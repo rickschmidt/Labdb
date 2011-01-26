@@ -1,0 +1,83 @@
+<h1>New experiment</h1>
+
+<% form_for(@experiment) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </p>
+  <p>
+    <%= f.label :anneal %><br />
+    <%= f.text_field :anneal %>
+  </p>
+  <p>
+    <%= f.label :dna_amount %><br />
+    <%= f.text_field :dna_amount %>
+  </p>
+  <p>
+    <%= f.label :total_samples %><br />
+    <%= f.text_field :total_samples %>
+  </p>
+  <p>
+    <%= f.label :notes %><br />
+    <%= f.text_field :notes %>
+  </p>
+  <p>
+    <%= f.label :experiment_number %><br />
+    <%= f.text_field :experiment_number %>
+  </p>
+  <p>
+    <%= f.label :bsa %><br />
+    <%= f.text_field :bsa %>
+  </p>
+  <p>
+    <%= f.label :buffer %><br />
+    <%= f.text_field :buffer %>
+  </p>
+  <p>
+    <%= f.label :mgcl2 %><br />
+    <%= f.text_field :mgcl2 %>
+  </p>
+  <p>
+    <%= f.label :taq %><br />
+    <%= f.text_field :taq %>
+  </p>
+  <p>
+    <%= f.label :h2o %><br />
+    <%= f.text_field :h2o %>
+  </p>
+  <p>
+    <%= f.label :dntps %><br />
+    <%= f.text_field :dntps %>
+  </p>
+  <p>
+    <%= f.label :dna %><br />
+    <%= f.text_field :dna %>
+  </p>
+  <p>
+    <%= f.label :primerl_amount %><br />
+    <%= f.text_field :primerl_amount %>
+  </p>
+  <p>
+    <%= f.label :primerh_amount %><br />
+    <%= f.text_field :primerh_amount %>
+  </p>
+  <p>
+    <%= f.label :total %><br />
+    <%= f.text_field :total %>
+  </p>
+  <p>
+    <%= f.label :primerl %><br />
+    <%= f.text_field :primerl %>
+  </p>
+  <p>
+    <%= f.label :primerh %><br />
+    <%= f.text_field :primerh %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', experiments_path %>

@@ -1,0 +1,23 @@
+<p>
+  <b>Genbank:</b>
+  <%=h @gene.genbank %>
+</p>
+
+<p>
+  <b>Locus:</b>
+  <%=h @gene.locus %>
+</p>
+
+<p>
+  <b>Primerl:</b>
+  <%=h @gene.primerl %>
+</p>
+
+<p>
+  <b>Primerh:</b>
+  <%=h @gene.primerh %>
+</p>
+
+
+<%= link_to 'Edit', edit_gene_path(@gene) %> |
+<%= link_to 'Back', genes_path %>

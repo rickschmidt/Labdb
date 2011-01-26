@@ -1,0 +1,35 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  genus: MyString
+  species: MyString
+  subspecies: MyString
+  new_diagnosis: MyString
+  family: MyString
+  reference: MyString
+  description_pdf: MyString
+  synonyms: MyString
+  type_museum: MyString
+  distribution: MyString
+  ingroup: MyString
+  other_literature: MyString
+  character_diagnosis: MyString
+  description: MyString
+  countries: MyString
+
+two:
+  genus: MyString
+  species: MyString
+  subspecies: MyString
+  new_diagnosis: MyString
+  family: MyString
+  reference: MyString
+  description_pdf: MyString
+  synonyms: MyString
+  type_museum: MyString
+  distribution: MyString
+  ingroup: MyString
+  other_literature: MyString
+  character_diagnosis: MyString
+  description: MyString
+  countries: MyString

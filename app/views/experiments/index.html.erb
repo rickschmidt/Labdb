@@ -1,0 +1,54 @@
+<h1>Listing experiments</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Anneal</th>
+    <th>Dna amount</th>
+    <th>Total samples</th>
+    <th>Notes</th>
+    <th>Experiment number</th>
+    <th>Bsa</th>
+    <th>Buffer</th>
+    <th>Mgcl2</th>
+    <th>Taq</th>
+    <th>H2o</th>
+    <th>Dntps</th>
+    <th>Dna</th>
+    <th>Primerl amount</th>
+    <th>Primerh amount</th>
+    <th>Total</th>
+    <th>Primerl</th>
+    <th>Primerh</th>
+  </tr>
+
+<% @experiments.each do |experiment| %>
+  <tr>
+    <td><%=h experiment.date %></td>
+    <td><%=h experiment.anneal %></td>
+    <td><%=h experiment.dna_amount %></td>
+    <td><%=h experiment.total_samples %></td>
+    <td><%=h experiment.notes %></td>
+    <td><%=h experiment.experiment_number %></td>
+    <td><%=h experiment.bsa %></td>
+    <td><%=h experiment.buffer %></td>
+    <td><%=h experiment.mgcl2 %></td>
+    <td><%=h experiment.taq %></td>
+    <td><%=h experiment.h2o %></td>
+    <td><%=h experiment.dntps %></td>
+    <td><%=h experiment.dna %></td>
+    <td><%=h experiment.primerl_amount %></td>
+    <td><%=h experiment.primerh_amount %></td>
+    <td><%=h experiment.total %></td>
+    <td><%=h experiment.primerl %></td>
+    <td><%=h experiment.primerh %></td>
+    <td><%= link_to 'Show', experiment %></td>
+    <td><%= link_to 'Edit', edit_experiment_path(experiment) %></td>
+    <td><%= link_to 'Destroy', experiment, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New experiment', new_experiment_path %>

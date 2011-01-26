@@ -1,0 +1,26 @@
+<h1>Listing genes</h1>
+
+<table>
+  <tr>
+    <th>Genbank</th>
+    <th>Locus</th>
+    <th>Primerl</th>
+    <th>Primerh</th>
+  </tr>
+
+<% @genes.each do |gene| %>
+  <tr>
+    <td><%=h gene.genbank %></td>
+    <td><%=h gene.locus %></td>
+    <td><%=h gene.primerl %></td>
+    <td><%=h gene.primerh %></td>
+    <td><%= link_to 'Show', gene %></td>
+    <td><%= link_to 'Edit', edit_gene_path(gene) %></td>
+    <td><%= link_to 'Destroy', gene, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New gene', new_gene_path %>

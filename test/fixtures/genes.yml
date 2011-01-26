@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  genbank: MyString
+  locus: MyString
+  primerl: MyString
+  primerh: MyString
+
+two:
+  genbank: MyString
+  locus: MyString
+  primerl: MyString
+  primerh: MyString

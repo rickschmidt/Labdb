@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  dna_accession: MyString
+  dnasample_number: MyString
+  date: 2011-01-26
+  method: MyString
+  elution_volume: 1.5
+  second_elute: MyString
+  second_elute_volumne: 1.5
+  reextracted: MyString
+  created_by: MyString
+
+two:
+  dna_accession: MyString
+  dnasample_number: MyString
+  date: 2011-01-26
+  method: MyString
+  elution_volume: 1.5
+  second_elute: MyString
+  second_elute_volumne: 1.5
+  reextracted: MyString
+  created_by: MyString

@@ -1,0 +1,41 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  date: 2011-01-26
+  anneal: 1.5
+  dna_amount: 1.5
+  total_samples: 1
+  notes: MyString
+  experiment_number: MyString
+  bsa: MyString
+  buffer: MyString
+  mgcl2: MyString
+  taq: MyString
+  h2o: MyString
+  dntps: MyString
+  dna: MyString
+  primerl_amount: 1.5
+  primerh_amount: 1.5
+  total: 1
+  primerl: MyString
+  primerh: MyString
+
+two:
+  date: 2011-01-26
+  anneal: 1.5
+  dna_amount: 1.5
+  total_samples: 1
+  notes: MyString
+  experiment_number: MyString
+  bsa: MyString
+  buffer: MyString
+  mgcl2: MyString
+  taq: MyString
+  h2o: MyString
+  dntps: MyString
+  dna: MyString
+  primerl_amount: 1.5
+  primerh_amount: 1.5
+  total: 1
+  primerl: MyString
+  primerh: MyString
