@@ -1,0 +1,78 @@
+<p>
+  <b>Genus:</b>
+  <%=h @taxonomy.genus %>
+</p>
+
+<p>
+  <b>Species:</b>
+  <%=h @taxonomy.species %>
+</p>
+
+<p>
+  <b>Subspecies:</b>
+  <%=h @taxonomy.subspecies %>
+</p>
+
+<p>
+  <b>New diagnosis:</b>
+  <%=h @taxonomy.new_diagnosis %>
+</p>
+
+<p>
+  <b>Family:</b>
+  <%=h @taxonomy.family %>
+</p>
+
+<p>
+  <b>Reference:</b>
+  <%=h @taxonomy.reference %>
+</p>
+
+<p>
+  <b>Description pdf:</b>
+  <%=h @taxonomy.description_pdf %>
+</p>
+
+<p>
+  <b>Synonyms:</b>
+  <%=h @taxonomy.synonyms %>
+</p>
+
+<p>
+  <b>Type museum:</b>
+  <%=h @taxonomy.type_museum %>
+</p>
+
+<p>
+  <b>Distribution:</b>
+  <%=h @taxonomy.distribution %>
+</p>
+
+<p>
+  <b>Ingroup:</b>
+  <%=h @taxonomy.ingroup %>
+</p>
+
+<p>
+  <b>Other literature:</b>
+  <%=h @taxonomy.other_literature %>
+</p>
+
+<p>
+  <b>Character diagnosis:</b>
+  <%=h @taxonomy.character_diagnosis %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @taxonomy.description %>
+</p>
+
+<p>
+  <b>Countries:</b>
+  <%=h @taxonomy.countries %>
+</p>
+
+
+<%= link_to 'Edit', edit_taxonomy_path(@taxonomy) %> |
+<%= link_to 'Back', taxonomies_path %>

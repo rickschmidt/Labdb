@@ -1,0 +1,42 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (3.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateTaxonomies (20110126195733)
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "taxonomies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "genus" varchar(255), "species" varchar(255), "subspecies" varchar(255), "new_diagnosis" varchar(255), "family" varchar(255), "reference" varchar(255), "description_pdf" varchar(255), "synonyms" varchar(255), "type_museum" varchar(255), "distribution" varchar(255), "ingroup" varchar(255), "other_literature" varchar(255), "character_diagnosis" varchar(255), "description" varchar(255), "countries" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110126195733')[0m
+Migrating to CreateDnasamples (20110126195743)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "dnasamples" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "dna_accession" varchar(255), "dnasample_number" varchar(255), "date" date, "method" varchar(255), "elution_volume" float, "second_elute" varchar(255), "second_elute_volumne" float, "reextracted" varchar(255), "created_by" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110126195743')[0m
+Migrating to CreatePcrs (20110126195750)
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "pcrs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pcr_tube_number" varchar(255), "gel_image" varchar(255), "date" date, "anneal_temp" float, "dna_amount" float, "conditions" varchar(255), "total_samples" integer, "notes" varchar(255), "reamp" varchar(255), "total_worked" integer, "denature" float, "extension" float, "cycle" float, "primerl" varchar(255), "primerh" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110126195750')[0m
+Migrating to CreateGenes (20110126195756)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "genes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "genbank" varchar(255), "locus" varchar(255), "primerl" varchar(255), "primerh" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110126195756')[0m
+Migrating to CreateExperiments (20110126195802)
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE TABLE "experiments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" date, "anneal" float, "dna_amount" float, "total_samples" integer, "notes" varchar(255), "experiment_number" varchar(255), "bsa" varchar(255), "buffer" varchar(255), "mgcl2" varchar(255), "taq" varchar(255), "h2o" varchar(255), "dntps" varchar(255), "dna" varchar(255), "primerl_amount" float, "primerh_amount" float, "total" integer, "primerl" varchar(255), "primerh" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110126195802')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("dnasamples")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("experiments")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("genes")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("pcrs")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("taxonomies")[0m

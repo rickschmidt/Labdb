@@ -1,0 +1,48 @@
+<h1>Listing taxonomies</h1>
+
+<table>
+  <tr>
+    <th>Genus</th>
+    <th>Species</th>
+    <th>Subspecies</th>
+    <th>New diagnosis</th>
+    <th>Family</th>
+    <th>Reference</th>
+    <th>Description pdf</th>
+    <th>Synonyms</th>
+    <th>Type museum</th>
+    <th>Distribution</th>
+    <th>Ingroup</th>
+    <th>Other literature</th>
+    <th>Character diagnosis</th>
+    <th>Description</th>
+    <th>Countries</th>
+  </tr>
+
+<% @taxonomies.each do |taxonomy| %>
+  <tr>
+    <td><%=h taxonomy.genus %></td>
+    <td><%=h taxonomy.species %></td>
+    <td><%=h taxonomy.subspecies %></td>
+    <td><%=h taxonomy.new_diagnosis %></td>
+    <td><%=h taxonomy.family %></td>
+    <td><%=h taxonomy.reference %></td>
+    <td><%=h taxonomy.description_pdf %></td>
+    <td><%=h taxonomy.synonyms %></td>
+    <td><%=h taxonomy.type_museum %></td>
+    <td><%=h taxonomy.distribution %></td>
+    <td><%=h taxonomy.ingroup %></td>
+    <td><%=h taxonomy.other_literature %></td>
+    <td><%=h taxonomy.character_diagnosis %></td>
+    <td><%=h taxonomy.description %></td>
+    <td><%=h taxonomy.countries %></td>
+    <td><%= link_to 'Show', taxonomy %></td>
+    <td><%= link_to 'Edit', edit_taxonomy_path(taxonomy) %></td>
+    <td><%= link_to 'Destroy', taxonomy, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New taxonomy', new_taxonomy_path %>

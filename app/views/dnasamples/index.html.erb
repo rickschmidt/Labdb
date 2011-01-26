@@ -1,0 +1,36 @@
+<h1>Listing dnasamples</h1>
+
+<table>
+  <tr>
+    <th>Dna accession</th>
+    <th>Dnasample number</th>
+    <th>Date</th>
+    <th>Method</th>
+    <th>Elution volume</th>
+    <th>Second elute</th>
+    <th>Second elute volumne</th>
+    <th>Reextracted</th>
+    <th>Created by</th>
+  </tr>
+
+<% @dnasamples.each do |dnasample| %>
+  <tr>
+    <td><%=h dnasample.dna_accession %></td>
+    <td><%=h dnasample.dnasample_number %></td>
+    <td><%=h dnasample.date %></td>
+    <td><%=h dnasample.method %></td>
+    <td><%=h dnasample.elution_volume %></td>
+    <td><%=h dnasample.second_elute %></td>
+    <td><%=h dnasample.second_elute_volumne %></td>
+    <td><%=h dnasample.reextracted %></td>
+    <td><%=h dnasample.created_by %></td>
+    <td><%= link_to 'Show', dnasample %></td>
+    <td><%= link_to 'Edit', edit_dnasample_path(dnasample) %></td>
+    <td><%= link_to 'Destroy', dnasample, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New dnasample', new_dnasample_path %>

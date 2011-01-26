@@ -1,0 +1,35 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  pcr_tube_number: MyString
+  gel_image: MyString
+  date: 2011-01-26
+  anneal_temp: 1.5
+  dna_amount: 1.5
+  conditions: MyString
+  total_samples: 1
+  notes: MyString
+  reamp: MyString
+  total_worked: 1
+  denature: 1.5
+  extension: 1.5
+  cycle: 1.5
+  primerl: MyString
+  primerh: MyString
+
+two:
+  pcr_tube_number: MyString
+  gel_image: MyString
+  date: 2011-01-26
+  anneal_temp: 1.5
+  dna_amount: 1.5
+  conditions: MyString
+  total_samples: 1
+  notes: MyString
+  reamp: MyString
+  total_worked: 1
+  denature: 1.5
+  extension: 1.5
+  cycle: 1.5
+  primerl: MyString
+  primerh: MyString

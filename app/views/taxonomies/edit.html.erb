@@ -1,0 +1,72 @@
+<h1>Editing taxonomy</h1>
+
+<% form_for(@taxonomy) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :genus %><br />
+    <%= f.text_field :genus %>
+  </p>
+  <p>
+    <%= f.label :species %><br />
+    <%= f.text_field :species %>
+  </p>
+  <p>
+    <%= f.label :subspecies %><br />
+    <%= f.text_field :subspecies %>
+  </p>
+  <p>
+    <%= f.label :new_diagnosis %><br />
+    <%= f.text_field :new_diagnosis %>
+  </p>
+  <p>
+    <%= f.label :family %><br />
+    <%= f.text_field :family %>
+  </p>
+  <p>
+    <%= f.label :reference %><br />
+    <%= f.text_field :reference %>
+  </p>
+  <p>
+    <%= f.label :description_pdf %><br />
+    <%= f.text_field :description_pdf %>
+  </p>
+  <p>
+    <%= f.label :synonyms %><br />
+    <%= f.text_field :synonyms %>
+  </p>
+  <p>
+    <%= f.label :type_museum %><br />
+    <%= f.text_field :type_museum %>
+  </p>
+  <p>
+    <%= f.label :distribution %><br />
+    <%= f.text_field :distribution %>
+  </p>
+  <p>
+    <%= f.label :ingroup %><br />
+    <%= f.text_field :ingroup %>
+  </p>
+  <p>
+    <%= f.label :other_literature %><br />
+    <%= f.text_field :other_literature %>
+  </p>
+  <p>
+    <%= f.label :character_diagnosis %><br />
+    <%= f.text_field :character_diagnosis %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :countries %><br />
+    <%= f.text_field :countries %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @taxonomy %> |
+<%= link_to 'Back', taxonomies_path %>
