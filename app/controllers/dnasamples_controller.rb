@@ -1,8 +1,14 @@
 class DnasamplesController < ApplicationController
   # GET /dnasamples
   # GET /dnasamples.xml
-  def index
-    @dnasamples = Dnasample.all
+  helper_method :sort_column, :sort_direction
+   helper :all
+   def index
+
+
+      @per_page = params[:per_page] || Experiment.per_page || 10
+       @search=Dnasample.search(params[:search])
+       @dnasamples=@search.find(:all,:order=>(sort_column + " "+ sort_direction)).paginate(:per_page => @per_page, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,4 +86,12 @@ class DnasamplesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  private 
+   def sort_column
+       Experiment.column_names.include?(params[:sort]) ? params[:sort] : "date"
+     end
+
+     def sort_direction
+       %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+     end
 end

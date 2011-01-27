@@ -64,9 +64,29 @@ th.custom{
 }
 
 tr.even {
-    background-color:#DDFFF8;
+    background-color:#D5D5D5;
 }
 
 tr.odd {
-    background-color:#FFFFFF;
+    background-color:white;
+}
+tr.odd:hover {
+background-color: #A7F0DE;
+}
+tr.even:hover {
+background-color: #A7F0DE;
+}
+#title{
+  font-size:36pt;
+  color:#661521;
+  font-family:Menlo; 
+
+  
+}
+#subtitle{
+  font-size:20pt;
+  color:#47791D;
+    font-family:Menlo;
+}
+}
 }

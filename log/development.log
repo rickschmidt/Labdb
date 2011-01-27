@@ -10150,3 +10150,647 @@ Rendering template within layouts/experiments
 Rendering experiments/index
 Rendered _navigation (0.5ms)
 Completed in 494ms (View: 202, DB: 208) | 200 OK [http://localhost/experiments?search=&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:11:25) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>""}
+  [4;35;1mExperiment Load (89.0ms)[0m   [0mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%%') OR (experiments.date LIKE '%%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 436ms (View: 136, DB: 89) | 200 OK [http://localhost/experiments?search=&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:11:29) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"3"}
+  [4;36;1mExperiment Load (187.2ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%3%') OR (experiments.date LIKE '%3%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 366ms (View: 101, DB: 187) | 200 OK [http://localhost/experiments?search=3&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:11:41) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"2013"}
+  [4;35;1mExperiment Load (26.6ms)[0m   [0mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%2013%') OR (experiments.date LIKE '%2013%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 295ms (View: 102, DB: 27) | 200 OK [http://localhost/experiments?search=2013&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:11:48) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"odio"}
+  [4;36;1mExperiment Load (2.0ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%odio%') OR (experiments.date LIKE '%odio%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 34ms (View: 12, DB: 2) | 200 OK [http://localhost/experiments?search=odio&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:13:42) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"odio"}
+
+NameError (undefined local variable or method `t' for main:Object):
+  app/models/experiment.rb:15
+  app/controllers/experiments_controller.rb:9:in `index'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (159.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:13:57) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"odio"}
+  [4;35;1mExperiment Load (14.9ms)[0m   [0mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%odio%') OR (experiments.date LIKE '%odio%') OR (experiments.anneal LIKE '%odio%') OR (experiments.dna_amount LIKE '%odio%') OR (experiments.total_samples LIKE '%odio%') OR (experiments.notes LIKE '%odio%') OR (experiments.bsa LIKE '%odio%') OR (experiments.buffer LIKE '%odio%') OR (experiments.mgcl2 LIKE '%odio%') OR (experiments.taq LIKE '%odio%') OR (experiments.dntps LIKE '%odio%') OR (experiments.dna LIKE '%odio%') OR (experiments.primerl_amount LIKE '%odio%') OR (experiments.primerh_amount LIKE '%odio%') OR (experiments.total LIKE '%odio%') OR (experiments.primerl LIKE '%odio%') OR (experiments.primerh LIKE '%odio%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 311ms (View: 194, DB: 15) | 200 OK [http://localhost/experiments?search=odio&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:13:59) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"odio"}
+  [4;36;1mExperiment Load (15.1ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%odio%') OR (experiments.date LIKE '%odio%') OR (experiments.anneal LIKE '%odio%') OR (experiments.dna_amount LIKE '%odio%') OR (experiments.total_samples LIKE '%odio%') OR (experiments.notes LIKE '%odio%') OR (experiments.bsa LIKE '%odio%') OR (experiments.buffer LIKE '%odio%') OR (experiments.mgcl2 LIKE '%odio%') OR (experiments.taq LIKE '%odio%') OR (experiments.dntps LIKE '%odio%') OR (experiments.dna LIKE '%odio%') OR (experiments.primerl_amount LIKE '%odio%') OR (experiments.primerh_amount LIKE '%odio%') OR (experiments.total LIKE '%odio%') OR (experiments.primerl LIKE '%odio%') OR (experiments.primerh LIKE '%odio%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 215ms (View: 99, DB: 15) | 200 OK [http://localhost/experiments?search=odio&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:14:04) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"4"}
+  [4;35;1mExperiment Load (80.1ms)[0m   [0mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%4%') OR (experiments.date LIKE '%4%') OR (experiments.anneal LIKE '%4%') OR (experiments.dna_amount LIKE '%4%') OR (experiments.total_samples LIKE '%4%') OR (experiments.notes LIKE '%4%') OR (experiments.bsa LIKE '%4%') OR (experiments.buffer LIKE '%4%') OR (experiments.mgcl2 LIKE '%4%') OR (experiments.taq LIKE '%4%') OR (experiments.dntps LIKE '%4%') OR (experiments.dna LIKE '%4%') OR (experiments.primerl_amount LIKE '%4%') OR (experiments.primerh_amount LIKE '%4%') OR (experiments.total LIKE '%4%') OR (experiments.primerl LIKE '%4%') OR (experiments.primerh LIKE '%4%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 450ms (View: 103, DB: 80) | 200 OK [http://localhost/experiments?search=4&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:14:21) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"4"}
+  [4;36;1mExperiment Load (189.2ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%4%') OR (experiments.date LIKE '%4%') OR (experiments.anneal LIKE '%4%') OR (experiments.dna_amount LIKE '%4%') OR (experiments.total_samples LIKE '%4%') OR (experiments.notes LIKE '%4%') OR (experiments.bsa LIKE '%4%') OR (experiments.buffer LIKE '%4%') OR (experiments.mgcl2 LIKE '%4%') OR (experiments.taq LIKE '%4%') OR (experiments.dntps LIKE '%4%') OR (experiments.dna LIKE '%4%') OR (experiments.primerl_amount LIKE '%4%') OR (experiments.primerh_amount LIKE '%4%') OR (experiments.total LIKE '%4%') OR (experiments.primerl LIKE '%4%') OR (experiments.primerh LIKE '%4%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 566ms (View: 209, DB: 189) | 200 OK [http://localhost/experiments?search=4&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:18:47) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"4"}
+  [4;35;1mExperiment Load (232.9ms)[0m   [0mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%4%') OR (experiments.date LIKE '%4%') OR (experiments.anneal LIKE '%4%') OR (experiments.dna_amount LIKE '%4%') OR (experiments.total_samples LIKE '%4%') OR (experiments.notes LIKE '%4%') OR (experiments.bsa LIKE '%4%') OR (experiments.buffer LIKE '%4%') OR (experiments.mgcl2 LIKE '%4%') OR (experiments.taq LIKE '%4%') OR (experiments.dntps LIKE '%4%') OR (experiments.dna LIKE '%4%') OR (experiments.primerl_amount LIKE '%4%') OR (experiments.primerh_amount LIKE '%4%') OR (experiments.total LIKE '%4%') OR (experiments.primerl LIKE '%4%') OR (experiments.primerh LIKE '%4%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.2ms)
+Completed in 586ms (View: 130, DB: 233) | 200 OK [http://localhost/experiments?search=4&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:19:19) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"4"}
+  [4;36;1mExperiment Load (80.8ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%4%') OR (experiments.date LIKE '%4%') OR (experiments.anneal LIKE '%4%') OR (experiments.dna_amount LIKE '%4%') OR (experiments.total_samples LIKE '%4%') OR (experiments.notes LIKE '%4%') OR (experiments.bsa LIKE '%4%') OR (experiments.buffer LIKE '%4%') OR (experiments.mgcl2 LIKE '%4%') OR (experiments.taq LIKE '%4%') OR (experiments.dntps LIKE '%4%') OR (experiments.dna LIKE '%4%') OR (experiments.primerl_amount LIKE '%4%') OR (experiments.primerh_amount LIKE '%4%') OR (experiments.total LIKE '%4%') OR (experiments.primerl LIKE '%4%') OR (experiments.primerh LIKE '%4%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.6ms)
+Completed in 570ms (View: 200, DB: 81) | 200 OK [http://localhost/experiments?search=4&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:19:21) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"4"}
+  [4;35;1mExperiment Load (202.2ms)[0m   [0mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%4%') OR (experiments.date LIKE '%4%') OR (experiments.anneal LIKE '%4%') OR (experiments.dna_amount LIKE '%4%') OR (experiments.total_samples LIKE '%4%') OR (experiments.notes LIKE '%4%') OR (experiments.bsa LIKE '%4%') OR (experiments.buffer LIKE '%4%') OR (experiments.mgcl2 LIKE '%4%') OR (experiments.taq LIKE '%4%') OR (experiments.dntps LIKE '%4%') OR (experiments.dna LIKE '%4%') OR (experiments.primerl_amount LIKE '%4%') OR (experiments.primerh_amount LIKE '%4%') OR (experiments.total LIKE '%4%') OR (experiments.primerl LIKE '%4%') OR (experiments.primerh LIKE '%4%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 475ms (View: 103, DB: 202) | 200 OK [http://localhost/experiments?search=4&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:19:42) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"4"}
+  [4;36;1mExperiment Load (80.7ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%4%') OR (experiments.date LIKE '%4%') OR (experiments.anneal LIKE '%4%') OR (experiments.dna_amount LIKE '%4%') OR (experiments.total_samples LIKE '%4%') OR (experiments.notes LIKE '%4%') OR (experiments.bsa LIKE '%4%') OR (experiments.buffer LIKE '%4%') OR (experiments.mgcl2 LIKE '%4%') OR (experiments.taq LIKE '%4%') OR (experiments.dntps LIKE '%4%') OR (experiments.dna LIKE '%4%') OR (experiments.primerl_amount LIKE '%4%') OR (experiments.primerh_amount LIKE '%4%') OR (experiments.total LIKE '%4%') OR (experiments.primerl LIKE '%4%') OR (experiments.primerh LIKE '%4%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.2ms)
+Completed in 446ms (View: 103, DB: 81) | 200 OK [http://localhost/experiments?search=4&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:20:10) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"4"}
+  [4;35;1mExperiment Load (81.9ms)[0m   [0mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%4%') OR (experiments.date LIKE '%4%') OR (experiments.anneal LIKE '%4%') OR (experiments.dna_amount LIKE '%4%') OR (experiments.total_samples LIKE '%4%') OR (experiments.notes LIKE '%4%') OR (experiments.bsa LIKE '%4%') OR (experiments.buffer LIKE '%4%') OR (experiments.mgcl2 LIKE '%4%') OR (experiments.taq LIKE '%4%') OR (experiments.dntps LIKE '%4%') OR (experiments.dna LIKE '%4%') OR (experiments.primerl_amount LIKE '%4%') OR (experiments.primerh_amount LIKE '%4%') OR (experiments.total LIKE '%4%') OR (experiments.primerl LIKE '%4%') OR (experiments.primerh LIKE '%4%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 552ms (View: 201, DB: 82) | 200 OK [http://localhost/experiments?search=4&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:20:20) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"4"}
+  [4;36;1mExperiment Load (195.9ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%4%') OR (experiments.date LIKE '%4%') OR (experiments.anneal LIKE '%4%') OR (experiments.dna_amount LIKE '%4%') OR (experiments.total_samples LIKE '%4%') OR (experiments.notes LIKE '%4%') OR (experiments.bsa LIKE '%4%') OR (experiments.buffer LIKE '%4%') OR (experiments.mgcl2 LIKE '%4%') OR (experiments.taq LIKE '%4%') OR (experiments.dntps LIKE '%4%') OR (experiments.dna LIKE '%4%') OR (experiments.primerl_amount LIKE '%4%') OR (experiments.primerh_amount LIKE '%4%') OR (experiments.total LIKE '%4%') OR (experiments.primerl LIKE '%4%') OR (experiments.primerh LIKE '%4%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.3ms)
+Completed in 467ms (View: 104, DB: 196) | 200 OK [http://localhost/experiments?search=4&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:22:19) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"4"}
+  [4;35;1mExperiment Load (80.3ms)[0m   [0mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%4%') OR (experiments.date LIKE '%4%') OR (experiments.anneal LIKE '%4%') OR (experiments.dna_amount LIKE '%4%') OR (experiments.total_samples LIKE '%4%') OR (experiments.notes LIKE '%4%') OR (experiments.bsa LIKE '%4%') OR (experiments.buffer LIKE '%4%') OR (experiments.mgcl2 LIKE '%4%') OR (experiments.taq LIKE '%4%') OR (experiments.dntps LIKE '%4%') OR (experiments.dna LIKE '%4%') OR (experiments.primerl_amount LIKE '%4%') OR (experiments.primerh_amount LIKE '%4%') OR (experiments.total LIKE '%4%') OR (experiments.primerl LIKE '%4%') OR (experiments.primerh LIKE '%4%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 446ms (View: 100, DB: 80) | 200 OK [http://localhost/experiments?search=4&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:22:33) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"4"}
+  [4;36;1mExperiment Load (208.1ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%4%') OR (experiments.date LIKE '%4%') OR (experiments.anneal LIKE '%4%') OR (experiments.dna_amount LIKE '%4%') OR (experiments.total_samples LIKE '%4%') OR (experiments.notes LIKE '%4%') OR (experiments.bsa LIKE '%4%') OR (experiments.buffer LIKE '%4%') OR (experiments.mgcl2 LIKE '%4%') OR (experiments.taq LIKE '%4%') OR (experiments.dntps LIKE '%4%') OR (experiments.dna LIKE '%4%') OR (experiments.primerl_amount LIKE '%4%') OR (experiments.primerh_amount LIKE '%4%') OR (experiments.total LIKE '%4%') OR (experiments.primerl LIKE '%4%') OR (experiments.primerh LIKE '%4%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 585ms (View: 206, DB: 208) | 200 OK [http://localhost/experiments?search=4&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:22:38) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"4"}
+  [4;35;1mExperiment Load (198.0ms)[0m   [0mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%4%') OR (experiments.date LIKE '%4%') OR (experiments.anneal LIKE '%4%') OR (experiments.dna_amount LIKE '%4%') OR (experiments.total_samples LIKE '%4%') OR (experiments.notes LIKE '%4%') OR (experiments.bsa LIKE '%4%') OR (experiments.buffer LIKE '%4%') OR (experiments.mgcl2 LIKE '%4%') OR (experiments.taq LIKE '%4%') OR (experiments.dntps LIKE '%4%') OR (experiments.dna LIKE '%4%') OR (experiments.primerl_amount LIKE '%4%') OR (experiments.primerh_amount LIKE '%4%') OR (experiments.total LIKE '%4%') OR (experiments.primerl LIKE '%4%') OR (experiments.primerh LIKE '%4%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 469ms (View: 102, DB: 198) | 200 OK [http://localhost/experiments?search=4&direction=asc&sort=experiment_number]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-26 20:23:07) [GET]
+
+ActionController::RoutingError (No route matches "/leases" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:24:04) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"4"}
+  [4;36;1mExperiment Load (81.4ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%4%') OR (experiments.date LIKE '%4%') OR (experiments.anneal LIKE '%4%') OR (experiments.dna_amount LIKE '%4%') OR (experiments.total_samples LIKE '%4%') OR (experiments.notes LIKE '%4%') OR (experiments.bsa LIKE '%4%') OR (experiments.buffer LIKE '%4%') OR (experiments.mgcl2 LIKE '%4%') OR (experiments.taq LIKE '%4%') OR (experiments.dntps LIKE '%4%') OR (experiments.dna LIKE '%4%') OR (experiments.primerl_amount LIKE '%4%') OR (experiments.primerh_amount LIKE '%4%') OR (experiments.total LIKE '%4%') OR (experiments.primerl LIKE '%4%') OR (experiments.primerh LIKE '%4%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.3ms)
+Completed in 458ms (View: 104, DB: 81) | 200 OK [http://localhost/experiments?search=4&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:24:38) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"4"}
+  [4;35;1mExperiment Load (208.7ms)[0m   [0mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%4%') OR (experiments.date LIKE '%4%') OR (experiments.anneal LIKE '%4%') OR (experiments.dna_amount LIKE '%4%') OR (experiments.total_samples LIKE '%4%') OR (experiments.notes LIKE '%4%') OR (experiments.bsa LIKE '%4%') OR (experiments.buffer LIKE '%4%') OR (experiments.mgcl2 LIKE '%4%') OR (experiments.taq LIKE '%4%') OR (experiments.dntps LIKE '%4%') OR (experiments.dna LIKE '%4%') OR (experiments.primerl_amount LIKE '%4%') OR (experiments.primerh_amount LIKE '%4%') OR (experiments.total LIKE '%4%') OR (experiments.primerl LIKE '%4%') OR (experiments.primerh LIKE '%4%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 587ms (View: 208, DB: 209) | 200 OK [http://localhost/experiments?search=4&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:27:00) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"4"}
+  [4;36;1mExperiment Load (194.7ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%4%') OR (experiments.date LIKE '%4%') OR (experiments.anneal LIKE '%4%') OR (experiments.dna_amount LIKE '%4%') OR (experiments.total_samples LIKE '%4%') OR (experiments.notes LIKE '%4%') OR (experiments.bsa LIKE '%4%') OR (experiments.buffer LIKE '%4%') OR (experiments.mgcl2 LIKE '%4%') OR (experiments.taq LIKE '%4%') OR (experiments.dntps LIKE '%4%') OR (experiments.dna LIKE '%4%') OR (experiments.primerl_amount LIKE '%4%') OR (experiments.primerh_amount LIKE '%4%') OR (experiments.total LIKE '%4%') OR (experiments.primerl LIKE '%4%') OR (experiments.primerh LIKE '%4%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 466ms (View: 102, DB: 195) | 200 OK [http://localhost/experiments?search=4&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:27:09) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"4"}
+  [4;35;1mExperiment Load (80.5ms)[0m   [0mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%4%') OR (experiments.date LIKE '%4%') OR (experiments.anneal LIKE '%4%') OR (experiments.dna_amount LIKE '%4%') OR (experiments.total_samples LIKE '%4%') OR (experiments.notes LIKE '%4%') OR (experiments.bsa LIKE '%4%') OR (experiments.buffer LIKE '%4%') OR (experiments.mgcl2 LIKE '%4%') OR (experiments.taq LIKE '%4%') OR (experiments.dntps LIKE '%4%') OR (experiments.dna LIKE '%4%') OR (experiments.primerl_amount LIKE '%4%') OR (experiments.primerh_amount LIKE '%4%') OR (experiments.total LIKE '%4%') OR (experiments.primerl LIKE '%4%') OR (experiments.primerh LIKE '%4%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 575ms (View: 202, DB: 81) | 200 OK [http://localhost/experiments?search=4&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:27:20) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"4"}
+  [4;36;1mExperiment Load (204.2ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%4%') OR (experiments.date LIKE '%4%') OR (experiments.anneal LIKE '%4%') OR (experiments.dna_amount LIKE '%4%') OR (experiments.total_samples LIKE '%4%') OR (experiments.notes LIKE '%4%') OR (experiments.bsa LIKE '%4%') OR (experiments.buffer LIKE '%4%') OR (experiments.mgcl2 LIKE '%4%') OR (experiments.taq LIKE '%4%') OR (experiments.dntps LIKE '%4%') OR (experiments.dna LIKE '%4%') OR (experiments.primerl_amount LIKE '%4%') OR (experiments.primerh_amount LIKE '%4%') OR (experiments.total LIKE '%4%') OR (experiments.primerl LIKE '%4%') OR (experiments.primerh LIKE '%4%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 471ms (View: 99, DB: 204) | 200 OK [http://localhost/experiments?search=4&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:27:50) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"4"}
+  [4;35;1mExperiment Load (80.6ms)[0m   [0mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%4%') OR (experiments.date LIKE '%4%') OR (experiments.anneal LIKE '%4%') OR (experiments.dna_amount LIKE '%4%') OR (experiments.total_samples LIKE '%4%') OR (experiments.notes LIKE '%4%') OR (experiments.bsa LIKE '%4%') OR (experiments.buffer LIKE '%4%') OR (experiments.mgcl2 LIKE '%4%') OR (experiments.taq LIKE '%4%') OR (experiments.dntps LIKE '%4%') OR (experiments.dna LIKE '%4%') OR (experiments.primerl_amount LIKE '%4%') OR (experiments.primerh_amount LIKE '%4%') OR (experiments.total LIKE '%4%') OR (experiments.primerl LIKE '%4%') OR (experiments.primerh LIKE '%4%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.3ms)
+Completed in 446ms (View: 104, DB: 81) | 200 OK [http://localhost/experiments?search=4&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:29:07) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"4"}
+  [4;36;1mExperiment Load (81.0ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%4%') OR (experiments.date LIKE '%4%') OR (experiments.anneal LIKE '%4%') OR (experiments.dna_amount LIKE '%4%') OR (experiments.total_samples LIKE '%4%') OR (experiments.notes LIKE '%4%') OR (experiments.bsa LIKE '%4%') OR (experiments.buffer LIKE '%4%') OR (experiments.mgcl2 LIKE '%4%') OR (experiments.taq LIKE '%4%') OR (experiments.dntps LIKE '%4%') OR (experiments.dna LIKE '%4%') OR (experiments.primerl_amount LIKE '%4%') OR (experiments.primerh_amount LIKE '%4%') OR (experiments.total LIKE '%4%') OR (experiments.primerl LIKE '%4%') OR (experiments.primerh LIKE '%4%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.4ms)
+Completed in 564ms (View: 209, DB: 81) | 200 OK [http://localhost/experiments?search=4&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:29:29) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"4"}
+  [4;35;1mExperiment Load (193.6ms)[0m   [0mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%4%') OR (experiments.date LIKE '%4%') OR (experiments.anneal LIKE '%4%') OR (experiments.dna_amount LIKE '%4%') OR (experiments.total_samples LIKE '%4%') OR (experiments.notes LIKE '%4%') OR (experiments.bsa LIKE '%4%') OR (experiments.buffer LIKE '%4%') OR (experiments.mgcl2 LIKE '%4%') OR (experiments.taq LIKE '%4%') OR (experiments.dntps LIKE '%4%') OR (experiments.dna LIKE '%4%') OR (experiments.primerl_amount LIKE '%4%') OR (experiments.primerh_amount LIKE '%4%') OR (experiments.total LIKE '%4%') OR (experiments.primerl LIKE '%4%') OR (experiments.primerh LIKE '%4%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.3ms)
+Completed in 477ms (View: 105, DB: 194) | 200 OK [http://localhost/experiments?search=4&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:30:48) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"4"}
+  [4;36;1mExperiment Load (85.1ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%4%') OR (experiments.date LIKE '%4%') OR (experiments.anneal LIKE '%4%') OR (experiments.dna_amount LIKE '%4%') OR (experiments.total_samples LIKE '%4%') OR (experiments.notes LIKE '%4%') OR (experiments.bsa LIKE '%4%') OR (experiments.buffer LIKE '%4%') OR (experiments.mgcl2 LIKE '%4%') OR (experiments.taq LIKE '%4%') OR (experiments.dntps LIKE '%4%') OR (experiments.dna LIKE '%4%') OR (experiments.primerl_amount LIKE '%4%') OR (experiments.primerh_amount LIKE '%4%') OR (experiments.total LIKE '%4%') OR (experiments.primerl LIKE '%4%') OR (experiments.primerh LIKE '%4%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.3ms)
+Completed in 522ms (View: 147, DB: 85) | 200 OK [http://localhost/experiments?search=4&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:31:58) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"4"}
+  [4;35;1mExperiment Load (209.9ms)[0m   [0mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%4%') OR (experiments.date LIKE '%4%') OR (experiments.anneal LIKE '%4%') OR (experiments.dna_amount LIKE '%4%') OR (experiments.total_samples LIKE '%4%') OR (experiments.notes LIKE '%4%') OR (experiments.bsa LIKE '%4%') OR (experiments.buffer LIKE '%4%') OR (experiments.mgcl2 LIKE '%4%') OR (experiments.taq LIKE '%4%') OR (experiments.dntps LIKE '%4%') OR (experiments.dna LIKE '%4%') OR (experiments.primerl_amount LIKE '%4%') OR (experiments.primerh_amount LIKE '%4%') OR (experiments.total LIKE '%4%') OR (experiments.primerl LIKE '%4%') OR (experiments.primerh LIKE '%4%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.3ms)
+Completed in 592ms (View: 208, DB: 210) | 200 OK [http://localhost/experiments?search=4&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:32:08) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"4"}
+  [4;36;1mExperiment Load (197.2ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%4%') OR (experiments.date LIKE '%4%') OR (experiments.anneal LIKE '%4%') OR (experiments.dna_amount LIKE '%4%') OR (experiments.total_samples LIKE '%4%') OR (experiments.notes LIKE '%4%') OR (experiments.bsa LIKE '%4%') OR (experiments.buffer LIKE '%4%') OR (experiments.mgcl2 LIKE '%4%') OR (experiments.taq LIKE '%4%') OR (experiments.dntps LIKE '%4%') OR (experiments.dna LIKE '%4%') OR (experiments.primerl_amount LIKE '%4%') OR (experiments.primerh_amount LIKE '%4%') OR (experiments.total LIKE '%4%') OR (experiments.primerl LIKE '%4%') OR (experiments.primerh LIKE '%4%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.3ms)
+Completed in 473ms (View: 105, DB: 197) | 200 OK [http://localhost/experiments?search=4&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:32:48) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"4"}
+  [4;35;1mExperiment Load (83.6ms)[0m   [0mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%4%') OR (experiments.date LIKE '%4%') OR (experiments.anneal LIKE '%4%') OR (experiments.dna_amount LIKE '%4%') OR (experiments.total_samples LIKE '%4%') OR (experiments.notes LIKE '%4%') OR (experiments.bsa LIKE '%4%') OR (experiments.buffer LIKE '%4%') OR (experiments.mgcl2 LIKE '%4%') OR (experiments.taq LIKE '%4%') OR (experiments.dntps LIKE '%4%') OR (experiments.dna LIKE '%4%') OR (experiments.primerl_amount LIKE '%4%') OR (experiments.primerh_amount LIKE '%4%') OR (experiments.total LIKE '%4%') OR (experiments.primerl LIKE '%4%') OR (experiments.primerh LIKE '%4%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 576ms (View: 204, DB: 84) | 200 OK [http://localhost/experiments?search=4&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:32:50) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"4"}
+  [4;36;1mExperiment Load (198.4ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%4%') OR (experiments.date LIKE '%4%') OR (experiments.anneal LIKE '%4%') OR (experiments.dna_amount LIKE '%4%') OR (experiments.total_samples LIKE '%4%') OR (experiments.notes LIKE '%4%') OR (experiments.bsa LIKE '%4%') OR (experiments.buffer LIKE '%4%') OR (experiments.mgcl2 LIKE '%4%') OR (experiments.taq LIKE '%4%') OR (experiments.dntps LIKE '%4%') OR (experiments.dna LIKE '%4%') OR (experiments.primerl_amount LIKE '%4%') OR (experiments.primerh_amount LIKE '%4%') OR (experiments.total LIKE '%4%') OR (experiments.primerl LIKE '%4%') OR (experiments.primerh LIKE '%4%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 468ms (View: 100, DB: 198) | 200 OK [http://localhost/experiments?search=4&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:32:56) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"4"}
+  [4;35;1mExperiment Load (80.9ms)[0m   [0mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%4%') OR (experiments.date LIKE '%4%') OR (experiments.anneal LIKE '%4%') OR (experiments.dna_amount LIKE '%4%') OR (experiments.total_samples LIKE '%4%') OR (experiments.notes LIKE '%4%') OR (experiments.bsa LIKE '%4%') OR (experiments.buffer LIKE '%4%') OR (experiments.mgcl2 LIKE '%4%') OR (experiments.taq LIKE '%4%') OR (experiments.dntps LIKE '%4%') OR (experiments.dna LIKE '%4%') OR (experiments.primerl_amount LIKE '%4%') OR (experiments.primerh_amount LIKE '%4%') OR (experiments.total LIKE '%4%') OR (experiments.primerl LIKE '%4%') OR (experiments.primerh LIKE '%4%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 448ms (View: 99, DB: 81) | 200 OK [http://localhost/experiments?search=4&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:33:02) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"4"}
+  [4;36;1mExperiment Load (81.0ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%4%') OR (experiments.date LIKE '%4%') OR (experiments.anneal LIKE '%4%') OR (experiments.dna_amount LIKE '%4%') OR (experiments.total_samples LIKE '%4%') OR (experiments.notes LIKE '%4%') OR (experiments.bsa LIKE '%4%') OR (experiments.buffer LIKE '%4%') OR (experiments.mgcl2 LIKE '%4%') OR (experiments.taq LIKE '%4%') OR (experiments.dntps LIKE '%4%') OR (experiments.dna LIKE '%4%') OR (experiments.primerl_amount LIKE '%4%') OR (experiments.primerh_amount LIKE '%4%') OR (experiments.total LIKE '%4%') OR (experiments.primerl LIKE '%4%') OR (experiments.primerh LIKE '%4%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 554ms (View: 201, DB: 81) | 200 OK [http://localhost/experiments?search=4&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:33:07) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"4"}
+  [4;35;1mExperiment Load (199.9ms)[0m   [0mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%4%') OR (experiments.date LIKE '%4%') OR (experiments.anneal LIKE '%4%') OR (experiments.dna_amount LIKE '%4%') OR (experiments.total_samples LIKE '%4%') OR (experiments.notes LIKE '%4%') OR (experiments.bsa LIKE '%4%') OR (experiments.buffer LIKE '%4%') OR (experiments.mgcl2 LIKE '%4%') OR (experiments.taq LIKE '%4%') OR (experiments.dntps LIKE '%4%') OR (experiments.dna LIKE '%4%') OR (experiments.primerl_amount LIKE '%4%') OR (experiments.primerh_amount LIKE '%4%') OR (experiments.total LIKE '%4%') OR (experiments.primerl LIKE '%4%') OR (experiments.primerh LIKE '%4%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 474ms (View: 100, DB: 200) | 200 OK [http://localhost/experiments?search=4&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:33:13) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"4"}
+  [4;36;1mExperiment Load (82.2ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%4%') OR (experiments.date LIKE '%4%') OR (experiments.anneal LIKE '%4%') OR (experiments.dna_amount LIKE '%4%') OR (experiments.total_samples LIKE '%4%') OR (experiments.notes LIKE '%4%') OR (experiments.bsa LIKE '%4%') OR (experiments.buffer LIKE '%4%') OR (experiments.mgcl2 LIKE '%4%') OR (experiments.taq LIKE '%4%') OR (experiments.dntps LIKE '%4%') OR (experiments.dna LIKE '%4%') OR (experiments.primerl_amount LIKE '%4%') OR (experiments.primerh_amount LIKE '%4%') OR (experiments.total LIKE '%4%') OR (experiments.primerl LIKE '%4%') OR (experiments.primerh LIKE '%4%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.3ms)
+Completed in 577ms (View: 207, DB: 82) | 200 OK [http://localhost/experiments?search=4&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:33:25) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"4"}
+  [4;35;1mExperiment Load (203.1ms)[0m   [0mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%4%') OR (experiments.date LIKE '%4%') OR (experiments.anneal LIKE '%4%') OR (experiments.dna_amount LIKE '%4%') OR (experiments.total_samples LIKE '%4%') OR (experiments.notes LIKE '%4%') OR (experiments.bsa LIKE '%4%') OR (experiments.buffer LIKE '%4%') OR (experiments.mgcl2 LIKE '%4%') OR (experiments.taq LIKE '%4%') OR (experiments.dntps LIKE '%4%') OR (experiments.dna LIKE '%4%') OR (experiments.primerl_amount LIKE '%4%') OR (experiments.primerh_amount LIKE '%4%') OR (experiments.total LIKE '%4%') OR (experiments.primerl LIKE '%4%') OR (experiments.primerh LIKE '%4%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.4ms)
+Completed in 577ms (View: 204, DB: 203) | 200 OK [http://localhost/experiments?search=4&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:33:45) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"4"}
+  [4;36;1mExperiment Load (200.8ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%4%') OR (experiments.date LIKE '%4%') OR (experiments.anneal LIKE '%4%') OR (experiments.dna_amount LIKE '%4%') OR (experiments.total_samples LIKE '%4%') OR (experiments.notes LIKE '%4%') OR (experiments.bsa LIKE '%4%') OR (experiments.buffer LIKE '%4%') OR (experiments.mgcl2 LIKE '%4%') OR (experiments.taq LIKE '%4%') OR (experiments.dntps LIKE '%4%') OR (experiments.dna LIKE '%4%') OR (experiments.primerl_amount LIKE '%4%') OR (experiments.primerh_amount LIKE '%4%') OR (experiments.total LIKE '%4%') OR (experiments.primerl LIKE '%4%') OR (experiments.primerh LIKE '%4%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.4ms)
+Completed in 488ms (View: 108, DB: 201) | 200 OK [http://localhost/experiments?search=4&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:34:05) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"4"}
+  [4;35;1mExperiment Load (81.6ms)[0m   [0mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%4%') OR (experiments.date LIKE '%4%') OR (experiments.anneal LIKE '%4%') OR (experiments.dna_amount LIKE '%4%') OR (experiments.total_samples LIKE '%4%') OR (experiments.notes LIKE '%4%') OR (experiments.bsa LIKE '%4%') OR (experiments.buffer LIKE '%4%') OR (experiments.mgcl2 LIKE '%4%') OR (experiments.taq LIKE '%4%') OR (experiments.dntps LIKE '%4%') OR (experiments.dna LIKE '%4%') OR (experiments.primerl_amount LIKE '%4%') OR (experiments.primerh_amount LIKE '%4%') OR (experiments.total LIKE '%4%') OR (experiments.primerl LIKE '%4%') OR (experiments.primerh LIKE '%4%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.4ms)
+Completed in 583ms (View: 204, DB: 82) | 200 OK [http://localhost/experiments?search=4&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:34:28) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc", "search"=>"4"}
+  [4;36;1mExperiment Load (198.9ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ((experiments.experiment_number LIKE '%4%') OR (experiments.date LIKE '%4%') OR (experiments.anneal LIKE '%4%') OR (experiments.dna_amount LIKE '%4%') OR (experiments.total_samples LIKE '%4%') OR (experiments.notes LIKE '%4%') OR (experiments.bsa LIKE '%4%') OR (experiments.buffer LIKE '%4%') OR (experiments.mgcl2 LIKE '%4%') OR (experiments.taq LIKE '%4%') OR (experiments.dntps LIKE '%4%') OR (experiments.dna LIKE '%4%') OR (experiments.primerl_amount LIKE '%4%') OR (experiments.primerh_amount LIKE '%4%') OR (experiments.total LIKE '%4%') OR (experiments.primerl LIKE '%4%') OR (experiments.primerh LIKE '%4%')) ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.3ms)
+Completed in 473ms (View: 104, DB: 199) | 200 OK [http://localhost/experiments?search=4&direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:34:35) [GET]
+  [4;35;1mExperiment Load (96.8ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 524ms (View: 325, DB: 97) | 200 OK [http://localhost/experiments]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-01-26 20:34:37) [GET]
+  [4;36;1mDnasample Load (0.8ms)[0m   [0;1mSELECT * FROM "dnasamples" [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.7ms)
+Completed in 26ms (View: 7, DB: 1) | 200 OK [http://localhost/dnasamples]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:34:38) [GET]
+  [4;35;1mExperiment Load (213.0ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 404ms (View: 100, DB: 213) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:34:41) [GET]
+  Parameters: {"sort"=>"total_samples", "direction"=>"asc"}
+  [4;36;1mExperiment Load (88.3ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY total_samples asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 386ms (View: 212, DB: 88) | 200 OK [http://localhost/experiments?direction=asc&sort=total_samples]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:35:13) [GET]
+  Parameters: {"sort"=>"total_samples", "direction"=>"asc"}
+  [4;35;1mExperiment Load (188.7ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY total_samples asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 378ms (View: 100, DB: 189) | 200 OK [http://localhost/experiments?direction=asc&sort=total_samples]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:35:41) [GET]
+  Parameters: {"sort"=>"total_samples", "direction"=>"asc"}
+  [4;36;1mExperiment Load (209.4ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY total_samples asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 513ms (View: 215, DB: 209) | 200 OK [http://localhost/experiments?direction=asc&sort=total_samples]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:36:19) [GET]
+  Parameters: {"sort"=>"total_samples", "direction"=>"asc"}
+  [4;35;1mExperiment Load (89.7ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY total_samples asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 388ms (View: 98, DB: 90) | 200 OK [http://localhost/experiments?direction=asc&sort=total_samples]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:36:43) [GET]
+  Parameters: {"per_page"=>"20"}
+  [4;36;1mExperiment Load (225.9ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 398ms (View: 77, DB: 226) | 200 OK [http://localhost/experiments?per_page=20]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:36:47) [GET]
+  Parameters: {"per_page"=>"10"}
+  [4;35;1mExperiment Load (224.4ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 370ms (View: 50, DB: 224) | 200 OK [http://localhost/experiments?per_page=10]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:36:52) [GET]
+  Parameters: {"per_page"=>"10", "sort"=>"date", "direction"=>"desc"}
+  [4;36;1mExperiment Load (93.9ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date desc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.7ms)
+Completed in 348ms (View: 165, DB: 94) | 200 OK [http://localhost/experiments?direction=desc&per_page=10&sort=date]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:37:10) [GET]
+  Parameters: {"per_page"=>"10", "sort"=>"date", "direction"=>"desc"}
+  [4;35;1mExperiment Load (88.8ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date desc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 338ms (View: 46, DB: 89) | 200 OK [http://localhost/experiments?direction=desc&per_page=10&sort=date]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-01-26 20:37:11) [GET]
+  [4;36;1mDnasample Load (0.6ms)[0m   [0;1mSELECT * FROM "dnasamples" [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.5ms)
+Completed in 11ms (View: 3, DB: 1) | 200 OK [http://localhost/dnasamples]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:37:12) [GET]
+  [4;35;1mExperiment Load (226.8ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 441ms (View: 125, DB: 227) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:39:20) [GET]
+  [4;36;1mExperiment Load (88.8ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 482ms (View: 192, DB: 89) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#show (for 127.0.0.1 at 2011-01-26 20:39:25) [GET]
+  Parameters: {"id"=>"278"}
+  [4;35;1mExperiment Load (0.3ms)[0m   [0mSELECT * FROM "experiments" WHERE ("experiments"."id" = 278) [0m
+Rendering template within layouts/experiments
+Rendering experiments/show
+Rendered _navigation (1.1ms)
+Completed in 21ms (View: 13, DB: 0) | 200 OK [http://localhost/experiments/278]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:39:31) [GET]
+  [4;36;1mExperiment Load (197.0ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 387ms (View: 103, DB: 197) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:42:07) [GET]
+  [4;35;1mExperiment Load (88.7ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 480ms (View: 193, DB: 89) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:44:23) [GET]
+  [4;36;1mExperiment Load (187.8ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 373ms (View: 97, DB: 188) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:44:35) [GET]
+  [4;35;1mExperiment Load (211.2ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 496ms (View: 199, DB: 211) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:44:49) [GET]
+  [4;36;1mExperiment Load (88.7ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 389ms (View: 97, DB: 89) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:45:00) [GET]
+  [4;35;1mExperiment Load (217.4ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 405ms (View: 100, DB: 217) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:45:08) [GET]
+  [4;36;1mExperiment Load (90.0ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.6ms)
+Completed in 377ms (View: 200, DB: 90) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:45:16) [GET]
+  [4;35;1mExperiment Load (204.9ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 393ms (View: 98, DB: 205) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#show (for 127.0.0.1 at 2011-01-26 20:45:42) [GET]
+  Parameters: {"id"=>"278"}
+  [4;36;1mExperiment Load (0.3ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ("experiments"."id" = 278) [0m
+Rendering template within layouts/experiments
+Rendering experiments/show
+Rendered _navigation (0.5ms)
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/experiments/278]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:46:21) [GET]
+  [4;35;1mExperiment Load (88.1ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 367ms (View: 193, DB: 88) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:47:36) [GET]
+  Parameters: {"sort"=>"experiment_number", "direction"=>"asc"}
+  [4;36;1mExperiment Load (187.0ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 383ms (View: 105, DB: 187) | 200 OK [http://localhost/experiments?direction=asc&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:48:03) [GET]
+  Parameters: {"page"=>"2", "sort"=>"experiment_number", "direction"=>"asc"}
+  [4;35;1mExperiment Load (206.6ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 497ms (View: 201, DB: 207) | 200 OK [http://localhost/experiments?direction=asc&page=2&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:48:08) [GET]
+  Parameters: {"page"=>"3", "sort"=>"experiment_number", "direction"=>"asc"}
+  [4;36;1mExperiment Load (89.1ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 391ms (View: 101, DB: 89) | 200 OK [http://localhost/experiments?direction=asc&page=3&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:48:12) [GET]
+  Parameters: {"page"=>"33", "sort"=>"experiment_number", "direction"=>"asc"}
+  [4;35;1mExperiment Load (230.7ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 418ms (View: 99, DB: 231) | 200 OK [http://localhost/experiments?direction=asc&page=33&sort=experiment_number]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-26 20:48:50) [GET]
+  Parameters: {"page"=>"28", "sort"=>"experiment_number", "direction"=>"asc"}
+  [4;36;1mExperiment Load (89.9ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY experiment_number asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 386ms (View: 206, DB: 90) | 200 OK [http://localhost/experiments?direction=asc&page=28&sort=experiment_number]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-01-26 21:09:17) [GET]
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.5ms)
+Completed in 23ms (View: 11, DB: 0) | 200 OK [http://localhost/dnasamples]
