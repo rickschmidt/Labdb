@@ -1,0 +1,319 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "dnasamples" [0m
+
+
+Processing DnasamplesController#create (for 0.0.0.0 at 2011-01-26 19:06:54) [POST]
+  Parameters: {"dnasample"=>{}}
+  [4;35;1mDnasample Create (0.3ms)[0m   [0mINSERT INTO "dnasamples" ("dnasample_number", "created_at", "method", "elution_volume", "second_elute_volumne", "updated_at", "reextracted", "date", "created_by", "dna_accession", "second_elute") VALUES(NULL, '2011-01-27 01:06:54', NULL, NULL, NULL, '2011-01-27 01:06:54', NULL, NULL, NULL, NULL, NULL)[0m
+Redirected to http://test.host/dnasamples/980190963
+Completed in 6ms (DB: 2) | 302 Found [http://test.host/dnasamples?]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "dnasamples" [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "dnasamples" [0m
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 980190962) [0m
+
+
+Processing DnasamplesController#destroy (for 0.0.0.0 at 2011-01-26 19:06:54) [DELETE]
+  Parameters: {"id"=>"980190962"}
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 980190962) [0m
+  [4;36;1mPcr Load (0.2ms)[0m   [0;1mSELECT * FROM "pcrs" INNER JOIN "dnasamples_pcrs" ON "pcrs".id = "dnasamples_pcrs".pcr_id WHERE ("dnasamples_pcrs".dnasample_id = 980190962 ) [0m
+  [4;35;1mGene Load (0.1ms)[0m   [0mSELECT * FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 980190962 ) [0m
+  [4;36;1mDnasample Destroy (0.2ms)[0m   [0;1mDELETE FROM "dnasamples" WHERE "id" = 980190962[0m
+Redirected to http://test.host/dnasamples
+Completed in 3ms (DB: 1) | 302 Found [http://test.host/dnasamples/980190962]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "dnasamples" [0m
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 980190962) [0m
+
+
+Processing DnasamplesController#edit (for 0.0.0.0 at 2011-01-26 19:06:54) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 980190962) [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/edit
+Rendered _navigation (0.9ms)
+Completed in 38ms (View: 37, DB: 0) | 200 OK [http://test.host/dnasamples/980190962/edit]
+
+
+Processing DnasamplesController#index (for 0.0.0.0 at 2011-01-26 19:06:54) [GET]
+  [4;36;1mDnasample Load (0.3ms)[0m   [0;1mSELECT * FROM "dnasamples" [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.4ms)
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://test.host/dnasamples]
+
+
+Processing DnasamplesController#new (for 0.0.0.0 at 2011-01-26 19:06:54) [GET]
+Rendering template within layouts/dnasamples
+Rendering dnasamples/new
+Rendered _navigation (0.4ms)
+Completed in 31ms (View: 31, DB: 0) | 200 OK [http://test.host/dnasamples/new]
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 980190962) [0m
+
+
+Processing DnasamplesController#show (for 0.0.0.0 at 2011-01-26 19:06:54) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 980190962) [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/show
+Rendered _navigation (0.4ms)
+Completed in 3ms (View: 3, DB: 0) | 200 OK [http://test.host/dnasamples/980190962]
+  [4;35;1mDnasample Load (0.3ms)[0m   [0mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 980190962) [0m
+
+
+Processing DnasamplesController#update (for 0.0.0.0 at 2011-01-26 19:06:54) [PUT]
+  Parameters: {"dnasample"=>{}, "id"=>"980190962"}
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 980190962) [0m
+Redirected to http://test.host/dnasamples/980190962
+Completed in 3ms (DB: 0) | 302 Found [http://test.host/dnasamples/980190962?]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "experiments" [0m
+
+
+Processing ExperimentsController#create (for 0.0.0.0 at 2011-01-26 19:06:54) [POST]
+  Parameters: {"experiment"=>{}}
+  [4;36;1mExperiment Create (0.4ms)[0m   [0;1mINSERT INTO "experiments" ("dna", "primerh", "created_at", "buffer", "notes", "updated_at", "dna_amount", "experiment_number", "taq", "dntps", "primerh_amount", "total", "date", "total_samples", "bsa", "h2o", "primerl", "anneal", "mgcl2", "primerl_amount") VALUES(NULL, NULL, '2011-01-27 01:06:54', NULL, NULL, '2011-01-27 01:06:54', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)[0m
+Redirected to http://test.host/experiments/980190963
+Completed in 7ms (DB: 1) | 302 Found [http://test.host/experiments?]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "experiments" [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM "experiments" [0m
+  [4;35;1mExperiment Load (0.2ms)[0m   [0mSELECT * FROM "experiments" WHERE ("experiments"."id" = 980190962) [0m
+
+
+Processing ExperimentsController#destroy (for 0.0.0.0 at 2011-01-26 19:06:54) [DELETE]
+  Parameters: {"id"=>"980190962"}
+  [4;36;1mExperiment Load (0.3ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ("experiments"."id" = 980190962) [0m
+  [4;35;1mExperiment Destroy (0.3ms)[0m   [0mDELETE FROM "experiments" WHERE "id" = 980190962[0m
+Redirected to http://test.host/experiments
+Completed in 2ms (DB: 2) | 302 Found [http://test.host/experiments/980190962]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "experiments" [0m
+  [4;35;1mExperiment Load (0.3ms)[0m   [0mSELECT * FROM "experiments" WHERE ("experiments"."id" = 980190962) [0m
+
+
+Processing ExperimentsController#edit (for 0.0.0.0 at 2011-01-26 19:06:54) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;36;1mExperiment Load (0.4ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ("experiments"."id" = 980190962) [0m
+Rendering template within layouts/experiments
+Rendering experiments/edit
+Rendered _navigation (0.4ms)
+Completed in 22ms (View: 21, DB: 1) | 200 OK [http://test.host/experiments/980190962/edit]
+
+
+Processing ExperimentsController#index (for 0.0.0.0 at 2011-01-26 19:06:54) [GET]
+  [4;35;1mExperiment Load (0.4ms)[0m   [0mSELECT * FROM "experiments" [0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.4ms)
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://test.host/experiments]
+
+
+Processing ExperimentsController#new (for 0.0.0.0 at 2011-01-26 19:06:54) [GET]
+Rendering template within layouts/experiments
+Rendering experiments/new
+Rendered _navigation (0.4ms)
+Completed in 18ms (View: 17, DB: 0) | 200 OK [http://test.host/experiments/new]
+  [4;36;1mExperiment Load (0.3ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ("experiments"."id" = 980190962) [0m
+
+
+Processing ExperimentsController#show (for 0.0.0.0 at 2011-01-26 19:06:54) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;35;1mExperiment Load (0.2ms)[0m   [0mSELECT * FROM "experiments" WHERE ("experiments"."id" = 980190962) [0m
+Rendering template within layouts/experiments
+Rendering experiments/show
+Rendered _navigation (0.4ms)
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://test.host/experiments/980190962]
+  [4;36;1mExperiment Load (0.3ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ("experiments"."id" = 980190962) [0m
+
+
+Processing ExperimentsController#update (for 0.0.0.0 at 2011-01-26 19:06:54) [PUT]
+  Parameters: {"experiment"=>{}, "id"=>"980190962"}
+  [4;35;1mExperiment Load (0.2ms)[0m   [0mSELECT * FROM "experiments" WHERE ("experiments"."id" = 980190962) [0m
+Redirected to http://test.host/experiments/980190962
+Completed in 2ms (DB: 1) | 302 Found [http://test.host/experiments/980190962?]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "genes" [0m
+
+
+Processing GenesController#create (for 0.0.0.0 at 2011-01-26 19:06:54) [POST]
+  Parameters: {"gene"=>{}}
+  [4;35;1mGene Create (307.7ms)[0m   [0mINSERT INTO "genes" ("genbank", "primerh", "created_at", "updated_at", "primerl", "locus") VALUES(NULL, NULL, '2011-01-27 01:06:54', '2011-01-27 01:06:54', NULL, NULL)[0m
+Redirected to http://test.host/genes/980190963
+Completed in 313ms (DB: 308) | 302 Found [http://test.host/genes?]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "genes" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "genes" [0m
+  [4;36;1mGene Load (0.2ms)[0m   [0;1mSELECT * FROM "genes" WHERE ("genes"."id" = 980190962) [0m
+
+
+Processing GenesController#destroy (for 0.0.0.0 at 2011-01-26 19:06:54) [DELETE]
+  Parameters: {"id"=>"980190962"}
+  [4;35;1mGene Load (0.2ms)[0m   [0mSELECT * FROM "genes" WHERE ("genes"."id" = 980190962) [0m
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_genes" ON "dnasamples".id = "dnasamples_genes".dnasample_id WHERE ("dnasamples_genes".gene_id = 980190962 ) [0m
+  [4;35;1mGene Destroy (0.2ms)[0m   [0mDELETE FROM "genes" WHERE "id" = 980190962[0m
+Redirected to http://test.host/genes
+Completed in 3ms (DB: 1) | 302 Found [http://test.host/genes/980190962]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "genes" [0m
+  [4;35;1mGene Load (0.2ms)[0m   [0mSELECT * FROM "genes" WHERE ("genes"."id" = 980190962) [0m
+
+
+Processing GenesController#edit (for 0.0.0.0 at 2011-01-26 19:06:54) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;36;1mGene Load (0.1ms)[0m   [0;1mSELECT * FROM "genes" WHERE ("genes"."id" = 980190962) [0m
+Rendering template within layouts/genes
+Rendering genes/edit
+Rendered _navigation (0.6ms)
+Completed in 7ms (View: 7, DB: 1) | 200 OK [http://test.host/genes/980190962/edit]
+
+
+Processing GenesController#index (for 0.0.0.0 at 2011-01-26 19:06:54) [GET]
+  [4;35;1mGene Load (0.2ms)[0m   [0mSELECT * FROM "genes" [0m
+Rendering template within layouts/genes
+Rendering genes/index
+Rendered _navigation (0.4ms)
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://test.host/genes]
+
+
+Processing GenesController#new (for 0.0.0.0 at 2011-01-26 19:06:54) [GET]
+Rendering template within layouts/genes
+Rendering genes/new
+Rendered _navigation (0.4ms)
+Completed in 5ms (View: 5, DB: 0) | 200 OK [http://test.host/genes/new]
+  [4;36;1mGene Load (0.2ms)[0m   [0;1mSELECT * FROM "genes" WHERE ("genes"."id" = 980190962) [0m
+
+
+Processing GenesController#show (for 0.0.0.0 at 2011-01-26 19:06:54) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;35;1mGene Load (0.1ms)[0m   [0mSELECT * FROM "genes" WHERE ("genes"."id" = 980190962) [0m
+Rendering template within layouts/genes
+Rendering genes/show
+Rendered _navigation (0.4ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://test.host/genes/980190962]
+  [4;36;1mGene Load (0.2ms)[0m   [0;1mSELECT * FROM "genes" WHERE ("genes"."id" = 980190962) [0m
+
+
+Processing GenesController#update (for 0.0.0.0 at 2011-01-26 19:06:54) [PUT]
+  Parameters: {"gene"=>{}, "id"=>"980190962"}
+  [4;35;1mGene Load (0.1ms)[0m   [0mSELECT * FROM "genes" WHERE ("genes"."id" = 980190962) [0m
+Redirected to http://test.host/genes/980190962
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/genes/980190962?]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "pcrs" [0m
+
+
+Processing PcrsController#create (for 0.0.0.0 at 2011-01-26 19:06:54) [POST]
+  Parameters: {"pcr"=>{}}
+  [4;35;1mPcr Create (0.4ms)[0m   [0mINSERT INTO "pcrs" ("gel_image", "denature", "primerh", "created_at", "conditions", "total_worked", "extension", "notes", "updated_at", "anneal_temp", "dna_amount", "date", "total_samples", "primerl", "pcr_tube_number", "cycle", "reamp") VALUES(NULL, NULL, NULL, '2011-01-27 01:06:54', NULL, NULL, NULL, NULL, '2011-01-27 01:06:54', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)[0m
+Redirected to http://test.host/pcrs/980190963
+Completed in 6ms (DB: 0) | 302 Found [http://test.host/pcrs?]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "pcrs" [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "pcrs" [0m
+  [4;36;1mPcr Load (0.2ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE ("pcrs"."id" = 980190962) [0m
+
+
+Processing PcrsController#destroy (for 0.0.0.0 at 2011-01-26 19:06:54) [DELETE]
+  Parameters: {"id"=>"980190962"}
+  [4;35;1mPcr Load (0.2ms)[0m   [0mSELECT * FROM "pcrs" WHERE ("pcrs"."id" = 980190962) [0m
+  [4;36;1mDnasample Load (0.1ms)[0m   [0;1mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 980190962 ) [0m
+  [4;35;1mPcr Destroy (0.2ms)[0m   [0mDELETE FROM "pcrs" WHERE "id" = 980190962[0m
+Redirected to http://test.host/pcrs
+Completed in 2ms (DB: 1) | 302 Found [http://test.host/pcrs/980190962]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "pcrs" [0m
+  [4;35;1mPcr Load (0.3ms)[0m   [0mSELECT * FROM "pcrs" WHERE ("pcrs"."id" = 980190962) [0m
+
+
+Processing PcrsController#edit (for 0.0.0.0 at 2011-01-26 19:06:54) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;36;1mPcr Load (0.2ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE ("pcrs"."id" = 980190962) [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/edit
+Rendered _navigation (0.4ms)
+Completed in 17ms (View: 16, DB: 1) | 200 OK [http://test.host/pcrs/980190962/edit]
+
+
+Processing PcrsController#index (for 0.0.0.0 at 2011-01-26 19:06:54) [GET]
+  [4;35;1mPcr Load (0.3ms)[0m   [0mSELECT * FROM "pcrs" [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+Rendered _navigation (0.4ms)
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://test.host/pcrs]
+
+
+Processing PcrsController#new (for 0.0.0.0 at 2011-01-26 19:06:54) [GET]
+Rendering template within layouts/pcrs
+Rendering pcrs/new
+Rendered _navigation (0.4ms)
+Completed in 14ms (View: 13, DB: 0) | 200 OK [http://test.host/pcrs/new]
+  [4;36;1mPcr Load (0.3ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE ("pcrs"."id" = 980190962) [0m
+
+
+Processing PcrsController#show (for 0.0.0.0 at 2011-01-26 19:06:54) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;35;1mPcr Load (0.2ms)[0m   [0mSELECT * FROM "pcrs" WHERE ("pcrs"."id" = 980190962) [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/show
+Rendered _navigation (0.4ms)
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://test.host/pcrs/980190962]
+  [4;36;1mPcr Load (0.2ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE ("pcrs"."id" = 980190962) [0m
+
+
+Processing PcrsController#update (for 0.0.0.0 at 2011-01-26 19:06:54) [PUT]
+  Parameters: {"id"=>"980190962", "pcr"=>{}}
+  [4;35;1mPcr Load (0.2ms)[0m   [0mSELECT * FROM "pcrs" WHERE ("pcrs"."id" = 980190962) [0m
+Redirected to http://test.host/pcrs/980190962
+Completed in 3ms (DB: 0) | 302 Found [http://test.host/pcrs/980190962?]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "taxonomies" [0m
+
+
+Processing TaxonomiesController#create (for 0.0.0.0 at 2011-01-26 19:06:54) [POST]
+  Parameters: {"taxonomy"=>{}}
+  [4;35;1mTaxonomy Create (0.4ms)[0m   [0mINSERT INTO "taxonomies" ("reference", "countries", "type_museum", "created_at", "updated_at", "synonyms", "other_literature", "character_diagnosis", "family", "description_pdf", "ingroup", "genus", "subspecies", "distribution", "description", "new_diagnosis", "species") VALUES(NULL, NULL, NULL, '2011-01-27 01:06:54', '2011-01-27 01:06:54', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)[0m
+Redirected to http://test.host/taxonomies/980190963
+Completed in 6ms (DB: 1) | 302 Found [http://test.host/taxonomies?]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "taxonomies" [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "taxonomies" [0m
+  [4;36;1mTaxonomy Load (0.2ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE ("taxonomies"."id" = 980190962) [0m
+
+
+Processing TaxonomiesController#destroy (for 0.0.0.0 at 2011-01-26 19:06:54) [DELETE]
+  Parameters: {"id"=>"980190962"}
+  [4;35;1mTaxonomy Load (0.2ms)[0m   [0mSELECT * FROM "taxonomies" WHERE ("taxonomies"."id" = 980190962) [0m
+  [4;36;1mTaxonomy Destroy (0.2ms)[0m   [0;1mDELETE FROM "taxonomies" WHERE "id" = 980190962[0m
+Redirected to http://test.host/taxonomies
+Completed in 2ms (DB: 1) | 302 Found [http://test.host/taxonomies/980190962]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "taxonomies" [0m
+  [4;36;1mTaxonomy Load (0.6ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE ("taxonomies"."id" = 980190962) [0m
+
+
+Processing TaxonomiesController#edit (for 0.0.0.0 at 2011-01-26 19:06:54) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;35;1mTaxonomy Load (0.2ms)[0m   [0mSELECT * FROM "taxonomies" WHERE ("taxonomies"."id" = 980190962) [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/edit
+Rendered _navigation (0.4ms)
+Completed in 15ms (View: 14, DB: 1) | 200 OK [http://test.host/taxonomies/980190962/edit]
+
+
+Processing TaxonomiesController#index (for 0.0.0.0 at 2011-01-26 19:06:54) [GET]
+  [4;36;1mTaxonomy Load (0.3ms)[0m   [0;1mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (0.4ms)
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://test.host/taxonomies]
+
+
+Processing TaxonomiesController#new (for 0.0.0.0 at 2011-01-26 19:06:54) [GET]
+Rendering template within layouts/taxonomies
+Rendering taxonomies/new
+Rendered _navigation (0.4ms)
+Completed in 12ms (View: 12, DB: 0) | 200 OK [http://test.host/taxonomies/new]
+  [4;35;1mTaxonomy Load (0.3ms)[0m   [0mSELECT * FROM "taxonomies" WHERE ("taxonomies"."id" = 980190962) [0m
+
+
+Processing TaxonomiesController#show (for 0.0.0.0 at 2011-01-26 19:06:54) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;36;1mTaxonomy Load (0.2ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE ("taxonomies"."id" = 980190962) [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/show
+Rendered _navigation (0.4ms)
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://test.host/taxonomies/980190962]
+  [4;35;1mTaxonomy Load (0.2ms)[0m   [0mSELECT * FROM "taxonomies" WHERE ("taxonomies"."id" = 980190962) [0m
+
+
+Processing TaxonomiesController#update (for 0.0.0.0 at 2011-01-26 19:06:54) [PUT]
+  Parameters: {"id"=>"980190962", "taxonomy"=>{}}
+  [4;36;1mTaxonomy Load (0.2ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE ("taxonomies"."id" = 980190962) [0m
+Redirected to http://test.host/taxonomies/980190962
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/taxonomies/980190962?]

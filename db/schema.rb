@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110126195802) do
+ActiveRecord::Schema.define(:version => 20110126205446) do
 
   create_table "dnasamples", :force => true do |t|
     t.string   "dna_accession"
@@ -21,6 +21,20 @@ ActiveRecord::Schema.define(:version => 20110126195802) do
     t.float    "second_elute_volumne"
     t.string   "reextracted"
     t.string   "created_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "dnasamples_genes", :id => false, :force => true do |t|
+    t.integer  "dnasample_id"
+    t.integer  "gene_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "dnasamples_pcrs", :id => false, :force => true do |t|
+    t.integer  "dnasample_id"
+    t.integer  "pcr_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

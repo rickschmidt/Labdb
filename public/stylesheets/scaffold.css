@@ -52,3 +52,21 @@ a:hover { color: #fff; background-color:#000; }
   list-style: square;
 }
 
+#header{
+
+text-aligin:center;
+  
+}
+th.custom{
+    font-color:white;
+    background-color:#00598F;
+    color: #fff
+}
+
+tr.even {
+    background-color:#DDFFF8;
+}
+
+tr.odd {
+    background-color:#FFFFFF;
+}
