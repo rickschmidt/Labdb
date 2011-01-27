@@ -1,0 +1,10 @@
+<h1>Welcome</h1>
+
+The most recently changed experiment is 
+<% if !@experiments.blank? %>
+<% @experiments.each do |experiment| %>
+  <br/>
+<%= link_to experiment.experiment_number , experiment_path(experiment.id) %>    
+
+<% end %>  
+<% end %>

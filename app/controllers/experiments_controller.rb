@@ -1,8 +1,14 @@
 class ExperimentsController < ApplicationController
   # GET /experiments
   # GET /experiments.xml
+  helper_method :sort_column, :sort_direction
+  helper :all
   def index
-    @experiments = Experiment.all
+
+    
+     @per_page = params[:per_page] || Experiment.per_page || 20
+      @search=Experiment.search(params[:search])
+      @experiments=@search.find(:all,:order=>(sort_column + " "+ sort_direction)).paginate(:per_page => @per_page, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,4 +86,13 @@ class ExperimentsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  private 
+   def sort_column
+       Experiment.column_names.include?(params[:sort]) ? params[:sort] : "date"
+     end
+
+     def sort_direction
+       %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+     end
 end

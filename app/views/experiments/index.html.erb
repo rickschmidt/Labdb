@@ -1,29 +1,43 @@
 <h1>Listing experiments</h1>
+<% form_tag experiments_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+	<%=hidden_field_tag :direction, params[:direction]%>
+	<%=hidden_field_tag :sort, params[:sort]%>
+
+<% end %>
+
+</p>
+<%= will_paginate @experiments %> 
+Per Page: <%= select_tag :per_page, options_for_select([10,20,50,100,200], params[:per_page].to_i),
+               :onchange => "if(this.value){window.location='?per_page='+this.value;}" %>
 
 <table>
-  <tr>
-    <th>Date</th>
-    <th>Anneal</th>
-    <th>Dna amount</th>
-    <th>Total samples</th>
-    <th>Notes</th>
-    <th>Experiment number</th>
-    <th>Bsa</th>
-    <th>Buffer</th>
-    <th>Mgcl2</th>
-    <th>Taq</th>
-    <th>H2o</th>
-    <th>Dntps</th>
-    <th>Dna</th>
-    <th>Primerl amount</th>
-    <th>Primerh amount</th>
-    <th>Total</th>
-    <th>Primerl</th>
-    <th>Primerh</th>
-  </tr>
+  <tr class="custom">
+    <th class ="custom">   <%= sortable 'date'%></th>
+    <th class ="custom"><%= sortable 'anneal'%>   </th>
+    <th class ="custom"><%= sortable 'dna_amount'%>   </th>
+    <th class ="custom"><%= sortable 'total_samples'%>   </th>
+    <th class ="custom"><%= sortable 'notes'%>   </th>
+    <th class ="custom"><%= sortable 'experiment_number'%>   </th>
+    <th class ="custom"><%= sortable 'bsa'%>   </th>
+    <th class ="custom"><%= sortable 'buffer'%></th>
+    <th class ="custom"><%= sortable 'mgcl2'%> </th>
+    <th class ="custom"><%= sortable 'taq'%>   </th>
+    <th class ="custom"><%= sortable 'h2o'%>   </th>
+    <th class ="custom"><%= sortable 'dntps'%> </th>
+    <th class ="custom"><%= sortable 'dna'%>   </th>
+    <th class ="custom"><%= sortable 'primerl_amount'%>   </th>
+    <th class ="custom"><%= sortable 'primerh_amount'%>   </th>
+    <th class ="custom"><%= sortable 'total'%>   </th>
+    <th class ="custom"><%= sortable 'primerl'%> </th>
+    <th class ="custom"><%= sortable 'primerh'%> </th>
+  </tr>                 <%= sortable 'date'%>   
 
 <% @experiments.each do |experiment| %>
-  <tr>
+  <tr class="<%= cycle("even", "odd") %>">
     <td><%=h experiment.date %></td>
     <td><%=h experiment.anneal %></td>
     <td><%=h experiment.dna_amount %></td>
@@ -42,9 +56,9 @@
     <td><%=h experiment.total %></td>
     <td><%=h experiment.primerl %></td>
     <td><%=h experiment.primerh %></td>
-    <td><%= link_to 'Show', experiment %></td>
-    <td><%= link_to 'Edit', edit_experiment_path(experiment) %></td>
-    <td><%= link_to 'Destroy', experiment, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td style=background:white><%= link_to 'Show', experiment %></td>
+    <td style=background:white><%= link_to 'Edit', edit_experiment_path(experiment) %></td>
+    <td style=background:white><%= link_to 'Destroy', experiment, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

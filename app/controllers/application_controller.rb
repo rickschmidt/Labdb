@@ -7,4 +7,15 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+  
+  def primer length
+    @dna=['C','A', 'T','G']
+    @primer=""
+    for n in 1..10
+    i=rand(4)
+
+      @primer<<@dna[i].to_str
+      
+  end
+end
 end
