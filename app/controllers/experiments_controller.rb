@@ -6,7 +6,7 @@ class ExperimentsController < ApplicationController
   def index
 
     
-     @per_page = params[:per_page] || Experiment.per_page || 20
+     @per_page = params[:per_page] || Experiment.per_page || 10
       @search=Experiment.search(params[:search])
       @experiments=@search.find(:all,:order=>(sort_column + " "+ sort_direction)).paginate(:per_page => @per_page, :page => params[:page])
 
