@@ -10794,3 +10794,1885 @@ Rendering template within layouts/dnasamples
 Rendering dnasamples/index
 Rendered _navigation (0.5ms)
 Completed in 23ms (View: 11, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-27 10:29:58) [GET]
+
+ActionController::RoutingError (No route matches "/leases" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-01-27 11:15:15) [GET]
+  [4;36;1mExperiment Load (330.7ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.6ms)
+Completed in 577ms (View: 139, DB: 331) | 200 OK [http://localhost/experiments]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-01-27 11:15:23) [GET]
+  [4;35;1mDnasample Load (20.6ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.7ms)
+Completed in 57ms (View: 3, DB: 21) | 200 OK [http://localhost/dnasamples]
+
+
+Processing GenesController#index (for 127.0.0.1 at 2011-01-27 11:15:24) [GET]
+  [4;36;1mGene Load (1.0ms)[0m   [0;1mSELECT * FROM "genes" [0m
+Rendering template within layouts/genes
+Rendering genes/index
+Rendered _navigation (0.5ms)
+Completed in 203ms (View: 143, DB: 1) | 200 OK [http://localhost/genes]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-01-27 11:15:25) [GET]
+  [4;35;1mPcr Load (0.6ms)[0m   [0mSELECT * FROM "pcrs" [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+Rendered _navigation (0.7ms)
+Completed in 79ms (View: 55, DB: 1) | 200 OK [http://localhost/pcrs]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-01-27 11:15:26) [GET]
+  [4;36;1mTaxonomy Load (6.5ms)[0m   [0;1mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (0.9ms)
+Completed in 298ms (View: 71, DB: 7) | 200 OK [http://localhost/taxonomies]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2011-01-27 11:15:27) [GET]
+  [4;35;1mExperiment Load (1.0ms)[0m   [0mSELECT * FROM "experiments" ORDER BY id DESC LIMIT 5[0m
+Rendering template within layouts/general
+Rendering welcome/index
+Rendered _navigation (0.7ms)
+Completed in 33ms (View: 24, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2011-02-08 15:27:04) [GET]
+  [4;36;1mExperiment Load (221.0ms)[0m   [0;1mSELECT * FROM "experiments" ORDER BY id DESC LIMIT 5[0m
+Rendering template within layouts/general
+Rendering welcome/index
+Rendered _navigation (16.4ms)
+Completed in 568ms (View: 302, DB: 221) | 200 OK [http://localhost/]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-02-08 15:27:11) [GET]
+  [4;35;1mExperiment Load (249.7ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 546ms (View: 210, DB: 250) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#show (for 127.0.0.1 at 2011-02-08 15:27:19) [GET]
+  Parameters: {"id"=>"278"}
+  [4;36;1mExperiment Load (0.3ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ("experiments"."id" = 278) [0m
+Rendering template within layouts/experiments
+Rendering experiments/show
+Rendered _navigation (0.5ms)
+Completed in 81ms (View: 74, DB: 0) | 200 OK [http://localhost/experiments/278]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-02-08 15:27:34) [GET]
+  [4;35;1mDnasample Load (12.0ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.5ms)
+Completed in 108ms (View: 40, DB: 12) | 200 OK [http://localhost/dnasamples]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-02-08 15:27:35) [GET]
+  [4;36;1mExperiment Load (166.4ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.6ms)
+Completed in 350ms (View: 97, DB: 166) | 200 OK [http://localhost/experiments]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2011-02-08 15:27:36) [GET]
+  [4;35;1mExperiment Load (1.0ms)[0m   [0mSELECT * FROM "experiments" ORDER BY id DESC LIMIT 5[0m
+Rendering template within layouts/general
+Rendering welcome/index
+Rendered _navigation (0.6ms)
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-02-08 15:27:37) [GET]
+  [4;36;1mPcr Load (1.0ms)[0m   [0;1mSELECT * FROM "pcrs" [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+Rendered _navigation (0.5ms)
+Completed in 57ms (View: 37, DB: 1) | 200 OK [http://localhost/pcrs]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2011-02-08 15:27:44) [GET]
+  [4;35;1mExperiment Load (1.0ms)[0m   [0mSELECT * FROM "experiments" ORDER BY id DESC LIMIT 5[0m
+Rendering template within layouts/general
+Rendering welcome/index
+Rendered _navigation (0.5ms)
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-02-08 15:27:45) [GET]
+  [4;36;1mExperiment Load (181.6ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 361ms (View: 95, DB: 182) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-02-08 15:28:19) [GET]
+  [4;35;1mExperiment Load (87.3ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 366ms (View: 192, DB: 87) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#show (for 127.0.0.1 at 2011-02-08 15:28:24) [GET]
+  Parameters: {"id"=>"278"}
+  [4;36;1mExperiment Load (0.3ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ("experiments"."id" = 278) [0m
+Rendering template within layouts/experiments
+Rendering experiments/show
+Rendered _navigation (0.5ms)
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/experiments/278]
+
+
+Processing ExperimentsController#new (for 127.0.0.1 at 2011-02-08 15:28:29) [GET]
+Rendering template within layouts/experiments
+Rendering experiments/new
+Rendered _navigation (0.5ms)
+Completed in 128ms (View: 122, DB: 0) | 200 OK [http://localhost/experiments/new]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-02-08 15:28:36) [GET]
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.5ms)
+Completed in 14ms (View: 3, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing GenesController#index (for 127.0.0.1 at 2011-02-08 15:28:37) [GET]
+  [4;36;1mGene Load (0.8ms)[0m   [0;1mSELECT * FROM "genes" [0m
+Rendering template within layouts/genes
+Rendering genes/index
+Rendered _navigation (0.7ms)
+Completed in 81ms (View: 59, DB: 1) | 200 OK [http://localhost/genes]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-02-08 15:28:39) [GET]
+  [4;35;1mPcr Load (0.6ms)[0m   [0mSELECT * FROM "pcrs" [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+Rendered _navigation (0.5ms)
+Completed in 8ms (View: 2, DB: 1) | 200 OK [http://localhost/pcrs]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-02-08 15:28:40) [GET]
+  [4;36;1mExperiment Load (164.9ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 435ms (View: 185, DB: 165) | 200 OK [http://localhost/experiments]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-02-08 15:29:10) [GET]
+  [4;35;1mTaxonomy Load (1.2ms)[0m   [0mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (0.8ms)
+Completed in 68ms (View: 44, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#new (for 127.0.0.1 at 2011-02-08 15:29:12) [GET]
+Rendering template within layouts/taxonomies
+Rendering taxonomies/new
+Rendered _navigation (0.5ms)
+Completed in 67ms (View: 61, DB: 0) | 200 OK [http://localhost/taxonomies/new]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-02-08 15:29:16) [GET]
+  [4;36;1mExperiment Load (186.8ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 448ms (View: 177, DB: 187) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-02-08 15:29:40) [GET]
+  [4;36;1mExperiment Load (88.0ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.4ms)
+Completed in 372ms (View: 200, DB: 88) | 200 OK [http://localhost/experiments]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-08 15:30:29) [GET]
+
+ActionController::RoutingError (No route matches "/leases" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2011-02-09 12:03:44) [GET]
+  [4;36;1mExperiment Load (24.9ms)[0m   [0;1mSELECT * FROM "experiments" ORDER BY id DESC LIMIT 5[0m
+Rendering template within layouts/general
+Rendering welcome/index
+Rendered _navigation (11.3ms)
+Completed in 200ms (View: 153, DB: 25) | 200 OK [http://localhost/]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-02-09 12:03:51) [GET]
+  [4;35;1mExperiment Load (260.6ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 558ms (View: 197, DB: 261) | 200 OK [http://localhost/experiments]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-02-09 12:03:52) [GET]
+  [4;36;1mDnasample Load (31.2ms)[0m   [0;1mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.8ms)
+Completed in 407ms (View: 250, DB: 31) | 200 OK [http://localhost/dnasamples]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2011-02-09 12:03:55) [GET]
+  [4;35;1mExperiment Load (2.4ms)[0m   [0mSELECT * FROM "experiments" ORDER BY id DESC LIMIT 5[0m
+Rendering template within layouts/general
+Rendering welcome/index
+Rendered _navigation (1.3ms)
+Completed in 18ms (View: 9, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing ExperimentsController#show (for 127.0.0.1 at 2011-02-09 12:03:57) [GET]
+  Parameters: {"id"=>"1057"}
+  [4;36;1mExperiment Load (0.3ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ("experiments"."id" = 1057) [0m
+Rendering template within layouts/experiments
+Rendering experiments/show
+Rendered _navigation (0.5ms)
+Completed in 25ms (View: 18, DB: 0) | 200 OK [http://localhost/experiments/1057]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2011-02-09 12:04:37) [GET]
+  [4;35;1mExperiment Load (1.2ms)[0m   [0mSELECT * FROM "experiments" ORDER BY id DESC LIMIT 5[0m
+Rendering template within layouts/general
+Rendering welcome/index
+Rendered _navigation (0.5ms)
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-09 12:04:49) [GET]
+
+ActionController::RoutingError (No route matches "/leases" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-09 13:39:14) [GET]
+
+ActionController::RoutingError (No route matches "/leases" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2011-03-06 13:48:37) [GET]
+  [4;36;1mExperiment Load (58.8ms)[0m   [0;1mSELECT * FROM "experiments" ORDER BY id DESC LIMIT 5[0m
+Rendering template within layouts/general
+Rendering welcome/index
+Rendered _navigation (10.2ms)
+Completed in 502ms (View: 418, DB: 59) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2011-03-06 13:49:35) [GET]
+  [4;35;1mExperiment Load (1.1ms)[0m   [0mSELECT * FROM "experiments" ORDER BY id DESC LIMIT 5[0m
+Rendering template within layouts/general
+Rendering welcome/index
+Rendered _navigation (0.6ms)
+Completed in 25ms (View: 15, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2011-03-06 13:50:05) [GET]
+  [4;36;1mExperiment Load (1.0ms)[0m   [0;1mSELECT * FROM "experiments" ORDER BY id DESC LIMIT 5[0m
+Rendering template within layouts/general
+Rendering welcome/index
+Rendered _navigation (0.5ms)
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 13:50:07) [GET]
+  [4;35;1mTaxonomy Load (1.0ms)[0m   [0mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (0.5ms)
+Completed in 51ms (View: 26, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-03-06 13:50:08) [GET]
+  [4;36;1mPcr Load (1.0ms)[0m   [0;1mSELECT * FROM "pcrs" [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+Rendered _navigation (0.5ms)
+Completed in 68ms (View: 27, DB: 1) | 200 OK [http://localhost/pcrs]
+
+
+Processing GenesController#index (for 127.0.0.1 at 2011-03-06 13:50:09) [GET]
+  [4;35;1mGene Load (0.6ms)[0m   [0mSELECT * FROM "genes" [0m
+Rendering template within layouts/genes
+Rendering genes/index
+Rendered _navigation (0.5ms)
+Completed in 78ms (View: 44, DB: 1) | 200 OK [http://localhost/genes]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2011-03-06 13:50:10) [GET]
+  [4;36;1mExperiment Load (1.1ms)[0m   [0;1mSELECT * FROM "experiments" ORDER BY id DESC LIMIT 5[0m
+Rendering template within layouts/general
+Rendering welcome/index
+Rendered _navigation (0.5ms)
+Completed in 14ms (View: 7, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2011-03-06 13:50:36) [GET]
+  [4;35;1mExperiment Load (1.0ms)[0m   [0mSELECT * FROM "experiments" ORDER BY id DESC LIMIT 5[0m
+Rendering template within layouts/general
+Rendering welcome/index
+Rendered _navigation (0.5ms)
+Completed in 14ms (View: 7, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing GenesController#index (for 127.0.0.1 at 2011-03-06 13:50:37) [GET]
+  [4;36;1mGene Load (0.5ms)[0m   [0;1mSELECT * FROM "genes" [0m
+Rendering template within layouts/genes
+Rendering genes/index
+Rendered _navigation (0.5ms)
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/genes]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2011-03-06 13:51:04) [GET]
+  [4;35;1mExperiment Load (1.1ms)[0m   [0mSELECT * FROM "experiments" ORDER BY id DESC LIMIT 5[0m
+Rendering template within layouts/general
+Rendering welcome/index
+Rendered _navigation (0.5ms)
+Completed in 14ms (View: 7, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2011-03-06 13:51:48) [GET]
+  [4;36;1mExperiment Load (1.2ms)[0m   [0;1mSELECT * FROM "experiments" ORDER BY id DESC LIMIT 5[0m
+Rendering template within layouts/general
+Rendering welcome/index
+Rendered _navigation (0.7ms)
+Completed in 17ms (View: 8, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 13:51:50) [GET]
+  [4;35;1mDnasample Load (12.2ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.5ms)
+Completed in 74ms (View: 32, DB: 12) | 200 OK [http://localhost/dnasamples]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 13:51:51) [GET]
+  [4;36;1mExperiment Load (245.2ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 515ms (View: 169, DB: 245) | 200 OK [http://localhost/experiments]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 13:51:53) [GET]
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.5ms)
+Completed in 105ms (View: 3, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 13:51:53) [GET]
+  [4;36;1mExperiment Load (101.9ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 404ms (View: 118, DB: 102) | 200 OK [http://localhost/experiments]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 13:51:55) [GET]
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.5ms)
+Completed in 14ms (View: 3, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 13:51:56) [GET]
+  [4;36;1mExperiment Load (199.9ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 499ms (View: 203, DB: 200) | 200 OK [http://localhost/experiments]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 13:51:57) [GET]
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.5ms)
+Completed in 16ms (View: 3, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 13:52:33) [GET]
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.6ms)
+Completed in 19ms (View: 6, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 13:53:19) [GET]
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.5ms)
+Completed in 16ms (View: 3, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 13:53:27) [GET]
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.5ms)
+Completed in 119ms (View: 4, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing GenesController#index (for 127.0.0.1 at 2011-03-06 13:53:28) [GET]
+  [4;35;1mGene Load (1.2ms)[0m   [0mSELECT * FROM "genes" [0m
+Rendering template within layouts/genes
+Rendering genes/index
+Rendered _navigation (0.5ms)
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/genes]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 13:53:29) [GET]
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.6ms)
+Completed in 15ms (View: 3, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 13:53:39) [GET]
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.5ms)
+Completed in 14ms (View: 3, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 13:53:49) [GET]
+  [4;36;1mDnasample Load (0.3ms)[0m   [0;1mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.5ms)
+Completed in 96ms (View: 3, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 13:53:53) [GET]
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.5ms)
+Completed in 15ms (View: 3, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 13:54:04) [GET]
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.5ms)
+Completed in 17ms (View: 3, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 13:54:10) [GET]
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.5ms)
+Completed in 16ms (View: 3, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 13:54:14) [GET]
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.5ms)
+Completed in 15ms (View: 3, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 13:54:19) [GET]
+  [4;35;1mDnasample Load (0.5ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.5ms)
+Completed in 16ms (View: 3, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 13:54:26) [GET]
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.5ms)
+Completed in 14ms (View: 2, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 13:54:30) [GET]
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.5ms)
+Completed in 18ms (View: 3, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 13:54:35) [GET]
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.5ms)
+Completed in 15ms (View: 3, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 13:54:44) [GET]
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.5ms)
+Completed in 14ms (View: 2, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 13:54:50) [GET]
+  [4;36;1mDnasample Load (0.3ms)[0m   [0;1mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.9ms)
+Completed in 14ms (View: 3, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 13:55:19) [GET]
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.5ms)
+Completed in 99ms (View: 3, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 13:56:04) [GET]
+  [4;36;1mExperiment Load (99.0ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 380ms (View: 109, DB: 99) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 13:56:43) [GET]
+  [4;35;1mExperiment Load (205.6ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 520ms (View: 224, DB: 206) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 13:56:59) [GET]
+  [4;36;1mExperiment Load (93.1ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.3ms)
+Completed in 406ms (View: 111, DB: 93) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 13:57:07) [GET]
+  [4;35;1mExperiment Load (216.3ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.3ms)
+Completed in 522ms (View: 217, DB: 216) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 13:57:45) [GET]
+  [4;36;1mExperiment Load (95.5ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 414ms (View: 108, DB: 95) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 13:57:51) [GET]
+  [4;35;1mExperiment Load (222.4ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 445ms (View: 121, DB: 222) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 13:58:10) [GET]
+  [4;36;1mExperiment Load (99.8ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 408ms (View: 214, DB: 100) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 13:58:21) [GET]
+  [4;35;1mExperiment Load (222.9ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 415ms (View: 103, DB: 223) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 13:59:01) [GET]
+  [4;36;1mExperiment Load (217.7ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 512ms (View: 206, DB: 218) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 13:59:35) [GET]
+  [4;35;1mExperiment Load (96.0ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 408ms (View: 104, DB: 96) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 13:59:41) [GET]
+  [4;36;1mExperiment Load (225.9ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.6ms)
+Completed in 538ms (View: 217, DB: 226) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 13:59:59) [GET]
+  [4;35;1mExperiment Load (92.3ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 405ms (View: 101, DB: 92) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 14:00:05) [GET]
+  [4;36;1mExperiment Load (222.3ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 414ms (View: 100, DB: 222) | 200 OK [http://localhost/experiments]
+
+
+Processing GenesController#index (for 127.0.0.1 at 2011-03-06 14:00:47) [GET]
+  [4;35;1mGene Load (0.6ms)[0m   [0mSELECT * FROM "genes" [0m
+Rendering template within layouts/genes
+Rendering genes/index
+Rendered _navigation (0.5ms)
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/genes]
+
+
+Processing GenesController#index (for 127.0.0.1 at 2011-03-06 14:01:01) [GET]
+  [4;36;1mGene Load (0.5ms)[0m   [0;1mSELECT * FROM "genes" [0m
+Rendering template within layouts/genes
+Rendering genes/index
+Rendered _navigation (0.5ms)
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/genes]
+
+
+Processing GenesController#index (for 127.0.0.1 at 2011-03-06 14:01:06) [GET]
+  [4;35;1mGene Load (0.6ms)[0m   [0mSELECT * FROM "genes" [0m
+Rendering template within layouts/genes
+Rendering genes/index
+Rendered _navigation (0.5ms)
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/genes]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2011-03-06 14:44:55) [GET]
+  [4;36;1mExperiment Load (1.1ms)[0m   [0;1mSELECT * FROM "experiments" ORDER BY id DESC LIMIT 5[0m
+Rendering template within layouts/general
+Rendering welcome/index
+Rendered _navigation (0.5ms)
+Completed in 16ms (View: 7, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 14:44:57) [GET]
+  [4;35;1mExperiment Load (227.4ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 584ms (View: 257, DB: 227) | 200 OK [http://localhost/experiments]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 14:44:58) [GET]
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.6ms)
+Completed in 32ms (View: 3, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-03-06 14:47:49) [GET]
+
+ActionController::RoutingError (No route matches "/leases" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 14:50:18) [GET]
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+ERROR: compiling _run_erb_app47views47_navigation46html46erb_locals_navigation_object RAISED compile error
+/Users/rickschmidt/Documents/ReddyLab/lab/app/views/_navigation.html.erb:20: syntax error, unexpected tSYMBEG, expecting kDO or '{' or '('
+...ts", experiments_path, {color:red}).to_s); @output_buffer.co...
+                              ^
+Function body:           def _run_erb_app47views47_navigation46html46erb_locals_navigation_object(local_assigns)
+            old_output_buffer = output_buffer;object = local_assigns[:object];navigation = local_assigns[:navigation];;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "\n"
+; @output_buffer.concat(( stylesheet_link_tag 'scaffold' ).to_s); @output_buffer.concat "\n<div id=\"header\">\n\n\n<!-- <header> -->\n\n\t<!-- <div class=\"div1\"> -->\n\n\t\n<img src=\"/images/ReddyLab.png\" width=\"100\" height=\"100\", style=\"float:left\" , hspace=\"20px\">\t\n\t<div id=\"title\">\n\t\tReddy Lab\n\t</div>\n\t<div id=\"subtitle\">\n\t\tExperimental Database\n\t</div>\n\t\n\t"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+; @output_buffer.concat((link_to "Welcome", root_path).to_s); @output_buffer.concat "|\n\t"
+; @output_buffer.concat((link_to "Experiments", experiments_path, {color:red}).to_s); @output_buffer.concat "|\n\t"
+; @output_buffer.concat((link_to "DNA Samples", dnasamples_path).to_s); @output_buffer.concat "|\n\t"
+; @output_buffer.concat((link_to "Genes", genes_path).to_s); @output_buffer.concat "|\n\t"
+; @output_buffer.concat((link_to "PCR ", pcrs_path).to_s); @output_buffer.concat "|\n\t"
+; @output_buffer.concat((link_to "Taxonomy", taxonomies_path).to_s); @output_buffer.concat "|\n\n\t\n\n\n\n\n\n\t\n\n\t<!-- </header> -->\n\t\n</div>"
+
+
+
+
+
+
+
+
+
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/rickschmidt/Documents/ReddyLab/lab/app/views/_navigation.html.erb:39:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable_partial.rb:20:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable_partial.rb:19:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/template.rb:205:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable_partial.rb:44:in `render_partial'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/partials.rb:184:in `render_partial'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:267:in `render'
+/Users/rickschmidt/Documents/ReddyLab/lab/app/views/layouts/dnasamples.html.erb:10:in `_run_erb_app47views47layouts47dnasamples46html46erb'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:34:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:34:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:306:in `with_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:30:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/template.rb:205:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:265:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:352:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:262:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:1252:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:942:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:135:in `custom'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:179:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:179:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:173:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:173:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/rickschmidt/Documents/ReddyLab/lab/app/controllers/dnasamples_controller.rb:13:in `index'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:1333:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:1333:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/flash.rb:151:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/routing/route_set.rb:438:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/string_coercion.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/session/cookie_store.rb:100:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/failsafe.rb:26:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.10/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.10/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/webrick.rb:48:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/webrick.rb:14:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.10/lib/commands/server.rb:111
+script/server:3:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/rickschmidt/Documents/ReddyLab/lab/app/views/_navigation.html.erb:20: syntax error, unexpected tSYMBEG, expecting kDO or '{' or '('
+...ts", experiments_path, {color:red}).to_s); @output_buffer.co...
+                              ^) on line #20 of app/views/_navigation.html.erb:
+17: 	</div>
+18: 	
+19: 	<%=link_to "Welcome", root_path%>|
+20: 	<%=link_to "Experiments", experiments_path, {color:red}%>|
+21: 	<%=link_to "DNA Samples", dnasamples_path%>|
+22: 	<%=link_to "Genes", genes_path%>|
+23: 	<%=link_to "PCR ", pcrs_path%>|
+
+    app/views/_navigation.html.erb:39:in `compile!'
+    app/views/layouts/dnasamples.html.erb:10
+    app/controllers/dnasamples_controller.rb:13:in `index'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (209.6ms)
+Rendered rescues/_request_and_response (1.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 14:50:23) [GET]
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+ERROR: compiling _run_erb_app47views47_navigation46html46erb_locals_navigation_object RAISED compile error
+/Users/rickschmidt/Documents/ReddyLab/lab/app/views/_navigation.html.erb:20: syntax error, unexpected tSYMBEG, expecting kDO or '{' or '('
+...s", experiments_path, {color:"red"}).to_s); @output_buffer.c...
+                              ^
+/Users/rickschmidt/Documents/ReddyLab/lab/app/views/_navigation.html.erb:20: syntax error, unexpected '}', expecting ')'
+...xperiments_path, {color:"red"}).to_s); @output_buffer.concat...
+                              ^
+Function body:           def _run_erb_app47views47_navigation46html46erb_locals_navigation_object(local_assigns)
+            old_output_buffer = output_buffer;object = local_assigns[:object];navigation = local_assigns[:navigation];;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "\n"
+; @output_buffer.concat(( stylesheet_link_tag 'scaffold' ).to_s); @output_buffer.concat "\n<div id=\"header\">\n\n\n<!-- <header> -->\n\n\t<!-- <div class=\"div1\"> -->\n\n\t\n<img src=\"/images/ReddyLab.png\" width=\"100\" height=\"100\", style=\"float:left\" , hspace=\"20px\">\t\n\t<div id=\"title\">\n\t\tReddy Lab\n\t</div>\n\t<div id=\"subtitle\">\n\t\tExperimental Database\n\t</div>\n\t\n\t"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+; @output_buffer.concat((link_to "Welcome", root_path).to_s); @output_buffer.concat "|\n\t"
+; @output_buffer.concat((link_to "Experiments", experiments_path, {color:"red"}).to_s); @output_buffer.concat "|\n\t"
+; @output_buffer.concat((link_to "DNA Samples", dnasamples_path).to_s); @output_buffer.concat "|\n\t"
+; @output_buffer.concat((link_to "Genes", genes_path).to_s); @output_buffer.concat "|\n\t"
+; @output_buffer.concat((link_to "PCR ", pcrs_path).to_s); @output_buffer.concat "|\n\t"
+; @output_buffer.concat((link_to "Taxonomy", taxonomies_path).to_s); @output_buffer.concat "|\n\n\t\n\n\n\n\n\n\t\n\n\t<!-- </header> -->\n\t\n</div>"
+
+
+
+
+
+
+
+
+
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/rickschmidt/Documents/ReddyLab/lab/app/views/_navigation.html.erb:39:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable_partial.rb:20:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable_partial.rb:19:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/template.rb:205:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable_partial.rb:44:in `render_partial'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/partials.rb:184:in `render_partial'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:267:in `render'
+/Users/rickschmidt/Documents/ReddyLab/lab/app/views/layouts/dnasamples.html.erb:10:in `_run_erb_app47views47layouts47dnasamples46html46erb'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:34:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:34:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:306:in `with_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:30:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/template.rb:205:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:265:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:352:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:262:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:1252:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:942:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:135:in `custom'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:179:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:179:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:173:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:173:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/rickschmidt/Documents/ReddyLab/lab/app/controllers/dnasamples_controller.rb:13:in `index'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:1333:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:1333:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/flash.rb:151:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/routing/route_set.rb:438:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/string_coercion.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/session/cookie_store.rb:100:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/failsafe.rb:26:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.10/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.10/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/webrick.rb:48:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/webrick.rb:14:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.10/lib/commands/server.rb:111
+script/server:3:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/rickschmidt/Documents/ReddyLab/lab/app/views/_navigation.html.erb:20: syntax error, unexpected tSYMBEG, expecting kDO or '{' or '('
+...s", experiments_path, {color:"red"}).to_s); @output_buffer.c...
+                              ^
+/Users/rickschmidt/Documents/ReddyLab/lab/app/views/_navigation.html.erb:20: syntax error, unexpected '}', expecting ')'
+...xperiments_path, {color:"red"}).to_s); @output_buffer.concat...
+                              ^) on line #20 of app/views/_navigation.html.erb:
+17: 	</div>
+18: 	
+19: 	<%=link_to "Welcome", root_path%>|
+20: 	<%=link_to "Experiments", experiments_path, {color:"red"}%>|
+21: 	<%=link_to "DNA Samples", dnasamples_path%>|
+22: 	<%=link_to "Genes", genes_path%>|
+23: 	<%=link_to "PCR ", pcrs_path%>|
+
+    app/views/_navigation.html.erb:39:in `compile!'
+    app/views/layouts/dnasamples.html.erb:10
+    app/controllers/dnasamples_controller.rb:13:in `index'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (162.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 14:50:34) [GET]
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+ERROR: compiling _run_erb_app47views47_navigation46html46erb_locals_navigation_object RAISED compile error
+/Users/rickschmidt/Documents/ReddyLab/lab/app/views/_navigation.html.erb:20: syntax error, unexpected tSYMBEG, expecting kDO or '{' or '('
+...ts", experiments_path, {style:bold}).to_s); @output_buffer.c...
+                              ^
+Function body:           def _run_erb_app47views47_navigation46html46erb_locals_navigation_object(local_assigns)
+            old_output_buffer = output_buffer;object = local_assigns[:object];navigation = local_assigns[:navigation];;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "\n"
+; @output_buffer.concat(( stylesheet_link_tag 'scaffold' ).to_s); @output_buffer.concat "\n<div id=\"header\">\n\n\n<!-- <header> -->\n\n\t<!-- <div class=\"div1\"> -->\n\n\t\n<img src=\"/images/ReddyLab.png\" width=\"100\" height=\"100\", style=\"float:left\" , hspace=\"20px\">\t\n\t<div id=\"title\">\n\t\tReddy Lab\n\t</div>\n\t<div id=\"subtitle\">\n\t\tExperimental Database\n\t</div>\n\t\n\t"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+; @output_buffer.concat((link_to "Welcome", root_path).to_s); @output_buffer.concat "|\n\t"
+; @output_buffer.concat((link_to "Experiments", experiments_path, {style:bold}).to_s); @output_buffer.concat "|\n\t"
+; @output_buffer.concat((link_to "DNA Samples", dnasamples_path).to_s); @output_buffer.concat "|\n\t"
+; @output_buffer.concat((link_to "Genes", genes_path).to_s); @output_buffer.concat "|\n\t"
+; @output_buffer.concat((link_to "PCR ", pcrs_path).to_s); @output_buffer.concat "|\n\t"
+; @output_buffer.concat((link_to "Taxonomy", taxonomies_path).to_s); @output_buffer.concat "|\n\n\t\n\n\n\n\n\n\t\n\n\t<!-- </header> -->\n\t\n</div>"
+
+
+
+
+
+
+
+
+
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/rickschmidt/Documents/ReddyLab/lab/app/views/_navigation.html.erb:39:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable_partial.rb:20:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable_partial.rb:19:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/template.rb:205:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable_partial.rb:44:in `render_partial'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/partials.rb:184:in `render_partial'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:267:in `render'
+/Users/rickschmidt/Documents/ReddyLab/lab/app/views/layouts/dnasamples.html.erb:10:in `_run_erb_app47views47layouts47dnasamples46html46erb'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:34:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:34:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:306:in `with_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:30:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/template.rb:205:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:265:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:352:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:262:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:1252:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:942:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:135:in `custom'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:179:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:179:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:173:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:173:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/rickschmidt/Documents/ReddyLab/lab/app/controllers/dnasamples_controller.rb:13:in `index'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:1333:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:1333:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/flash.rb:151:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/routing/route_set.rb:438:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/string_coercion.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/session/cookie_store.rb:100:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/failsafe.rb:26:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.10/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.10/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/webrick.rb:48:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/webrick.rb:14:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.10/lib/commands/server.rb:111
+script/server:3:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/rickschmidt/Documents/ReddyLab/lab/app/views/_navigation.html.erb:20: syntax error, unexpected tSYMBEG, expecting kDO or '{' or '('
+...ts", experiments_path, {style:bold}).to_s); @output_buffer.c...
+                              ^) on line #20 of app/views/_navigation.html.erb:
+17: 	</div>
+18: 	
+19: 	<%=link_to "Welcome", root_path%>|
+20: 	<%=link_to "Experiments", experiments_path, {style:bold}%>|
+21: 	<%=link_to "DNA Samples", dnasamples_path%>|
+22: 	<%=link_to "Genes", genes_path%>|
+23: 	<%=link_to "PCR ", pcrs_path%>|
+
+    app/views/_navigation.html.erb:39:in `compile!'
+    app/views/layouts/dnasamples.html.erb:10
+    app/controllers/dnasamples_controller.rb:13:in `index'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (57.5ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 14:50:39) [GET]
+  [4;36;1mDnasample Load (0.3ms)[0m   [0;1mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+ERROR: compiling _run_erb_app47views47_navigation46html46erb_locals_navigation_object RAISED compile error
+/Users/rickschmidt/Documents/ReddyLab/lab/app/views/_navigation.html.erb:20: odd number list for Hash
+...experiments_path, {style=bold}).to_s); @output_buffer.concat...
+                              ^
+Function body:           def _run_erb_app47views47_navigation46html46erb_locals_navigation_object(local_assigns)
+            old_output_buffer = output_buffer;object = local_assigns[:object];navigation = local_assigns[:navigation];;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "\n"
+; @output_buffer.concat(( stylesheet_link_tag 'scaffold' ).to_s); @output_buffer.concat "\n<div id=\"header\">\n\n\n<!-- <header> -->\n\n\t<!-- <div class=\"div1\"> -->\n\n\t\n<img src=\"/images/ReddyLab.png\" width=\"100\" height=\"100\", style=\"float:left\" , hspace=\"20px\">\t\n\t<div id=\"title\">\n\t\tReddy Lab\n\t</div>\n\t<div id=\"subtitle\">\n\t\tExperimental Database\n\t</div>\n\t\n\t"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+; @output_buffer.concat((link_to "Welcome", root_path).to_s); @output_buffer.concat "|\n\t"
+; @output_buffer.concat((link_to "Experiments", experiments_path, {style=bold}).to_s); @output_buffer.concat "|\n\t"
+; @output_buffer.concat((link_to "DNA Samples", dnasamples_path).to_s); @output_buffer.concat "|\n\t"
+; @output_buffer.concat((link_to "Genes", genes_path).to_s); @output_buffer.concat "|\n\t"
+; @output_buffer.concat((link_to "PCR ", pcrs_path).to_s); @output_buffer.concat "|\n\t"
+; @output_buffer.concat((link_to "Taxonomy", taxonomies_path).to_s); @output_buffer.concat "|\n\n\t\n\n\n\n\n\n\t\n\n\t<!-- </header> -->\n\t\n</div>"
+
+
+
+
+
+
+
+
+
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/rickschmidt/Documents/ReddyLab/lab/app/views/_navigation.html.erb:39:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable_partial.rb:20:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable_partial.rb:19:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/template.rb:205:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable_partial.rb:44:in `render_partial'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/partials.rb:184:in `render_partial'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:267:in `render'
+/Users/rickschmidt/Documents/ReddyLab/lab/app/views/layouts/dnasamples.html.erb:10:in `_run_erb_app47views47layouts47dnasamples46html46erb'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:34:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:34:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:306:in `with_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:30:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/template.rb:205:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:265:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:352:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:262:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:1252:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:942:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:135:in `custom'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:179:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:179:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:173:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:173:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/rickschmidt/Documents/ReddyLab/lab/app/controllers/dnasamples_controller.rb:13:in `index'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:1333:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:1333:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/flash.rb:151:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/routing/route_set.rb:438:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/string_coercion.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/session/cookie_store.rb:100:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/failsafe.rb:26:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.10/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.10/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/webrick.rb:48:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/webrick.rb:14:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.10/lib/commands/server.rb:111
+script/server:3:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/rickschmidt/Documents/ReddyLab/lab/app/views/_navigation.html.erb:20: odd number list for Hash
+...experiments_path, {style=bold}).to_s); @output_buffer.concat...
+                              ^) on line #20 of app/views/_navigation.html.erb:
+17: 	</div>
+18: 	
+19: 	<%=link_to "Welcome", root_path%>|
+20: 	<%=link_to "Experiments", experiments_path, {style=bold}%>|
+21: 	<%=link_to "DNA Samples", dnasamples_path%>|
+22: 	<%=link_to "Genes", genes_path%>|
+23: 	<%=link_to "PCR ", pcrs_path%>|
+
+    app/views/_navigation.html.erb:39:in `compile!'
+    app/views/layouts/dnasamples.html.erb:10
+    app/controllers/dnasamples_controller.rb:13:in `index'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (93.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 14:50:44) [GET]
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+ERROR: compiling _run_erb_app47views47_navigation46html46erb_locals_navigation_object RAISED compile error
+/Users/rickschmidt/Documents/ReddyLab/lab/app/views/_navigation.html.erb:20: odd number list for Hash
+...periments_path, {style="bold"}).to_s); @output_buffer.concat...
+                              ^
+Function body:           def _run_erb_app47views47_navigation46html46erb_locals_navigation_object(local_assigns)
+            old_output_buffer = output_buffer;object = local_assigns[:object];navigation = local_assigns[:navigation];;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "\n"
+; @output_buffer.concat(( stylesheet_link_tag 'scaffold' ).to_s); @output_buffer.concat "\n<div id=\"header\">\n\n\n<!-- <header> -->\n\n\t<!-- <div class=\"div1\"> -->\n\n\t\n<img src=\"/images/ReddyLab.png\" width=\"100\" height=\"100\", style=\"float:left\" , hspace=\"20px\">\t\n\t<div id=\"title\">\n\t\tReddy Lab\n\t</div>\n\t<div id=\"subtitle\">\n\t\tExperimental Database\n\t</div>\n\t\n\t"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+; @output_buffer.concat((link_to "Welcome", root_path).to_s); @output_buffer.concat "|\n\t"
+; @output_buffer.concat((link_to "Experiments", experiments_path, {style="bold"}).to_s); @output_buffer.concat "|\n\t"
+; @output_buffer.concat((link_to "DNA Samples", dnasamples_path).to_s); @output_buffer.concat "|\n\t"
+; @output_buffer.concat((link_to "Genes", genes_path).to_s); @output_buffer.concat "|\n\t"
+; @output_buffer.concat((link_to "PCR ", pcrs_path).to_s); @output_buffer.concat "|\n\t"
+; @output_buffer.concat((link_to "Taxonomy", taxonomies_path).to_s); @output_buffer.concat "|\n\n\t\n\n\n\n\n\n\t\n\n\t<!-- </header> -->\n\t\n</div>"
+
+
+
+
+
+
+
+
+
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/rickschmidt/Documents/ReddyLab/lab/app/views/_navigation.html.erb:39:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable_partial.rb:20:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable_partial.rb:19:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/template.rb:205:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable_partial.rb:44:in `render_partial'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/partials.rb:184:in `render_partial'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:267:in `render'
+/Users/rickschmidt/Documents/ReddyLab/lab/app/views/layouts/dnasamples.html.erb:10:in `_run_erb_app47views47layouts47dnasamples46html46erb'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:34:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:34:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:306:in `with_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:30:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/template.rb:205:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:265:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:352:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:262:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:1252:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:942:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:135:in `custom'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:179:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:179:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:173:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:173:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/rickschmidt/Documents/ReddyLab/lab/app/controllers/dnasamples_controller.rb:13:in `index'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:1333:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:1333:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/flash.rb:151:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/routing/route_set.rb:438:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/string_coercion.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/session/cookie_store.rb:100:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/failsafe.rb:26:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.10/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.10/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/webrick.rb:48:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/webrick.rb:14:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.10/lib/commands/server.rb:111
+script/server:3:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/rickschmidt/Documents/ReddyLab/lab/app/views/_navigation.html.erb:20: odd number list for Hash
+...periments_path, {style="bold"}).to_s); @output_buffer.concat...
+                              ^) on line #20 of app/views/_navigation.html.erb:
+17: 	</div>
+18: 	
+19: 	<%=link_to "Welcome", root_path%>|
+20: 	<%=link_to "Experiments", experiments_path, {style="bold"}%>|
+21: 	<%=link_to "DNA Samples", dnasamples_path%>|
+22: 	<%=link_to "Genes", genes_path%>|
+23: 	<%=link_to "PCR ", pcrs_path%>|
+
+    app/views/_navigation.html.erb:39:in `compile!'
+    app/views/layouts/dnasamples.html.erb:10
+    app/controllers/dnasamples_controller.rb:13:in `index'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (52.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 14:50:52) [GET]
+  [4;36;1mDnasample Load (0.3ms)[0m   [0;1mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (1.4ms)
+Completed in 18ms (View: 7, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 14:51:22) [GET]
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (1.3ms)
+Completed in 147ms (View: 7, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 14:51:43) [GET]
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.5ms)
+Completed in 16ms (View: 3, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 14:51:51) [GET]
+  [4;35;1mDnasample Load (0.3ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.5ms)
+Completed in 20ms (View: 3, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 14:52:00) [GET]
+  [4;36;1mDnasample Load (0.3ms)[0m   [0;1mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.5ms)
+Completed in 20ms (View: 3, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 14:52:33) [GET]
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.6ms)
+Completed in 15ms (View: 3, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 14:52:41) [GET]
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.5ms)
+Completed in 16ms (View: 3, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 14:52:47) [GET]
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.6ms)
+Completed in 17ms (View: 3, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 14:53:36) [GET]
+  [4;36;1mDnasample Load (0.3ms)[0m   [0;1mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (1.3ms)
+Completed in 142ms (View: 127, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 14:53:46) [GET]
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.5ms)
+Completed in 16ms (View: 3, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 14:53:47) [GET]
+  [4;36;1mDnasample Load (0.3ms)[0m   [0;1mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.5ms)
+Completed in 35ms (View: 3, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 14:53:50) [GET]
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.6ms)
+Completed in 20ms (View: 4, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 14:54:26) [GET]
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (1.5ms)
+Completed in 25ms (View: 8, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 14:54:36) [GET]
+  [4;35;1mDnasample Load (0.3ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (1.5ms)
+Completed in 21ms (View: 8, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-03-06 14:56:12) [GET]
+
+ActionController::RoutingError (No route matches "/leases" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2011-03-06 14:57:55) [GET]
+  [4;36;1mExperiment Load (1.1ms)[0m   [0;1mSELECT * FROM "experiments" ORDER BY id DESC LIMIT 5[0m
+Rendering template within layouts/general
+Rendering welcome/index
+Rendered _navigation (0.5ms)
+Completed in 74ms (View: 67, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 14:57:57) [GET]
+  [4;35;1mExperiment Load (100.3ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 730ms (View: 529, DB: 100) | 200 OK [http://localhost/experiments]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 14:57:58) [GET]
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.6ms)
+Completed in 39ms (View: 27, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing GenesController#index (for 127.0.0.1 at 2011-03-06 14:57:59) [GET]
+  [4;35;1mGene Load (0.6ms)[0m   [0mSELECT * FROM "genes" [0m
+Rendering template within layouts/genes
+Rendering genes/index
+Rendered _navigation (0.5ms)
+Completed in 23ms (View: 3, DB: 1) | 200 OK [http://localhost/genes]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-03-06 14:58:01) [GET]
+  [4;36;1mPcr Load (0.6ms)[0m   [0;1mSELECT * FROM "pcrs" [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+Rendered _navigation (0.6ms)
+Completed in 18ms (View: 10, DB: 1) | 200 OK [http://localhost/pcrs]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 14:58:02) [GET]
+  [4;35;1mTaxonomy Load (0.6ms)[0m   [0mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (0.5ms)
+Completed in 171ms (View: 17, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 15:05:41) [GET]
+  [4;36;1mExperiment Load (106.5ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 447ms (View: 123, DB: 107) | 200 OK [http://localhost/experiments]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 15:05:43) [GET]
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (0.5ms)
+Completed in 14ms (View: 2, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing GenesController#index (for 127.0.0.1 at 2011-03-06 15:05:44) [GET]
+  [4;36;1mGene Load (0.6ms)[0m   [0;1mSELECT * FROM "genes" [0m
+Rendering template within layouts/genes
+Rendering genes/index
+Rendered _navigation (0.5ms)
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/genes]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 15:05:45) [GET]
+  [4;35;1mExperiment Load (235.3ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 619ms (View: 275, DB: 235) | 200 OK [http://localhost/experiments]
