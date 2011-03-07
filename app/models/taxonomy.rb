@@ -1,3 +1,3 @@
 class Taxonomy < ActiveRecord::Base
-  has_many :dnasamples
+  has_and_belongs_to_many :dnasamples
 end

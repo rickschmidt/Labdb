@@ -1,5 +1,11 @@
 
 <%= stylesheet_link_tag 'scaffold' %>
+<div id="banner">
+	<%if current_user%>  <%= link_to "Logout", user_session_path, :method => :delete %>
+		<%else%>
+  			<%= link_to "Log In", new_user_session_path %>
+		<%end%>
+	</div>	
 <div id="header">
 
 
@@ -7,7 +13,7 @@
 
 	<!-- <div class="div1"> -->
 
-	
+
 <img src="/images/ReddyLab.png" width="100" height="75", style="float:left" , hspace="20px">	
 	<div id="title">
 		Reddy Lab
@@ -22,7 +28,7 @@
 		<li id="gene"><%=link_to "", genes_path%></li>
 		<li id="pcr"><%=link_to "", pcrs_path%></li>
 		<li id="taxonomy"><%=link_to "", taxonomies_path%></li>
-		<li id="profile"><%=link_to "", taxonomies_path%></li>
+		<li id="profile"><%=link_to "", account_path%></li>
 	</ul>
 	
 	

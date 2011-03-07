@@ -1,7 +1,9 @@
 #wrapper {
 	width:1000px;
 	margin: 0 auto 0 auto;
-
+#banner{
+ right:300px;position:relative;
+}
 }
 #header {
   margin: 30px 0px 60px 0px;
@@ -117,6 +119,9 @@ tr.even {
 }
 
 tr.odd {
+    height:10px;
+    overflow:hidden;
+    border-collapse:collapse;
     background-color:white;
 }
 tr.odd:hover {
@@ -125,6 +130,7 @@ background-color: #A7F0DE;
 tr.even:hover {
 background-color: #A7F0DE;
 }
+
 #title{
   font-size:36pt;
   color:#661521;

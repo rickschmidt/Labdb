@@ -1,3 +1,9 @@
+
+<table border="0" cellspacing="5" cellpadding="5">
+	<tr><td><b>Date: </b><%=h @experiment.date%></td>
+	<td><b>Experiment: </b> <%=h @experiment.experiment_number%></td></tr>
+	<td> PCRS <%= @samples%></td>
+</table>
 <p>
   <b>Date:</b>
   <%=h @experiment.date %>
@@ -87,7 +93,7 @@
   <b>Primerh:</b>
   <%=h @experiment.primerh %>
 </p>
-
+</table>
 
 <%= link_to 'Edit', edit_experiment_path(@experiment) %> |
 <%= link_to 'Back', experiments_path %>
