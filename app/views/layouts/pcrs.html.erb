@@ -2,18 +2,26 @@
        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>Pcrs: <%= controller.action_name %></title>
+  <title>Lease: <%= controller.action_name %></title>
   <%= stylesheet_link_tag 'scaffold' %>
-		<%=render :partial => '/navigation'%>
+		
 </head>
 <body>
+<div id="wrapper">
+<%=render :partial => '/navigation'%>
+	<% if flash[:notice]%>
 
-
-<p style="color: green"><%= notice %></p>
-
+<p style="color: green"><%= flash[:notice] %></p>
+<%end%>
+<%if flash[:error]%>
+<P style="color: red"><%=flash[:error]%></p>
+	<%end%>
 <%= yield %>
 
+
+</div>
 </body>
 </html>
