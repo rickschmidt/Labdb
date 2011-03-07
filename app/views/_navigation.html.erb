@@ -15,7 +15,15 @@
 	<div id="subtitle">
 		Experimental Database
 	</div>
-
+	<ul id="navlist">
+		<li id="welcome"><%=link_to "", root_path%></li>
+		<li id="experiments"><%=link_to "", experiments_path%></li>
+		<li id="dna"><%=link_to "", dnasamples_path%></li>
+		<li id="gene"><%=link_to "", genes_path%></li>
+		<li id="pcr"><%=link_to "", pcrs_path%></li>
+		<li id="taxonomy"><%=link_to "", taxonomies_path%></li>
+		<li id="profile"><%=link_to "", taxonomies_path%></li>
+	</ul>
 	<%=link_to "Welcome", root_path%> |
 	<%=link_to "Experiments", experiments_path%> |
 	<%=link_to "DNA Samples", dnasamples_path%> |
@@ -29,7 +37,7 @@
 
 
 
-	
+	<!-- <%=link_to image_tag('/images/banner.png',:border=>"0"), root_path%> -->
 
 	<!-- </header> -->
 	
