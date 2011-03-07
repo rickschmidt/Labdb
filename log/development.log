@@ -12676,3 +12676,1984 @@ Rendering template within layouts/experiments
 Rendering experiments/index
 Rendered _navigation (0.5ms)
 Completed in 619ms (View: 275, DB: 235) | 200 OK [http://localhost/experiments]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-03-06 17:47:33) [GET]
+
+ActionController::RoutingError (No route matches "/leases" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-03-06 20:08:25) [GET]
+
+ActionController::RoutingError (No route matches "/leases" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2011-03-06 20:08:39) [GET]
+  [4;36;1mExperiment Load (33.0ms)[0m   [0;1mSELECT * FROM "experiments" ORDER BY id DESC LIMIT 5[0m
+Rendering template within layouts/general
+Rendering welcome/index
+Rendered _navigation (27.5ms)
+Completed in 225ms (View: 171, DB: 33) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTaxonomies (20110126195733)
+Migrating to CreateDnasamples (20110126195743)
+Migrating to CreatePcrs (20110126195750)
+Migrating to CreateGenes (20110126195756)
+Migrating to CreateExperiments (20110126195802)
+Migrating to Jointables (20110126205446)
+Migrating to CreateUsers (20110307022152)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (53.5ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) NOT NULL, "email" varchar(255) NOT NULL, "crypted_password" varchar(255) NOT NULL, "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "current_login_at" datetime, "last_login_at" datetime, "current_login_ip" varchar(255), "last_login_ip" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (42.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110307022152')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("dnasamples")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("dnasamples_genes")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("dnasamples_pcrs")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("experiments")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("genes")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("pcrs")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("taxonomies")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-03-06 20:38:03) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+
+NoMethodError (undefined method `require_no_user' for #<UserSessionsController:0x1035378f8>):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (31.5ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-03-06 20:38:04) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+
+NoMethodError (undefined method `require_no_user' for #<UserSessionsController:0x10320d678>):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (33.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-03-06 20:39:18) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+
+NoMethodError (undefined method `require_no_user' for #<UserSessionsController:0x102fef5d0>):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (120.5ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GenesController#index (for 127.0.0.1 at 2011-03-06 20:39:22) [GET]
+  Parameters: {"action"=>"index", "controller"=>"genes"}
+  [4;36;1mGene Load (3.0ms)[0m   [0;1mSELECT * FROM "genes" [0m
+Rendering template within layouts/genes
+Rendering genes/index
+Rendered _navigation (1.5ms)
+Completed in 335ms (View: 296, DB: 3) | 200 OK [http://localhost/genes]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-03-06 20:39:25) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+
+NoMethodError (undefined method `require_no_user' for #<UserSessionsController:0x1030bcaa8>):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-03-06 20:39:37) [GET]
+
+ActionController::RoutingError (No route matches "/login" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-03-06 20:40:29) [GET]
+
+ActionController::RoutingError (No route matches "/login" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-03-06 20:40:31) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+
+NoMethodError (undefined method `require_no_user' for #<UserSessionsController:0x1031c8758>):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-03-06 20:42:54) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+Completed in 164ms (View: 10, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2011-03-06 20:43:00) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"test"}, "action"=>"create", "authenticity_token"=>"Kg0AntGTl2YafsYS/AgFRZ2oWklxjD+ZujYGh4A8q5M=", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".login) = 'test') LIMIT 1[0m
+Rendering user_sessions/new
+Completed in 224ms (View: 7, DB: 0) | 200 OK [http://localhost/user_session]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2011-03-06 20:43:07) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 23ms (DB: 0) | 302 Found [http://localhost/account]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-03-06 20:43:07) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+Completed in 32ms (View: 5, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-03-06 20:43:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+
+ActionController::UnknownAction (No action responded to index. Actions: create, edit, new, primer, show, and update):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2011-03-06 20:43:41) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering users/new
+
+ActionView::TemplateError (wrong number of arguments (0 for 1)) on line #1 of app/views/users/new.html.erb:
+1: <%= form.label :login %><br />
+2: <%= form.text_field :login %><br />
+3: <br />
+4: <%= form.label :password, form.object.new_record? ? nil : "Change password" %><br />
+
+    app/views/users/new.html.erb:1:in `form'
+    app/views/users/new.html.erb:1
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (127.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2011-03-06 20:44:24) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering users/new
+Rendered users/_form (3.4ms)
+Completed in 39ms (View: 16, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2011-03-06 20:45:25) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering users/new
+Rendered users/_form (2.6ms)
+Completed in 125ms (View: 8, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-03-06 20:45:30) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "authenticity_token"=>"Kg0AntGTl2YafsYS/AgFRZ2oWklxjD+ZujYGh4A8q5M=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"admin"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'admin') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '4fdd1309a53f2fef9d88394f7535272eb151c1d5f031e240534ea3462a7bef8c86d5f490b037a348b8096ab87894d7c03bd605ea46f4d003aac51bd18dec12dc') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'VymIiQ7tEFsKR2pbfvqw') LIMIT 1[0m
+Rendering users/new
+Rendered users/_form (2.7ms)
+Completed in 135ms (View: 12, DB: 0) | 200 OK [http://localhost/account]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 21:16:55) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (175.5ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 595ms (View: 267, DB: 176) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 21:17:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (88.3ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 393ms (View: 95, DB: 88) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 21:26:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (207.7ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 393ms (View: 96, DB: 208) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 21:27:34) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (91.6ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.6ms)
+Completed in 397ms (View: 98, DB: 92) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 21:27:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (212.6ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 404ms (View: 101, DB: 213) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 21:27:55) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (89.5ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 387ms (View: 209, DB: 89) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 21:28:07) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (217.5ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 429ms (View: 112, DB: 218) | 200 OK [http://localhost/experiments]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-03-06 21:28:43) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+Completed in 595ms (View: 52, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 21:29:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (88.7ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 398ms (View: 96, DB: 89) | 200 OK [http://localhost/experiments]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-03-06 21:29:40) [GET]
+
+ActionController::RoutingError (No route matches "/leases" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 21:30:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (207.2ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.5ms)
+Completed in 503ms (View: 208, DB: 207) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 21:59:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (330.8ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.6ms)
+Completed in 546ms (View: 103, DB: 331) | 200 OK [http://localhost/experiments]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-03-06 21:59:38) [GET]
+
+ActionController::RoutingError (No route matches "/images/banner.png" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 21:59:52) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (89.6ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.6ms)
+Completed in 392ms (View: 214, DB: 90) | 200 OK [http://localhost/experiments]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-03-06 21:59:52) [GET]
+
+ActionController::RoutingError (No route matches "/images/banner.png" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:00:13) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (219.4ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.7ms)
+Completed in 411ms (View: 100, DB: 219) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:12:38) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (187.6ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.7ms)
+Completed in 517ms (View: 104, DB: 188) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:13:33) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (217.4ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.8ms)
+Completed in 527ms (View: 216, DB: 217) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:14:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (91.9ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.7ms)
+Completed in 411ms (View: 103, DB: 92) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:14:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (231.8ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.6ms)
+Completed in 553ms (View: 229, DB: 232) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:16:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (88.3ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.8ms)
+Completed in 399ms (View: 98, DB: 88) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:16:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (225.4ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.8ms)
+Completed in 531ms (View: 215, DB: 225) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:17:30) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (225.7ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.7ms)
+Completed in 416ms (View: 102, DB: 226) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:17:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (223.4ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.8ms)
+Completed in 524ms (View: 210, DB: 223) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:18:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (215.6ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.8ms)
+Completed in 406ms (View: 98, DB: 216) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:19:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (216.9ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (2.2ms)
+Completed in 518ms (View: 214, DB: 217) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:19:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (216.7ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.9ms)
+Completed in 408ms (View: 98, DB: 217) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:19:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (226.8ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.0ms)
+Completed in 547ms (View: 229, DB: 227) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:19:50) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (89.7ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (2.4ms)
+Completed in 403ms (View: 102, DB: 90) | 200 OK [http://localhost/experiments]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-03-06 22:19:52) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+Completed in 146ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:20:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (89.9ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.8ms)
+Completed in 380ms (View: 98, DB: 90) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:21:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (214.7ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.8ms)
+Completed in 406ms (View: 99, DB: 215) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:22:07) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (89.8ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.9ms)
+Completed in 391ms (View: 213, DB: 90) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:22:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (313.4ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.9ms)
+Completed in 510ms (View: 105, DB: 313) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:24:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (89.5ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.9ms)
+Completed in 398ms (View: 97, DB: 90) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:25:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (204.3ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.9ms)
+Completed in 435ms (View: 98, DB: 204) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:27:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (138.1ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.1ms)
+Completed in 760ms (View: 225, DB: 138) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:28:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (202.3ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.8ms)
+Completed in 393ms (View: 99, DB: 202) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:28:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (86.8ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.8ms)
+Completed in 378ms (View: 97, DB: 87) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:29:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (219.6ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.8ms)
+Completed in 405ms (View: 95, DB: 220) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:29:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (91.5ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.9ms)
+Completed in 388ms (View: 207, DB: 91) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:29:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (214.1ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.9ms)
+Completed in 404ms (View: 97, DB: 214) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:30:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (90.5ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.9ms)
+Completed in 389ms (View: 210, DB: 91) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:31:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (217.3ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.8ms)
+Completed in 407ms (View: 98, DB: 217) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:31:23) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (92.2ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.9ms)
+Completed in 394ms (View: 211, DB: 92) | 200 OK [http://localhost/experiments]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-03-06 22:31:25) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+Completed in 30ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:31:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (225.9ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.8ms)
+Completed in 519ms (View: 204, DB: 226) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:31:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (360.5ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.8ms)
+Completed in 851ms (View: 107, DB: 360) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:32:02) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (224.8ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.9ms)
+Completed in 531ms (View: 215, DB: 225) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:32:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (92.5ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.9ms)
+Completed in 417ms (View: 101, DB: 92) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:33:34) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (247.5ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.9ms)
+Completed in 582ms (View: 244, DB: 248) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:33:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (93.3ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.8ms)
+Completed in 407ms (View: 98, DB: 93) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:33:47) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (223.3ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.9ms)
+Completed in 412ms (View: 95, DB: 223) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:33:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (90.1ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.9ms)
+Completed in 395ms (View: 98, DB: 90) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:34:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (209.3ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.8ms)
+Completed in 396ms (View: 97, DB: 209) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:34:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (90.1ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.9ms)
+Completed in 395ms (View: 98, DB: 90) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:34:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (211.8ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.8ms)
+Completed in 403ms (View: 100, DB: 212) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:34:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (92.1ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.9ms)
+Completed in 408ms (View: 102, DB: 92) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:35:07) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (243.2ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.0ms)
+Completed in 504ms (View: 160, DB: 243) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:35:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (96.5ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.9ms)
+Completed in 453ms (View: 107, DB: 97) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:36:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (203.1ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.8ms)
+Completed in 390ms (View: 97, DB: 203) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:36:49) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (89.5ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.9ms)
+Completed in 383ms (View: 101, DB: 90) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:36:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (209.3ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.9ms)
+Completed in 400ms (View: 99, DB: 209) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:36:55) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (92.3ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.9ms)
+Completed in 409ms (View: 226, DB: 92) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:37:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (221.1ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.8ms)
+Completed in 410ms (View: 97, DB: 221) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:37:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (229.3ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.9ms)
+Completed in 533ms (View: 212, DB: 229) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:38:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (89.4ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.0ms)
+Completed in 422ms (View: 99, DB: 89) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:38:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (206.4ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (0.9ms)
+Completed in 504ms (View: 211, DB: 206) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:43:24) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (89.0ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (2.0ms)
+Completed in 410ms (View: 104, DB: 89) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:44:52) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (216.5ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (2.2ms)
+Completed in 525ms (View: 221, DB: 216) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:45:14) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (89.2ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.1ms)
+Completed in 402ms (View: 97, DB: 89) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:45:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (226.7ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.0ms)
+Completed in 528ms (View: 213, DB: 227) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:45:46) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (88.9ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.1ms)
+Completed in 396ms (View: 97, DB: 89) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:46:00) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (245.9ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.1ms)
+Completed in 452ms (View: 113, DB: 246) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:46:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (94.1ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.1ms)
+Completed in 428ms (View: 103, DB: 94) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:46:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (231.2ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.1ms)
+Completed in 442ms (View: 104, DB: 231) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:46:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (90.2ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.1ms)
+Completed in 393ms (View: 97, DB: 90) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:46:55) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (210.7ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.0ms)
+Completed in 397ms (View: 96, DB: 211) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:47:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (88.4ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.0ms)
+Completed in 389ms (View: 96, DB: 88) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:47:32) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (215.5ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.0ms)
+Completed in 403ms (View: 97, DB: 215) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:49:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (90.8ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.0ms)
+Completed in 390ms (View: 101, DB: 91) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:49:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (228.9ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.2ms)
+Completed in 425ms (View: 106, DB: 229) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:50:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (89.5ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.1ms)
+Completed in 386ms (View: 211, DB: 90) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:51:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (217.2ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.1ms)
+Completed in 409ms (View: 98, DB: 217) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:51:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (91.9ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.1ms)
+Completed in 390ms (View: 210, DB: 92) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:51:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (217.9ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.1ms)
+Completed in 406ms (View: 97, DB: 218) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:52:08) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (91.3ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.1ms)
+Completed in 390ms (View: 210, DB: 91) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:55:38) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (229.3ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.0ms)
+Completed in 435ms (View: 108, DB: 229) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:55:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (89.9ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.1ms)
+Completed in 389ms (View: 210, DB: 90) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:56:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (215.8ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.0ms)
+Completed in 406ms (View: 99, DB: 216) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:56:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (90.3ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.1ms)
+Completed in 520ms (View: 212, DB: 90) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:57:00) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (213.3ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.1ms)
+Completed in 405ms (View: 98, DB: 213) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:57:15) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (220.1ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.1ms)
+Completed in 520ms (View: 211, DB: 220) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:57:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (243.8ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.1ms)
+Completed in 466ms (View: 122, DB: 244) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:57:46) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (260.4ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (2.2ms)
+Completed in 592ms (View: 239, DB: 260) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:58:10) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (96.4ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.7ms)
+Completed in 448ms (View: 123, DB: 96) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:58:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (223.9ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.0ms)
+Completed in 527ms (View: 214, DB: 224) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:59:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (88.9ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.1ms)
+Completed in 405ms (View: 102, DB: 89) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 22:59:41) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (222.9ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.1ms)
+Completed in 527ms (View: 214, DB: 223) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 23:00:14) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (93.8ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.2ms)
+Completed in 409ms (View: 99, DB: 94) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 23:00:38) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (223.7ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.0ms)
+Completed in 416ms (View: 99, DB: 224) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 23:01:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (94.3ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.1ms)
+Completed in 404ms (View: 99, DB: 94) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 23:02:23) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (215.4ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.0ms)
+Completed in 405ms (View: 97, DB: 215) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 23:02:32) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (92.1ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.1ms)
+Completed in 403ms (View: 99, DB: 92) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 23:02:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (211.5ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.0ms)
+Completed in 400ms (View: 97, DB: 212) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 23:03:13) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (94.7ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.2ms)
+Completed in 430ms (View: 243, DB: 95) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 23:03:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (220.7ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.0ms)
+Completed in 409ms (View: 97, DB: 221) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 23:03:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (90.8ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.1ms)
+Completed in 389ms (View: 208, DB: 91) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 23:04:03) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (213.7ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.0ms)
+Completed in 405ms (View: 99, DB: 214) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 23:04:47) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (91.2ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.1ms)
+Completed in 391ms (View: 211, DB: 91) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 23:05:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (218.3ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.0ms)
+Completed in 409ms (View: 97, DB: 218) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 23:05:43) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (92.7ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.1ms)
+Completed in 532ms (View: 212, DB: 93) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 23:05:59) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (214.2ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.1ms)
+Completed in 406ms (View: 100, DB: 214) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 23:06:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (219.8ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.1ms)
+Completed in 519ms (View: 211, DB: 220) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 23:07:03) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (224.0ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.2ms)
+Completed in 417ms (View: 99, DB: 224) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 23:07:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (219.7ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.1ms)
+Completed in 523ms (View: 214, DB: 220) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 23:07:52) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (89.7ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.1ms)
+Completed in 419ms (View: 106, DB: 90) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 23:08:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (221.5ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.1ms)
+Completed in 526ms (View: 214, DB: 222) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 23:08:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mExperiment Load (89.2ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.1ms)
+Completed in 406ms (View: 102, DB: 89) | 200 OK [http://localhost/experiments]
+
+
+Processing GenesController#index (for 127.0.0.1 at 2011-03-06 23:08:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"genes"}
+  [4;36;1mGene Load (1.0ms)[0m   [0;1mSELECT * FROM "genes" [0m
+Rendering template within layouts/genes
+Rendering genes/index
+Rendered _navigation (1.0ms)
+Completed in 106ms (View: 3, DB: 1) | 200 OK [http://localhost/genes]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 23:08:49) [GET]
+  Parameters: {"action"=>"index", "controller"=>"dnasamples"}
+  [4;35;1mDnasample Load (12.6ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (1.1ms)
+Completed in 486ms (View: 114, DB: 13) | 200 OK [http://localhost/dnasamples]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 23:08:50) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (193.0ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.1ms)
+Completed in 385ms (View: 102, DB: 193) | 200 OK [http://localhost/experiments]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-03-06 23:08:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (0.6ms)[0m   [0mSELECT * FROM "pcrs" [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+Rendered _navigation (1.7ms)
+Completed in 245ms (View: 196, DB: 1) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-03-06 23:09:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (0.7ms)[0m   [0;1mSELECT * FROM "pcrs" [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+Rendered _navigation (1.3ms)
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-03-06 23:09:49) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (0.7ms)[0m   [0mSELECT * FROM "pcrs" [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+Rendered _navigation (1.0ms)
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/pcrs]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:09:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mTaxonomy Load (1.2ms)[0m   [0;1mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.7ms)
+Completed in 85ms (View: 65, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:09:55) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mTaxonomy Load (0.7ms)[0m   [0mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.0ms)
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:09:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mTaxonomy Load (0.6ms)[0m   [0;1mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.3ms)
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:09:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mTaxonomy Load (0.6ms)[0m   [0mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:09:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mTaxonomy Load (0.6ms)[0m   [0;1mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.0ms)
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:10:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mTaxonomy Load (0.8ms)[0m   [0mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:10:23) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mTaxonomy Load (0.6ms)[0m   [0;1mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.0ms)
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:10:26) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mTaxonomy Load (0.6ms)[0m   [0mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 75ms (View: 69, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:10:26) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mTaxonomy Load (0.7ms)[0m   [0;1mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing GenesController#index (for 127.0.0.1 at 2011-03-06 23:10:28) [GET]
+  Parameters: {"action"=>"index", "controller"=>"genes"}
+  [4;35;1mGene Load (0.6ms)[0m   [0mSELECT * FROM "genes" [0m
+Rendering template within layouts/genes
+Rendering genes/index
+Rendered _navigation (1.1ms)
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/genes]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:10:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mTaxonomy Load (0.6ms)[0m   [0;1mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:10:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mTaxonomy Load (0.6ms)[0m   [0mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:10:32) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mTaxonomy Load (0.7ms)[0m   [0;1mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:10:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mTaxonomy Load (0.6ms)[0m   [0mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:10:41) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mTaxonomy Load (0.6ms)[0m   [0;1mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:10:43) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mTaxonomy Load (0.9ms)[0m   [0mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.0ms)
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:10:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mTaxonomy Load (0.6ms)[0m   [0;1mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:12:02) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mTaxonomy Load (1.1ms)[0m   [0mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.0ms)
+Completed in 11ms (View: 4, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:12:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mTaxonomy Load (0.6ms)[0m   [0;1mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:12:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mTaxonomy Load (0.8ms)[0m   [0mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 115ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:12:33) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mTaxonomy Load (0.6ms)[0m   [0;1mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:12:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mTaxonomy Load (0.6ms)[0m   [0mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:12:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mTaxonomy Load (0.7ms)[0m   [0;1mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:12:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mTaxonomy Load (0.9ms)[0m   [0mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.6ms)
+Completed in 12ms (View: 4, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:13:10) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mTaxonomy Load (0.6ms)[0m   [0;1mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 11ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:13:26) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mTaxonomy Load (0.7ms)[0m   [0mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.2ms)
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:13:28) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mTaxonomy Load (0.6ms)[0m   [0;1mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:14:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mTaxonomy Load (0.6ms)[0m   [0mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.1ms)
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:14:59) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mTaxonomy Load (0.6ms)[0m   [0;1mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.3ms)
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:15:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mTaxonomy Load (0.6ms)[0m   [0mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:15:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mTaxonomy Load (0.7ms)[0m   [0;1mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:15:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mTaxonomy Load (0.6ms)[0m   [0mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:16:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mTaxonomy Load (0.8ms)[0m   [0;1mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.2ms)
+Completed in 11ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:16:06) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mTaxonomy Load (0.6ms)[0m   [0mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:19:46) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mTaxonomy Load (0.6ms)[0m   [0;1mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:20:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mTaxonomy Load (0.6ms)[0m   [0mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:20:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mTaxonomy Load (0.6ms)[0m   [0;1mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:20:28) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mTaxonomy Load (0.8ms)[0m   [0mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:20:33) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mTaxonomy Load (0.6ms)[0m   [0;1mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:20:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mTaxonomy Load (0.6ms)[0m   [0mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:21:08) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mTaxonomy Load (0.7ms)[0m   [0;1mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:21:23) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mTaxonomy Load (0.6ms)[0m   [0mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:21:43) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mTaxonomy Load (0.6ms)[0m   [0;1mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:21:55) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mTaxonomy Load (0.6ms)[0m   [0mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:22:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mTaxonomy Load (0.6ms)[0m   [0;1mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:22:26) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mTaxonomy Load (0.6ms)[0m   [0mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:22:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mTaxonomy Load (0.6ms)[0m   [0;1mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:23:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mTaxonomy Load (0.6ms)[0m   [0mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.2ms)
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:23:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mTaxonomy Load (0.6ms)[0m   [0;1mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:24:26) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mTaxonomy Load (0.6ms)[0m   [0mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.0ms)
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:24:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mTaxonomy Load (0.6ms)[0m   [0;1mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:24:52) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mTaxonomy Load (0.6ms)[0m   [0mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.3ms)
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing GenesController#index (for 127.0.0.1 at 2011-03-06 23:25:03) [GET]
+  Parameters: {"action"=>"index", "controller"=>"genes"}
+  [4;36;1mGene Load (0.6ms)[0m   [0;1mSELECT * FROM "genes" [0m
+Rendering template within layouts/genes
+Rendering genes/index
+Rendered _navigation (1.1ms)
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/genes]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-06 23:25:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"dnasamples"}
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+Rendered _navigation (1.2ms)
+Completed in 121ms (View: 3, DB: 0) | 200 OK [http://localhost/dnasamples]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-06 23:25:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mExperiment Load (88.6ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (1.4ms)
+Completed in 377ms (View: 99, DB: 89) | 200 OK [http://localhost/experiments]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-03-06 23:25:07) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+Completed in 52ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-03-06 23:25:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (0.6ms)[0m   [0mSELECT * FROM "pcrs" [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+Rendered _navigation (1.1ms)
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/pcrs]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:25:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mTaxonomy Load (0.7ms)[0m   [0;1mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-03-06 23:25:13) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mTaxonomy Load (0.7ms)[0m   [0mSELECT * FROM "taxonomies" [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (1.1ms)
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/taxonomies]
