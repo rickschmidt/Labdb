@@ -20,8 +20,15 @@ class ExperimentsController < ApplicationController
   # GET /experiments/1
   # GET /experiments/1.xml
   def show
+    @ids=Array.new
+    @pcrs=Array.new
     @experiment = Experiment.find(params[:id])
-    @samples=@experiment.pcrs
+    @experiment.pcrs.each do |pcr|
+      @pcrs<<pcr
+      pcr.dnasamples.each do |dna|
+        @ids<<dna
+      end
+    end
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @experiment }

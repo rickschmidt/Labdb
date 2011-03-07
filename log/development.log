@@ -20077,3 +20077,1117 @@ Migrating to CreateUsers (20110307022152)
  FROM sqlite_master
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-03-07 11:37:03) [GET]
+
+ActionController::RoutingError (No route matches "/leases" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTaxonomies (20110126195733)
+Migrating to CreateDnasamples (20110126195743)
+Migrating to CreatePcrs (20110126195750)
+Migrating to CreateGenes (20110126195756)
+Migrating to CreateExperiments (20110126195802)
+Migrating to Jointables (20110126205446)
+Migrating to CreateUsers (20110307022152)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("dnasamples")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("dnasamples_genes")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("dnasamples_pcrs")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("experiments")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("genes")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("pcrs")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("taxonomies")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mExperiment Load (0.7ms)[0m   [0;1mSELECT * FROM "experiments" ORDER BY experiments.id DESC LIMIT 1[0m
+  [4;35;1mPcr Load (0.0ms)[0m   [0mSQLite3::SQLException: no such column: pcrs.experiment_id: SELECT * FROM "pcrs" WHERE ("pcrs".experiment_id = 1057) [0m
+  [4;36;1mDnasample Load (0.5ms)[0m   [0;1mSELECT * FROM "dnasamples" ORDER BY dnasamples.id DESC LIMIT 1[0m
+  [4;35;1mPcr Load (0.0ms)[0m   [0mSQLite3::SQLException: no such column: pcrs.dnasample_id: SELECT * FROM "pcrs" WHERE ("pcrs".dnasample_id = 101) [0m
+  [4;36;1mPcr Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: pcrs.experiment_id: SELECT * FROM "pcrs" WHERE ("pcrs".experiment_id = 1057) [0m
+  [4;35;1mPcr Load (0.5ms)[0m   [0mSELECT * FROM "pcrs" ORDER BY pcrs.id DESC LIMIT 1[0m
+  [4;36;1mPcr Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: pcrs.dnasample_id: SELECT * FROM "pcrs" WHERE ("pcrs".dnasample_id = 101) [0m
+  [4;35;1mPcr Update (1.1ms)[0m   [0mUPDATE "pcrs" SET "updated_at" = '2011-03-07 17:41:21' WHERE "id" = 101[0m
+  [4;36;1mPcr Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: pcrs.dnasample_id: SELECT * FROM "pcrs" WHERE ("pcrs".dnasample_id = 101) [0m
+  [4;35;1mDnasample Load (0.5ms)[0m   [0mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 101) [0m
+  [4;36;1mGene Load (0.4ms)[0m   [0;1mSELECT * FROM "genes" ORDER BY genes.id DESC LIMIT 1[0m
+  [4;35;1mPcr Load (0.0ms)[0m   [0mSQLite3::SQLException: no such column: pcrs.dnasample_id: SELECT * FROM "pcrs" WHERE ("pcrs".dnasample_id = 101) [0m
+  [4;36;1mPcr Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: pcrs.dnasample_id: SELECT * FROM "pcrs" WHERE ("pcrs".dnasample_id = 101) [0m
+  [4;35;1mPcr Load (0.0ms)[0m   [0mSQLite3::SQLException: no such column: pcrs.dnasample_id: SELECT * FROM "pcrs" WHERE ("pcrs".dnasample_id = 101) [0m
+  [4;36;1mPcr Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: pcrs.dnasample_id: SELECT * FROM "pcrs" WHERE ("pcrs".dnasample_id = 101) [0m
+  [4;36;1mExperiment Load (0.9ms)[0m   [0;1mSELECT * FROM "experiments" ORDER BY experiments.id DESC LIMIT 1[0m
+  [4;35;1mPcr Load (0.4ms)[0m   [0mSELECT * FROM "pcrs" ORDER BY pcrs.id DESC LIMIT 1[0m
+  [4;36;1mPcr Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: pcrs.experiment_id: SELECT * FROM "pcrs" WHERE ("pcrs".experiment_id = 1057) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTaxonomies (20110126195733)
+Migrating to CreateDnasamples (20110126195743)
+Migrating to CreatePcrs (20110126195750)
+Migrating to CreateGenes (20110126195756)
+Migrating to CreateExperiments (20110126195802)
+Migrating to Jointables (20110126205446)
+Migrating to CreateUsers (20110307022152)
+Migrating to MoreJoins (20110307175326)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "experiments_pcrs" ("experiment_id" integer, "pcr_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110307175326')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("dnasamples")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("dnasamples_genes")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("dnasamples_pcrs")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("experiments")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("experiments_pcrs")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("genes")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("pcrs")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("taxonomies")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;36;1mExperiment Load (0.7ms)[0m   [0;1mSELECT * FROM "experiments" ORDER BY experiments.id DESC LIMIT 1[0m
+  [4;35;1mPcr Load (0.4ms)[0m   [0mSELECT * FROM "pcrs" ORDER BY pcrs.id DESC LIMIT 1[0m
+  [4;36;1mPcr Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: pcrs.experiment_id: SELECT * FROM "pcrs" WHERE ("pcrs".experiment_id = 1057) [0m
+  [4;35;1mPcr Load (0.0ms)[0m   [0mSQLite3::SQLException: no such column: pcrs.experiment_id: SELECT * FROM "pcrs" WHERE ("pcrs".experiment_id = 1057) [0m
+  [4;36;1mExperiment Load (0.7ms)[0m   [0;1mSELECT * FROM "experiments" ORDER BY experiments.id DESC LIMIT 1[0m
+  [4;35;1mPcr Load (0.6ms)[0m   [0mSELECT * FROM "pcrs" ORDER BY pcrs.id DESC LIMIT 1[0m
+  [4;36;1mPcr Load (0.5ms)[0m   [0;1mSELECT * FROM "pcrs" INNER JOIN "experiments_pcrs" ON "pcrs".id = "experiments_pcrs".pcr_id WHERE ("experiments_pcrs".experiment_id = 1057 ) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO "experiments_pcrs" ("experiment_id", "created_at", "updated_at", "pcr_id") VALUES (1057, '2011-03-07 16:55:34', '2011-03-07 17:41:21', 101)[0m
+  [4;35;1mDnasample Load (0.6ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY dnasamples.id DESC LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mExperiment Load (0.7ms)[0m   [0;1mSELECT * FROM "experiments" ORDER BY experiments.id DESC LIMIT 1[0m
+  [4;35;1mPcr Load (0.6ms)[0m   [0mSELECT * FROM "pcrs" ORDER BY pcrs.id DESC LIMIT 1[0m
+  [4;36;1mDnasample Load (0.6ms)[0m   [0;1mSELECT * FROM "dnasamples" ORDER BY dnasamples.id DESC LIMIT 1[0m
+  [4;35;1mPcr Load (0.7ms)[0m   [0mSELECT * FROM "pcrs" INNER JOIN "experiments_pcrs" ON "pcrs".id = "experiments_pcrs".pcr_id WHERE ("experiments_pcrs".experiment_id = 1057 ) [0m
+  [4;36;1mDnasample Load (0.5ms)[0m   [0;1mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 101 ) [0m
+  [4;35;1mSQL (1.2ms)[0m   [0mINSERT INTO "dnasamples_pcrs" ("created_at", "updated_at", "dnasample_id", "pcr_id") VALUES ('2011-03-07 16:55:09', '2011-03-07 16:55:09', 101, 101)[0m
+  [4;36;1mPcr Load (0.7ms)[0m   [0;1mSELECT * FROM "pcrs" INNER JOIN "dnasamples_pcrs" ON "pcrs".id = "dnasamples_pcrs".pcr_id WHERE ("dnasamples_pcrs".dnasample_id = 101 ) [0m
+  [4;35;1mExperiment Load (0.9ms)[0m   [0mSELECT * FROM "experiments" INNER JOIN "experiments_pcrs" ON "experiments".id = "experiments_pcrs".experiment_id WHERE ("experiments_pcrs".pcr_id = 101 ) [0m
+  [4;36;1mDnasample Load (0.6ms)[0m   [0;1mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 101 ) [0m
+  [4;35;1mPcr Load (0.7ms)[0m   [0mSELECT * FROM "pcrs" ORDER BY pcrs.id DESC LIMIT 1[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO "experiments_pcrs" ("experiment_id", "created_at", "updated_at", "pcr_id") VALUES (1057, '2011-03-07 16:55:34', '2011-03-07 17:41:21', 101)[0m
+  [4;35;1mPcr Load (0.4ms)[0m   [0mSELECT * FROM "pcrs" LIMIT 1[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO "experiments_pcrs" ("experiment_id", "created_at", "updated_at", "pcr_id") VALUES (1057, '2011-03-07 16:55:34', '2011-03-07 16:55:34', 2)[0m
+  [4;35;1mDnasample Load (0.6ms)[0m   [0mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 101 ) [0m
+  [4;36;1mDnasample Load (0.3ms)[0m   [0;1mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 2 ) [0m
+  [4;35;1mPcr Load (0.4ms)[0m   [0mSELECT * FROM "pcrs" LIMIT 1[0m
+  [4;36;1mPcr Load (0.5ms)[0m   [0;1mSELECT * FROM "pcrs" ORDER BY pcrs.id DESC LIMIT 1[0m
+  [4;35;1mDnasample Load (0.4ms)[0m   [0mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 2) [0m
+  [4;36;1mDnasample Load (0.5ms)[0m   [0;1mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 3) [0m
+  [4;35;1mSQL (1.1ms)[0m   [0mINSERT INTO "dnasamples_pcrs" ("created_at", "updated_at", "dnasample_id", "pcr_id") VALUES ('2011-03-07 16:55:09', '2011-03-07 16:55:09', 101, 101)[0m
+  [4;36;1mDnasample Load (0.7ms)[0m   [0;1mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 101 ) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO "dnasamples_pcrs" ("created_at", "updated_at", "dnasample_id", "pcr_id") VALUES ('2011-03-07 16:55:08', '2011-03-07 16:55:08', 2, 101)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO "dnasamples_pcrs" ("created_at", "updated_at", "dnasample_id", "pcr_id") VALUES ('2011-03-07 16:55:08', '2011-03-07 16:55:08', 3, 2)[0m
+  [4;35;1mDnasample Load (0.6ms)[0m   [0mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 2 ) [0m
+  [4;36;1mPcr Load (0.8ms)[0m   [0;1mSELECT * FROM "pcrs" INNER JOIN "experiments_pcrs" ON "pcrs".id = "experiments_pcrs".pcr_id WHERE ("experiments_pcrs".experiment_id = 1057 ) [0m
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-07 12:08:41) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-03-07 18:08:41', "perishable_token" = 'eHeJXuyxXI9hgxUld', "last_request_at" = '2011-03-07 18:08:41' WHERE "id" = 1[0m
+  [4;35;1mExperiment Load (193.9ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (2.3ms)
+Completed in 434ms (View: 79, DB: 195) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#show (for 127.0.0.1 at 2011-03-07 12:08:50) [GET]
+  Parameters: {"action"=>"show", "id"=>"278", "controller"=>"experiments"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-03-07 18:08:50', "perishable_token" = 'zaOmxUGZTZSvMAWchTz', "last_request_at" = '2011-03-07 18:08:50' WHERE "id" = 1[0m
+  [4;36;1mExperiment Load (0.6ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ("experiments"."id" = 278) [0m
+Rendering template within layouts/experiments
+Rendering experiments/show
+  [4;35;1mPcr Load (0.3ms)[0m   [0mSELECT * FROM "pcrs" INNER JOIN "experiments_pcrs" ON "pcrs".id = "experiments_pcrs".pcr_id WHERE ("experiments_pcrs".experiment_id = 278 ) [0m
+Rendered _navigation (2.6ms)
+Completed in 183ms (View: 139, DB: 2) | 200 OK [http://localhost/experiments/278]
+
+
+Processing ExperimentsController#show (for 127.0.0.1 at 2011-03-07 12:08:50) [GET]
+  Parameters: {"action"=>"show", "id"=>"278", "controller"=>"experiments"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-03-07 18:08:50', "perishable_token" = 'nAmLkWNAXZy0l1GXfQ', "last_request_at" = '2011-03-07 18:08:50' WHERE "id" = 1[0m
+  [4;36;1mExperiment Load (0.3ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ("experiments"."id" = 278) [0m
+Rendering template within layouts/experiments
+Rendering experiments/show
+  [4;35;1mPcr Load (0.3ms)[0m   [0mSELECT * FROM "pcrs" INNER JOIN "experiments_pcrs" ON "pcrs".id = "experiments_pcrs".pcr_id WHERE ("experiments_pcrs".experiment_id = 278 ) [0m
+Rendered _navigation (2.4ms)
+Completed in 54ms (View: 9, DB: 1) | 200 OK [http://localhost/experiments/278]
+  [4;35;1mExperiment Load (0.5ms)[0m   [0mSELECT * FROM "experiments" WHERE ("experiments"."id" = 24) [0m
+  [4;36;1mExperiment Load (0.6ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ("experiments"."id" = 278) [0m
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-03-07 12:09:30) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (7.4ms)[0m   [0;1mSELECT * FROM "pcrs" [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-03-07 18:09:30', "perishable_token" = 'syqg5oelPsuzz8XTqNU5', "last_request_at" = '2011-03-07 18:09:30' WHERE "id" = 1[0m
+Rendered _navigation (35.9ms)
+Completed in 420ms (View: 398, DB: 8) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#show (for 127.0.0.1 at 2011-03-07 12:09:34) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (0.3ms)[0m   [0mSELECT * FROM "pcrs" WHERE ("pcrs"."id" = 2) [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-03-07 18:09:34', "perishable_token" = 'YJjiV2jkVtpEJjBO6c5R', "last_request_at" = '2011-03-07 18:09:34' WHERE "id" = 1[0m
+Rendered _navigation (38.0ms)
+Completed in 72ms (View: 63, DB: 1) | 200 OK [http://localhost/pcrs/2]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-07 12:09:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"dnasamples"}
+  [4;36;1mDnasample Load (5.8ms)[0m   [0;1mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-03-07 18:09:42', "perishable_token" = 'G3ZbjuvudX2Ddh3JMOJ', "last_request_at" = '2011-03-07 18:09:42' WHERE "id" = 1[0m
+Rendered _navigation (42.8ms)
+Completed in 280ms (View: 255, DB: 7) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-03-07 12:09:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"dnasamples"}
+  [4;35;1mDnasample Load (6.0ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-03-07 18:09:43', "perishable_token" = 'vWq1KkUZEZXqJBZsyL5', "last_request_at" = '2011-03-07 18:09:43' WHERE "id" = 1[0m
+Rendered _navigation (147.6ms)
+Completed in 253ms (View: 228, DB: 7) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#show (for 127.0.0.1 at 2011-03-07 12:09:44) [GET]
+  Parameters: {"action"=>"show", "id"=>"62", "controller"=>"dnasamples"}
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 62) [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-03-07 18:09:44', "perishable_token" = 'rQkD2RofqWPFSpX82WDY', "last_request_at" = '2011-03-07 18:09:44' WHERE "id" = 1[0m
+Rendered _navigation (36.7ms)
+Completed in 54ms (View: 45, DB: 1) | 200 OK [http://localhost/dnasamples/62]
+  [4;35;1mPcr Load (0.4ms)[0m   [0mSELECT * FROM "pcrs" INNER JOIN "experiments_pcrs" ON "pcrs".id = "experiments_pcrs".pcr_id WHERE ("experiments_pcrs".experiment_id = 278 ) [0m
+  [4;36;1mPcr Load (0.6ms)[0m   [0;1mSELECT * FROM "pcrs" LIMIT 1[0m
+  [4;35;1mPcr Load (0.5ms)[0m   [0mSELECT * FROM "pcrs" ORDER BY pcrs.id DESC LIMIT 1[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO "experiments_pcrs" ("experiment_id", "created_at", "updated_at", "pcr_id") VALUES (278, '2011-03-07 16:55:34', '2011-03-07 16:55:34', 2)[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mINSERT INTO "experiments_pcrs" ("experiment_id", "created_at", "updated_at", "pcr_id") VALUES (278, '2011-03-07 16:55:34', '2011-03-07 17:41:21', 101)[0m
+  [4;36;1mDnasample Load (0.7ms)[0m   [0;1mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 2 ) [0m
+  [4;35;1mDnasample Load (0.8ms)[0m   [0mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 101 ) [0m
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-07 12:18:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-03-07 18:18:37', "perishable_token" = 'bIevI492TYGhQAD6fBG', "last_request_at" = '2011-03-07 18:18:37' WHERE "id" = 1[0m
+  [4;35;1mExperiment Load (90.0ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (2.4ms)
+Completed in 518ms (View: 81, DB: 91) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#show (for 127.0.0.1 at 2011-03-07 12:18:39) [GET]
+  Parameters: {"action"=>"show", "id"=>"278", "controller"=>"experiments"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-03-07 18:18:39', "perishable_token" = 'SituHa5yYHMKf429KfRC', "last_request_at" = '2011-03-07 18:18:39' WHERE "id" = 1[0m
+  [4;36;1mExperiment Load (0.3ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ("experiments"."id" = 278) [0m
+Rendering template within layouts/experiments
+Rendering experiments/show
+  [4;35;1mPcr Load (0.5ms)[0m   [0mSELECT * FROM "pcrs" INNER JOIN "experiments_pcrs" ON "pcrs".id = "experiments_pcrs".pcr_id WHERE ("experiments_pcrs".experiment_id = 278 ) [0m
+Rendered _navigation (2.3ms)
+Completed in 57ms (View: 12, DB: 2) | 200 OK [http://localhost/experiments/278]
+
+
+Processing ExperimentsController#show (for 127.0.0.1 at 2011-03-07 12:19:26) [GET]
+  Parameters: {"action"=>"show", "id"=>"278", "controller"=>"experiments"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-03-07 18:19:26', "perishable_token" = 'aiPqh1TT4v6PHfPVeZGx', "last_request_at" = '2011-03-07 18:19:26' WHERE "id" = 1[0m
+  [4;36;1mExperiment Load (0.4ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ("experiments"."id" = 278) [0m
+  [4;35;1mPcr Load (0.5ms)[0m   [0mSELECT * FROM "pcrs" INNER JOIN "experiments_pcrs" ON "pcrs".id = "experiments_pcrs".pcr_id WHERE ("experiments_pcrs".experiment_id = 278 ) [0m
+  [4;36;1mDnasample Load (0.3ms)[0m   [0;1mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 2 ) [0m
+  [4;35;1mDnasample Load (0.4ms)[0m   [0mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 101 ) [0m
+Rendering template within layouts/experiments
+Rendering experiments/show
+Rendered _navigation (2.3ms)
+Completed in 206ms (View: 12, DB: 2) | 200 OK [http://localhost/experiments/278]
+
+
+Processing ExperimentsController#show (for 127.0.0.1 at 2011-03-07 12:20:19) [GET]
+  Parameters: {"action"=>"show", "id"=>"278", "controller"=>"experiments"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-03-07 18:20:19', "perishable_token" = 'g3jUKWSPdOvqBONYf9Gq', "last_request_at" = '2011-03-07 18:20:19' WHERE "id" = 1[0m
+  [4;36;1mExperiment Load (0.4ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ("experiments"."id" = 278) [0m
+  [4;35;1mPcr Load (0.5ms)[0m   [0mSELECT * FROM "pcrs" INNER JOIN "experiments_pcrs" ON "pcrs".id = "experiments_pcrs".pcr_id WHERE ("experiments_pcrs".experiment_id = 278 ) [0m
+  [4;36;1mDnasample Load (0.3ms)[0m   [0;1mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 2 ) [0m
+  [4;35;1mDnasample Load (0.5ms)[0m   [0mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 101 ) [0m
+Rendering template within layouts/experiments
+Rendering experiments/show
+
+ActionView::TemplateError (undefined method `each' for 2:Fixnum) on line #5 of app/views/experiments/show.html.erb:
+2: <table border="0" cellspacing="5" cellpadding="5">
+3: 	<tr><td><b>Date: </b><%=h @experiment.date%></td>
+4: 	<td><b>Experiment: </b> <%=h @experiment.experiment_number%></td></tr>
+5: 	<td> PCRS <%@ids.each do |i|%>
+6: 		<%=h i.id%>
+7: 		<%end%></td>
+8: </table>
+
+    app/views/experiments/show.html.erb:5
+    app/controllers/experiments_controller.rb:30:in `show'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (43.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ExperimentsController#show (for 127.0.0.1 at 2011-03-07 12:21:19) [GET]
+  Parameters: {"action"=>"show", "id"=>"278", "controller"=>"experiments"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-03-07 18:21:19', "perishable_token" = 'oKGif4NKARMMDA6VIlRX', "last_request_at" = '2011-03-07 18:21:19' WHERE "id" = 1[0m
+  [4;36;1mExperiment Load (0.8ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ("experiments"."id" = 278) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `dnasamples' for #<Class:0x10633e440>):
+  searchlogic (2.4.27) lib/searchlogic/named_scopes/conditions.rb:81:in `method_missing'
+  searchlogic (2.4.27) lib/searchlogic/named_scopes/association_conditions.rb:19:in `method_missing'
+  searchlogic (2.4.27) lib/searchlogic/named_scopes/association_ordering.rb:27:in `method_missing'
+  searchlogic (2.4.27) lib/searchlogic/named_scopes/ordering.rb:30:in `method_missing'
+  searchlogic (2.4.27) lib/searchlogic/named_scopes/or_conditions.rb:28:in `method_missing'
+  /Users/rickschmidt/.gem/ruby/1.8/gems/will_paginate-2.3.15/lib/will_paginate/finder.rb:170:in `method_missing'
+  /Users/rickschmidt/.gem/ruby/1.8/gems/will_paginate-2.3.15/lib/will_paginate/finder.rb:170:in `method_missing'
+  app/controllers/experiments_controller.rb:25:in `show'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (156.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ExperimentsController#show (for 127.0.0.1 at 2011-03-07 12:21:52) [GET]
+  Parameters: {"action"=>"show", "id"=>"278", "controller"=>"experiments"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-03-07 18:21:52', "perishable_token" = 'xsaYZEvzzcjlbGp8Abmh', "last_request_at" = '2011-03-07 18:21:52' WHERE "id" = 1[0m
+  [4;36;1mExperiment Load (0.4ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ("experiments"."id" = 278) [0m
+  [4;35;1mPcr Load (0.5ms)[0m   [0mSELECT * FROM "pcrs" INNER JOIN "experiments_pcrs" ON "pcrs".id = "experiments_pcrs".pcr_id WHERE ("experiments_pcrs".experiment_id = 278 ) [0m
+  [4;36;1mDnasample Load (0.3ms)[0m   [0;1mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 2 ) [0m
+  [4;35;1mDnasample Load (0.6ms)[0m   [0mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 101 ) [0m
+Rendering template within layouts/experiments
+Rendering experiments/show
+
+ActionView::TemplateError (undefined method `each' for 2:Fixnum) on line #5 of app/views/experiments/show.html.erb:
+2: <table border="0" cellspacing="5" cellpadding="5">
+3: 	<tr><td><b>Date: </b><%=h @experiment.date%></td>
+4: 	<td><b>Experiment: </b> <%=h @experiment.experiment_number%></td></tr>
+5: 	<td> PCRS <%@ids.each do |i|%>
+6: 		<%=h i.id%>
+7: 		<%end%></td>
+8: </table>
+
+    app/views/experiments/show.html.erb:5
+    app/controllers/experiments_controller.rb:29:in `show'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (157.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ExperimentsController#show (for 127.0.0.1 at 2011-03-07 12:22:14) [GET]
+  Parameters: {"action"=>"show", "id"=>"278", "controller"=>"experiments"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-03-07 18:22:14', "perishable_token" = 'CH1H0yGygsQzz9Y5eKnm', "last_request_at" = '2011-03-07 18:22:14' WHERE "id" = 1[0m
+  [4;36;1mExperiment Load (0.4ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ("experiments"."id" = 278) [0m
+  [4;35;1mPcr Load (0.5ms)[0m   [0mSELECT * FROM "pcrs" INNER JOIN "experiments_pcrs" ON "pcrs".id = "experiments_pcrs".pcr_id WHERE ("experiments_pcrs".experiment_id = 278 ) [0m
+  [4;36;1mDnasample Load (0.3ms)[0m   [0;1mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 2 ) [0m
+  [4;35;1mDnasample Load (0.6ms)[0m   [0mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 101 ) [0m
+Rendering template within layouts/experiments
+Rendering experiments/show
+
+ActionView::TemplateError (undefined method `each' for #<Dnasample:0x106400720>) on line #5 of app/views/experiments/show.html.erb:
+2: <table border="0" cellspacing="5" cellpadding="5">
+3: 	<tr><td><b>Date: </b><%=h @experiment.date%></td>
+4: 	<td><b>Experiment: </b> <%=h @experiment.experiment_number%></td></tr>
+5: 	<td> PCRS <%@ids.each do |i|%>
+6: 		<%=h i.id%>
+7: 		<%end%></td>
+8: </table>
+
+    app/views/experiments/show.html.erb:5
+    app/controllers/experiments_controller.rb:29:in `show'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (157.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ExperimentsController#show (for 127.0.0.1 at 2011-03-07 12:22:26) [GET]
+  Parameters: {"action"=>"show", "id"=>"278", "controller"=>"experiments"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-03-07 18:22:26', "perishable_token" = 'XXxrMqY9XepeDIXptqy', "last_request_at" = '2011-03-07 18:22:26' WHERE "id" = 1[0m
+  [4;36;1mExperiment Load (0.4ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ("experiments"."id" = 278) [0m
+  [4;35;1mPcr Load (0.5ms)[0m   [0mSELECT * FROM "pcrs" INNER JOIN "experiments_pcrs" ON "pcrs".id = "experiments_pcrs".pcr_id WHERE ("experiments_pcrs".experiment_id = 278 ) [0m
+  [4;36;1mDnasample Load (0.3ms)[0m   [0;1mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 2 ) [0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.<<):
+  app/controllers/experiments_controller.rb:26:in `show'
+  /Users/rickschmidt/.gem/ruby/1.8/gems/will_paginate-2.3.15/lib/will_paginate/finder.rb:168:in `method_missing'
+  /Users/rickschmidt/.gem/ruby/1.8/gems/will_paginate-2.3.15/lib/will_paginate/finder.rb:168:in `method_missing'
+  app/controllers/experiments_controller.rb:25:in `show'
+  /Users/rickschmidt/.gem/ruby/1.8/gems/will_paginate-2.3.15/lib/will_paginate/finder.rb:168:in `method_missing'
+  /Users/rickschmidt/.gem/ruby/1.8/gems/will_paginate-2.3.15/lib/will_paginate/finder.rb:168:in `method_missing'
+  app/controllers/experiments_controller.rb:24:in `show'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (152.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ExperimentsController#show (for 127.0.0.1 at 2011-03-07 12:22:41) [GET]
+  Parameters: {"action"=>"show", "id"=>"278", "controller"=>"experiments"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-03-07 18:22:41', "perishable_token" = 'dytztauCsjjQZFhyDBn', "last_request_at" = '2011-03-07 18:22:41' WHERE "id" = 1[0m
+  [4;35;1mExperiment Load (1.0ms)[0m   [0mSELECT * FROM "experiments" WHERE ("experiments"."id" = 278) [0m
+  [4;36;1mPcr Load (0.5ms)[0m   [0;1mSELECT * FROM "pcrs" INNER JOIN "experiments_pcrs" ON "pcrs".id = "experiments_pcrs".pcr_id WHERE ("experiments_pcrs".experiment_id = 278 ) [0m
+  [4;35;1mDnasample Load (0.3ms)[0m   [0mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 2 ) [0m
+  [4;36;1mDnasample Load (0.5ms)[0m   [0;1mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 101 ) [0m
+Rendering template within layouts/experiments
+Rendering experiments/show
+Rendered _navigation (2.4ms)
+Completed in 68ms (View: 8, DB: 3) | 200 OK [http://localhost/experiments/278]
+
+
+Processing ExperimentsController#show (for 127.0.0.1 at 2011-03-07 12:23:14) [GET]
+  Parameters: {"action"=>"show", "id"=>"278", "controller"=>"experiments"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-03-07 18:23:14', "perishable_token" = '1LfIkuISJ0kW0Rdljyge', "last_request_at" = '2011-03-07 18:23:14' WHERE "id" = 1[0m
+  [4;35;1mExperiment Load (0.5ms)[0m   [0mSELECT * FROM "experiments" WHERE ("experiments"."id" = 278) [0m
+  [4;36;1mPcr Load (0.5ms)[0m   [0;1mSELECT * FROM "pcrs" INNER JOIN "experiments_pcrs" ON "pcrs".id = "experiments_pcrs".pcr_id WHERE ("experiments_pcrs".experiment_id = 278 ) [0m
+  [4;35;1mDnasample Load (0.4ms)[0m   [0mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 2 ) [0m
+  [4;36;1mDnasample Load (0.5ms)[0m   [0;1mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 101 ) [0m
+Rendering template within layouts/experiments
+Rendering experiments/show
+Rendered _navigation (2.5ms)
+Completed in 179ms (View: 8, DB: 3) | 200 OK [http://localhost/experiments/278]
+
+
+Processing ExperimentsController#show (for 127.0.0.1 at 2011-03-07 12:24:12) [GET]
+  Parameters: {"action"=>"show", "id"=>"278", "controller"=>"experiments"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-03-07 18:24:12', "perishable_token" = 'WIQcQyNxwCp4FjQrAND', "last_request_at" = '2011-03-07 18:24:12' WHERE "id" = 1[0m
+  [4;35;1mExperiment Load (0.4ms)[0m   [0mSELECT * FROM "experiments" WHERE ("experiments"."id" = 278) [0m
+  [4;36;1mPcr Load (0.5ms)[0m   [0;1mSELECT * FROM "pcrs" INNER JOIN "experiments_pcrs" ON "pcrs".id = "experiments_pcrs".pcr_id WHERE ("experiments_pcrs".experiment_id = 278 ) [0m
+  [4;35;1mDnasample Load (0.4ms)[0m   [0mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 2 ) [0m
+  [4;36;1mDnasample Load (0.4ms)[0m   [0;1mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 101 ) [0m
+Rendering template within layouts/experiments
+Rendering experiments/show
+Rendered _navigation (2.4ms)
+Completed in 78ms (View: 13, DB: 2) | 200 OK [http://localhost/experiments/278]
+
+
+Processing ExperimentsController#show (for 127.0.0.1 at 2011-03-07 12:24:45) [GET]
+  Parameters: {"action"=>"show", "id"=>"278", "controller"=>"experiments"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-03-07 18:24:45', "perishable_token" = '6CEXfyddzYagxcP6fdc', "last_request_at" = '2011-03-07 18:24:45' WHERE "id" = 1[0m
+  [4;35;1mExperiment Load (0.4ms)[0m   [0mSELECT * FROM "experiments" WHERE ("experiments"."id" = 278) [0m
+  [4;36;1mPcr Load (0.5ms)[0m   [0;1mSELECT * FROM "pcrs" INNER JOIN "experiments_pcrs" ON "pcrs".id = "experiments_pcrs".pcr_id WHERE ("experiments_pcrs".experiment_id = 278 ) [0m
+  [4;35;1mDnasample Load (0.4ms)[0m   [0mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 2 ) [0m
+  [4;36;1mDnasample Load (0.5ms)[0m   [0;1mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 101 ) [0m
+Rendering template within layouts/experiments
+Rendering experiments/show
+
+ActionView::TemplateError (undefined method `Pcr' for #<ActionView::Base:0x1069d3080>) on line #6 of app/views/experiments/show.html.erb:
+3: 	<tr><td><b>Date: </b><%=h @experiment.date%></td>
+4: 	<td><b>Experiment: </b> <%=h @experiment.experiment_number%></td></tr>
+5: 	<td> PCRS <%@pcrs.each do |i|%>
+6: 		<%=h Pcr i.id%>
+7: 		<%end%>
+8: 		<%@ids.each do |i|%>
+9: 		<%=h DNA i.id%>
+
+    app/views/experiments/show.html.erb:6
+    app/views/experiments/show.html.erb:5:in `each'
+    app/views/experiments/show.html.erb:5
+    app/controllers/experiments_controller.rb:32:in `show'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (150.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ExperimentsController#show (for 127.0.0.1 at 2011-03-07 12:24:55) [GET]
+  Parameters: {"action"=>"show", "id"=>"278", "controller"=>"experiments"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-03-07 18:24:55', "perishable_token" = '07sYEt82JzavyUN8eJI', "last_request_at" = '2011-03-07 18:24:55' WHERE "id" = 1[0m
+  [4;35;1mExperiment Load (0.3ms)[0m   [0mSELECT * FROM "experiments" WHERE ("experiments"."id" = 278) [0m
+  [4;36;1mPcr Load (0.5ms)[0m   [0;1mSELECT * FROM "pcrs" INNER JOIN "experiments_pcrs" ON "pcrs".id = "experiments_pcrs".pcr_id WHERE ("experiments_pcrs".experiment_id = 278 ) [0m
+  [4;35;1mDnasample Load (0.4ms)[0m   [0mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 2 ) [0m
+  [4;36;1mDnasample Load (0.5ms)[0m   [0;1mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 101 ) [0m
+Rendering template within layouts/experiments
+Rendering experiments/show
+ERROR: compiling _run_erb_app47views47experiments47show46html46erb RAISED compile error
+/Users/rickschmidt/Documents/ReddyLab/lab/app/views/experiments/show.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+...utput_buffer.concat((h "Pcr" i.id).to_s); @output_buffer.con...
+                              ^
+/Users/rickschmidt/Documents/ReddyLab/lab/app/views/experiments/show.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting ')'
+...utput_buffer.concat((h "DNA" i.id).to_s); @output_buffer.con...
+                              ^
+Function body:           def _run_erb_app47views47experiments47show46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "\n<table border=\"0\" cellspacing=\"5\" cellpadding=\"5\">\n\t<tr><td><b>Date: </b>"
+
+; @output_buffer.concat((h @experiment.date).to_s); @output_buffer.concat "</td>\n\t<td><b>Experiment: </b> "
+; @output_buffer.concat((h @experiment.experiment_number).to_s); @output_buffer.concat "</td></tr>\n\t<td> PCRS "
+; @pcrs.each do |i|; @output_buffer.concat "\n\t\t"
+; @output_buffer.concat((h "Pcr" i.id).to_s); @output_buffer.concat "\n\t\t"
+; end; @output_buffer.concat "\n\t\t"
+; @ids.each do |i|; @output_buffer.concat "\n\t\t"
+; @output_buffer.concat((h "DNA" i.id).to_s); @output_buffer.concat "\n\t\t"
+; end; @output_buffer.concat "\n\t\t</td>\n</table>\n<p>\n  <b>Date:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.date ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Anneal:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.anneal ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Dna amount:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.dna_amount ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Total samples:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.total_samples ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Notes:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.notes ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Experiment number:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.experiment_number ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Bsa:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.bsa ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Buffer:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.buffer ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Mgcl2:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.mgcl2 ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Taq:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.taq ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>H2o:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.h2o ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Dntps:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.dntps ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Dna:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.dna ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Primerl amount:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.primerl_amount ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Primerh amount:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.primerh_amount ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Total:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.total ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Primerl:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.primerl ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Primerh:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.primerh ).to_s); @output_buffer.concat "\n</p>\n</table>\n\n"
+
+
+
+; @output_buffer.concat(( link_to 'Edit', edit_experiment_path(@experiment) ).to_s); @output_buffer.concat " |\n"
+; @output_buffer.concat(( link_to 'Back', experiments_path ).to_s); @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/rickschmidt/Documents/ReddyLab/lab/app/views/experiments/show.html.erb:108:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/template.rb:205:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:265:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:348:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:262:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:1252:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:942:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:135:in `custom'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:179:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:179:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:173:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:173:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/rickschmidt/Documents/ReddyLab/lab/app/controllers/experiments_controller.rb:32:in `show'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:1333:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:1333:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/flash.rb:151:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/routing/route_set.rb:438:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/string_coercion.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/session/cookie_store.rb:100:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/failsafe.rb:26:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.10/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.10/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/webrick.rb:48:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/webrick.rb:14:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.10/lib/commands/server.rb:111
+script/server:3:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/rickschmidt/Documents/ReddyLab/lab/app/views/experiments/show.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+...utput_buffer.concat((h "Pcr" i.id).to_s); @output_buffer.con...
+                              ^
+/Users/rickschmidt/Documents/ReddyLab/lab/app/views/experiments/show.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting ')'
+...utput_buffer.concat((h "DNA" i.id).to_s); @output_buffer.con...
+                              ^) on line #6 of app/views/experiments/show.html.erb:
+3: 	<tr><td><b>Date: </b><%=h @experiment.date%></td>
+4: 	<td><b>Experiment: </b> <%=h @experiment.experiment_number%></td></tr>
+5: 	<td> PCRS <%@pcrs.each do |i|%>
+6: 		<%=h "Pcr" i.id%>
+7: 		<%end%>
+8: 		<%@ids.each do |i|%>
+9: 		<%=h "DNA" i.id%>
+
+    app/views/experiments/show.html.erb:108:in `compile!'
+    app/controllers/experiments_controller.rb:32:in `show'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (154.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ExperimentsController#show (for 127.0.0.1 at 2011-03-07 12:25:09) [GET]
+  Parameters: {"action"=>"show", "id"=>"278", "controller"=>"experiments"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-03-07 18:25:09', "perishable_token" = 'so1bnE71gDFcy6U1Xof', "last_request_at" = '2011-03-07 18:25:09' WHERE "id" = 1[0m
+  [4;35;1mExperiment Load (0.6ms)[0m   [0mSELECT * FROM "experiments" WHERE ("experiments"."id" = 278) [0m
+  [4;36;1mPcr Load (0.5ms)[0m   [0;1mSELECT * FROM "pcrs" INNER JOIN "experiments_pcrs" ON "pcrs".id = "experiments_pcrs".pcr_id WHERE ("experiments_pcrs".experiment_id = 278 ) [0m
+  [4;35;1mDnasample Load (0.4ms)[0m   [0mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 2 ) [0m
+  [4;36;1mDnasample Load (0.5ms)[0m   [0;1mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 101 ) [0m
+Rendering template within layouts/experiments
+Rendering experiments/show
+ERROR: compiling _run_erb_app47views47experiments47show46html46erb RAISED compile error
+/Users/rickschmidt/Documents/ReddyLab/lab/app/views/experiments/show.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting ')'
+...utput_buffer.concat((h "DNA" i.id).to_s); @output_buffer.con...
+                              ^
+Function body:           def _run_erb_app47views47experiments47show46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "\n<table border=\"0\" cellspacing=\"5\" cellpadding=\"5\">\n\t<tr><td><b>Date: </b>"
+
+; @output_buffer.concat((h @experiment.date).to_s); @output_buffer.concat "</td>\n\t<td><b>Experiment: </b> "
+; @output_buffer.concat((h @experiment.experiment_number).to_s); @output_buffer.concat "</td></tr>\n\t<td> PCRS "
+; @pcrs.each do |i|; @output_buffer.concat "\n\t\t"
+; @output_buffer.concat((h "Pcr", i.id).to_s); @output_buffer.concat "\n\t\t"
+; end; @output_buffer.concat "\n\t\t"
+; @ids.each do |i|; @output_buffer.concat "\n\t\t"
+; @output_buffer.concat((h "DNA" i.id).to_s); @output_buffer.concat "\n\t\t"
+; end; @output_buffer.concat "\n\t\t</td>\n</table>\n<p>\n  <b>Date:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.date ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Anneal:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.anneal ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Dna amount:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.dna_amount ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Total samples:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.total_samples ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Notes:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.notes ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Experiment number:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.experiment_number ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Bsa:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.bsa ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Buffer:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.buffer ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Mgcl2:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.mgcl2 ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Taq:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.taq ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>H2o:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.h2o ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Dntps:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.dntps ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Dna:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.dna ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Primerl amount:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.primerl_amount ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Primerh amount:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.primerh_amount ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Total:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.total ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Primerl:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.primerl ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Primerh:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @experiment.primerh ).to_s); @output_buffer.concat "\n</p>\n</table>\n\n"
+
+
+
+; @output_buffer.concat(( link_to 'Edit', edit_experiment_path(@experiment) ).to_s); @output_buffer.concat " |\n"
+; @output_buffer.concat(( link_to 'Back', experiments_path ).to_s); @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/rickschmidt/Documents/ReddyLab/lab/app/views/experiments/show.html.erb:108:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/template.rb:205:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:265:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:348:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_view/base.rb:262:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:1252:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:942:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:135:in `custom'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:179:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:179:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:173:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:173:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/rickschmidt/Documents/ReddyLab/lab/app/controllers/experiments_controller.rb:32:in `show'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:1333:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:1333:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.10/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/flash.rb:151:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/routing/route_set.rb:438:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.10/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/string_coercion.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/session/cookie_store.rb:100:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/failsafe.rb:26:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.10/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.10/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.10/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/webrick.rb:48:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/webrick.rb:14:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.10/lib/commands/server.rb:111
+script/server:3:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/rickschmidt/Documents/ReddyLab/lab/app/views/experiments/show.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting ')'
+...utput_buffer.concat((h "DNA" i.id).to_s); @output_buffer.con...
+                              ^) on line #9 of app/views/experiments/show.html.erb:
+6: 		<%=h "Pcr", i.id%>
+7: 		<%end%>
+8: 		<%@ids.each do |i|%>
+9: 		<%=h "DNA" i.id%>
+10: 		<%end%>
+11: 		</td>
+12: </table>
+
+    app/views/experiments/show.html.erb:108:in `compile!'
+    app/controllers/experiments_controller.rb:32:in `show'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (39.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ExperimentsController#show (for 127.0.0.1 at 2011-03-07 12:25:13) [GET]
+  Parameters: {"action"=>"show", "id"=>"278", "controller"=>"experiments"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-03-07 18:25:13', "perishable_token" = 'bTpNUEaIIMlIXY3kvZv', "last_request_at" = '2011-03-07 18:25:13' WHERE "id" = 1[0m
+  [4;35;1mExperiment Load (0.4ms)[0m   [0mSELECT * FROM "experiments" WHERE ("experiments"."id" = 278) [0m
+  [4;36;1mPcr Load (0.5ms)[0m   [0;1mSELECT * FROM "pcrs" INNER JOIN "experiments_pcrs" ON "pcrs".id = "experiments_pcrs".pcr_id WHERE ("experiments_pcrs".experiment_id = 278 ) [0m
+  [4;35;1mDnasample Load (0.3ms)[0m   [0mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 2 ) [0m
+  [4;36;1mDnasample Load (0.4ms)[0m   [0;1mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 101 ) [0m
+Rendering template within layouts/experiments
+Rendering experiments/show
+
+ActionView::TemplateError (wrong number of arguments (2 for 1)) on line #6 of app/views/experiments/show.html.erb:
+3: 	<tr><td><b>Date: </b><%=h @experiment.date%></td>
+4: 	<td><b>Experiment: </b> <%=h @experiment.experiment_number%></td></tr>
+5: 	<td> PCRS <%@pcrs.each do |i|%>
+6: 		<%=h "Pcr", i.id%>
+7: 		<%end%>
+8: 		<%@ids.each do |i|%>
+9: 		<%=h "DNA", i.id%>
+
+    app/views/experiments/show.html.erb:6:in `h'
+    app/views/experiments/show.html.erb:6
+    app/views/experiments/show.html.erb:5:in `each'
+    app/views/experiments/show.html.erb:5
+    app/controllers/experiments_controller.rb:32:in `show'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (159.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ExperimentsController#show (for 127.0.0.1 at 2011-03-07 12:25:27) [GET]
+  Parameters: {"action"=>"show", "id"=>"278", "controller"=>"experiments"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-03-07 18:25:27', "perishable_token" = 'p89kWVPJb5m5FiX5MWX', "last_request_at" = '2011-03-07 18:25:27' WHERE "id" = 1[0m
+  [4;35;1mExperiment Load (0.4ms)[0m   [0mSELECT * FROM "experiments" WHERE ("experiments"."id" = 278) [0m
+  [4;36;1mPcr Load (0.5ms)[0m   [0;1mSELECT * FROM "pcrs" INNER JOIN "experiments_pcrs" ON "pcrs".id = "experiments_pcrs".pcr_id WHERE ("experiments_pcrs".experiment_id = 278 ) [0m
+  [4;35;1mDnasample Load (0.3ms)[0m   [0mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 2 ) [0m
+  [4;36;1mDnasample Load (0.5ms)[0m   [0;1mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 101 ) [0m
+Rendering template within layouts/experiments
+Rendering experiments/show
+Rendered _navigation (2.4ms)
+Completed in 74ms (View: 13, DB: 2) | 200 OK [http://localhost/experiments/278]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-03-07 12:25:38) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-03-07 18:25:38', "perishable_token" = 'aNCiaN2A6fufrXa6kSW', "last_request_at" = '2011-03-07 18:25:38' WHERE "id" = 1[0m
+  [4;35;1mExperiment Load (98.0ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (2.4ms)
+Completed in 527ms (View: 190, DB: 99) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#show (for 127.0.0.1 at 2011-03-07 12:25:40) [GET]
+  Parameters: {"action"=>"show", "id"=>"745", "controller"=>"experiments"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-03-07 18:25:40', "perishable_token" = 'AZlbPG9mAwlC2GE9LIpV', "last_request_at" = '2011-03-07 18:25:40' WHERE "id" = 1[0m
+  [4;36;1mExperiment Load (0.4ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ("experiments"."id" = 745) [0m
+  [4;35;1mPcr Load (0.3ms)[0m   [0mSELECT * FROM "pcrs" INNER JOIN "experiments_pcrs" ON "pcrs".id = "experiments_pcrs".pcr_id WHERE ("experiments_pcrs".experiment_id = 745 ) [0m
+Rendering template within layouts/experiments
+Rendering experiments/show
+Rendered _navigation (2.4ms)
+Completed in 54ms (View: 8, DB: 1) | 200 OK [http://localhost/experiments/745]
+
+
+Processing ExperimentsController#show (for 127.0.0.1 at 2011-03-07 12:25:42) [GET]
+  Parameters: {"action"=>"show", "id"=>"278", "controller"=>"experiments"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-03-07 18:25:43', "perishable_token" = 'tBU2sz6S48um4fiKi8i', "last_request_at" = '2011-03-07 18:25:43' WHERE "id" = 1[0m
+  [4;36;1mExperiment Load (0.4ms)[0m   [0;1mSELECT * FROM "experiments" WHERE ("experiments"."id" = 278) [0m
+  [4;35;1mPcr Load (0.5ms)[0m   [0mSELECT * FROM "pcrs" INNER JOIN "experiments_pcrs" ON "pcrs".id = "experiments_pcrs".pcr_id WHERE ("experiments_pcrs".experiment_id = 278 ) [0m
+  [4;36;1mDnasample Load (0.4ms)[0m   [0;1mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 2 ) [0m
+  [4;35;1mDnasample Load (0.5ms)[0m   [0mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 101 ) [0m
+Rendering template within layouts/experiments
+Rendering experiments/show
+Rendered _navigation (2.5ms)
+Completed in 188ms (View: 8, DB: 2) | 200 OK [http://localhost/experiments/278]
