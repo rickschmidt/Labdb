@@ -2,7 +2,13 @@
 <table border="0" cellspacing="5" cellpadding="5">
 	<tr><td><b>Date: </b><%=h @experiment.date%></td>
 	<td><b>Experiment: </b> <%=h @experiment.experiment_number%></td></tr>
-	<td> PCRS <%= @samples%></td>
+	<td> PCRS <%@pcrs.each do |i|%>
+	PCR	<%=h  i.id%>
+		<%end%>
+		<%@ids.each do |i|%>
+	DNA	<%=h  i.id%>
+		<%end%>
+		</td>
 </table>
 <p>
   <b>Date:</b>
