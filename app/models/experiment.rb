@@ -1,5 +1,6 @@
 class Experiment < ActiveRecord::Base
   has_many :pcrs
+  has_many :dnasamples, :through=>:pcrs
   
 
   def self.search(search)

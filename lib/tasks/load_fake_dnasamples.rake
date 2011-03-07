@@ -22,7 +22,7 @@ dnasample = Dnasample.create(
 :dnasample_number=>rand(100),
 :date=>Date.today+rand(1000),
 :method=>"Extraction",
-:elution_volumne=>rand(10.0),
+:elution_volume=>rand(10.0),
 :second_elute=>Faker::Lorem::words,
 :second_elute_volumne=>rand(10.0),
 :reextracted=>Faker::Lorem::words,
@@ -67,9 +67,22 @@ task :create_pcrs => :environment do
 
 pcr = Pcr.create(
 
-=begin
-  TODO Load in the rest of pcr and then tax, populate test db and update indexes
-=end
+
+:pcr_tube_number=>rand(20),
+:gel_image=>"image",
+:anneal_temp=>rand(10)+90,
+:dna_amount=>rand(50),
+:conditions=>"normal",
+:total_samples=>rand(50),
+:notes=> "notes",
+:reamp=> rand(10),
+:total_worked=> rand(50),
+:denature=>rand(10)+80,
+:extension=>rand(10)+85,
+:cycle=>rand(80),
+:primerh=>(primer 10),
+:primerl=>(primer 10)
+
 )
 
 
@@ -78,5 +91,39 @@ pcr.save false
 end
 end 
 end
+
+namespace :db do 
+desc "create some fake taxonomies" 
+
+task :create_taxonomies => :environment do 
+100.times do
+
+taxonomy = Taxonomy.create(
+
+
+:genus=>Faker::Lorem::name,
+:species=>Faker::Lorem::name,
+:subspecies=>Faker::Lorem::name,
+:new_diagnosis=>Faker::Lorem::name,
+:family=>Faker::Lorem::name,
+:description_pdf=>Faker::Lorem::name,
+:synonyms=>Faker::Lorem::name,
+:type_museum=>Faker::Lorem::name,
+:distribution=>Faker::Lorem::name,
+:ingroup=>Faker::Lorem::name,
+:other_literature=>Faker::Lorem::name,
+:character_diagnosis=>Faker::Lorem::name,
+:description=>Faker::Lorem::name,
+:countries=>Faker::Lorem::name
+
+)
+
+
+taxonomy.save false 
+
+end
+end 
+end
+
 
 

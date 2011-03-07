@@ -1,16 +1,21 @@
-<h1>New dnasample</h1>
+<h1>New DNA Sample</h1>
 
 <% form_for(@dnasample) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :dna_accession %><br />
-    <%= f.text_field :dna_accession %>
-  </p>
-  <p>
-    <%= f.label :dnasample_number %><br />
-    <%= f.text_field :dnasample_number %>
-  </p>
+<table border="0" cellspacing="5" cellpadding="5">
+	<tr><td>	 
+    	<%= f.label :dna_accession, "DNA Accession #" %><br />
+	    <%= f.text_field :dna_accession %></td>
+
+		<td>
+    	<%= f.label :dnasample_number, "DNA Sample #" %><br />
+	    <%= f.text_field :dnasample_number %></td>
+	</tr>
+
+  
+</table>
+ 
   <p>
     <%= f.label :date %><br />
     <%= f.date_select :date %>
