@@ -1,4 +1,5 @@
 class WelcomeController < ApplicationController
+  before_filter :require_user
    helper_method :primer
   layout 'general'
   def index
