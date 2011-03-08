@@ -1,0 +1,121 @@
+--- 
+gene: 
+  :columns: 
+  - id
+  - genbank
+  - locus
+  - primerl
+  - primerh
+  - created_at
+  - updated_at
+  :associations: 
+  - dnasamples
+dnasample: 
+  :columns: 
+  - id
+  - dna_accession
+  - dnasample_number
+  - date
+  - method
+  - elution_volume
+  - second_elute
+  - second_elute_volumne
+  - reextracted
+  - created_by
+  - created_at
+  - updated_at
+  :associations: 
+  - pcrs
+  - experiments
+experiment: 
+  :columns: 
+  - id
+  - date
+  - anneal
+  - dna_amount
+  - total_samples
+  - notes
+  - experiment_number
+  - bsa
+  - buffer
+  - mgcl2
+  - taq
+  - h2o
+  - dntps
+  - dna
+  - primerl_amount
+  - primerh_amount
+  - total
+  - primerl
+  - primerh
+  - created_at
+  - updated_at
+  :associations: 
+  - dnasamples
+  - pcrs
+taxonomy: 
+  :columns: 
+  - id
+  - genus
+  - species
+  - subspecies
+  - new_diagnosis
+  - family
+  - reference
+  - description_pdf
+  - synonyms
+  - type_museum
+  - distribution
+  - ingroup
+  - other_literature
+  - character_diagnosis
+  - description
+  - countries
+  - created_at
+  - updated_at
+  :associations: 
+  - dnasamples
+user: 
+  :columns: 
+  - id
+  - login
+  - email
+  - crypted_password
+  - password_salt
+  - persistence_token
+  - single_access_token
+  - perishable_token
+  - login_count
+  - failed_login_count
+  - last_request_at
+  - current_login_at
+  - last_login_at
+  - current_login_ip
+  - last_login_ip
+  - created_at
+  - updated_at
+  :associations: []
+
+pcr: 
+  :columns: 
+  - id
+  - pcr_tube_number
+  - gel_image
+  - date
+  - anneal_temp
+  - dna_amount
+  - conditions
+  - total_samples
+  - notes
+  - reamp
+  - total_worked
+  - denature
+  - extension
+  - cycle
+  - primerl
+  - primerh
+  - created_at
+  - updated_at
+  :associations: 
+  - dnasamples
+  - experiments
