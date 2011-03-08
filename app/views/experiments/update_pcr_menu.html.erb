@@ -1,0 +1,7 @@
+<select id="pcr_field" name="experiment[pcr]">
+  <%- if @experiment.pcrs.present? -%>  
+    <%= options_from_collection_for_select(@experiment.pcrs, :id, :pcr_tube_name) %>
+  <%- else -%>	
+    <option value=''>There are no cities in the state you selected.</option>
+  <%- end -%>
+</select>

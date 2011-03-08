@@ -21,8 +21,11 @@ class ExperimentsController < ApplicationController
   # GET /experiments/1.xml
   def show
     @ids=Array.new
+    @pcrsAll=Pcr.find(:all)
+    @dnasamples=Dnasample.find(:all)
     @pcrs=Array.new
-    @experiment = Experiment.find(params[:id])
+    @experiments=Experiment.find(:all)
+    @experiment=Experiment.find(params[:id])
     @experiment.pcrs.each do |pcr|
       @pcrs<<pcr
       pcr.dnasamples.each do |dna|
@@ -39,7 +42,7 @@ class ExperimentsController < ApplicationController
   # GET /experiments/new.xml
   def new
     @experiment = Experiment.new
-
+    @pcrsAll=Pcr.find(:all)
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @experiment }
@@ -93,6 +96,34 @@ class ExperimentsController < ApplicationController
       format.html { redirect_to(experiments_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  
+  def updatepcr
+    experiment=Experiment.find(params[:id])
+    pcrs=experiment.pcrs
+    dnasamples=pcrs.dnasamples
+    render :update do |page|
+      page.replace_html 'pcrs', :partial => 'pcrs', :object => pcrs
+      page.replace_html 'dnasamples',   :partial => 'dnasamples',   :object => dnasamples
+    end
+    @pcr = Pcr.find(params[:experiment][:state])
+
+  end
+  
+  def updatednasamples
+    logger.debug "update sample id is #{params[:id]}"
+    pcr=Pcr.find(params[:id])
+    @dnasamples=Array.new
+    pcr.dnasamples.each do |dna|
+      @dnasamples<<dna
+    end
+    dnasamples=pcr.dnasamples
+    logger.debug "dna samples #{@dnasamples}"
+    render :update do |page|
+      page.replace_html 'dnasamples', :partial => 'dnasamples', :object => @dnasamples
+    end
+  
   end
   
   private 
