@@ -1,7 +1,45 @@
+<% form_tag experiment_path do %>
+	<%= select :experiment, :pcrs, Pcr.all.collect { |m| [m.pcr_tube_number, m.id] }.sort, {:prompt=>'Please Select...'} %>
+	<%= observe_field(:pcrs, :url => {:controller=> 'experiments',:action => "updatepcrmenu" },
+                  :update => :pcr_field_div,
+                  :with => :pcrs
+            ) %> 
+	<div id="pcr_field_div"></div>
+        <%= submit_tag 'Submit' %>
 
-<table border="0" cellspacing="5" cellpadding="5">
+<%= javascript_include_tag :defaults %>
+<%= collection_select(nil, :id,  @experiments,  :id, :id,
+                      {:prompt   => "Select a Genre"},
+                      {:onchange => "#{remote_function(:url  => {:action => "updatepcrmenu"},
+                                                       :with => "'id='+value")}"}) %>
+<br/>
+<div id="artists"><%= render :partial => 'pcr', :object => @pcrs %></div>
+<div id="dnasamples"><%= render :partial => 'dnasamples',   :object => @dnasamples %></div>
+<% end %>	
+
 	<tr><td><b>Date: </b><%=h @experiment.date%></td>
 	<td><b>Experiment: </b> <%=h @experiment.experiment_number%></td></tr>
+	</br>
+	
+<table border="0" cellspacing="5" cellpadding="5">	
+	
+	<tr class="custom">
+    <th class ="custom"><%= sortable 'pcr_tube_number'%>   </th>
+    <th class ="custom">   <%= sortable 'dna_sample_number'%></th>
+    <th class ="custom">   <%= sortable 'lprimer'%></th>
+    <th class ="custom">   <%= sortable 'hprimer'%></th>
+</tr>
+
+<% @pcrsAll.each do |pcr| %>
+<% @ids.each do |id| %>
+  <tr class="<%= cycle("even", "odd") %>">
+	<td><%= collection_select(:pcr, :id, @pcrsAll, :id, :pcr_tube_number)%></td>
+	 <td><%=h pcr.pcr_tube_number %></td>
+		 <td><%=h id.id %></td>
+	<%end%>
+		<%end%>
+	</table>
+	
 	<td> PCRS <%@pcrs.each do |i|%>
 	PCR	<%=h  i.id%>
 		<%end%>

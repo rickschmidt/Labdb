@@ -1,0 +1,6 @@
+<%= collection_select(:pcr, :id, @pcrs, :id, :id,
+                     {:prompt   => "Select a PCR"},
+                     {:onchange => "#{remote_function(:url  => {:action => "updatednasamples"},
+                                                      :with => "'id='+value")}"}) %>
+<br/>
+
