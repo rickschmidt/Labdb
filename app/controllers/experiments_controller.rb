@@ -121,7 +121,8 @@ class ExperimentsController < ApplicationController
     dnasamples=pcr.dnasamples
     logger.debug "dna samples #{@dnasamples}"
     render :update do |page|
-      page.replace_html 'dnasamples', :partial => 'dnasamples', :object => @dnasamples
+      page.replace 'dnasamples', :partial => 'dnasamples', :object => @dnasamples
+
     end
   
   end

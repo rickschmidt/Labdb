@@ -13,8 +13,8 @@
                       {:onchange => "#{remote_function(:url  => {:action => "updatepcrmenu"},
                                                        :with => "'id='+value")}"}) %>
 <br/>
-<div id="artists"><%= render :partial => 'pcr', :object => @pcrs %></div>
-<div id="dnasamples"><%= render :partial => 'dnasamples',   :object => @dnasamples %></div>
+
+
 <% end %>	
 
 	<tr><td><b>Date: </b><%=h @experiment.date%></td>
@@ -30,13 +30,16 @@
     <th class ="custom">   <%= sortable 'hprimer'%></th>
 </tr>
 
-<% @pcrsAll.each do |pcr| %>
-<% @ids.each do |id| %>
-  <tr class="<%= cycle("even", "odd") %>">
-	<td><%= collection_select(:pcr, :id, @pcrsAll, :id, :pcr_tube_number)%></td>
-	 <td><%=h pcr.pcr_tube_number %></td>
-		 <td><%=h id.id %></td>
-	<%end%>
+<% @experiments.each do |experiment| %>
+
+ <tr >
+	<td><div id="artists"><%= render :partial => 'pcr', :object => @pcrs %></div>
+<div id="dnasamples"><%= render :partial => 'dnasamples',   :object => @dnasamples %></div>
+
+
+</tr>
+
+
 		<%end%>
 	</table>
 	
