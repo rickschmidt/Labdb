@@ -1,26 +1,27 @@
 <h1>Taxonomy</h1>
+<%= will_paginate @taxonomies %> 
 
 <table>
-  <tr>
-    <th>Genus</th>
-    <th>Species</th>
-    <th>Subspecies</th>
-    <th>New diagnosis</th>
-    <th>Family</th>
-    <th>Reference</th>
-    <th>Description pdf</th>
-    <th>Synonyms</th>
-    <th>Type museum</th>
-    <th>Distribution</th>
-    <th>Ingroup</th>
-    <th>Other literature</th>
-    <th>Character diagnosis</th>
-    <th>Description</th>
-    <th>Countries</th>
+  <tr class="custom">
+    <th class="custom"><%= sortable 'genus'%></th>
+    <th class="custom"><%= sortable 'species'%></th>
+    <th class="custom"><%= sortable 'subspecies'%></th>
+    <th class="custom"><%= sortable 'new_diagnosis'%></th>
+    <th class="custom"><%= sortable 'family'%></th>
+    <th class="custom"><%= sortable 'reference'%></th>
+    <th class="custom"><%= sortable 'description_pdf'%></th>
+    <th class="custom"><%= sortable 'synonyms'%></th>
+    <th class="custom"><%= sortable 'type_museum'%></th>
+    <th class="custom"><%= sortable 'distribution'%></th>
+    <th class="custom"><%= sortable 'ingroup'%></th>
+    <th class="custom"><%= sortable 'other_literature'%></th>
+    <th class="custom"><%= sortable 'character_diagnosis'%></th>
+    <th class="custom"><%= sortable 'description'%></th>
+    <th class="custom"><%= sortable 'countries'%></th>
   </tr>
 
 <% @taxonomies.each do |taxonomy| %>
-  <tr>
+  <tr class="<%= cycle("even", "odd") %>">
     <td><%=h taxonomy.genus %></td>
     <td><%=h taxonomy.species %></td>
     <td><%=h taxonomy.subspecies %></td>
@@ -42,6 +43,9 @@
   </tr>
 <% end %>
 </table>
+<%= will_paginate @taxonomies %> 
+Per Page: <%= select_tag :per_page, options_for_select([10,20,50,100,200], params[:per_page].to_i),
+               :onchange => "if(this.value){window.location='?per_page='+this.value;}" %>
 
 <br />
 

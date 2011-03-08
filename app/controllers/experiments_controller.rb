@@ -24,7 +24,7 @@ class ExperimentsController < ApplicationController
     @pcrsAll=Pcr.find(:all)
     @dnasamples=Dnasample.find(:all)
     @pcrs=Array.new
-    @experiments=Experiment.find(:all)
+    @experiments=Experiment.find(:all, :limit=>15 )
     @experiment=Experiment.find(params[:id])
     @experiment.pcrs.each do |pcr|
       @pcrs<<pcr
@@ -35,6 +35,7 @@ class ExperimentsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @experiment }
+      format.js
     end
   end
 
