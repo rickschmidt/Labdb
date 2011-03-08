@@ -1,6 +1,7 @@
 class TaxonomiesController < ApplicationController
+    before_filter :require_user
     helper_method :sort_column, :sort_direction
-  helper :all
+    helper :all
   # GET /taxonomies
   # GET /taxonomies.xml
   def index
@@ -88,7 +89,7 @@ class TaxonomiesController < ApplicationController
   
    private 
    def sort_column
-       Taxonomy.column_names.include?(params[:sort]) ? params[:sort] : "genus"
+       Taxonomy.column_names.include?(params[:sort]) ? params[:sort] : "id"
      end
 
      def sort_direction
