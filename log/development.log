@@ -78783,3 +78783,37 @@ Rendering template within layouts/taxonomies
 Rendering taxonomies/index
 Rendered _navigation (2.3ms)
 Completed in 356ms (View: 90, DB: 60) | 200 OK [http://localhost/taxonomies]
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTaxonomies (20110126195733)
+Migrating to CreateDnasamples (20110126195743)
+Migrating to CreatePcrs (20110126195750)
+Migrating to CreateGenes (20110126195756)
+Migrating to CreateExperiments (20110126195802)
+Migrating to Jointables (20110126205446)
+Migrating to CreateUsers (20110307022152)
+Migrating to MoreJoins (20110307175326)
+Migrating to Testheroku (20110308222702)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20110308222702')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("dnasamples")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("dnasamples_genes")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("dnasamples_pcrs")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("experiments")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("experiments_pcrs")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("genes")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("pcrs")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("taxonomies")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
