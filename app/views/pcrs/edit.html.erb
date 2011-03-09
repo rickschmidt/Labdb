@@ -3,66 +3,49 @@
 <% form_for(@pcr) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :pcr_tube_number %><br />
-    <%= f.text_field :pcr_tube_number %>
-  </p>
-  <p>
-    <%= f.label :gel_image %><br />
-    <%= f.text_field :gel_image %>
-  </p>
-  <p>
-    <%= f.label :date %><br />
-    <%= f.date_select :date %>
-  </p>
-  <p>
-    <%= f.label :anneal_temp %><br />
-    <%= f.text_field :anneal_temp %>
-  </p>
-  <p>
-    <%= f.label :dna_amount %><br />
-    <%= f.text_field :dna_amount %>
-  </p>
-  <p>
-    <%= f.label :conditions %><br />
-    <%= f.text_field :conditions %>
-  </p>
-  <p>
-    <%= f.label :total_samples %><br />
-    <%= f.text_field :total_samples %>
-  </p>
-  <p>
-    <%= f.label :notes %><br />
-    <%= f.text_field :notes %>
-  </p>
-  <p>
-    <%= f.label :reamp %><br />
-    <%= f.text_field :reamp %>
-  </p>
-  <p>
-    <%= f.label :total_worked %><br />
-    <%= f.text_field :total_worked %>
-  </p>
-  <p>
-    <%= f.label :denature %><br />
-    <%= f.text_field :denature %>
-  </p>
-  <p>
-    <%= f.label :extension %><br />
-    <%= f.text_field :extension %>
-  </p>
-  <p>
-    <%= f.label :cycle %><br />
-    <%= f.text_field :cycle %>
-  </p>
-  <p>
-    <%= f.label :primerl %><br />
-    <%= f.text_field :primerl %>
-  </p>
-  <p>
-    <%= f.label :primerh %><br />
-    <%= f.text_field :primerh %>
-  </p>
+  <table border="0" cellspacing="5" cellpadding="5">
+	<tr><td><%= f.label :date %><br />
+    <%= f.date_select :date %></td></tr>
+	
+	<tr><td>    <%= f.label :pcr_tube_number %><br />
+    <%= f.text_field :pcr_tube_number %></td>
+	<td> <%= f.label :gel_image %><br />
+    <%= f.text_field :gel_image %></td></tr>
+
+	<tr><td>    <%= f.label :anneal_temp %><br />
+    	<%= f.text_field :anneal_temp %></td>
+		<td><%= f.label :dna_amount %><br />
+    <%= f.text_field :dna_amount %></td>
+	</tr>
+	
+	<tr><td>    <%= f.label :conditions %><br />
+    <%= f.text_field :conditions %></td>
+	<td><%= f.label :total_samples %><br />
+    <%= f.text_field :total_samples %></td>
+</tr>
+
+
+	<tr><td> <%= f.label :notes %><br />
+    <%= f.text_field :notes %></td>
+	<td><%= f.label :reamp %><br />
+    <%= f.text_field :reamp %></td>
+	</tr>
+
+	<tr><td>    <%= f.label :total_worked %><br />
+    <%= f.text_field :total_worked %></td>
+	<td><%= f.label :denature %><br />
+    <%= f.text_field :denature %></td>
+</tr>
+	<tr><td><%= f.label :extension %><br />
+    <%= f.text_field :extension %></td>
+	<td>  <%= f.label :cycle %><br />
+    <%= f.text_field :cycle %></td></tr>
+
+<tr><td><%= f.label :primerl %><br />
+    <%= f.text_field :primerl %></td>
+	<td> <%= f.label :primerh %><br />
+    <%= f.text_field :primerh %></td></tr>
+</table>
   <p>
     <%= f.submit 'Update' %>
   </p>
