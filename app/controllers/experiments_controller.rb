@@ -128,6 +128,27 @@ class ExperimentsController < ApplicationController
   
   end
   
+  def genes
+    dnasample=Dnasample.find(params[:id])
+    @gene=Array.new
+    dnasample.genes.each do |gene|
+      @gene<<gene
+      logger.debug "gene is #{gene}"
+    end
+    @gene=@gene[0]
+    @hprimer=@gene.primerh
+
+    render :update do |page|
+      page.replace 'lprimer', :partial => 'genes', :object=>@gene
+      page.replace 'hprimer', :partial=>  'hprimer', :object=>@hprimer  
+    end
+  end
+  
+  def submit
+    
+    
+  end
+    
   private 
    def sort_column
        Experiment.column_names.include?(params[:sort]) ? params[:sort] : "date"
