@@ -31,12 +31,12 @@
 </tr>
 
 <% @experiments.each do |experiment| %>
-
- <tr >
+ 
+ <tr ><span>
 	<td><div id="artists"><%= render :partial => 'pcr', :object => @pcrs %></div></td>
-<td><div id="dnasamples"><%= render :partial => 'dnasamples',   :object => @dnasamples %></div></td>
+<td><div id="dnasamples_<%=h experiment.id %>"><%= render :partial => 'dnasamples',   :object => @dnasamples %></div></td>
 <td><div id="lprimer"><%= render :partial => 'genes',   :object => @gene %></div></td>
-<td><div id="hprimer"><%= render :partial => 'hprimer',   :object => @hrpimer %></div></td>
+<td><div id="hprimer"><%= render :partial => 'hprimer',   :object => @hrpimer %></div></td></span>
 </tr><%end%>
 		</table>
 	
