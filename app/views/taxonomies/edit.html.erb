@@ -2,67 +2,47 @@
 
 <% form_for(@taxonomy) do |f| %>
   <%= f.error_messages %>
+<table border="0" cellspacing="5" cellpadding="5">
+	
+	<tr><td>    <%= f.label :genus %><br />
+    <%= f.text_field :genus %></td>
+<td>   <%= f.label :species %><br />
+    <%= f.text_field :species %></td></tr>
 
-  <p>
-    <%= f.label :genus %><br />
-    <%= f.text_field :genus %>
-  </p>
-  <p>
-    <%= f.label :species %><br />
-    <%= f.text_field :species %>
-  </p>
-  <p>
-    <%= f.label :subspecies %><br />
-    <%= f.text_field :subspecies %>
-  </p>
-  <p>
-    <%= f.label :new_diagnosis %><br />
-    <%= f.text_field :new_diagnosis %>
-  </p>
-  <p>
-    <%= f.label :family %><br />
-    <%= f.text_field :family %>
-  </p>
-  <p>
-    <%= f.label :reference %><br />
-    <%= f.text_field :reference %>
-  </p>
-  <p>
-    <%= f.label :description_pdf %><br />
-    <%= f.text_field :description_pdf %>
-  </p>
-  <p>
-    <%= f.label :synonyms %><br />
-    <%= f.text_field :synonyms %>
-  </p>
-  <p>
-    <%= f.label :type_museum %><br />
-    <%= f.text_field :type_museum %>
-  </p>
-  <p>
-    <%= f.label :distribution %><br />
-    <%= f.text_field :distribution %>
-  </p>
-  <p>
-    <%= f.label :ingroup %><br />
-    <%= f.text_field :ingroup %>
-  </p>
-  <p>
-    <%= f.label :other_literature %><br />
-    <%= f.text_field :other_literature %>
-  </p>
-  <p>
-    <%= f.label :character_diagnosis %><br />
-    <%= f.text_field :character_diagnosis %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </p>
-  <p>
-    <%= f.label :countries %><br />
-    <%= f.text_field :countries %>
-  </p>
+<tr><td>    <%= f.label :subspecies %><br />
+    <%= f.text_field :subspecies %></td>
+<td> <%= f.label :family %><br />
+    <%= f.text_field :family %></td></tr>
+
+<tr><td>    <%= f.label :new_diagnosis %><br />
+    <%= f.text_field :new_diagnosis %></td>
+	<td><%= f.label :reference %><br />
+    <%= f.text_field :reference %></td></tr>
+
+	<tr><td><%= f.label :description_pdf %><br />
+    <%= f.text_field :description_pdf %></td>
+	<td><%= f.label :synonyms %><br />
+    <%= f.text_field :synonyms %></td></tr>
+
+
+<tr><td>    <%= f.label :type_museum %><br />
+    <%= f.text_field :type_museum %></td>
+<td> <%= f.label :distribution %><br />
+    <%= f.text_field :distribution %></td></tr>
+
+<tr><td>  <%= f.label :ingroup %><br />
+    <%= f.text_field :ingroup %></td>
+<td><%= f.label :other_literature %><br />
+    <%= f.text_field :other_literature %></td>
+</tr>
+
+<tr><td> <%= f.label :character_diagnosis %><br />
+    <%= f.text_field :character_diagnosis %></td>
+<td> <%= f.label :description %><br />
+    <%= f.text_field :description %></td></tr>
+
+<tr><td>  <%= f.label :countries %><br />
+    <%= f.text_field :countries %></td></tr>
   <p>
     <%= f.submit 'Update' %>
   </p>

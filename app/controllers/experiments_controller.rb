@@ -106,13 +106,20 @@ class ExperimentsController < ApplicationController
     dnasamples=pcrs.dnasamples
     render :update do |page|
       page.replace_html 'pcrs', :partial => 'pcrs', :object => pcrs
-      page.replace_html 'dnasamples',   :partial => 'dnasamples',   :object => dnasamples
     end
+    pcr=Pcr.find(params[:id])
+    logger.debug "PCR PCR, #{pcr}"
+    @dnasamples=Array.new
+    pcr.dnasamples.each do |dna|
+      @dnasamples<<dna
+    end
+#    render :partial => 'dnasamples'
     @pcr = Pcr.find(params[:experiment][:state])
 
   end
   
   def updatednasamples
+    experiment=Experiment.find(278)
     logger.debug "update sample id is #{params[:id]}"
     pcr=Pcr.find(params[:id])
     @dnasamples=Array.new
@@ -122,7 +129,7 @@ class ExperimentsController < ApplicationController
     dnasamples=pcr.dnasamples
     logger.debug "dna samples #{@dnasamples}"
     render :update do |page|
-      page.replace 'dnasamples', :partial => 'dnasamples', :object => @dnasamples
+      page.replace "dnasamples_#{experiment.id}", :partial => 'dnasamples', :object => @dnasamples
 
     end
   
