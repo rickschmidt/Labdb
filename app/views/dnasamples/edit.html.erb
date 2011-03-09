@@ -3,42 +3,42 @@
 <% form_for(@dnasample) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :dna_accession %><br />
-    <%= f.text_field :dna_accession %>
-  </p>
-  <p>
-    <%= f.label :dnasample_number %><br />
-    <%= f.text_field :dnasample_number %>
-  </p>
-  <p>
-    <%= f.label :date %><br />
-    <%= f.date_select :date %>
-  </p>
-  <p>
-    <%= f.label :method %><br />
+<table border="0" cellspacing="5" cellpadding="5">
+	<tr><td><%= f.label :date%><br/>
+			<%= f.date_select :date%></td>
+			</tr>
+	<tr><td>	 
+    	<%= f.label :dna_accession, "DNA Accession #" %><br />
+	    <%= f.text_field :dna_accession %></td>
+
+		<td>
+    	<%= f.label :dnasample_number, "DNA Sample #" %><br />
+	    <%= f.text_field :dnasample_number %></td>
+	</tr>
+
+
+
+<tr><td>
+	 <%= f.label :method %><br />
     <%= f.text_field :method %>
-  </p>
-  <p>
-    <%= f.label :elution_volume %><br />
-    <%= f.text_field :elution_volume %>
-  </p>
-  <p>
-    <%= f.label :second_elute %><br />
-    <%= f.text_field :second_elute %>
-  </p>
-  <p>
-    <%= f.label :second_elute_volumne %><br />
-    <%= f.text_field :second_elute_volumne %>
-  </p>
-  <p>
-    <%= f.label :reextracted %><br />
-    <%= f.text_field :reextracted %>
-  </p>
-  <p>
-    <%= f.label :created_by %><br />
-    <%= f.text_field :created_by %>
-  </p>
+</td><td> <%= f.label :elution_volume %><br />
+    <%= f.text_field :elution_volume %></td></tr>
+
+
+	<tr><td><%= f.label :second_elute %><br />
+    <%= f.text_field :second_elute %></td>
+
+	<td> <%= f.label :second_elute_volumne %><br />
+    <%= f.text_field :second_elute_volumne %></td></tr>
+
+
+	<tr><td><%= f.label :reextracted %><br />
+    <%= f.text_field :reextracted %></td>
+
+</tr>
+
+
+</table>
   <p>
     <%= f.submit 'Update' %>
   </p>

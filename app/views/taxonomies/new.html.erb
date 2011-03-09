@@ -2,30 +2,31 @@
 
 <% form_for(@taxonomy) do |f| %>
   <%= f.error_messages %>
+<table border="0" cellspacing="5" cellpadding="5">
+	
+	<tr><td>    <%= f.label :genus %><br />
+    <%= f.text_field :genus %></td>
+<td>   <%= f.label :species %><br />
+    <%= f.text_field :species %></td></tr>
+
+<tr><td>    <%= f.label :subspecies %><br />
+    <%= f.text_field :subspecies %></td>
+<td> <%= f.label :family %><br />
+    <%= f.text_field :family %></td></tr>
+
+<tr><td>    <%= f.label :new_diagnosis %><br />
+    <%= f.text_field :new_diagnosis %></td>
+	<td><%= f.label :reference %><br />
+    <%= f.text_field :reference %></td></tr>
+
+
+  </p>
+  <p>
+
+  </p>
 
   <p>
-    <%= f.label :genus %><br />
-    <%= f.text_field :genus %>
-  </p>
-  <p>
-    <%= f.label :species %><br />
-    <%= f.text_field :species %>
-  </p>
-  <p>
-    <%= f.label :subspecies %><br />
-    <%= f.text_field :subspecies %>
-  </p>
-  <p>
-    <%= f.label :new_diagnosis %><br />
-    <%= f.text_field :new_diagnosis %>
-  </p>
-  <p>
-    <%= f.label :family %><br />
-    <%= f.text_field :family %>
-  </p>
-  <p>
-    <%= f.label :reference %><br />
-    <%= f.text_field :reference %>
+    
   </p>
   <p>
     <%= f.label :description_pdf %><br />

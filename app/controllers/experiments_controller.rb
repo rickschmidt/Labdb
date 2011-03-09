@@ -136,7 +136,9 @@ class ExperimentsController < ApplicationController
       logger.debug "gene is #{gene}"
     end
     @gene=@gene[0]
-    @hprimer=@gene.primerh
+    if @gene
+      @hprimer=@gene.primerh
+    end
 
     render :update do |page|
       page.replace 'lprimer', :partial => 'genes', :object=>@gene
