@@ -9,7 +9,10 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :taxonomies
   
+  map.resources :primers
+  
   map.resource :user_session
+  
   #map.root :controller => "user_sessions", :action => "new"   
   map.resource :account, :controller => "users"
   map.resources :users
