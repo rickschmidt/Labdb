@@ -1,0 +1,15 @@
+<h1>Primers</h1>
+<table>
+	<tr>
+		<th>Primer H</th>
+		<th>Primer L</th>
+	</tr>
+	
+	
+	<%@primers.each do |primer| %>
+	<tr>
+		<td><%=h primer.primerh %></td>
+		<td><%=h primer.primerl %></td>
+	</tr>
+	<%end%>
+</table>

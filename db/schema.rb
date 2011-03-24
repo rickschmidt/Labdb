@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110308222702) do
+ActiveRecord::Schema.define(:version => 20110316194033) do
 
   create_table "dnasamples", :force => true do |t|
     t.string   "dna_accession"
@@ -94,6 +94,13 @@ ActiveRecord::Schema.define(:version => 20110308222702) do
     t.float    "cycle"
     t.string   "primerl"
     t.string   "primerh"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "primers", :force => true do |t|
+    t.string   "primerh"
+    t.string   "primerl"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
