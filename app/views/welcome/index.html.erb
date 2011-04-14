@@ -1,6 +1,7 @@
 <h1>Welcome</h1>
 
-The most recently changed experiment is 
+The most recently changed experiment is ...Testing cap
+
 <% if !@experiments.blank? %>
 <% @experiments.each do |experiment| %>
   <br/>
@@ -16,3 +17,4 @@ The most recently changed experiment is
   <%= link_to "My Account", account_path %> |
   <%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
 <% end %>
+
