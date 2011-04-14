@@ -1,5 +1,5 @@
 set :application, "reddylab.etl.luc.edu"
-set :repository,  "git@github.com:rschmidt06/biodb.git"
+set :repository,  "/home/admin/github/biodb"
 
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
