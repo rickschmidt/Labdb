@@ -10,6 +10,9 @@
 	<tr>
 		<td><%=h primer.primerh %></td>
 		<td><%=h primer.primerl %></td>
+		<td><%=h link_to "Show", primer %></td>
+		<td><%=h link_to "Edit", edit_primer_path(primer) %></td>
 	</tr>
 	<%end%>
 </table>
+<%=h link_to "Create new", new_primer_path%>

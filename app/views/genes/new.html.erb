@@ -19,6 +19,13 @@
     <%= f.label :primerh %><br />
     <%= f.text_field :primerh %>
   </p>
+<p>
+	
+	<%= select('gene','primerh',Primer.all.collect {|p| [ p.id, p.primerh] }, {:prompt => 'Select Primer'})%>
+<%@primers.each do |primer| %>
+<p><%= primer.primerh %></p>
+<%end %>
+</p>
   <p>
     <%= f.submit 'Create' %>
   </p>

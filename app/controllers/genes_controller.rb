@@ -25,6 +25,7 @@ class GenesController < ApplicationController
   # GET /genes/new.xml
   def new
     @gene = Gene.new
+    @primers=Primer.find(:all)
 
     respond_to do |format|
       format.html # new.html.erb
