@@ -1,5 +1,20 @@
 <h1>New gene</h1>
 
+
+
+ 
+
+
+	<p>Create a new user with this form.</p>
+	<button id="toggleButton">New Primer</button>
+  	<div id="toggleSection">
+			<%=render :partial => 'primerh.html.erb'%>
+	
+  	</div>
+	<button id="toggleButton2">add more his</button>
+<div id='newpair'>			<%=render :partial => 'primerh.html.erb'%>	</div>
+<div class="target2">
+	<button >alert</button></div>
 <% form_for(@gene) do |f| %>
   <%= f.error_messages %>
 
@@ -11,17 +26,21 @@
     <%= f.label :locus %><br />
     <%= f.text_field :locus %>
   </p>
-  <p>
-    <%= f.label :primerl %><br />
-    <%= f.text_field :primerl %>
-  </p>
-  <p>
-    <%= f.label :primerh %><br />
-    <%= f.text_field :primerh %>
-  </p>
+  <!-- <p>
+     <%= f.label :primerl %><br />
+     <%= f.text_field :primerl %>
+   </p>
+   <p>
+     <%= f.label :primerh %><br />
+     <%= f.text_field :primerh %>
+   </p> -->
 <p>
-	
-	<%= select('gene','primerh',Primer.all.collect {|p| [ p.id, p.primerh] }, {:prompt => 'Select Primer'})%>
+	<div class="target2">
+	<%= select('gene','primer',Primer.all.collect {|p| [ p.id, p.id] }, {:prompt => 'Select Primer'})%>
+
+			</div>
+
+
 <%@primers.each do |primer| %>
 <p><%= primer.primerh %></p>
 <%end %>

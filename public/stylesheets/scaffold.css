@@ -14,36 +14,40 @@
   text-decoration:none;
 }
 #navlist{left:120px;position:relative;}
-#navlist li{margin:0;padding:0;list-style:none;position:absolute;top:0;}
-#navlist li, #navlist a{height:44px;display:block;}
+#navlist li{margin:0;padding:0;list-style:none;position:absolute;top:10;}
+#navlist li, #navlist a{height:45px;display:block;}
 
-#welcome{left:0px;width:110px;}
+#welcome{left:10px;width:95px;}
 #welcome{background:url('/images/banner.png') 0px 0;}
 #welcome a:hover{background: url('/images/banner.png') 0px -45px;}
 
-#experiments{left:110px;width:110px;}
-#experiments{background:url('/images/banner.png')  -110px 0px;}
-#experiments a:hover{background: url('/images/banner.png') -110px -45px;}
+#experiments{left:105px;width:112.649px;}
+#experiments{background:url('/images/banner.png')  -105px 0px;}
+#experiments a:hover{background: url('/images/banner.png') -105.649px -45px;}
 
-#dna{left:220px;width:105px;}
-#dna{background:url('/images/banner.png')  -220px 0px;}
-#dna a:hover{background: url('/images/banner.png') -220px -45px;}
+#dna{left:217.649px;width:112px;}
+#dna{background:url('/images/banner.png')  -217.649px 0px;}
+#dna a:hover{background: url('/images/banner.png') -217.649px -45px;}
            
-#gene{left:325px;width:75px;}
-#gene{background:url('/images/banner.png')  -325px 0px;}
-#gene a:hover{background: url('/images/banner.png') -325px -45px;}
+#gene{left:330.3px;width:75px;}
+#gene{background:url('/images/banner.png')  -330.3px 0px;}
+#gene a:hover{background: url('/images/banner.png') -330.3px -45px;}
 
-#pcr{left:400px;width:40px;}
-#pcr{background:url('/images/banner.png')  -400px 0px;}
-#pcr a:hover{background: url('/images/banner.png') -400px -45px;}
+#pcr{left:406px;width:75px;}
+#pcr{background:url('/images/banner.png')  -406px 0px;}
+#pcr a:hover{background: url('/images/banner.png') -406px -45px;}
 
-#taxonomy{left:440px;width:100px;}
-#taxonomy{background:url('/images/banner.png')  -440px 0px;}
-#taxonomy a:hover{background: url('/images/banner.png') -440px -45px;}
+#taxonomy{left:481px;width:100px;}
+#taxonomy{background:url('/images/banner.png')  -481px 0px;}
+#taxonomy a:hover{background: url('/images/banner.png') -481px -45px;}
 
-#profile{left:540px;width:100px;}
-#profile{background:url('/images/banner.png')  -540px 0px;}
-#profile a:hover{background: url('/images/banner.png') -540px -45px;}
+#primers{left:576px;width:100px;}
+#primers{background:url('/images/banner.png')  -576px 0px;}
+#primers a:hover{background: url('/images/banner.png') -576px -45px;}
+
+#profile{left:652px;width:100px;}
+#profile{background:url('/images/banner.png')  -652px 0px;}
+#profile a:hover{background: url('/images/banner.png') -652px -45px;}
 
 
 body { background-color: #fff; 

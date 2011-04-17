@@ -26,10 +26,11 @@ class GenesController < ApplicationController
   def new
     @gene = Gene.new
     @primers=Primer.find(:all)
-
+    @primer=Primer.new
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @gene }
+      format.js
     end
   end
 
@@ -81,4 +82,15 @@ class GenesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def getprimerpair
+      @primer=Primer.find(params[:id])
+      @primerh=@primer.primerh
+      @primerl=@primer.primerl
+      logger.debug "HIHIHIHIHIHIHIHIHIHIH"
+      render :update do |page|
+          page.replace "primerh", :object => @primerh
+      end
+
+    end
 end
