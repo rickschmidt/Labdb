@@ -21,11 +21,12 @@
 #welcome{background:url('/images/banner.png') 0px 0;}
 #welcome a:hover{background: url('/images/banner.png') 0px -45px;}
 
+
 #experiments{left:105px;width:112.649px;}
 #experiments{background:url('/images/banner.png')  -105px 0px;}
 #experiments a:hover{background: url('/images/banner.png') -105.649px -45px;}
 
-#dna{left:217.649px;width:112px;}
+#dna{left:217.649px;width:112.649px;}
 #dna{background:url('/images/banner.png')  -217.649px 0px;}
 #dna a:hover{background: url('/images/banner.png') -217.649px -45px;}
            

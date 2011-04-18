@@ -35,10 +35,11 @@
      <%= f.text_field :primerh %>
    </p> -->
 <p>
-	<div class="target2">
+	<select class="target3">
 	<%= select('gene','primer',Primer.all.collect {|p| [ p.id, p.id] }, {:prompt => 'Select Primer'})%>
 
-			</div>
+			</select>
+			<p id='primerh'>testreplace</p>
 
 
 <%@primers.each do |primer| %>
