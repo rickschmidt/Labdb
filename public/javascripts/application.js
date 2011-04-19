@@ -59,8 +59,8 @@ jQuery.ajaxSetup({
 }); 
 
 $(document).ready(function (){  
-  $('.target3').change(function (){
-      dataString = $("select.target3").val();
+  $('select#gene_primer').live('change',function (){
+      dataString = $('select#gene_primer').val();
       alert("hi"+dataString);
   
       // $.post('/genes/getprimerpair', function(dataString){
@@ -70,10 +70,10 @@ $(document).ready(function (){
       $.ajax({
           url: "/genes/getprimerpair",
           type: "POST",
-          dataType: "json",
+          dataType: "html",
           data: {id:dataString},
-          complete: function(){
-              alert("ajax complete");
+          success: function(html,textStatus){
+              $('.primerh').html(html);
 
           }
       });

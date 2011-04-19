@@ -93,7 +93,7 @@ class GenesController < ApplicationController
       # end
       flash[:notice] = "updating" 
       respond_to do |with|
-                    with.js
+                    with.js #{render :layout => false}
                     logger.debug "here"
                 end
 
