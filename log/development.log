@@ -1,0 +1,102 @@
+# Logfile created on Wed Apr 20 12:50:49 -0500 2011  [4;36;1mSQL (7.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTaxonomies (20110126195733)
+Migrating to CreateDnasamples (20110126195743)
+Migrating to CreatePcrs (20110126195750)
+Migrating to CreateGenes (20110126195756)
+Migrating to CreateExperiments (20110126195802)
+Migrating to Jointables (20110126205446)
+Migrating to CreateUsers (20110307022152)
+Migrating to MoreJoins (20110307175326)
+Migrating to Testheroku (20110308222702)
+Migrating to AddPrimerTable (20110316193616)
+Migrating to CreatePrimers (20110316194033)
+Migrating to Addprimtertogenetable (20110414162148)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("dnasamples")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("dnasamples_genes")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("dnasamples_pcrs")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("experiments")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("experiments_pcrs")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("genes")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("pcrs")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("primers")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("taxonomies")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2011-04-20 13:03:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+  [4;36;1mUser Load (14.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-04-20 18:03:06', "perishable_token" = 'YFFa2USV4nCg6x8rbnsd', "last_request_at" = '2011-04-20 18:03:06' WHERE "id" = 1[0m
+  [4;36;1mExperiment Load (40.2ms)[0m   [0;1mSELECT * FROM "experiments" ORDER BY updated_at DESC LIMIT 5[0m
+Rendering template within layouts/general
+Rendering welcome/index
+Rendered _navigation (4.5ms)
+Completed in 421ms (View: 200, DB: 55) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-04-20 13:03:06) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing GenesController#index (for 127.0.0.1 at 2011-04-20 13:05:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"genes"}
+  [4;35;1mGene Load (72.9ms)[0m   [0mSELECT * FROM "genes" [0m
+Rendering template within layouts/genes
+Rendering genes/index
+Rendered _navigation (12.8ms)
+Completed in 696ms (View: 610, DB: 73) | 200 OK [http://localhost/genes]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2011-04-20 13:12:06) [GET]
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-04-20 18:12:07', "perishable_token" = 'PzmsM5hf7Y02qveLfzx', "last_request_at" = '2011-04-20 18:12:07' WHERE "id" = 1[0m
+  [4;36;1mExperiment Load (6.3ms)[0m   [0;1mSELECT * FROM "experiments" ORDER BY updated_at DESC LIMIT 5[0m
+Rendering template within layouts/general
+Rendering welcome/index
+Rendered _navigation (3.0ms)
+Completed in 189ms (View: 12, DB: 7) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-04-20 13:12:07) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
