@@ -61,7 +61,7 @@ jQuery.ajaxSetup({
 $(document).ready(function (){  
   $('select#gene_primer').live('change',function (){
       dataString = $('select#gene_primer').val();
-      alert("hi"+dataString);
+
   
       // $.post('/genes/getprimerpair', function(dataString){
       //                //$.('target3').html(dataString);
@@ -74,6 +74,7 @@ $(document).ready(function (){
           data: {id:dataString},
           success: function(html,textStatus){
               $('.primerh').html(html);
+
 
           }
       });
