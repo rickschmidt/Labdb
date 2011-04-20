@@ -2,7 +2,8 @@ class PrimersController < ApplicationController
 # GET /pcrs
   # GET /pcrs.xml
   def index
-    @primers = Primer.all
+      @search=Primer.search(params[:search])
+    @primers = @search.find(:all)
 
     respond_to do |format|
       format.html # index.html.erb
