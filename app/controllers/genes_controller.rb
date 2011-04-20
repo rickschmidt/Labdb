@@ -87,7 +87,7 @@ class GenesController < ApplicationController
       @primer=Primer.find(params[:id])
       @primerh=@primer.primerh
       @primerl=@primer.primerl
-       logger.debug "HIHIHIHIHIHIHIHIHIHIH"
+
       # render :update do |page|
       #     page.replace "primerh", :object => @primerh
       # end

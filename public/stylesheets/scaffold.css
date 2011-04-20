@@ -179,6 +179,15 @@ font-family: Gill Sans / Gill Sans MT, sans-serif;
 font-family: Gill Sans / Gill Sans MT, sans-serif;
   margin-bottom: 10px;    
 }
+.preview{
+  float:right;  
+  margin-right:50%;
+
+}
+#primersinfo{
+
+    
+}
 
 #shell{
     width:100%;
