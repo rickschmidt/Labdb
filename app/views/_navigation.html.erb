@@ -1,11 +1,13 @@
 
 <%= stylesheet_link_tag 'scaffold' %>
+
 <div id="banner">
 	<%if current_user%>  <%= link_to "Logout", user_session_path, :method => :delete %>
 		<%else%>
   			<%= link_to "Log In", new_user_session_path %>
 		<%end%>
 	</div>	
+
 <div id="header">
 
 
@@ -32,7 +34,8 @@
 		<li id="profile"><%=link_to "", account_path%></li>
 	</ul>
 	
-	
+	<br/>
+		<br/>	
 
 
 
@@ -42,4 +45,5 @@
 
 	<!-- </header> -->
 	
+
 </div>

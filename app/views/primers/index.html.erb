@@ -1,18 +1,29 @@
 <h1>Primers</h1>
-<table>
-	<tr>
-		<th>Primer H</th>
-		<th>Primer L</th>
+<table class="custom">
+	<tr >
+		<th ></th>
+		<th class="custom">Primer H</th>
+		<th class="custom">Primer L</th>
 	</tr>
 	
 	
 	<%@primers.each do |primer| %>
-	<tr>
-		<td><%=h primer.primerh %></td>
-		<td><%=h primer.primerl %></td>
-		<td><%=h link_to "Show", primer %></td>
-		<td><%=h link_to "Edit", edit_primer_path(primer) %></td>
+  <tr class="<%= cycle("even", "odd") %>">
+		<td class="idfield"><%=h primer.id %></td>
+		<td class="primer"><%=h primer.primerh %></td>
+		<td class="primer"><%=h primer.primerl %></td>
+		<td class="idfield" id="blank"><%=h link_to "Show", primer %></td>
+		<td class="idfield" id="blank"><%=h link_to "Edit", edit_primer_path(primer) %></td>
 	</tr>
 	<%end%>
 </table>
+<% form_tag primers_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+	<%=hidden_field_tag :direction, params[:direction]%>
+	<%=hidden_field_tag :sort, params[:sort]%>
+
+<% end %>
 <%=h link_to "Create new", new_primer_path%>
