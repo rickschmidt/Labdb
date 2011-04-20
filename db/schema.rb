@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110316194033) do
+ActiveRecord::Schema.define(:version => 20110414162148) do
 
   create_table "dnasamples", :force => true do |t|
     t.string   "dna_accession"
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(:version => 20110316194033) do
     t.string   "primerh"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "primer"
   end
 
   create_table "pcrs", :force => true do |t|
