@@ -51,7 +51,7 @@ DEPENDENCIES
   faker
   paperclip (~> 2.3)
   prawn
-  rails (~> 2.3.5)
+  rails (~> 2.3.11)
   searchlogic
   sqlite3-ruby
   will_paginate
