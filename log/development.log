@@ -4472,3 +4472,535 @@ Processing GenesController#getprimerpair (for 127.0.0.1 at 2011-04-20 17:24:10) 
 here
 Rendering genes/getprimerpair
 Completed in 12ms (View: 2, DB: 0) | 200 OK [http://localhost/genes/getprimerpair]
+
+
+Processing GenesController#index (for 127.0.0.1 at 2011-04-20 20:02:33) [GET]
+  Parameters: {"action"=>"index", "controller"=>"genes"}
+  [4;35;1mGene Load (30.3ms)[0m   [0mSELECT * FROM "genes" [0m
+Rendering template within layouts/genes
+Rendering genes/index
+Rendered _navigation (343.0ms)
+Completed in 933ms (View: 867, DB: 30) | 200 OK [http://localhost/genes]
+
+
+Processing WelcomeController#faq (for 127.0.0.1 at 2011-04-22 11:26:04) [GET]
+  Parameters: {"action"=>"faq", "controller"=>"welcome"}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 135ms (DB: 0) | 302 Found [http://localhost/welcome/faq]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-04-22 11:26:04) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/general
+Rendering user_sessions/new
+Rendered _navigation (25.7ms)
+Completed in 118ms (View: 94, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-04-22 11:26:04) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2011-04-22 11:26:15) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"admin"}, "action"=>"create", "authenticity_token"=>"MfkqRcffbmP585NcthFf5YK/2Le1p0DNiJAR/O/z0RE=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (18.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'admin') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "login_count" = 18, "current_login_ip" = '127.0.0.1', "updated_at" = '2011-04-22 16:26:15', "perishable_token" = 'qJwrqn4glJtT9BwODjIQ', "last_request_at" = '2011-04-22 16:26:15', "last_login_at" = '2011-04-20 21:38:23', "last_login_ip" = '192.168.1.8', "current_login_at" = '2011-04-22 16:26:15' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/welcome/faq
+Completed in 330ms (DB: 19) | 302 Found [http://localhost/user_session]
+
+
+Processing WelcomeController#faq (for 127.0.0.1 at 2011-04-22 11:26:15) [GET]
+  Parameters: {"action"=>"faq", "controller"=>"welcome"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-04-22 16:26:15', "perishable_token" = 'Ru5LsV16TloMzgOMW1Rw', "last_request_at" = '2011-04-22 16:26:15' WHERE "id" = 1[0m
+
+ActionController::UnknownAction (No action responded to faq. Actions: index and primer):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2011-04-22 11:26:23) [GET]
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-04-22 16:26:23', "perishable_token" = 'EHVtUZumi4J82LrtG4YF', "last_request_at" = '2011-04-22 16:26:23' WHERE "id" = 1[0m
+  [4;36;1mExperiment Load (26.7ms)[0m   [0;1mSELECT * FROM "experiments" ORDER BY updated_at DESC LIMIT 5[0m
+Rendering template within layouts/general
+Rendering welcome/index
+Rendered _navigation (2.5ms)
+Completed in 163ms (View: 31, DB: 27) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-04-22 11:26:24) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-04-22 11:26:26) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-04-22 16:26:26', "perishable_token" = 'YreanUxcJnliwe7XY9zy', "last_request_at" = '2011-04-22 16:26:26' WHERE "id" = 1[0m
+  [4;35;1mExperiment Load (90.3ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (3.7ms)
+Completed in 544ms (View: 230, DB: 91) | 200 OK [http://localhost/experiments]
+
+
+Processing PrimersController#index (for 127.0.0.1 at 2011-04-22 11:26:32) [GET]
+  Parameters: {"action"=>"index", "controller"=>"primers"}
+  [4;36;1mPrimer Load (0.4ms)[0m   [0;1mSELECT * FROM "primers" WHERE (primers.primerl LIKE '%%') [0m
+Rendering template within layouts/primers
+Rendering primers/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-04-22 16:26:32', "perishable_token" = '34nmkxvCiJzyTWzO3V9w', "last_request_at" = '2011-04-22 16:26:32' WHERE "id" = 1[0m
+Rendered _navigation (26.2ms)
+Completed in 117ms (View: 90, DB: 1) | 200 OK [http://localhost/primers]
+
+
+Processing GenesController#index (for 127.0.0.1 at 2011-04-22 11:26:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"genes"}
+  [4;35;1mGene Load (28.4ms)[0m   [0mSELECT * FROM "genes" [0m
+Rendering template within layouts/genes
+Rendering genes/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-04-22 16:26:40', "perishable_token" = '2j25I7F1kFrdLHZxLGwT', "last_request_at" = '2011-04-22 16:26:40' WHERE "id" = 1[0m
+Rendered _navigation (25.7ms)
+Completed in 520ms (View: 467, DB: 29) | 200 OK [http://localhost/genes]
+
+
+Processing GenesController#new (for 127.0.0.1 at 2011-04-22 11:26:44) [GET]
+  Parameters: {"action"=>"new", "controller"=>"genes"}
+  [4;36;1mPrimer Load (0.3ms)[0m   [0;1mSELECT * FROM "primers" [0m
+Rendering template within layouts/genes
+Rendering genes/new
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "primers" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-04-22 16:26:44', "perishable_token" = 'VtFJsPPf9zOm2wF4K0DG', "last_request_at" = '2011-04-22 16:26:44' WHERE "id" = 1[0m
+Rendered _navigation (35.4ms)
+Completed in 174ms (View: 58, DB: 1) | 200 OK [http://localhost/genes/new]
+
+
+Processing GenesController#getprimerpair (for 127.0.0.1 at 2011-04-22 11:27:03) [POST]
+  Parameters: {"action"=>"getprimerpair", "id"=>"1", "controller"=>"genes"}
+  [4;36;1mPrimer Load (0.2ms)[0m   [0;1mSELECT * FROM "primers" WHERE ("primers"."id" = 1) [0m
+here
+Rendering genes/getprimerpair
+Completed in 48ms (View: 17, DB: 0) | 200 OK [http://localhost/genes/getprimerpair]
+
+
+Processing GenesController#getprimerpair (for 127.0.0.1 at 2011-04-22 11:27:06) [POST]
+  Parameters: {"action"=>"getprimerpair", "id"=>"4", "controller"=>"genes"}
+  [4;35;1mPrimer Load (0.2ms)[0m   [0mSELECT * FROM "primers" WHERE ("primers"."id" = 4) [0m
+here
+Rendering genes/getprimerpair
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/genes/getprimerpair]
+
+
+Processing GenesController#getprimerpair (for 127.0.0.1 at 2011-04-22 11:27:08) [POST]
+  Parameters: {"action"=>"getprimerpair", "id"=>"3", "controller"=>"genes"}
+  [4;36;1mPrimer Load (0.2ms)[0m   [0;1mSELECT * FROM "primers" WHERE ("primers"."id" = 3) [0m
+here
+Rendering genes/getprimerpair
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/genes/getprimerpair]
+
+
+Processing GenesController#getprimerpair (for 127.0.0.1 at 2011-04-22 11:27:10) [POST]
+  Parameters: {"action"=>"getprimerpair", "id"=>"2", "controller"=>"genes"}
+  [4;35;1mPrimer Load (0.2ms)[0m   [0mSELECT * FROM "primers" WHERE ("primers"."id" = 2) [0m
+here
+Rendering genes/getprimerpair
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/genes/getprimerpair]
+
+
+Processing GenesController#getprimerpair (for 127.0.0.1 at 2011-04-22 11:27:15) [POST]
+  Parameters: {"action"=>"getprimerpair", "id"=>"1", "controller"=>"genes"}
+  [4;36;1mPrimer Load (0.2ms)[0m   [0;1mSELECT * FROM "primers" WHERE ("primers"."id" = 1) [0m
+here
+Rendering genes/getprimerpair
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/genes/getprimerpair]
+
+
+Processing GenesController#index (for 127.0.0.1 at 2011-04-22 11:27:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"genes"}
+  [4;35;1mGene Load (4.4ms)[0m   [0mSELECT * FROM "genes" [0m
+Rendering template within layouts/genes
+Rendering genes/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-04-22 16:27:17', "perishable_token" = 'umqNKRPaQgG4lgugtc', "last_request_at" = '2011-04-22 16:27:17' WHERE "id" = 1[0m
+Rendered _navigation (143.8ms)
+Completed in 533ms (View: 518, DB: 5) | 200 OK [http://localhost/genes]
+
+
+Processing PrimersController#index (for 127.0.0.1 at 2011-04-22 11:27:24) [GET]
+  Parameters: {"action"=>"index", "controller"=>"primers"}
+  [4;36;1mPrimer Load (0.3ms)[0m   [0;1mSELECT * FROM "primers" WHERE (primers.primerl LIKE '%%') [0m
+Rendering template within layouts/primers
+Rendering primers/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-04-22 16:27:24', "perishable_token" = 'WZrqmCUFyFhUd7DvKeAu', "last_request_at" = '2011-04-22 16:27:24' WHERE "id" = 1[0m
+Rendered _navigation (34.8ms)
+Completed in 49ms (View: 41, DB: 1) | 200 OK [http://localhost/primers]
+
+
+Processing GenesController#index (for 127.0.0.1 at 2011-04-22 11:27:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"genes"}
+  [4;35;1mGene Load (110.9ms)[0m   [0mSELECT * FROM "genes" [0m
+Rendering template within layouts/genes
+Rendering genes/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-04-22 16:27:49', "perishable_token" = 'FlTB2Bjeiws2jkCPk', "last_request_at" = '2011-04-22 16:27:49' WHERE "id" = 1[0m
+Rendered _navigation (35.0ms)
+Completed in 528ms (View: 406, DB: 112) | 200 OK [http://localhost/genes]
+
+
+Processing GenesController#new (for 127.0.0.1 at 2011-04-22 11:27:52) [GET]
+  Parameters: {"action"=>"new", "controller"=>"genes"}
+  [4;36;1mPrimer Load (0.3ms)[0m   [0;1mSELECT * FROM "primers" [0m
+Rendering template within layouts/genes
+Rendering genes/new
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "primers" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-04-22 16:27:52', "perishable_token" = '5jQE5FJvQSpnqRCfbbp', "last_request_at" = '2011-04-22 16:27:52' WHERE "id" = 1[0m
+Rendered _navigation (138.5ms)
+Completed in 153ms (View: 142, DB: 1) | 200 OK [http://localhost/genes/new]
+
+
+Processing GenesController#getprimerpair (for 127.0.0.1 at 2011-04-22 11:27:54) [POST]
+  Parameters: {"action"=>"getprimerpair", "id"=>"3", "controller"=>"genes"}
+  [4;36;1mPrimer Load (0.2ms)[0m   [0;1mSELECT * FROM "primers" WHERE ("primers"."id" = 3) [0m
+here
+Rendering genes/getprimerpair
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/genes/getprimerpair]
+
+
+Processing GenesController#getprimerpair (for 127.0.0.1 at 2011-04-22 11:28:00) [POST]
+  Parameters: {"action"=>"getprimerpair", "id"=>"4", "controller"=>"genes"}
+  [4;35;1mPrimer Load (0.2ms)[0m   [0mSELECT * FROM "primers" WHERE ("primers"."id" = 4) [0m
+here
+Rendering genes/getprimerpair
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/genes/getprimerpair]
+
+
+Processing GenesController#getprimerpair (for 127.0.0.1 at 2011-04-22 11:28:03) [POST]
+  Parameters: {"action"=>"getprimerpair", "id"=>"3", "controller"=>"genes"}
+  [4;36;1mPrimer Load (0.2ms)[0m   [0;1mSELECT * FROM "primers" WHERE ("primers"."id" = 3) [0m
+here
+Rendering genes/getprimerpair
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/genes/getprimerpair]
+
+
+Processing GenesController#getprimerpair (for 127.0.0.1 at 2011-04-22 11:28:10) [POST]
+  Parameters: {"action"=>"getprimerpair", "id"=>"2", "controller"=>"genes"}
+  [4;35;1mPrimer Load (0.2ms)[0m   [0mSELECT * FROM "primers" WHERE ("primers"."id" = 2) [0m
+here
+Rendering genes/getprimerpair
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/genes/getprimerpair]
+
+
+Processing GenesController#getprimerpair (for 127.0.0.1 at 2011-04-22 11:28:20) [POST]
+  Parameters: {"action"=>"getprimerpair", "id"=>"3", "controller"=>"genes"}
+  [4;36;1mPrimer Load (0.2ms)[0m   [0;1mSELECT * FROM "primers" WHERE ("primers"."id" = 3) [0m
+here
+Rendering genes/getprimerpair
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/genes/getprimerpair]
+
+
+Processing GenesController#getprimerpair (for 127.0.0.1 at 2011-04-22 11:28:22) [POST]
+  Parameters: {"action"=>"getprimerpair", "id"=>"4", "controller"=>"genes"}
+  [4;35;1mPrimer Load (0.2ms)[0m   [0mSELECT * FROM "primers" WHERE ("primers"."id" = 4) [0m
+here
+Rendering genes/getprimerpair
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/genes/getprimerpair]
+
+
+Processing GenesController#getprimerpair (for 127.0.0.1 at 2011-04-22 11:28:24) [POST]
+  Parameters: {"action"=>"getprimerpair", "id"=>"5", "controller"=>"genes"}
+  [4;36;1mPrimer Load (0.2ms)[0m   [0;1mSELECT * FROM "primers" WHERE ("primers"."id" = 5) [0m
+here
+Rendering genes/getprimerpair
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/genes/getprimerpair]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-04-22 11:28:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-04-22 16:28:27', "perishable_token" = 'juONmh0m1z98HOUFf49Y', "last_request_at" = '2011-04-22 16:28:27' WHERE "id" = 1[0m
+  [4;35;1mExperiment Load (196.6ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (2.5ms)
+Completed in 506ms (View: 189, DB: 197) | 200 OK [http://localhost/experiments]
+
+
+Processing PrimersController#index (for 127.0.0.1 at 2011-04-22 11:30:10) [GET]
+  Parameters: {"action"=>"index", "controller"=>"primers"}
+  [4;36;1mPrimer Load (0.3ms)[0m   [0;1mSELECT * FROM "primers" WHERE (primers.primerl LIKE '%%') [0m
+Rendering template within layouts/primers
+Rendering primers/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-04-22 16:30:10', "perishable_token" = 'OV20WhmcTXFt7xs6scxC', "last_request_at" = '2011-04-22 16:30:10' WHERE "id" = 1[0m
+Rendered _navigation (659.3ms)
+Completed in 674ms (View: 665, DB: 1) | 200 OK [http://localhost/primers]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-04-22 11:30:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-04-22 16:30:20', "perishable_token" = 'GQVYPfhPAnv5cnve9d5', "last_request_at" = '2011-04-22 16:30:20' WHERE "id" = 1[0m
+  [4;35;1mExperiment Load (92.1ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (2.5ms)
+Completed in 528ms (View: 189, DB: 93) | 200 OK [http://localhost/experiments]
+
+
+Processing PrimersController#index (for 127.0.0.1 at 2011-04-22 11:30:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"primers"}
+  [4;36;1mPrimer Load (0.3ms)[0m   [0;1mSELECT * FROM "primers" WHERE (primers.primerl LIKE '%%') [0m
+Rendering template within layouts/primers
+Rendering primers/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-04-22 16:30:30', "perishable_token" = '4IBJiXmeKKPTJUbYtBH', "last_request_at" = '2011-04-22 16:30:30' WHERE "id" = 1[0m
+Rendered _navigation (37.0ms)
+Completed in 51ms (View: 42, DB: 1) | 200 OK [http://localhost/primers]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-04-22 11:30:32) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-04-22 16:30:32', "perishable_token" = '5w2qQDD5xZ4cxIjX71i', "last_request_at" = '2011-04-22 16:30:32' WHERE "id" = 1[0m
+  [4;35;1mExperiment Load (91.3ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (2.4ms)
+Completed in 524ms (View: 79, DB: 92) | 200 OK [http://localhost/experiments]
+
+
+Processing PrimersController#index (for 127.0.0.1 at 2011-04-22 11:30:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"primers"}
+  [4;36;1mPrimer Load (0.3ms)[0m   [0;1mSELECT * FROM "primers" WHERE (primers.primerl LIKE '%%') [0m
+Rendering template within layouts/primers
+Rendering primers/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-04-22 16:30:39', "perishable_token" = 'sJIjWZzq4OedyY5a8prq', "last_request_at" = '2011-04-22 16:30:39' WHERE "id" = 1[0m
+Rendered _navigation (34.1ms)
+Completed in 48ms (View: 40, DB: 1) | 200 OK [http://localhost/primers]
+
+
+Processing PrimersController#show (for 127.0.0.1 at 2011-04-22 11:32:07) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"primers"}
+  [4;35;1mPrimer Load (0.2ms)[0m   [0mSELECT * FROM "primers" WHERE ("primers"."id" = 1) [0m
+Rendering template within layouts/primers
+Rendering primers/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-04-22 16:32:07', "perishable_token" = 'hD9XtdH7BSP5d4qYe1Rp', "last_request_at" = '2011-04-22 16:32:07' WHERE "id" = 1[0m
+Rendered _navigation (38.3ms)
+Completed in 93ms (View: 85, DB: 1) | 200 OK [http://localhost/primers/1]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2011-05-02 09:23:10) [GET]
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 191ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-05-02 09:23:11) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/general
+Rendering user_sessions/new
+Rendered _navigation (20.1ms)
+Completed in 198ms (View: 173, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-02 09:23:11) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2011-05-02 09:23:14) [GET]
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 23ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-05-02 09:23:14) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/general
+Rendering user_sessions/new
+Rendered _navigation (1.0ms)
+Completed in 152ms (View: 125, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-02 09:23:15) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2011-05-02 09:23:19) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"admin"}, "action"=>"create", "authenticity_token"=>"n4drokR1qdlrf02UP+rSe7CjZkw+SLGQTUjaCVxYRxU=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (27.8ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'admin') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "login_count" = 19, "updated_at" = '2011-05-02 14:23:19', "perishable_token" = 'wdYZ5cCFVGerILYfmtXA', "last_request_at" = '2011-05-02 14:23:19', "last_login_at" = '2011-04-22 16:26:15', "last_login_ip" = '127.0.0.1', "current_login_at" = '2011-05-02 14:23:19' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 318ms (DB: 28) | 302 Found [http://localhost/user_session]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2011-05-02 09:23:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-02 14:23:19', "perishable_token" = '4aVg4wPqvuiaPwwQwnY', "last_request_at" = '2011-05-02 14:23:19' WHERE "id" = 1[0m
+  [4;36;1mExperiment Load (26.7ms)[0m   [0;1mSELECT * FROM "experiments" ORDER BY updated_at DESC LIMIT 5[0m
+Rendering template within layouts/general
+Rendering welcome/index
+Rendered _navigation (2.6ms)
+Completed in 241ms (View: 18, DB: 27) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-02 09:23:19) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-05-02 09:23:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-02 14:23:21', "perishable_token" = 'EzNAotxJ2T8Cnll98MG', "last_request_at" = '2011-05-02 14:23:21' WHERE "id" = 1[0m
+  [4;35;1mExperiment Load (201.8ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (2.9ms)
+Completed in 561ms (View: 234, DB: 203) | 200 OK [http://localhost/experiments]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-05-02 09:23:23) [GET]
+  Parameters: {"action"=>"index", "controller"=>"dnasamples"}
+  [4;36;1mDnasample Load (6.1ms)[0m   [0;1mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-02 14:23:23', "perishable_token" = 'CTADr0l52tjwipqFYDb6', "last_request_at" = '2011-05-02 14:23:23' WHERE "id" = 1[0m
+Rendered _navigation (155.5ms)
+Completed in 365ms (View: 328, DB: 7) | 200 OK [http://localhost/dnasamples]
+
+
+Processing GenesController#index (for 127.0.0.1 at 2011-05-02 09:23:24) [GET]
+  Parameters: {"action"=>"index", "controller"=>"genes"}
+  [4;35;1mGene Load (5.1ms)[0m   [0mSELECT * FROM "genes" [0m
+Rendering template within layouts/genes
+Rendering genes/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-02 14:23:24', "perishable_token" = 'AvxOU7cfXd9IgxN3JIzJ', "last_request_at" = '2011-05-02 14:23:24' WHERE "id" = 1[0m
+Rendered _navigation (102.4ms)
+Completed in 642ms (View: 611, DB: 6) | 200 OK [http://localhost/genes]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2011-05-02 09:23:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-02 14:23:25', "perishable_token" = 'ITt0BxJYYyfkVWRB674T', "last_request_at" = '2011-05-02 14:23:25' WHERE "id" = 1[0m
+  [4;36;1mExperiment Load (6.9ms)[0m   [0;1mSELECT * FROM "experiments" ORDER BY updated_at DESC LIMIT 5[0m
+Rendering template within layouts/general
+Rendering welcome/index
+Rendered _navigation (2.4ms)
+Completed in 58ms (View: 12, DB: 8) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-02 09:23:25) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-02 09:23:26) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-02 14:23:27', "perishable_token" = 'i7ilwuP7HkaCFCimsk1', "last_request_at" = '2011-05-02 14:23:27' WHERE "id" = 1[0m
+  [4;35;1mTaxonomy Load (66.2ms)[0m   [0mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (3.1ms)
+Completed in 580ms (View: 247, DB: 67) | 200 OK [http://localhost/taxonomies]
