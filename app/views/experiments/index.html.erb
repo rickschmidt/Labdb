@@ -1,4 +1,4 @@
-<h1>Listing Experiments</h1>
+<h1>Experiments</h1>
 <% form_tag experiments_path, :method => 'get' do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
@@ -12,30 +12,36 @@
 
 
 </p>
+<%= button_to 'New experiment', {:action=>"new"}, {:class=>'newButton'} %>
 <%= will_paginate @experiments %> 
 Per Page: <%= select_tag :per_page, options_for_select([10,20,50,100,200], params[:per_page].to_i),
                :onchange => "if(this.value){window.location='?per_page='+this.value;}" %>
 
-<table cellspacing="1" cellpadding="5px" table-layout="fixed">
+<table class="custom">
   <tr class="custom">
-    <th class ="custom"><%= sortable 'experiment_number'%>   </th>
+    <th class="custom" ><%=h sortable 'id', '#'%></th>
     <th class ="custom"><%= sortable 'date'%></th>
     <th class ="custom"><%= sortable 'total_samples'%>   </th>
     <th class ="custom"><%= sortable 'updated_at'%>   </th>
+	<th stlye=></th>
+
   </tr>                
 
 <% @experiments.each do |experiment| %>
   <tr class="<%= cycle("even", "odd") %>">
-    <td><%=h link_to(experiment.experiment_number, "/experiments/#{experiment.id}") %></td>
+    <td class='idfield'><%=h experiment.id %></td>
     <td><%=h experiment.date %></td>
     <td><%=h experiment.total_samples %></td>
     <td><%=h experiment.updated_at %></td>
- 	<td style=background:white><%= link_to 'Delete', experiment, :confirm => 'Are you sure?', :method => :delete %></td>
+ 	<td class="icons"><%= link_to image_tag("show.png", :border=>0), experiment%></td>
+ 	<td class="icons"><%= link_to image_tag("edit.png", :border=>0), experiment%></td>
+ 	<td class="icons"><%= link_to image_tag("delete.png", :border=>0), experiment, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New experiment', new_experiment_path %>
+
+
 
