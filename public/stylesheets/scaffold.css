@@ -2,6 +2,9 @@
 	width:1000px;
 	margin: 0 auto 0 auto;
 }
+#content{
+    margin-left:100px;
+}
 #banner{
  right:300px;position:relative;
 
@@ -128,7 +131,33 @@ th.custom{
     font-size:16px;
     font-family:Futura,sans-serif;
     background-color:#00598F;
-    color: #fff
+    color: #fff;
+}
+th.custom a{
+
+    height:25px;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-weight:400;
+    letter-spacing:1px;
+    font-size:16px;
+    font-family:Futura,sans-serif;
+    background-color:#00598F;
+    color: #fff;
+    text-decoration:none;
+}
+th.custom a:hover{
+
+    height:25px;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-weight:400;
+    letter-spacing:1px;
+    font-size:16px;
+    font-family:Futura,sans-serif;
+    background-color:#00598F;
+    color: #A7F0DE;
+    text-decoration:none;
 }
 
 tr.even {
@@ -151,6 +180,14 @@ td{
     padding-left:20px;
     height:20px;
 }
+td.icons {
+    padding:5px;
+    background-color:white;
+}
+td.icons:hover {
+    background-color:none;
+
+}
 td.idfield{
     color:white;
     background-color:#00598F;
@@ -160,6 +197,10 @@ td.idfield#blank{
     background-color:white;
         padding-right:5px;
     padding-left:5px;
+}
+td.idfield#icons{
+    background-color:white;
+    width:15px;
 }
 td.primer{
     font-weight:bolder;
@@ -195,3 +236,4 @@ font-family: Gill Sans / Gill Sans MT, sans-serif;
     background-color:#999;
 	margin: 0 0 0 auto;
 }
+
