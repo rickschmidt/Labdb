@@ -11,7 +11,9 @@
 </head>
 <body>
 <div id="wrapper">
+	
 <%=render :partial => '/navigation'%>
+	<div id="content">
 	<% if flash[:notice]%>
 
 <p style="color: green"><%= flash[:notice] %></p>
@@ -21,7 +23,7 @@
 	<%end%>
 <%= yield %>
 
-
+</div>
 </div>
 </body>
 </html>
