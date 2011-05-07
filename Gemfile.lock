@@ -17,6 +17,7 @@ GEM
     faker (0.9.5)
       i18n (~> 0.4)
     i18n (0.5.0)
+    json (1.5.1)
     paperclip (2.3.11)
       activerecord (>= 2.3.0)
       activesupport (>= 2.3.2)
@@ -49,6 +50,7 @@ PLATFORMS
 DEPENDENCIES
   authlogic
   faker
+  json
   paperclip (~> 2.3)
   prawn
   rails (~> 2.3.11)

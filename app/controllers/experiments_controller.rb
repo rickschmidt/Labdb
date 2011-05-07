@@ -59,7 +59,12 @@ class ExperimentsController < ApplicationController
   # POST /experiments.xml
   def create
     @experiment = Experiment.new(params[:experiment])
-
+    logger.debug "gene primer is #{params[:gene][:primer]}"
+    if params[:gene][:primer]!=""
+        @primer=Primer.find(params[:gene][:primer])
+        @experiment.primerh=@primer.primerh
+        @experiment.primerl=@primer.primerl
+    end
     respond_to do |format|
       if @experiment.save
         format.html { redirect_to(@experiment, :notice => 'Experiment was successfully created.') }
