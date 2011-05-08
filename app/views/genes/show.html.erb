@@ -17,12 +17,6 @@
   <b>Primerh:</b>
   <%=h @gene.primerh %>
 </p>
-<p>
-  <b>Primer:</b>
-	<%@p=Primer.find(@gene.primer)%>
-  <%=h @p.primerh %>
-  <%=h @p.primerl %>
-</p>
 
 <%= link_to 'Edit', edit_gene_path(@gene) %> |
 <%= link_to 'Back', genes_path %>

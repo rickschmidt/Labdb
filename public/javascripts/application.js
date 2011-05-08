@@ -75,7 +75,7 @@ $(document).ready(function (){
           success: function(json,textStatus){
               
               var obj = jQuery.parseJSON(json);
-                alert( obj.primerh );
+
               
               $('.primerh').html(obj.primerh);
             $('.primerl').html(obj.primerl);

@@ -34,7 +34,7 @@ Per Page: <%= select_tag :per_page, options_for_select([10,20,50,100,200], param
     <td><%=h experiment.total_samples %></td>
     <td><%=h experiment.updated_at %></td>
  	<td class="icons"><%= link_to image_tag("show.png", :border=>0), experiment%></td>
- 	<td class="icons"><%= link_to image_tag("edit.png", :border=>0), experiment%></td>
+ 	<td class="icons"><%= link_to image_tag("edit.png", :border=>0), edit_experiment_path(experiment)%></td>
  	<td class="icons"><%= link_to image_tag("delete.png", :border=>0), experiment, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>

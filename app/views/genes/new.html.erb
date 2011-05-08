@@ -1,3 +1,21 @@
+<h1>Create a new Gene</h1>
+<% form_for(@gene) do |f| %>
+  <%= f.error_messages %>
 
-<%=render :partial => '/primerselect'%>
+  <p>
+    <%= f.label :genbank %><br />
+    <%= f.text_field :genbank %>
+  </p>
+  <p>
+    <%= f.label :locus %><br />
+    <%= f.text_field :locus %>
+  </p>
+<p>
+	<%=render :partial => '/primerselect'%>
+</p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
 <%= link_to 'Back', genes_path %>

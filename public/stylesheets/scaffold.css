@@ -133,6 +133,9 @@ th.custom{
     background-color:#00598F;
     color: #fff;
 }
+th.custom#small{
+    font-size:13px;
+}
 th.custom a{
 
     height:25px;
@@ -140,7 +143,7 @@ th.custom a{
     padding-left: 20px;
     font-weight:400;
     letter-spacing:1px;
-    font-size:16px;
+
     font-family:Futura,sans-serif;
     background-color:#00598F;
     color: #fff;
@@ -153,7 +156,7 @@ th.custom a:hover{
     padding-left: 20px;
     font-weight:400;
     letter-spacing:1px;
-    font-size:16px;
+
     font-family:Futura,sans-serif;
     background-color:#00598F;
     color: #A7F0DE;

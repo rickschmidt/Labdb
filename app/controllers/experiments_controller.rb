@@ -59,7 +59,7 @@ class ExperimentsController < ApplicationController
   # POST /experiments.xml
   def create
     @experiment = Experiment.new(params[:experiment])
-    logger.debug "gene primer is #{params[:gene][:primer]}"
+    
     if params[:gene][:primer]!=""
         @primer=Primer.find(params[:gene][:primer])
         @experiment.primerh=@primer.primerh
@@ -80,6 +80,11 @@ class ExperimentsController < ApplicationController
   # PUT /experiments/1.xml
   def update
     @experiment = Experiment.find(params[:id])
+     if params[:gene][:primer]!=""
+        @primer=Primer.find(params[:gene][:primer])
+        @experiment.primerh=@primer.primerh
+        @experiment.primerl=@primer.primerl
+    end
 
     respond_to do |format|
       if @experiment.update_attributes(params[:experiment])

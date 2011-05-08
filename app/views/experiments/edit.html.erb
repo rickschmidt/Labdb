@@ -79,29 +79,45 @@
 			</td>
 		</tr>
 
+
+	</table>
+
+	<%= select('gene','primer',Primer.all.collect {|p| [ p.id, p.id] }, {:prompt => 'Select Primer'})%> Select a Primer by its ID in the <%= link_to "Primers", primers_path %> table.
+
+
+			
+<div class="preview">
+	<div id="primersinfo">
+					
+	<table  width="500px">
+		<th width="105px">Primer </th>
+		<th align="left">Sequence</th>
+		<th align="right">Amount</th>
+	
 		<tr>
 			<td>
-				  <%= f.label :primerl %><br/>
-			    <%= f.text_field :primerl %>
+				Primer H:
 			</td>
 			<td>
-				<%= f.label :primerl_amount %><br/>
-			    <%= f.text_field :primerl_amount %>
+				<div class='primerh'/>
+			</td>
+			<td align="right">
+				<%= f.text_field :primerh_amount, :size=>"10px" %>
 			</td>
 		</tr>
 		
 		<tr>
 			<td>
-				<%= f.label :primerh %><br/>
-			    <%= f.text_field :primerh %>
+				Primer L: 
 			</td>
-			<td>
-			    <%= f.label :primerh_amount %><br/>
-			    <%= f.text_field :primerh_amount %>
+			<td>	
+				<div class='primerl'/>
+			</td>
+			<td align="right">
+				<%= f.text_field :primerl_amount, :size=>"10px" %>
 			</td>
 		</tr>
 	</table>
-	
 	<table border="0" cellspacing="5" cellpadding="5">
 		<tr>
 			<td>

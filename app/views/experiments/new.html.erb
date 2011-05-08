@@ -92,6 +92,7 @@
 	<table  width="500px">
 		<th width="105px">Primer </th>
 		<th align="left">Sequence</th>
+		<th align="right">Amount</th>
 	
 		<tr>
 			<td>
@@ -99,6 +100,9 @@
 			</td>
 			<td>
 				<div class='primerh'/>
+			</td>
+			<td align="right">
+				<%= f.text_field :primerh_amount, :size=>"10px" %>
 			</td>
 		</tr>
 		
@@ -108,6 +112,9 @@
 			</td>
 			<td>	
 				<div class='primerl'/>
+			</td>
+			<td align="right">
+				<%= f.text_field :primerl_amount, :size=>"10px" %>
 			</td>
 		</tr>
 	</table>
