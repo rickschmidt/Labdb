@@ -11,15 +11,9 @@
     <%= f.label :locus %><br />
     <%= f.text_field :locus %>
   </p>
-	<%= select('gene','primer',Primer.all.collect {|p| [ p.id, p.id] }, {:prompt => 'Select Primer'})%>
-  <!-- <p>
-      <%= f.label :primerl %><br />
-      <%= f.text_field :primerl %>
-    </p>
-    <p>
-      <%= f.label :primerh %><br />
-      <%= f.text_field :primerh %>
-    </p> -->
+<p>
+	<%=render :partial => '/primerselect'%>
+</p>
   <p>
     <%= f.submit 'Update' %>
   </p>

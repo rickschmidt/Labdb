@@ -43,7 +43,12 @@ class GenesController < ApplicationController
   # POST /genes.xml
   def create
     @gene = Gene.new(params[:gene])
-
+    
+      if params[:gene][:primer]!=""
+        @primer=Primer.find(params[:gene][:primer])
+        @gene.primerh=@primer.primerh
+        @gene.primerl=@primer.primerl
+    end
     respond_to do |format|
       if @gene.save
         format.html { redirect_to(@gene, :notice => 'Gene was successfully created.') }
@@ -60,6 +65,11 @@ class GenesController < ApplicationController
   def update
     @gene = Gene.find(params[:id])
 
+      if params[:gene][:primer]!=""
+        @primer=Primer.find(params[:gene][:primer])
+        @gene.primerh=@primer.primerh
+        @gene.primerl=@primer.primerl
+    end
     respond_to do |format|
       if @gene.update_attributes(params[:gene])
         format.html { redirect_to(@gene, :notice => 'Gene was successfully updated.') }

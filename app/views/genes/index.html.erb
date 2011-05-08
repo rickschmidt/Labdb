@@ -1,22 +1,23 @@
 <h1>Genes</h1>
 
-<table>
+<table class="custom">
   <tr>
-    <th>Genbank</th>
-    <th>Locus</th>
-    <th>Primerl</th>
-    <th>Primerh</th>
+    <th class="custom">Genbank</th>
+    <th class="custom">Locus</th>
+    <th class="custom">Primerl</th>
+    <th class="custom">Primerh</th>
   </tr>
 
 <% @genes.each do |gene| %>
-  <tr>
+<tr class="<%= cycle("even", "odd") %>">
     <td><%=h gene.genbank %></td>
     <td><%=h gene.locus %></td>
     <td><%=h gene.primerl %></td>
     <td><%=h gene.primerh %></td>
-    <td><%= link_to 'Show', gene %></td>
-    <td><%= link_to 'Edit', edit_gene_path(gene) %></td>
-    <td><%= link_to 'Destroy', gene, :confirm => 'Are you sure?', :method => :delete %></td>
+	<td class="icons"><%= link_to image_tag("show.png", :border=>0), gene%></td>
+ 	<td class="icons"><%= link_to image_tag("edit.png", :border=>0), edit_gene_path(gene)%></td>
+ 	<td class="icons"><%= link_to image_tag("delete.png", :border=>0), gene, :confirm => 'Are you sure?', :method => :delete %></td>
+
   </tr>
 <% end %>
 </table>
