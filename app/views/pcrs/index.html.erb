@@ -1,44 +1,38 @@
 <h1>PCR Reactions</h1>
 
-<table>
-  <tr>
-    <th>Pcr tube number</th>
-    <th>Gel image</th>
-    <th>Date</th>
-    <th>Anneal temp</th>
-    <th>Dna amount</th>
-    <th>Conditions</th>
-    <th>Total samples</th>
-    <th>Notes</th>
-    <th>Reamp</th>
-    <th>Total worked</th>
-    <th>Denature</th>
-    <th>Extension</th>
-    <th>Cycle</th>
-    <th>Primerl</th>
-    <th>Primerh</th>
-  </tr>
+<table class="custom">
+  <tr class="custom">
+	<th class="custom" id="lesswide"><%= sortable 'id' %></th>
+    <th class="custom"><%= sortable 'pcr_tube_number', 'Tube #' %></th>
+    <th class="custom"><%= sortable 'date' %></th>
 
+    <th class="custom"><%= sortable 'dna_amount', 'DNA Amount' %></th>
+
+    <th class="custom"><%= sortable 'total_samples', "Total Samples" %></th>
+
+    <th class="custom"><%= sortable 'total_worked' %></th>
+    <th class="custom"><%= sortable 'reamp' %></th>
+
+  </tr>
+<%= will_paginate @pcrs %> 
+Per Page: <%= select_tag :per_page, options_for_select([10,20,50,100,200], params[:per_page].to_i),
+               :onchange => "if(this.value){window.location='?per_page='+this.value;}" %>
 <% @pcrs.each do |pcr| %>
-  <tr>
-    <td><%=h pcr.pcr_tube_number %></td>
-    <td><%=h pcr.gel_image %></td>
+  <tr class="<%= cycle("even", "odd") %>">
+    <td class='idfield'><%= pcr.id %>
+	<td><%=h pcr.pcr_tube_number %></td>
     <td><%=h pcr.date %></td>
-    <td><%=h pcr.anneal_temp %></td>
+
     <td><%=h pcr.dna_amount %></td>
-    <td><%=h pcr.conditions %></td>
+
     <td><%=h pcr.total_samples %></td>
-    <td><%=h pcr.notes %></td>
-    <td><%=h pcr.reamp %></td>
+
     <td><%=h pcr.total_worked %></td>
-    <td><%=h pcr.denature %></td>
-    <td><%=h pcr.extension %></td>
-    <td><%=h pcr.cycle %></td>
-    <td><%=h pcr.primerl %></td>
-    <td><%=h pcr.primerh %></td>
-    <td><%= link_to 'Show', pcr %></td>
-    <td><%= link_to 'Edit', edit_pcr_path(pcr) %></td>
-    <td><%= link_to 'Destroy', pcr, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%=h pcr.reamp %></td>
+
+   	<td class="icons"><%= link_to image_tag("show.png", :border=>0), pcr%></td>
+ 	<td class="icons"><%= link_to image_tag("edit.png", :border=>0), edit_pcr_path(pcr)%></td>
+ 	<td class="icons"><%= link_to image_tag("delete.png", :border=>0), pcr, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

@@ -10,46 +10,37 @@
 
 <% end %>
 <%= will_paginate @taxonomies %> 
-
-<table cellspacing="1" cellpadding="5px" table-layout="fixed">
+<%= button_to 'New taxonomy', new_taxonomy_path %>
+<table class="custom">
   <tr class="custom">
+	<th></th>
     <th class="custom"><%= sortable 'genus'%></th>
     <th class="custom"><%= sortable 'species'%></th>
     <th class="custom"><%= sortable 'subspecies'%></th>
-    <th class="custom"><%= sortable 'new_diagnosis'%></th>
+
     <th class="custom"><%= sortable 'family'%></th>
-    <th class="custom"><%= sortable 'reference'%></th>
-    <th class="custom"><%= sortable 'description_pdf'%></th>
-    <th class="custom"><%= sortable 'synonyms'%></th>
-    <th class="custom"><%= sortable 'type_museum'%></th>
-    <th class="custom"><%= sortable 'distribution'%></th>
-    <th class="custom"><%= sortable 'ingroup'%></th>
-    <th class="custom"><%= sortable 'other_literature'%></th>
-    <th class="custom"><%= sortable 'character_diagnosis'%></th>
-    <th class="custom"><%= sortable 'description'%></th>
+
+
+   
+
     <th class="custom"><%= sortable 'countries'%></th>
   </tr>
 
 <% @taxonomies.each do |taxonomy| %>
   <tr class="<%= cycle("even", "odd") %>">
-    <td><%=h taxonomy.genus %></td>
+	<td class="idfield"><%=h taxonomy.id %></td>
+    <td ><%=h taxonomy.genus %></td>
     <td><%=h taxonomy.species %></td>
     <td><%=h taxonomy.subspecies %></td>
-    <td><%=h taxonomy.new_diagnosis %></td>
-    <td><%=h taxonomy.family %></td>
-    <td><%=h taxonomy.reference %></td>
-    <td><%=h taxonomy.description_pdf %></td>
-    <td><%=h taxonomy.synonyms %></td>
-    <td><%=h taxonomy.type_museum %></td>
-    <td><%=h taxonomy.distribution %></td>
-    <td><%=h taxonomy.ingroup %></td>
-    <td><%=h taxonomy.other_literature %></td>
-    <td><%=h taxonomy.character_diagnosis %></td>
-    <td><%=h taxonomy.description %></td>
+	<td><%=h taxonomy.family %></td>
+
+
+
+
     <td><%=h taxonomy.countries %></td>
-    <td><%= link_to 'Show', taxonomy %></td>
-    <td><%= link_to 'Edit', edit_taxonomy_path(taxonomy) %></td>
-    <td><%= link_to 'Destroy', taxonomy, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td class="icons"><%= link_to image_tag("show.png", :border=>0), taxonomy%></td>
+ 	<td class="icons"><%= link_to image_tag("edit.png", :border=>0), edit_taxonomy_path(taxonomy)%></td>
+ 	<td class="icons"><%= link_to image_tag("delete.png", :border=>0), taxonomy, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

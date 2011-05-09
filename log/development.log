@@ -20019,3 +20019,2055 @@ Rendering pcrs/index
   [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:03:42', "perishable_token" = 'kyziKr33w7YZ2GtYCYyU', "last_request_at" = '2011-05-08 16:03:42' WHERE "id" = 1[0m
 Rendered _navigation (133.2ms)
 Completed in 508ms (View: 487, DB: 8) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:12:50) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (8.6ms)[0m   [0;1mSELECT * FROM "pcrs" [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:12:50', "perishable_token" = 'VnO1Gicpf2b02k8MC4sE', "last_request_at" = '2011-05-08 16:12:50' WHERE "id" = 1[0m
+Rendered _navigation (35.6ms)
+Completed in 444ms (View: 421, DB: 9) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:13:02) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (7.1ms)[0m   [0mSELECT * FROM "pcrs" [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:13:03', "perishable_token" = 'vsP0IYqdYVcPiK5AY', "last_request_at" = '2011-05-08 16:13:03' WHERE "id" = 1[0m
+Rendered _navigation (36.1ms)
+Completed in 413ms (View: 392, DB: 8) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:14:32) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (6.8ms)[0m   [0;1mSELECT * FROM "pcrs" [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:14:32', "perishable_token" = 'JffrzOALq9ZTL9ZRerDb', "last_request_at" = '2011-05-08 16:14:32' WHERE "id" = 1[0m
+Rendered _navigation (37.0ms)
+Completed in 590ms (View: 569, DB: 7) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:16:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (6.9ms)[0m   [0mSELECT * FROM "pcrs" [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:16:57', "perishable_token" = 'GqCWrOosfz8OkgXHcPWB', "last_request_at" = '2011-05-08 16:16:57' WHERE "id" = 1[0m
+Rendered _navigation (36.9ms)
+Completed in 581ms (View: 560, DB: 8) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:19:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (6.8ms)[0m   [0;1mSELECT * FROM "pcrs" [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+
+ActionView::TemplateError (undefined local variable or method `sort_column' for #<ActionView::Base:0x105f04bb8>) on line #5 of app/views/pcrs/index.html.erb:
+2: 
+3: <table class="custom">
+4:   <tr>
+5:     <th class="custom"><%= sortable 'pcr_tube_number', 'Tube #' %></th>
+6:     <th class="custom"><%= sortable 'date' %></th>
+7: 
+8:     <th class="custom"><%= sortable 'dna_amount', 'DNA Amount' %></th>
+
+    app/helpers/application_helper.rb:8:in `sortable'
+    app/views/pcrs/index.html.erb:5
+    app/controllers/pcrs_controller.rb:7:in `index'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (43.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:20:22) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (7.0ms)[0m   [0mSELECT * FROM "pcrs" [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+
+ActionView::TemplateError (undefined local variable or method `sort_column' for #<ActionView::Base:0x105dddde8>) on line #5 of app/views/pcrs/index.html.erb:
+2: 
+3: <table class="custom">
+4:   <tr>
+5:     <th class="custom"><%= sortable 'pcr_tube_number', 'Tube #' %></th>
+6:     <th class="custom"><%= sortable 'date' %></th>
+7: 
+8:     <th class="custom"><%= sortable 'dna_amount', 'DNA Amount' %></th>
+
+    app/helpers/application_helper.rb:8:in `sortable'
+    app/views/pcrs/index.html.erb:5
+    app/controllers/pcrs_controller.rb:7:in `index'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (44.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:20:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (7.1ms)[0m   [0;1mSELECT * FROM "pcrs" [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+
+ActionView::TemplateError (undefined local variable or method `sort_column' for #<ActionView::Base:0x105e20cd8>) on line #5 of app/views/pcrs/index.html.erb:
+2: 
+3: <table class="custom">
+4:   <tr>
+5:     <th class="custom"><%= sortable 'pcr_tube_number', 'Tube #' %></th>
+6:     <th class="custom"><%= sortable 'date' %></th>
+7: 
+8:     <th class="custom"><%= sortable 'dna_amount', 'DNA Amount' %></th>
+
+    app/helpers/application_helper.rb:8:in `sortable'
+    app/views/pcrs/index.html.erb:5
+    app/controllers/pcrs_controller.rb:8:in `index'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (43.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:21:08) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (7.0ms)[0m   [0mSELECT * FROM "pcrs" [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:21:09', "perishable_token" = 'rJIyYm8jMPsaiHrxaBP', "last_request_at" = '2011-05-08 16:21:09' WHERE "id" = 1[0m
+Rendered _navigation (143.8ms)
+Completed in 601ms (View: 579, DB: 8) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:21:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs", "sort"=>"date", "direction"=>"desc"}
+  [4;36;1mPcr Load (6.8ms)[0m   [0;1mSELECT * FROM "pcrs" [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:21:13', "perishable_token" = 'HsCONEGIS8CjSnIdDe9', "last_request_at" = '2011-05-08 16:21:13' WHERE "id" = 1[0m
+Rendered _navigation (145.5ms)
+Completed in 610ms (View: 589, DB: 7) | 200 OK [http://localhost/pcrs?direction=desc&sort=date]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:21:14) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs", "sort"=>"dna_amount", "direction"=>"asc"}
+  [4;35;1mPcr Load (6.9ms)[0m   [0mSELECT * FROM "pcrs" [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:21:14', "perishable_token" = 'Xl8myr1GdoiKMPGZ2Na', "last_request_at" = '2011-05-08 16:21:14' WHERE "id" = 1[0m
+Rendered _navigation (35.3ms)
+Completed in 502ms (View: 478, DB: 8) | 200 OK [http://localhost/pcrs?direction=asc&sort=dna_amount]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:21:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs", "sort"=>"dna_amount", "direction"=>"desc"}
+  [4;36;1mPcr Load (7.1ms)[0m   [0;1mSELECT * FROM "pcrs" [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:21:16', "perishable_token" = 'QZPZlo29ljWdz7gXbQC', "last_request_at" = '2011-05-08 16:21:16' WHERE "id" = 1[0m
+Rendered _navigation (36.8ms)
+Completed in 494ms (View: 473, DB: 8) | 200 OK [http://localhost/pcrs?direction=desc&sort=dna_amount]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:22:47) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs", "sort"=>"dna_amount", "direction"=>"desc"}
+  [4;35;1mPcr Load (6.8ms)[0m   [0mSELECT * FROM "pcrs" [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:22:47', "perishable_token" = 'M96xSOMAy0xVwYpvdag5', "last_request_at" = '2011-05-08 16:22:47' WHERE "id" = 1[0m
+Rendered _navigation (35.7ms)
+Completed in 618ms (View: 597, DB: 8) | 200 OK [http://localhost/pcrs?direction=desc&sort=dna_amount]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:22:49) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs", "sort"=>"dna_amount", "direction"=>"asc"}
+  [4;36;1mPcr Load (7.1ms)[0m   [0;1mSELECT * FROM "pcrs" [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:22:49', "perishable_token" = 'NCvsXpEgEay7DpI3eUYD', "last_request_at" = '2011-05-08 16:22:49' WHERE "id" = 1[0m
+Rendered _navigation (142.2ms)
+Completed in 604ms (View: 582, DB: 8) | 200 OK [http://localhost/pcrs?direction=asc&sort=dna_amount]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:22:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs", "sort"=>"dna_amount", "direction"=>"desc"}
+  [4;35;1mPcr Load (7.3ms)[0m   [0mSELECT * FROM "pcrs" [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.7ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:22:52', "perishable_token" = 's3Wwx0JLsPpZJfXEphPT', "last_request_at" = '2011-05-08 16:22:52' WHERE "id" = 1[0m
+Rendered _navigation (135.9ms)
+Completed in 602ms (View: 580, DB: 8) | 200 OK [http://localhost/pcrs?direction=desc&sort=dna_amount]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:23:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs", "sort"=>"dna_amount", "direction"=>"desc"}
+  [4;36;1mPcr Load (0.4ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.date LIKE '%%') ORDER BY dna_amount desc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:23:45', "perishable_token" = 'SLeIzAqpFVv1S8aFaRK6', "last_request_at" = '2011-05-08 16:23:45' WHERE "id" = 1[0m
+Rendered _navigation (36.7ms)
+Completed in 52ms (View: 40, DB: 1) | 200 OK [http://localhost/pcrs?direction=desc&sort=dna_amount]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:23:46) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs", "sort"=>"dna_amount", "direction"=>"desc"}
+  [4;35;1mPcr Load (0.3ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.date LIKE '%%') ORDER BY dna_amount desc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:23:46', "perishable_token" = 'IDTdd4f3wB3qNbjZVt4', "last_request_at" = '2011-05-08 16:23:46' WHERE "id" = 1[0m
+Rendered _navigation (141.6ms)
+Completed in 155ms (View: 145, DB: 1) | 200 OK [http://localhost/pcrs?direction=desc&sort=dna_amount]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:23:47) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs", "sort"=>"dna_amount", "direction"=>"desc"}
+  [4;36;1mPcr Load (0.3ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.date LIKE '%%') ORDER BY dna_amount desc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:23:47', "perishable_token" = 'dt6ZBCvGYMPluGDJaHcO', "last_request_at" = '2011-05-08 16:23:47' WHERE "id" = 1[0m
+Rendered _navigation (35.7ms)
+Completed in 49ms (View: 39, DB: 1) | 200 OK [http://localhost/pcrs?direction=desc&sort=dna_amount]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:23:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs", "sort"=>"dna_amount", "direction"=>"asc"}
+  [4;35;1mPcr Load (0.4ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.date LIKE '%%') ORDER BY dna_amount asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:23:48', "perishable_token" = 'Hzev0VXE5ULOFWtq7KJ', "last_request_at" = '2011-05-08 16:23:48' WHERE "id" = 1[0m
+Rendered _navigation (36.5ms)
+Completed in 51ms (View: 40, DB: 1) | 200 OK [http://localhost/pcrs?direction=asc&sort=dna_amount]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:23:49) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs", "sort"=>"date", "direction"=>"asc"}
+  [4;36;1mPcr Load (0.3ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.date LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:23:50', "perishable_token" = 'aqL0hZfrd9RcG5tNK3M', "last_request_at" = '2011-05-08 16:23:50' WHERE "id" = 1[0m
+Rendered _navigation (134.4ms)
+Completed in 148ms (View: 138, DB: 1) | 200 OK [http://localhost/pcrs?direction=asc&sort=date]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:23:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs", "sort"=>"pcr_tube_number", "direction"=>"asc"}
+  [4;35;1mPcr Load (0.3ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.date LIKE '%%') ORDER BY pcr_tube_number asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:23:51', "perishable_token" = 'Mk2j75azHelFZmS4yBSE', "last_request_at" = '2011-05-08 16:23:51' WHERE "id" = 1[0m
+Rendered _navigation (35.1ms)
+Completed in 49ms (View: 39, DB: 1) | 200 OK [http://localhost/pcrs?direction=asc&sort=pcr_tube_number]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:24:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs", "sort"=>"pcr_tube_number", "direction"=>"asc"}
+  [4;36;1mPcr Load (7.0ms)[0m   [0;1mSELECT * FROM "pcrs" [0m
+
+ArgumentError (wrong number of arguments (2 for 1)):
+  app/controllers/pcrs_controller.rb:10:in `find'
+  app/controllers/pcrs_controller.rb:10:in `index'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (147.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:24:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs", "sort"=>"pcr_tube_number", "direction"=>"asc"}
+  [4;35;1mPcr Load (7.3ms)[0m   [0mSELECT * FROM "pcrs" [0m
+
+ArgumentError (wrong number of arguments (2 for 1)):
+  app/controllers/pcrs_controller.rb:10:in `find'
+  app/controllers/pcrs_controller.rb:10:in `index'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:24:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs", "sort"=>"pcr_tube_number", "direction"=>"asc"}
+  [4;36;1mPcr Load (7.3ms)[0m   [0;1mSELECT * FROM "pcrs" [0m
+
+ArgumentError (wrong number of arguments (2 for 1)):
+  app/controllers/pcrs_controller.rb:10:in `find'
+  app/controllers/pcrs_controller.rb:10:in `index'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:25:03) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs", "sort"=>"pcr_tube_number", "direction"=>"asc"}
+  [4;35;1mPcr Load (7.7ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY pcr_tube_number asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:25:04', "perishable_token" = 'XiFWYzTOdnIHYsme5Ld', "last_request_at" = '2011-05-08 16:25:04' WHERE "id" = 1[0m
+Rendered _navigation (43.2ms)
+Completed in 286ms (View: 261, DB: 8) | 200 OK [http://localhost/pcrs?direction=asc&sort=pcr_tube_number]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:25:06) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs", "sort"=>"dna_amount", "direction"=>"asc"}
+  [4;36;1mPcr Load (7.8ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY dna_amount asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:25:06', "perishable_token" = 'rLpdpNQn1GTWpmrjakL1', "last_request_at" = '2011-05-08 16:25:06' WHERE "id" = 1[0m
+Rendered _navigation (38.4ms)
+Completed in 283ms (View: 258, DB: 9) | 200 OK [http://localhost/pcrs?direction=asc&sort=dna_amount]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:25:07) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs", "sort"=>"dna_amount", "direction"=>"desc"}
+  [4;35;1mPcr Load (7.9ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY dna_amount desc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:25:07', "perishable_token" = 'sbmrqFN3zUgcl4qGHPm', "last_request_at" = '2011-05-08 16:25:07' WHERE "id" = 1[0m
+Rendered _navigation (43.0ms)
+Completed in 282ms (View: 257, DB: 9) | 200 OK [http://localhost/pcrs?direction=desc&sort=dna_amount]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:25:10) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs", "sort"=>"pcr_tube_number", "direction"=>"asc"}
+  [4;36;1mPcr Load (7.3ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY pcr_tube_number asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:25:10', "perishable_token" = 'NG1lygwWhN6nNObaiIv', "last_request_at" = '2011-05-08 16:25:10' WHERE "id" = 1[0m
+Rendered _navigation (36.6ms)
+Completed in 272ms (View: 248, DB: 8) | 200 OK [http://localhost/pcrs?direction=asc&sort=pcr_tube_number]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:25:10) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs", "sort"=>"pcr_tube_number", "direction"=>"desc"}
+  [4;35;1mPcr Load (7.4ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY pcr_tube_number desc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:25:11', "perishable_token" = 'xeWMibYb8Jt98URnkn7z', "last_request_at" = '2011-05-08 16:25:11' WHERE "id" = 1[0m
+Rendered _navigation (36.4ms)
+Completed in 271ms (View: 247, DB: 8) | 200 OK [http://localhost/pcrs?direction=desc&sort=pcr_tube_number]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:26:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs", "sort"=>"pcr_tube_number", "direction"=>"desc"}
+  [4;36;1mPcr Load (7.6ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY pcr_tube_number desc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:26:35', "perishable_token" = 'hgc5pzIwu7ztqfhlsMPg', "last_request_at" = '2011-05-08 16:26:35' WHERE "id" = 1[0m
+Rendered _navigation (35.9ms)
+Completed in 278ms (View: 254, DB: 8) | 200 OK [http://localhost/pcrs?direction=desc&sort=pcr_tube_number]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:26:38) [GET]
+  Parameters: {"action"=>"index", "page"=>"4", "controller"=>"pcrs", "sort"=>"pcr_tube_number", "direction"=>"desc"}
+  [4;35;1mPcr Load (7.4ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY pcr_tube_number desc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:26:38', "perishable_token" = 'k9WU2yKUlgddaD1kk7H', "last_request_at" = '2011-05-08 16:26:38' WHERE "id" = 1[0m
+Rendered _navigation (36.3ms)
+Completed in 205ms (View: 181, DB: 8) | 200 OK [http://localhost/pcrs?direction=desc&page=4&sort=pcr_tube_number]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:26:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs", "per_page"=>"200"}
+  [4;36;1mPcr Load (7.9ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:26:42', "perishable_token" = 'yMNYXHzMqv1qE9XYUBa', "last_request_at" = '2011-05-08 16:26:42' WHERE "id" = 1[0m
+Rendered _navigation (148.2ms)
+Completed in 620ms (View: 595, DB: 9) | 200 OK [http://localhost/pcrs?per_page=200]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:26:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs", "per_page"=>"200", "sort"=>"pcr_tube_number", "direction"=>"asc"}
+  [4;35;1mPcr Load (7.3ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY pcr_tube_number asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:26:44', "perishable_token" = 'wngzlhCs0Qcse3aA3gXk', "last_request_at" = '2011-05-08 16:26:44' WHERE "id" = 1[0m
+Rendered _navigation (36.2ms)
+Completed in 497ms (View: 473, DB: 8) | 200 OK [http://localhost/pcrs?direction=asc&per_page=200&sort=pcr_tube_number]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:26:46) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs", "per_page"=>"200", "sort"=>"pcr_tube_number", "direction"=>"desc"}
+  [4;36;1mPcr Load (8.2ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY pcr_tube_number desc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:26:46', "perishable_token" = 'KFJ8RY1N82Aonvu05ND0', "last_request_at" = '2011-05-08 16:26:46' WHERE "id" = 1[0m
+Rendered _navigation (34.3ms)
+Completed in 502ms (View: 477, DB: 9) | 200 OK [http://localhost/pcrs?direction=desc&per_page=200&sort=pcr_tube_number]
+
+
+Processing PrimersController#index (for 127.0.0.1 at 2011-05-08 11:27:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"primers"}
+  [4;35;1mPrimer Load (0.4ms)[0m   [0mSELECT * FROM "primers" WHERE (primers.primerl LIKE '%%') [0m
+Rendering template within layouts/primers
+Rendering primers/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:27:19', "perishable_token" = 'pR1lerOt3uEirLli7kP', "last_request_at" = '2011-05-08 16:27:19' WHERE "id" = 1[0m
+Rendered _navigation (140.3ms)
+Completed in 158ms (View: 148, DB: 1) | 200 OK [http://localhost/primers]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-08 11:27:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:27:21', "perishable_token" = '8A9rP9my2cOlIRVg01es', "last_request_at" = '2011-05-08 16:27:21' WHERE "id" = 1[0m
+  [4;36;1mTaxonomy Load (163.0ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.8ms)
+Completed in 378ms (View: 104, DB: 164) | 200 OK [http://localhost/taxonomies]
+
+
+Processing GenesController#index (for 127.0.0.1 at 2011-05-08 11:27:22) [GET]
+  Parameters: {"action"=>"index", "controller"=>"genes"}
+  [4;35;1mGene Load (4.5ms)[0m   [0mSELECT * FROM "genes" [0m
+Rendering template within layouts/genes
+Rendering genes/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:27:23', "perishable_token" = 'r2qY0GxrifH84r8iwpLp', "last_request_at" = '2011-05-08 16:27:23' WHERE "id" = 1[0m
+Rendered _navigation (36.0ms)
+Completed in 661ms (View: 646, DB: 5) | 200 OK [http://localhost/genes]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-05-08 11:27:24) [GET]
+  Parameters: {"action"=>"index", "controller"=>"dnasamples"}
+  [4;36;1mDnasample Load (5.9ms)[0m   [0;1mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:27:24', "perishable_token" = 'JAwUbvPt4smKmToZc8XL', "last_request_at" = '2011-05-08 16:27:24' WHERE "id" = 1[0m
+Rendered _navigation (36.0ms)
+Completed in 281ms (View: 255, DB: 7) | 200 OK [http://localhost/dnasamples]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-05-08 11:27:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:27:25', "perishable_token" = 'WYx2bIwqe5pPkc7pcumS', "last_request_at" = '2011-05-08 16:27:25' WHERE "id" = 1[0m
+  [4;35;1mExperiment Load (93.2ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (2.7ms)
+Completed in 555ms (View: 233, DB: 94) | 200 OK [http://localhost/experiments]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-05-08 11:27:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"dnasamples"}
+  [4;36;1mDnasample Load (5.7ms)[0m   [0;1mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:27:32', "perishable_token" = 'TvOsk88zd6NW4GxpRs', "last_request_at" = '2011-05-08 16:27:32' WHERE "id" = 1[0m
+Rendered _navigation (37.2ms)
+Completed in 303ms (View: 278, DB: 6) | 200 OK [http://localhost/dnasamples]
+
+
+Processing GenesController#index (for 127.0.0.1 at 2011-05-08 11:27:34) [GET]
+  Parameters: {"action"=>"index", "controller"=>"genes"}
+  [4;35;1mGene Load (4.3ms)[0m   [0mSELECT * FROM "genes" [0m
+Rendering template within layouts/genes
+Rendering genes/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:27:35', "perishable_token" = '7FZ2UDQ7M0KTwFpO0iqS', "last_request_at" = '2011-05-08 16:27:35' WHERE "id" = 1[0m
+Rendered _navigation (139.9ms)
+Completed in 652ms (View: 636, DB: 5) | 200 OK [http://localhost/genes]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-05-08 11:27:38) [GET]
+  Parameters: {"action"=>"index", "controller"=>"dnasamples"}
+  [4;36;1mDnasample Load (5.4ms)[0m   [0;1mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:27:39', "perishable_token" = 'fFBOPKQ50mQP2cEnnpHM', "last_request_at" = '2011-05-08 16:27:39' WHERE "id" = 1[0m
+Rendered _navigation (146.8ms)
+Completed in 287ms (View: 261, DB: 6) | 200 OK [http://localhost/dnasamples]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:27:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (7.7ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:27:40', "perishable_token" = 'yQgx0pZT8PYAE7yLjUA6', "last_request_at" = '2011-05-08 16:27:40' WHERE "id" = 1[0m
+Rendered _navigation (142.8ms)
+Completed in 270ms (View: 246, DB: 9) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:28:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (7.4ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:28:17', "perishable_token" = 'AOU0PMglh6bCatOcVTw', "last_request_at" = '2011-05-08 16:28:17' WHERE "id" = 1[0m
+Rendered _navigation (141.9ms)
+Completed in 276ms (View: 253, DB: 8) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:28:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (7.3ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:28:40', "perishable_token" = 'EWsAlfWSvSxbJHqFScdT', "last_request_at" = '2011-05-08 16:28:40' WHERE "id" = 1[0m
+Rendered _navigation (35.9ms)
+Completed in 274ms (View: 250, DB: 8) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:29:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (7.6ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:29:01', "perishable_token" = 'O8FF25lkvLk8Ak5cFD8', "last_request_at" = '2011-05-08 16:29:01' WHERE "id" = 1[0m
+Rendered _navigation (35.6ms)
+Completed in 281ms (View: 256, DB: 8) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:29:06) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (112.5ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:29:06', "perishable_token" = 'sOajkPldrY6K0VjdBUJc', "last_request_at" = '2011-05-08 16:29:06' WHERE "id" = 1[0m
+Rendered _navigation (36.1ms)
+Completed in 276ms (View: 147, DB: 113) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:29:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (7.5ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:29:19', "perishable_token" = 'BiVEHcaIPCGseGUxjkU', "last_request_at" = '2011-05-08 16:29:19' WHERE "id" = 1[0m
+Rendered _navigation (35.3ms)
+Completed in 168ms (View: 145, DB: 8) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:30:02) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (8.2ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:30:03', "perishable_token" = 'xO68UbZOzRyBb55P0gZe', "last_request_at" = '2011-05-08 16:30:03' WHERE "id" = 1[0m
+Rendered _navigation (139.9ms)
+Completed in 276ms (View: 251, DB: 9) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:30:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (7.5ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:30:22', "perishable_token" = 'SR9TKqDWNviWrfAECC', "last_request_at" = '2011-05-08 16:30:22' WHERE "id" = 1[0m
+Rendered _navigation (141.7ms)
+Completed in 280ms (View: 256, DB: 8) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:31:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (7.5ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:31:22', "perishable_token" = 'DVRVaEwJnXpUqgP3DAZS', "last_request_at" = '2011-05-08 16:31:22' WHERE "id" = 1[0m
+Rendered _navigation (35.5ms)
+Completed in 276ms (View: 251, DB: 8) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:31:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (7.9ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (5.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:31:41', "perishable_token" = '5vhOjlmiBAUniuIPJNh', "last_request_at" = '2011-05-08 16:31:41' WHERE "id" = 1[0m
+Rendered _navigation (56.4ms)
+Completed in 372ms (View: 340, DB: 14) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:31:47) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (111.0ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:31:47', "perishable_token" = 'ccxUtwsfNtywmokQ8VXV', "last_request_at" = '2011-05-08 16:31:47' WHERE "id" = 1[0m
+Rendered _navigation (35.6ms)
+Completed in 273ms (View: 145, DB: 112) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:31:59) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (8.1ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:31:59', "perishable_token" = 'a5OFy9vH33S2NDCotxRC', "last_request_at" = '2011-05-08 16:31:59' WHERE "id" = 1[0m
+Rendered _navigation (35.2ms)
+Completed in 167ms (View: 141, DB: 9) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:32:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (7.7ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:32:22', "perishable_token" = 'XtUqNV8psYmR2z5h4YSc', "last_request_at" = '2011-05-08 16:32:22' WHERE "id" = 1[0m
+Rendered _navigation (139.9ms)
+Completed in 270ms (View: 245, DB: 8) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:32:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (7.9ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:32:27', "perishable_token" = '12xCfyLCfmlvbWj8wIDX', "last_request_at" = '2011-05-08 16:32:27' WHERE "id" = 1[0m
+Rendered _navigation (140.3ms)
+Completed in 270ms (View: 245, DB: 9) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:32:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (7.6ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:32:40', "perishable_token" = 'd5u6evwBNRxF6FxGWDTn', "last_request_at" = '2011-05-08 16:32:40' WHERE "id" = 1[0m
+Rendered _navigation (149.9ms)
+Completed in 281ms (View: 256, DB: 8) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:32:50) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (7.6ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:32:50', "perishable_token" = 'j56H4kJEDvDXjtxfjUy', "last_request_at" = '2011-05-08 16:32:50' WHERE "id" = 1[0m
+Rendered _navigation (36.5ms)
+Completed in 275ms (View: 250, DB: 8) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:33:53) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (7.3ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:33:54', "perishable_token" = '047KBYyxYEGe64uOnK', "last_request_at" = '2011-05-08 16:33:54' WHERE "id" = 1[0m
+Rendered _navigation (38.3ms)
+Completed in 276ms (View: 252, DB: 8) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:34:00) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (111.0ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:34:00', "perishable_token" = 'OST3ANA43o2A5MS2Ul', "last_request_at" = '2011-05-08 16:34:00' WHERE "id" = 1[0m
+Rendered _navigation (36.2ms)
+Completed in 273ms (View: 146, DB: 112) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:34:10) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (7.8ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:34:10', "perishable_token" = 'dmtVK6eTjwCoKWOJ8hUI', "last_request_at" = '2011-05-08 16:34:10' WHERE "id" = 1[0m
+Rendered _navigation (36.1ms)
+Completed in 168ms (View: 143, DB: 8) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:34:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (8.0ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:34:17', "perishable_token" = 'V1pgze7mw1t985q56p', "last_request_at" = '2011-05-08 16:34:17' WHERE "id" = 1[0m
+Rendered _navigation (36.1ms)
+Completed in 171ms (View: 146, DB: 9) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:34:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (7.7ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:34:27', "perishable_token" = 'VpJRx3hlawzwErLwviJ', "last_request_at" = '2011-05-08 16:34:27' WHERE "id" = 1[0m
+Rendered _navigation (139.3ms)
+Completed in 274ms (View: 249, DB: 8) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:34:38) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (7.7ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:34:38', "perishable_token" = 'klEcl1DxlDKIW8FunEoz', "last_request_at" = '2011-05-08 16:34:38' WHERE "id" = 1[0m
+Rendered _navigation (145.4ms)
+Completed in 277ms (View: 252, DB: 8) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:34:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (7.3ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:34:44', "perishable_token" = 'dTyfczn336yZs2lXyY', "last_request_at" = '2011-05-08 16:34:44' WHERE "id" = 1[0m
+Rendered _navigation (37.2ms)
+Completed in 275ms (View: 251, DB: 8) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:34:54) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (7.4ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:34:55', "perishable_token" = 'IfxiHSL3JvvGY6MC4GJM', "last_request_at" = '2011-05-08 16:34:55' WHERE "id" = 1[0m
+Rendered _navigation (35.4ms)
+Completed in 272ms (View: 248, DB: 8) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:34:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (8.0ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:34:58', "perishable_token" = 'FC9iWMwSm3TlfBeDtb', "last_request_at" = '2011-05-08 16:34:58' WHERE "id" = 1[0m
+Rendered _navigation (37.3ms)
+Completed in 284ms (View: 258, DB: 9) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:35:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (7.4ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:35:02', "perishable_token" = 'aSDRvAJwF9MjeT6grru', "last_request_at" = '2011-05-08 16:35:02' WHERE "id" = 1[0m
+Rendered _navigation (36.8ms)
+Completed in 287ms (View: 152, DB: 8) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:35:14) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (7.7ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:35:14', "perishable_token" = 'CCQuDoNeFXbYWItluuJd', "last_request_at" = '2011-05-08 16:35:14' WHERE "id" = 1[0m
+Rendered _navigation (35.6ms)
+Completed in 166ms (View: 141, DB: 8) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:35:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (7.8ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.8ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:35:20', "perishable_token" = '2k8XcIyKLGw9L4k4TMJ', "last_request_at" = '2011-05-08 16:35:20' WHERE "id" = 1[0m
+Rendered _navigation (141.5ms)
+Completed in 270ms (View: 245, DB: 9) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:35:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (8.0ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:35:21', "perishable_token" = 'iDn7MEuERv0gJOGu', "last_request_at" = '2011-05-08 16:35:21' WHERE "id" = 1[0m
+Rendered _navigation (144.1ms)
+Completed in 273ms (View: 249, DB: 9) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:35:28) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (7.3ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:35:28', "perishable_token" = 'h42NkR2OztTuwAFAqPhT', "last_request_at" = '2011-05-08 16:35:28' WHERE "id" = 1[0m
+Rendered _navigation (37.0ms)
+Completed in 273ms (View: 248, DB: 8) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:35:33) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (7.8ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:35:33', "perishable_token" = 'uGBOehSvpUZtkuGA7g', "last_request_at" = '2011-05-08 16:35:33' WHERE "id" = 1[0m
+Rendered _navigation (36.3ms)
+Completed in 275ms (View: 249, DB: 8) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:35:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (7.5ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:35:42', "perishable_token" = 'H7p9ohuK366BFGKJNseW', "last_request_at" = '2011-05-08 16:35:42' WHERE "id" = 1[0m
+Rendered _navigation (36.5ms)
+Completed in 270ms (View: 246, DB: 8) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:35:46) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (113.3ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:35:46', "perishable_token" = 'yuWlUlWSkWUpwJx2p6', "last_request_at" = '2011-05-08 16:35:46' WHERE "id" = 1[0m
+Rendered _navigation (38.0ms)
+Completed in 276ms (View: 147, DB: 114) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:35:54) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (7.9ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:35:54', "perishable_token" = 'WUotS1OeJ2RhRop1EgGH', "last_request_at" = '2011-05-08 16:35:54' WHERE "id" = 1[0m
+Rendered _navigation (35.6ms)
+Completed in 166ms (View: 141, DB: 9) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:36:00) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (7.3ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:36:01', "perishable_token" = 'eAzX9EGXdNGvd73GvPH5', "last_request_at" = '2011-05-08 16:36:01' WHERE "id" = 1[0m
+Rendered _navigation (34.4ms)
+Completed in 166ms (View: 142, DB: 8) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:36:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (7.7ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:36:37', "perishable_token" = 'nHDVTjLG2PLKODAqaTdt', "last_request_at" = '2011-05-08 16:36:37' WHERE "id" = 1[0m
+Rendered _navigation (144.0ms)
+Completed in 280ms (View: 255, DB: 8) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:37:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (7.7ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:37:05', "perishable_token" = 'LbxL2sSjgyTxGcNKqO7t', "last_request_at" = '2011-05-08 16:37:05' WHERE "id" = 1[0m
+Rendered _navigation (35.6ms)
+Completed in 279ms (View: 254, DB: 8) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:37:13) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (8.1ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:37:13', "perishable_token" = '6hEcE7PHf2uborAxh5A', "last_request_at" = '2011-05-08 16:37:13' WHERE "id" = 1[0m
+Rendered _navigation (36.7ms)
+Completed in 273ms (View: 248, DB: 9) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:37:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (8.2ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:37:21', "perishable_token" = '4evO7ByUszKO4pbz1WgM', "last_request_at" = '2011-05-08 16:37:21' WHERE "id" = 1[0m
+Rendered _navigation (35.9ms)
+Completed in 278ms (View: 252, DB: 9) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:37:47) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (112.5ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:37:47', "perishable_token" = 'X1LPdB2hNt51jEw4Szay', "last_request_at" = '2011-05-08 16:37:47' WHERE "id" = 1[0m
+Rendered _navigation (36.0ms)
+Completed in 275ms (View: 145, DB: 113) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:37:49) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (7.4ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:37:49', "perishable_token" = '0gYCodn75bZZJJdZYKXL', "last_request_at" = '2011-05-08 16:37:49' WHERE "id" = 1[0m
+Rendered _navigation (35.4ms)
+Completed in 165ms (View: 140, DB: 8) | 200 OK [http://localhost/pcrs]
+
+
+Processing PrimersController#index (for 127.0.0.1 at 2011-05-08 11:38:14) [GET]
+  Parameters: {"action"=>"index", "controller"=>"primers"}
+  [4;36;1mPrimer Load (0.3ms)[0m   [0;1mSELECT * FROM "primers" WHERE (primers.primerl LIKE '%%') [0m
+Rendering template within layouts/primers
+Rendering primers/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:38:15', "perishable_token" = 'XXiRY76b0Jq9vSx1c8L', "last_request_at" = '2011-05-08 16:38:15' WHERE "id" = 1[0m
+Rendered _navigation (35.4ms)
+Completed in 51ms (View: 42, DB: 1) | 200 OK [http://localhost/primers]
+
+
+Processing PrimersController#index (for 127.0.0.1 at 2011-05-08 11:38:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"primers"}
+  [4;35;1mPrimer Load (0.3ms)[0m   [0mSELECT * FROM "primers" WHERE (primers.primerl LIKE '%%') [0m
+Rendering template within layouts/primers
+Rendering primers/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:38:41', "perishable_token" = '3lsYwy1SjqUUbD2uoN1O', "last_request_at" = '2011-05-08 16:38:41' WHERE "id" = 1[0m
+Rendered _navigation (142.3ms)
+Completed in 159ms (View: 149, DB: 1) | 200 OK [http://localhost/primers]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:38:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (7.8ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:38:43', "perishable_token" = 'XCXYuTgtAnJUTmwOl', "last_request_at" = '2011-05-08 16:38:43' WHERE "id" = 1[0m
+Rendered _navigation (151.4ms)
+Completed in 286ms (View: 261, DB: 9) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:38:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs", "per_page"=>"200"}
+  [4;35;1mPcr Load (7.6ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:38:46', "perishable_token" = 'G2JUbqxSrrN19I4EkRA8', "last_request_at" = '2011-05-08 16:38:46' WHERE "id" = 1[0m
+Rendered _navigation (36.2ms)
+Completed in 608ms (View: 583, DB: 8) | 200 OK [http://localhost/pcrs?per_page=200]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:38:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs", "per_page"=>"10"}
+  [4;36;1mPcr Load (7.8ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:38:51', "perishable_token" = 'y2eiyq7JkEoS9KVZqMc', "last_request_at" = '2011-05-08 16:38:51' WHERE "id" = 1[0m
+Rendered _navigation (36.3ms)
+Completed in 104ms (View: 78, DB: 8) | 200 OK [http://localhost/pcrs?per_page=10]
+
+
+Processing PcrsController#show (for 127.0.0.1 at 2011-05-08 11:39:30) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (0.3ms)[0m   [0mSELECT * FROM "pcrs" WHERE ("pcrs"."id" = 2) [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:39:31', "perishable_token" = '6OeZKVsQKHTQcMmcB2kl', "last_request_at" = '2011-05-08 16:39:31' WHERE "id" = 1[0m
+Rendered _navigation (37.6ms)
+Completed in 165ms (View: 47, DB: 1) | 200 OK [http://localhost/pcrs/2]
+
+
+Processing PcrsController#edit (for 127.0.0.1 at 2011-05-08 11:39:36) [GET]
+  Parameters: {"action"=>"edit", "id"=>"2", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (0.2ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE ("pcrs"."id" = 2) [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/edit
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:39:36', "perishable_token" = 'olNXNExwq5BKemTCzPMQ', "last_request_at" = '2011-05-08 16:39:36' WHERE "id" = 1[0m
+Rendered _navigation (127.7ms)
+Completed in 192ms (View: 183, DB: 1) | 200 OK [http://localhost/pcrs/2/edit]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-08 11:39:41) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (10.8ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-08 16:39:42', "perishable_token" = 'H68Fj0vbvRGvrMn0aVdc', "last_request_at" = '2011-05-08 16:39:42' WHERE "id" = 1[0m
+Rendered _navigation (160.2ms)
+Completed in 337ms (View: 305, DB: 12) | 200 OK [http://localhost/pcrs]
+
+
+Processing GenesController#index (for 127.0.0.1 at 2011-05-08 11:39:43) [GET]
+  Parameters: {"action"=>"index", "controller"=>"genes"}
+  [4;36;1mGene Load (4.4ms)[0m   [0;1mSELECT * FROM "genes" [0m
+Rendering template within layouts/genes
+Rendering genes/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:39:43', "perishable_token" = 'RW1gJoR5140aKwd28bkC', "last_request_at" = '2011-05-08 16:39:43' WHERE "id" = 1[0m
+Rendered _navigation (38.9ms)
+Completed in 586ms (View: 570, DB: 5) | 200 OK [http://localhost/genes]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-08 11:39:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-08 16:39:44', "perishable_token" = 'aXNEvrNFW36sqYXPiMBA', "last_request_at" = '2011-05-08 16:39:44' WHERE "id" = 1[0m
+  [4;35;1mTaxonomy Load (65.4ms)[0m   [0mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (3.0ms)
+Completed in 402ms (View: 214, DB: 66) | 200 OK [http://localhost/taxonomies]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-05-08 19:00:47) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 101ms (DB: 0) | 302 Found [http://localhost/experiments]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-05-08 19:00:47) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/general
+Rendering user_sessions/new
+Rendered _navigation (1.2ms)
+Completed in 170ms (View: 145, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-05-09 09:27:23) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 125ms (DB: 0) | 302 Found [http://localhost/experiments]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-05-09 09:27:23) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/general
+Rendering user_sessions/new
+Rendered _navigation (1.5ms)
+Completed in 78ms (View: 51, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 13:42:33) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (4.0ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 18:42:34', "perishable_token" = 'j6qja23PJCkLGCAHZpDK', "last_request_at" = '2011-05-09 18:42:34' WHERE "id" = 1[0m
+  [4;36;1mTaxonomy Load (61.0ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (4.6ms)
+Completed in 1026ms (View: 262, DB: 65) | 200 OK [http://localhost/taxonomies]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-05-09 13:42:38) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 18:42:38', "perishable_token" = 'Xu1y1SumLKmP9zuvKCE', "last_request_at" = '2011-05-09 18:42:38' WHERE "id" = 1[0m
+  [4;35;1mExperiment Load (200.7ms)[0m   [0mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (109.8ms)
+Completed in 571ms (View: 246, DB: 201) | 200 OK [http://localhost/experiments]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-09 13:43:41) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (7.3ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 18:43:41', "perishable_token" = 'hBOBMx7z3C6xP667jwBm', "last_request_at" = '2011-05-09 18:43:41' WHERE "id" = 1[0m
+Rendered _navigation (152.2ms)
+Completed in 281ms (View: 257, DB: 8) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#show (for 127.0.0.1 at 2011-05-09 13:43:48) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (0.3ms)[0m   [0mSELECT * FROM "pcrs" WHERE ("pcrs"."id" = 2) [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 18:43:48', "perishable_token" = 'mnpFWaPpGow1G6zFhX9o', "last_request_at" = '2011-05-09 18:43:48' WHERE "id" = 1[0m
+Rendered _navigation (36.0ms)
+Completed in 49ms (View: 40, DB: 1) | 200 OK [http://localhost/pcrs/2]
+
+
+Processing PcrsController#edit (for 127.0.0.1 at 2011-05-09 13:43:53) [GET]
+  Parameters: {"action"=>"edit", "id"=>"2", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (0.3ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE ("pcrs"."id" = 2) [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/edit
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 18:43:53', "perishable_token" = '9GogmUWlsPDf9xDTs', "last_request_at" = '2011-05-09 18:43:53' WHERE "id" = 1[0m
+Rendered _navigation (140.7ms)
+Completed in 181ms (View: 173, DB: 1) | 200 OK [http://localhost/pcrs/2/edit]
+
+
+Processing PcrsController#new (for 127.0.0.1 at 2011-05-09 13:44:05) [GET]
+  Parameters: {"action"=>"new", "controller"=>"pcrs"}
+Rendering template within layouts/pcrs
+Rendering pcrs/new
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 18:44:05', "perishable_token" = 'J4oHRtJOzk0rmJ0MdZR', "last_request_at" = '2011-05-09 18:44:05' WHERE "id" = 1[0m
+Rendered _navigation (23.0ms)
+Completed in 62ms (View: 54, DB: 1) | 200 OK [http://localhost/pcrs/new]
+
+
+Processing PcrsController#new (for 127.0.0.1 at 2011-05-09 13:45:01) [GET]
+  Parameters: {"action"=>"new", "controller"=>"pcrs"}
+Rendering template within layouts/pcrs
+Rendering pcrs/new
+  [4;35;1mPrimer Load (0.5ms)[0m   [0mSELECT * FROM "primers" [0m
+Rendered _primerselect (29.5ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 18:45:01', "perishable_token" = 'IGXp45gDmOrlgA6Iecv', "last_request_at" = '2011-05-09 18:45:01' WHERE "id" = 1[0m
+Rendered _navigation (23.5ms)
+Completed in 198ms (View: 88, DB: 1) | 200 OK [http://localhost/pcrs/new]
+
+
+Processing PcrsController#new (for 127.0.0.1 at 2011-05-09 13:45:19) [GET]
+  Parameters: {"action"=>"new", "controller"=>"pcrs"}
+Rendering template within layouts/pcrs
+Rendering pcrs/new
+  [4;36;1mPrimer Load (0.4ms)[0m   [0;1mSELECT * FROM "primers" [0m
+Rendered _primerselect (5.8ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.7ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 18:45:20', "perishable_token" = 'TEpqjej7kAB14shnrFNA', "last_request_at" = '2011-05-09 18:45:20' WHERE "id" = 1[0m
+Rendered _navigation (22.2ms)
+Completed in 177ms (View: 167, DB: 1) | 200 OK [http://localhost/pcrs/new]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-05-09 13:45:34) [GET]
+  Parameters: {"action"=>"index", "controller"=>"dnasamples"}
+  [4;35;1mDnasample Load (5.6ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 18:45:34', "perishable_token" = 'Dm6NmwXWY6DpKVZikx', "last_request_at" = '2011-05-09 18:45:34' WHERE "id" = 1[0m
+Rendered _navigation (36.4ms)
+Completed in 295ms (View: 251, DB: 6) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#new (for 127.0.0.1 at 2011-05-09 13:45:36) [POST]
+  Parameters: {"action"=>"new", "authenticity_token"=>"zz4ukdjnaQc624OSUVQpjA3R0EVFjKm+U5m+cEkGVoc=", "controller"=>"dnasamples"}
+Rendering template within layouts/dnasamples
+Rendering dnasamples/new
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 18:45:36', "perishable_token" = 'b4fNRPduDYnLf4P0BDDs', "last_request_at" = '2011-05-09 18:45:36' WHERE "id" = 1[0m
+Rendered _navigation (119.2ms)
+Completed in 155ms (View: 145, DB: 1) | 200 OK [http://localhost/dnasamples/new]
+
+
+Processing GenesController#index (for 127.0.0.1 at 2011-05-09 13:45:38) [GET]
+  Parameters: {"action"=>"index", "controller"=>"genes"}
+  [4;36;1mGene Load (6.6ms)[0m   [0;1mSELECT * FROM "genes" [0m
+Rendering template within layouts/genes
+Rendering genes/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 18:45:39', "perishable_token" = 'qjU10EK8Cgi0lTGWpd04', "last_request_at" = '2011-05-09 18:45:39' WHERE "id" = 1[0m
+Rendered _navigation (35.8ms)
+Completed in 535ms (View: 502, DB: 7) | 200 OK [http://localhost/genes]
+
+
+Processing GenesController#new (for 127.0.0.1 at 2011-05-09 13:45:42) [GET]
+  Parameters: {"action"=>"new", "controller"=>"genes"}
+  [4;35;1mPrimer Load (0.4ms)[0m   [0mSELECT * FROM "primers" [0m
+Rendering template within layouts/genes
+Rendering genes/new
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "primers" [0m
+Rendered _primerselect (1.2ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 18:45:42', "perishable_token" = 'cAJ3hKJiEAgF50hrjfXb', "last_request_at" = '2011-05-09 18:45:42' WHERE "id" = 1[0m
+Rendered _navigation (23.9ms)
+Completed in 57ms (View: 44, DB: 1) | 200 OK [http://localhost/genes/new]
+
+
+Processing GenesController#getprimerpair (for 127.0.0.1 at 2011-05-09 13:45:45) [POST]
+  Parameters: {"action"=>"getprimerpair", "id"=>"1", "controller"=>"genes"}
+  [4;35;1mPrimer Load (0.2ms)[0m   [0mSELECT * FROM "primers" WHERE ("primers"."id" = 1) [0m
+here
+Rendering genes/getprimerpair
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/genes/getprimerpair]
+
+
+Processing GenesController#getprimerpair (for 127.0.0.1 at 2011-05-09 13:45:46) [POST]
+  Parameters: {"action"=>"getprimerpair", "id"=>"5", "controller"=>"genes"}
+  [4;36;1mPrimer Load (0.2ms)[0m   [0;1mSELECT * FROM "primers" WHERE ("primers"."id" = 5) [0m
+here
+Rendering genes/getprimerpair
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/genes/getprimerpair]
+
+
+Processing GenesController#new (for 127.0.0.1 at 2011-05-09 13:46:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"genes"}
+  [4;35;1mPrimer Load (0.3ms)[0m   [0mSELECT * FROM "primers" [0m
+Rendering template within layouts/genes
+Rendering genes/new
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "primers" [0m
+Rendered _primerselect (1.1ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 18:46:09', "perishable_token" = 'E7IpnvCixFVz7Sfe37S5', "last_request_at" = '2011-05-09 18:46:09' WHERE "id" = 1[0m
+Rendered _navigation (24.9ms)
+Completed in 60ms (View: 48, DB: 1) | 200 OK [http://localhost/genes/new]
+
+
+Processing GenesController#new (for 127.0.0.1 at 2011-05-09 13:46:10) [GET]
+  Parameters: {"action"=>"new", "controller"=>"genes"}
+  [4;35;1mPrimer Load (0.4ms)[0m   [0mSELECT * FROM "primers" [0m
+Rendering template within layouts/genes
+Rendering genes/new
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "primers" [0m
+Rendered _primerselect (1.1ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 18:46:10', "perishable_token" = 'NPdMlehQyPTQhAbUUaP', "last_request_at" = '2011-05-09 18:46:10' WHERE "id" = 1[0m
+Rendered _navigation (117.6ms)
+Completed in 153ms (View: 137, DB: 1) | 200 OK [http://localhost/genes/new]
+
+
+Processing GenesController#getprimerpair (for 127.0.0.1 at 2011-05-09 13:46:12) [POST]
+  Parameters: {"action"=>"getprimerpair", "id"=>"2", "controller"=>"genes"}
+  [4;35;1mPrimer Load (0.2ms)[0m   [0mSELECT * FROM "primers" WHERE ("primers"."id" = 2) [0m
+here
+Rendering genes/getprimerpair
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/genes/getprimerpair]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-09 13:46:13) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (7.9ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 18:46:14', "perishable_token" = '0QI8RQUJbW8zPKrLrs', "last_request_at" = '2011-05-09 18:46:14' WHERE "id" = 1[0m
+Rendered _navigation (38.0ms)
+Completed in 276ms (View: 251, DB: 9) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#new (for 127.0.0.1 at 2011-05-09 13:46:17) [GET]
+  Parameters: {"action"=>"new", "controller"=>"pcrs"}
+Rendering template within layouts/pcrs
+Rendering pcrs/new
+  [4;35;1mPrimer Load (0.4ms)[0m   [0mSELECT * FROM "primers" [0m
+Rendered _primerselect (5.6ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 18:46:17', "perishable_token" = 'XzWw3irtmGkJm5ajCjw', "last_request_at" = '2011-05-09 18:46:17' WHERE "id" = 1[0m
+Rendered _navigation (120.4ms)
+Completed in 169ms (View: 161, DB: 1) | 200 OK [http://localhost/pcrs/new]
+
+
+Processing PcrsController#new (for 127.0.0.1 at 2011-05-09 13:46:45) [GET]
+  Parameters: {"action"=>"new", "controller"=>"pcrs"}
+Rendering template within layouts/pcrs
+Rendering pcrs/new
+  [4;36;1mPrimer Load (0.4ms)[0m   [0;1mSELECT * FROM "primers" [0m
+Rendered _primerselect (5.7ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 18:46:46', "perishable_token" = '0O5jCu0j5nOrCPAvUa7h', "last_request_at" = '2011-05-09 18:46:45' WHERE "id" = 1[0m
+Rendered _navigation (24.5ms)
+Completed in 73ms (View: 65, DB: 1) | 200 OK [http://localhost/pcrs/new]
+
+
+Processing GenesController#getprimerpair (for 127.0.0.1 at 2011-05-09 13:46:47) [POST]
+  Parameters: {"action"=>"getprimerpair", "id"=>"1", "controller"=>"genes"}
+  [4;35;1mPrimer Load (0.2ms)[0m   [0mSELECT * FROM "primers" WHERE ("primers"."id" = 1) [0m
+here
+Rendering genes/getprimerpair
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/genes/getprimerpair]
+
+
+Processing PcrsController#new (for 127.0.0.1 at 2011-05-09 13:47:16) [GET]
+  Parameters: {"action"=>"new", "controller"=>"pcrs"}
+Rendering template within layouts/pcrs
+Rendering pcrs/new
+  [4;36;1mPrimer Load (0.4ms)[0m   [0;1mSELECT * FROM "primers" [0m
+Rendered _primerselect (6.0ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 18:47:16', "perishable_token" = 'WIU8dTq7PRkytGvGgEL', "last_request_at" = '2011-05-09 18:47:16' WHERE "id" = 1[0m
+Rendered _navigation (23.0ms)
+Completed in 73ms (View: 65, DB: 1) | 200 OK [http://localhost/pcrs/new]
+
+
+Processing PcrsController#new (for 127.0.0.1 at 2011-05-09 13:48:10) [GET]
+  Parameters: {"action"=>"new", "controller"=>"pcrs"}
+Rendering template within layouts/pcrs
+Rendering pcrs/new
+  [4;35;1mPrimer Load (0.4ms)[0m   [0mSELECT * FROM "primers" [0m
+Rendered _primerselect (5.9ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 18:48:10', "perishable_token" = 'r2SQNVoVED0X9WXG', "last_request_at" = '2011-05-09 18:48:10' WHERE "id" = 1[0m
+Rendered _navigation (23.6ms)
+Completed in 68ms (View: 59, DB: 1) | 200 OK [http://localhost/pcrs/new]
+
+
+Processing GenesController#getprimerpair (for 127.0.0.1 at 2011-05-09 13:48:16) [POST]
+  Parameters: {"action"=>"getprimerpair", "id"=>"1", "controller"=>"genes"}
+  [4;36;1mPrimer Load (0.2ms)[0m   [0;1mSELECT * FROM "primers" WHERE ("primers"."id" = 1) [0m
+here
+Rendering genes/getprimerpair
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://localhost/genes/getprimerpair]
+
+
+Processing PcrsController#create (for 127.0.0.1 at 2011-05-09 13:48:17) [POST]
+  Parameters: {"commit"=>"Create", "gene"=>{"primer"=>"1"}, "action"=>"create", "authenticity_token"=>"2H28lieYrV1Ao4dRYymJ2diH9ryVGepyyLUosBSUT20=", "controller"=>"pcrs", "pcr"=>{"denature"=>"", "gel_image"=>"", "date(1i)"=>"2011", "extension"=>"", "total_worked"=>"", "conditions"=>"", "date(2i)"=>"5", "notes"=>"", "date(3i)"=>"9", "dna_amount"=>"", "anneal_temp"=>"", "total_samples"=>"", "pcr_tube_number"=>"testpcr", "cycle"=>"", "reamp"=>""}}
+  [4;35;1mPrimer Load (0.2ms)[0m   [0mSELECT * FROM "primers" WHERE ("primers"."id" = 1) [0m
+  [4;36;1mPcr Create (0.4ms)[0m   [0;1mINSERT INTO "pcrs" ("gel_image", "denature", "primerh", "created_at", "conditions", "total_worked", "extension", "notes", "updated_at", "anneal_temp", "dna_amount", "date", "total_samples", "primerl", "pcr_tube_number", "cycle", "reamp") VALUES('', NULL, 'GATCGTAGCTCGTAGCATGCT', '2011-05-09 18:48:17', '', NULL, NULL, '', '2011-05-09 18:48:17', NULL, NULL, '2011-05-09', NULL, 'ATCGACGATCGTACGTCAT', 'testpcr', NULL, '')[0m
+Redirected to http://localhost:3000/pcrs/102
+Completed in 21ms (DB: 1) | 302 Found [http://localhost/pcrs]
+
+
+Processing PcrsController#show (for 127.0.0.1 at 2011-05-09 13:48:17) [GET]
+  Parameters: {"action"=>"show", "id"=>"102", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (0.2ms)[0m   [0mSELECT * FROM "pcrs" WHERE ("pcrs"."id" = 102) [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 18:48:17', "perishable_token" = '3Hvc7VUmDzJmBUOtC6HL', "last_request_at" = '2011-05-09 18:48:17' WHERE "id" = 1[0m
+Rendered _navigation (34.5ms)
+Completed in 49ms (View: 39, DB: 1) | 200 OK [http://localhost/pcrs/102]
+
+
+Processing PcrsController#edit (for 127.0.0.1 at 2011-05-09 13:48:21) [GET]
+  Parameters: {"action"=>"edit", "id"=>"102", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (0.3ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE ("pcrs"."id" = 102) [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/edit
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.7ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 18:48:21', "perishable_token" = 'Y52zBHiWSUicarLiS30', "last_request_at" = '2011-05-09 18:48:21' WHERE "id" = 1[0m
+Rendered _navigation (22.0ms)
+Completed in 64ms (View: 55, DB: 1) | 200 OK [http://localhost/pcrs/102/edit]
+
+
+Processing PcrsController#edit (for 127.0.0.1 at 2011-05-09 13:48:52) [GET]
+  Parameters: {"action"=>"edit", "id"=>"102", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (0.2ms)[0m   [0mSELECT * FROM "pcrs" WHERE ("pcrs"."id" = 102) [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/edit
+  [4;36;1mPrimer Load (0.4ms)[0m   [0;1mSELECT * FROM "primers" [0m
+Rendered _primerselect (6.0ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 18:48:53', "perishable_token" = 'xqSpvfN1uRM0VR1x1xVi', "last_request_at" = '2011-05-09 18:48:53' WHERE "id" = 1[0m
+Rendered _navigation (24.6ms)
+Completed in 175ms (View: 166, DB: 1) | 200 OK [http://localhost/pcrs/102/edit]
+
+
+Processing GenesController#getprimerpair (for 127.0.0.1 at 2011-05-09 13:48:55) [POST]
+  Parameters: {"action"=>"getprimerpair", "id"=>"4", "controller"=>"genes"}
+  [4;35;1mPrimer Load (0.2ms)[0m   [0mSELECT * FROM "primers" WHERE ("primers"."id" = 4) [0m
+here
+Rendering genes/getprimerpair
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/genes/getprimerpair]
+
+
+Processing GenesController#getprimerpair (for 127.0.0.1 at 2011-05-09 13:48:57) [POST]
+  Parameters: {"action"=>"getprimerpair", "id"=>"7", "controller"=>"genes"}
+  [4;36;1mPrimer Load (0.2ms)[0m   [0;1mSELECT * FROM "primers" WHERE ("primers"."id" = 7) [0m
+here
+Rendering genes/getprimerpair
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/genes/getprimerpair]
+
+
+Processing PcrsController#update (for 127.0.0.1 at 2011-05-09 13:48:59) [PUT]
+  Parameters: {"commit"=>"Update", "gene"=>{"primer"=>"7"}, "action"=>"update", "_method"=>"put", "authenticity_token"=>"KbSE0/n/yxGAzEUvuuPRR1MsMwHCl6SuR4bPwAko9t8=", "id"=>"102", "controller"=>"pcrs", "pcr"=>{"denature"=>"", "gel_image"=>"", "date(1i)"=>"2011", "extension"=>"", "total_worked"=>"", "conditions"=>"", "date(2i)"=>"5", "notes"=>"", "date(3i)"=>"9", "dna_amount"=>"", "anneal_temp"=>"", "total_samples"=>"", "pcr_tube_number"=>"testpcr", "cycle"=>"", "reamp"=>""}}
+  [4;35;1mPcr Load (0.2ms)[0m   [0mSELECT * FROM "pcrs" WHERE ("pcrs"."id" = 102) [0m
+  [4;36;1mPrimer Load (0.2ms)[0m   [0;1mSELECT * FROM "primers" WHERE ("primers"."id" = 7) [0m
+  [4;35;1mPcr Update (0.3ms)[0m   [0mUPDATE "pcrs" SET "updated_at" = '2011-05-09 18:48:59', "primerl" = 'Test', "primerh" = 'Test3' WHERE "id" = 102[0m
+Redirected to http://localhost:3000/pcrs/102
+Completed in 22ms (DB: 1) | 302 Found [http://localhost/pcrs/102]
+
+
+Processing PcrsController#show (for 127.0.0.1 at 2011-05-09 13:48:59) [GET]
+  Parameters: {"action"=>"show", "id"=>"102", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (0.3ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE ("pcrs"."id" = 102) [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 18:48:59', "perishable_token" = 'itePaVzgwRx0qC1fs7T', "last_request_at" = '2011-05-09 18:48:59' WHERE "id" = 1[0m
+Rendered _navigation (35.0ms)
+Completed in 49ms (View: 40, DB: 1) | 200 OK [http://localhost/pcrs/102]
+
+
+Processing PcrsController#edit (for 127.0.0.1 at 2011-05-09 13:49:04) [GET]
+  Parameters: {"action"=>"edit", "id"=>"102", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (0.3ms)[0m   [0mSELECT * FROM "pcrs" WHERE ("pcrs"."id" = 102) [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/edit
+  [4;36;1mPrimer Load (0.4ms)[0m   [0;1mSELECT * FROM "primers" [0m
+Rendered _primerselect (5.9ms)
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 18:49:04', "perishable_token" = 'g9u6nGFEbRYoVJ7IngtW', "last_request_at" = '2011-05-09 18:49:04' WHERE "id" = 1[0m
+Rendered _navigation (24.3ms)
+Completed in 73ms (View: 63, DB: 2) | 200 OK [http://localhost/pcrs/102/edit]
+
+
+Processing PcrsController#edit (for 127.0.0.1 at 2011-05-09 13:49:15) [GET]
+  Parameters: {"action"=>"edit", "id"=>"102", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (0.2ms)[0m   [0mSELECT * FROM "pcrs" WHERE ("pcrs"."id" = 102) [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/edit
+  [4;36;1mPrimer Load (0.4ms)[0m   [0;1mSELECT * FROM "primers" [0m
+Rendered _primerselect (5.8ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 18:49:15', "perishable_token" = 'fwkZazOPddvJhafE30hJ', "last_request_at" = '2011-05-09 18:49:15' WHERE "id" = 1[0m
+Rendered _navigation (122.6ms)
+Completed in 174ms (View: 165, DB: 1) | 200 OK [http://localhost/pcrs/102/edit]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-09 13:49:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (7.3ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 18:49:19', "perishable_token" = 'Zb9sodZhp4D4zmhdhvT', "last_request_at" = '2011-05-09 18:49:19' WHERE "id" = 1[0m
+Rendered _navigation (39.4ms)
+Completed in 274ms (View: 249, DB: 8) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-09 13:49:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (7.8ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 18:49:19', "perishable_token" = 'CkBNhQYGDaHfDL9FhmM9', "last_request_at" = '2011-05-09 18:49:19' WHERE "id" = 1[0m
+Rendered _navigation (140.8ms)
+Completed in 269ms (View: 242, DB: 8) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#show (for 127.0.0.1 at 2011-05-09 13:49:23) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (0.3ms)[0m   [0mSELECT * FROM "pcrs" WHERE ("pcrs"."id" = 2) [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 18:49:23', "perishable_token" = 'Qp7qSvqmjvWK9kkdhQpR', "last_request_at" = '2011-05-09 18:49:23' WHERE "id" = 1[0m
+Rendered _navigation (35.6ms)
+Completed in 49ms (View: 40, DB: 1) | 200 OK [http://localhost/pcrs/2]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 13:49:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 18:49:25', "perishable_token" = 'sxnPvMg9bjoX1lzg6', "last_request_at" = '2011-05-09 18:49:25' WHERE "id" = 1[0m
+  [4;36;1mTaxonomy Load (61.0ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.7ms)
+Completed in 368ms (View: 196, DB: 62) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 13:50:08) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 18:50:08', "perishable_token" = '5MjkKAr8uGZsrm47RPiZ', "last_request_at" = '2011-05-09 18:50:08' WHERE "id" = 1[0m
+  [4;35;1mTaxonomy Load (168.9ms)[0m   [0mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+  [4;36;1mTaxonomy Load (165.0ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') [0m
+
+ActionView::TemplateError (undefined local variable or method `dnasample' for #<ActionView::Base:0x105c99590>) on line #50 of app/views/taxonomies/index.html.erb:
+47:     <td><%=h taxonomy.character_diagnosis %></td>
+48:     <td><%=h taxonomy.description %></td>
+49:     <td><%=h taxonomy.countries %></td>
+50:     <td class="icons"><%= link_to image_tag("show.png", :border=>0), dnasample%></td>
+51:  	<td class="icons"><%= link_to image_tag("edit.png", :border=>0), edit_dnasample_path(dnasample)%></td>
+52:  	<td class="icons"><%= link_to image_tag("delete.png", :border=>0), dnasample, :confirm => 'Are you sure?', :method => :delete %></td>
+53:   </tr>
+
+    app/views/taxonomies/index.html.erb:50
+    app/views/taxonomies/index.html.erb:33:in `each'
+    app/views/taxonomies/index.html.erb:33
+    app/controllers/taxonomies_controller.rb:12:in `index'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (158.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 13:50:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 18:50:29', "perishable_token" = 'ZvHNLL97LY0LRh7iu4T', "last_request_at" = '2011-05-09 18:50:29' WHERE "id" = 1[0m
+  [4;35;1mTaxonomy Load (186.7ms)[0m   [0mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.5ms)
+Completed in 420ms (View: 123, DB: 187) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 13:50:47) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 18:50:47', "perishable_token" = '5c7Ify50UeiZ2A9AGx8D', "last_request_at" = '2011-05-09 18:50:47' WHERE "id" = 1[0m
+  [4;36;1mTaxonomy Load (61.3ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.4ms)
+Completed in 391ms (View: 220, DB: 62) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 13:51:06) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 18:51:06', "perishable_token" = 'UMgsD9DTzrm5HRuPMVp', "last_request_at" = '2011-05-09 18:51:06' WHERE "id" = 1[0m
+  [4;35;1mTaxonomy Load (61.2ms)[0m   [0mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.6ms)
+Completed in 525ms (View: 225, DB: 62) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 13:52:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 18:52:18', "perishable_token" = 'rU6arTvgectN8BUvLG5', "last_request_at" = '2011-05-09 18:52:18' WHERE "id" = 1[0m
+  [4;36;1mTaxonomy Load (178.2ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.6ms)
+Completed in 412ms (View: 122, DB: 179) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 13:52:28) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 18:52:28', "perishable_token" = 'HA2PdzvlYX4iFrHQO2X', "last_request_at" = '2011-05-09 18:52:28' WHERE "id" = 1[0m
+  [4;35;1mTaxonomy Load (62.4ms)[0m   [0mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.5ms)
+Completed in 388ms (View: 116, DB: 63) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 13:52:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 18:52:40', "perishable_token" = 'P5s6l7wy0Hla1oeNy7rf', "last_request_at" = '2011-05-09 18:52:40' WHERE "id" = 1[0m
+  [4;36;1mTaxonomy Load (61.6ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.5ms)
+Completed in 518ms (View: 220, DB: 62) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 13:52:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 18:52:51', "perishable_token" = 'DJMvkqEFKIqzFyvmplzc', "last_request_at" = '2011-05-09 18:52:51' WHERE "id" = 1[0m
+  [4;35;1mTaxonomy Load (174.2ms)[0m   [0mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.5ms)
+Completed in 403ms (View: 115, DB: 175) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 13:52:53) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 18:52:53', "perishable_token" = 'bKJHu0sNZrzswqmX62t', "last_request_at" = '2011-05-09 18:52:53' WHERE "id" = 1[0m
+  [4;36;1mTaxonomy Load (59.9ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.6ms)
+Completed in 390ms (View: 218, DB: 61) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 13:53:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 18:53:01', "perishable_token" = 'Fo6fRGxiTzwxuMWqKT', "last_request_at" = '2011-05-09 18:53:01' WHERE "id" = 1[0m
+  [4;35;1mTaxonomy Load (186.5ms)[0m   [0mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.5ms)
+Completed in 411ms (View: 115, DB: 187) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 13:53:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 18:53:11', "perishable_token" = 'A5MPvNHR8aW0uwovC2q1', "last_request_at" = '2011-05-09 18:53:11' WHERE "id" = 1[0m
+  [4;36;1mTaxonomy Load (61.1ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.5ms)
+Completed in 397ms (View: 114, DB: 62) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 13:53:14) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 18:53:14', "perishable_token" = '9HIP50NwJLhJOfWpMXRd', "last_request_at" = '2011-05-09 18:53:14' WHERE "id" = 1[0m
+  [4;35;1mTaxonomy Load (60.7ms)[0m   [0mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.6ms)
+Completed in 502ms (View: 218, DB: 61) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 13:53:30) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 18:53:30', "perishable_token" = 'tCdR5gvJdpmDYP7tPra', "last_request_at" = '2011-05-09 18:53:30' WHERE "id" = 1[0m
+  [4;36;1mTaxonomy Load (179.7ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.4ms)
+Completed in 404ms (View: 115, DB: 180) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 13:53:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 18:53:40', "perishable_token" = 'XlGnSI5B4vdLBG9F9jpq', "last_request_at" = '2011-05-09 18:53:40' WHERE "id" = 1[0m
+  [4;35;1mTaxonomy Load (60.5ms)[0m   [0mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.5ms)
+Completed in 397ms (View: 116, DB: 61) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 13:54:02) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 18:54:02', "perishable_token" = 'Wc7AyIprF83uimXe9Ql', "last_request_at" = '2011-05-09 18:54:02' WHERE "id" = 1[0m
+  [4;36;1mTaxonomy Load (62.7ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.5ms)
+Completed in 540ms (View: 250, DB: 63) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 13:55:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 18:55:17', "perishable_token" = 'AiGCLXYFhfLcZVkpbJXV', "last_request_at" = '2011-05-09 18:55:17' WHERE "id" = 1[0m
+  [4;35;1mTaxonomy Load (180.7ms)[0m   [0mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.5ms)
+Completed in 413ms (View: 120, DB: 181) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 13:56:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 18:56:29', "perishable_token" = 'AZxoWB9MrojFzGFxHYss', "last_request_at" = '2011-05-09 18:56:29' WHERE "id" = 1[0m
+  [4;36;1mTaxonomy Load (61.3ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.5ms)
+Completed in 398ms (View: 115, DB: 62) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 13:56:53) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.8ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 18:56:54', "perishable_token" = '03arkOns3wIcypZR1P68', "last_request_at" = '2011-05-09 18:56:54' WHERE "id" = 1[0m
+  [4;35;1mTaxonomy Load (59.6ms)[0m   [0mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.5ms)
+Completed in 511ms (View: 229, DB: 61) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 13:57:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 18:57:42', "perishable_token" = '53FF8XlDSRLT4h50ZqX3', "last_request_at" = '2011-05-09 18:57:42' WHERE "id" = 1[0m
+  [4;36;1mTaxonomy Load (186.0ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.5ms)
+Completed in 412ms (View: 115, DB: 187) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 13:58:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 18:58:11', "perishable_token" = '9qKu26tTrlRkjOiofi5s', "last_request_at" = '2011-05-09 18:58:11' WHERE "id" = 1[0m
+  [4;35;1mTaxonomy Load (59.5ms)[0m   [0mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.5ms)
+Completed in 384ms (View: 117, DB: 60) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 13:58:32) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 18:58:32', "perishable_token" = 'ItpolAINjKzvjvnECz', "last_request_at" = '2011-05-09 18:58:32' WHERE "id" = 1[0m
+  [4;36;1mTaxonomy Load (61.0ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.6ms)
+Completed in 525ms (View: 220, DB: 62) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 13:58:38) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 18:58:38', "perishable_token" = 'U87OQGP3flXkxzC0c2Wh', "last_request_at" = '2011-05-09 18:58:38' WHERE "id" = 1[0m
+  [4;35;1mTaxonomy Load (179.1ms)[0m   [0mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.5ms)
+Completed in 407ms (View: 114, DB: 180) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 13:59:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 18:59:01', "perishable_token" = '8eJufa9XciBhiYpfLwv', "last_request_at" = '2011-05-09 18:59:01' WHERE "id" = 1[0m
+  [4;36;1mTaxonomy Load (60.3ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.5ms)
+Completed in 393ms (View: 221, DB: 61) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 13:59:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 18:59:09', "perishable_token" = 'Nws63vvw55JNeDzf7b', "last_request_at" = '2011-05-09 18:59:09' WHERE "id" = 1[0m
+  [4;35;1mTaxonomy Load (181.1ms)[0m   [0mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.5ms)
+Completed in 522ms (View: 225, DB: 182) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 13:59:14) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 18:59:14', "perishable_token" = '1MS5UBxJPYeVigU0Dcl', "last_request_at" = '2011-05-09 18:59:14' WHERE "id" = 1[0m
+  [4;36;1mTaxonomy Load (183.3ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.5ms)
+Completed in 411ms (View: 114, DB: 184) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 14:00:50) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 19:00:50', "perishable_token" = 'hWqlU5frcBuy50bonR4', "last_request_at" = '2011-05-09 19:00:50' WHERE "id" = 1[0m
+  [4;35;1mTaxonomy Load (59.8ms)[0m   [0mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.5ms)
+Completed in 521ms (View: 225, DB: 60) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 14:01:00) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 19:01:00', "perishable_token" = 'HpjunRTZ9KSg6PR5aS', "last_request_at" = '2011-05-09 19:01:00' WHERE "id" = 1[0m
+  [4;36;1mTaxonomy Load (183.9ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.5ms)
+Completed in 419ms (View: 121, DB: 185) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 14:01:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 19:01:12', "perishable_token" = 'iGoVl2WSeRVtprTJvq4L', "last_request_at" = '2011-05-09 19:01:12' WHERE "id" = 1[0m
+  [4;35;1mTaxonomy Load (60.3ms)[0m   [0mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.4ms)
+Completed in 405ms (View: 123, DB: 61) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 14:01:33) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 19:01:33', "perishable_token" = 'qkc9eGaiRb5hTAos6EJN', "last_request_at" = '2011-05-09 19:01:33' WHERE "id" = 1[0m
+  [4;36;1mTaxonomy Load (61.5ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.5ms)
+Completed in 507ms (View: 223, DB: 62) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 14:01:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 19:01:40', "perishable_token" = '2JMaxLwp81M6xLwCE', "last_request_at" = '2011-05-09 19:01:40' WHERE "id" = 1[0m
+  [4;35;1mTaxonomy Load (178.7ms)[0m   [0mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.6ms)
+Completed in 409ms (View: 119, DB: 179) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 14:02:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 19:02:37', "perishable_token" = 'AX4epgmFycDtM65jYk1', "last_request_at" = '2011-05-09 19:02:37' WHERE "id" = 1[0m
+  [4;36;1mTaxonomy Load (61.0ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.5ms)
+Completed in 395ms (View: 115, DB: 62) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 14:03:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 19:03:17', "perishable_token" = 'O3IpGX5UCGffPE3UXVkM', "last_request_at" = '2011-05-09 19:03:17' WHERE "id" = 1[0m
+  [4;35;1mTaxonomy Load (59.8ms)[0m   [0mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.5ms)
+Completed in 500ms (View: 219, DB: 61) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 14:04:41) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 19:04:41', "perishable_token" = 'kh6sjIpYqLrOGELIY', "last_request_at" = '2011-05-09 19:04:41' WHERE "id" = 1[0m
+  [4;36;1mTaxonomy Load (181.8ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.5ms)
+Completed in 410ms (View: 116, DB: 182) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 14:05:49) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 19:05:49', "perishable_token" = '3mbDtuM0YVBejdqDKDuV', "last_request_at" = '2011-05-09 19:05:49' WHERE "id" = 1[0m
+  [4;35;1mTaxonomy Load (59.7ms)[0m   [0mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.5ms)
+Completed in 401ms (View: 118, DB: 60) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 14:07:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 19:07:20', "perishable_token" = 'kCJatYlp8T3Reol4b1w3', "last_request_at" = '2011-05-09 19:07:20' WHERE "id" = 1[0m
+  [4;36;1mTaxonomy Load (60.8ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.5ms)
+Completed in 509ms (View: 220, DB: 61) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-09 14:07:43) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 19:07:43', "perishable_token" = 'ygUlGFCflCxEQ30ZrfD', "last_request_at" = '2011-05-09 19:07:43' WHERE "id" = 1[0m
+  [4;35;1mTaxonomy Load (182.2ms)[0m   [0mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.4ms)
+Completed in 411ms (View: 116, DB: 183) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#new (for 127.0.0.1 at 2011-05-09 14:07:45) [POST]
+  Parameters: {"action"=>"new", "authenticity_token"=>"54DGRPZ3zOJH7AGt3GbKp3k4XlD6rQ33I0E1s7yBY2I=", "controller"=>"taxonomies"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 19:07:45', "perishable_token" = 'uCfcClPLc9U6ML9VV5uT', "last_request_at" = '2011-05-09 19:07:45' WHERE "id" = 1[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/new
+Rendered _navigation (2.8ms)
+Completed in 100ms (View: 61, DB: 1) | 200 OK [http://localhost/taxonomies/new]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-05-09 14:07:59) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 19:07:59', "perishable_token" = 'INrqklh8lEXZFVNOXXT', "last_request_at" = '2011-05-09 19:07:59' WHERE "id" = 1[0m
+  [4;36;1mExperiment Load (204.0ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (2.5ms)
+Completed in 548ms (View: 222, DB: 205) | 200 OK [http://localhost/experiments]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-05-09 14:08:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"dnasamples"}
+  [4;35;1mDnasample Load (5.5ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 19:08:02', "perishable_token" = 'GzfGHiozVeTMXZ9yR', "last_request_at" = '2011-05-09 19:08:02' WHERE "id" = 1[0m
+Rendered _navigation (144.6ms)
+Completed in 279ms (View: 255, DB: 6) | 200 OK [http://localhost/dnasamples]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-05-09 14:08:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 19:08:12', "perishable_token" = 'dabfCzvlJq8A6oQZrRrO', "last_request_at" = '2011-05-09 19:08:12' WHERE "id" = 1[0m
+  [4;36;1mExperiment Load (205.1ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (2.5ms)
+Completed in 455ms (View: 128, DB: 206) | 200 OK [http://localhost/experiments]
+
+
+Processing ExperimentsController#new (for 127.0.0.1 at 2011-05-09 14:08:16) [POST]
+  Parameters: {"action"=>"new", "authenticity_token"=>"54DGRPZ3zOJH7AGt3GbKp3k4XlD6rQ33I0E1s7yBY2I=", "controller"=>"experiments"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-09 19:08:16', "perishable_token" = '3KFnQBE57XM9mIP6TAe', "last_request_at" = '2011-05-09 19:08:16' WHERE "id" = 1[0m
+  [4;35;1mPcr Load (6.8ms)[0m   [0mSELECT * FROM "pcrs" [0m
+Rendering template within layouts/experiments
+Rendering experiments/new
+  [4;36;1mPrimer Load (0.4ms)[0m   [0;1mSELECT * FROM "primers" [0m
+Rendered _navigation (2.5ms)
+Completed in 217ms (View: 35, DB: 8) | 200 OK [http://localhost/experiments/new]
+
+
+Processing GenesController#getprimerpair (for 127.0.0.1 at 2011-05-09 14:08:21) [POST]
+  Parameters: {"action"=>"getprimerpair", "id"=>"2", "controller"=>"genes"}
+  [4;35;1mPrimer Load (0.2ms)[0m   [0mSELECT * FROM "primers" WHERE ("primers"."id" = 2) [0m
+here
+Rendering genes/getprimerpair
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/genes/getprimerpair]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-05-09 14:08:24) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-09 19:08:24', "perishable_token" = 'OnQfNBNGUNrSgnM2ssYe', "last_request_at" = '2011-05-09 19:08:24' WHERE "id" = 1[0m
+  [4;36;1mExperiment Load (90.8ms)[0m   [0;1mSELECT * FROM "experiments" WHERE (experiments.experiment_number LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/experiments
+Rendering experiments/index
+Rendered _navigation (2.5ms)
+Completed in 533ms (View: 220, DB: 91) | 200 OK [http://localhost/experiments]

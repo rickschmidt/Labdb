@@ -1,8 +1,14 @@
 class PcrsController < ApplicationController
   # GET /pcrs
   # GET /pcrs.xml
+    helper_method :sort_column, :sort_direction
+    helper :all
   def index
-    @pcrs = Pcr.all
+
+    @per_page = params[:per_page] || Pcr.per_page || 10
+      @search=Pcr.search(params[:search])
+      @pcrs=@search.find(:all,:order=>(sort_column + " "+ sort_direction)).paginate(:per_page => @per_page, :page => params[:page])
+
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,7 +47,11 @@ class PcrsController < ApplicationController
   # POST /pcrs.xml
   def create
     @pcr = Pcr.new(params[:pcr])
-
+     if params[:gene][:primer]!=""
+        @primer=Primer.find(params[:gene][:primer])
+        @pcr.primerh=@primer.primerh
+        @pcr.primerl=@primer.primerl
+    end
     respond_to do |format|
       if @pcr.save
         format.html { redirect_to(@pcr, :notice => 'Pcr was successfully created.') }
@@ -57,7 +67,11 @@ class PcrsController < ApplicationController
   # PUT /pcrs/1.xml
   def update
     @pcr = Pcr.find(params[:id])
-
+     if params[:gene][:primer]!=""
+        @primer=Primer.find(params[:gene][:primer])
+        @pcr.primerh=@primer.primerh
+        @pcr.primerl=@primer.primerl
+    end
     respond_to do |format|
       if @pcr.update_attributes(params[:pcr])
         format.html { redirect_to(@pcr, :notice => 'Pcr was successfully updated.') }
@@ -80,4 +94,13 @@ class PcrsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  private 
+   def sort_column
+       Pcr.column_names.include?(params[:sort]) ? params[:sort] : "date"
+     end
+
+     def sort_direction
+       %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+     end
 end

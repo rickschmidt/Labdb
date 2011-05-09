@@ -1,4 +1,4 @@
-<h1>New pcr</h1>
+<h1>New PCR Reaction</h1>
 
 <% form_for(@pcr) do |f| %>
   <%= f.error_messages %>
@@ -40,12 +40,9 @@
 	<td>  <%= f.label :cycle %><br />
     <%= f.text_field :cycle %></td></tr>
 
-<tr><td><%= f.label :primerl %><br />
-    <%= f.text_field :primerl %></td>
-	<td> <%= f.label :primerh %><br />
-    <%= f.text_field :primerh %></td></tr>
-</table>
 
+</table>
+<p>	<%=render :partial => '/primerselect'%></p>
 
   
   <p>
