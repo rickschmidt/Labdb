@@ -85,7 +85,7 @@ $(document).ready(function (){
       });
     });
     
-      $('select#pcr_dnasamples').live('change',function (){
+      $('NULLselect#pcr_dnasamples').live('change',function (){
       dataString = $('select#pcr_dnasamples').val();
       pcr=$('input#pcrid').val();
       

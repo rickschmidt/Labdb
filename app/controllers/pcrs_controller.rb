@@ -20,6 +20,7 @@ class PcrsController < ApplicationController
   # GET /pcrs/1.xml
   def show
     @pcr = Pcr.find(params[:id])
+    @pcrdnas=@pcr.dnasamples
     session[:pcrid]=@pcr.id
     respond_to do |format|
       format.html # show.html.erb
@@ -112,6 +113,21 @@ class PcrsController < ApplicationController
     end 
   end
   
+  def submitdnasample
+       @pcr=Pcr.find(params[:pcrid])
+     @dna=Dnasample.find(params[:pcr][:dnasamples])
+     @pcr.dnasamples<<@dna
+     flash[:notice] = "Added DNA Sample #{@dna.dna_accession} to PCR Tube #{@pcr.pcr_tube_number}" 
+        request.env["HTTP_REFERER"] ? (redirect_to :back) :(redirect_to :root)
+ end
+ 
+ def removednasample
+           @pcr=Pcr.find(params[:pcrid])
+     @dna=Dnasample.find(params[:pcr][:dnasamples])
+     @pcr.dnasamples.delete(@dna)
+     flash[:notice] = "Removed DNA Sample #{@dna.dna_accession} to PCR Tube #{@pcr.pcr_tube_number}" 
+        request.env["HTTP_REFERER"] ? (redirect_to :back) :(redirect_to :root)
+ end
   private 
    def sort_column
        Pcr.column_names.include?(params[:sort]) ? params[:sort] : "date"
