@@ -1,3 +1,9 @@
+
+
+
+
+
+
 <% form_tag experiment_path do %>
 	<%= select :experiment, :pcrs, Pcr.all.collect { |m| [m.pcr_tube_number, m.id] }.sort, {:prompt=>'Please Select...'} %>
 	<%= observe_field(:pcrs, :url => {:controller=> 'experiments',:action => "updatepcrmenu" },

@@ -84,4 +84,32 @@ $(document).ready(function (){
           }
       });
     });
-});
+    
+      $('select#pcr_dnasamples').live('change',function (){
+      dataString = $('select#pcr_dnasamples').val();
+      pcr=$('input#pcrid').val();
+      
+      alert(pcr);
+  
+      // $.post('/genes/getprimerpair', function(dataString){
+      //                //$.('target3').html(dataString);
+      //                alert("hello from ajax");
+      //            });
+
+      $.ajax({
+          url: "/pcrs/getdnasample",
+          type: "POST",
+          data: {id:dataString,pcrid:pcr},
+    
+          success: function(json,textStatus){
+                   
+              var obj = jQuery.parseJSON(json);
+              alert(obj.dnaid)
+              
+
+
+
+          }
+      });
+    });
+}); //docuement ready 

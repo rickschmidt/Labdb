@@ -24,7 +24,7 @@
 #navlist li{margin:0;padding:0;list-style:none;position:absolute;top:10;}
 #navlist li, #navlist a{height:45px;display:block;}
 
-#welcome{left:10px;width:95px;}
+#welcome{left:10px;width:105px;}
 #welcome{background:url('/images/banner.png') 0px 0px;}
 #welcome a:hover{background: url('/images/banner.png') 0px -45px;}
 
@@ -33,11 +33,11 @@
 #experiments{background:url('/images/banner.png')  -105px 0px;}
 #experiments a:hover{background: url('/images/banner.png') -105.649px -45px;}
 
-#dna{left:217.649px;width:112.649px;}
+#dna{left:217.649px;width:113.649px;}
 #dna{background:url('/images/banner.png')  -217.649px 0px;}
 #dna a:hover{background: url('/images/banner.png') -217.649px -45px;}
            
-#gene{left:330.3px;width:75px;}
+#gene{left:330.3px;width:76px;}
 #gene{background:url('/images/banner.png')  -330.3px 0px;}
 #gene a:hover{background: url('/images/banner.png') -330.3px -45px;}
 
