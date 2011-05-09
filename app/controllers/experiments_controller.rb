@@ -167,6 +167,19 @@ class ExperimentsController < ApplicationController
     
     
   end
+  
+  def getpcrtube
+     @pcr=Pcr.find(params[:id]) 
+     @dnasample=@pcr.dnasamples.first
+
+     flash[:notice] = "updating" 
+      respond_to do |with|
+            with.js
+                    logger.debug "here"
+                end
+
+      
+  end
     
   private 
    def sort_column

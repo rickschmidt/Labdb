@@ -26,36 +26,36 @@
 
 #welcome{left:10px;width:105px;}
 #welcome{background:url('/images/banner.png') 0px 0px;}
-#welcome a:hover{background: url('/images/banner.png') 0px -45px;}
+#welcome a:hover{background: url('/images/banner.png') 0px -43px;}
 
 
 #experiments{left:105px;width:112.649px;}
 #experiments{background:url('/images/banner.png')  -105px 0px;}
-#experiments a:hover{background: url('/images/banner.png') -105.649px -45px;}
+#experiments a:hover{background: url('/images/banner.png') -105px -43px;}
 
 #dna{left:217.649px;width:113.649px;}
 #dna{background:url('/images/banner.png')  -217.649px 0px;}
-#dna a:hover{background: url('/images/banner.png') -217.649px -45px;}
+#dna a:hover{background: url('/images/banner.png') -217.649px -43px;}
            
 #gene{left:330.3px;width:76px;}
 #gene{background:url('/images/banner.png')  -330.3px 0px;}
-#gene a:hover{background: url('/images/banner.png') -330.3px -45px;}
+#gene a:hover{background: url('/images/banner.png') -330.3px -43px;}
 
 #pcr{left:406px;width:75px;}
 #pcr{background:url('/images/banner.png')  -406px 0px;}
-#pcr a:hover{background: url('/images/banner.png') -406px -45px;}
+#pcr a:hover{background: url('/images/banner.png') -406px -43px;}
 
 #taxonomy{left:481px;width:100px;}
 #taxonomy{background:url('/images/banner.png')  -481px 0px;}
-#taxonomy a:hover{background: url('/images/banner.png') -481px -45px;}
+#taxonomy a:hover{background: url('/images/banner.png') -481px -43px;}
 
 #primers{left:576px;width:100px;}
 #primers{background:url('/images/banner.png')  -576px 0px;}
-#primers a:hover{background: url('/images/banner.png') -576px -45px;}
+#primers a:hover{background: url('/images/banner.png') -576px -43px;}
 
 #profile{left:652px;width:100px;}
 #profile{background:url('/images/banner.png')  -652px 0px;}
-#profile a:hover{background: url('/images/banner.png') -652px -45px;}
+#profile a:hover{background: url('/images/banner.png') -652px -43px;}
 
 
 body { background-color: #fff; 

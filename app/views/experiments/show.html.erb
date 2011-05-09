@@ -1,9 +1,25 @@
+<p><b>Date:</b> <%= @experiment.date %> <b>Experiment:</b><%= @experiment.experiment_number %></p>
+<table class='custom'>
+	<tr>
+		<th class="custom"><%= sortable 'pcr_tube_number' %></th>
+		<th class="custom"><%= sortable 'dna_sample_number' %></th>
+		<th class="custom"><%= sortable 'lprimer' %></th>
+		<th class="custom"><%= sortable 'hprimer' %></th>
+	</tr>
+<% @experiments.each do |experiment|%>
+
+<tr id="newexp">
+	<td class="custom"><%= select('experiment','pcrs',Pcr.all.collect {|p| [ p.pcr_tube_number, p.id] }, {:prompt => 'Select PCR'})%>	</td>
+	<td class="dna"></td>
+		<td class="primerh"></td>
+			<td class="primerl"></td>
+</tr>
+<%end%>
+</table>
 
 
-
-
-
-
+<hr/>
+<h1>OLD</h1>
 <% form_tag experiment_path do %>
 	<%= select :experiment, :pcrs, Pcr.all.collect { |m| [m.pcr_tube_number, m.id] }.sort, {:prompt=>'Please Select...'} %>
 	<%= observe_field(:pcrs, :url => {:controller=> 'experiments',:action => "updatepcrmenu" },
@@ -13,7 +29,7 @@
 	<div id="pcr_field_div"></div>
         <%= submit_tag 'Submit' %>
 
-<%= javascript_include_tag :defaults %>
+
 <%= collection_select(nil, :id,  @experiments,  :id, :id,
                       {:prompt   => "Select a Genre"},
                       {:onchange => "#{remote_function(:url  => {:action => "updatepcrmenu"},
