@@ -1,0 +1,2 @@
+
+	<%= select('pcr','dnasamples',Dnasample.all.collect {|p| [ p.dna_accession, p.id] }, {:prompt => 'Select PCR'})%> Select a DNA Sample by its Accession # in the <%= link_to "DNA Samples", dnasamples_path %> table.

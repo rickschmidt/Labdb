@@ -20,7 +20,7 @@ class PcrsController < ApplicationController
   # GET /pcrs/1.xml
   def show
     @pcr = Pcr.find(params[:id])
-
+    session[:pcrid]=@pcr.id
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @pcr }
@@ -93,6 +93,23 @@ class PcrsController < ApplicationController
       format.html { redirect_to(pcrs_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  def getdnasample
+
+     @pcr=Pcr.find(params[:pcrid])
+     @dna=Dnasample.find(params[:id])
+     @pcr.dnasamples<<@dna
+     
+     
+
+      # render :update do |page|
+      #     page.replace "primerh", :object => @primerh
+      # end
+      flash[:notice] = "updating" 
+      respond_to do |with|
+            with.js
+    end 
   end
   
   private 

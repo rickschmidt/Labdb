@@ -1,3 +1,4 @@
+<p><%=h  hidden_field_tag(:pcrid, @pcr.id) %></p>
 <p>
   <b>Pcr tube number:</b>
   <%=h @pcr.pcr_tube_number %>
@@ -72,6 +73,7 @@
   <b>Primerh:</b>
   <%=h @pcr.primerh %>
 </p>
+<p><%= render :partial =>'dnasampleselect' %></p>
 
 
 <%= link_to 'Edit', edit_pcr_path(@pcr) %> |
