@@ -114,28 +114,35 @@ $(document).ready(function (){
       //    });
     
      $('select#experiment_pcrs').live('change',function (){
-            alert("hi");
-      dataString = $('select#experiment_pcrs').val();
-      
+
+      dataString = jQuery('tr.exp:last').find('select#experiment_pcrs').val();
+        alert("hi"+ ""+ dataString);
          $.ajax({
           url: "/experiments/getpcrtube",
           type: "POST",
           data: {id:dataString},
     
           success: function(json,textStatus){
-              
+
               var obj = jQuery.parseJSON(json);
               alert(obj.dna);
-        var myDiv = jQuery('<tr><td>HI JQUERY</td></tr>').insertAfter('tr#newexp');
-             $('.primerh').html(obj.primerh);
-             $('.dna').html(obj.dna);
-             $('.primerl').html(obj.primerl);
 
-              
-                
+             
 
+            
+             var index = jQuery('tr.exp:last').index();
+                            alert(index);
+             $('.primerh:last').attr('id',index).html(obj.primerh);
+             $('.dna:last').attr('id',index).html(obj.dna);
+             $('.primerl:last').attr('id',index).html(obj.primerl);
+              var myDiv = jQuery('tr.exp#0').clone().attr('id',index).appendTo('table.custom');
 
+          },
+          
+          error: function(json,textStatus){
+              alert(textStatus);
           }
+
       });
      
     });

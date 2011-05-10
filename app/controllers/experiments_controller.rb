@@ -170,7 +170,10 @@ class ExperimentsController < ApplicationController
   
   def getpcrtube
      @pcr=Pcr.find(params[:id]) 
-     @dnasample=@pcr.dnasamples.first
+    if @pcr.dnasamples.first
+        @dnasample=@pcr.dnasamples.first
+end
+        
 
      flash[:notice] = "updating" 
       respond_to do |with|

@@ -1,20 +1,20 @@
 <p><b>Date:</b> <%= @experiment.date %> <b>Experiment:</b><%= @experiment.experiment_number %></p>
 <table class='custom'>
 	<tr>
-		<th class="custom"><%= sortable 'pcr_tube_number' %></th>
+		<th class="custom"><%= sortable 'pcr_tube_number', "ids for now" %></th>
 		<th class="custom"><%= sortable 'dna_sample_number' %></th>
 		<th class="custom"><%= sortable 'lprimer' %></th>
 		<th class="custom"><%= sortable 'hprimer' %></th>
 	</tr>
-<% @experiments.each do |experiment|%>
 
-<tr id="newexp">
-	<td class="custom"><%= select('experiment','pcrs',Pcr.all.collect {|p| [ p.pcr_tube_number, p.id] }, {:prompt => 'Select PCR'})%>	</td>
+
+<tr class="exp" id="0">
+	<td class="custom"><%= select('experiment','pcrs',Pcr.all.collect {|p| [ p.id, p.id] }, {:prompt => 'Select PCR'})%>	</td>
 	<td class="dna"></td>
 		<td class="primerh"></td>
 			<td class="primerl"></td>
 </tr>
-<%end%>
+
 </table>
 
 
