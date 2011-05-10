@@ -20,42 +20,6 @@
 #header a {
   text-decoration:none;
 }
-#navlist{left:120px;position:relative;}
-#navlist li{margin:0;padding:0;list-style:none;position:absolute;top:10;}
-#navlist li, #navlist a{height:45px;display:block;}
-
-#welcome{left:10px;width:105px;}
-#welcome{background:url('/images/banner.png') 0px 0px;}
-#welcome a:hover{background: url('/images/banner.png') 0px -43px;}
-
-
-#experiments{left:105px;width:112.649px;}
-#experiments{background:url('/images/banner.png')  -105px 0px;}
-#experiments a:hover{background: url('/images/banner.png') -105px -43px;}
-
-#dna{left:217.649px;width:113.649px;}
-#dna{background:url('/images/banner.png')  -217.649px 0px;}
-#dna a:hover{background: url('/images/banner.png') -217.649px -43px;}
-           
-#gene{left:330.3px;width:76px;}
-#gene{background:url('/images/banner.png')  -330.3px 0px;}
-#gene a:hover{background: url('/images/banner.png') -330.3px -43px;}
-
-#pcr{left:406px;width:75px;}
-#pcr{background:url('/images/banner.png')  -406px 0px;}
-#pcr a:hover{background: url('/images/banner.png') -406px -43px;}
-
-#taxonomy{left:481px;width:100px;}
-#taxonomy{background:url('/images/banner.png')  -481px 0px;}
-#taxonomy a:hover{background: url('/images/banner.png') -481px -43px;}
-
-#primers{left:576px;width:100px;}
-#primers{background:url('/images/banner.png')  -576px 0px;}
-#primers a:hover{background: url('/images/banner.png') -576px -43px;}
-
-#profile{left:652px;width:100px;}
-#profile{background:url('/images/banner.png')  -652px 0px;}
-#profile a:hover{background: url('/images/banner.png') -652px -43px;}
 
 
 body { background-color: #fff; 
@@ -267,3 +231,64 @@ font-family: Gill Sans / Gill Sans MT, sans-serif;
 	margin: 0 0 0 auto;
 }
 
+
+
+
+
+
+
+
+
+
+#welcome a:hover{
+
+	background: #8265A6; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#BAA5D2', endColorstr='#8265A6'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#BAA5D2), to(#8265A6)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #BAA5D2,  #8265A6); /* for firefox 3.6+ */
+}
+
+
+#exper a:hover{
+	background: #F58C8C; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FABFBF', endColorstr='#F58C8C'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#FABFBF), to(#F58C8C)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #FABFBF,  #F58C8C); /* for firefox 3.6+ */
+}
+#primers a:hover{
+		background: #A2D87C; /* for non-css3 browsers */
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#CBECB4', endColorstr='#A2D87C'); /* for IE */
+		background: -webkit-gradient(linear, left top, left bottom, from(#CBECB4), to(#A2D87C)); /* for webkit browsers */
+		background: -moz-linear-gradient(top,  #CBECB4,  #A2D87C); /* for firefox 3.6+ */
+}
+#dna a:hover{
+background: #F5F48C; /* for non-css3 browsers */
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FAFABF', endColorstr='#F5F48C'); /* for IE */
+background: -webkit-gradient(linear, left top, left bottom, from(#FAFABF), to(#F5F48C)); /* for webkit browsers */
+background: -moz-linear-gradient(top,  #FAFABF,  #F5F48C); /* for firefox 3.6+ */ 
+}
+
+#pcr a:hover{
+	background: #CB749F; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E5AFC9', endColorstr='#CB749F'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#E5AFC9), to(#CB749F)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #E5AFC9,  #CB749F); /* for firefox 3.6+ */
+}
+#genes a:hover{
+		background: #F5B78C; /* for non-css3 browsers */
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FAD7BF', endColorstr='#F5B78C'); /* for IE */
+		background: -webkit-gradient(linear, left top, left bottom, from(#FAD7BF), to(#F5B78C)); /* for webkit browsers */
+		background: -moz-linear-gradient(top,  #FAD7BF,  #F5B78C); /* for firefox 3.6+ */
+}
+#tax a:hover{
+	background: #599B90; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9DCDC5', endColorstr='#599B90'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#9DCDC5), to(#599B90)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #9DCDC5,  #599B90); /* for firefox 3.6+ */
+}
+#profile a:hover{
+	background: #8265A6; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#BAA5D2', endColorstr='#8265A6'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#BAA5D2), to(#8265A6)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #BAA5D2,  #8265A6); /* for firefox 3.6+ */
+}
