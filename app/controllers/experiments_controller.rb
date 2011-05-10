@@ -172,10 +172,11 @@ class ExperimentsController < ApplicationController
      @pcr=Pcr.find(params[:id]) 
     if @pcr.dnasamples.first
         @dnasample=@pcr.dnasamples.first
-end
+    end
+    flash[:error] = "No DNA Sample associated with this project"
         
 
-     flash[:notice] = "updating" 
+   
       respond_to do |with|
             with.js
                     logger.debug "here"

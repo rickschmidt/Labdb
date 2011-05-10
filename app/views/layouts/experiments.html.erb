@@ -19,10 +19,10 @@
 
 	<% if flash[:notice]%>
 
-<p style="color: green"><%= flash[:notice] %></p>
+<p  id="notice" style="color: green"><%= flash[:notice] %></p>
 <%end%>
 <%if flash[:error]%>
-<P style="color: red"><%=flash[:error]%></p>
+<p id="error" style="color: red"><%=flash[:error]%></p>
 	<%end%>
 <%= yield %>
 
