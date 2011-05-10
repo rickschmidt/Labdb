@@ -143,6 +143,9 @@ $(document).ready(function (){
           
           error: function(json,textStatus){
               alert(textStatus);
+              var flash_div = $("p#error");
+              $('<p id="error" style="color: red">Error: No DNA Sample is associated witht that PCR Tube.</p>').insertBefore('table.custom').fadeOut(3200);
+
           }
 
       });
