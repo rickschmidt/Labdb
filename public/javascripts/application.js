@@ -132,10 +132,12 @@ $(document).ready(function (){
             
              var index = jQuery('tr.exp:last').index();
                             alert(index);
+          var myDiv = jQuery('tr.exp:last').clone().attr('id',index);
              $('.primerh:last').attr('id',index).html(obj.primerh);
              $('.dna:last').attr('id',index).html(obj.dna);
              $('.primerl:last').attr('id',index).html(obj.primerl);
-              var myDiv = jQuery('tr.exp#0').clone().attr('id',index).appendTo('table.custom');
+             myDiv.appendTo('table.custom');
+             
 
           },
           
