@@ -1,4 +1,11 @@
-Primer
-<%=h @primer.id %>
-<%=h @primer.primerh  %>
-<%=h @primer.primerl  %>
+<H2>Primer <%=h @primer.id %> </H2>
+
+<table border="0" >
+	<tr><th></th><th></th></tr>
+	<tr><td>Primer L:</td><td>Primer L:<%=h @primer.primerl  %></td></tr>
+	<tr><td>Primer H:</td><td> <%=h @primer.primerh  %></td></tr>
+</table>
+
+<%= link_to "Edit", edit_primer_path(@primer) %>
+
+

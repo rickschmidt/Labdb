@@ -4,7 +4,8 @@
 }
 
 #content{
-    margin-left:20px;
+    margin:0 auto;
+    width:100%;
 }
 
 #banner{
@@ -291,4 +292,7 @@ background: -moz-linear-gradient(top,  #FAFABF,  #F5F48C); /* for firefox 3.6+ *
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#BAA5D2', endColorstr='#8265A6'); /* for IE */
 	background: -webkit-gradient(linear, left top, left bottom, from(#BAA5D2), to(#8265A6)); /* for webkit browsers */
 	background: -moz-linear-gradient(top,  #BAA5D2,  #8265A6); /* for firefox 3.6+ */
+}
+#nav{
+    width:100%;
 }
