@@ -112,11 +112,11 @@ $(document).ready(function (){
       //          }
       //      });
       //    });
-    
+    //experiment show
      $('select#experiment_pcrs').live('change',function (){
 
       dataString = jQuery('tr.exp:last').find('select#experiment_pcrs').val();
-        alert("hi"+ ""+ dataString);
+
          $.ajax({
           url: "/experiments/getpcrtube",
           type: "POST",
@@ -125,13 +125,13 @@ $(document).ready(function (){
           success: function(json,textStatus){
 
               var obj = jQuery.parseJSON(json);
-              alert(obj.dna);
+
 
              
 
             
              var index = jQuery('tr.exp:last').index();
-                            alert(index);
+
           var myDiv = jQuery('tr.exp:last').clone().attr('id',index);
              $('.primerh:last').attr('id',index).html(obj.primerh);
              $('.dna:last').attr('id',index).html(obj.dna);
@@ -142,7 +142,7 @@ $(document).ready(function (){
           },
           
           error: function(json,textStatus){
-              alert(textStatus);
+
               var flash_div = $("p#error");
               $('<p id="error" style="color: red">Error: No DNA Sample is associated witht that PCR Tube.</p>').insertBefore('table.custom').fadeOut(3200);
 
