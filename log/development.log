@@ -37217,3 +37217,1700 @@ ActionView::TemplateError (undefined method `dna_accession' for nil:NilClass) on
 Rendered rescues/_trace (43.9ms)
 Rendered rescues/_request_and_response (0.3ms)
 Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTaxonomies (20110126195733)
+Migrating to CreateDnasamples (20110126195743)
+Migrating to CreatePcrs (20110126195750)
+Migrating to CreateGenes (20110126195756)
+Migrating to CreateExperiments (20110126195802)
+Migrating to Jointables (20110126205446)
+Migrating to CreateUsers (20110307022152)
+Migrating to MoreJoins (20110307175326)
+Migrating to Testheroku (20110308222702)
+Migrating to AddPrimerTable (20110316193616)
+Migrating to CreatePrimers (20110316194033)
+Migrating to Addprimtertogenetable (20110414162148)
+Migrating to AddNameToPrimers (20110511132406)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mALTER TABLE "primers" ADD "name" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110511132406')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("dnasamples")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("dnasamples_genes")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("dnasamples_pcrs")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("experiments")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("experiments_pcrs")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("genes")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("pcrs")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("primers")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("taxonomies")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+
+
+Processing PrimersController#index (for 127.0.0.1 at 2011-05-11 08:29:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"primers"}
+  [4;36;1mPrimer Load (0.2ms)[0m   [0;1mSELECT * FROM "primers" WHERE (primers.primerl LIKE '%%') [0m
+Rendering template within layouts/primers
+Rendering primers/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 13:29:25', "perishable_token" = 'BGMTffZI30xWcOGbHbH', "last_request_at" = '2011-05-11 13:29:25' WHERE "id" = 1[0m
+Rendered _navigation (146.1ms)
+Completed in 162ms (View: 153, DB: 1) | 200 OK [http://localhost/primers]
+
+
+Processing PrimersController#new (for 127.0.0.1 at 2011-05-11 08:29:27) [POST]
+  Parameters: {"action"=>"new", "authenticity_token"=>"i/vOPr/zN6u4b8yQwqKrIBuB2V+AjHwoXbFXpKCKxS0=", "controller"=>"primers"}
+Rendering template within layouts/primers
+Rendering primers/new
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 13:29:27', "perishable_token" = 'HJfWFU5kB7fbgGnHtf3', "last_request_at" = '2011-05-11 13:29:27' WHERE "id" = 1[0m
+Rendered _navigation (34.5ms)
+Completed in 46ms (View: 38, DB: 1) | 200 OK [http://localhost/primers/new]
+
+
+Processing PrimersController#new (for 127.0.0.1 at 2011-05-11 08:29:55) [POST]
+  Parameters: {"action"=>"new", "authenticity_token"=>"i/vOPr/zN6u4b8yQwqKrIBuB2V+AjHwoXbFXpKCKxS0=", "controller"=>"primers"}
+Rendering template within layouts/primers
+Rendering primers/new
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 13:29:56', "perishable_token" = 'XnuzNBKLLBkxHSfep7Y', "last_request_at" = '2011-05-11 13:29:56' WHERE "id" = 1[0m
+Rendered _navigation (144.4ms)
+Completed in 160ms (View: 153, DB: 1) | 200 OK [http://localhost/primers/new]
+
+
+Processing PrimersController#create (for 127.0.0.1 at 2011-05-11 08:30:10) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"i/vOPr/zN6u4b8yQwqKrIBuB2V+AjHwoXbFXpKCKxS0=", "controller"=>"primers", "primer"=>{"name"=>"Test", "primerh"=>"ACTGAT", "primerl"=>"ATCT"}}
+  [4;35;1mPrimer Create (0.4ms)[0m   [0mINSERT INTO "primers" ("name", "primerh", "created_at", "updated_at", "primerl") VALUES('Test', 'ACTGAT', '2011-05-11 13:30:10', '2011-05-11 13:30:10', 'ATCT')[0m
+Redirected to http://localhost:3000/primers/2
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/primers]
+
+
+Processing PrimersController#show (for 127.0.0.1 at 2011-05-11 08:30:10) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"primers"}
+  [4;36;1mPrimer Load (0.2ms)[0m   [0;1mSELECT * FROM "primers" WHERE ("primers"."id" = 2) [0m
+Rendering template within layouts/primers
+Rendering primers/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 13:30:10', "perishable_token" = 'zhXYJV8b4ev0snRmRSS', "last_request_at" = '2011-05-11 13:30:10' WHERE "id" = 1[0m
+Rendered _navigation (141.5ms)
+Completed in 156ms (View: 148, DB: 1) | 200 OK [http://localhost/primers/2]
+
+
+Processing PrimersController#show (for 127.0.0.1 at 2011-05-11 08:30:54) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"primers"}
+  [4;35;1mPrimer Load (0.2ms)[0m   [0mSELECT * FROM "primers" WHERE ("primers"."id" = 2) [0m
+Rendering template within layouts/primers
+Rendering primers/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 13:30:54', "perishable_token" = '3EjsJQ165GB4rTtiSZI', "last_request_at" = '2011-05-11 13:30:54' WHERE "id" = 1[0m
+Rendered _navigation (36.3ms)
+Completed in 47ms (View: 39, DB: 1) | 200 OK [http://localhost/primers/2]
+
+
+Processing PrimersController#show (for 127.0.0.1 at 2011-05-11 08:31:34) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"primers"}
+  [4;36;1mPrimer Load (0.2ms)[0m   [0;1mSELECT * FROM "primers" WHERE ("primers"."id" = 2) [0m
+Rendering template within layouts/primers
+Rendering primers/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.7ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 13:31:35', "perishable_token" = 'ADUMbIbxCGylPJf9vusv', "last_request_at" = '2011-05-11 13:31:35' WHERE "id" = 1[0m
+Rendered _navigation (158.0ms)
+Completed in 168ms (View: 160, DB: 1) | 200 OK [http://localhost/primers/2]
+
+
+Processing PrimersController#edit (for 127.0.0.1 at 2011-05-11 08:31:47) [GET]
+  Parameters: {"action"=>"edit", "id"=>"2", "controller"=>"primers"}
+  [4;35;1mPrimer Load (0.2ms)[0m   [0mSELECT * FROM "primers" WHERE ("primers"."id" = 2) [0m
+Rendering template within layouts/primers
+Rendering primers/edit
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 13:31:47', "perishable_token" = 'f7b4SLtRJcYE7A3IB58N', "last_request_at" = '2011-05-11 13:31:47' WHERE "id" = 1[0m
+Rendered _navigation (35.1ms)
+Completed in 52ms (View: 45, DB: 1) | 200 OK [http://localhost/primers/2/edit]
+
+
+Processing PrimersController#index (for 127.0.0.1 at 2011-05-11 08:31:50) [GET]
+  Parameters: {"action"=>"index", "controller"=>"primers"}
+  [4;36;1mPrimer Load (0.2ms)[0m   [0;1mSELECT * FROM "primers" WHERE (primers.primerl LIKE '%%') [0m
+Rendering template within layouts/primers
+Rendering primers/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 13:31:50', "perishable_token" = 'yr2B6Bkv4FFRhZ1VALRB', "last_request_at" = '2011-05-11 13:31:50' WHERE "id" = 1[0m
+Rendered _navigation (34.7ms)
+Completed in 54ms (View: 45, DB: 1) | 200 OK [http://localhost/primers]
+
+
+Processing PrimersController#index (for 127.0.0.1 at 2011-05-11 08:32:24) [GET]
+  Parameters: {"action"=>"index", "controller"=>"primers"}
+  [4;35;1mPrimer Load (0.3ms)[0m   [0mSELECT * FROM "primers" WHERE (primers.primerl LIKE '%%') [0m
+Rendering template within layouts/primers
+Rendering primers/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 13:32:25', "perishable_token" = 'V1xW4rM2mDf9tiFWSR5i', "last_request_at" = '2011-05-11 13:32:25' WHERE "id" = 1[0m
+Rendered _navigation (139.8ms)
+Completed in 159ms (View: 150, DB: 1) | 200 OK [http://localhost/primers]
+
+
+Processing PrimersController#show (for 127.0.0.1 at 2011-05-11 08:32:28) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"primers"}
+  [4;36;1mPrimer Load (0.2ms)[0m   [0;1mSELECT * FROM "primers" WHERE ("primers"."id" = 1) [0m
+Rendering template within layouts/primers
+Rendering primers/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 13:32:28', "perishable_token" = 'e0ZAgNHdxARlnwyJpYI', "last_request_at" = '2011-05-11 13:32:28' WHERE "id" = 1[0m
+Rendered _navigation (35.2ms)
+Completed in 49ms (View: 42, DB: 1) | 200 OK [http://localhost/primers/1]
+
+
+Processing PrimersController#show (for 127.0.0.1 at 2011-05-11 08:32:43) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"primers"}
+  [4;35;1mPrimer Load (0.2ms)[0m   [0mSELECT * FROM "primers" WHERE ("primers"."id" = 1) [0m
+Rendering template within layouts/primers
+Rendering primers/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 13:32:43', "perishable_token" = 'OUWzSAb964ammnAscL', "last_request_at" = '2011-05-11 13:32:43' WHERE "id" = 1[0m
+Rendered _navigation (146.0ms)
+Completed in 160ms (View: 152, DB: 1) | 200 OK [http://localhost/primers/1]
+
+
+Processing PrimersController#edit (for 127.0.0.1 at 2011-05-11 08:32:48) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"primers"}
+  [4;36;1mPrimer Load (0.2ms)[0m   [0;1mSELECT * FROM "primers" WHERE ("primers"."id" = 1) [0m
+Rendering template within layouts/primers
+Rendering primers/edit
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 13:32:48', "perishable_token" = 'zOozQUyiN7a6Bw5X8aOe', "last_request_at" = '2011-05-11 13:32:48' WHERE "id" = 1[0m
+Rendered _navigation (32.3ms)
+Completed in 45ms (View: 38, DB: 1) | 200 OK [http://localhost/primers/1/edit]
+
+
+Processing PrimersController#index (for 127.0.0.1 at 2011-05-11 08:32:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"primers"}
+  [4;35;1mPrimer Load (0.3ms)[0m   [0mSELECT * FROM "primers" WHERE (primers.primerl LIKE '%%') [0m
+Rendering template within layouts/primers
+Rendering primers/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 13:32:51', "perishable_token" = 'LfX6AaYVum2jjeM7aHK', "last_request_at" = '2011-05-11 13:32:51' WHERE "id" = 1[0m
+Rendered _navigation (33.3ms)
+Completed in 53ms (View: 44, DB: 1) | 200 OK [http://localhost/primers]
+
+
+Processing PrimersController#index (for 127.0.0.1 at 2011-05-11 08:33:15) [GET]
+  Parameters: {"action"=>"index", "controller"=>"primers"}
+  [4;36;1mPrimer Load (0.3ms)[0m   [0;1mSELECT * FROM "primers" WHERE (primers.primerl LIKE '%%') [0m
+Rendering template within layouts/primers
+Rendering primers/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 13:33:15', "perishable_token" = '8nwjWKn5tfygjiOQLPg', "last_request_at" = '2011-05-11 13:33:15' WHERE "id" = 1[0m
+Rendered _navigation (145.2ms)
+Completed in 170ms (View: 161, DB: 1) | 200 OK [http://localhost/primers]
+
+
+Processing PrimersController#index (for 127.0.0.1 at 2011-05-11 08:33:24) [GET]
+  Parameters: {"action"=>"index", "controller"=>"primers"}
+  [4;35;1mPrimer Load (0.2ms)[0m   [0mSELECT * FROM "primers" WHERE (primers.primerl LIKE '%%') [0m
+Rendering template within layouts/primers
+Rendering primers/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 13:33:24', "perishable_token" = 'WLRmGVwLWX5tLRpQTMLT', "last_request_at" = '2011-05-11 13:33:24' WHERE "id" = 1[0m
+Rendered _navigation (34.5ms)
+Completed in 59ms (View: 50, DB: 1) | 200 OK [http://localhost/primers]
+
+
+Processing PrimersController#index (for 127.0.0.1 at 2011-05-11 08:33:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"primers"}
+  [4;36;1mPrimer Load (0.3ms)[0m   [0;1mSELECT * FROM "primers" WHERE (primers.primerl LIKE '%%') [0m
+Rendering template within layouts/primers
+Rendering primers/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 13:33:42', "perishable_token" = 'm859v7Hk9XltyQyINPdU', "last_request_at" = '2011-05-11 13:33:42' WHERE "id" = 1[0m
+Rendered _navigation (36.9ms)
+Completed in 62ms (View: 53, DB: 1) | 200 OK [http://localhost/primers]
+
+
+Processing PrimersController#index (for 127.0.0.1 at 2011-05-11 08:34:15) [GET]
+  Parameters: {"action"=>"index", "controller"=>"primers"}
+  [4;35;1mPrimer Load (0.2ms)[0m   [0mSELECT * FROM "primers" WHERE (primers.primerl LIKE '%%') [0m
+Rendering template within layouts/primers
+Rendering primers/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 13:34:16', "perishable_token" = 'bLURxZlFbJnaoJbPY6hy', "last_request_at" = '2011-05-11 13:34:16' WHERE "id" = 1[0m
+Rendered _navigation (142.5ms)
+Completed in 167ms (View: 159, DB: 1) | 200 OK [http://localhost/primers]
+
+
+Processing PrimersController#index (for 127.0.0.1 at 2011-05-11 08:34:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"primers"}
+  [4;36;1mPrimer Load (0.2ms)[0m   [0;1mSELECT * FROM "primers" WHERE (primers.primerl LIKE '%%') [0m
+Rendering template within layouts/primers
+Rendering primers/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 13:34:25', "perishable_token" = 'UEgULG1EaqeDqLesRRv', "last_request_at" = '2011-05-11 13:34:25' WHERE "id" = 1[0m
+Rendered _navigation (35.1ms)
+Completed in 59ms (View: 51, DB: 1) | 200 OK [http://localhost/primers]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-05-11 08:35:10) [GET]
+  Parameters: {"action"=>"index", "controller"=>"dnasamples"}
+  [4;35;1mDnasample Load (0.3ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 13:35:10', "perishable_token" = '03L742a638h50h6YikQv', "last_request_at" = '2011-05-11 13:35:10' WHERE "id" = 1[0m
+Rendered _navigation (35.6ms)
+Completed in 62ms (View: 47, DB: 1) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#new (for 127.0.0.1 at 2011-05-11 08:35:12) [GET]
+  Parameters: {"action"=>"new", "controller"=>"dnasamples"}
+Rendering template within layouts/dnasamples
+Rendering dnasamples/new
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 13:35:12', "perishable_token" = 'nOWkhhIiShV0lu21Fwq', "last_request_at" = '2011-05-11 13:35:12' WHERE "id" = 1[0m
+Rendered _navigation (23.3ms)
+Completed in 166ms (View: 157, DB: 1) | 200 OK [http://localhost/dnasamples/new]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-11 08:35:13) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (0.3ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 13:35:13', "perishable_token" = 'u2TU3mjHnFOWNAagBP9a', "last_request_at" = '2011-05-11 13:35:13' WHERE "id" = 1[0m
+Rendered _navigation (34.6ms)
+Completed in 56ms (View: 46, DB: 1) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#new (for 127.0.0.1 at 2011-05-11 08:35:15) [GET]
+  Parameters: {"action"=>"new", "controller"=>"pcrs"}
+Rendering template within layouts/pcrs
+Rendering pcrs/new
+  [4;35;1mPrimer Load (0.3ms)[0m   [0mSELECT * FROM "primers" [0m
+Rendered _primerselect (6.7ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 13:35:15', "perishable_token" = 'Z4mhriYcRHNlVi3krnZw', "last_request_at" = '2011-05-11 13:35:15' WHERE "id" = 1[0m
+Rendered _navigation (22.9ms)
+Completed in 72ms (View: 64, DB: 1) | 200 OK [http://localhost/pcrs/new]
+
+
+Processing GenesController#getprimerpair (for 127.0.0.1 at 2011-05-11 08:35:24) [POST]
+  Parameters: {"action"=>"getprimerpair", "id"=>"2", "controller"=>"genes"}
+  [4;36;1mPrimer Load (0.2ms)[0m   [0;1mSELECT * FROM "primers" WHERE ("primers"."id" = 2) [0m
+here
+Rendering genes/getprimerpair
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/genes/getprimerpair]
+
+
+Processing GenesController#getprimerpair (for 127.0.0.1 at 2011-05-11 08:35:30) [POST]
+  Parameters: {"action"=>"getprimerpair", "id"=>"1", "controller"=>"genes"}
+  [4;35;1mPrimer Load (0.2ms)[0m   [0mSELECT * FROM "primers" WHERE ("primers"."id" = 1) [0m
+here
+Rendering genes/getprimerpair
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://localhost/genes/getprimerpair]
+
+
+Processing GenesController#getprimerpair (for 127.0.0.1 at 2011-05-11 08:35:31) [POST]
+  Parameters: {"action"=>"getprimerpair", "id"=>"2", "controller"=>"genes"}
+  [4;36;1mPrimer Load (0.2ms)[0m   [0;1mSELECT * FROM "primers" WHERE ("primers"."id" = 2) [0m
+here
+Rendering genes/getprimerpair
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/genes/getprimerpair]
+
+
+Processing PcrsController#new (for 127.0.0.1 at 2011-05-11 08:35:40) [GET]
+  Parameters: {"action"=>"new", "controller"=>"pcrs"}
+Rendering template within layouts/pcrs
+Rendering pcrs/new
+  [4;35;1mPrimer Load (0.3ms)[0m   [0mSELECT * FROM "primers" [0m
+Rendered _primerselect (6.7ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 13:35:41', "perishable_token" = 'Gl652B2KjPOqoJQPG9', "last_request_at" = '2011-05-11 13:35:41' WHERE "id" = 1[0m
+Rendered _navigation (127.6ms)
+Completed in 178ms (View: 169, DB: 1) | 200 OK [http://localhost/pcrs/new]
+
+
+Processing PcrsController#new (for 127.0.0.1 at 2011-05-11 08:35:55) [GET]
+  Parameters: {"action"=>"new", "controller"=>"pcrs"}
+Rendering template within layouts/pcrs
+Rendering pcrs/new
+  [4;36;1mPrimer Load (0.3ms)[0m   [0;1mSELECT * FROM "primers" [0m
+Rendered _primerselect (6.9ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 13:35:56', "perishable_token" = 'C8eOI5rZOhzYiB1Qp4', "last_request_at" = '2011-05-11 13:35:56' WHERE "id" = 1[0m
+Rendered _navigation (24.1ms)
+Completed in 72ms (View: 64, DB: 1) | 200 OK [http://localhost/pcrs/new]
+
+
+Processing PcrsController#new (for 127.0.0.1 at 2011-05-11 08:36:51) [GET]
+  Parameters: {"action"=>"new", "controller"=>"pcrs"}
+Rendering template within layouts/pcrs
+Rendering pcrs/new
+  [4;35;1mPrimer Load (0.3ms)[0m   [0mSELECT * FROM "primers" [0m
+Rendered _primerselect (7.3ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 13:36:51', "perishable_token" = 'hAzEUNyd7xaHpFecBk', "last_request_at" = '2011-05-11 13:36:51' WHERE "id" = 1[0m
+Rendered _navigation (23.1ms)
+Completed in 72ms (View: 64, DB: 1) | 200 OK [http://localhost/pcrs/new]
+
+
+Processing PcrsController#new (for 127.0.0.1 at 2011-05-11 08:37:01) [GET]
+  Parameters: {"action"=>"new", "controller"=>"pcrs"}
+Rendering template within layouts/pcrs
+Rendering pcrs/new
+  [4;36;1mPrimer Load (0.3ms)[0m   [0;1mSELECT * FROM "primers" [0m
+Rendered _primerselect (7.0ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (285.8ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 13:37:01', "perishable_token" = 'ZFmfRx9Cm2i9RjRGuXo', "last_request_at" = '2011-05-11 13:37:01' WHERE "id" = 1[0m
+Rendered _navigation (308.3ms)
+Completed in 361ms (View: 66, DB: 286) | 200 OK [http://localhost/pcrs/new]
+
+
+Processing GenesController#getprimerpair (for 127.0.0.1 at 2011-05-11 08:37:15) [POST]
+  Parameters: {"action"=>"getprimerpair", "id"=>"1", "controller"=>"genes"}
+  [4;35;1mPrimer Load (0.2ms)[0m   [0mSELECT * FROM "primers" WHERE ("primers"."id" = 1) [0m
+here
+Rendering genes/getprimerpair
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/genes/getprimerpair]
+
+
+Processing GenesController#getprimerpair (for 127.0.0.1 at 2011-05-11 08:37:16) [POST]
+  Parameters: {"action"=>"getprimerpair", "id"=>"2", "controller"=>"genes"}
+  [4;36;1mPrimer Load (0.2ms)[0m   [0;1mSELECT * FROM "primers" WHERE ("primers"."id" = 2) [0m
+here
+Rendering genes/getprimerpair
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/genes/getprimerpair]
+
+
+Processing PcrsController#new (for 127.0.0.1 at 2011-05-11 08:37:31) [GET]
+  Parameters: {"action"=>"new", "controller"=>"pcrs"}
+Rendering template within layouts/pcrs
+Rendering pcrs/new
+  [4;35;1mPrimer Load (0.3ms)[0m   [0mSELECT * FROM "primers" [0m
+Rendered _primerselect (6.7ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 13:37:31', "perishable_token" = 'Gt5Odlj4XsqwFT6dnw', "last_request_at" = '2011-05-11 13:37:31' WHERE "id" = 1[0m
+Rendered _navigation (22.5ms)
+Completed in 72ms (View: 63, DB: 1) | 200 OK [http://localhost/pcrs/new]
+
+
+Processing PrimersController#index (for 127.0.0.1 at 2011-05-11 08:38:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"primers"}
+  [4;36;1mPrimer Load (0.3ms)[0m   [0;1mSELECT * FROM "primers" WHERE (primers.primerl LIKE '%%') [0m
+Rendering template within layouts/primers
+Rendering primers/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 13:38:09', "perishable_token" = 'PYVbGRPvihfrt4yJwsd6', "last_request_at" = '2011-05-11 13:38:09' WHERE "id" = 1[0m
+Rendered _navigation (34.8ms)
+Completed in 54ms (View: 45, DB: 1) | 200 OK [http://localhost/primers]
+
+
+Processing PrimersController#new (for 127.0.0.1 at 2011-05-11 08:38:12) [GET]
+  Parameters: {"action"=>"new", "controller"=>"primers"}
+Rendering template within layouts/primers
+Rendering primers/new
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 13:38:12', "perishable_token" = 'cGb0oFSurobdwRGtImMr', "last_request_at" = '2011-05-11 13:38:12' WHERE "id" = 1[0m
+Rendered _navigation (142.5ms)
+Completed in 154ms (View: 147, DB: 1) | 200 OK [http://localhost/primers/new]
+
+
+Processing PrimersController#create (for 127.0.0.1 at 2011-05-11 08:38:18) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"srA1gF88VDeNAk8Itxa0dnoWkoG4xX3WxW5cWYW4ML0=", "controller"=>"primers", "primer"=>{"name"=>"CN501", "primerh"=>"", "primerl"=>""}}
+  [4;35;1mPrimer Create (0.3ms)[0m   [0mINSERT INTO "primers" ("name", "primerh", "created_at", "updated_at", "primerl") VALUES('CN501', '', '2011-05-11 13:38:18', '2011-05-11 13:38:18', '')[0m
+Redirected to http://localhost:3000/primers/3
+Completed in 14ms (DB: 0) | 302 Found [http://localhost/primers]
+
+
+Processing PrimersController#show (for 127.0.0.1 at 2011-05-11 08:38:18) [GET]
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"primers"}
+  [4;36;1mPrimer Load (0.2ms)[0m   [0;1mSELECT * FROM "primers" WHERE ("primers"."id" = 3) [0m
+Rendering template within layouts/primers
+Rendering primers/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 13:38:18', "perishable_token" = 'WvdwlI1xYOvYWFDvseOG', "last_request_at" = '2011-05-11 13:38:18' WHERE "id" = 1[0m
+Rendered _navigation (35.7ms)
+Completed in 47ms (View: 38, DB: 1) | 200 OK [http://localhost/primers/3]
+
+
+Processing PrimersController#edit (for 127.0.0.1 at 2011-05-11 08:38:21) [GET]
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"primers"}
+  [4;35;1mPrimer Load (0.2ms)[0m   [0mSELECT * FROM "primers" WHERE ("primers"."id" = 3) [0m
+Rendering template within layouts/primers
+Rendering primers/edit
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 13:38:21', "perishable_token" = 'n8mepN83JMbKkz9XwBAV', "last_request_at" = '2011-05-11 13:38:21' WHERE "id" = 1[0m
+Rendered _navigation (34.0ms)
+Completed in 46ms (View: 39, DB: 1) | 200 OK [http://localhost/primers/3/edit]
+
+
+Processing PrimersController#update (for 127.0.0.1 at 2011-05-11 08:38:23) [PUT]
+  Parameters: {"commit"=>"Update", "action"=>"update", "_method"=>"put", "authenticity_token"=>"srA1gF88VDeNAk8Itxa0dnoWkoG4xX3WxW5cWYW4ML0=", "id"=>"3", "controller"=>"primers", "primer"=>{"name"=>"CN501", "primerh"=>"", "primerl"=>""}}
+  [4;36;1mPrimer Load (0.2ms)[0m   [0;1mSELECT * FROM "primers" WHERE ("primers"."id" = 3) [0m
+Redirected to http://localhost:3000/primers/3
+Completed in 10ms (DB: 0) | 302 Found [http://localhost/primers/3]
+
+
+Processing PrimersController#show (for 127.0.0.1 at 2011-05-11 08:38:23) [GET]
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"primers"}
+  [4;35;1mPrimer Load (0.2ms)[0m   [0mSELECT * FROM "primers" WHERE ("primers"."id" = 3) [0m
+Rendering template within layouts/primers
+Rendering primers/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.7ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 13:38:23', "perishable_token" = 'wYR7PRHNCAYOdTeu36po', "last_request_at" = '2011-05-11 13:38:23' WHERE "id" = 1[0m
+Rendered _navigation (146.6ms)
+Completed in 157ms (View: 149, DB: 1) | 200 OK [http://localhost/primers/3]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-11 08:38:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (0.3ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 13:38:26', "perishable_token" = '5wUcCgIpidonU4GI1oKC', "last_request_at" = '2011-05-11 13:38:26' WHERE "id" = 1[0m
+Rendered _navigation (34.3ms)
+Completed in 56ms (View: 46, DB: 1) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#show (for 127.0.0.1 at 2011-05-11 08:38:31) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (0.3ms)[0m   [0mSELECT * FROM "pcrs" WHERE ("pcrs"."id" = 1) [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/show
+  [4;36;1mDnasample Load (0.7ms)[0m   [0;1mSELECT * FROM "dnasamples" [0m
+  [4;35;1mDnasample Load (0.3ms)[0m   [0mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 1 ) [0m
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT "dnasamples".* FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 1 ) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 13:38:31', "perishable_token" = 'TVRiM8D5HPD7xBGf9n2', "last_request_at" = '2011-05-11 13:38:31' WHERE "id" = 1[0m
+Rendered _navigation (38.3ms)
+Completed in 72ms (View: 51, DB: 2) | 200 OK [http://localhost/pcrs/1]
+
+
+Processing PcrsController#index (for 127.0.0.1 at 2011-05-11 08:38:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"pcrs"}
+  [4;35;1mPcr Load (0.3ms)[0m   [0mSELECT * FROM "pcrs" WHERE (pcrs.id LIKE '%%') ORDER BY date asc[0m
+Rendering template within layouts/pcrs
+Rendering pcrs/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 13:38:40', "perishable_token" = 'aJWXq3cqSBY6IwhHiLP', "last_request_at" = '2011-05-11 13:38:40' WHERE "id" = 1[0m
+Rendered _navigation (142.0ms)
+Completed in 164ms (View: 154, DB: 1) | 200 OK [http://localhost/pcrs]
+
+
+Processing PcrsController#show (for 127.0.0.1 at 2011-05-11 08:38:42) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (0.2ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE ("pcrs"."id" = 1) [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/show
+  [4;35;1mDnasample Load (0.3ms)[0m   [0mSELECT * FROM "dnasamples" [0m
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 1 ) [0m
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT "dnasamples".* FROM "dnasamples" INNER JOIN "dnasamples_pcrs" ON "dnasamples".id = "dnasamples_pcrs".dnasample_id WHERE ("dnasamples_pcrs".pcr_id = 1 ) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 13:38:42', "perishable_token" = 'jwsdxFoahP4k9DJFpr', "last_request_at" = '2011-05-11 13:38:42' WHERE "id" = 1[0m
+Rendered _navigation (38.1ms)
+Completed in 66ms (View: 50, DB: 2) | 200 OK [http://localhost/pcrs/1]
+
+
+Processing PcrsController#edit (for 127.0.0.1 at 2011-05-11 08:38:45) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"pcrs"}
+  [4;36;1mPcr Load (0.3ms)[0m   [0;1mSELECT * FROM "pcrs" WHERE ("pcrs"."id" = 1) [0m
+Rendering template within layouts/pcrs
+Rendering pcrs/edit
+  [4;35;1mPrimer Load (0.4ms)[0m   [0mSELECT * FROM "primers" [0m
+Rendered _primerselect (6.5ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 13:38:45', "perishable_token" = 'rer36RIYQee6RyKn9Id', "last_request_at" = '2011-05-11 13:38:45' WHERE "id" = 1[0m
+Rendered _navigation (22.2ms)
+Completed in 210ms (View: 90, DB: 1) | 200 OK [http://localhost/pcrs/1/edit]
+
+
+Processing GenesController#getprimerpair (for 127.0.0.1 at 2011-05-11 08:38:49) [POST]
+  Parameters: {"action"=>"getprimerpair", "id"=>"3", "controller"=>"genes"}
+  [4;36;1mPrimer Load (0.2ms)[0m   [0;1mSELECT * FROM "primers" WHERE ("primers"."id" = 3) [0m
+here
+Rendering genes/getprimerpair
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/genes/getprimerpair]
+
+
+Processing PrimersController#index (for 127.0.0.1 at 2011-05-11 08:39:06) [GET]
+  Parameters: {"action"=>"index", "controller"=>"primers"}
+  [4;35;1mPrimer Load (0.2ms)[0m   [0mSELECT * FROM "primers" WHERE (primers.primerl LIKE '%%') [0m
+Rendering template within layouts/primers
+Rendering primers/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.7ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 13:39:06', "perishable_token" = '4sPkKYr3cxtE34CjJvEx', "last_request_at" = '2011-05-11 13:39:06' WHERE "id" = 1[0m
+Rendered _navigation (40.0ms)
+Completed in 171ms (View: 162, DB: 1) | 200 OK [http://localhost/primers]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-11 08:40:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"primers"}
+
+NoMethodError (undefined method `validates_presence_of' for PrimersController:Class):
+  app/controllers/primers_controller.rb:8
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (29.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PrimersController#index (for 127.0.0.1 at 2011-05-11 08:41:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"primers"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 13:41:35', "perishable_token" = 'vQNwZbhaJf6SEyEwdQCJ', "last_request_at" = '2011-05-11 13:41:35' WHERE "id" = 1[0m
+  [4;36;1mPrimer Load (0.3ms)[0m   [0;1mSELECT * FROM "primers" WHERE (primers.primerl LIKE '%%') [0m
+Rendering template within layouts/primers
+Rendering primers/index
+Rendered _navigation (2.2ms)
+Completed in 169ms (View: 18, DB: 1) | 200 OK [http://localhost/primers]
+
+
+Processing PrimersController#edit (for 127.0.0.1 at 2011-05-11 08:41:47) [GET]
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"primers"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 13:41:47', "perishable_token" = 'emcuIcRXmXN3N6a6yLn', "last_request_at" = '2011-05-11 13:41:47' WHERE "id" = 1[0m
+  [4;35;1mPrimer Load (0.2ms)[0m   [0mSELECT * FROM "primers" WHERE ("primers"."id" = 3) [0m
+Rendering template within layouts/primers
+Rendering primers/edit
+Rendered _navigation (2.1ms)
+Completed in 46ms (View: 8, DB: 1) | 200 OK [http://localhost/primers/3/edit]
+
+
+Processing PrimersController#update (for 127.0.0.1 at 2011-05-11 08:41:53) [PUT]
+  Parameters: {"commit"=>"Update", "action"=>"update", "_method"=>"put", "authenticity_token"=>"VF/gFR5m24hBpn9FqFYKBMjAQJfkHvUIySXfIbgPlzw=", "id"=>"3", "controller"=>"primers", "primer"=>{"name"=>"CN501", "primerh"=>"CTAGCTAGTCATCGA", "primerl"=>"CGATCGATCGATCGATAAAC"}}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 13:41:54', "perishable_token" = '2bKMX3oluBiHS0TYYn8', "last_request_at" = '2011-05-11 13:41:54' WHERE "id" = 1[0m
+  [4;36;1mPrimer Load (0.3ms)[0m   [0;1mSELECT * FROM "primers" WHERE ("primers"."id" = 3) [0m
+  [4;35;1mPrimer Update (0.5ms)[0m   [0mUPDATE "primers" SET "updated_at" = '2011-05-11 13:41:54', "primerl" = 'CGATCGATCGATCGATAAAC', "primerh" = 'CTAGCTAGTCATCGA' WHERE "id" = 3[0m
+Redirected to http://localhost:3000/primers/3
+Completed in 154ms (DB: 1) | 302 Found [http://localhost/primers/3]
+
+
+Processing PrimersController#show (for 127.0.0.1 at 2011-05-11 08:41:54) [GET]
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"primers"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 13:41:54', "perishable_token" = 'ClTj4MtKXkS7AjXj5Kq', "last_request_at" = '2011-05-11 13:41:54' WHERE "id" = 1[0m
+  [4;36;1mPrimer Load (0.2ms)[0m   [0;1mSELECT * FROM "primers" WHERE ("primers"."id" = 3) [0m
+Rendering template within layouts/primers
+Rendering primers/show
+Rendered _navigation (2.1ms)
+Completed in 46ms (View: 6, DB: 1) | 200 OK [http://localhost/primers/3]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-05-11 08:42:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"dnasamples"}
+  [4;35;1mDnasample Load (0.3ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 13:42:01', "perishable_token" = 'gKp1MSDPRIT8h0oQvDL', "last_request_at" = '2011-05-11 13:42:01' WHERE "id" = 1[0m
+Rendered _navigation (36.8ms)
+Completed in 170ms (View: 155, DB: 1) | 200 OK [http://localhost/dnasamples]
+
+
+Processing GenesController#index (for 127.0.0.1 at 2011-05-11 08:45:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"genes"}
+  [4;36;1mGene Load (0.6ms)[0m   [0;1mSELECT * FROM "genes" [0m
+Rendering template within layouts/genes
+Rendering genes/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 13:45:40', "perishable_token" = 'LXnOyA6p5vvVIiOFT5', "last_request_at" = '2011-05-11 13:45:40' WHERE "id" = 1[0m
+Rendered _navigation (32.1ms)
+Completed in 42ms (View: 35, DB: 1) | 200 OK [http://localhost/genes]
+
+
+Processing GenesController#new (for 127.0.0.1 at 2011-05-11 08:45:46) [POST]
+  Parameters: {"action"=>"new", "authenticity_token"=>"VF/gFR5m24hBpn9FqFYKBMjAQJfkHvUIySXfIbgPlzw=", "controller"=>"genes"}
+  [4;35;1mPrimer Load (0.3ms)[0m   [0mSELECT * FROM "primers" [0m
+Rendering template within layouts/genes
+Rendering genes/new
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "primers" [0m
+Rendered _primerselect (1.9ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 13:45:46', "perishable_token" = 'VDJunwPMS66Cr5WAUnrr', "last_request_at" = '2011-05-11 13:45:46' WHERE "id" = 1[0m
+Rendered _navigation (22.4ms)
+Completed in 58ms (View: 44, DB: 1) | 200 OK [http://localhost/genes/new]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-05-11 09:16:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"dnasamples"}
+  [4;35;1mDnasample Load (0.4ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 14:16:19', "perishable_token" = '6GCFubGaAqv6D0cVLD1', "last_request_at" = '2011-05-11 14:16:19' WHERE "id" = 1[0m
+Rendered _navigation (228.9ms)
+Completed in 257ms (View: 241, DB: 1) | 200 OK [http://localhost/dnasamples]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-11 09:16:22) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 14:16:22', "perishable_token" = 'ifWpkXaYXY13wZXMJR7p', "last_request_at" = '2011-05-11 14:16:22' WHERE "id" = 1[0m
+  [4;36;1mTaxonomy Load (0.3ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.1ms)
+Completed in 118ms (View: 8, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing ExperimentsController#index (for 127.0.0.1 at 2011-05-11 09:29:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"experiments"}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 79ms (DB: 0) | 302 Found [http://localhost/experiments]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-05-11 09:29:12) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/general
+Rendering user_sessions/new
+Rendered _navigation (0.6ms)
+Completed in 54ms (View: 26, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-11 09:35:54) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 14:35:54', "perishable_token" = 'JNdpYgCdVJlvb1oi7kJ', "last_request_at" = '2011-05-11 14:35:54' WHERE "id" = 1[0m
+  [4;35;1mTaxonomy Load (0.3ms)[0m   [0mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.3ms)
+Completed in 145ms (View: 48, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-11 09:36:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 14:36:05', "perishable_token" = 'fl7E1rmiPKUIU93mQIC7', "last_request_at" = '2011-05-11 14:36:05' WHERE "id" = 1[0m
+  [4;36;1mTaxonomy Load (0.3ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.1ms)
+Completed in 63ms (View: 8, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-11 09:36:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 14:36:09', "perishable_token" = 'HDfD69Pd4Qb0v5LPOT9', "last_request_at" = '2011-05-11 14:36:09' WHERE "id" = 1[0m
+  [4;35;1mTaxonomy Load (0.3ms)[0m   [0mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.5ms)
+Completed in 72ms (View: 9, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-05-11 09:36:23) [GET]
+  Parameters: {"action"=>"index", "controller"=>"dnasamples"}
+  [4;36;1mDnasample Load (0.3ms)[0m   [0;1mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 14:36:23', "perishable_token" = 'Xkn5hXqvTdw8wL44Zqxd', "last_request_at" = '2011-05-11 14:36:23' WHERE "id" = 1[0m
+Rendered _navigation (451.0ms)
+Completed in 479ms (View: 464, DB: 1) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#show (for 127.0.0.1 at 2011-05-11 09:36:28) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"dnasamples"}
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/show
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 14:36:28', "perishable_token" = 'aRcrOv3VQ3TfLOGzRY8Z', "last_request_at" = '2011-05-11 14:36:28' WHERE "id" = 1[0m
+Rendered _navigation (387.8ms)
+Completed in 403ms (View: 392, DB: 1) | 200 OK [http://localhost/dnasamples/1]
+
+
+Processing DnasamplesController#edit (for 127.0.0.1 at 2011-05-11 09:36:31) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"dnasamples"}
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/edit
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 14:36:31', "perishable_token" = 'vVo2Xpr0FDRukgesXlmZ', "last_request_at" = '2011-05-11 14:36:31' WHERE "id" = 1[0m
+Rendered _navigation (71.7ms)
+Completed in 120ms (View: 111, DB: 1) | 200 OK [http://localhost/dnasamples/1/edit]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-05-11 09:38:08) [GET]
+  Parameters: {"action"=>"index", "controller"=>"dnasamples"}
+  [4;35;1mDnasample Load (0.3ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 14:38:08', "perishable_token" = '6Je8EBG9WgPjTiZGSMPQ', "last_request_at" = '2011-05-11 14:38:08' WHERE "id" = 1[0m
+Rendered _navigation (41.9ms)
+Completed in 74ms (View: 58, DB: 1) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#new (for 127.0.0.1 at 2011-05-11 09:38:10) [GET]
+  Parameters: {"action"=>"new", "controller"=>"dnasamples"}
+Rendering template within layouts/dnasamples
+Rendering dnasamples/new
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 14:38:10', "perishable_token" = 'naDAE9dXpsQVo7lfuI3y', "last_request_at" = '2011-05-11 14:38:10' WHERE "id" = 1[0m
+Rendered _navigation (205.5ms)
+Completed in 243ms (View: 233, DB: 1) | 200 OK [http://localhost/dnasamples/new]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-05-11 09:38:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"dnasamples"}
+  [4;36;1mDnasample Load (0.3ms)[0m   [0;1mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 14:38:17', "perishable_token" = '4QxK4nXjhU7BQZpz7jOu', "last_request_at" = '2011-05-11 14:38:17' WHERE "id" = 1[0m
+Rendered _navigation (55.0ms)
+Completed in 84ms (View: 66, DB: 2) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#show (for 127.0.0.1 at 2011-05-11 09:38:18) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"dnasamples"}
+  [4;35;1mDnasample Load (0.3ms)[0m   [0mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/show
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 14:38:18', "perishable_token" = 'BEh7uQ1zaWdl42Ultm8', "last_request_at" = '2011-05-11 14:38:18' WHERE "id" = 1[0m
+Rendered _navigation (53.8ms)
+Completed in 193ms (View: 58, DB: 1) | 200 OK [http://localhost/dnasamples/1]
+
+
+Processing DnasamplesController#edit (for 127.0.0.1 at 2011-05-11 09:38:20) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"dnasamples"}
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/edit
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 14:38:21', "perishable_token" = 'uRQtvGik4wzCTos8k9rJ', "last_request_at" = '2011-05-11 14:38:21' WHERE "id" = 1[0m
+Rendered _navigation (141.1ms)
+Completed in 185ms (View: 174, DB: 1) | 200 OK [http://localhost/dnasamples/1/edit]
+
+
+Processing DnasamplesController#show (for 127.0.0.1 at 2011-05-11 09:39:03) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"dnasamples"}
+  [4;35;1mDnasample Load (0.3ms)[0m   [0mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 14:39:03', "perishable_token" = 'RkMy9GxFe8BTJHxu1Xk', "last_request_at" = '2011-05-11 14:39:03' WHERE "id" = 1[0m
+Rendered _navigation (54.0ms)
+Completed in 76ms (View: 64, DB: 1) | 200 OK [http://localhost/dnasamples/1]
+
+
+Processing DnasamplesController#show (for 127.0.0.1 at 2011-05-11 09:40:37) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"dnasamples"}
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/show
+  [4;35;1mGene Load (0.2ms)[0m   [0mSELECT * FROM "genes" [0m
+
+ActionView::TemplateError (undefined method `gene' for #<Dnasample:0x105f770c8>) on line #42 of app/views/dnasamples/show.html.erb:
+39: </p>
+40: 
+41: 
+42: 	<%= select('dnasample','gene',Gene.all.collect {|p| [ p.genbank, p.id] }, {:prompt => 'Select Gene'})%> Select a Gene by its Genbank ID in the <%= link_to "Genes", genes_path %> table.
+43: <table class="custom">
+44: 	<tr><th>Associa</th></tr>
+45: 	<tr><td>Data</td></tr>
+
+    app/views/dnasamples/show.html.erb:42
+    app/controllers/dnasamples_controller.rb:24:in `show'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (48.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DnasamplesController#show (for 127.0.0.1 at 2011-05-11 09:40:41) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"dnasamples"}
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/show
+  [4;35;1mGene Load (0.2ms)[0m   [0mSELECT * FROM "genes" [0m
+  [4;36;1mGene Load (0.2ms)[0m   [0;1mSELECT * FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 14:40:41', "perishable_token" = 'Sz1vLZBs1i01Wv4AEQSQ', "last_request_at" = '2011-05-11 14:40:41' WHERE "id" = 1[0m
+Rendered _navigation (169.0ms)
+Completed in 202ms (View: 184, DB: 1) | 200 OK [http://localhost/dnasamples/1]
+
+
+Processing GenesController#index (for 127.0.0.1 at 2011-05-11 09:40:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"genes"}
+  [4;35;1mGene Load (0.6ms)[0m   [0mSELECT * FROM "genes" [0m
+Rendering template within layouts/genes
+Rendering genes/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 14:40:45', "perishable_token" = 'jCxYd3gLfTo8fCf3YYkH', "last_request_at" = '2011-05-11 14:40:45' WHERE "id" = 1[0m
+Rendered _navigation (56.9ms)
+Completed in 68ms (View: 60, DB: 1) | 200 OK [http://localhost/genes]
+
+
+Processing GenesController#new (for 127.0.0.1 at 2011-05-11 09:40:47) [POST]
+  Parameters: {"action"=>"new", "authenticity_token"=>"VF/gFR5m24hBpn9FqFYKBMjAQJfkHvUIySXfIbgPlzw=", "controller"=>"genes"}
+  [4;36;1mPrimer Load (0.3ms)[0m   [0;1mSELECT * FROM "primers" [0m
+Rendering template within layouts/genes
+Rendering genes/new
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "primers" [0m
+Rendered _primerselect (2.6ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (8.1ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 14:40:47', "perishable_token" = 'f94Vk4gAHVRUkd5p', "last_request_at" = '2011-05-11 14:40:47' WHERE "id" = 1[0m
+Rendered _navigation (57.4ms)
+Completed in 94ms (View: 71, DB: 9) | 200 OK [http://localhost/genes/new]
+
+
+Processing GenesController#getprimerpair (for 127.0.0.1 at 2011-05-11 09:41:04) [POST]
+  Parameters: {"action"=>"getprimerpair", "id"=>"3", "controller"=>"genes"}
+  [4;36;1mPrimer Load (0.2ms)[0m   [0;1mSELECT * FROM "primers" WHERE ("primers"."id" = 3) [0m
+here
+Rendering genes/getprimerpair
+Completed in 11ms (View: 2, DB: 0) | 200 OK [http://localhost/genes/getprimerpair]
+
+
+Processing GenesController#create (for 127.0.0.1 at 2011-05-11 09:41:06) [POST]
+  Parameters: {"commit"=>"Create", "gene"=>{"genbank"=>"ND3", "primer"=>"3", "locus"=>""}, "action"=>"create", "authenticity_token"=>"VF/gFR5m24hBpn9FqFYKBMjAQJfkHvUIySXfIbgPlzw=", "controller"=>"genes"}
+  [4;35;1mPrimer Load (0.3ms)[0m   [0mSELECT * FROM "primers" WHERE ("primers"."id" = 3) [0m
+  [4;36;1mGene Create (0.4ms)[0m   [0;1mINSERT INTO "genes" ("genbank", "primerh", "created_at", "updated_at", "primerl", "locus", "primer") VALUES('ND3', 'CTAGCTAGTCATCGA', '2011-05-11 14:41:06', '2011-05-11 14:41:06', 'CGATCGATCGATCGATAAAC', '', '3')[0m
+Redirected to http://localhost:3000/genes/1
+Completed in 83ms (DB: 1) | 302 Found [http://localhost/genes]
+
+
+Processing GenesController#show (for 127.0.0.1 at 2011-05-11 09:41:06) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"genes"}
+  [4;35;1mGene Load (0.2ms)[0m   [0mSELECT * FROM "genes" WHERE ("genes"."id" = 1) [0m
+Rendering template within layouts/genes
+Rendering genes/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 14:41:06', "perishable_token" = 'PSTwUh8YvQZUPHxx7Cn', "last_request_at" = '2011-05-11 14:41:06' WHERE "id" = 1[0m
+Rendered _navigation (490.4ms)
+Completed in 543ms (View: 531, DB: 1) | 200 OK [http://localhost/genes/1]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-05-11 09:41:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"dnasamples"}
+  [4;36;1mDnasample Load (0.3ms)[0m   [0;1mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 14:41:10', "perishable_token" = 'ixEXokZi2Nf5mQ6HkH0', "last_request_at" = '2011-05-11 14:41:10' WHERE "id" = 1[0m
+Rendered _navigation (463.5ms)
+Completed in 492ms (View: 476, DB: 1) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#show (for 127.0.0.1 at 2011-05-11 09:41:13) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"dnasamples"}
+  [4;35;1mDnasample Load (0.3ms)[0m   [0mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/show
+  [4;36;1mGene Load (0.2ms)[0m   [0;1mSELECT * FROM "genes" [0m
+  [4;35;1mGene Load (0.3ms)[0m   [0mSELECT * FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 14:41:13', "perishable_token" = '9KopsaNaYc9XmHnWYnPC', "last_request_at" = '2011-05-11 14:41:13' WHERE "id" = 1[0m
+Rendered _navigation (37.8ms)
+Completed in 62ms (View: 50, DB: 2) | 200 OK [http://localhost/dnasamples/1]
+
+
+Processing DnasamplesController#show (for 127.0.0.1 at 2011-05-11 09:41:29) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"dnasamples"}
+  [4;36;1mDnasample Load (0.3ms)[0m   [0;1mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/show
+  [4;35;1mGene Load (0.2ms)[0m   [0mSELECT * FROM "genes" [0m
+  [4;36;1mGene Load (0.2ms)[0m   [0;1mSELECT * FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 14:41:29', "perishable_token" = 't1Hi4lDJs2TFKskCmJKy', "last_request_at" = '2011-05-11 14:41:29' WHERE "id" = 1[0m
+Rendered _navigation (116.2ms)
+Completed in 147ms (View: 133, DB: 1) | 200 OK [http://localhost/dnasamples/1]
+
+
+Processing DnasamplesController#show (for 127.0.0.1 at 2011-05-11 09:41:48) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"dnasamples"}
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/show
+  [4;36;1mGene Load (0.3ms)[0m   [0;1mSELECT * FROM "genes" [0m
+  [4;35;1mGene Load (0.2ms)[0m   [0mSELECT * FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 14:41:48', "perishable_token" = 'q3ii7IoIfaWiuwPQ3Vet', "last_request_at" = '2011-05-11 14:41:48' WHERE "id" = 1[0m
+Rendered _navigation (47.9ms)
+Completed in 196ms (View: 185, DB: 1) | 200 OK [http://localhost/dnasamples/1]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2011-05-11 09:50:30) [GET]
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 95ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-05-11 09:50:30) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/general
+Rendering user_sessions/new
+Rendered _navigation (0.6ms)
+Completed in 167ms (View: 25, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2011-05-11 09:50:37) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"admin"}, "action"=>"create", "authenticity_token"=>"LFXwL2gA1cYNbRs0b2EwzMa2sP/c/+7io4YOA9l0lg8=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'admin') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "login_count" = 4, "current_login_ip" = '127.0.0.1', "updated_at" = '2011-05-11 14:50:37', "perishable_token" = 'i3haeM9RX17b4F3J7jXB', "last_request_at" = '2011-05-11 14:50:37', "last_login_at" = '2011-05-11 12:38:13', "last_login_ip" = '192.168.1.8', "current_login_at" = '2011-05-11 14:50:37' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 38ms (DB: 1) | 302 Found [http://localhost/user_session]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2011-05-11 09:50:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 14:50:37', "perishable_token" = 'z5Lufo0vkm7Qk0kAa4h', "last_request_at" = '2011-05-11 14:50:37' WHERE "id" = 1[0m
+  [4;36;1mExperiment Load (0.4ms)[0m   [0;1mSELECT * FROM "experiments" ORDER BY updated_at DESC LIMIT 5[0m
+Rendering template within layouts/general
+Rendering welcome/index
+Rendered _navigation (2.2ms)
+Completed in 246ms (View: 26, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-05-11 09:51:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"dnasamples"}
+  [4;35;1mDnasample Load (0.3ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 14:51:01', "perishable_token" = 'huzjCotjcuufwD9scfew', "last_request_at" = '2011-05-11 14:51:01' WHERE "id" = 1[0m
+Rendered _navigation (34.5ms)
+Completed in 77ms (View: 62, DB: 1) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#show (for 127.0.0.1 at 2011-05-11 09:51:03) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"dnasamples"}
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/show
+ERROR: compiling _run_erb_app47views47dnasamples47show46html46erb RAISED compile error
+/Users/rickschmidt/Documents/ReddyLab/lab/app/views/dnasamples/show.html.erb:50: syntax error, unexpected kENSURE, expecting kEND
+/Users/rickschmidt/Documents/ReddyLab/lab/app/views/dnasamples/show.html.erb:52: syntax error, unexpected $end, expecting kEND
+Function body:           def _run_erb_app47views47dnasamples47show46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<p>\n  <b>Dna accession:</b>\n  "
+
+; @output_buffer.concat((h @dnasample.dna_accession ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Dnasample number:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @dnasample.dnasample_number ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Date:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @dnasample.date ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Method:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @dnasample.method ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Elution volume:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @dnasample.elution_volume ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Second elute:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @dnasample.second_elute ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Second elute volumne:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @dnasample.second_elute_volumne ).to_s); @output_buffer.concat "\n</p>\n\n<p>\n  <b>Reextracted:</b>\n  "
+
+
+
+
+; @output_buffer.concat((h @dnasample.reextracted ).to_s); @output_buffer.concat "\n</p>\n\n\n"
+
+
+
+;  form_tag(:action => "submitgene") do ; @output_buffer.concat "\n<p>\t"
+; @output_buffer.concat(( select('dnasample','genes',Gene.all.collect {|p| [ p.genbank, p.id] }, {:prompt => 'Select Gene'})).to_s); @output_buffer.concat " Select a Gene by its Genbank ID in the "; @output_buffer.concat(( link_to "Genes", genes_path ).to_s); @output_buffer.concat " table.</p>\n<p>"
+; @output_buffer.concat((h  hidden_field_tag(:dnasampleid, @dnasample.id) ).to_s); @output_buffer.concat "</p>\n"
+; @output_buffer.concat(( submit_tag "Add").to_s); @output_buffer.concat "\n\n\n"
+
+
+; @output_buffer.concat(( link_to 'Edit', edit_dnasample_path(@dnasample) ).to_s); @output_buffer.concat " |\n"
+; @output_buffer.concat(( link_to 'Back', dnasamples_path ).to_s); @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/rickschmidt/Documents/ReddyLab/lab/app/views/dnasamples/show.html.erb:52:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_view/template.rb:205:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_view/base.rb:265:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_view/base.rb:348:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_view/base.rb:262:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:1252:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:942:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.11/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.11/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/mime_responds.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/mime_responds.rb:135:in `custom'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/mime_responds.rb:179:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/mime_responds.rb:179:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/mime_responds.rb:173:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/mime_responds.rb:173:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/rickschmidt/Documents/ReddyLab/lab/app/controllers/dnasamples_controller.rb:24:in `show'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:1333:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:1333:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.11/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.11/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/flash.rb:151:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/routing/route_set.rb:438:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.11/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.11/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.11/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.11/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.11/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.11/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/string_coercion.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.2/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.2/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/session/cookie_store.rb:99:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/failsafe.rb:26:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.2/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.11/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.2/lib/rack/urlmap.rb:47:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.11/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.2/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.2/lib/rack/handler/webrick.rb:48:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.2/lib/rack/handler/webrick.rb:14:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.11/lib/commands/server.rb:111
+script/server:3:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/rickschmidt/Documents/ReddyLab/lab/app/views/dnasamples/show.html.erb:50: syntax error, unexpected kENSURE, expecting kEND
+/Users/rickschmidt/Documents/ReddyLab/lab/app/views/dnasamples/show.html.erb:52: syntax error, unexpected $end, expecting kEND) on line #50 of app/views/dnasamples/show.html.erb:
+47: 
+48: <%= link_to 'Edit', edit_dnasample_path(@dnasample) %> |
+49: <%= link_to 'Back', dnasamples_path %>
+
+    app/views/dnasamples/show.html.erb:52:in `compile!'
+    app/controllers/dnasamples_controller.rb:24:in `show'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (43.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DnasamplesController#show (for 127.0.0.1 at 2011-05-11 09:51:18) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"dnasamples"}
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/show
+  [4;36;1mGene Load (0.2ms)[0m   [0;1mSELECT * FROM "genes" [0m
+  [4;35;1mGene Load (0.2ms)[0m   [0mSELECT * FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 14:51:19', "perishable_token" = 'SV6T7nCABxGDW6FLs6so', "last_request_at" = '2011-05-11 14:51:19' WHERE "id" = 1[0m
+Rendered _navigation (149.1ms)
+Completed in 177ms (View: 166, DB: 1) | 200 OK [http://localhost/dnasamples/1]
+
+
+Processing DnasamplesController#submitgene (for 127.0.0.1 at 2011-05-11 09:51:22) [POST]
+  Parameters: {"commit"=>"Add", "dnasample"=>{"genes"=>"1"}, "action"=>"submitgene", "authenticity_token"=>"LFXwL2gA1cYNbRs0b2EwzMa2sP/c/+7io4YOA9l0lg8=", "controller"=>"dnasamples", "dnasampleid"=>"1"}
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+  [4;35;1mGene Load (0.3ms)[0m   [0mSELECT * FROM "genes" WHERE ("genes"."id" = 1) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "dnasamples_genes" ("created_at", "updated_at", "dnasample_id", "gene_id") VALUES ('2011-05-11 14:41:06', '2011-05-11 14:41:06', 1, 1)[0m
+Redirected to http://localhost:3000/dnasamples/1
+Completed in 24ms (DB: 1) | 302 Found [http://localhost/dnasamples/submitgene]
+
+
+Processing DnasamplesController#show (for 127.0.0.1 at 2011-05-11 09:51:22) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"dnasamples"}
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/show
+  [4;36;1mGene Load (0.2ms)[0m   [0;1mSELECT * FROM "genes" [0m
+  [4;35;1mGene Load (0.3ms)[0m   [0mSELECT * FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 14:51:22', "perishable_token" = '8tiDI1QrUcdieHkQowu5', "last_request_at" = '2011-05-11 14:51:22' WHERE "id" = 1[0m
+Rendered _navigation (145.0ms)
+Completed in 169ms (View: 158, DB: 1) | 200 OK [http://localhost/dnasamples/1]
+
+
+Processing DnasamplesController#show (for 127.0.0.1 at 2011-05-11 09:53:59) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"dnasamples"}
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/show
+  [4;35;1mGene Load (0.3ms)[0m   [0mSELECT * FROM "genes" [0m
+  [4;36;1mGene Load (0.3ms)[0m   [0;1mSELECT * FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;35;1mGene Load (0.3ms)[0m   [0mSELECT "genes".* FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 14:53:59', "perishable_token" = 'eUJXqxxg9EuhefFGHTm3', "last_request_at" = '2011-05-11 14:53:59' WHERE "id" = 1[0m
+Rendered _navigation (142.6ms)
+Completed in 174ms (View: 159, DB: 2) | 200 OK [http://localhost/dnasamples/1]
+
+
+Processing DnasamplesController#removegene (for 127.0.0.1 at 2011-05-11 09:54:02) [POST]
+  Parameters: {"commit"=>"Remove", "dnasample"=>{"genes"=>"1"}, "action"=>"removegene", "authenticity_token"=>"LFXwL2gA1cYNbRs0b2EwzMa2sP/c/+7io4YOA9l0lg8=", "controller"=>"dnasamples", "dnasampleid"=>"1"}
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+  [4;35;1mGene Load (0.2ms)[0m   [0mSELECT * FROM "genes" WHERE ("genes"."id" = 1) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mDELETE FROM "dnasamples_genes" WHERE dnasample_id = 1 AND gene_id IN (1)[0m
+Redirected to http://localhost:3000/dnasamples/1
+Completed in 22ms (DB: 1) | 302 Found [http://localhost/dnasamples/removegene]
+
+
+Processing DnasamplesController#show (for 127.0.0.1 at 2011-05-11 09:54:02) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"dnasamples"}
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/show
+  [4;36;1mGene Load (0.2ms)[0m   [0;1mSELECT * FROM "genes" [0m
+  [4;35;1mGene Load (0.2ms)[0m   [0mSELECT * FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;36;1mGene Load (0.2ms)[0m   [0;1mSELECT "genes".* FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 14:54:02', "perishable_token" = '7R41nQpWUUIqnGfKy89L', "last_request_at" = '2011-05-11 14:54:02' WHERE "id" = 1[0m
+Rendered _navigation (148.7ms)
+Completed in 174ms (View: 159, DB: 2) | 200 OK [http://localhost/dnasamples/1]
+
+
+Processing DnasamplesController#submitgene (for 127.0.0.1 at 2011-05-11 09:54:05) [POST]
+  Parameters: {"commit"=>"Add", "dnasample"=>{"genes"=>"1"}, "action"=>"submitgene", "authenticity_token"=>"LFXwL2gA1cYNbRs0b2EwzMa2sP/c/+7io4YOA9l0lg8=", "controller"=>"dnasamples", "dnasampleid"=>"1"}
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+  [4;36;1mGene Load (0.2ms)[0m   [0;1mSELECT * FROM "genes" WHERE ("genes"."id" = 1) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "dnasamples_genes" ("created_at", "updated_at", "dnasample_id", "gene_id") VALUES ('2011-05-11 14:41:06', '2011-05-11 14:41:06', 1, 1)[0m
+Redirected to http://localhost:3000/dnasamples/1
+Completed in 22ms (DB: 1) | 302 Found [http://localhost/dnasamples/submitgene]
+
+
+Processing DnasamplesController#show (for 127.0.0.1 at 2011-05-11 09:54:05) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"dnasamples"}
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/show
+  [4;35;1mGene Load (0.2ms)[0m   [0mSELECT * FROM "genes" [0m
+  [4;36;1mGene Load (0.3ms)[0m   [0;1mSELECT * FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;35;1mGene Load (0.2ms)[0m   [0mSELECT "genes".* FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 14:54:05', "perishable_token" = 'xQk1M6CcXKY4NvSZdgap', "last_request_at" = '2011-05-11 14:54:05' WHERE "id" = 1[0m
+Rendered _navigation (145.7ms)
+Completed in 172ms (View: 156, DB: 2) | 200 OK [http://localhost/dnasamples/1]
+
+
+Processing DnasamplesController#show (for 127.0.0.1 at 2011-05-11 09:55:58) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"dnasamples"}
+  [4;36;1mDnasample Load (0.3ms)[0m   [0;1mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/show
+  [4;35;1mGene Load (0.3ms)[0m   [0mSELECT * FROM "genes" [0m
+  [4;36;1mGene Load (0.3ms)[0m   [0;1mSELECT * FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;35;1mGene Load (0.2ms)[0m   [0mSELECT "genes".* FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 14:55:58', "perishable_token" = 'ZqFRrnlt5alMn4NKp4Ph', "last_request_at" = '2011-05-11 14:55:58' WHERE "id" = 1[0m
+Rendered _navigation (36.2ms)
+Completed in 68ms (View: 52, DB: 2) | 200 OK [http://localhost/dnasamples/1]
+
+
+Processing DnasamplesController#show (for 127.0.0.1 at 2011-05-11 09:56:23) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"dnasamples"}
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/show
+  [4;35;1mGene Load (0.3ms)[0m   [0mSELECT * FROM "genes" [0m
+  [4;36;1mGene Load (0.3ms)[0m   [0;1mSELECT * FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;35;1mGene Load (0.2ms)[0m   [0mSELECT "genes".* FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 14:56:23', "perishable_token" = 'jUx8nvSzg0tRpSZzS1Rw', "last_request_at" = '2011-05-11 14:56:23' WHERE "id" = 1[0m
+Rendered _navigation (37.0ms)
+Completed in 180ms (View: 53, DB: 2) | 200 OK [http://localhost/dnasamples/1]
+
+
+Processing DnasamplesController#show (for 127.0.0.1 at 2011-05-11 09:56:24) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"dnasamples"}
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/show
+  [4;35;1mGene Load (0.2ms)[0m   [0mSELECT * FROM "genes" [0m
+  [4;36;1mGene Load (0.3ms)[0m   [0;1mSELECT * FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;35;1mGene Load (0.2ms)[0m   [0mSELECT "genes".* FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 14:56:25', "perishable_token" = 'Nuf0d67nXMMZh43Ak7N', "last_request_at" = '2011-05-11 14:56:25' WHERE "id" = 1[0m
+Rendered _navigation (143.0ms)
+Completed in 168ms (View: 153, DB: 2) | 200 OK [http://localhost/dnasamples/1]
+
+
+Processing DnasamplesController#show (for 127.0.0.1 at 2011-05-11 09:56:45) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"dnasamples"}
+  [4;36;1mDnasample Load (0.3ms)[0m   [0;1mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/show
+  [4;35;1mGene Load (0.2ms)[0m   [0mSELECT * FROM "genes" [0m
+  [4;36;1mGene Load (0.3ms)[0m   [0;1mSELECT * FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;35;1mGene Load (0.2ms)[0m   [0mSELECT "genes".* FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 14:56:45', "perishable_token" = 'NHHcXAM1DdM4pBsDJ9Iy', "last_request_at" = '2011-05-11 14:56:45' WHERE "id" = 1[0m
+Rendered _navigation (35.4ms)
+Completed in 67ms (View: 51, DB: 2) | 200 OK [http://localhost/dnasamples/1]
+
+
+Processing DnasamplesController#show (for 127.0.0.1 at 2011-05-11 09:56:55) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"dnasamples"}
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/show
+  [4;35;1mGene Load (0.3ms)[0m   [0mSELECT * FROM "genes" [0m
+  [4;36;1mGene Load (0.3ms)[0m   [0;1mSELECT * FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;35;1mGene Load (0.2ms)[0m   [0mSELECT "genes".* FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 14:56:56', "perishable_token" = 'GZOKzGENIQYdr9DJMVI0', "last_request_at" = '2011-05-11 14:56:56' WHERE "id" = 1[0m
+Rendered _navigation (34.6ms)
+Completed in 65ms (View: 50, DB: 2) | 200 OK [http://localhost/dnasamples/1]
+
+
+Processing DnasamplesController#show (for 127.0.0.1 at 2011-05-11 09:57:08) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"dnasamples"}
+  [4;36;1mDnasample Load (0.4ms)[0m   [0;1mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/show
+  [4;35;1mGene Load (0.3ms)[0m   [0mSELECT * FROM "genes" [0m
+  [4;36;1mGene Load (0.3ms)[0m   [0;1mSELECT * FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;35;1mGene Load (0.2ms)[0m   [0mSELECT "genes".* FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 14:57:08', "perishable_token" = 'K6V3yDNiNOO4cvz2f6sk', "last_request_at" = '2011-05-11 14:57:08' WHERE "id" = 1[0m
+Rendered _navigation (36.4ms)
+Completed in 176ms (View: 53, DB: 2) | 200 OK [http://localhost/dnasamples/1]
+
+
+Processing DnasamplesController#show (for 127.0.0.1 at 2011-05-11 09:57:26) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"dnasamples"}
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/show
+  [4;35;1mGene Load (0.2ms)[0m   [0mSELECT * FROM "genes" [0m
+  [4;36;1mGene Load (0.3ms)[0m   [0;1mSELECT * FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;35;1mGene Load (0.2ms)[0m   [0mSELECT "genes".* FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 14:57:26', "perishable_token" = 'mc3WigqWyW5FBgCMKGY', "last_request_at" = '2011-05-11 14:57:26' WHERE "id" = 1[0m
+Rendered _navigation (143.8ms)
+Completed in 173ms (View: 159, DB: 2) | 200 OK [http://localhost/dnasamples/1]
+
+
+Processing DnasamplesController#show (for 127.0.0.1 at 2011-05-11 09:57:32) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"dnasamples"}
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/show
+  [4;35;1mGene Load (0.3ms)[0m   [0mSELECT * FROM "genes" [0m
+  [4;36;1mGene Load (0.3ms)[0m   [0;1mSELECT * FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;35;1mGene Load (0.2ms)[0m   [0mSELECT "genes".* FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 14:57:32', "perishable_token" = 'ylrRy2VDfe1u7FlOpSw', "last_request_at" = '2011-05-11 14:57:32' WHERE "id" = 1[0m
+Rendered _navigation (36.0ms)
+Completed in 67ms (View: 52, DB: 2) | 200 OK [http://localhost/dnasamples/1]
+
+
+Processing DnasamplesController#show (for 127.0.0.1 at 2011-05-11 09:57:43) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"dnasamples"}
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/show
+  [4;35;1mGene Load (0.3ms)[0m   [0mSELECT * FROM "genes" [0m
+  [4;36;1mGene Load (0.3ms)[0m   [0;1mSELECT * FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;35;1mGene Load (0.5ms)[0m   [0mSELECT "genes".* FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (158.6ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 14:57:43', "perishable_token" = 'ctNkU5JfksO4mMS5wFkc', "last_request_at" = '2011-05-11 14:57:43' WHERE "id" = 1[0m
+Rendered _navigation (518.7ms)
+Completed in 551ms (View: 377, DB: 160) | 200 OK [http://localhost/dnasamples/1]
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTaxonomies (20110126195733)
+Migrating to CreateDnasamples (20110126195743)
+Migrating to CreatePcrs (20110126195750)
+Migrating to CreateGenes (20110126195756)
+Migrating to CreateExperiments (20110126195802)
+Migrating to Jointables (20110126205446)
+Migrating to CreateUsers (20110307022152)
+Migrating to MoreJoins (20110307175326)
+Migrating to Testheroku (20110308222702)
+Migrating to AddPrimerTable (20110316193616)
+Migrating to CreatePrimers (20110316194033)
+Migrating to Addprimtertogenetable (20110414162148)
+Migrating to AddNameToPrimers (20110511132406)
+Migrating to Dnataxjoin (20110511145911)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTaxonomies (20110126195733)
+Migrating to CreateDnasamples (20110126195743)
+Migrating to CreatePcrs (20110126195750)
+Migrating to CreateGenes (20110126195756)
+Migrating to CreateExperiments (20110126195802)
+Migrating to Jointables (20110126205446)
+Migrating to CreateUsers (20110307022152)
+Migrating to MoreJoins (20110307175326)
+Migrating to Testheroku (20110308222702)
+Migrating to AddPrimerTable (20110316193616)
+Migrating to CreatePrimers (20110316194033)
+Migrating to Addprimtertogenetable (20110414162148)
+Migrating to AddNameToPrimers (20110511132406)
+Migrating to Dnataxjoin (20110511145911)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "dnasamples_taxonomies" ("dnasample_id" integer, "taxonomy_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110511145911')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("dnasamples")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("dnasamples_genes")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("dnasamples_pcrs")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("dnasamples_taxonomies")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("experiments")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("experiments_pcrs")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("genes")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("pcrs")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("primers")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("taxonomies")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+
+
+Processing DnasamplesController#show (for 127.0.0.1 at 2011-05-11 10:05:24) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"dnasamples"}
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/show
+  [4;35;1mGene Load (0.3ms)[0m   [0mSELECT * FROM "genes" [0m
+  [4;36;1mGene Load (0.3ms)[0m   [0;1mSELECT * FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;35;1mGene Load (0.3ms)[0m   [0mSELECT "genes".* FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 15:05:25', "perishable_token" = 'ImHCXUE4WyivQefq8tn', "last_request_at" = '2011-05-11 15:05:25' WHERE "id" = 1[0m
+Rendered _navigation (36.7ms)
+Completed in 173ms (View: 48, DB: 2) | 200 OK [http://localhost/dnasamples/1]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-11 10:05:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 15:05:27', "perishable_token" = 'PYhsMMVYIONJRqI56tAG', "last_request_at" = '2011-05-11 15:05:27' WHERE "id" = 1[0m
+  [4;36;1mTaxonomy Load (0.2ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.1ms)
+Completed in 51ms (View: 8, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#new (for 127.0.0.1 at 2011-05-11 10:05:29) [GET]
+  Parameters: {"action"=>"new", "controller"=>"taxonomies"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 15:05:29', "perishable_token" = 'e3SbrjvsHvnDnxFcGZJ', "last_request_at" = '2011-05-11 15:05:29' WHERE "id" = 1[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/new
+Rendered _navigation (2.1ms)
+Completed in 97ms (View: 56, DB: 1) | 200 OK [http://localhost/taxonomies/new]
+
+
+Processing TaxonomiesController#create (for 127.0.0.1 at 2011-05-11 10:05:31) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"LFXwL2gA1cYNbRs0b2EwzMa2sP/c/+7io4YOA9l0lg8=", "taxonomy"=>{"countries"=>"", "reference"=>"", "type_museum"=>"", "other_literature"=>"", "synonyms"=>"", "character_diagnosis"=>"", "ingroup"=>"", "description_pdf"=>"", "family"=>"", "genus"=>"", "description"=>"", "distribution"=>"", "subspecies"=>"", "new_diagnosis"=>"", "species"=>""}, "controller"=>"taxonomies"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 15:05:31', "perishable_token" = 'xiKqoIC5jMIEVzTDsmEZ', "last_request_at" = '2011-05-11 15:05:31' WHERE "id" = 1[0m
+  [4;35;1mTaxonomy Create (0.4ms)[0m   [0mINSERT INTO "taxonomies" ("reference", "countries", "type_museum", "created_at", "updated_at", "synonyms", "other_literature", "character_diagnosis", "family", "description_pdf", "ingroup", "genus", "subspecies", "distribution", "description", "new_diagnosis", "species") VALUES('', '', '', '2011-05-11 15:05:31', '2011-05-11 15:05:31', '', '', '', '', '', '', '', '', '', '', '', '')[0m
+Redirected to http://localhost:3000/taxonomies/1
+Completed in 47ms (DB: 1) | 302 Found [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#show (for 127.0.0.1 at 2011-05-11 10:05:31) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"taxonomies"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 15:05:31', "perishable_token" = 'EFjPLvNkq0kmNAJRvNa', "last_request_at" = '2011-05-11 15:05:31' WHERE "id" = 1[0m
+  [4;36;1mTaxonomy Load (0.3ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE ("taxonomies"."id" = 1) [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/show
+  [4;35;1mDnasample Load (0.3ms)[0m   [0mSELECT * FROM "dnasamples" [0m
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_taxonomies" ON "dnasamples".id = "dnasamples_taxonomies".dnasample_id WHERE ("dnasamples_taxonomies".taxonomy_id = 1 ) [0m
+
+ActionView::TemplateError (undefined method `all' for nil:NilClass) on line #87 of app/views/taxonomies/show.html.erb:
+84: 
+85: <h5> Delete a DNA Sample that is associated with this species.</h5>
+86: <% form_tag(:action => "removednasample") do %>
+87: <p>	<%= select('taxonomy','dnasamples',@taxonomydnasamples.all.collect {|p| [ p.dna_accession, p.id] }, {:prompt => 'Select DNA Sample'})%> Select a DNA Sample by its Accession ID in the <%= link_to "DNA Samples", dnasamples_path %> table.</p>
+88: <p><%=h  hidden_field_tag(:taxonomyid, @taxonomy.id) %></p>
+89: 
+90: <%= submit_tag "Remove"%>
+
+    app/views/taxonomies/show.html.erb:87
+    app/views/taxonomies/show.html.erb:86
+    app/controllers/taxonomies_controller.rb:23:in `show'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (158.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TaxonomiesController#show (for 127.0.0.1 at 2011-05-11 10:06:11) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"taxonomies"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 15:06:11', "perishable_token" = 'wCJ3wi9r67FyOYZwpj', "last_request_at" = '2011-05-11 15:06:11' WHERE "id" = 1[0m
+  [4;35;1mTaxonomy Load (0.4ms)[0m   [0mSELECT * FROM "taxonomies" WHERE ("taxonomies"."id" = 1) [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/show
+  [4;36;1mDnasample Load (0.3ms)[0m   [0;1mSELECT * FROM "dnasamples" [0m
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_taxonomies" ON "dnasamples".id = "dnasamples_taxonomies".dnasample_id WHERE ("dnasamples_taxonomies".taxonomy_id = 1 ) [0m
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT "dnasamples".* FROM "dnasamples" INNER JOIN "dnasamples_taxonomies" ON "dnasamples".id = "dnasamples_taxonomies".dnasample_id WHERE ("dnasamples_taxonomies".taxonomy_id = 1 ) [0m
+Rendered _navigation (2.2ms)
+Completed in 60ms (View: 14, DB: 2) | 200 OK [http://localhost/taxonomies/1]
+
+
+Processing TaxonomiesController#show (for 127.0.0.1 at 2011-05-11 10:09:53) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"taxonomies"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 15:09:53', "perishable_token" = 'AMfnW01qKp2xaqtE9t', "last_request_at" = '2011-05-11 15:09:53' WHERE "id" = 1[0m
+  [4;35;1mTaxonomy Load (0.3ms)[0m   [0mSELECT * FROM "taxonomies" WHERE ("taxonomies"."id" = 1) [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/show
+  [4;36;1mDnasample Load (0.3ms)[0m   [0;1mSELECT * FROM "dnasamples" [0m
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_taxonomies" ON "dnasamples".id = "dnasamples_taxonomies".dnasample_id WHERE ("dnasamples_taxonomies".taxonomy_id = 1 ) [0m
+  [4;36;1mDnasample Load (0.4ms)[0m   [0;1mSELECT "dnasamples".* FROM "dnasamples" INNER JOIN "dnasamples_taxonomies" ON "dnasamples".id = "dnasamples_taxonomies".dnasample_id WHERE ("dnasamples_taxonomies".taxonomy_id = 1 ) [0m
+Rendered _navigation (2.3ms)
+Completed in 175ms (View: 15, DB: 2) | 200 OK [http://localhost/taxonomies/1]
+
+
+Processing DnasamplesController#index (for 127.0.0.1 at 2011-05-11 10:09:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"dnasamples"}
+  [4;35;1mDnasample Load (0.3ms)[0m   [0mSELECT * FROM "dnasamples" ORDER BY date asc[0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.7ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 15:09:57', "perishable_token" = '9vJ4w6bs4ORWG402KlXE', "last_request_at" = '2011-05-11 15:09:57' WHERE "id" = 1[0m
+Rendered _navigation (36.9ms)
+Completed in 65ms (View: 49, DB: 1) | 200 OK [http://localhost/dnasamples]
+
+
+Processing DnasamplesController#edit (for 127.0.0.1 at 2011-05-11 10:09:59) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"dnasamples"}
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/edit
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 15:09:59', "perishable_token" = 't456MU0RkHMBSWfyO85v', "last_request_at" = '2011-05-11 15:09:59' WHERE "id" = 1[0m
+Rendered _navigation (26.1ms)
+Completed in 65ms (View: 54, DB: 1) | 200 OK [http://localhost/dnasamples/1/edit]
+
+
+Processing DnasamplesController#update (for 127.0.0.1 at 2011-05-11 10:10:06) [PUT]
+  Parameters: {"commit"=>"Update", "dnasample"=>{"dnasample_number"=>"", "date(1i)"=>"2011", "date(2i)"=>"5", "second_elute_volumne"=>"", "elution_volume"=>"", "method"=>"", "date(3i)"=>"11", "reextracted"=>"", "dna_accession"=>"CD501", "second_elute"=>""}, "action"=>"update", "_method"=>"put", "authenticity_token"=>"LFXwL2gA1cYNbRs0b2EwzMa2sP/c/+7io4YOA9l0lg8=", "id"=>"1", "controller"=>"dnasamples"}
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+  [4;36;1mDnasample Update (0.4ms)[0m   [0;1mUPDATE "dnasamples" SET "updated_at" = '2011-05-11 15:10:06', "dna_accession" = 'CD501' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/dnasamples/1
+Completed in 18ms (DB: 1) | 302 Found [http://localhost/dnasamples/1]
+
+
+Processing DnasamplesController#show (for 127.0.0.1 at 2011-05-11 10:10:06) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"dnasamples"}
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+Rendering template within layouts/dnasamples
+Rendering dnasamples/show
+  [4;36;1mGene Load (0.3ms)[0m   [0;1mSELECT * FROM "genes" [0m
+  [4;35;1mGene Load (0.3ms)[0m   [0mSELECT * FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;36;1mGene Load (0.3ms)[0m   [0;1mSELECT "genes".* FROM "genes" INNER JOIN "dnasamples_genes" ON "genes".id = "dnasamples_genes".gene_id WHERE ("dnasamples_genes".dnasample_id = 1 ) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 15:10:06', "perishable_token" = 'os3Wm05mTNsJlGmjmC', "last_request_at" = '2011-05-11 15:10:06' WHERE "id" = 1[0m
+Rendered _navigation (34.6ms)
+Completed in 169ms (View: 46, DB: 2) | 200 OK [http://localhost/dnasamples/1]
+
+
+Processing TaxonomiesController#index (for 127.0.0.1 at 2011-05-11 10:10:10) [GET]
+  Parameters: {"action"=>"index", "controller"=>"taxonomies"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 15:10:10', "perishable_token" = 'kwSdFs8ySPb8DyiVhkiM', "last_request_at" = '2011-05-11 15:10:10' WHERE "id" = 1[0m
+  [4;35;1mTaxonomy Load (0.3ms)[0m   [0mSELECT * FROM "taxonomies" WHERE (taxonomies.genus LIKE '%%') ORDER BY id asc[0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/index
+Rendered _navigation (2.1ms)
+Completed in 57ms (View: 13, DB: 1) | 200 OK [http://localhost/taxonomies]
+
+
+Processing TaxonomiesController#show (for 127.0.0.1 at 2011-05-11 10:10:12) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"taxonomies"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 15:10:12', "perishable_token" = 'u0chVYVztoWP9RLa7F2', "last_request_at" = '2011-05-11 15:10:12' WHERE "id" = 1[0m
+  [4;36;1mTaxonomy Load (0.4ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE ("taxonomies"."id" = 1) [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/show
+  [4;35;1mDnasample Load (0.3ms)[0m   [0mSELECT * FROM "dnasamples" [0m
+  [4;36;1mDnasample Load (0.3ms)[0m   [0;1mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_taxonomies" ON "dnasamples".id = "dnasamples_taxonomies".dnasample_id WHERE ("dnasamples_taxonomies".taxonomy_id = 1 ) [0m
+  [4;35;1mDnasample Load (0.3ms)[0m   [0mSELECT "dnasamples".* FROM "dnasamples" INNER JOIN "dnasamples_taxonomies" ON "dnasamples".id = "dnasamples_taxonomies".dnasample_id WHERE ("dnasamples_taxonomies".taxonomy_id = 1 ) [0m
+Rendered _navigation (2.5ms)
+Completed in 72ms (View: 18, DB: 2) | 200 OK [http://localhost/taxonomies/1]
+
+
+Processing TaxonomiesController#submitdnasample (for 127.0.0.1 at 2011-05-11 10:10:15) [POST]
+  Parameters: {"commit"=>"Add", "taxonomyid"=>"1", "action"=>"submitdnasample", "authenticity_token"=>"LFXwL2gA1cYNbRs0b2EwzMa2sP/c/+7io4YOA9l0lg8=", "taxonomy"=>{"dnasamples"=>"1"}, "controller"=>"taxonomies"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 15:10:15', "perishable_token" = 'i3bVFaT8xhgpGFLpSj1', "last_request_at" = '2011-05-11 15:10:15' WHERE "id" = 1[0m
+
+ActionController::UnknownAction (No action responded to submitdnasample. Actions: create, destroy, edit, index, new, primer, removednasamples, show, submitdnasamples, and update):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing TaxonomiesController#submitdnasample (for 127.0.0.1 at 2011-05-11 10:10:30) [POST]
+  Parameters: {"commit"=>"Add", "taxonomyid"=>"1", "action"=>"submitdnasample", "authenticity_token"=>"LFXwL2gA1cYNbRs0b2EwzMa2sP/c/+7io4YOA9l0lg8=", "taxonomy"=>{"dnasamples"=>"1"}, "controller"=>"taxonomies"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 15:10:30', "perishable_token" = 'FVERn357FsbArnAhobtn', "last_request_at" = '2011-05-11 15:10:30' WHERE "id" = 1[0m
+  [4;36;1mTaxonomy Load (0.3ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE ("taxonomies"."id" = 1) [0m
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "dnasamples_taxonomies" ("created_at", "updated_at", "dnasample_id", "taxonomy_id") VALUES ('2011-05-11 13:17:26', '2011-05-11 15:10:06', 1, 1)[0m
+Redirected to http://localhost:3000/taxonomies/1
+Completed in 54ms (DB: 2) | 302 Found [http://localhost/taxonomies/submitdnasample]
+
+
+Processing TaxonomiesController#show (for 127.0.0.1 at 2011-05-11 10:10:30) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"taxonomies"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 15:10:30', "perishable_token" = 'IHmecKmr66dKksOAIEhZ', "last_request_at" = '2011-05-11 15:10:30' WHERE "id" = 1[0m
+  [4;35;1mTaxonomy Load (0.3ms)[0m   [0mSELECT * FROM "taxonomies" WHERE ("taxonomies"."id" = 1) [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/show
+  [4;36;1mDnasample Load (0.3ms)[0m   [0;1mSELECT * FROM "dnasamples" [0m
+  [4;35;1mDnasample Load (0.3ms)[0m   [0mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_taxonomies" ON "dnasamples".id = "dnasamples_taxonomies".dnasample_id WHERE ("dnasamples_taxonomies".taxonomy_id = 1 ) [0m
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT "dnasamples".* FROM "dnasamples" INNER JOIN "dnasamples_taxonomies" ON "dnasamples".id = "dnasamples_taxonomies".dnasample_id WHERE ("dnasamples_taxonomies".taxonomy_id = 1 ) [0m
+Rendered _navigation (2.3ms)
+Completed in 59ms (View: 14, DB: 2) | 200 OK [http://localhost/taxonomies/1]
+
+
+Processing TaxonomiesController#removednasample (for 127.0.0.1 at 2011-05-11 10:10:33) [POST]
+  Parameters: {"commit"=>"Remove", "taxonomyid"=>"1", "action"=>"removednasample", "authenticity_token"=>"LFXwL2gA1cYNbRs0b2EwzMa2sP/c/+7io4YOA9l0lg8=", "taxonomy"=>{"dnasamples"=>"1"}, "controller"=>"taxonomies"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-05-11 15:10:33', "perishable_token" = 'y5KFHYyisb1RlUD4UhSa', "last_request_at" = '2011-05-11 15:10:33' WHERE "id" = 1[0m
+  [4;35;1mTaxonomy Load (0.4ms)[0m   [0mSELECT * FROM "taxonomies" WHERE ("taxonomies"."id" = 1) [0m
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" WHERE ("dnasamples"."id" = 1) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mDELETE FROM "dnasamples_taxonomies" WHERE taxonomy_id = 1 AND dnasample_id IN (1)[0m
+Redirected to http://localhost:3000/taxonomies/1
+Completed in 53ms (DB: 2) | 302 Found [http://localhost/taxonomies/removednasample]
+
+
+Processing TaxonomiesController#show (for 127.0.0.1 at 2011-05-11 10:10:33) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"taxonomies"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-05-11 15:10:33', "perishable_token" = 'nkT29OsFwpZ8RWPQsSs', "last_request_at" = '2011-05-11 15:10:33' WHERE "id" = 1[0m
+  [4;36;1mTaxonomy Load (0.3ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE ("taxonomies"."id" = 1) [0m
+Rendering template within layouts/taxonomies
+Rendering taxonomies/show
+  [4;35;1mDnasample Load (0.3ms)[0m   [0mSELECT * FROM "dnasamples" [0m
+  [4;36;1mDnasample Load (0.2ms)[0m   [0;1mSELECT * FROM "dnasamples" INNER JOIN "dnasamples_taxonomies" ON "dnasamples".id = "dnasamples_taxonomies".dnasample_id WHERE ("dnasamples_taxonomies".taxonomy_id = 1 ) [0m
+  [4;35;1mDnasample Load (0.2ms)[0m   [0mSELECT "dnasamples".* FROM "dnasamples" INNER JOIN "dnasamples_taxonomies" ON "dnasamples".id = "dnasamples_taxonomies".dnasample_id WHERE ("dnasamples_taxonomies".taxonomy_id = 1 ) [0m
+Rendered _navigation (2.1ms)
+Completed in 58ms (View: 14, DB: 2) | 200 OK [http://localhost/taxonomies/1]

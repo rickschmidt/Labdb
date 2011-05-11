@@ -1,27 +1,4 @@
 <h1>Primers</h1>
-	<%=h button_to "New Primer", new_primer_path%>
-<table class="custom">
-	<tr class='custom'>
-		<th ></th>
-		<th class="custom">Primer H</th>
-		<th class="custom">Primer L</th>
-		<th class="custom">Date Updated</th>
-	</tr>
-	
-	
-	<%@primers.each do |primer| %>
-
-  <tr class="<%= cycle("even", "odd") %>">
-		<td class="idfield"><%=h primer.id %></td>
-		<td class="primer"><%=h primer.primerh %></td>
-		<td class="primer"><%=h primer.primerl %></td>
-		<td class="custom"><%=h primer.updated_at %></td>
-		<td class="icons"><%= link_to image_tag("show.png", :border=>0), primer%></td>
-	 	<td class="icons"><%= link_to image_tag("edit.png", :border=>0), edit_primer_path(primer)%></td>
-	 	<td class="icons"><%= link_to image_tag("delete.png", :border=>0), primer, :confirm => 'Are you sure?', :method => :delete %></td>
-	</tr>
-	<%end%>
-</table>
 <% form_tag primers_path, :method => 'get' do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
@@ -31,4 +8,28 @@
 	<%=hidden_field_tag :sort, params[:sort]%>
 
 <% end %>
+	<%=h button_to "New Primer", new_primer_path%>
+<table class="custom">
+	<tr class='custom'>
+		<th class="custom">Name</th>
+		<th class="custom">Primer H</th>
+		<th class="custom">Primer L</th>
+		<th class="custom">Date Updated</th>
+	</tr>
+	
+	
+	<%@primers.each do |primer| %>
+
+  <tr class="<%= cycle("even", "odd") %>">
+		<td class="primer"><%=h primer.name %></td>
+		<td class="primer"><%=h primer.primerh %></td>
+		<td class="primer"><%=h primer.primerl %></td>
+		<td class="custom"><%=h primer.updated_at %></td>
+		<td class="icons"><%= link_to image_tag("show.png", :border=>0), primer%></td>
+	 	<td class="icons"><%= link_to image_tag("edit.png", :border=>0), edit_primer_path(primer)%></td>
+	 	<td class="icons"><%= link_to image_tag("delete.png", :border=>0), primer, :confirm => 'Are you sure?', :method => :delete %></td>
+	</tr>
+	<%end%>
+</table>
+
 <%=h link_to "Create new", new_primer_path%>
