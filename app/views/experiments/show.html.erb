@@ -1,4 +1,20 @@
 <p><b>Date:</b> <%= @experiment.date %> <b>Experiment:</b><%= @experiment.experiment_number %></p>
+
+<div class="premix">
+	<table class="custom">
+
+		<tr><td>BSA</td><td>  <%=h @experiment.bsa %></td></tr>
+		<tr><td>Buffer</td><td>  <%=h @experiment.buffer %></td></tr>
+		<tr><td>MgCl2</td><td>  <%=h @experiment.mgcl2 %></td></tr>
+		<tr><td>TAQ  </td><td>   <%=h @experiment.taq %> </td></tr>
+		<tr><td>H2O  </td><td>   <%=h @experiment.h2o %> </td></tr>
+		<tr><td>dNTPs  </td><td> <%=h @experiment.dntps %>  </td></tr>
+		<tr><td>primerL  </td><td>   <%=h @experiment.primerl_amount %> </td></tr>
+		<tr><td>primerH  </td><td>   <%=h @experiment.primerh %> </td></tr>
+		<tr><td>DNA  </td><td> <%=h @experiment.dna %>  </td></tr>
+		<tr><td>Total  </td><td> <%=h @experiment.total %> </td></tr>
+	</table>
+</div>
 <table class='custom'>
 	<tr>
 		<th class="custom"><%= sortable 'pcr_tube_number', "ids for now" %></th>
@@ -18,69 +34,7 @@
 </table>
 
 
-<hr/>
-<h1>OLD</h1>
-<% form_tag experiment_path do %>
-	<%= select :experiment, :pcrs, Pcr.all.collect { |m| [m.pcr_tube_number, m.id] }.sort, {:prompt=>'Please Select...'} %>
-	<%= observe_field(:pcrs, :url => {:controller=> 'experiments',:action => "updatepcrmenu" },
-                  :update => :pcr_field_div,
-                  :with => :pcrs
-            ) %> 
-	<div id="pcr_field_div"></div>
-        <%= submit_tag 'Submit' %>
 
-
-<%= collection_select(nil, :id,  @experiments,  :id, :id,
-                      {:prompt   => "Select a Genre"},
-                      {:onchange => "#{remote_function(:url  => {:action => "updatepcrmenu"},
-                                                       :with => "'id='+value")}"}) %>
-<br/>
-
-
-<% end %>	
-
-	<tr><td><b>Date: </b><%=h @experiment.date%></td>
-	<td><b>Experiment: </b> <%=h @experiment.experiment_number%></td></tr>
-	</br>
-	
-<table border="0" cellspacing="5" cellpadding="5">	
-	
-	<tr class="custom">
-    <th class ="custom"><%= sortable 'pcr_tube_number'%>   </th>
-    <th class ="custom">   <%= sortable 'dna_sample_number'%></th>
-    <th class ="custom">   <%= sortable 'lprimer'%></th>
-    <th class ="custom">   <%= sortable 'hprimer'%></th>
-</tr>
-
-<% @experiments.each do |experiment| %>
- 
- <tr ><span>
-	<td><div id="artists"><%= render :partial => 'pcr', :object => @pcrs %></div></td>
-<td><div id="dnasamples_<%=h experiment.id %>"><%= render :partial => 'dnasamples',   :object => @dnasamples %></div></td>
-<td><div id="lprimer"><%= render :partial => 'genes',   :object => @gene %></div></td>
-<td><div id="hprimer"><%= render :partial => 'hprimer',   :object => @hrpimer %></div></td></span>
-</tr><%end%>
-		</table>
-	
-	
-	
-	
-	<td> PCRS <%@pcrs.each do |i|%>
-	PCR	<%=h  i.id%>
-		<%end%>
-		<%@ids.each do |i|%>
-	DNA	<%=h  i.id%>
-		<%end%>
-		</td>
-</table>
-
-<% form_tag(:action => "submit") do %>
-	<%=hidden_field_tag :pcr, params[:pcr]%>
-	<%=hidden_field_tag :dnasample, params[:dnasample]%>
-	<%=hidden_field_tag :gene, params[:gene]%>
-	<%= submit_tag "Post", :name => "submit"%>
-	<% end%>
-  
 
 <p>
   <b>Date:</b>
@@ -114,42 +68,42 @@
 
 <p>
   <b>Bsa:</b>
-  <%=h @experiment.bsa %>
+
 </p>
 
 <p>
   <b>Buffer:</b>
-  <%=h @experiment.buffer %>
+
 </p>
 
 <p>
   <b>Mgcl2:</b>
-  <%=h @experiment.mgcl2 %>
+
 </p>
 
 <p>
   <b>Taq:</b>
-  <%=h @experiment.taq %>
+
 </p>
 
 <p>
   <b>H2o:</b>
-  <%=h @experiment.h2o %>
+
 </p>
 
 <p>
   <b>Dntps:</b>
-  <%=h @experiment.dntps %>
+ 
 </p>
 
 <p>
   <b>Dna:</b>
-  <%=h @experiment.dna %>
+ 
 </p>
 
 <p>
   <b>Primerl amount:</b>
-  <%=h @experiment.primerl_amount %>
+
 </p>
 
 <p>
@@ -159,7 +113,7 @@
 
 <p>
   <b>Total:</b>
-  <%=h @experiment.total %>
+  
 </p>
 
 <p>
@@ -169,7 +123,7 @@
 
 <p>
   <b>Primerh:</b>
-  <%=h @experiment.primerh %>
+
 </p>
 </table>
 
