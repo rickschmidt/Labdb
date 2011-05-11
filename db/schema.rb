@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110414162148) do
+ActiveRecord::Schema.define(:version => 20110511145911) do
 
   create_table "dnasamples", :force => true do |t|
     t.string   "dna_accession"
@@ -35,6 +35,13 @@ ActiveRecord::Schema.define(:version => 20110414162148) do
   create_table "dnasamples_pcrs", :id => false, :force => true do |t|
     t.integer  "dnasample_id"
     t.integer  "pcr_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "dnasamples_taxonomies", :id => false, :force => true do |t|
+    t.integer  "dnasample_id"
+    t.integer  "taxonomy_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -104,6 +111,7 @@ ActiveRecord::Schema.define(:version => 20110414162148) do
     t.string   "primerl"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   create_table "taxonomies", :force => true do |t|

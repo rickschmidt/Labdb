@@ -19,7 +19,7 @@ class TaxonomiesController < ApplicationController
   # GET /taxonomies/1.xml
   def show
     @taxonomy = Taxonomy.find(params[:id])
-
+    @taxonomydnasamples=@taxonomy.dnasamples
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @taxonomy }
@@ -84,6 +84,24 @@ class TaxonomiesController < ApplicationController
       format.html { redirect_to(taxonomies_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  def submitdnasample
+          @taxonomy=Taxonomy.find(params[:taxonomyid]) 
+     @dnasample=Dnasample.find(params[:taxonomy][:dnasamples])
+     @taxonomy.dnasamples<<@dnasample
+          flash[:notice] = "Added DNA Sample #{@dnasample.dna_accession} to #{@taxonomy.id}." 
+        request.env["HTTP_REFERER"] ? (redirect_to :back) :(redirect_to :root) 
+      
+  end
+  
+    def removednasample
+          @taxonomy=Taxonomy.find(params[:taxonomyid]) 
+     @dnasample=Dnasample.find(params[:taxonomy][:dnasamples])
+     @taxonomy.dnasamples.delete(@dnasample)
+          flash[:notice] = "Removed DNA Sample #{@dnasample.dna_accession} to #{@taxonomy.id}." 
+        request.env["HTTP_REFERER"] ? (redirect_to :back) :(redirect_to :root) 
+      
   end
   
   

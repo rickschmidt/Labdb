@@ -20,7 +20,7 @@ class DnasamplesController < ApplicationController
   # GET /dnasamples/1.xml
   def show
     @dnasample = Dnasample.find(params[:id])
-
+    @dnasamplegenes=@dnasample.genes
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @dnasample }
@@ -85,6 +85,23 @@ class DnasamplesController < ApplicationController
       format.html { redirect_to(dnasamples_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  def submitgene
+     @dnasample=Dnasample.find(params[:dnasampleid]) 
+     @gene=Gene.find(params[:dnasample][:genes])
+     @dnasample.genes<<@gene
+          flash[:notice] = "Added gene #{@gene.genbank} to DNA sample #{@dnasample.dna_accession}. " 
+        request.env["HTTP_REFERER"] ? (redirect_to :back) :(redirect_to :root)
+      
+  end
+  
+  def removegene
+     @dnasample=Dnasample.find(params[:dnasampleid]) 
+     @gene=Gene.find(params[:dnasample][:genes])
+     @dnasample.genes.delete(@gene)
+          flash[:notice] = "Removed gene #{@gene.genbank} to DNA sample #{@dnasample.dna_accession}. " 
+        request.env["HTTP_REFERER"] ? (redirect_to :back) :(redirect_to :root)
   end
   private 
    def sort_column

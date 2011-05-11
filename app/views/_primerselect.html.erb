@@ -1,11 +1,12 @@
 <div class="target3">
-	<%= select('gene','primer',Primer.all.collect {|p| [ p.id, p.id] }, {:prompt => 'Select Primer'})%> Select a Primer by its ID in the <%= link_to "Primers", primers_path %> table.
+	<%= select('gene','primer',Primer.all.collect {|p| [ p.name, p.id] }, {:prompt => 'Select Primer'})%> Select a Primer by its ID in the <%= link_to "Primers", primers_path %> table.
 </div>
 			
 <div class="preview">
 	<div id="primersinfo">
 					
 	<table  width="500px">
+
 		<th width="105px">Primer </th>
 		<th align="left">Sequence</th>
 	

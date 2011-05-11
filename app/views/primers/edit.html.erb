@@ -3,12 +3,21 @@
 <% form_for(@primer) do |f| %>
   <%= f.error_messages %>
 <table border="0" cellspacing="5" cellpadding="5">
+	<tr>
+		<td><b>Primer Name:</b><br/>
+			<%= f.text_field :name, :size=>'50' %></td>
+	</tr>
 
+	<tr>
+		<td><b>Primer L: </b><br />
+    	<%= f.text_field :primerl, :size=>'50' %></td>
+	</tr>
+	
+	<tr>
+		<td><b>Primer H: </b><br />
+	    <%= f.text_field :primerh, :size=>'50' %></td>
+	</tr>
 
-<tr><td>Primer L:<br />
-    <%= f.text_field :primerl %></td>
-	<td> Primer H:<br />
-    <%= f.text_field :primerh %></td></tr>
 </table>
 
 
