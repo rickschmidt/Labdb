@@ -8,7 +8,12 @@ jQuery.ajaxSetup({
 
 //
 $(document).ready(function (){  
+
         //Executes everytime the experiment pcr tube select box changes
+        $('button.message').live('click',function(){
+            $('p.message').remove();
+          
+        });
      $('select#experiment_pcrs').live('change',function (){
 
       dataString = jQuery('tr.exp:last').find('select#experiment_pcrs').val();
@@ -32,19 +37,82 @@ $(document).ready(function (){
              $('.primerh:last').attr('id',index).html(obj.primerh);
              $('.dna:last').attr('id',index).html(obj.dna);
              $('.primerl:last').attr('id',index).html(obj.primerl);
+             $('select#experiment_pcrs').attr('disabled', 'disabled');
              myDiv.appendTo('table.custom');
+                         $('p.message#errorExplanation').remove();
              
 
           },
           
           error: function(json,textStatus){
-
-              var flash_div = $("p#error");
-              $('<p id="error" style="color: red">Error: No DNA Sample is associated witht that PCR Tube.</p>').insertBefore('table.custom').fadeOut(3200);
+              $('tr.exp:last select#experiment_pcrs').val(0);
+                                       $('p.message').remove();
+              $('<p class="message" id="errorExplanation">Error1: No DNA Sample is associated witht that PCR Tube.<button class="message" id="cancel">x</button></p>').appendTo('#messages').fadeIn(slow);
 
           }
 
       });
      
     });
+    
+    $('button.save').live('click', function(){
+        var pcrs=new Array();
+        $('select#experiment_pcrs').each(function (i){
+            if ($(this).val()!=''){
+            
+                  pcrs[i]=$(this).val();
+                
+                }                  
+        });
+        alert(pcrs);
+        $.ajax({
+            url: "/experiments/savepcrtubes",
+            type: "POST",
+            data:{id:pcrs},
+            
+            success: function(json,textStatus){
+                alert(textStatus);
+                $('p.message#errorExplanation').remove();
+                 $('<p class="message" id="success">PCR Tubes saved to this experiment.<button class="message" id="cancel">x</button></p>').appendTo('#messages').fadeIn(slow);
+            },
+            
+            error: function(json,textStatus){
+                alert(textStatus);
+                $('p.message').remove();
+              $('<p class="message" id="errorExplanation">Error: No DNA Sample is associated witht that PCR Tube.<button class="message" id="cancel">x</button></p>').appendTo('#messages').fadeIn(slow);
+            }
+        });
+
+
+    });
+    
+    
+    
+
 }); //docuement ready 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

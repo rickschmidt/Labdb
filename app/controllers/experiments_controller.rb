@@ -184,7 +184,12 @@ class ExperimentsController < ApplicationController
 
       
   end
+    def savepcrtubes
+       @pcrsAll=Pcr.find(params[:id])
     
+        render :nothing => true
+
+    end
   private 
    def sort_column
        Experiment.column_names.include?(params[:sort]) ? params[:sort] : "date"
