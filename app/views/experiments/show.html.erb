@@ -1,7 +1,7 @@
 <p><b>Date:</b> <%= @experiment.date %> <b>Experiment:</b><%= @experiment.experiment_number %></p>
 
 <div class="premix">
-	<table class="custom">
+	<table >
 
 		<tr><td>BSA</td><td>  <%=h @experiment.bsa %></td></tr>
 		<tr><td>Buffer</td><td>  <%=h @experiment.buffer %></td></tr>
@@ -10,7 +10,7 @@
 		<tr><td>H2O  </td><td>   <%=h @experiment.h2o %> </td></tr>
 		<tr><td>dNTPs  </td><td> <%=h @experiment.dntps %>  </td></tr>
 		<tr><td>primerL  </td><td>   <%=h @experiment.primerl_amount %> </td></tr>
-		<tr><td>primerH  </td><td>   <%=h @experiment.primerh %> </td></tr>
+		<tr><td>primerH  </td><td>   <%=h @experiment.primerh_amount %> </td></tr>
 		<tr><td>DNA  </td><td> <%=h @experiment.dna %>  </td></tr>
 		<tr><td>Total  </td><td> <%=h @experiment.total %> </td></tr>
 	</table>
@@ -32,100 +32,13 @@
 </tr>
 
 </table>
+<button class="save">Save</button>
 
 
 
 
-<p>
-  <b>Date:</b>
-  <%=h @experiment.date %>
-</p>
 
-<p>
-  <b>Anneal:</b>
-  <%=h @experiment.anneal %>
-</p>
 
-<p>
-  <b>Dna amount:</b>
-  <%=h @experiment.dna_amount %>
-</p>
-
-<p>
-  <b>Total samples:</b>
-  <%=h @experiment.total_samples %>
-</p>
-
-<p>
-  <b>Notes:</b>
-  <%=h @experiment.notes %>
-</p>
-
-<p>
-  <b>Experiment number:</b>
-  <%=h @experiment.experiment_number %>
-</p>
-
-<p>
-  <b>Bsa:</b>
-
-</p>
-
-<p>
-  <b>Buffer:</b>
-
-</p>
-
-<p>
-  <b>Mgcl2:</b>
-
-</p>
-
-<p>
-  <b>Taq:</b>
-
-</p>
-
-<p>
-  <b>H2o:</b>
-
-</p>
-
-<p>
-  <b>Dntps:</b>
- 
-</p>
-
-<p>
-  <b>Dna:</b>
- 
-</p>
-
-<p>
-  <b>Primerl amount:</b>
-
-</p>
-
-<p>
-  <b>Primerh amount:</b>
-  <%=h @experiment.primerh_amount %>
-</p>
-
-<p>
-  <b>Total:</b>
-  
-</p>
-
-<p>
-  <b>Primerl:</b>
-  <%=h @experiment.primerl %>
-</p>
-
-<p>
-  <b>Primerh:</b>
-
-</p>
-</table>
 
 <%= link_to 'Edit', edit_experiment_path(@experiment) %> |
 <%= link_to 'Back', experiments_path %>

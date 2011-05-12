@@ -7,7 +7,14 @@
     margin:0 auto;
     width:100%;
 }
+#messages{
+    width:100%;
+    height:30px;
+    margin-top:5px;
+    padding:10px;
 
+
+}
 #banner{
 
 
@@ -78,6 +85,20 @@ a:hover { color: #fff; background-color:#000; }
 #errorExplanation ul li {
   font-size: 12px;
   list-style: square;
+}
+#success {
+  width: 400px;
+  border: 2px solid green;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #A7CDC6;
+
+}
+button.message#cancel{
+    color:red;
+    border-style:none;
+    background-color:#6071F8;
 }
 
 #header{
@@ -247,6 +268,7 @@ font-family: Gill Sans / Gill Sans MT, sans-serif;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#BAA5D2', endColorstr='#8265A6'); /* for IE */
 	background: -webkit-gradient(linear, left top, left bottom, from(#BAA5D2), to(#8265A6)); /* for webkit browsers */
 	background: -moz-linear-gradient(top,  #BAA5D2,  #8265A6); /* for firefox 3.6+ */
+			-webkit-box-shadow:none;
 }
 
 
@@ -255,18 +277,21 @@ font-family: Gill Sans / Gill Sans MT, sans-serif;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FABFBF', endColorstr='#F58C8C'); /* for IE */
 	background: -webkit-gradient(linear, left top, left bottom, from(#FABFBF), to(#F58C8C)); /* for webkit browsers */
 	background: -moz-linear-gradient(top,  #FABFBF,  #F58C8C); /* for firefox 3.6+ */
+			-webkit-box-shadow:none;
 }
 #primers a:hover{
 		background: #A2D87C; /* for non-css3 browsers */
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#CBECB4', endColorstr='#A2D87C'); /* for IE */
 		background: -webkit-gradient(linear, left top, left bottom, from(#CBECB4), to(#A2D87C)); /* for webkit browsers */
-		background: -moz-linear-gradient(top,  #CBECB4,  #A2D87C); /* for firefox 3.6+ */
+		-webkit-box-shadow:none;
+				background: -moz-linear-gradient(top,  #CBECB4,  #A2D87C); /* for firefox 3.6+ */
 }
 #dna a:hover{
 background: #F5F48C; /* for non-css3 browsers */
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FAFABF', endColorstr='#F5F48C'); /* for IE */
 background: -webkit-gradient(linear, left top, left bottom, from(#FAFABF), to(#F5F48C)); /* for webkit browsers */
 background: -moz-linear-gradient(top,  #FAFABF,  #F5F48C); /* for firefox 3.6+ */ 
+		-webkit-box-shadow:none;
 }
 
 #pcr a:hover{
@@ -274,25 +299,37 @@ background: -moz-linear-gradient(top,  #FAFABF,  #F5F48C); /* for firefox 3.6+ *
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E5AFC9', endColorstr='#CB749F'); /* for IE */
 	background: -webkit-gradient(linear, left top, left bottom, from(#E5AFC9), to(#CB749F)); /* for webkit browsers */
 	background: -moz-linear-gradient(top,  #E5AFC9,  #CB749F); /* for firefox 3.6+ */
+			-webkit-box-shadow:none;
 }
 #genes a:hover{
 		background: #F5B78C; /* for non-css3 browsers */
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FAD7BF', endColorstr='#F5B78C'); /* for IE */
 		background: -webkit-gradient(linear, left top, left bottom, from(#FAD7BF), to(#F5B78C)); /* for webkit browsers */
 		background: -moz-linear-gradient(top,  #FAD7BF,  #F5B78C); /* for firefox 3.6+ */
+				-webkit-box-shadow:none;
 }
 #tax a:hover{
 	background: #599B90; /* for non-css3 browsers */
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9DCDC5', endColorstr='#599B90'); /* for IE */
 	background: -webkit-gradient(linear, left top, left bottom, from(#9DCDC5), to(#599B90)); /* for webkit browsers */
 	background: -moz-linear-gradient(top,  #9DCDC5,  #599B90); /* for firefox 3.6+ */
+			-webkit-box-shadow:none;
 }
 #profile a:hover{
 	background: #8265A6; /* for non-css3 browsers */
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#BAA5D2', endColorstr='#8265A6'); /* for IE */
 	background: -webkit-gradient(linear, left top, left bottom, from(#BAA5D2), to(#8265A6)); /* for webkit browsers */
 	background: -moz-linear-gradient(top,  #BAA5D2,  #8265A6); /* for firefox 3.6+ */
+			-webkit-box-shadow:none;
 }
 #nav{
     width:100%;
+    
+}
+
+.shadow a{
+    -webkit-box-shadow:inset 5px 0px 70px #717171;
+}
+.noshadow a{
+    		-webkit-box-shadow:none;
 }
