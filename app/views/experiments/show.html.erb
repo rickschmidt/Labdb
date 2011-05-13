@@ -1,5 +1,5 @@
 <p><b>Date:</b> <%= @experiment.date %> <b>Experiment:</b><%= @experiment.experiment_number %></p>
-
+<%= hidden_field_tag "experimentId", @experiment.id %>
 <div class="premix">
 	<table >
 
@@ -22,10 +22,18 @@
 		<th class="custom"><%= sortable 'lprimer' %></th>
 		<th class="custom"><%= sortable 'hprimer' %></th>
 	</tr>
+<%@pcrs.each {|pcr,dnasample| %>
 
+  <tr class="<%= cycle("even", "odd") %>">
+	<td><%= pcr.id %></td>
+	<td><%= pcr.id %></td>
+	<td><%= pcr.primerh %></td>
+	<td><%= pcr.primerl %></td>
+	</tr>
+	<%} %>
 
 <tr class="exp" id="0">
-	<td class="custom"><%= select('experiment','pcrs',Pcr.all.collect {|p| [ p.id, p.id] }, {:prompt => 'Select PCR'})%>	</td>
+	<td class="custom"><%= select('experiment','pcrs',Pcr.all.collect {|p| [ p.id, p.id] }, {:include_blank => 'Select PCR'})%>	</td>
 	<td class="dna"></td>
 		<td class="primerh"></td>
 			<td class="primerl"></td>
