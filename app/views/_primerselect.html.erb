@@ -1,6 +1,6 @@
-<div class="target3">
-	<%= select('gene','primer',Primer.all.collect {|p| [ p.name, p.id] }, {:prompt => 'Select Primer'})%> Select a Primer by its ID in the <%= link_to "Primers", primers_path %> table.
-</div>
+
+ Select a Primer by its ID in the <%= link_to "Primers", primers_path %> table.
+
 			
 <div class="preview">
 	<div id="primersinfo">
@@ -8,11 +8,17 @@
 	<table  width="500px">
 
 		<th width="105px">Primer </th>
-		<th align="left">Sequence</th>
+		<th align="left">Name</th>
+		<th align="right">Sequence</th>
 	
 		<tr>
 			<td>
 				Primer L:
+			</td>
+			<td>
+				<div class="target3">
+					<%= select('gene','primer',Primer.all.collect {|p| [ p.name, p.id] }, {:prompt => 'Select Primer'})%> 
+				</div>
 			</td>
 			<td>
 				<div class='primerl'/>
@@ -22,6 +28,11 @@
 		<tr>
 			<td>
 				Primer H: 
+			</td>
+			<td>
+				<div class="target3">
+					<%= select('gene','primer2',Primer.all.collect {|p| [ p.name, p.id] }, {:prompt => 'Select Primer'})%> 
+				</div>
 			</td>
 			<td>	
 				<div class='primerh'/>

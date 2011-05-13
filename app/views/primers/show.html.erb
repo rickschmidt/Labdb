@@ -3,8 +3,8 @@
 <table border="0" >
 	<tr><th></th><th></th><th></th></tr>
 
-	<tr><td>Primer L:</td><td><%=h @primer.primerl  %></td></tr>
-	<tr><td>Primer H:</td><td> <%=h @primer.primerh  %></td></tr>
+	<tr><td>Name:</td><td><%= @primer.name %></td></tr>
+	<tr><td>Sequence</td><td> <%=h @primer.sequence  %></td></tr>
 </table>
 
 <%= link_to "Edit", edit_primer_path(@primer) %>

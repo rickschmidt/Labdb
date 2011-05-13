@@ -128,6 +128,15 @@ class PcrsController < ApplicationController
      flash[:notice] = "Removed DNA Sample #{@dna.dna_accession} to PCR Tube #{@pcr.pcr_tube_number}" 
         request.env["HTTP_REFERER"] ? (redirect_to :back) :(redirect_to :root)
  end
+ 
+ def getprimersequence
+    @primer=Primer.find(params[:id])
+    
+    respond_to do |with|
+        with.js
+        end 
+     
+ end
   private 
    def sort_column
        Pcr.column_names.include?(params[:sort]) ? params[:sort] : "date"
