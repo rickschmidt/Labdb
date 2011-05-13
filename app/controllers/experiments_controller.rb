@@ -23,14 +23,15 @@ class ExperimentsController < ApplicationController
     @ids=Array.new
     @pcrsAll=Pcr.find(:all)
     @dnasamples=Dnasample.find(:all)
-    @pcrs=Array.new
+    @pcrs=Hash.new
     @experiments=Experiment.find(:all, :limit=>15 )
     @experiment=Experiment.find(params[:id])
     @experiment.pcrs.each do |pcr|
-      @pcrs<<pcr
-      pcr.dnasamples.each do |dna|
-        @ids<<dna
-      end
+      @pcrs[pcr]=pcr.dnasamples.first
+      logger.debug "pcrs in exp show #{@pcrs.inspect}"
+      # pcr.dnasamples.each do |dna|
+      #   @ids<<dna
+      # end
     end
     respond_to do |format|
       format.html # show.html.erb
@@ -186,7 +187,9 @@ class ExperimentsController < ApplicationController
   end
     def savepcrtubes
        @pcrsAll=Pcr.find(params[:id])
-    
+        logger.debug "pcrs all in savepcrtubes #{@pcrsAll.inspect}"
+        @experiment=Experiment.find(params[:experimentId])
+        @experiment.pcrs<<@pcrsAll
         render :nothing => true
 
     end

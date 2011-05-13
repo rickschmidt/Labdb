@@ -47,7 +47,7 @@ $(document).ready(function (){
           error: function(json,textStatus){
               $('tr.exp:last select#experiment_pcrs').val(0);
                                        $('p.message').remove();
-              $('<p class="message" id="errorExplanation">Error1: No DNA Sample is associated witht that PCR Tube.<button class="message" id="cancel">x</button></p>').appendTo('#messages').fadeIn(slow);
+              $('<p class="message" id="errorExplanation">Error1: No DNA Sample is associated witht that PCR Tube.<button class="message"><p id="cancel">x</p></button></p>').appendTo('#messages').fadeIn(slow);
 
           }
 
@@ -57,6 +57,8 @@ $(document).ready(function (){
     
     $('button.save').live('click', function(){
         var pcrs=new Array();
+        var currentExperiment=$('input#experimentId').val();
+
         $('select#experiment_pcrs').each(function (i){
             if ($(this).val()!=''){
             
@@ -68,18 +70,18 @@ $(document).ready(function (){
         $.ajax({
             url: "/experiments/savepcrtubes",
             type: "POST",
-            data:{id:pcrs},
+            data:{id:pcrs,experimentId:currentExperiment},
             
             success: function(json,textStatus){
                 alert(textStatus);
                 $('p.message#errorExplanation').remove();
-                 $('<p class="message" id="success">PCR Tubes saved to this experiment.<button class="message" id="cancel">x</button></p>').appendTo('#messages').fadeIn(slow);
+                 $('<p class="message" id="success">PCR Tubes saved to this experiment.<button class="message"><p id="cancel">x</p></button></p>').appendTo('#messages').fadeIn(slow);
             },
             
             error: function(json,textStatus){
                 alert(textStatus);
                 $('p.message').remove();
-              $('<p class="message" id="errorExplanation">Error: No DNA Sample is associated witht that PCR Tube.<button class="message" id="cancel">x</button></p>').appendTo('#messages').fadeIn(slow);
+              $('<p class="message" id="errorExplanation">Error: No DNA Sample is associated witht that PCR Tube.<button class="message"><p id="cancel">x</p></button></p>').appendTo('#messages').fadeIn(slow);
             }
         });
 
