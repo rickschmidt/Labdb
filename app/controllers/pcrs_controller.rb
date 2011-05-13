@@ -48,10 +48,14 @@ class PcrsController < ApplicationController
   # POST /pcrs.xml
   def create
     @pcr = Pcr.new(params[:pcr])
-     if params[:gene][:primer]!=""
-        @primer=Primer.find(params[:gene][:primer])
-        @pcr.primerh=@primer.primerh
-        @pcr.primerl=@primer.primerl
+     if params[:gene][:primerl]!=""
+        @primer=Primer.find(params[:gene][:primerl])
+        @pcr.primerl=@primer.sequence
+    end
+    
+    if params[:gene][:primerh]!=""
+        @primer=Primer.find(params[:gene][:primerh])
+        @pcr.primerh=@primer.sequence
     end
     respond_to do |format|
       if @pcr.save
@@ -68,10 +72,15 @@ class PcrsController < ApplicationController
   # PUT /pcrs/1.xml
   def update
     @pcr = Pcr.find(params[:id])
-     if params[:gene][:primer]!=""
-        @primer=Primer.find(params[:gene][:primer])
-        @pcr.primerh=@primer.primerh
-        @pcr.primerl=@primer.primerl
+      
+     if params[:gene][:primerl]!=""
+        @primer=Primer.find(params[:gene][:primerl])
+        @pcr.primerl=@primer.sequence
+    end
+    
+    if params[:gene][:primerh]!=""
+        @primer=Primer.find(params[:gene][:primerh])
+        @pcr.primerh=@primer.sequence
     end
     respond_to do |format|
       if @pcr.update_attributes(params[:pcr])
