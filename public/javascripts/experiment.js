@@ -66,20 +66,20 @@ $(document).ready(function (){
                 
                 }                  
         });
-        alert(pcrs);
+        
         $.ajax({
             url: "/experiments/savepcrtubes",
             type: "POST",
             data:{id:pcrs,experimentId:currentExperiment},
             
             success: function(json,textStatus){
-                alert(textStatus);
+
                 $('p.message#errorExplanation').remove();
                  $('<p class="message" id="success">PCR Tubes saved to this experiment.<button class="message"><p id="cancel">x</p></button></p>').appendTo('#messages').fadeIn(slow);
             },
             
             error: function(json,textStatus){
-                alert(textStatus);
+
                 $('p.message').remove();
               $('<p class="message" id="errorExplanation">Error: No DNA Sample is associated witht that PCR Tube.<button class="message"><p id="cancel">x</p></button></p>').appendTo('#messages').fadeIn(slow);
             }
