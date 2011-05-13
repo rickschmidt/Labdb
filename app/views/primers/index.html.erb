@@ -12,8 +12,7 @@
 <table class="custom">
 	<tr class='custom'>
 		<th class="custom">Name</th>
-		<th class="custom">Primer H</th>
-		<th class="custom">Primer L</th>
+		<th class="custom">Sequence</th>
 		<th class="custom">Date Updated</th>
 	</tr>
 	
@@ -22,8 +21,7 @@
 
   <tr class="<%= cycle("even", "odd") %>">
 		<td class="primer"><%=h primer.name %></td>
-		<td class="primer"><%=h primer.primerh %></td>
-		<td class="primer"><%=h primer.primerl %></td>
+		<td class="primer"><%=h primer.sequence %></td>
 		<td class="custom"><%=h primer.updated_at %></td>
 		<td class="icons"><%= link_to image_tag("show.png", :border=>0), primer%></td>
 	 	<td class="icons"><%= link_to image_tag("edit.png", :border=>0), edit_primer_path(primer)%></td>
