@@ -27,16 +27,16 @@
   <tr class="<%= cycle("even", "odd") %>">
 	<td><%= pcr.id %></td>
 	<td><%= dnasample.dna_accession %></td>
-	<td><%= pcr.primerh %></td>
 	<td><%= pcr.primerl %></td>
+	<td><%= pcr.primerh %></td>
 	</tr>
 	<%} %>
 
 <tr class="exp" id="0">
 	<td class="custom"><%= select('experiment','pcrs',Pcr.all.collect {|p| [ p.id, p.id] }, {:include_blank => 'Select PCR'})%>	</td>
 	<td class="dna"></td>
-		<td class="primerh"></td>
 			<td class="primerl"></td>
+		<td class="primerh"></td>
 </tr>
 
 </table>

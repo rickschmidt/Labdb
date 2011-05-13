@@ -3,8 +3,8 @@ jQuery.ajaxSetup({
 }); 
 
 $(document).ready(function (){  
-  $('select#gene_primer').live('change',function (){
-      dataString = $('select#gene_primer').val();
+  $('select#gene_primerl').live('change',function (){
+      dataString = $('select#gene_primerl').val();
       alert('primer1');
 
   
@@ -26,8 +26,8 @@ $(document).ready(function (){
       }); //close ajax
   });
       
-      $('select#gene_primer2').live('change',function(){
-          dataString = $('select#gene_primer2').val();
+      $('select#gene_primerh').live('change',function(){
+          dataString = $('select#gene_primerh').val();
           alert("primer2");
           
           
