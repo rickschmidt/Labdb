@@ -64,7 +64,14 @@ $(document).ready(function (){
         var row_idx = currentId.prevAll().length;
         alert(row_idx);
         var tubeid=$(this).parent().parent().find('.custom').find('select#experiment_pcrs').val();
+        var tubeidPrev=$(this).parent().parent().find('.customPrev').html();
+        if(tubeid!=null){
         alert(tubeid);
+        }
+        if(tubeidPrev){
+            alert(tubeidPrev);
+        }
+        
 
     });
     

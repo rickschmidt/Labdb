@@ -27,7 +27,7 @@
 <%@pcrs.each {|pcr,dnasample| %>
 
   <tr class="<%= cycle("even", "odd") %>">
-	<td><%= pcr.pcr_tube_number %></td>
+	<td class="customPrev"><%= pcr.pcr_tube_number %></td>
 	<td><%= dnasample.dna_accession %></td>
 	<td><%= pcr.primerl %></td>
 	<td><%= pcr.primerh %></td>
