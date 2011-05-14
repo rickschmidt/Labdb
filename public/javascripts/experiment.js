@@ -17,7 +17,8 @@ $(document).ready(function (){
      $('select#experiment_pcrs').live('change',function (){
 
       dataString = jQuery('tr.exp:last').find('select#experiment_pcrs').val();
-
+      success=jQuery('tr.exp:last').find('select#pcr_success').val();
+      alert(success);
          $.ajax({
           url: "/experiments/getpcrtube",
           type: "POST",
@@ -37,6 +38,7 @@ $(document).ready(function (){
              $('.primerh:last').attr('id',index).html(obj.primerh);
              $('.dna:last').attr('id',index).html(obj.dna);
              $('.primerl:last').attr('id',index).html(obj.primerl);
+             $('.success:last').attr('id',index);
              $('select#experiment_pcrs').attr('disabled', 'disabled');
              myDiv.appendTo('table.custom');
                          $('p.message#errorExplanation').remove();
@@ -55,22 +57,69 @@ $(document).ready(function (){
      
     });
     
+    $('select#pcr_success').live('change', function(){
+
+    
+        var currentId = $(this).parent().parent();
+        var row_idx = currentId.prevAll().length;
+        alert(row_idx);
+        var tubeid=$(this).parent().parent().find('.custom').find('select#experiment_pcrs').val();
+        alert(tubeid);
+
+    });
+    
     $('button.save').live('click', function(){
         var pcrs=new Array();
+        var successfulPcrsArray=new Array();
         var currentExperiment=$('input#experimentId').val();
 
-        $('select#experiment_pcrs').each(function (i){
-            if ($(this).val()!=''){
-            
-                  pcrs[i]=$(this).val();
+        $('tr#.exp').each(function (i){
+            alert("i",i.val);
+            var selpcr=$('select#experiment_pcrs').val();
+            if(selpcr!=''){
+                pcrs[i]=selpcr;
+                alert(pcrs[i]);
+                var x=$('select#pcr_success').val();
+                alert("x",x);
                 
-                }                  
+                if(x=="1"){
+                     alert("here");
+                        var id=$('select#pcr_success').val();
+                        alert(id+"id");
+                          successfulPcrsArray[i]=id;
+                        alert(successfulPcrsArray);
+                    
+                }
+            }
+            
+            
         });
+
+        // $('select#experiment_pcrs').each(function (i){
+        // 
+        //             if ($(this).val()!=''){
+        //                   pcrs[i]=$(this).val();
+        //                   alert(pcrs[i]);
+        //                  var x= $('select#pcr_success');
+        //                  alert("x",x);
+        //                 if(x=="1"){
+        //                         alert("here");
+        //                         var id=$('select#pcr_success').val();
+        //                         alert(id+"id");
+        //                   successfulPcrsArray[i]=id;
+        //                         alert(successfulPcrsArray);
+        //                     };
+        // 
+        //                 };
+        //                           
+        //         });
+        
+
         
         $.ajax({
             url: "/experiments/savepcrtubes",
             type: "POST",
-            data:{id:pcrs,experimentId:currentExperiment},
+            data:{id:pcrs,experimentId:currentExperiment,successfulPcrs:successfulPcrsArray},
             
             success: function(json,textStatus){
 

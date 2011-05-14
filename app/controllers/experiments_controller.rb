@@ -190,6 +190,11 @@ class ExperimentsController < ApplicationController
         logger.debug "pcrs all in savepcrtubes #{@pcrsAll.inspect}"
         @experiment=Experiment.find(params[:experimentId])
         @experiment.pcrs<<@pcrsAll
+        logger.debug "successful pcrs #{params[:successfulPcrs]}"
+        @successfulPcrs=Pcr.find(params[:successfulPcrs])
+        @successfulPcrs.each do |successful|
+            successful.update_attributes(:success=>true)
+        end
         render :nothing => true
 
     end
