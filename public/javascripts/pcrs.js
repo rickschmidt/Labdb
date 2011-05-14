@@ -5,7 +5,7 @@ jQuery.ajaxSetup({
 $(document).ready(function (){  
   $('select#gene_primerl').live('change',function (){
       dataString = $('select#gene_primerl').val();
-      alert('primer1');
+      
 
   
       $.ajax({
@@ -21,14 +21,14 @@ $(document).ready(function (){
           },
           
           error: function(json,status){
-              alert(status);
+      
           }
       }); //close ajax
   });
       
       $('select#gene_primerh').live('change',function(){
           dataString = $('select#gene_primerh').val();
-          alert("primer2");
+      
           
           
          $.ajax({
@@ -37,14 +37,14 @@ $(document).ready(function (){
           data: {id:dataString},
     
           success: function(json,textStatus){
-              alert(textStatus);
+      
               var obj = jQuery.parseJSON(json);              
                             alert(obj.sequence);
               $('.primerh').html(obj.sequence);
           },
           
           error: function(json,textStatus){
-              alert(textStatus);
+      
           }
       }); //close ajax
           

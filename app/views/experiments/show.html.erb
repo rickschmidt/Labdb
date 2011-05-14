@@ -17,26 +17,32 @@
 </div>
 <table class='custom'>
 	<tr>
-		<th class="custom"><%= sortable 'pcr_tube_number', "ids for now" %></th>
+		<th class="custom"><%= sortable 'pcr_tube_number' %></th>
 		<th class="custom"><%= sortable 'dna_sample_number' %></th>
 		<th class="custom"><%= sortable 'lprimer' %></th>
 		<th class="custom"><%= sortable 'hprimer' %></th>
+		<th class="custom"><%= sortable 'success' %></th>
+		<th class="custom"><%= sortable 'ready' %></th>
 	</tr>
 <%@pcrs.each {|pcr,dnasample| %>
 
   <tr class="<%= cycle("even", "odd") %>">
-	<td><%= pcr.id %></td>
+	<td><%= pcr.pcr_tube_number %></td>
 	<td><%= dnasample.dna_accession %></td>
 	<td><%= pcr.primerl %></td>
 	<td><%= pcr.primerh %></td>
+	<td><%= select_tag :pcr_success, options_for_select({"No"=>0,"Yes"=>1}, params[:pcr_success])%></td>
+	<td><%= pcr.ready %></td>
 	</tr>
 	<%} %>
 
 <tr class="exp" id="0">
+
 	<td class="custom"><%= select('experiment','pcrs',Pcr.all.collect {|p| [ p.id, p.id] }, {:include_blank => 'Select PCR'})%>	</td>
 	<td class="dna"></td>
 			<td class="primerl"></td>
 		<td class="primerh"></td>
+			<td class="success"><%= select_tag :pcr_success, options_for_select({"No"=>0,"Yes"=>1}, params[:pcr_success])%></td>
 </tr>
 
 </table>
