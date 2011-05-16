@@ -31,19 +31,30 @@
 	<td><%= dnasample.dna_accession %></td>
 	<td><%= pcr.primerl %></td>
 	<td><%= pcr.primerh %></td>
-	<td><%= check_box("pcr","pcr_success") %></td>
-	<!-- <td><%= select_tag :pcr_success, options_for_select({"No"=>0,"Yes"=>1}, params[:pcr_success])%></td> -->
-	<td><%= pcr.ready %></td>
+	
+	<%if pcr.success==true%>
+		<td align="center"><%= check_box("pcr","pcr_success",{:checked=>true}) %></td>
+	<%else%>
+		<td align="center"><%= check_box("pcr","pcr_success",{:checked=>false}) %></td>
+	<%end%>
+	
+	<%if pcr.ready?%>
+		<td align="center"><%= check_box("pcr","pcr_ready",{:checked=>true}) %></td>
+	<%else%>
+		<td align="center"><%= check_box("pcr","pcr_ready",{:checked=>false}) %></td>
+	<%end%>
+
 	</tr>
 	<%} %>
 
 <tr class="exp" id="0">
 
-	<td class="custom"><%= select('experiment','pcrs',Pcr.all.collect {|p| [ p.pcr_tube_number, p.id] }, {:include_blank => 'Select PCR'})%>	</td>
+	<td class="custom"><%= select('experiment','pcrs',Pcr.all.collect {|p| [ p.pcr_tube_number, p.id] }, {:include_blank => 'Add PCR Tube'})%>	</td>
 	<td class="dna"></td>
 			<td class="primerl"></td>
 		<td class="primerh"></td>
-			<td class="success"><%= check_box("pcr","pcr_success") %></td>
+			<td class="success" align="center"><%= check_box("pcr","pcr_success",{:checked=>false}) %></td>
+			<td class="success" align="center"><%= check_box("pcr","pcr_ready",{:checked=>false}) %></td>
 </tr>
 
 </table>

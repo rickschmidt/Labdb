@@ -201,11 +201,22 @@ class ExperimentsController < ApplicationController
     
     def updatesuccess
         @checked=params[:checked]
-        @tube=Pcr.find(params[:tube])
-        logger.debug "The value of tube #{@tube.pcr_tube_number} should be set to #{@checked.to_s}."
-        @tube.update_attributes(:success=>@checked)
+        @pcr=Pcr.find_by_pcr_tube_number(params[:tube])
+        logger.debug "The value of tube #{@pcr.pcr_tube_number} should be set to #{@checked.to_s}."
+        @pcr.update_attributes(:success=>@checked.to_s)
         logger.debug "checked is #{@checked.to_s}"
-        logger.debug "The value of tube #{@tube.pcr_tube_number} is now reading as #{@tube.success}."
+        logger.debug "The value of tube #{@pcr.pcr_tube_number} is now reading as #{@pcr.success}."
+        
+       render :nothing=>true 
+    end
+    
+    def updateready
+        @checked=params[:checked]
+        @pcr=Pcr.find_by_pcr_tube_number(params[:tube])
+        logger.debug "The value of tube #{@pcr.pcr_tube_number} should be set to #{@checked.to_s}."
+        @pcr.update_attributes(:ready=>@checked)
+        logger.debug "checked is #{@checked.to_s}"
+        logger.debug "The value of tube #{@pcr.pcr_tube_number} is now reading as #{@pcr.ready}."
         
        render :nothing=>true 
     end
