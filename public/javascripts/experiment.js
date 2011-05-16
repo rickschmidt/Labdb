@@ -75,6 +75,38 @@ $(document).ready(function (){
 
     });
     
+    $('input#pcr_pcr_success').click(function() {
+        var checked=this.checked
+         alert(checked);
+        var currentId = $(this).parent().parent();
+        var row_idx = currentId.prevAll().length;
+        alert(row_idx);
+        var tubeid=$(this).parent().parent().find('.custom').find('select#experiment_pcrs').val();
+        var tubeidPrev=$(this).parent().parent().find('.customPrev').html();
+        if(tubeid!=null){
+            var tube=tubeid;
+        alert(tubeid);
+        }
+        if(tubeidPrev){
+            var tube=tubeidPrev;
+            alert(tubeidPrev);
+        }
+        
+         $.ajax({
+            url: "/experiments/updatesuccess",
+            type: "POST",
+            data:{checked:checked,tube:tube},
+            
+            success: function(json,textStatus){
+                alert(textStatus);
+            },
+            error: function(json,textStatus){
+                alert(textStatus);
+            }
+        });
+        
+    });
+    
     $('button.save').live('click', function(){
         var pcrs=new Array();
         var successfulPcrsArray=new Array();

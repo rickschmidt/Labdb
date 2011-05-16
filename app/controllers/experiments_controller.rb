@@ -198,6 +198,17 @@ class ExperimentsController < ApplicationController
         render :nothing => true
 
     end
+    
+    def updatesuccess
+        @checked=params[:checked]
+        @tube=Pcr.find(params[:tube])
+        logger.debug "The value of tube #{@tube.pcr_tube_number} should be set to #{@checked.to_s}."
+        @tube.update_attributes(:success=>@checked)
+        logger.debug "checked is #{@checked.to_s}"
+        logger.debug "The value of tube #{@tube.pcr_tube_number} is now reading as #{@tube.success}."
+        
+       render :nothing=>true 
+    end
   private 
    def sort_column
        Experiment.column_names.include?(params[:sort]) ? params[:sort] : "date"
