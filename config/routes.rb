@@ -16,7 +16,8 @@ ActionController::Routing::Routes.draw do |map|
   #map.root :controller => "user_sessions", :action => "new"   
   map.resource :account, :controller => "users"
   map.resources :users
-
+  
+  map.connect 'sequencelayout', :controller=>'experiments', :action=>'sequencelayout'
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

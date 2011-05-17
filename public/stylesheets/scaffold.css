@@ -51,7 +51,11 @@ pre {
 a { color: #000; }
 a:visited { color: #666; }
 a:hover { color: #fff; background-color:#000; }
+.icons a:hover{
+    color:none;
+    background-color:white;
 
+  }
 .fieldWithErrors {
   padding: 2px;
   background-color: red;
@@ -209,7 +213,9 @@ td.icons {
     background-color:white;
 }
 td.icons:hover {
-    background-color:none;
+    background-color:white;
+    -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
 
 }
 td.idfield{

@@ -130,7 +130,7 @@ class ExperimentsController < ApplicationController
   end
   
   def updatednasamples
-    experiment=Experiment.find(278)
+
     logger.debug "update sample id is #{params[:id]}"
     pcr=Pcr.find(params[:id])
     @dnasamples=Array.new
@@ -191,10 +191,10 @@ class ExperimentsController < ApplicationController
         @experiment=Experiment.find(params[:experimentId])
         @experiment.pcrs<<@pcrsAll
         logger.debug "successful pcrs #{params[:successfulPcrs]}"
-        @successfulPcrs=Pcr.find(params[:successfulPcrs])
-        @successfulPcrs.each do |successful|
-            successful.update_attributes(:success=>true)
-        end
+        # @successfulPcrs=Pcr.find(params[:successfulPcrs])
+        #     @successfulPcrs.each do |successful|
+        #         successful.update_attributes(:success=>true)
+        #     end
         render :nothing => true
 
     end
@@ -220,6 +220,25 @@ class ExperimentsController < ApplicationController
         
        render :nothing=>true 
     end
+    
+    def sequencelayout
+#       @experiments=Experiment.find(params[:experimentssequence])
+        @experiment=Experiment.find(params[:experimentId])
+        logger.debug "The experiment is #{@experiment.id}."
+       @experimentspcr=@experiment.pcrs
+
+       @successful=@experimentspcr.find(:all, :conditions=>{:ready=>true})
+       
+       @successful.each do |s|
+       logger.debug "The successful pcrs are...#{s.id}"
+   end
+       respond_to do |with|
+           with.html
+       end
+   
+      
+    end
+    
   private 
    def sort_column
        Experiment.column_names.include?(params[:sort]) ? params[:sort] : "date"

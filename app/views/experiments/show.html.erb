@@ -31,19 +31,8 @@
 	<td><%= dnasample.dna_accession %></td>
 	<td><%= pcr.primerl %></td>
 	<td><%= pcr.primerh %></td>
-	
-	<%if pcr.success==true%>
-		<td align="center"><%= check_box("pcr","pcr_success",{:checked=>true}) %></td>
-	<%else%>
-		<td align="center"><%= check_box("pcr","pcr_success",{:checked=>false}) %></td>
-	<%end%>
-	
-	<%if pcr.ready?%>
-		<td align="center"><%= check_box("pcr","pcr_ready",{:checked=>true}) %></td>
-	<%else%>
-		<td align="center"><%= check_box("pcr","pcr_ready",{:checked=>false}) %></td>
-	<%end%>
-
+	<td align="center"><%= success(pcr) %></td>
+	<td align="center"><%= ready(pcr) %></td>
 	</tr>
 	<%} %>
 
@@ -55,10 +44,21 @@
 		<td class="primerh"></td>
 			<td class="success" align="center"><%= check_box("pcr","pcr_success",{:checked=>false}) %></td>
 			<td class="success" align="center"><%= check_box("pcr","pcr_ready",{:checked=>false}) %></td>
-</tr>
+	</tr>
 
 </table>
 <button class="save">Save</button>
+
+
+
+<% form_tag(:action => "sequencelayout") do %>
+<%= hidden_field_tag "experimentId", @experiment.id %>
+  <%= submit_tag "Prepare for Sequencing "%>
+<% end -%>
+
+
+
+
 
 
 

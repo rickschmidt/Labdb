@@ -1,0 +1,22 @@
+<h2>Sequencing Layout</h2>
+
+
+<table class="custom">
+	<tr>
+		<th>DNA Sample</th>
+		<th>Pcr Tube</th>
+		<th>Primer</th>
+		<th>Location in Well</th>
+	</tr>
+	
+	
+<%@successful.each do |sequence| %>
+
+<tr>
+	<td><%= sequence.dnasamples.first.dna_accession %></td>
+	<td><%= sequence.pcr_tube_number %></td>
+	<td><%= sequence.primerl %></td>
+	<td>A-1(needs to be set)</td>
+</tr>
+<%end %>
+</table>

@@ -4,7 +4,7 @@
   <tr class="custom">
 	<th class="custom" id="lesswide"><%= sortable 'id' %></th>
     <th class="custom"><%= sortable 'pcr_tube_number', 'Tube #' %></th>
-    <th class="custom"><%= sortable 'date' %></th>
+
 
     <th class="custom"><%= sortable 'dna_amount', 'DNA Amount' %></th>
 
@@ -12,6 +12,9 @@
 
     <th class="custom"><%= sortable 'total_worked' %></th>
     <th class="custom"><%= sortable 'reamp' %></th>
+	<th class="custom"><%= sortable 'Success?' %></th>
+	<th class="custom"><%= sortable 'Ready?' %></th>
+    <th class="custom"><%= sortable 'date' %></th>
 
   </tr>
 <%= will_paginate @pcrs %> 
@@ -21,7 +24,7 @@ Per Page: <%= select_tag :per_page, options_for_select([10,20,50,100,200], param
   <tr class="<%= cycle("even", "odd") %>">
     <td class='idfield'><%= pcr.id %>
 	<td><%=h pcr.pcr_tube_number %></td>
-    <td><%=h pcr.date %></td>
+
 
     <td><%=h pcr.dna_amount %></td>
 
@@ -29,6 +32,10 @@ Per Page: <%= select_tag :per_page, options_for_select([10,20,50,100,200], param
 
     <td><%=h pcr.total_worked %></td>
     <td><%=h pcr.reamp %></td>
+	<td align="center" ><%=h success(pcr) %></td>
+	<td align="center"><%=h ready(pcr) %></td>
+	
+    <td><%=h pcr.date %></td>
 
    	<td class="icons"><%= link_to image_tag("show.png", :border=>0), pcr%></td>
  	<td class="icons"><%= link_to image_tag("edit.png", :border=>0), edit_pcr_path(pcr)%></td>
