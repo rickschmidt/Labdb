@@ -136,7 +136,8 @@ table.custom{
 }
 th.custom{
     font-color:white;
-    height:25px;
+    padding-bottom:10px;
+    padding-top:10px;
     padding-right: 20px;
     padding-left: 20px;
     font-weight:400;
@@ -151,7 +152,7 @@ th.custom#small{
 }
 th.custom a{
 
-    height:25px;
+
     padding-right: 20px;
     padding-left: 20px;
     font-weight:400;
@@ -164,7 +165,7 @@ th.custom a{
 }
 th.custom a:hover{
 
-    height:25px;
+
     padding-right: 20px;
     padding-left: 20px;
     font-weight:400;

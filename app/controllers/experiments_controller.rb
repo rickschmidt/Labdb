@@ -35,6 +35,7 @@ class ExperimentsController < ApplicationController
     end
     respond_to do |format|
       format.html # show.html.erb
+      format.pdf {render :pdf =>{:experiment=>@experiment, :pcrs=>@pcrs}}
       format.xml  { render :xml => @experiment }
       format.js
     end
@@ -230,8 +231,8 @@ class ExperimentsController < ApplicationController
        @successful=@experimentspcr.find(:all, :conditions=>{:ready=>true})
        
        @successful.each do |s|
-       logger.debug "The successful pcrs are...#{s.id}"
-   end
+           logger.debug "The successful pcrs are...#{s.id}"
+       end
        respond_to do |with|
            with.html
        end
