@@ -1,14 +1,15 @@
 <h1>Welcome</h1>
 
 
+	<ol><b>Workflow</b>
+		<li>Create a Primer</li>
+		<li>Create a DNA Sample, optionally associate with a Gene.</li>
+		<li>Create a PCR Tube and select the primers that should be associated with it.</li>
+		<li>Create an experiment.  Add the PCR tubes to be used in the experiment and click save. </li>
+		
+</ol>
 
-<% if !@experiments.blank? %>
-<% @experiments.each do |experiment| %>
-  <br/>
-<%= link_to experiment.experiment_number , experiment_path(experiment.id) %>    
 
-<% end %>  
-<% end %>
 
 <% if !current_user %>
   <%= link_to "Register", new_account_path %> |

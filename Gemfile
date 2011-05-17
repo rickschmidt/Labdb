@@ -6,6 +6,7 @@ gem "rails", "~> 2.3.11"
 
 
 gem "prawn"
+gem "prawnto"
 gem "sqlite3-ruby", :group => :development
 
 
