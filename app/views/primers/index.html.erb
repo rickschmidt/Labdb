@@ -20,9 +20,9 @@
 	<%@primers.each do |primer| %>
 
   <tr class="<%= cycle("even", "odd") %>">
-		<td class="primer"><%=h primer.name %></td>
-		<td class="primer"><%=h primer.sequence %></td>
-		<td class="custom"><%=h primer.updated_at %></td>
+		<td ><%=h primer.name %></td>
+		<td ><%=h primer.sequence %></td>
+		<td ><%=h primer.updated_at %></td>
 		<td class="icons"><%= link_to image_tag("show.png", :border=>0), primer%></td>
 	 	<td class="icons"><%= link_to image_tag("edit.png", :border=>0), edit_primer_path(primer)%></td>
 	 	<td class="icons"><%= link_to image_tag("delete.png", :border=>0), primer, :confirm => 'Are you sure?', :method => :delete %></td>

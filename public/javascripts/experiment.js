@@ -21,7 +21,7 @@ $(document).ready(function (){
 
       dataString = jQuery('tr.exp:last').find('select#experiment_pcrs').val();
       success=jQuery('tr.exp:last').find('select#pcr_success').val();
-      alert(success);
+      
          $.ajax({
           url: "/experiments/getpcrtube",
           type: "POST",
@@ -75,19 +75,19 @@ $(document).ready(function (){
     //Runs if Success check box is changed
     $('input#pcr_pcr_success').click(function() {
         var checked=this.checked
-         alert(checked);
+       
         var currentId = $(this).parent().parent();
         var row_idx = currentId.prevAll().length;
-        alert(row_idx);
+       
         var tubeid=$(this).parent().parent().find('.custom').find('select#experiment_pcrs').val();
         var tubeidPrev=$(this).parent().parent().find('.customPrev').html();
         if(tubeid!=null){
             var tube=tubeid;
-        alert(tubeid);
+       
         }
         if(tubeidPrev!=null){
             var tube=tubeidPrev;
-            alert(tubeidPrev);
+            
         }
         
          $.ajax({
@@ -96,10 +96,10 @@ $(document).ready(function (){
             data:{checked:checked,tube:tube},
             
             success: function(json,textStatus){
-                alert(textStatus);
+                
             },
             error: function(json,textStatus){
-                alert(textStatus);
+                
             }
         });
         
@@ -108,19 +108,19 @@ $(document).ready(function (){
     //Runs if Ready check box is changed
     $('input#pcr_pcr_ready').click(function() {
         var checked=this.checked
-         alert(checked);
+         
         var currentId = $(this).parent().parent();
         var row_idx = currentId.prevAll().length;
-        alert(row_idx);
+        
         var tubeid=$(this).parent().parent().find('.custom').find('select#experiment_pcrs').val();
         var tubeidPrev=$(this).parent().parent().find('.customPrev').html();
         if(tubeid!=null){
             var tube=tubeid;
-        alert(tubeid);
+        
         }
         if(tubeidPrev!=null){
             var tube=tubeidPrev;
-            alert(tubeidPrev);
+        
         }
         
          $.ajax({
@@ -129,7 +129,7 @@ $(document).ready(function (){
             data:{checked:checked,tube:tube},
             
             success: function(json,textStatus){
-                alert(textStatus);
+        
             },
             error: function(json,textStatus){
                 alert(textStatus);
@@ -145,20 +145,20 @@ $(document).ready(function (){
         var currentExperiment=$('input#experimentId').val();
 
         $('tr#.exp').each(function (i){
-            alert("i",i.val);
+            
             var selpcr=$('select#experiment_pcrs').val();
             if(selpcr!=''){
                 pcrs[i]=selpcr;
-                alert(pcrs[i]);
+            
                 var x=$('select#pcr_success').val();
-                alert("x",x);
+
                 
                 if(x=="1"){
-                     alert("here");
+
                         var id=$('select#pcr_success').val();
-                        alert(id+"id");
+
                           successfulPcrsArray[i]=id;
-                        alert(successfulPcrsArray);
+
                     
                 }
             }
