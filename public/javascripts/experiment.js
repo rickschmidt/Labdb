@@ -21,11 +21,12 @@ $(document).ready(function (){
 
       dataString = jQuery('tr.exp:last').find('select#experiment_pcrs').val();
       success=jQuery('tr.exp:last').find('select#pcr_success').val();
+      var currentExperiment=$('input#experimentId').val();
       
          $.ajax({
           url: "/experiments/getpcrtube",
           type: "POST",
-          data: {id:dataString},
+          data: {id:dataString,experimentId:currentExperiment},
     
           success: function(json,textStatus){
 
@@ -40,6 +41,7 @@ $(document).ready(function (){
              $('select#experiment_pcrs').attr('disabled', 'disabled');
              myDiv.appendTo('table.custom');
                          $('p.message#errorExplanation').remove();
+            $('.totalSamples').html(obj.total_samples);
              
 
           },
