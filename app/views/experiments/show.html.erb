@@ -1,4 +1,5 @@
 <p><b>Date:</b> <%= @experiment.date %> <b>Experiment:</b><%= @experiment.experiment_number %></p>
+<p><b>Total # of Samples: </b> <div class="totalSamples"><%= @experiment.total_samples %></div></p>
 <%= hidden_field_tag "experimentId", @experiment.id %>
 <div class="premix">
 	<table >

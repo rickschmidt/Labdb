@@ -33,6 +33,7 @@ class ExperimentsController < ApplicationController
       #   @ids<<dna
       # end
     end
+    @experiment.update_attributes(:total_samples=>@pcrs.size)
     respond_to do |format|
       format.html # show.html.erb
       format.pdf {render :pdf =>{:experiment=>@experiment, :pcrs=>@pcrs}}
@@ -172,6 +173,7 @@ class ExperimentsController < ApplicationController
   
   def getpcrtube
      @pcr=Pcr.find(params[:id]) 
+     @experiment=Experiment.find(params[:experimentId])
     if @pcr.dnasamples.first
         @dnasample=@pcr.dnasamples.first
     end
