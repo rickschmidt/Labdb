@@ -5,7 +5,7 @@ class Primer < ActiveRecord::Base
            if search
               @search=Primer.primerl_or_primerh_or_id_like_any(search)  #Search is not built yet
               else
-                @search=Primer.primerl_like("")
+          @search=Primer.id_like("")
           end
       end
 end
