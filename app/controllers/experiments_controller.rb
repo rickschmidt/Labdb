@@ -63,11 +63,11 @@ class ExperimentsController < ApplicationController
   def create
     @experiment = Experiment.new(params[:experiment])
     
-    if params[:gene][:primer]!=""
-        @primer=Primer.find(params[:gene][:primer])
-        @experiment.primerh=@primer.primerh
-        @experiment.primerl=@primer.primerl
-    end
+    # if params[:gene][:primer]!=""
+    #         @primer=Primer.find(params[:gene][:primer])
+    #         @experiment.primerh=@primer.primerh
+    #         @experiment.primerl=@primer.primerl
+    #     end
     respond_to do |format|
       if @experiment.save
         format.html { redirect_to(@experiment, :notice => 'Experiment was successfully created.') }
@@ -83,11 +83,11 @@ class ExperimentsController < ApplicationController
   # PUT /experiments/1.xml
   def update
     @experiment = Experiment.find(params[:id])
-     if params[:gene][:primer]!=""
-        @primer=Primer.find(params[:gene][:primer])
-        @experiment.primerh=@primer.primerh
-        @experiment.primerl=@primer.primerl
-    end
+     # if params[:gene][:primer]!=""
+     #       @primer=Primer.find(params[:gene][:primer])
+     #       @experiment.primerh=@primer.primerh
+     #       @experiment.primerl=@primer.primerl
+     #   end
 
     respond_to do |format|
       if @experiment.update_attributes(params[:experiment])
