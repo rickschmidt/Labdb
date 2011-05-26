@@ -14,9 +14,9 @@ $(document).ready(function (){
           data: {id:dataString},
     
           success: function(json,textStatus){
-              alert(textStatus);
+
               var obj = jQuery.parseJSON(json);     
-               alert(obj.sequence);         
+      
               $('.primerl').html(obj.sequence);
           },
           
@@ -39,7 +39,7 @@ $(document).ready(function (){
           success: function(json,textStatus){
       
               var obj = jQuery.parseJSON(json);              
-                            alert(obj.sequence);
+                            
               $('.primerh').html(obj.sequence);
           },
           
