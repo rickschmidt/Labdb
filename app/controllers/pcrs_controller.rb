@@ -1,6 +1,7 @@
 class PcrsController < ApplicationController
   # GET /pcrs
   # GET /pcrs.xml
+    before_filter :require_user
     helper_method :sort_column, :sort_direction
     helper :all
   def index

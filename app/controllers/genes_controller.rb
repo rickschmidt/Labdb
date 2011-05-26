@@ -1,4 +1,5 @@
 class GenesController < ApplicationController
+      before_filter :require_user
   # GET /genes
   # GET /genes.xml
   def index
@@ -44,10 +45,14 @@ class GenesController < ApplicationController
   def create
     @gene = Gene.new(params[:gene])
     
-      if params[:gene][:primer]!=""
-        @primer=Primer.find(params[:gene][:primer])
-        @gene.primerh=@primer.primerh
+      if params[:gene][:primerl]!=""
+        @primer=Primer.find(params[:gene][:primerl])
         @gene.primerl=@primer.primerl
+    end
+    
+    if params[:gene][:primerh]!=""
+        @primer=Primer.find(params[:gene][:primerh])
+        @gene.primerh=@primer.primerh
     end
     respond_to do |format|
       if @gene.save
@@ -64,14 +69,23 @@ class GenesController < ApplicationController
   # PUT /genes/1.xml
   def update
     @gene = Gene.find(params[:id])
-
-      if params[:gene][:primer]!=""
-        @primer=Primer.find(params[:gene][:primer])
-        @gene.primerh=@primer.primerh
-        @gene.primerl=@primer.primerl
+         if @gene.update_attributes(params[:gene][:primerl]!="")
+                @primer=Primer.find(params[:gene][:primerl])
+                logger.debug "primer in primerl #{@primer}: #{@primer.sequence}"
+                @gene.primerl=@primer.sequence
+                logger.debug "gene primerl #{@gene.primerl}"
+            end
+    
+    if params[:gene][:primerh]!=""
+        @primer=Primer.find(params[:gene][:primerh])
+        @gene.primerh=@primer.sequence
+        @gene.save
     end
     respond_to do |format|
+      
+
       if @gene.update_attributes(params[:gene])
+
         format.html { redirect_to(@gene, :notice => 'Gene was successfully updated.') }
         format.xml  { head :ok }
       else
