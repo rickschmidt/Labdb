@@ -16,6 +16,26 @@ $(document).ready(function (){
           
         });
         
+        $('select#experiment_dnasamples').live('change',function(){
+             dataString = jQuery('tr.exp:last').find('select#experiment_dnasamples').val();
+              var currentExperiment=$('input#experimentId').val();
+              
+              $.ajax({
+                  url: "/experiments/getdnasample",
+                  type:"POST",
+                  data:{id:dataString,experimentId:currentExperiment},
+                  
+                  success: function(json,textStatus){
+                      var obj=jQuery.parseJSON(json);
+                      var index = jQuery('tr.exp:last').index();
+                      var myDiv = jQuery('tr.exp:last').clone().attr('id',index);
+                      
+                    $('.dna:last').attr('id',index).html(obj.dna);
+                     myDiv.appendTo('table.custom');
+                  }
+              });
+        });
+        
         //Runs when pcr tube select is changed
      $('select#experiment_pcrs').live('change',function (){
 

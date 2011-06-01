@@ -1,6 +1,6 @@
 class Experiment < ActiveRecord::Base
   has_and_belongs_to_many :pcrs
-  has_many :dnasamples, :through=>:pcrs
+  has_and_belongs_to_many :dnasamples#, :through=>:pcrs
   
   validates_presence_of :experiment_number
   validates_uniqueness_of :experiment_number
