@@ -1,0 +1,7 @@
+require File.expand_path(File.dirname(__FILE__) + "/../app/controllers/dnasamples_controller.rb")
+require File.expand_path(File.dirname(__FILE__) + "/../app/controllers/experiments_controller.rb")
+require File.expand_path(File.dirname(__FILE__) + "/../app/controllers/genes_controller.rb")
+require File.expand_path(File.dirname(__FILE__) + "/../app/controllers/pcrs_controller.rb")
+require File.expand_path(File.dirname(__FILE__) + "/../app/controllers/primers_controller.rb")
+require File.expand_path(File.dirname(__FILE__) + "/../app/controllers/taxonomies_controller.rb")
+require File.expand_path(File.dirname(__FILE__) + "/../app/controllers/application_controller.rb")

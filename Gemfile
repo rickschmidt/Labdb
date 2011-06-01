@@ -2,7 +2,7 @@ source :gemcutter
 
 gem "rails", "~> 2.3.11"
 #gem "rails", "~> 3.0.6"
-
+gem "rspec"
 
 
 gem "prawn"

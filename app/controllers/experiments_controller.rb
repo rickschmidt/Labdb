@@ -26,6 +26,7 @@ class ExperimentsController < ApplicationController
     @pcrs=Hash.new
     @experiments=Experiment.find(:all, :limit=>15 )
     @experiment=Experiment.find(params[:id])
+    @dnasamples=@experiment.dnasamples
     @experiment.pcrs.each do |pcr|
       @pcrs[pcr]=pcr.dnasamples.first
       logger.debug "pcrs in exp show #{@pcrs.inspect}"
@@ -240,6 +241,18 @@ class ExperimentsController < ApplicationController
        end
    
       
+    end
+    
+    
+    def getdnasample
+        @experiment=Experiment.find(params[:experimentId])
+        @dnasample=Dnasample.find(params[:id]) 
+        
+        respond_to do |with|
+            with.js
+        end
+        
+        
     end
     
   private 
