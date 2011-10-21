@@ -1,5 +1,5 @@
 class ExperimentsController < ApplicationController
-  # before_filter :require_user
+before_filter :authenticate_user!
   # GET /experiments
   # GET /experiments.xml
   helper_method :sort_column, :sort_direction
