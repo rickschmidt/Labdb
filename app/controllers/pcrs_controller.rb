@@ -1,14 +1,14 @@
 class PcrsController < ApplicationController
   # GET /pcrs
   # GET /pcrs.xml
-    before_filter :require_user
+
     helper_method :sort_column, :sort_direction
     helper :all
   def index
 
     @per_page = params[:per_page] || Pcr.per_page || 10
-      @search=Pcr.search(params[:search])
-      @pcrs=@search.find(:all,:order=>(sort_column + " "+ sort_direction)).paginate(:per_page => @per_page, :page => params[:page])
+
+      @pcrs=Pcr.paginate(:per_page => @per_page, :page => params[:page])
 
 
     respond_to do |format|
