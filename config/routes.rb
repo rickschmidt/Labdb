@@ -1,4 +1,8 @@
 Lab::Application.routes.draw do
+  devise_for :users
+devise_scope :user do
+  get "/logout" => "devise/sessions#destroy"
+end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -12,7 +16,7 @@ Lab::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
     resources :experiments
-	resource :user_session
+
 
 	resources :genes
 
@@ -24,11 +28,10 @@ Lab::Application.routes.draw do
  
 	 resources :primers
  
-	 resource :user_session
+
  
 	  #map.root :controller => "user_sessions", :action => "new"   
-	resource :account, :controller => "users"
-	resources :users
+
  		match 'dnasamples/submitgene'
  		match 'dnasamples/removegene'
 		match 'experiments/sequencelayout'
