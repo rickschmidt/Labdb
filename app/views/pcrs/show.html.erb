@@ -75,7 +75,7 @@
 </p>
 <p>
 	<h5>Add the DNA Sample that corresponds to this PCR Reaction.</h5>
-<% form_tag(:action => "submitdnasample") do %>
+<%= form_tag(:action => "submitdnasample") do %>
 		<%= select('pcr','dnasamples',Dnasample.all.collect {|p| [ p.dna_accession, p.id] }, {:prompt => 'Select PCR'})%> Select a DNA Sample by its Accession # in the <%= link_to "DNA Samples", dnasamples_path %> table.
 		
 		<p><%=h  hidden_field_tag(:pcrid, @pcr.id) %></p>
@@ -83,7 +83,7 @@
   
 <% end -%>
 <h5>Remove a DNA Sample from this PCR Reaction.</h5>
-<% form_tag(:action => "removednasample") do %>
+<%= form_tag(:action => "removednasample") do %>
 		<%= select('pcr','dnasamples',@pcrdnas.all.collect{|p| [p.dna_accession, p.id]}, {:prompt => 'Select PCR'})%> Select a DNA Sample by its Accession # in the <%= link_to "DNA Samples", dnasamples_path %> table.
 		
 		<p><%=h  hidden_field_tag(:pcrid, @pcr.id) %></p>

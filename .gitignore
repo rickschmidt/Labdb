@@ -1,7 +1,5 @@
-config/database.yml
-
-*.cache
-*.log
-*.pid
-tmp/**/*
-.DS_Store
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/
+.sass-cache/

@@ -1,5 +1,5 @@
 class ExperimentsController < ApplicationController
-  before_filter :require_user
+  # before_filter :require_user
   # GET /experiments
   # GET /experiments.xml
   helper_method :sort_column, :sort_direction
@@ -7,9 +7,9 @@ class ExperimentsController < ApplicationController
   def index
 
     
-     @per_page = params[:per_page] || Experiment.per_page || 10
-      @search=Experiment.search(params[:search])
-      @experiments=@search.find(:all,:order=>(sort_column + " "+ sort_direction)).paginate(:per_page => @per_page, :page => params[:page])
+     # @per_page = params[:per_page] || Experiment.per_page || 10
+
+      @experiments=Experiment.paginate(:per_page => @per_page, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

@@ -1,15 +1,15 @@
 class PrimersController < ApplicationController
 # GET /pcrs
   # GET /pcrs.xml
-  before_filter :require_user
+
 
   helper_method :sort_column, :sort_direction
   helper :all
 
   
   def index
-      @search=Primer.search(params[:search])
-    @primers = @search.find(:all)
+
+    @primers =Primer.find(:all)
 
     respond_to do |format|
       format.html # index.html.erb
