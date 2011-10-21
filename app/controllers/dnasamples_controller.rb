@@ -1,15 +1,17 @@
 class DnasamplesController < ApplicationController
   # GET /dnasamples
   # GET /dnasamples.xml
-    before_filter :require_user
+
   helper_method :sort_column, :sort_direction
    helper :all
    def index
+		puts "WP? #{defined? WillPaginate} <<"
 
 
-      @per_page = params[:per_page] || Dnasample.per_page || 10
-       @search=Dnasample.search(params[:search])
-       @dnasamples=@search.find(:all,:order=>(sort_column + " "+ sort_direction)).paginate(:per_page => @per_page, :page => params[:page])
+      @per_page = params[:per_page]  || 10
+       # @search=Dnasample.search(params[:search])
+       # @dnasamples=Dnasample.find(:all,:order=>(sort_column + " "+ sort_direction)).paginate(:per_page => @per_page, :page => params[:page])
+       @dnasamples=Dnasample.paginate(:page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

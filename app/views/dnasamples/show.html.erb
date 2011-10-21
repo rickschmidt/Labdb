@@ -39,7 +39,7 @@
 </p>
 <hr/>
 <h5>Associate this DNA sample with a gene.</h5>
-<% form_tag(:action => "submitgene") do %>
+<%= form_tag(:action => "submitgene") do %>
 <p>	<%= select('dnasample','genes',Gene.all.collect {|p| [ p.genbank, p.id] }, {:prompt => 'Select Gene'})%> Select a Gene by its Genbank ID in the <%= link_to "Genes", genes_path %> table.</p>
 <p><%=h  hidden_field_tag(:dnasampleid, @dnasample.id) %></p>
 
@@ -47,7 +47,7 @@
 <%end%>
 
 <h5> Delete a gene association from this DNA Sample.</h5>
-<% form_tag(:action => "removegene") do %>
+<%= form_tag(:action => "removegene") do %>
 <p>	<%= select('dnasample','genes',@dnasamplegenes.all.collect {|p| [ p.genbank, p.id] }, {:prompt => 'Select Gene'})%> Select a Gene by its Genbank ID in the <%= link_to "Genes", genes_path %> table.</p>
 <p><%=h  hidden_field_tag(:dnasampleid, @dnasample.id) %></p>
 

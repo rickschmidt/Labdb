@@ -5,8 +5,8 @@ class WelcomeController < ApplicationController
   def index
     @experiments=Experiment.find(:all, :order => 'updated_at DESC', :limit=>5)
     
-    primer 10
-    @primer
+
+
     
     
   end

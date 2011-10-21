@@ -1,5 +1,5 @@
 class GenesController < ApplicationController
-      before_filter :require_user
+
   # GET /genes
   # GET /genes.xml
   def index

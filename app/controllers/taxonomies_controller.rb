@@ -1,13 +1,12 @@
 class TaxonomiesController < ApplicationController
-    before_filter :require_user
+
     helper_method :sort_column, :sort_direction
     helper :all
   # GET /taxonomies
   # GET /taxonomies.xml
   def index
     @per_page = params[:per_page] || Experiment.per_page || 10
-    @search=Taxonomy.search(params[:search])
-    @taxonomies=@search.find(:all,:order=>(sort_column + " "+ sort_direction)).paginate(:per_page => @per_page, :page => params[:page])
+    @taxonomies=Taxonomy.paginate(:per_page => @per_page, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
