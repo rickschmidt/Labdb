@@ -1,17 +1,52 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
 <head>
-  <title>Lab</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Reddy Lab:DNA Samples</title>
+  <%= stylesheet_link_tag 'scaffold' %>
+
+<style type="text/css">
+
+#nav a{ float:left;
+	padding:10px; 
+	text-decoration:none; 
+	color:black; 
+	-moz-border-top-right-radius: 5px; 
+	border-top-left-radius: 5px;
+	-moz-border-top-right-radius: 5px; 
+	border-top-right-radius: 5px;
+
+background: #7f7f7f; /* for non-css3 browsers */
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#CfCfCf', endColorstr='#7f7f7f'); /* for IE */
+background: -webkit-gradient(linear, left top, left bottom, from(#CfCfCf), to(#7f7f7f)); /* for webkit browsers */
+background: -moz-linear-gradient(top,  #CfCfCf,  #7f7f7f); /* for firefox 3.6+ */ 
+
+border-bottom:5px solid #F5F48C;
+}
+
+
+
+</style>
+		
 </head>
 <body>
+<div id="wrapper">
+	
+<%=render :partial => '/navigation'%>
+	<div id="content">
+	<% if flash[:notice]%>
 
+<p style="color: green"><%= flash[:notice] %></p>
+<%end%>
+<%if flash[:error]%>
+<P style="color: red"><%=flash[:error]%></p>
+	<%end%>
 <%= yield %>
 
-<p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-
+</div>
+</div>
 </body>
 </html>
