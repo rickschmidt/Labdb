@@ -1,52 +1,60 @@
-<h1>New DNA Sample</h1>
+<h1>
+	New DNA Sample
+</h1>
 
 <%= form_for(@dnasample) do |f| %>
-
-
-<table border="0" cellspacing="5" cellpadding="5">
-	<tr><td><%= f.label :date%><br/>
-			<%= f.date_select :date%></td>
-			</tr>
-	<tr><td>	 
-    	<%= f.label :dna_accession, "DNA Accession #" %><br />
-	    <%= f.text_field :dna_accession %></td>
-
-		<td>
-    	<%= f.label :dnasample_number, "DNA Sample #" %><br />
-	    <%= f.text_field :dnasample_number %></td>
-	</tr>
-
-
-
-<tr><td>
-	 <%= f.label :method %><br />
-    <%= f.text_field :method %>
-</td><td> <%= f.label :elution_volume %><br />
-    <%= f.text_field :elution_volume %></td></tr>
-
-
-	<tr><td><%= f.label :second_elute %><br />
-    <%= f.text_field :second_elute %></td>
-
-	<td> <%= f.label :second_elute_volumne %><br />
-    <%= f.text_field :second_elute_volumne %></td></tr>
-
-
-	<tr><td><%= f.label :reextracted %><br />
-    <%= f.text_field :reextracted %></td>
-
-</tr>
-
-
-</table>
-
-
-
-
-
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
+	<table border="0" cellspacing="5" cellpadding="5">
+		<tr>
+			<td>
+				<%= f.label "Which taxonomy does this belong to?" %>
+				<%= f.collection_select(:taxonomies, Taxonomy.all, :id,:genus,options={:include_blank=>true}) %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= f.label :date%><br>
+				<%= f.date_select :date%>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= f.label :dna_accession, "DNA Accession #" %><br>
+				<%= f.text_field :dna_accession %>
+			</td>
+			<td>
+				<%= f.label :dnasample_number, "DNA Sample #" %><br>
+				<%= f.text_field :dnasample_number %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= f.label :method %><br>
+				<%= f.text_field :method %>
+			</td>
+			<td>
+				<%= f.label :elution_volume %><br>
+				<%= f.text_field :elution_volume %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= f.label :second_elute %><br>
+				<%= f.text_field :second_elute %>
+			</td>
+			<td>
+				<%= f.label :second_elute_volumne %><br>
+				<%= f.text_field :second_elute_volumne %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= f.label :reextracted %><br>
+				<%= f.text_field :reextracted %>
+			</td>
+		</tr>
+	</table>
+	<p>
+		<%= f.submit 'Create' %>
+	</p>
 <% end %>
-
 <%= link_to 'Back', dnasamples_path %>

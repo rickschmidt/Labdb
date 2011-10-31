@@ -23,15 +23,15 @@ dnasample = Dnasample.create(
 :date=>Date.today+rand(1000),
 :method=>"Extraction",
 :elution_volume=>rand(10.0),
-:second_elute=>Faker::Lorem::words,
+:second_elute=>"yes",
 :second_elute_volumne=>rand(10.0),
-:reextracted=>Faker::Lorem::words,
+:reextracted=>"yes",
 :created_by=>Faker::Lorem::name
 
 )
 
 
-dnasample.save false 
+dnasample.save 
 
 end
 end 
@@ -96,30 +96,32 @@ namespace :db do
 desc "create some fake taxonomies" 
 
 task :create_taxonomies => :environment do 
+	counter=1
 100.times do
 
 taxonomy = Taxonomy.create(
 
 
-:genus=>Faker::Lorem::name,
-:species=>Faker::Lorem::name,
-:subspecies=>Faker::Lorem::name,
-:new_diagnosis=>Faker::Lorem::name,
-:family=>Faker::Lorem::name,
-:description_pdf=>Faker::Lorem::name,
-:synonyms=>Faker::Lorem::name,
-:type_museum=>Faker::Lorem::name,
-:distribution=>Faker::Lorem::name,
-:ingroup=>Faker::Lorem::name,
-:other_literature=>Faker::Lorem::name,
-:character_diagnosis=>Faker::Lorem::name,
-:description=>Faker::Lorem::name,
-:countries=>Faker::Lorem::name
+:genus=>"Genus #{counter}",
+:species=>"species #{counter}",
+:subspecies=>"subspecies #{counter}",
+:new_diagnosis=>Faker::Lorem.words,
+:family=>Faker::Lorem.words,
+:description_pdf=>Faker::Lorem.words,
+:synonyms=>Faker::Lorem.words,
+:type_museum=>Faker::Lorem.words,
+:distribution=>Faker::Lorem.words,
+:ingroup=>Faker::Lorem.words,
+:other_literature=>Faker::Lorem.words,
+:character_diagnosis=>Faker::Lorem.words,
+:description=>Faker::Lorem.words,
+:countries=>Faker::Lorem.words
 
 )
 
 
-taxonomy.save false 
+taxonomy.save 
+counter=counter+1
 
 end
 end 

@@ -4,18 +4,15 @@ before_filter :authenticate_user!
   # GET /experiments.xml
   helper_method :sort_column, :sort_direction
   helper :all
-  def index
-
-    
-     # @per_page = params[:per_page] || Experiment.per_page || 10
-
-      @experiments=Experiment.paginate(:per_page => @per_page, :page => params[:page])
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @experiments }
-    end
-  end
+ 
+	def index
+		# @per_page = params[:per_page] || Experiment.per_page || 10
+      	@experiments=Experiment.paginate(:per_page => @per_page, :page => params[:page])
+    	respond_to do |format|
+      		format.html # index.html.erb
+		    format.xml  { render :xml => @experiments }
+	    end
+	end
 
   # GET /experiments/1
   # GET /experiments/1.xml

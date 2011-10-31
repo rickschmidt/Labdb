@@ -5,13 +5,8 @@ class DnasamplesController < ApplicationController
   helper_method :sort_column, :sort_direction
    helper :all
    def index
-		puts "WP? #{defined? WillPaginate} <<"
-
-
-      @per_page = params[:per_page]  || 10
-       # @search=Dnasample.search(params[:search])
-       # @dnasamples=Dnasample.find(:all,:order=>(sort_column + " "+ sort_direction)).paginate(:per_page => @per_page, :page => params[:page])
-       @dnasamples=Dnasample.paginate(:page => params[:page])
+		@per_page = params[:per_page]  ||= 10
+       	@dnasamples=Dnasample.paginate(:page => params[:page], :per_page=>@per_page)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -33,8 +28,7 @@ class DnasamplesController < ApplicationController
   # GET /dnasamples/new
   # GET /dnasamples/new.xml
   def new
-    @dnasample = Dnasample.new
-
+    @dnasample = Dnasample.new	
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @dnasample }
@@ -49,10 +43,21 @@ class DnasamplesController < ApplicationController
   # POST /dnasamples
   # POST /dnasamples.xml
   def create
-    @dnasample = Dnasample.new(params[:dnasample])
 
+	# @taxonomy=Taxonomy.find(params[:dnasample][:taxonomies])
+	# params[:jobs][:notes] = [ Note.new(:note => params[:jobs][:notes]) ]
+	if (params[:dnasample][:taxonomies]!='')
+		params[:dnasample][:taxonomies]=[Taxonomy.find(params[:dnasample][:taxonomies])]
+	else
+		params[:dnasample][:taxonomies]=[]
+	end
+    @dnasample = Dnasample.new(params[:dnasample])
     respond_to do |format|
       if @dnasample.save
+
+		# 	@dnasample.taxonomies<<@taxonomy
+		# end
+						
         format.html { redirect_to(@dnasample, :notice => 'Dnasample was successfully created.') }
         format.xml  { render :xml => @dnasample, :status => :created, :location => @dnasample }
       else
