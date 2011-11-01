@@ -11,7 +11,7 @@
     <th class="custom" id="small"><%= sortable 'second_elute_volumne' , "Second Volume"%></th>
     <th class="custom" id="small"><%= sortable 'Reextracted'%></th>
   </tr>                
-<%= button_to 'New DNA Sample', {:action=>"new"}, {:class=>'newButton'} %>
+<%= link_to 'New dnasample', new_dnasample_path %>
 <%= will_paginate @dnasamples %> 
 Per Page: <%= select_tag :per_page, options_for_select([10,20,50,100,200], params[:per_page].to_i),
                :onchange => "if(this.value){window.location='?per_page='+this.value;}" %>

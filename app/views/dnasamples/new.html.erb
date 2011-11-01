@@ -2,17 +2,20 @@
 	New DNA Sample
 </h1>
 
+<h3>
+	Obtain Tissue Samples
+</h3>
 <%= form_for(@dnasample) do |f| %>
 	<table border="0" cellspacing="5" cellpadding="5">
 		<tr>
 			<td>
 				<%= f.label "Which taxonomy does this belong to?" %>
-				<%= f.collection_select(:taxonomies, Taxonomy.all, :id,:genus,options={:include_blank=>true}) %>
+				<%= f.select(:taxonomies, Taxonomy.all.collect{|taxa| [[taxa.genus,taxa.species,taxa.subspecies].join(" "),taxa.id]} ,options={:include_blank=>true}) %>
 			</td>
 		</tr>
 		<tr>
 			<td>
-				<%= f.label :date%><br>
+				<%= f.label "Date of sample collection"%><br>
 				<%= f.date_select :date%>
 			</td>
 		</tr>
@@ -21,35 +24,39 @@
 				<%= f.label :dna_accession, "DNA Accession #" %><br>
 				<%= f.text_field :dna_accession %>
 			</td>
+		</tr>
+		<tr>
 			<td>
-				<%= f.label :dnasample_number, "DNA Sample #" %><br>
-				<%= f.text_field :dnasample_number %>
+				<%= f.label "Collector Number" %>
+				<%= f.text_field :collector_number %>
+			</td>			
+			<td>
+				<%= f.label "Specimen Gender" %>
+				<%= f.select(:specimen_gender,["Male","Female"],{:include_blank=>true}) %>
 			</td>
 		</tr>
 		<tr>
 			<td>
-				<%= f.label :method %><br>
-				<%= f.text_field :method %>
+				<%= f.label "Specific Location of Collection" %>
+				<%= f.text_field :location_collected %>
 			</td>
+		</tr>
+
+	</table>
+	<h3>
+		DNA Extraction
+	</h3>
+	<table border="0" cellspacing="5" cellpadding="5">
+		<tr>
 			<td>
-				<%= f.label :elution_volume %><br>
-				<%= f.text_field :elution_volume %>
+				<%= f.label "Extraction Method" %>
+				<%= f.select(:method,["Qiagen DNeasy Blood & Tissue Kit","GeneClean Kit for Ancient DNA","Phenol Chloroform Extraction","Omega SQ Tissue DNA Kit"],{:include_blank=>true}) %>
 			</td>
 		</tr>
 		<tr>
 			<td>
-				<%= f.label :second_elute %><br>
-				<%= f.text_field :second_elute %>
-			</td>
-			<td>
-				<%= f.label :second_elute_volumne %><br>
-				<%= f.text_field :second_elute_volumne %>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<%= f.label :reextracted %><br>
-				<%= f.text_field :reextracted %>
+				<%= f.label "Extraction Notes" %><br>
+				<%= f.text_area :extraction_notes ,:cols=>130,:rows=>15%>
 			</td>
 		</tr>
 	</table>

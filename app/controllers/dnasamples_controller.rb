@@ -19,6 +19,7 @@ class DnasamplesController < ApplicationController
   def show
     @dnasample = Dnasample.find(params[:id])
     @dnasamplegenes=@dnasample.genes
+	@coords=geocode(@dnasample.location_collected)
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @dnasample }
@@ -43,9 +44,6 @@ class DnasamplesController < ApplicationController
   # POST /dnasamples
   # POST /dnasamples.xml
   def create
-
-	# @taxonomy=Taxonomy.find(params[:dnasample][:taxonomies])
-	# params[:jobs][:notes] = [ Note.new(:note => params[:jobs][:notes]) ]
 	if (params[:dnasample][:taxonomies]!='')
 		params[:dnasample][:taxonomies]=[Taxonomy.find(params[:dnasample][:taxonomies])]
 	else
@@ -70,6 +68,11 @@ class DnasamplesController < ApplicationController
   # PUT /dnasamples/1
   # PUT /dnasamples/1.xml
   def update
+	if (params[:dnasample][:taxonomies]!='')
+		params[:dnasample][:taxonomies]=[Taxonomy.find(params[:dnasample][:taxonomies])]
+	else
+		params[:dnasample][:taxonomies]=[]
+	end
     @dnasample = Dnasample.find(params[:id])
 
     respond_to do |format|
