@@ -1,42 +1,60 @@
-<p>
-  <b>Dna accession:</b>
-  <%=h @dnasample.dna_accession %>
-</p>
+<h3>
+	Tissue Samples Obtained
+</h3>
+	<table div="left_table" border="0" cellspacing="5" cellpadding="5">
+		<tr>
+			<td>
+				<b>Belongs to the following Taxonomy Record </b><br>
+				<%= @dnasample.taxonomies.collect{|taxa|[taxa.id,taxa.genus,taxa.species,taxa.subspecies].join(" ")} %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<b>Date of sample collection</b><br>
+				<%= @dnasample.date%>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<b>DNA Accession #</b><br>
+				<%=@dnasample.dna_accession %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<b>Collector #</b>
+				<%= @dnasample.collector_number %>
+			</td>			
+		</tr>
+		<tr>
+			<td>
+				<b>Specimen Gender</b>
+				<%= @dnasample.specimen_gender %>		
+			</td>
+		</tr>
+		
 
-<p>
-  <b>Dnasample number:</b>
-  <%=h @dnasample.dnasample_number %>
-</p>
-
-<p>
-  <b>Date:</b>
-  <%=h @dnasample.date %>
-</p>
-
-<p>
-  <b>Method:</b>
-  <%=h @dnasample.method %>
-</p>
-
-<p>
-  <b>Elution volume:</b>
-  <%=h @dnasample.elution_volume %>
-</p>
-
-<p>
-  <b>Second elute:</b>
-  <%=h @dnasample.second_elute %>
-</p>
-
-<p>
-  <b>Second elute volumne:</b>
-  <%=h @dnasample.second_elute_volumne %>
-</p>
-
-<p>
-  <b>Reextracted:</b>
-  <%=h @dnasample.reextracted %>
-</p>
+	</table>
+	
+	<div id='map'><b>Specific Location of Collection</b><br>
+				<%= @dnasample.location_collected %><%= image_tag("http://maps.googleapis.com/maps/api/staticmap?center=#{@coords['lat']},#{@coords['lng']}&zoom=5&size=400x400&sensor=false") %></div>
+	<h3>
+		DNA Extraction
+	</h3>
+	<table border="0" cellspacing="5" cellpadding="5">
+		<tr>
+			<td>
+				<b>Extraction Method</b>
+				<%= @dnasample.method %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<b>Extraction Notes</b><br>
+				<%= @dnasample.extraction_notes %>
+			</td>
+		</tr>
+	</table>
 <hr/>
 <h5>Associate this DNA sample with a gene.</h5>
 <%= form_tag(:action => "submitgene") do %>
