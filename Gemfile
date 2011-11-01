@@ -9,6 +9,9 @@ gem 'sqlite3', '~> 1.3.4'
 # 
 gem 'json'
 gem 'devise'
+gem 'execjs'
+
+gem 'therubyracer'
 # 
 # # Gems used only for assets and not required
 # # in production environments by default.
@@ -18,7 +21,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :development, :test do
+group :development, :test, :production do
 	gem 'jquery-rails'
 	gem "prawn"
 	gem "prawnto"
