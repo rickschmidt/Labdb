@@ -15,4 +15,9 @@ test:
   pool: 5
   timeout: 5000
 
-
+production:
+  adapter: mysql
+  database: reddy
+  username: rails
+  password: f4cu3zcaqfhapjw29d8x
+  timeout: 5000
