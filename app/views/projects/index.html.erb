@@ -1,45 +1,31 @@
+<div class="projects_index">
 <h1>Projects</h1>
-<% form_tag projects_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
-	<%=hidden_field_tag :direction, params[:direction]%>
-	<%=hidden_field_tag :sort, params[:sort]%>
+<%= button_to 'Create', new_project_path,{:method=>:get,:class=>"button_create"} %>
 
-<% end %>
+	<table>
+		<tr id="header_row">
+	    	<th >Project Name</th>
+			<th >Date</th>
+						<th >Date</th>
+									<th >Date</th>
+												<th >Date</th>	
+		</tr>
+	
+	<%@projects.each do |pro| %>
+	<tr class="<%= cycle("even", "odd") %>">
+	    <td><%=h pro.project_name %></td>
+	    <td><%=h pro.date %></td>
+		    <td><%=h pro.date %></td>
+			    <td><%=h pro.date %></td>
+				    <td><%=h pro.date %></td>
+	    <td class="icons" id="show"><%= link_to image_tag("show.png", :border=>0), pro%></td>
+	 	<td class="icons"><%= link_to image_tag("edit.png", :border=>0), edit_project_path(pro)%></td>
+	 	<td class="icons"><%= link_to image_tag("delete.png", :border=>0), pro, :confirm => 'Are you sure?', :method => :delete %></td>
 
-
-
-</p>
-<%= link_to 'New Project', {:action=>"new"},{:method=>"get"}, {:class=>'newButton'} %>
-
-
-<table class="custom">
-  <tr >
-    <th class="custom" ></th>
-    <th class ="custom"></th>
-    <th class ="custom"></th>
-    <th class ="custom"></th>
-	<th stlye=></th>
-
-  </tr>                
-
-<% @projects.each do |project| %>
-  <tr class="<%= cycle("even", "odd") %>">
-    <td class='idfield'><%=h project.id %></td>
-    <td><%=h project.date %></td>
-    <td><%=h project.total_samples %></td>
-    <td><%=h project.updated_at %></td>
- 	<td class="icons"><%= link_to image_tag("show.png", :border=>0), project%></td>
- 	<td class="icons"><%= link_to image_tag("edit.png", :border=>0), edit_project_path(project)%></td>
- 	<td class="icons"><%= link_to image_tag("delete.png", :border=>0), project, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-
-
-
+	  </tr>
+	<% end %>
+	</table>
+	<%= will_paginate @projects %> 
+	Per Page: <%= select_tag :per_page, options_for_select([10,20,50,100,200], params[:per_page].to_i),
+	               :onchange => "if(this.value){window.location='?per_page='+this.value;}" %>
+</div>

@@ -15,16 +15,15 @@
 
 <%= button_to 'Create', new_dnasample_path,{:method=>:get,:class=>"button_create"} %>
 </div>
-<table class="custom">
-  <tr >
-    <th class="custom" id="small"><%= sortable 'dna_accession', 'DNA' %></th>
-    <th class="custom" id="small"><%= sortable 'dnasample_number', 'Sample #'%></th>
-    <th class="custom" id="small"><%= sortable 'date'%></th>
-    <th class="custom" id="small"><%= sortable 'method' %></th>
-    <th class="custom" id="small"><%= sortable 'first_elution_volume'%></th>
-    <th class="custom" id="small"><%= sortable 'second_elution_volume' , "Second Volume"%></th>
-    <th class="custom" id="small"><%= sortable 'Reextracted'%></th>
-  </tr>                
+<div class="dnasamples_index">
+<table >
+  <tr id="header_row">
+    <th >DNA Accession</th>
+    <th >Sample Number</th>
+    <th >Date</th>
+    <th >Method</th>
+
+  </tr>   
 
 
 <% @dnasamples.each do |dnasample| %>
@@ -33,16 +32,15 @@
     <td><%=h dnasample.dnasample_number %></td>
     <td><%=h dnasample.date %></td>
     <td><%=h dnasample.method %></td>
-    <td><%=h dnasample.first_elution_volume %></td>
-    <td><%=h dnasample.second_elution_volume %></td>
-    <td><%=h dnasample.reextracted %></td>
-    <td class="icons"><%= link_to image_tag("show.png", :border=>0), dnasample%></td>
+
+    <td class="icons" id="show"><%= link_to image_tag("show.png", :border=>0), dnasample%></td>
  	<td class="icons"><%= link_to image_tag("edit.png", :border=>0), edit_dnasample_path(dnasample)%></td>
  	<td class="icons"><%= link_to image_tag("delete.png", :border=>0), dnasample, :confirm => 'Are you sure?', :method => :delete %></td>
 
   </tr>
 <% end %>
 </table>
+</div>
 <%= will_paginate @dnasamples %> 
 Per Page: <%= select_tag :per_page, options_for_select([10,20,50,100,200], params[:per_page].to_i),
                :onchange => "if(this.value){window.location='?per_page='+this.value;}" %>

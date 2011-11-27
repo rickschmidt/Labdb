@@ -1,14 +1,15 @@
-<%= stylesheet_link_tag 'scaffold' %>
+<%= stylesheet_link_tag 'nav' %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
 	<head>
 		<title></title>
 	</head>
 	<body>
-		<div id="banner">
+		<div class="top">
+		<div class="banner">
 			<% if user_signed_in? %><%= link_to('Logout', '/logout')%><% else %><%= link_to('Login', new_user_session_path)  %><% end %>
 		</div>
-		<div id="header">
+		<div class="header">
 			<img src="/images/ReddyLab.png" width="100" height="75" style="float:left" hspace="20px">
 			<div id="title">
 				Reddy Lab
@@ -17,39 +18,19 @@
 				Experimental Database
 			</div>
 		</div>
-
-		<div class="shadow" id="nav">
-			<div id="background_banner">
-				<div class="noshadow" id="welcome">
-					<a href="/">WELCOME</a>
-				</div>
-				<div id="exper">
-					<a href="/projects">PROJECTS</a>
-				</div>
-				<div id="primers">
-					<a href="/primers">PRIMERS</a>
-				</div>
-				<div id="dna">
-					<a href="/dnasamples">DNA SAMPLES</a>
-				</div>
-				<div id="pcr">
-					<a href="/pcrs">PCR</a>
-				</div>
-				<div id="genes">
-					<a href="/genes">GENES</a>
-				</div>
-				<div id="tax">
-					<a href="/taxonomies">TAXONOMY</a>
-				</div>
-				<div id="profile">
-					<a href="/account">PROFILE</a>
-				</div>
-			</div>
 		</div>
-		<p>
-			<br>
-			<br>
-			<!-- </header> -->
-		</p>
+		<div class="horizontal">
+			<ul>
+								<li><a href="/">Welcome</a></li>
+				<li><a href="/projects">Projects</a></li>
+				<li><a href="/primers">Primers</a></li>
+				<li><a href="/dnasamples">DNA Samples</a></li>
+				<li><a href="/pcrs">PCR</a></li>
+								<li><a href="/genes">Genes</a></li>
+												<li><a href="/taxonomies">Taxonomy</a></li>
+			</ul>
+		</div>
+		
+	
 	</body>
 </html>

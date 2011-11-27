@@ -22,6 +22,7 @@ class PcrsController < ApplicationController
   def show
     @pcr = Pcr.find(params[:id])
     @pcrdnas=@pcr.dnasamples
+
     session[:pcrid]=@pcr.id
     respond_to do |format|
       format.html # show.html.erb
@@ -47,6 +48,12 @@ class PcrsController < ApplicationController
   # POST /pcrs
   # POST /pcrs.xml
   def create
+	if params[:pcr][:projects]!=''
+		params[:pcr][:projects]=[Project.find(params[:pcr][:projects])]
+	else
+		params[:pcr][:projects]=[]
+	end
+	
 	if params[:pcr][:dnasamples]!=''
 		params[:pcr][:dnasamples]=[Dnasample.find(params[:pcr][:dnasamples])]
 	else
@@ -77,6 +84,11 @@ class PcrsController < ApplicationController
   # PUT /pcrs/1
   # PUT /pcrs/1.xml
   def update
+	if params[:pcr][:projects]!=''
+		params[:pcr][:projects]=[Project.find(params[:pcr][:projects])]
+	else
+		params[:pcr][:projects]=[]
+	end
 	if params[:pcr][:dnasamples]!=''
 		params[:pcr][:dnasamples]=[Dnasample.find(params[:pcr][:dnasamples])]
 	else

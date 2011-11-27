@@ -1,25 +1,24 @@
+<div class="pcrs_index">
 <h1>PCR Reactions</h1>
 <%= button_to 'New pcr', new_pcr_path, {:method=>:get} %>
-<table class="custom">
-  <tr class="custom">
-	<th class="custom" id="lesswide"><%= sortable 'id' %></th>
-    <th class="custom"><%= sortable 'pcr_tube_number', 'Tube #' %></th>
-
-
-    <th class="custom"><%= sortable 'dna_amount', 'DNA Amount' %></th>
-
-    <th class="custom"><%= sortable 'total_samples', "Total Samples" %></th>
-
-    <th class="custom"><%= sortable 'total_worked' %></th>
-    <th class="custom"><%= sortable 'reamp' %></th>
-	<th class="custom"><%= sortable 'Success?' %></th>
-	<th class="custom"><%= sortable 'Ready?' %></th>
-    <th class="custom"><%= sortable 'date' %></th>
-
+<table>
+  <tr id="header_row">
+	<th>Id</th>
+    <th >Tube Number</th>
+       
+       
+    <th > DNA Amount</th>
+       
+    <th  >Total Samples</th>
+       
+    <th >Total Worked</th>
+    <th  >Reamp</th>
+	<th  >Success</th>
+	<th  >Ready?</th>
+    <th  >Date</th>
+       
   </tr>
-<%= will_paginate @pcrs %> 
-Per Page: <%= select_tag :per_page, options_for_select([10,20,50,100,200], params[:per_page].to_i),
-               :onchange => "if(this.value){window.location='?per_page='+this.value;}" %>
+
 <% @pcrs.each do |pcr| %>
   <tr class="<%= cycle("even", "odd") %>">
     <td class='idfield'><%= pcr.id %>
@@ -43,7 +42,10 @@ Per Page: <%= select_tag :per_page, options_for_select([10,20,50,100,200], param
   </tr>
 <% end %>
 </table>
-
+<%= will_paginate @pcrs %> 
+Per Page: <%= select_tag :per_page, options_for_select([10,20,50,100,200], params[:per_page].to_i),
+               :onchange => "if(this.value){window.location='?per_page='+this.value;}" %>
 <br />
 
-<%= link_to 'New pcr', new_pcr_path %>
+
+</div>

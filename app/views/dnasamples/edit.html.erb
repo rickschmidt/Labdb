@@ -17,7 +17,7 @@
 			<td>
 				<%= f.label "Species Taxonomy" %>
 				<%= f.select(:taxonomies, Taxonomy.all.collect{|taxa| [[taxa.family,taxa.genus,taxa.species,taxa.subspecies].join(" "),taxa.id]} ) %>
-				<p>Must reselect taxonomies-on TODO lsit</p>
+				<p>Must reselect taxonomies-on TODO list</p>
 				<!-- <%= f.fields_for @dnasample.taxonomies do |taxa2|  %>
 					 Name: <%= taxa2.select(:id, Taxonomy.all.collect{|taxa| [[taxa.family,taxa.genus,taxa.species,taxa.subspecies].join(" "),taxa.id]})  %>
 					<%end%> -->

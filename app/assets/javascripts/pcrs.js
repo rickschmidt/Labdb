@@ -6,6 +6,12 @@ jQuery.ajaxSetup({
 
 $(document).ready(function() {
 
+	$('.pcrs_index tr').click(function(e) {
+
+						selected=$(this).closest('tr').children('td.icons#show').children('a').attr("href");
+						window.location=selected;
+
+});
     $('select#pcr_dnasamples').live('change',
     function() {
         selected_id = $('select#pcr_dnasamples').val()

@@ -6,42 +6,17 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Reddy Lab:Primers</title>
-  <%= stylesheet_link_tag 'scaffold' %>
+  <%= stylesheet_link_tag 'primers' %>
+		<%= javascript_include_tag "jquery.js","jquery-ui-1.8.12.custom.min.js"  , "primers" %>
+		<%= csrf_meta_tag %>
 		
-		<style type="text/css">
-
-		#nav a{ float:left;
-			padding:10px; 
-			text-decoration:none; 
-			color:black; 
-			-moz-border-top-right-radius: 5px; 
-			border-top-left-radius: 5px;
-			-moz-border-top-right-radius: 5px; 
-			border-top-right-radius: 5px;
-
-			background: #7f7f7f; /* for non-css3 browsers */
-			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#CfCfCf', endColorstr='#7f7f7f'); /* for IE */
-			background: -webkit-gradient(linear, left top, left bottom, from(#CfCfCf), to(#7f7f7f)); /* for webkit browsers */
-			background: -moz-linear-gradient(top,  #CfCfCf,  #7f7f7f); /* for firefox 3.6+ */
-
-		border-bottom:5px solid #A2D87C;
-		}
-
-		#primers a{
-		background: #A2D87C; /* for non-css3 browsers */
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#CBECB4', endColorstr='#A2D87C'); /* for IE */
-		background: -webkit-gradient(linear, left top, left bottom, from(#CBECB4), to(#A2D87C)); /* for webkit browsers */
-		background: -moz-linear-gradient(top,  #CBECB4,  #A2D87C); /* for firefox 3.6+ */ 
-				-webkit-box-shadow:none;
-		}
-
-		</style>
+		
 
 </head>
 <body>
-<div id="wrapper">
 <%=render :partial => '/navigation'%>
-	<div id="content">
+<div id="wrapper">
+
 	<% if flash[:notice]%>
 
 <p style="color: green"><%= flash[:notice] %></p>
@@ -51,7 +26,7 @@
 	<%end%>
 <%= yield %>
 
-</div>
+
 </div>
 </body>
 </html>
