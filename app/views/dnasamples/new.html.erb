@@ -41,7 +41,7 @@
 		<tr>
 			<td>
 				<%= f.label "Sample Type" %>
-				<%= f.select(:sample_type,["Tissue","Skin","Feather","Blood","Other"]) %>
+				<%= f.select(:sample_type,["Tissue","Skin","Feather","Blood","Other"],{:include_blank=>true}) %>
 			</td>
 		</tr>
 		<tr>

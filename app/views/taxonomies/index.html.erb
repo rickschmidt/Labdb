@@ -1,3 +1,4 @@
+<div class="taxonomies_index">
 <h1>Taxonomy</h1>
 
 <% form_tag taxonomies_path, :method => 'get' do %>
@@ -9,36 +10,32 @@
 	<%=hidden_field_tag :sort, params[:sort]%>
 
 <% end %>
-<%= will_paginate @taxonomies %> 
+
 <%= button_to 'New taxonomy', new_taxonomy_path %>
-<table class="custom">
-  <tr class="custom">
-	<th></th>
-    <th class="custom"><%= sortable 'genus'%></th>
-    <th class="custom"><%= sortable 'species'%></th>
-    <th class="custom"><%= sortable 'subspecies'%></th>
-
-    <th class="custom"><%= sortable 'family'%></th>
-
-
-   
-
-    <th class="custom"><%= sortable 'countries'%></th>
+<table >
+  <tr id="header_row">
+	<th>ID</th>
+	<th>Family</th>
+	<th>Genus</th>
+	<th>Species</th>
+	<th>Subspecies</th>
+	<th>Country</th>
   </tr>
 
 <% @taxonomies.each do |taxonomy| %>
   <tr class="<%= cycle("even", "odd") %>">
-	<td class="idfield"><%=h taxonomy.id %></td>
+	<td ><%=h taxonomy.id %></td>
+		<td><%=h taxonomy.family %></td>
     <td ><%=h taxonomy.genus %></td>
     <td><%=h taxonomy.species %></td>
     <td><%=h taxonomy.subspecies %></td>
-	<td><%=h taxonomy.family %></td>
+
 
 
 
 
     <td><%=h taxonomy.countries %></td>
-    <td class="icons"><%= link_to image_tag("show.png", :border=>0), taxonomy%></td>
+    <td class="icons" id="show"><%= link_to image_tag("show.png", :border=>0), taxonomy%></td>
  	<td class="icons"><%= link_to image_tag("edit.png", :border=>0), edit_taxonomy_path(taxonomy)%></td>
  	<td class="icons"><%= link_to image_tag("delete.png", :border=>0), taxonomy, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
@@ -50,4 +47,4 @@ Per Page: <%= select_tag :per_page, options_for_select([10,20,50,100,200], param
 
 <br />
 
-<%= link_to 'New taxonomy', new_taxonomy_path %>
+</div>

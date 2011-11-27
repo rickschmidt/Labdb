@@ -1,7 +1,8 @@
+<div class="genes_index">
 <h1>Genes</h1>
 <%= button_to 'New gene', new_gene_path %>
-<table class="custom">
-  <tr>
+<table >
+  <tr id="header_row">
     <th class="custom">Genbank</th>
     <th class="custom">Locus</th>
     <th class="custom">Primerl</th>
@@ -14,7 +15,7 @@
     <td><%=h gene.locus %></td>
     <td><%=h gene.primerl %></td>
     <td><%=h gene.primerh %></td>
-	<td class="icons"><%= link_to image_tag("show.png", :border=>0), gene%></td>
+	<td class="icons" id="show"><%= link_to image_tag("show.png", :border=>0), gene%></td>
  	<td class="icons"><%= link_to image_tag("edit.png", :border=>0), edit_gene_path(gene)%></td>
  	<td class="icons"><%= link_to image_tag("delete.png", :border=>0), gene, :confirm => 'Are you sure?', :method => :delete %></td>
 
@@ -24,4 +25,4 @@
 
 <br />
 
-<%= link_to 'New gene', new_gene_path %>
+</div>

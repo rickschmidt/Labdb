@@ -6,42 +6,14 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Reddy Lab:Taxonomy</title>
-  <%= stylesheet_link_tag 'scaffold' %>
-		
-		<style type="text/css">
-
-		#nav a{ float:left;
-			padding:10px; 
-			text-decoration:none; 
-			color:black; 
-			-moz-border-top-right-radius: 5px; 
-			border-top-left-radius: 5px;
-			-moz-border-top-right-radius: 5px; 
-			border-top-right-radius: 5px;
-
-			background: #7f7f7f; /* for non-css3 browsers */
-			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#CfCfCf', endColorstr='#7f7f7f'); /* for IE */
-			background: -webkit-gradient(linear, left top, left bottom, from(#CfCfCf), to(#7f7f7f)); /* for webkit browsers */
-			background: -moz-linear-gradient(top,  #CfCfCf,  #7f7f7f); /* for firefox 3.6+ */
-
-		border-bottom:5px solid #599B90;
-		}
-
-		#tax a{
-		background: #599B90; /* for non-css3 browsers */
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9DCDC5', endColorstr='#599B90'); /* for IE */
-		background: -webkit-gradient(linear, left top, left bottom, from(#9DCDC5), to(#599B90)); /* for webkit browsers */
-		background: -moz-linear-gradient(top,  #9DCDC5,  #599B90); /* for firefox 3.6+ */ 
-				-webkit-box-shadow:none;
-		}
-
-		</style>
+  <%= stylesheet_link_tag 'taxonomies' %>
+		<%= javascript_include_tag "jquery.js","jquery-ui-1.8.12.custom.min.js"  , "taxonomies" %>		
 
 </head>
 <body>
-<div id="wrapper">
 <%=render :partial => '/navigation'%>
-	<div id="content">
+<div id="wrapper">
+
 	<% if flash[:notice]%>
 
 <p style="color: green"><%= flash[:notice] %></p>
@@ -51,7 +23,7 @@
 	<%end%>
 <%= yield %>
 
-</div>
+
 </div>
 </body>
 </html>
