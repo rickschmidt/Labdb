@@ -1,53 +1,78 @@
-<h1>New PCR Reaction</h1>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<h1>
+			New PCR Reaction
+		</h1>
+		<%= form_for(@pcr) do |f| %>
+		<table>
+			<tr>
+				<td>
+				<%= f.label "DNA Sample" %>
+				<%= f.select(:dnasamples, Dnasample.all.collect{|dna| [[dna.dna_accession,dna.dnasample_number].join(" "),dna.id]} ,options={:include_blank=>true}) %><%= link_to image_tag("show.png", :border=>0), {},{:id=>"sample_link"} %>
+				</td>
+				<td style="background-color:#ffffff;
+padding:4px;
+padding-bottom:40px;
+border:1px solid #d4d4d4;
+width:300px;
+font-size:100%;
+">DNA Sample Stats
+<div class="dnasample_stats"></div></td>
+			</tr>
+			
+			</table>
 
-<%= form_for(@pcr) do |f| %>
-  
-<table border="0" cellspacing="5" cellpadding="5">
-	<tr><td><%= f.label :date %><br />
-    <%= f.date_select :date %></td></tr>
-	
-	<tr><td>    <%= f.label :pcr_tube_number %><br />
-    <%= f.text_field :pcr_tube_number %></td>
-	<td> <%= f.label :gel_image %><br />
-    <%= f.text_field :gel_image %></td></tr>
+		<table>
 
-	<tr><td>    <%= f.label :anneal_temp %><br />
-    	<%= f.text_field :anneal_temp %></td>
-		<td><%= f.label :dna_amount %><br />
-    <%= f.text_field :dna_amount %></td>
-	</tr>
-	
-	<tr><td>    <%= f.label :conditions %><br />
-    <%= f.text_field :conditions %></td>
-	<td><%= f.label :total_samples %><br />
-    <%= f.text_field :total_samples %></td>
-</tr>
+			
+			 <tr>
+				<td>
+					<%= f.label :h2o %><br>
+					<%= f.text_field :h2o %>
+				</td>
+				<td>
+					<%= f.label :buffer %><br>
+					<%= f.text_field :buffer %>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<%= f.label :mgcl2 %><br>
+					<%= f.text_field :mgcl2 %>
+				</td>
+				<td>
+					<%= f.label :bsa %><br>
+					<%= f.text_field :bsa %>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<%= f.label :taq %><br>
+					<%= f.text_field :taq %>
+				</td>
 
+				<td>
+					<%= f.label :dntps %><br>
+					<%= f.text_field :dntps %>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<%= f.label :notes %><br>
+					<%= f.text_field :notes %>
+				</td>
+			</tr>
 
-	<tr><td> <%= f.label :notes %><br />
-    <%= f.text_field :notes %></td>
-	<td><%= f.label :reamp %><br />
-    <%= f.text_field :reamp %></td>
-	</tr>
-
-	<tr><td>    <%= f.label :total_worked %><br />
-    <%= f.text_field :total_worked %></td>
-	<td><%= f.label :denature %><br />
-    <%= f.text_field :denature %></td>
-</tr>
-	<tr><td><%= f.label :extension %><br />
-    <%= f.text_field :extension %></td>
-	<td>  <%= f.label :cycle %><br />
-    <%= f.text_field :cycle %></td></tr>
-
-
-</table>
-<p>	<%=render :partial => '/primerselect'%></p>
-
-  
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
-<% end %>
-
-<%= link_to 'Back', pcrs_path %>
+		</table>
+		<p>
+			<%=render :partial => '/primerselect'%>
+		</p>
+		<p>
+			<%= f.submit 'Create' %>
+		</p><% end %><%= link_to 'Back', pcrs_path %>
+	</body>
+</html>

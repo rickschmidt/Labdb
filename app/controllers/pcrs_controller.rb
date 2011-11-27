@@ -33,7 +33,6 @@ class PcrsController < ApplicationController
   # GET /pcrs/new.xml
   def new
     @pcr = Pcr.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @pcr }
@@ -48,7 +47,13 @@ class PcrsController < ApplicationController
   # POST /pcrs
   # POST /pcrs.xml
   def create
-    @pcr = Pcr.new(params[:pcr])
+	if params[:pcr][:dnasamples]!=''
+		params[:pcr][:dnasamples]=[Dnasample.find(params[:pcr][:dnasamples])]
+	else
+		params[:pcr][:dnasmaples]=[]
+	end
+	 
+	@pcr = Pcr.new(params[:pcr])
      if params[:gene][:primerl]!=""
         @primer=Primer.find(params[:gene][:primerl])
         @pcr.primerl=@primer.sequence
@@ -72,6 +77,11 @@ class PcrsController < ApplicationController
   # PUT /pcrs/1
   # PUT /pcrs/1.xml
   def update
+	if params[:pcr][:dnasamples]!=''
+		params[:pcr][:dnasamples]=[Dnasample.find(params[:pcr][:dnasamples])]
+	else
+		params[:pcr][:dnasmaples]=[]
+	end
     @pcr = Pcr.find(params[:id])
       
      if params[:gene][:primerl]!=""
@@ -147,6 +157,15 @@ class PcrsController < ApplicationController
         end 
      
  end
+
+def getdnasamplestats
+	@dnasample=Dnasample.find(params[:id])
+	@taxonomy=@dnasample.taxonomies.first
+	logger.debug "GETDNASAMPLESTATS"
+	respond_to do |with|
+		with.js
+	end
+end
   private 
    def sort_column
        Pcr.column_names.include?(params[:sort]) ? params[:sort] : "date"

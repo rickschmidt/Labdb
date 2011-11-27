@@ -1,5 +1,5 @@
 <h1>PCR Reactions</h1>
-<%= button_to 'New pcr', new_pcr_path %>
+<%= button_to 'New pcr', new_pcr_path, {:method=>:get} %>
 <table class="custom">
   <tr class="custom">
 	<th class="custom" id="lesswide"><%= sortable 'id' %></th>

@@ -3,26 +3,21 @@
 </h1>
 
 <h3>
-	Obtain Tissue Samples
+	General 
 </h3>
+
 <%= form_for(@dnasample) do |f| %>
 	<table border="0" cellspacing="5" cellpadding="5">
 		<tr>
 			<td>
-				<%= f.label "Which taxonomy does this belong to?" %>
-				<%= f.select(:taxonomies, Taxonomy.all.collect{|taxa| [[taxa.genus,taxa.species,taxa.subspecies].join(" "),taxa.id]} ,options={:include_blank=>true}) %>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<%= f.label "Date of sample collection"%><br>
-				<%= f.date_select :date%>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<%= f.label :dna_accession, "DNA Accession #" %><br>
+				<%= f.label "Accession Number" %>
 				<%= f.text_field :dna_accession %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= f.label "Species Taxonomy" %>
+				<%= f.select(:taxonomies, Taxonomy.all.collect{|taxa| [[taxa.family,taxa.genus,taxa.species,taxa.subspecies].join(" "),taxa.id]} ,options={:include_blank=>true}) %>
 			</td>
 		</tr>
 		<tr>
@@ -30,10 +25,6 @@
 				<%= f.label "Collector Number" %>
 				<%= f.text_field :collector_number %>
 			</td>			
-			<td>
-				<%= f.label "Specimen Gender" %>
-				<%= f.select(:specimen_gender,["Male","Female"],{:include_blank=>true}) %>
-			</td>
 		</tr>
 		<tr>
 			<td>
@@ -41,16 +32,58 @@
 				<%= f.text_field :location_collected %>
 			</td>
 		</tr>
+		<tr>
+			<td>
+				<%= f.label "Museum" %>
+				<%= f.text_field :museum %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= f.label "Sample Type" %>
+				<%= f.select(:sample_type,["Tissue","Skin","Feather","Blood","Other"]) %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= f.label "Specimen Gender" %>
+				<%= f.select(:specimen_gender,["Male","Female","Unknown"],{:include_blank=>true}) %>
+			</td>
+		</tr>
 
 	</table>
 	<h3>
-		DNA Extraction
+		Extraction 
 	</h3>
 	<table border="0" cellspacing="5" cellpadding="5">
 		<tr>
 			<td>
+				<%= f.label :dna_accession, "Extraction Number (usually museum and accession number)" %><br>
+				<%= f.text_field :dna_accession %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= f.label "Date of extraction"%><br>
+				<%= f.date_select :date, :start_year=>Date.today.year-100%>
+			</td>
+		</tr>
+		<tr>
+			<td>
 				<%= f.label "Extraction Method" %>
 				<%= f.select(:method,["Qiagen DNeasy Blood & Tissue Kit","GeneClean Kit for Ancient DNA","Phenol Chloroform Extraction","Omega SQ Tissue DNA Kit"],{:include_blank=>true}) %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= f.label "First Extraction Volume" %>
+				<%= f.text_field :first_elution_volume %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= f.label "Second Extraction Volume" %>
+				<%= f.text_field :second_elution_volume %>
 			</td>
 		</tr>
 		<tr>

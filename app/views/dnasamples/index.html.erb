@@ -1,29 +1,40 @@
 <h1>DNA Samples</h1>
+<div class="index_information">
+<table style="position:relative;margin-left:500px">
+	<tr>
+		<th>Accession </th>
+		<th>Extraction</th>
+	</tr>
+	<% @recent.each do |r| %>
+	<tr>
+		<td><%= r.dna_accession %></td>
+		<td><%= r.dnasample_number %></td>
+	</tr>
+	<%end%>
+</table>
 
+<%= button_to 'Create', new_dnasample_path,{:method=>:get,:class=>"button_create"} %>
+</div>
 <table class="custom">
   <tr >
     <th class="custom" id="small"><%= sortable 'dna_accession', 'DNA' %></th>
     <th class="custom" id="small"><%= sortable 'dnasample_number', 'Sample #'%></th>
     <th class="custom" id="small"><%= sortable 'date'%></th>
     <th class="custom" id="small"><%= sortable 'method' %></th>
-    <th class="custom" id="small"><%= sortable 'elution_volume'%></th>
-    <th class="custom" id="small"><%= sortable 'second_elute'%></th>
-    <th class="custom" id="small"><%= sortable 'second_elute_volumne' , "Second Volume"%></th>
+    <th class="custom" id="small"><%= sortable 'first_elution_volume'%></th>
+    <th class="custom" id="small"><%= sortable 'second_elution_volume' , "Second Volume"%></th>
     <th class="custom" id="small"><%= sortable 'Reextracted'%></th>
   </tr>                
-<%= link_to 'New dnasample', new_dnasample_path %>
-<%= will_paginate @dnasamples %> 
-Per Page: <%= select_tag :per_page, options_for_select([10,20,50,100,200], params[:per_page].to_i),
-               :onchange => "if(this.value){window.location='?per_page='+this.value;}" %>
+
+
 <% @dnasamples.each do |dnasample| %>
   <tr class="<%= cycle("even", "odd") %>">
     <td><%=h dnasample.dna_accession %></td>
     <td><%=h dnasample.dnasample_number %></td>
     <td><%=h dnasample.date %></td>
     <td><%=h dnasample.method %></td>
-    <td><%=h dnasample.elution_volume %></td>
-    <td><%=h dnasample.second_elute %></td>
-    <td><%=h dnasample.second_elute_volumne %></td>
+    <td><%=h dnasample.first_elution_volume %></td>
+    <td><%=h dnasample.second_elution_volume %></td>
     <td><%=h dnasample.reextracted %></td>
     <td class="icons"><%= link_to image_tag("show.png", :border=>0), dnasample%></td>
  	<td class="icons"><%= link_to image_tag("edit.png", :border=>0), edit_dnasample_path(dnasample)%></td>
@@ -32,7 +43,8 @@ Per Page: <%= select_tag :per_page, options_for_select([10,20,50,100,200], param
   </tr>
 <% end %>
 </table>
-
+<%= will_paginate @dnasamples %> 
+Per Page: <%= select_tag :per_page, options_for_select([10,20,50,100,200], params[:per_page].to_i),
+               :onchange => "if(this.value){window.location='?per_page='+this.value;}" %>
 <br />
 
-<%= link_to 'New dnasample', new_dnasample_path %>

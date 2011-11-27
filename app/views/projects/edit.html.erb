@@ -1,6 +1,6 @@
 <h1>Editing</h1>
 
-<%= form_for(@experiment) do |f| %>
+<%= form_for(@project) do |f| %>
    
 <h3>Premix</h3>
 	<table border="0" cellspacing="5" cellpadding="5">
@@ -10,8 +10,8 @@
     			<%= f.date_select :date %>
 			</td>
 			<td>
-				<%= f.label :experiment_number %><br/>
-		    	<%= f.text_field :experiment_number, :size=>20 %>
+				<%= f.label :project_name %><br/>
+		    	<%= f.text_field :project_name, :size=>20 %>
 			</td>
 		</tr>
    
@@ -99,5 +99,5 @@
 
 <% end %>
 
-<%= link_to 'Show', @experiment %> |
-<%= link_to 'Back', experiments_path %>
+<%= link_to 'Show', @project %> |
+<%= link_to 'Back', projects_path %>

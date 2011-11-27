@@ -1,71 +1,55 @@
-
 <%= stylesheet_link_tag 'scaffold' %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<div id="banner">
+			<% if user_signed_in? %><%= link_to('Logout', '/logout')%><% else %><%= link_to('Login', new_user_session_path)  %><% end %>
+		</div>
+		<div id="header">
+			<img src="/images/ReddyLab.png" width="100" height="75" style="float:left" hspace="20px">
+			<div id="title">
+				Reddy Lab
+			</div>
+			<div id="subtitle">
+				Experimental Database
+			</div>
+		</div>
 
-<div id="banner">
-
-<% if user_signed_in? %>
-
-  <%= link_to('Logout', '/logout')%>
-
-<% else %>
-
-  <%= link_to('Login', new_user_session_path)  %>  
-
-<% end %>
-	
-	</div>	
-
-<div id="header">
-
-
-
-
-<img src="/images/ReddyLab.png" width="100" height="75", style="float:left" , hspace="20px" >	
-	<div id="title">
-
-		Reddy Lab
-	</div>
-	<div id="subtitle">
-		Experimental Database
-	</div>
-	</div>
-
-	
-	<div class="shadow" id="nav">
-	<div class="noshadow" id="welcome"> <a href="/">WELCOME</a>
-	</div>
-
-	<div  id="exper"> <a href="/experiments">EXPERIMENTS</a>
-	</div>
-
-	<div  id="primers"> <a href="/primers">PRIMERS</a>
-	</div>
-
-	<div  id="dna"> <a href="/dnasamples">DNA SAMPLES</a>
-	</div>
-
-	<div  id="pcr"> <a href="/pcrs">PCR</a>
-	</div>
-
-	<div  id="genes"> <a href="/genes">GENES</a>
-	</div>
-
-	<div  id="tax"> <a href="/taxonomies">TAXONOMY</a>
-	</div>
-
-	<div   id="profile"><a href="/account"> PROFILE</a>
-	</div>
-	</div>
-	<br/>
-	<br/>
-	
-	
-
-
-
-
-
-
-	<!-- </header> -->
-	
-
+		<div class="shadow" id="nav">
+			<div id="background_banner">
+				<div class="noshadow" id="welcome">
+					<a href="/">WELCOME</a>
+				</div>
+				<div id="exper">
+					<a href="/projects">PROJECTS</a>
+				</div>
+				<div id="primers">
+					<a href="/primers">PRIMERS</a>
+				</div>
+				<div id="dna">
+					<a href="/dnasamples">DNA SAMPLES</a>
+				</div>
+				<div id="pcr">
+					<a href="/pcrs">PCR</a>
+				</div>
+				<div id="genes">
+					<a href="/genes">GENES</a>
+				</div>
+				<div id="tax">
+					<a href="/taxonomies">TAXONOMY</a>
+				</div>
+				<div id="profile">
+					<a href="/account">PROFILE</a>
+				</div>
+			</div>
+		</div>
+		<p>
+			<br>
+			<br>
+			<!-- </header> -->
+		</p>
+	</body>
+</html>

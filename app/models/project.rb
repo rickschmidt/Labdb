@@ -1,9 +1,9 @@
-class Experiment < ActiveRecord::Base
+class Project < ActiveRecord::Base
   has_and_belongs_to_many :pcrs
   has_and_belongs_to_many :dnasamples#, :through=>:pcrs
   
-  validates_presence_of :experiment_number
-  validates_uniqueness_of :experiment_number
+  validates_presence_of :project_name
+  validates_uniqueness_of :project_name
   
   
   

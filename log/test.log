@@ -317,3 +317,271 @@ Processing TaxonomiesController#update (for 0.0.0.0 at 2011-01-26 19:06:54) [PUT
   [4;36;1mTaxonomy Load (0.2ms)[0m   [0;1mSELECT * FROM "taxonomies" WHERE ("taxonomies"."id" = 980190962) [0m
 Redirected to http://test.host/taxonomies/980190962
 Completed in 2ms (DB: 0) | 302 Found [http://test.host/taxonomies/980190962?]
+  Processing by ProjectsController#create as HTML
+Completed 500 Internal Server Error in 1ms
+  Processing by ProjectsController#create as HTML
+Completed 500 Internal Server Error in 1ms
+  Processing by DnasamplesController#create as HTML
+Completed 500 Internal Server Error in 1ms
+  Processing by DnasamplesController#new as HTML
+Rendered dnasamples/new.html.erb within layouts/dnasamples (2.9ms)
+Completed 200 OK in 83ms (Views: 82.2ms | ActiveRecord: 0.0ms)
+  Processing by DnasamplesController#create as HTML
+Completed 500 Internal Server Error in 0ms
+  Processing by DnasamplesController#create as HTML
+Completed 500 Internal Server Error in 0ms
+  Processing by DnasamplesController#create as HTML
+  Parameters: {"dnasample"=>{"project_name"=>"rspec"}}
+Completed 404 Not Found in 1ms
+  Processing by DnasamplesController#create as HTML
+  Parameters: {"dnasample"=>{"project_name"=>"rspec"}}
+Completed 404 Not Found in 1ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"dnasample"=>{"project_name"=>"rspec"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT 1 FROM "projects" WHERE "projects"."project_name" = '' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 200 OK in 129ms (Views: 48.1ms | ActiveRecord: 0.7ms)
+  Processing by DnasamplesController#create as HTML
+  Parameters: {"dnasample"=>{"project_name"=>"rspec"}}
+Completed 404 Not Found in 1ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"rspec"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT 1 FROM "projects" WHERE "projects"."project_name" = 'rspec' LIMIT 1
+  [1m[36mSQL (37.9ms)[0m  [1mINSERT INTO "projects" ("anneal", "bsa", "buffer", "created_at", "date", "dna", "dna_amount", "dntps", "h2o", "mgcl2", "notes", "primerh", "primerh_amount", "primerl", "primerl_amount", "project_name", "taq", "total", "total_samples", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["anneal", nil], ["bsa", nil], ["buffer", nil], ["created_at", Fri, 25 Nov 2011 19:03:30 CST -06:00], ["date", nil], ["dna", nil], ["dna_amount", nil], ["dntps", nil], ["h2o", nil], ["mgcl2", nil], ["notes", nil], ["primerh", nil], ["primerh_amount", nil], ["primerl", nil], ["primerl_amount", nil], ["project_name", "rspec"], ["taq", nil], ["total", nil], ["total_samples", nil], ["updated_at", Fri, 25 Nov 2011 19:03:30 CST -06:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects/1
+Completed 302 Found in 80ms
+  Processing by DnasamplesController#create as HTML
+  Parameters: {"dnasample"=>{"project_name"=>"rspec"}}
+Completed 404 Not Found in 1ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"rspec"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT 1 FROM "projects" WHERE "projects"."project_name" = 'rspec' LIMIT 1
+  [1m[36mSQL (6.9ms)[0m  [1mINSERT INTO "projects" ("anneal", "bsa", "buffer", "created_at", "date", "dna", "dna_amount", "dntps", "h2o", "mgcl2", "notes", "primerh", "primerh_amount", "primerl", "primerl_amount", "project_name", "taq", "total", "total_samples", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["anneal", nil], ["bsa", nil], ["buffer", nil], ["created_at", Fri, 25 Nov 2011 19:16:16 CST -06:00], ["date", nil], ["dna", nil], ["dna_amount", nil], ["dntps", nil], ["h2o", nil], ["mgcl2", nil], ["notes", nil], ["primerh", nil], ["primerh_amount", nil], ["primerl", nil], ["primerl_amount", nil], ["project_name", "rspec"], ["taq", nil], ["total", nil], ["total_samples", nil], ["updated_at", Fri, 25 Nov 2011 19:16:16 CST -06:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects/1
+Completed 302 Found in 56ms
+  Processing by DnasamplesController#create as HTML
+  Parameters: {"dnasample"=>{"project_name"=>"rspec"}}
+Completed 404 Not Found in 1ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"rspec"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT 1 FROM "projects" WHERE "projects"."project_name" = 'rspec' LIMIT 1
+  [1m[36mSQL (5.9ms)[0m  [1mINSERT INTO "projects" ("anneal", "bsa", "buffer", "created_at", "date", "dna", "dna_amount", "dntps", "h2o", "mgcl2", "notes", "primerh", "primerh_amount", "primerl", "primerl_amount", "project_name", "taq", "total", "total_samples", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["anneal", nil], ["bsa", nil], ["buffer", nil], ["created_at", Fri, 25 Nov 2011 19:23:23 CST -06:00], ["date", nil], ["dna", nil], ["dna_amount", nil], ["dntps", nil], ["h2o", nil], ["mgcl2", nil], ["notes", nil], ["primerh", nil], ["primerh_amount", nil], ["primerl", nil], ["primerl_amount", nil], ["project_name", "rspec"], ["taq", nil], ["total", nil], ["total_samples", nil], ["updated_at", Fri, 25 Nov 2011 19:23:23 CST -06:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects/1
+Completed 302 Found in 49ms
+  Processing by DnasamplesController#create as HTML
+  Parameters: {"dnasample"=>{"project_name"=>"rspec"}}
+Completed 404 Not Found in 1ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"rspec"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT 1 FROM "projects" WHERE "projects"."project_name" = 'rspec' LIMIT 1
+  [1m[36mSQL (6.5ms)[0m  [1mINSERT INTO "projects" ("anneal", "bsa", "buffer", "created_at", "date", "dna", "dna_amount", "dntps", "h2o", "mgcl2", "notes", "primerh", "primerh_amount", "primerl", "primerl_amount", "project_name", "taq", "total", "total_samples", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["anneal", nil], ["bsa", nil], ["buffer", nil], ["created_at", Fri, 25 Nov 2011 19:30:12 CST -06:00], ["date", nil], ["dna", nil], ["dna_amount", nil], ["dntps", nil], ["h2o", nil], ["mgcl2", nil], ["notes", nil], ["primerh", nil], ["primerh_amount", nil], ["primerl", nil], ["primerl_amount", nil], ["project_name", "rspec"], ["taq", nil], ["total", nil], ["total_samples", nil], ["updated_at", Fri, 25 Nov 2011 19:30:12 CST -06:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects/1
+Completed 302 Found in 57ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"rspec"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT 1 FROM "projects" WHERE "projects"."project_name" = 'rspec' LIMIT 1
+  [1m[36mSQL (6.2ms)[0m  [1mINSERT INTO "projects" ("anneal", "bsa", "buffer", "created_at", "date", "dna", "dna_amount", "dntps", "h2o", "mgcl2", "notes", "primerh", "primerh_amount", "primerl", "primerl_amount", "project_name", "taq", "total", "total_samples", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["anneal", nil], ["bsa", nil], ["buffer", nil], ["created_at", Fri, 25 Nov 2011 21:24:15 CST -06:00], ["date", nil], ["dna", nil], ["dna_amount", nil], ["dntps", nil], ["h2o", nil], ["mgcl2", nil], ["notes", nil], ["primerh", nil], ["primerh_amount", nil], ["primerl", nil], ["primerl_amount", nil], ["project_name", "rspec"], ["taq", nil], ["total", nil], ["total_samples", nil], ["updated_at", Fri, 25 Nov 2011 21:24:15 CST -06:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects/1
+Completed 302 Found in 49ms
+  Processing by DnasamplesController#create as HTML
+  Parameters: {"dnasample"=>{"project_name"=>"rspec"}}
+Completed 404 Not Found in 0ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"rspec"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT 1 FROM "projects" WHERE "projects"."project_name" = 'rspec' LIMIT 1
+  [1m[36mSQL (6.6ms)[0m  [1mINSERT INTO "projects" ("anneal", "bsa", "buffer", "created_at", "date", "dna", "dna_amount", "dntps", "h2o", "mgcl2", "notes", "primerh", "primerh_amount", "primerl", "primerl_amount", "project_name", "taq", "total", "total_samples", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["anneal", nil], ["bsa", nil], ["buffer", nil], ["created_at", Fri, 25 Nov 2011 21:25:08 CST -06:00], ["date", nil], ["dna", nil], ["dna_amount", nil], ["dntps", nil], ["h2o", nil], ["mgcl2", nil], ["notes", nil], ["primerh", nil], ["primerh_amount", nil], ["primerl", nil], ["primerl_amount", nil], ["project_name", "rspec"], ["taq", nil], ["total", nil], ["total_samples", nil], ["updated_at", Fri, 25 Nov 2011 21:25:08 CST -06:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects/1
+Completed 302 Found in 52ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"rspec"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT 1 FROM "projects" WHERE "projects"."project_name" = 'rspec' LIMIT 1
+  [1m[36mSQL (5.9ms)[0m  [1mINSERT INTO "projects" ("anneal", "bsa", "buffer", "created_at", "date", "dna", "dna_amount", "dntps", "h2o", "mgcl2", "notes", "primerh", "primerh_amount", "primerl", "primerl_amount", "project_name", "taq", "total", "total_samples", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["anneal", nil], ["bsa", nil], ["buffer", nil], ["created_at", Fri, 25 Nov 2011 21:36:02 CST -06:00], ["date", nil], ["dna", nil], ["dna_amount", nil], ["dntps", nil], ["h2o", nil], ["mgcl2", nil], ["notes", nil], ["primerh", nil], ["primerh_amount", nil], ["primerl", nil], ["primerl_amount", nil], ["project_name", "rspec"], ["taq", nil], ["total", nil], ["total_samples", nil], ["updated_at", Fri, 25 Nov 2011 21:36:02 CST -06:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects/1
+Completed 302 Found in 49ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"rspec"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT 1 FROM "projects" WHERE "projects"."project_name" = 'rspec' LIMIT 1
+  [1m[36mSQL (6.0ms)[0m  [1mINSERT INTO "projects" ("anneal", "bsa", "buffer", "created_at", "date", "dna", "dna_amount", "dntps", "h2o", "mgcl2", "notes", "primerh", "primerh_amount", "primerl", "primerl_amount", "project_name", "taq", "total", "total_samples", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["anneal", nil], ["bsa", nil], ["buffer", nil], ["created_at", Fri, 25 Nov 2011 21:36:18 CST -06:00], ["date", nil], ["dna", nil], ["dna_amount", nil], ["dntps", nil], ["h2o", nil], ["mgcl2", nil], ["notes", nil], ["primerh", nil], ["primerh_amount", nil], ["primerl", nil], ["primerl_amount", nil], ["project_name", "rspec"], ["taq", nil], ["total", nil], ["total_samples", nil], ["updated_at", Fri, 25 Nov 2011 21:36:18 CST -06:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects/1
+Completed 302 Found in 48ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"rspec"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "projects" WHERE "projects"."project_name" = 'rspec' LIMIT 1
+  [1m[36mSQL (6.1ms)[0m  [1mINSERT INTO "projects" ("anneal", "bsa", "buffer", "created_at", "date", "dna", "dna_amount", "dntps", "h2o", "mgcl2", "notes", "primerh", "primerh_amount", "primerl", "primerl_amount", "project_name", "taq", "total", "total_samples", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["anneal", nil], ["bsa", nil], ["buffer", nil], ["created_at", Fri, 25 Nov 2011 21:37:45 CST -06:00], ["date", nil], ["dna", nil], ["dna_amount", nil], ["dntps", nil], ["h2o", nil], ["mgcl2", nil], ["notes", nil], ["primerh", nil], ["primerh_amount", nil], ["primerl", nil], ["primerl_amount", nil], ["project_name", "rspec"], ["taq", nil], ["total", nil], ["total_samples", nil], ["updated_at", Fri, 25 Nov 2011 21:37:45 CST -06:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects/1
+Completed 302 Found in 44ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"rspec"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "projects" WHERE "projects"."project_name" = 'rspec' LIMIT 1
+  [1m[36mSQL (6.4ms)[0m  [1mINSERT INTO "projects" ("anneal", "bsa", "buffer", "created_at", "date", "dna", "dna_amount", "dntps", "h2o", "mgcl2", "notes", "primerh", "primerh_amount", "primerl", "primerl_amount", "project_name", "taq", "total", "total_samples", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["anneal", nil], ["bsa", nil], ["buffer", nil], ["created_at", Fri, 25 Nov 2011 21:44:42 CST -06:00], ["date", nil], ["dna", nil], ["dna_amount", nil], ["dntps", nil], ["h2o", nil], ["mgcl2", nil], ["notes", nil], ["primerh", nil], ["primerh_amount", nil], ["primerl", nil], ["primerl_amount", nil], ["project_name", "rspec"], ["taq", nil], ["total", nil], ["total_samples", nil], ["updated_at", Fri, 25 Nov 2011 21:44:42 CST -06:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects/1
+Completed 302 Found in 44ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"rspec"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT 1 FROM "projects" WHERE "projects"."project_name" = 'rspec' LIMIT 1
+  [1m[36mSQL (7.8ms)[0m  [1mINSERT INTO "projects" ("anneal", "bsa", "buffer", "created_at", "date", "dna", "dna_amount", "dntps", "h2o", "mgcl2", "notes", "primerh", "primerh_amount", "primerl", "primerl_amount", "project_name", "taq", "total", "total_samples", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["anneal", nil], ["bsa", nil], ["buffer", nil], ["created_at", Fri, 25 Nov 2011 21:45:19 CST -06:00], ["date", nil], ["dna", nil], ["dna_amount", nil], ["dntps", nil], ["h2o", nil], ["mgcl2", nil], ["notes", nil], ["primerh", nil], ["primerh_amount", nil], ["primerl", nil], ["primerl_amount", nil], ["project_name", "rspec"], ["taq", nil], ["total", nil], ["total_samples", nil], ["updated_at", Fri, 25 Nov 2011 21:45:19 CST -06:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects/1
+Completed 302 Found in 46ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"rspec"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "projects" WHERE "projects"."project_name" = 'rspec' LIMIT 1
+  [1m[36mSQL (8.5ms)[0m  [1mINSERT INTO "projects" ("anneal", "bsa", "buffer", "created_at", "date", "dna", "dna_amount", "dntps", "h2o", "mgcl2", "notes", "primerh", "primerh_amount", "primerl", "primerl_amount", "project_name", "taq", "total", "total_samples", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["anneal", nil], ["bsa", nil], ["buffer", nil], ["created_at", Fri, 25 Nov 2011 21:45:53 CST -06:00], ["date", nil], ["dna", nil], ["dna_amount", nil], ["dntps", nil], ["h2o", nil], ["mgcl2", nil], ["notes", nil], ["primerh", nil], ["primerh_amount", nil], ["primerl", nil], ["primerl_amount", nil], ["project_name", "rspec"], ["taq", nil], ["total", nil], ["total_samples", nil], ["updated_at", Fri, 25 Nov 2011 21:45:53 CST -06:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects/1
+Completed 302 Found in 51ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"rspec"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "projects" WHERE "projects"."project_name" = 'rspec' LIMIT 1
+  [1m[36mSQL (5.8ms)[0m  [1mINSERT INTO "projects" ("anneal", "bsa", "buffer", "created_at", "date", "dna", "dna_amount", "dntps", "h2o", "mgcl2", "notes", "primerh", "primerh_amount", "primerl", "primerl_amount", "project_name", "taq", "total", "total_samples", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["anneal", nil], ["bsa", nil], ["buffer", nil], ["created_at", Fri, 25 Nov 2011 21:46:26 CST -06:00], ["date", nil], ["dna", nil], ["dna_amount", nil], ["dntps", nil], ["h2o", nil], ["mgcl2", nil], ["notes", nil], ["primerh", nil], ["primerh_amount", nil], ["primerl", nil], ["primerl_amount", nil], ["project_name", "rspec"], ["taq", nil], ["total", nil], ["total_samples", nil], ["updated_at", Fri, 25 Nov 2011 21:46:26 CST -06:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects/1
+Completed 302 Found in 49ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"rspec"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "projects" WHERE "projects"."project_name" = 'rspec' LIMIT 1
+  [1m[36mSQL (5.9ms)[0m  [1mINSERT INTO "projects" ("anneal", "bsa", "buffer", "created_at", "date", "dna", "dna_amount", "dntps", "h2o", "mgcl2", "notes", "primerh", "primerh_amount", "primerl", "primerl_amount", "project_name", "taq", "total", "total_samples", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["anneal", nil], ["bsa", nil], ["buffer", nil], ["created_at", Fri, 25 Nov 2011 21:50:17 CST -06:00], ["date", nil], ["dna", nil], ["dna_amount", nil], ["dntps", nil], ["h2o", nil], ["mgcl2", nil], ["notes", nil], ["primerh", nil], ["primerh_amount", nil], ["primerl", nil], ["primerl_amount", nil], ["project_name", "rspec"], ["taq", nil], ["total", nil], ["total_samples", nil], ["updated_at", Fri, 25 Nov 2011 21:50:17 CST -06:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects/1
+Completed 302 Found in 45ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"rspec"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT 1 FROM "projects" WHERE "projects"."project_name" = 'rspec' LIMIT 1
+  [1m[36mSQL (13.4ms)[0m  [1mINSERT INTO "projects" ("anneal", "bsa", "buffer", "created_at", "date", "dna", "dna_amount", "dntps", "h2o", "mgcl2", "notes", "primerh", "primerh_amount", "primerl", "primerl_amount", "project_name", "taq", "total", "total_samples", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["anneal", nil], ["bsa", nil], ["buffer", nil], ["created_at", Fri, 25 Nov 2011 22:00:45 CST -06:00], ["date", nil], ["dna", nil], ["dna_amount", nil], ["dntps", nil], ["h2o", nil], ["mgcl2", nil], ["notes", nil], ["primerh", nil], ["primerh_amount", nil], ["primerl", nil], ["primerl_amount", nil], ["project_name", "rspec"], ["taq", nil], ["total", nil], ["total_samples", nil], ["updated_at", Fri, 25 Nov 2011 22:00:45 CST -06:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/projects/1
+Completed 302 Found in 35ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"rspec"}}
+Completed 500 Internal Server Error in 0ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{}}
+Completed 500 Internal Server Error in 498ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{}}
+Redirected to http://test.host/projects/1001
+Completed 302 Found in 3ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{}}
+Redirected to http://test.host/projects/1001
+Completed 302 Found in 4ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{}}
+Redirected to http://test.host/projects/1001
+Completed 302 Found in 3ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{}}
+Redirected to http://test.host/projects/1001
+Completed 302 Found in 7ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{}}
+Redirected to http://test.host/projects/1001
+Completed 302 Found in 5ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{}}
+Redirected to http://test.host/projects/1001
+Completed 302 Found in 4ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"rspec"}}
+Redirected to http://test.host/projects/1001
+Completed 302 Found in 2ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"rspec"}}
+Redirected to http://test.host/projects/1001
+Completed 302 Found in 4ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"rspec"}}
+Completed 500 Internal Server Error in 1ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"rspec"}}
+Completed 500 Internal Server Error in 1ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"rspec"}}
+Completed 500 Internal Server Error in 1ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"rspec"}}
+Completed 500 Internal Server Error in 1ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"rspec"}}
+Redirected to http://test.host/projects/1001
+Completed 302 Found in 2ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"rspec"}}
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM "projects" WHERE "projects"."project_name" = 'rspec' LIMIT 1[0m
+  [1m[35mSQL (29.2ms)[0m  INSERT INTO "projects" ("anneal", "bsa", "buffer", "created_at", "date", "dna", "dna_amount", "dntps", "h2o", "mgcl2", "notes", "primerh", "primerh_amount", "primerl", "primerl_amount", "project_name", "taq", "total", "total_samples", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["anneal", nil], ["bsa", nil], ["buffer", nil], ["created_at", Fri, 25 Nov 2011 23:19:07 CST -06:00], ["date", nil], ["dna", nil], ["dna_amount", nil], ["dntps", nil], ["h2o", nil], ["mgcl2", nil], ["notes", nil], ["primerh", nil], ["primerh_amount", nil], ["primerl", nil], ["primerl_amount", nil], ["project_name", "rspec"], ["taq", nil], ["total", nil], ["total_samples", nil], ["updated_at", Fri, 25 Nov 2011 23:19:07 CST -06:00]]
+Redirected to http://test.host/projects/1
+Completed 302 Found in 116ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"rspec"}}
+  [1m[36m (0.3ms)[0m  [1mSELECT 1 FROM "projects" WHERE "projects"."project_name" = 'rspec' LIMIT 1[0m
+  [1m[35mSQL (8.2ms)[0m  INSERT INTO "projects" ("anneal", "bsa", "buffer", "created_at", "date", "dna", "dna_amount", "dntps", "h2o", "mgcl2", "notes", "primerh", "primerh_amount", "primerl", "primerl_amount", "project_name", "taq", "total", "total_samples", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["anneal", nil], ["bsa", nil], ["buffer", nil], ["created_at", Fri, 25 Nov 2011 23:21:55 CST -06:00], ["date", nil], ["dna", nil], ["dna_amount", nil], ["dntps", nil], ["h2o", nil], ["mgcl2", nil], ["notes", nil], ["primerh", nil], ["primerh_amount", nil], ["primerl", nil], ["primerl_amount", nil], ["project_name", "rspec"], ["taq", nil], ["total", nil], ["total_samples", nil], ["updated_at", Fri, 25 Nov 2011 23:21:55 CST -06:00]]
+Redirected to http://test.host/projects/1
+Completed 302 Found in 161ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"rspec"}}
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM "projects" WHERE "projects"."project_name" = 'rspec' LIMIT 1[0m
+  [1m[35mSQL (7.7ms)[0m  INSERT INTO "projects" ("anneal", "bsa", "buffer", "created_at", "date", "dna", "dna_amount", "dntps", "h2o", "mgcl2", "notes", "primerh", "primerh_amount", "primerl", "primerl_amount", "project_name", "taq", "total", "total_samples", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["anneal", nil], ["bsa", nil], ["buffer", nil], ["created_at", Fri, 25 Nov 2011 23:22:14 CST -06:00], ["date", nil], ["dna", nil], ["dna_amount", nil], ["dntps", nil], ["h2o", nil], ["mgcl2", nil], ["notes", nil], ["primerh", nil], ["primerh_amount", nil], ["primerl", nil], ["primerl_amount", nil], ["project_name", "rspec"], ["taq", nil], ["total", nil], ["total_samples", nil], ["updated_at", Fri, 25 Nov 2011 23:22:14 CST -06:00]]
+Redirected to http://test.host/projects/1
+Completed 302 Found in 60ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"rspec"}}
+  [1m[36m (0.3ms)[0m  [1mSELECT 1 FROM "projects" WHERE "projects"."project_name" = 'rspec' LIMIT 1[0m
+  [1m[35mSQL (6.5ms)[0m  INSERT INTO "projects" ("anneal", "bsa", "buffer", "created_at", "date", "dna", "dna_amount", "dntps", "h2o", "mgcl2", "notes", "primerh", "primerh_amount", "primerl", "primerl_amount", "project_name", "taq", "total", "total_samples", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["anneal", nil], ["bsa", nil], ["buffer", nil], ["created_at", Fri, 25 Nov 2011 23:24:28 CST -06:00], ["date", nil], ["dna", nil], ["dna_amount", nil], ["dntps", nil], ["h2o", nil], ["mgcl2", nil], ["notes", nil], ["primerh", nil], ["primerh_amount", nil], ["primerl", nil], ["primerl_amount", nil], ["project_name", "rspec"], ["taq", nil], ["total", nil], ["total_samples", nil], ["updated_at", Fri, 25 Nov 2011 23:24:28 CST -06:00]]
+Redirected to http://test.host/projects/1
+Completed 302 Found in 54ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"rspec"}}
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM "projects" WHERE "projects"."project_name" = 'rspec' LIMIT 1[0m
+  [1m[35mSQL (6.6ms)[0m  INSERT INTO "projects" ("anneal", "bsa", "buffer", "created_at", "date", "dna", "dna_amount", "dntps", "h2o", "mgcl2", "notes", "primerh", "primerh_amount", "primerl", "primerl_amount", "project_name", "taq", "total", "total_samples", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["anneal", nil], ["bsa", nil], ["buffer", nil], ["created_at", Fri, 25 Nov 2011 23:26:57 CST -06:00], ["date", nil], ["dna", nil], ["dna_amount", nil], ["dntps", nil], ["h2o", nil], ["mgcl2", nil], ["notes", nil], ["primerh", nil], ["primerh_amount", nil], ["primerl", nil], ["primerl_amount", nil], ["project_name", "rspec"], ["taq", nil], ["total", nil], ["total_samples", nil], ["updated_at", Fri, 25 Nov 2011 23:26:57 CST -06:00]]
+Redirected to http://test.host/projects/1
+Completed 302 Found in 31ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"rspec"}}
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM "projects" WHERE "projects"."project_name" = 'rspec' LIMIT 1[0m
+  [1m[35mSQL (6.1ms)[0m  INSERT INTO "projects" ("anneal", "bsa", "buffer", "created_at", "date", "dna", "dna_amount", "dntps", "h2o", "mgcl2", "notes", "primerh", "primerh_amount", "primerl", "primerl_amount", "project_name", "taq", "total", "total_samples", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["anneal", nil], ["bsa", nil], ["buffer", nil], ["created_at", Fri, 25 Nov 2011 23:29:33 CST -06:00], ["date", nil], ["dna", nil], ["dna_amount", nil], ["dntps", nil], ["h2o", nil], ["mgcl2", nil], ["notes", nil], ["primerh", nil], ["primerh_amount", nil], ["primerl", nil], ["primerl_amount", nil], ["project_name", "rspec"], ["taq", nil], ["total", nil], ["total_samples", nil], ["updated_at", Fri, 25 Nov 2011 23:29:33 CST -06:00]]
+Redirected to http://test.host/projects/1
+Completed 302 Found in 32ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"rspec"}}
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM "projects" WHERE "projects"."project_name" = 'rspec' LIMIT 1[0m
+  [1m[35mSQL (6.5ms)[0m  INSERT INTO "projects" ("anneal", "bsa", "buffer", "created_at", "date", "dna", "dna_amount", "dntps", "h2o", "mgcl2", "notes", "primerh", "primerh_amount", "primerl", "primerl_amount", "project_name", "taq", "total", "total_samples", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["anneal", nil], ["bsa", nil], ["buffer", nil], ["created_at", Fri, 25 Nov 2011 23:30:45 CST -06:00], ["date", nil], ["dna", nil], ["dna_amount", nil], ["dntps", nil], ["h2o", nil], ["mgcl2", nil], ["notes", nil], ["primerh", nil], ["primerh_amount", nil], ["primerl", nil], ["primerl_amount", nil], ["project_name", "rspec"], ["taq", nil], ["total", nil], ["total_samples", nil], ["updated_at", Fri, 25 Nov 2011 23:30:45 CST -06:00]]
+Redirected to http://test.host/projects/1
+Completed 302 Found in 32ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"rspec"}}
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM "projects" WHERE "projects"."project_name" = 'rspec' LIMIT 1[0m
+  [1m[35mSQL (6.0ms)[0m  INSERT INTO "projects" ("anneal", "bsa", "buffer", "created_at", "date", "dna", "dna_amount", "dntps", "h2o", "mgcl2", "notes", "primerh", "primerh_amount", "primerl", "primerl_amount", "project_name", "taq", "total", "total_samples", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["anneal", nil], ["bsa", nil], ["buffer", nil], ["created_at", Fri, 25 Nov 2011 23:32:08 CST -06:00], ["date", nil], ["dna", nil], ["dna_amount", nil], ["dntps", nil], ["h2o", nil], ["mgcl2", nil], ["notes", nil], ["primerh", nil], ["primerh_amount", nil], ["primerl", nil], ["primerl_amount", nil], ["project_name", "rspec"], ["taq", nil], ["total", nil], ["total_samples", nil], ["updated_at", Fri, 25 Nov 2011 23:32:08 CST -06:00]]
+Redirected to http://test.host/projects/1
+Completed 302 Found in 36ms
+  Processing by ProjectsController#create as HTML
+  Parameters: {"project"=>{"project_name"=>"rspec"}}
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM "projects" WHERE "projects"."project_name" = 'rspec' LIMIT 1[0m
+  [1m[35mSQL (6.3ms)[0m  INSERT INTO "projects" ("anneal", "bsa", "buffer", "created_at", "date", "dna", "dna_amount", "dntps", "h2o", "mgcl2", "notes", "primerh", "primerh_amount", "primerl", "primerl_amount", "project_name", "taq", "total", "total_samples", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["anneal", nil], ["bsa", nil], ["buffer", nil], ["created_at", Fri, 25 Nov 2011 23:33:11 CST -06:00], ["date", nil], ["dna", nil], ["dna_amount", nil], ["dntps", nil], ["h2o", nil], ["mgcl2", nil], ["notes", nil], ["primerh", nil], ["primerh_amount", nil], ["primerl", nil], ["primerl_amount", nil], ["project_name", "rspec"], ["taq", nil], ["total", nil], ["total_samples", nil], ["updated_at", Fri, 25 Nov 2011 23:33:11 CST -06:00]]
+Redirected to http://test.host/projects/1
+Completed 302 Found in 35ms

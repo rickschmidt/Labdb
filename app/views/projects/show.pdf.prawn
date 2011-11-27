@@ -1,4 +1,4 @@
-pdf.text "Experiment #{@experiment.id} and #{@pcrs[0]}"
+pdf.text "Experiment #{@project.id} and #{@pcrs[0]}"
 
 pdf.text "PCRs #{@pcrs.id}"
 

@@ -10,16 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111031233109) do
+ActiveRecord::Schema.define(:version => 20111127011620) do
 
   create_table "dnasamples", :force => true do |t|
     t.string   "dna_accession"
     t.string   "dnasample_number"
     t.date     "date"
     t.string   "method"
-    t.float    "elution_volume"
+    t.float    "first_elution_volume"
     t.string   "second_elute"
-    t.float    "second_elute_volumne"
+    t.float    "second_elution_volume"
     t.string   "reextracted"
     t.string   "created_by"
     t.datetime "created_at"
@@ -28,13 +28,8 @@ ActiveRecord::Schema.define(:version => 20111031233109) do
     t.string   "specimen_gender"
     t.integer  "collector_number"
     t.text     "extraction_notes"
-  end
-
-  create_table "dnasamples_experiments", :id => false, :force => true do |t|
-    t.integer  "dnasample_id"
-    t.integer  "experiment_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "museum"
+    t.string   "sample_type"
   end
 
   create_table "dnasamples_genes", :id => false, :force => true do |t|
@@ -51,39 +46,16 @@ ActiveRecord::Schema.define(:version => 20111031233109) do
     t.datetime "updated_at"
   end
 
+  create_table "dnasamples_projects", :id => false, :force => true do |t|
+    t.integer  "dnasample_id"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "dnasamples_taxonomies", :id => false, :force => true do |t|
     t.integer  "dnasample_id"
     t.integer  "taxonomy_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "experiments", :force => true do |t|
-    t.date     "date"
-    t.float    "anneal"
-    t.float    "dna_amount"
-    t.integer  "total_samples"
-    t.string   "notes"
-    t.string   "experiment_number"
-    t.string   "bsa"
-    t.string   "buffer"
-    t.string   "mgcl2"
-    t.string   "taq"
-    t.string   "h2o"
-    t.string   "dntps"
-    t.string   "dna"
-    t.float    "primerl_amount"
-    t.float    "primerh_amount"
-    t.integer  "total"
-    t.string   "primerl"
-    t.string   "primerh"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "experiments_pcrs", :id => false, :force => true do |t|
-    t.integer  "experiment_id"
-    t.integer  "pcr_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -118,6 +90,19 @@ ActiveRecord::Schema.define(:version => 20111031233109) do
     t.datetime "updated_at"
     t.boolean  "success"
     t.boolean  "ready"
+    t.string   "h2o"
+    t.string   "buffer"
+    t.string   "mgcl2"
+    t.string   "bsa"
+    t.string   "dntps"
+    t.string   "taq"
+  end
+
+  create_table "pcrs_projects", :id => false, :force => true do |t|
+    t.integer  "project_id"
+    t.integer  "pcr_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "primers", :force => true do |t|
@@ -127,6 +112,35 @@ ActiveRecord::Schema.define(:version => 20111031233109) do
     t.datetime "updated_at"
     t.string   "name"
     t.string   "sequence"
+    t.string   "h2o"
+    t.string   "buffer"
+    t.string   "mgcl2"
+    t.string   "bsa"
+    t.string   "dntps"
+    t.string   "taq"
+  end
+
+  create_table "projects", :force => true do |t|
+    t.date     "date"
+    t.float    "anneal"
+    t.float    "dna_amount"
+    t.integer  "total_samples"
+    t.string   "notes"
+    t.string   "project_name"
+    t.string   "bsa"
+    t.string   "buffer"
+    t.string   "mgcl2"
+    t.string   "taq"
+    t.string   "h2o"
+    t.string   "dntps"
+    t.string   "dna"
+    t.float    "primerl_amount"
+    t.float    "primerh_amount"
+    t.integer  "total"
+    t.string   "primerl"
+    t.string   "primerh"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "taxonomies", :force => true do |t|

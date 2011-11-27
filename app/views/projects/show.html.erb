@@ -1,0 +1,64 @@
+<p><b>Date:</b> <%= @project.date %> <b>Project:</b><%= @project.project_name %></p>
+<p><b>Total # of Samples: </b> <div class="totalSamples"><%= @project.total_samples %></div></p>
+<%= hidden_field_tag "projectId", @project.id %>
+<div class="premix">
+	<table >
+
+		<tr><td>BSA</td><td>  <%=h @project.bsa %></td></tr>
+		<tr><td>Buffer</td><td>  <%=h @project.buffer %></td></tr>
+		<tr><td>MgCl2</td><td>  <%=h @project.mgcl2 %></td></tr>
+		<tr><td>TAQ  </td><td>   <%=h @project.taq %> </td></tr>
+		<tr><td>H2O  </td><td>   <%=h @project.h2o %> </td></tr>
+		<tr><td>dNTPs  </td><td> <%=h @project.dntps %>  </td></tr>
+		<tr><td>primerL  </td><td>   <%=h @project.primerl_amount %> </td></tr>
+		<tr><td>primerH  </td><td>   <%=h @project.primerh_amount %> </td></tr>
+		<tr><td>DNA  </td><td> <%=h @project.dna %>  </td></tr>
+		<tr><td>Total  </td><td> <%=h @project.total %> </td></tr>
+	</table>
+</div>
+
+<table class='custom'>
+	<tr>
+		<th class="custom"><%= sortable 'id' %></th>
+		<th class="custom"><%= sortable 'dna_accession' %></th>
+		<th class="custom"><%= sortable 'success' %></th>
+		<th class="custom"><%= sortable 'ready' %></th>
+	</tr>
+<%@dnasamples.each do |dna_sample| %>
+
+  <tr class="<%= cycle("even", "odd") %>">
+	<td class="customPrev"><%= dna_sample.id %></td>
+	<td><%= dna_sample.dna_accession %></td>
+
+	</tr>
+	 <%end%>
+
+<tr class="exp" id="0">
+
+	<td class="custom"><%= select('project','dnasamples',Dnasample.all.collect {|d| [ d.id, d.id] }, {:include_blank => 'Add DNA Sample'})%>	</td>
+	<td class="dna"></td>
+			<td class="accession"></td>
+		<td class="primerh"></td>
+			<td class="success" align="center"><%= check_box("pcr","pcr_success",{:checked=>false}) %></td>
+			<td class="success" align="center"><%= check_box("pcr","pcr_ready",{:checked=>false}) %></td>
+	</tr>
+
+</table>
+<button class="save">Save</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

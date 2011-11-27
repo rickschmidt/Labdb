@@ -1,16 +1,15 @@
-class ExperimentsController < ApplicationController
-before_filter :authenticate_user!
-  # GET /experiments
-  # GET /experiments.xml
+class ProjectsController < ApplicationController
+# before_filter :authenticate_user!
+  # GET /projects
+  # GET /projects.xml
   helper_method :sort_column, :sort_direction
   helper :all
  
 	def index
-		# @per_page = params[:per_page] || Experiment.per_page || 10
-      	@experiments=Experiment.paginate(:per_page => @per_page, :page => params[:page])
+      	@projects=Project.paginate(:per_page => @per_page, :page => params[:page])
     	respond_to do |format|
       		format.html # index.html.erb
-		    format.xml  { render :xml => @experiments }
+		    format.xml  { render :xml => @projects }
 	    end
 	end
 
@@ -21,21 +20,21 @@ before_filter :authenticate_user!
     @pcrsAll=Pcr.find(:all)
     @dnasamples=Dnasample.find(:all)
     @pcrs=Hash.new
-    @experiments=Experiment.find(:all, :limit=>15 )
-    @experiment=Experiment.find(params[:id])
-    @dnasamples=@experiment.dnasamples
-    @experiment.pcrs.each do |pcr|
+    @projects=Project.find(:all, :limit=>15 )
+    @project=Project.find(params[:id])
+    @dnasamples=@project.dnasamples
+    @project.pcrs.each do |pcr|
       @pcrs[pcr]=pcr.dnasamples.first
       logger.debug "pcrs in exp show #{@pcrs.inspect}"
       # pcr.dnasamples.each do |dna|
       #   @ids<<dna
       # end
     end
-    @experiment.update_attributes(:total_samples=>@pcrs.size)
+    @project.update_attributes(:total_samples=>@pcrs.size)
     respond_to do |format|
       format.html # show.html.erb
-      format.pdf {render :pdf =>{:experiment=>@experiment, :pcrs=>@pcrs}}
-      format.xml  { render :xml => @experiment }
+      # format.pdf {render :pdf =>{:project=>@project, :pcrs=>@pcrs}}
+      format.xml  { render :xml => {:project=>@project, :dnasamples=>@dnasamples} }
       format.js
     end
   end
@@ -43,36 +42,39 @@ before_filter :authenticate_user!
   # GET /experiments/new
   # GET /experiments/new.xml
   def new
-    @experiment = Experiment.new
+    @project = Project.new
     @pcrsAll=Pcr.find(:all)
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @experiment }
+      format.xml  { render :xml => @project }
     end
   end
 
   # GET /experiments/1/edit
   def edit
-    @experiment = Experiment.find(params[:id])
+    @project = Project.find(params[:id])
   end
 
   # POST /experiments
   # POST /experiments.xml
   def create
-    @experiment = Experiment.new(params[:experiment])
+
+    @project = Project.new(params[:project])
     
     # if params[:gene][:primer]!=""
     #         @primer=Primer.find(params[:gene][:primer])
-    #         @experiment.primerh=@primer.primerh
-    #         @experiment.primerl=@primer.primerl
+    #         @project.primerh=@primer.primerh
+    #         @project.primerl=@primer.primerl
     #     end
+
     respond_to do |format|
-      if @experiment.save
-        format.html { redirect_to(@experiment, :notice => 'Experiment was successfully created.') }
-        format.xml  { render :xml => @experiment, :status => :created, :location => @experiment }
+      if @project.save
+		puts "project controller create"
+        format.html { redirect_to(@project, :notice => 'Project was successfully created.') }
+        format.xml  { render :xml => @project, :status => :created, :location => @project }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @experiment.errors, :status => :unprocessable_entity }
+        format.xml  { render :xml => @project.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -80,20 +82,20 @@ before_filter :authenticate_user!
   # PUT /experiments/1
   # PUT /experiments/1.xml
   def update
-    @experiment = Experiment.find(params[:id])
+    @project = Project.find(params[:id])
      # if params[:gene][:primer]!=""
      #       @primer=Primer.find(params[:gene][:primer])
-     #       @experiment.primerh=@primer.primerh
-     #       @experiment.primerl=@primer.primerl
+     #       @project.primerh=@primer.primerh
+     #       @project.primerl=@primer.primerl
      #   end
 
     respond_to do |format|
-      if @experiment.update_attributes(params[:experiment])
-        format.html { redirect_to(@experiment, :notice => 'Experiment was successfully updated.') }
+      if @project.update_attributes(params[:project])
+        format.html { redirect_to(@project, :notice => 'Project was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @experiment.errors, :status => :unprocessable_entity }
+        format.xml  { render :xml => @project.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -101,8 +103,8 @@ before_filter :authenticate_user!
   # DELETE /experiments/1
   # DELETE /experiments/1.xml
   def destroy
-    @experiment = Experiment.find(params[:id])
-    @experiment.destroy
+    @project = Project.find(params[:id])
+    @project.destroy
 
     respond_to do |format|
       format.html { redirect_to(experiments_url) }
@@ -112,7 +114,7 @@ before_filter :authenticate_user!
   
   
   def updatepcr
-    experiment=Experiment.find(params[:id])
+    experiment=Project.find(params[:id])
     pcrs=experiment.pcrs
     dnasamples=pcrs.dnasamples
     render :update do |page|
@@ -125,7 +127,7 @@ before_filter :authenticate_user!
       @dnasamples<<dna
     end
 #    render :partial => 'dnasamples'
-    @pcr = Pcr.find(params[:experiment][:state])
+    @pcr = Pcr.find(params[:project][:state])
 
   end
   
@@ -171,7 +173,7 @@ before_filter :authenticate_user!
   
   def getpcrtube
      @pcr=Pcr.find(params[:id]) 
-     @experiment=Experiment.find(params[:experimentId])
+     @project=Project.find(params[:projectId])
     if @pcr.dnasamples.first
         @dnasample=@pcr.dnasamples.first
     end
@@ -189,8 +191,8 @@ before_filter :authenticate_user!
     def savepcrtubes
        @pcrsAll=Pcr.find(params[:id])
         logger.debug "pcrs all in savepcrtubes #{@pcrsAll.inspect}"
-        @experiment=Experiment.find(params[:experimentId])
-        @experiment.pcrs<<@pcrsAll
+        @project=Project.find(params[:projectId])
+        @project.pcrs<<@pcrsAll
         logger.debug "successful pcrs #{params[:successfulPcrs]}"
         # @successfulPcrs=Pcr.find(params[:successfulPcrs])
         #     @successfulPcrs.each do |successful|
@@ -223,12 +225,12 @@ before_filter :authenticate_user!
     end
     
     def sequencelayout
-#       @experiments=Experiment.find(params[:experimentssequence])
-        @experiment=Experiment.find(params[:experimentId])
-        logger.debug "The experiment is #{@experiment.id}."
-       @experimentspcr=@experiment.pcrs
+#       @projects=Project.find(params[:projectssequence])
+        @project=Project.find(params[:projectId])
+        logger.debug "The experiment is #{@project.id}."
+       @projectspcr=@project.pcrs
 
-       @successful=@experimentspcr.find(:all, :conditions=>{:ready=>true})
+       @successful=@projectspcr.find(:all, :conditions=>{:ready=>true})
        
        @successful.each do |s|
            logger.debug "The successful pcrs are...#{s.id}"
@@ -242,7 +244,7 @@ before_filter :authenticate_user!
     
     
     def getdnasample
-        @experiment=Experiment.find(params[:experimentId])
+        @project=Project.find(params[:projectId])
         @dnasample=Dnasample.find(params[:id]) 
         
         respond_to do |with|
@@ -254,7 +256,7 @@ before_filter :authenticate_user!
     
   private 
    def sort_column
-       Experiment.column_names.include?(params[:sort]) ? params[:sort] : "date"
+       Project.column_names.include?(params[:sort]) ? params[:sort] : "date"
      end
 
      def sort_direction

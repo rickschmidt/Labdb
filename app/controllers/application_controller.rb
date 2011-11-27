@@ -1,4 +1,5 @@
 require "rexml/document"
+require "net/http"
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
@@ -37,3 +38,6 @@ def geocode(*args)
 
 end
 end
+
+
+

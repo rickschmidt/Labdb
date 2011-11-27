@@ -23,13 +23,15 @@ end
 
 group :development, :test, :production do
 	gem 'jquery-rails'
-	gem "prawn"
-	gem "prawnto"
+	# gem "prawn"
+	# gem "prawnto"
 	gem "faker"
 	# gem "searchlogic"  
 	gem 'will_paginate'#, '~> 3.0.2'
 	gem "paperclip", "~> 2.3"
 	gem "rspec"
+	gem  'rspec-rails'
+	gem 'cucumber-rails'
 
 end
 # # To use ActiveModel has_secure_password

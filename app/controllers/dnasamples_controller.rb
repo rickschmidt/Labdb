@@ -7,6 +7,8 @@ class DnasamplesController < ApplicationController
    def index
 		@per_page = params[:per_page]  ||= 10
        	@dnasamples=Dnasample.paginate(:page => params[:page], :per_page=>@per_page)
+		@recent=Dnasample.order("updated_at DESC").limit(5)
+
 
     respond_to do |format|
       format.html # index.html.erb
@@ -38,7 +40,10 @@ class DnasamplesController < ApplicationController
 
   # GET /dnasamples/1/edit
   def edit
+	
     @dnasample = Dnasample.find(params[:id])
+
+
   end
 
   # POST /dnasamples
@@ -116,7 +121,7 @@ class DnasamplesController < ApplicationController
   end
   private 
    def sort_column
-       Experiment.column_names.include?(params[:sort]) ? params[:sort] : "date"
+       Project.column_names.include?(params[:sort]) ? params[:sort] : "date"
      end
 
      def sort_direction

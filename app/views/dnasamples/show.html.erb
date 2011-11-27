@@ -5,7 +5,7 @@
 		<tr>
 			<td>
 				<b>Belongs to the following Taxonomy Record </b><br>
-				<%= @dnasample.taxonomies.collect{|taxa|[taxa.id,taxa.genus,taxa.species,taxa.subspecies].join(" ")} %>
+				<%= @dnasample.taxonomies.collect{|taxa|[taxa.id,taxa.family,taxa.genus,taxa.species,taxa.subspecies].join(" ")} %>
 			</td>
 		</tr>
 		<tr>

@@ -14,7 +14,7 @@ namespace :db do
 desc "create some fake dnasamples" 
 
 task :create_dnasamples => :environment do 
-100.times do
+10.times do
 
 dnasample = Dnasample.create(
 
@@ -36,6 +36,7 @@ dnasample.save
 end
 end 
 end
+
 
 
 namespace :db do 

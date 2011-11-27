@@ -5,7 +5,7 @@ class TaxonomiesController < ApplicationController
   # GET /taxonomies
   # GET /taxonomies.xml
   def index
-    @per_page = params[:per_page] || Experiment.per_page || 10
+    @per_page = params[:per_page] || Project.per_page || 10
     @taxonomies=Taxonomy.paginate(:per_page => @per_page, :page => params[:page])
 
     respond_to do |format|

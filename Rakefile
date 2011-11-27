@@ -3,5 +3,12 @@
 # for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
 
 require File.expand_path('../config/application', __FILE__)
+require 'rubygems'
+require 'rspec/core/rake_task'
 
 Lab::Application.load_tasks
+
+RSpec::Core::RakeTask.new(:spec)do |t|
+	t.pattern=FileList['spec/']
+end
+task :default => :spec

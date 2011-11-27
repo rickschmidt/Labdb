@@ -7,6 +7,8 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Reddy Lab:DNA Samples</title>
   <%= stylesheet_link_tag 'scaffold' %>
+<%= javascript_include_tag 'jquery.js' %>
+<%= csrf_meta_tag %>
 
 <style type="text/css">
 
@@ -39,9 +41,10 @@ background: -moz-linear-gradient(top,  #FAFABF,  #F5F48C); /* for firefox 3.6+ *
 		
 </head>
 <body>
+<%=render :partial => '/navigation'%>
 <div id="wrapper">
 	
-<%=render :partial => '/navigation'%>
+
 	<div id="content">
 	<% if flash[:notice]%>
 
