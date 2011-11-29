@@ -21,6 +21,9 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :test do
+	gem 'database_cleaner'
+end
 group :development, :test, :production do
 	gem 'jquery-rails'
 	# gem "prawn"

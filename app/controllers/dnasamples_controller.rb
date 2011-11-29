@@ -6,6 +6,7 @@ class DnasamplesController < ApplicationController
    helper :all
    def index
 		@per_page = params[:per_page]  ||= 10
+
        	@dnasamples=Dnasample.paginate(:page => params[:page], :per_page=>@per_page)
 		@recent=Dnasample.order("updated_at DESC").limit(5)
 

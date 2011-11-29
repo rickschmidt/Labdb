@@ -6,11 +6,18 @@ class TaxonomiesController < ApplicationController
   # GET /taxonomies.xml
   def index
     @per_page = params[:per_page] || Project.per_page || 10
-    @taxonomies=Taxonomy.paginate(:per_page => @per_page, :page => params[:page])
+		if params[:term]
+		    @taxonomies = Taxonomy.find(:all,:conditions => ['species LIKE ?', "#{params[:term]}%"])
+		 else
+	    	@taxonomies = Taxonomy.all
+	  	end
+    # @taxonomies=Taxonomy.paginate(:per_page => @per_page, :page => params[:page])
+		puts @taxonomies.to_json
 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @taxonomies }
+	format.json {render :json=>@taxonomies.to_json}
     end
   end
 

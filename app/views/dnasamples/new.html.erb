@@ -16,8 +16,9 @@
 		</tr>
 		<tr>
 			<td>
-				<%= f.label "Species Taxonomy" %>
-				<%= f.select(:taxonomies, Taxonomy.all.collect{|taxa| [[taxa.family,taxa.genus,taxa.species,taxa.subspecies].join(" "),taxa.id]} ,options={:include_blank=>true}) %>
+				<%= f.label "Select Taxonomy" %>
+				<input id="taxonomy_select"/>
+				<%= f.hidden_field :taxonomies %>
 			</td>
 		</tr>
 		<tr>
