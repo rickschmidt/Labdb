@@ -21,7 +21,8 @@ class DnasamplesController < ApplicationController
   # GET /dnasamples/1.xml
   def show
     @dnasample = Dnasample.find(params[:id])
-    @dnasamplegenes=@dnasample.genes
+
+
 	@coords=geocode(@dnasample.location_collected)
     respond_to do |format|
       format.html # show.html.erb

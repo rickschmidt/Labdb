@@ -37,6 +37,10 @@ def geocode(*args)
 	
 
 end
+	def ipad?
+		request.user_agent =~/Mobile/
+	end
+	helper_method :ipad?
 end
 
 

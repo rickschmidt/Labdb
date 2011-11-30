@@ -18,6 +18,3 @@ Feature: add dna samples into the experiment directly
         Then save the dna samples used in the experiment
         
         
-        =begin
-            TODO Create a migration to link the experiments and dna samples tables
-        =end

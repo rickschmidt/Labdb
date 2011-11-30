@@ -14,6 +14,7 @@
 </table>
 
 <%= button_to 'Create', new_dnasample_path,{:method=>:get,:class=>"button_create"} %>
+
 </div>
 <div class="dnasamples_index">
 <table >
@@ -35,7 +36,7 @@
 
     <td class="icons" id="show"><%= link_to image_tag("show.png", :border=>0), dnasample%></td>
  	<td class="icons"><%= link_to image_tag("edit.png", :border=>0), edit_dnasample_path(dnasample)%></td>
- 	<td class="icons"><%= link_to image_tag("delete.png", :border=>0), dnasample, :confirm => 'Are you sure?', :method => :delete %></td>
+ 	<td class="icons"><%= link_to image_tag("delete.png", :border=>0), dnasample %></td>
 
   </tr>
 <% end %>
