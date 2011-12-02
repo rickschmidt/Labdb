@@ -4138,3 +4138,369 @@ Started GET "/dnasamples/1003" for 127.0.0.1 at Wed Nov 30 13:10:23 -0600 2011
   Parameters: {"id"=>"1003"}
 response "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<GeocodeResponse>\n <status>OK</status>\n <result>\n  <type>locality</type>\n  <type>political</type>\n  <formatted_address>New York, NY, USA</formatted_address>\n  <address_component>\n   <long_name>New York</long_name>\n   <short_name>New York</short_name>\n   <type>locality</type>\n   <type>political</type>\n  </address_component>\n  <address_component>\n   <long_name>New York</long_name>\n   <short_name>New York</short_name>\n   <type>administrative_area_level_2</type>\n   <type>political</type>\n  </address_component>\n  <address_component>\n   <long_name>New York</long_name>\n   <short_name>NY</short_name>\n   <type>administrative_area_level_1</type>\n   <type>political</type>\n  </address_component>\n  <address_component>\n   <long_name>United States</long_name>\n   <short_name>US</short_name>\n   <type>country</type>\n   <type>political</type>\n  </address_component>\n  <geometry>\n   <location>\n    <lat>40.7143528</lat>\n    <lng>-74.0059731</lng>\n   </location>\n   <location_type>APPROXIMATE</location_type>\n   <viewport>\n    <southwest>\n     <lat>40.5788964</lat>\n     <lng>-74.2620919</lng>\n    </southwest>\n    <northeast>\n     <lat>40.8495342</lat>\n     <lng>-73.7498543</lng>\n    </northeast>\n   </viewport>\n   <bounds>\n    <southwest>\n     <lat>40.4773990</lat>\n     <lng>-74.2590900</lng>\n    </southwest>\n    <northeast>\n     <lat>40.9175770</lat>\n     <lng>-73.7002720</lng>\n    </northeast>\n   </bounds>\n  </geometry>\n </result>\n</GeocodeResponse>\n"
 Completed 500 Internal Server Error in 372ms
+
+
+Started GET "/dnasamples/new" for 127.0.0.1 at Wed Nov 30 16:03:22 -0600 2011
+  Processing by DnasamplesController#new as HTML
+Rendered dnasamples/new.html.erb within layouts/dnasamples (68.0ms)
+Rendered _navigation.html.erb (2.1ms)
+Completed 200 OK in 96ms (Views: 94.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/dnasamples/new" for 127.0.0.1 at Wed Nov 30 16:03:22 -0600 2011
+  Processing by DnasamplesController#new as HTML
+Rendered dnasamples/new.html.erb within layouts/dnasamples (16.6ms)
+Rendered _navigation.html.erb (1.4ms)
+Completed 200 OK in 24ms (Views: 23.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/dnasamples" for 127.0.0.1 at Wed Nov 30 16:03:22 -0600 2011
+  Processing by DnasamplesController#create as HTML
+  Parameters: {"commit"=>"Create", "dnasample"=>{"dnasample_number"=>"AABB", "date(1i)"=>"2011", "location_collected"=>"Chicago, IL", "date(2i)"=>"11", "extraction_notes"=>"Notes", "date(3i)"=>"30", "method"=>"Qiagen DNeasy Blood & Tissue Kit", "sample_type"=>"Tissue", "specimen_gender"=>"Male", "second_elution_volume"=>"2", "taxonomies"=>"", "dna_accession"=>"Rspec capybara", "first_elution_volume"=>"1", "collector_number"=>"1", "museum"=>"Field"}, "utf8"=>"\342\234\223"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (5.7ms)[0m  INSERT INTO "dnasamples" ("collector_number", "created_at", "created_by", "date", "dna_accession", "dnasample_number", "extraction_notes", "first_elution_volume", "location_collected", "method", "museum", "reextracted", "sample_type", "second_elute", "second_elution_volume", "specimen_gender", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["collector_number", 1], ["created_at", Wed, 30 Nov 2011 16:03:22 CST -06:00], ["created_by", nil], ["date", Wed, 30 Nov 2011], ["dna_accession", "Rspec capybara"], ["dnasample_number", "AABB"], ["extraction_notes", "Notes"], ["first_elution_volume", 1.0], ["location_collected", "Chicago, IL"], ["method", "Qiagen DNeasy Blood & Tissue Kit"], ["museum", "Field"], ["reextracted", nil], ["sample_type", "Tissue"], ["second_elute", nil], ["second_elution_volume", 2.0], ["specimen_gender", "Male"], ["updated_at", Wed, 30 Nov 2011 16:03:22 CST -06:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/dnasamples/1
+Completed 302 Found in 16ms
+
+
+Started GET "/dnasamples/1" for 127.0.0.1 at Wed Nov 30 16:03:22 -0600 2011
+  Processing by DnasamplesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mDnasample Load (0.3ms)[0m  SELECT "dnasamples".* FROM "dnasamples" WHERE "dnasamples"."id" = ? LIMIT 1  [["id", "1"]]
+response "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<GeocodeResponse>\n <status>OK</status>\n <result>\n  <type>locality</type>\n  <type>political</type>\n  <formatted_address>Chicago, IL, USA</formatted_address>\n  <address_component>\n   <long_name>Chicago</long_name>\n   <short_name>Chicago</short_name>\n   <type>locality</type>\n   <type>political</type>\n  </address_component>\n  <address_component>\n   <long_name>Cook</long_name>\n   <short_name>Cook</short_name>\n   <type>administrative_area_level_2</type>\n   <type>political</type>\n  </address_component>\n  <address_component>\n   <long_name>Illinois</long_name>\n   <short_name>IL</short_name>\n   <type>administrative_area_level_1</type>\n   <type>political</type>\n  </address_component>\n  <address_component>\n   <long_name>United States</long_name>\n   <short_name>US</short_name>\n   <type>country</type>\n   <type>political</type>\n  </address_component>\n  <geometry>\n   <location>\n    <lat>41.8781136</lat>\n    <lng>-87.6297982</lng>\n   </location>\n   <location_type>APPROXIMATE</location_type>\n   <viewport>\n    <southwest>\n     <lat>41.7450495</lat>\n     <lng>-87.8859170</lng>\n    </southwest>\n    <northeast>\n     <lat>42.0109012</lat>\n     <lng>-87.3736794</lng>\n    </northeast>\n   </viewport>\n   <bounds>\n    <southwest>\n     <lat>41.6443350</lat>\n     <lng>-87.9402669</lng>\n    </southwest>\n    <northeast>\n     <lat>42.0231310</lat>\n     <lng>-87.5236609</lng>\n    </northeast>\n   </bounds>\n  </geometry>\n </result>\n</GeocodeResponse>\n"
+  [1m[36mTaxonomy Load (0.3ms)[0m  [1mSELECT "taxonomies".* FROM "taxonomies" INNER JOIN "dnasamples_taxonomies" ON "taxonomies"."id" = "dnasamples_taxonomies"."taxonomy_id" WHERE "dnasamples_taxonomies"."dnasample_id" = 1[0m
+Rendered dnasamples/show.html.erb within layouts/dnasamples (46.6ms)
+Rendered _navigation.html.erb (1.2ms)
+Completed 200 OK in 359ms (Views: 52.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/dnasamples/new" for 127.0.0.1 at Wed Nov 30 16:03:42 -0600 2011
+  Processing by DnasamplesController#new as HTML
+Rendered dnasamples/new.html.erb within layouts/dnasamples (49.1ms)
+Rendered _navigation.html.erb (1.5ms)
+Completed 200 OK in 77ms (Views: 75.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/dnasamples/new" for 127.0.0.1 at Wed Nov 30 16:03:43 -0600 2011
+  Processing by DnasamplesController#new as HTML
+Rendered dnasamples/new.html.erb within layouts/dnasamples (15.2ms)
+Rendered _navigation.html.erb (1.0ms)
+Completed 200 OK in 20ms (Views: 19.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/dnasamples" for 127.0.0.1 at Wed Nov 30 16:03:43 -0600 2011
+  Processing by DnasamplesController#create as HTML
+  Parameters: {"commit"=>"Create", "dnasample"=>{"dnasample_number"=>"AABB", "date(1i)"=>"2011", "location_collected"=>"Chicago, IL", "date(2i)"=>"11", "extraction_notes"=>"Notes", "date(3i)"=>"30", "method"=>"Qiagen DNeasy Blood & Tissue Kit", "sample_type"=>"Tissue", "specimen_gender"=>"Male", "second_elution_volume"=>"2", "taxonomies"=>"", "dna_accession"=>"Rspec capybara", "first_elution_volume"=>"1", "collector_number"=>"1", "museum"=>"Field"}, "utf8"=>"\342\234\223"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (6.4ms)[0m  INSERT INTO "dnasamples" ("collector_number", "created_at", "created_by", "date", "dna_accession", "dnasample_number", "extraction_notes", "first_elution_volume", "location_collected", "method", "museum", "reextracted", "sample_type", "second_elute", "second_elution_volume", "specimen_gender", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["collector_number", 1], ["created_at", Wed, 30 Nov 2011 16:03:43 CST -06:00], ["created_by", nil], ["date", Wed, 30 Nov 2011], ["dna_accession", "Rspec capybara"], ["dnasample_number", "AABB"], ["extraction_notes", "Notes"], ["first_elution_volume", 1.0], ["location_collected", "Chicago, IL"], ["method", "Qiagen DNeasy Blood & Tissue Kit"], ["museum", "Field"], ["reextracted", nil], ["sample_type", "Tissue"], ["second_elute", nil], ["second_elution_volume", 2.0], ["specimen_gender", "Male"], ["updated_at", Wed, 30 Nov 2011 16:03:43 CST -06:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/dnasamples/1
+Completed 302 Found in 17ms
+
+
+Started GET "/dnasamples/1" for 127.0.0.1 at Wed Nov 30 16:03:43 -0600 2011
+  Processing by DnasamplesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mDnasample Load (0.3ms)[0m  SELECT "dnasamples".* FROM "dnasamples" WHERE "dnasamples"."id" = ? LIMIT 1  [["id", "1"]]
+response "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<GeocodeResponse>\n <status>OK</status>\n <result>\n  <type>locality</type>\n  <type>political</type>\n  <formatted_address>Chicago, IL, USA</formatted_address>\n  <address_component>\n   <long_name>Chicago</long_name>\n   <short_name>Chicago</short_name>\n   <type>locality</type>\n   <type>political</type>\n  </address_component>\n  <address_component>\n   <long_name>Cook</long_name>\n   <short_name>Cook</short_name>\n   <type>administrative_area_level_2</type>\n   <type>political</type>\n  </address_component>\n  <address_component>\n   <long_name>Illinois</long_name>\n   <short_name>IL</short_name>\n   <type>administrative_area_level_1</type>\n   <type>political</type>\n  </address_component>\n  <address_component>\n   <long_name>United States</long_name>\n   <short_name>US</short_name>\n   <type>country</type>\n   <type>political</type>\n  </address_component>\n  <geometry>\n   <location>\n    <lat>41.8781136</lat>\n    <lng>-87.6297982</lng>\n   </location>\n   <location_type>APPROXIMATE</location_type>\n   <viewport>\n    <southwest>\n     <lat>41.7450495</lat>\n     <lng>-87.8859170</lng>\n    </southwest>\n    <northeast>\n     <lat>42.0109012</lat>\n     <lng>-87.3736794</lng>\n    </northeast>\n   </viewport>\n   <bounds>\n    <southwest>\n     <lat>41.6443350</lat>\n     <lng>-87.9402669</lng>\n    </southwest>\n    <northeast>\n     <lat>42.0231310</lat>\n     <lng>-87.5236609</lng>\n    </northeast>\n   </bounds>\n  </geometry>\n </result>\n</GeocodeResponse>\n"
+  [1m[36mTaxonomy Load (0.2ms)[0m  [1mSELECT "taxonomies".* FROM "taxonomies" INNER JOIN "dnasamples_taxonomies" ON "taxonomies"."id" = "dnasamples_taxonomies"."taxonomy_id" WHERE "dnasamples_taxonomies"."dnasample_id" = 1[0m
+Rendered dnasamples/show.html.erb within layouts/dnasamples (20.1ms)
+Rendered _navigation.html.erb (1.1ms)
+Completed 200 OK in 249ms (Views: 25.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/dnasamples/new" for 127.0.0.1 at Wed Nov 30 17:48:45 -0600 2011
+  Processing by DnasamplesController#new as HTML
+Rendered dnasamples/new.html.erb within layouts/dnasamples (54.5ms)
+Rendered _navigation.html.erb (1.5ms)
+Completed 200 OK in 103ms (Views: 101.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/dnasamples/new" for 127.0.0.1 at Wed Nov 30 17:48:45 -0600 2011
+  Processing by DnasamplesController#new as HTML
+Rendered dnasamples/new.html.erb within layouts/dnasamples (15.4ms)
+Rendered _navigation.html.erb (0.9ms)
+Completed 200 OK in 20ms (Views: 19.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/dnasamples" for 127.0.0.1 at Wed Nov 30 17:48:45 -0600 2011
+  Processing by DnasamplesController#create as HTML
+  Parameters: {"commit"=>"Create", "dnasample"=>{"dnasample_number"=>"AABB", "date(1i)"=>"2011", "location_collected"=>"Chicago, IL", "date(2i)"=>"11", "extraction_notes"=>"Notes", "date(3i)"=>"30", "method"=>"Qiagen DNeasy Blood & Tissue Kit", "sample_type"=>"Tissue", "specimen_gender"=>"Male", "second_elution_volume"=>"2", "taxonomies"=>"", "dna_accession"=>"Rspec capybara", "first_elution_volume"=>"1", "collector_number"=>"1", "museum"=>"Field"}, "utf8"=>"\342\234\223"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (5.6ms)[0m  INSERT INTO "dnasamples" ("collector_number", "created_at", "created_by", "date", "dna_accession", "dnasample_number", "extraction_notes", "first_elution_volume", "location_collected", "method", "museum", "reextracted", "sample_type", "second_elute", "second_elution_volume", "specimen_gender", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["collector_number", 1], ["created_at", Wed, 30 Nov 2011 17:48:45 CST -06:00], ["created_by", nil], ["date", Wed, 30 Nov 2011], ["dna_accession", "Rspec capybara"], ["dnasample_number", "AABB"], ["extraction_notes", "Notes"], ["first_elution_volume", 1.0], ["location_collected", "Chicago, IL"], ["method", "Qiagen DNeasy Blood & Tissue Kit"], ["museum", "Field"], ["reextracted", nil], ["sample_type", "Tissue"], ["second_elute", nil], ["second_elution_volume", 2.0], ["specimen_gender", "Male"], ["updated_at", Wed, 30 Nov 2011 17:48:45 CST -06:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/dnasamples/1
+Completed 302 Found in 16ms
+
+
+Started GET "/dnasamples/1" for 127.0.0.1 at Wed Nov 30 17:48:45 -0600 2011
+  Processing by DnasamplesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mDnasample Load (0.4ms)[0m  SELECT "dnasamples".* FROM "dnasamples" WHERE "dnasamples"."id" = ? LIMIT 1  [["id", "1"]]
+response "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<GeocodeResponse>\n <status>OK</status>\n <result>\n  <type>locality</type>\n  <type>political</type>\n  <formatted_address>Chicago, IL, USA</formatted_address>\n  <address_component>\n   <long_name>Chicago</long_name>\n   <short_name>Chicago</short_name>\n   <type>locality</type>\n   <type>political</type>\n  </address_component>\n  <address_component>\n   <long_name>Cook</long_name>\n   <short_name>Cook</short_name>\n   <type>administrative_area_level_2</type>\n   <type>political</type>\n  </address_component>\n  <address_component>\n   <long_name>Illinois</long_name>\n   <short_name>IL</short_name>\n   <type>administrative_area_level_1</type>\n   <type>political</type>\n  </address_component>\n  <address_component>\n   <long_name>United States</long_name>\n   <short_name>US</short_name>\n   <type>country</type>\n   <type>political</type>\n  </address_component>\n  <geometry>\n   <location>\n    <lat>41.8781136</lat>\n    <lng>-87.6297982</lng>\n   </location>\n   <location_type>APPROXIMATE</location_type>\n   <viewport>\n    <southwest>\n     <lat>41.7450495</lat>\n     <lng>-87.8859170</lng>\n    </southwest>\n    <northeast>\n     <lat>42.0109012</lat>\n     <lng>-87.3736794</lng>\n    </northeast>\n   </viewport>\n   <bounds>\n    <southwest>\n     <lat>41.6443350</lat>\n     <lng>-87.9402669</lng>\n    </southwest>\n    <northeast>\n     <lat>42.0231310</lat>\n     <lng>-87.5236609</lng>\n    </northeast>\n   </bounds>\n  </geometry>\n </result>\n</GeocodeResponse>\n"
+  [1m[36mTaxonomy Load (0.2ms)[0m  [1mSELECT "taxonomies".* FROM "taxonomies" INNER JOIN "dnasamples_taxonomies" ON "taxonomies"."id" = "dnasamples_taxonomies"."taxonomy_id" WHERE "dnasamples_taxonomies"."dnasample_id" = 1[0m
+Rendered dnasamples/show.html.erb within layouts/dnasamples (25.0ms)
+Rendered _navigation.html.erb (1.2ms)
+Completed 200 OK in 9104ms (Views: 29.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/dnasamples/new" for 127.0.0.1 at Wed Nov 30 17:48:54 -0600 2011
+  Processing by DnasamplesController#new as HTML
+Rendered dnasamples/new.html.erb within layouts/dnasamples (23.0ms)
+Rendered _navigation.html.erb (1.2ms)
+Completed 200 OK in 29ms (Views: 28.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnasamples/new" for 127.0.0.1 at Fri Dec 02 13:03:24 -0600 2011
+  Processing by DnasamplesController#new as HTML
+Rendered dnasamples/new.html.erb within layouts/dnasamples (67.1ms)
+Rendered _navigation.html.erb (2.3ms)
+Completed 200 OK in 107ms (Views: 103.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/dnasamples/new" for 127.0.0.1 at Fri Dec 02 13:03:24 -0600 2011
+  Processing by DnasamplesController#new as HTML
+Rendered dnasamples/new.html.erb within layouts/dnasamples (20.3ms)
+Rendered _navigation.html.erb (2.4ms)
+Completed 200 OK in 37ms (Views: 36.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/dnasamples" for 127.0.0.1 at Fri Dec 02 13:03:25 -0600 2011
+  Processing by DnasamplesController#create as HTML
+  Parameters: {"commit"=>"Create", "dnasample"=>{"dnasample_number"=>"AABB", "date(1i)"=>"2011", "location_collected"=>"Chicago, IL", "date(2i)"=>"12", "extraction_notes"=>"Notes", "date(3i)"=>"2", "method"=>"Qiagen DNeasy Blood & Tissue Kit", "sample_type"=>"Tissue", "specimen_gender"=>"Male", "second_elution_volume"=>"2", "taxonomies"=>"", "dna_accession"=>"Rspec capybara", "first_elution_volume"=>"1", "collector_number"=>"1", "museum"=>"Field"}, "utf8"=>"\342\234\223"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (25.9ms)[0m  INSERT INTO "dnasamples" ("collector_number", "created_at", "created_by", "date", "dna_accession", "dnasample_number", "extraction_notes", "first_elution_volume", "location_collected", "method", "museum", "reextracted", "sample_type", "second_elute", "second_elution_volume", "specimen_gender", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["collector_number", 1], ["created_at", Fri, 02 Dec 2011 13:03:25 CST -06:00], ["created_by", nil], ["date", Fri, 02 Dec 2011], ["dna_accession", "Rspec capybara"], ["dnasample_number", "AABB"], ["extraction_notes", "Notes"], ["first_elution_volume", 1.0], ["location_collected", "Chicago, IL"], ["method", "Qiagen DNeasy Blood & Tissue Kit"], ["museum", "Field"], ["reextracted", nil], ["sample_type", "Tissue"], ["second_elute", nil], ["second_elution_volume", 2.0], ["specimen_gender", "Male"], ["updated_at", Fri, 02 Dec 2011 13:03:25 CST -06:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/dnasamples/1
+Completed 302 Found in 40ms
+
+
+Started GET "/dnasamples/1" for 127.0.0.1 at Fri Dec 02 13:03:25 -0600 2011
+  Processing by DnasamplesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mDnasample Load (0.3ms)[0m  SELECT "dnasamples".* FROM "dnasamples" WHERE "dnasamples"."id" = ? LIMIT 1  [["id", "1"]]
+response "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<GeocodeResponse>\n <status>OK</status>\n <result>\n  <type>locality</type>\n  <type>political</type>\n  <formatted_address>Chicago, IL, USA</formatted_address>\n  <address_component>\n   <long_name>Chicago</long_name>\n   <short_name>Chicago</short_name>\n   <type>locality</type>\n   <type>political</type>\n  </address_component>\n  <address_component>\n   <long_name>Cook</long_name>\n   <short_name>Cook</short_name>\n   <type>administrative_area_level_2</type>\n   <type>political</type>\n  </address_component>\n  <address_component>\n   <long_name>Illinois</long_name>\n   <short_name>IL</short_name>\n   <type>administrative_area_level_1</type>\n   <type>political</type>\n  </address_component>\n  <address_component>\n   <long_name>United States</long_name>\n   <short_name>US</short_name>\n   <type>country</type>\n   <type>political</type>\n  </address_component>\n  <geometry>\n   <location>\n    <lat>41.8781136</lat>\n    <lng>-87.6297982</lng>\n   </location>\n   <location_type>APPROXIMATE</location_type>\n   <viewport>\n    <southwest>\n     <lat>41.7450495</lat>\n     <lng>-87.8859170</lng>\n    </southwest>\n    <northeast>\n     <lat>42.0109012</lat>\n     <lng>-87.3736794</lng>\n    </northeast>\n   </viewport>\n   <bounds>\n    <southwest>\n     <lat>41.6443350</lat>\n     <lng>-87.9402669</lng>\n    </southwest>\n    <northeast>\n     <lat>42.0231310</lat>\n     <lng>-87.5236609</lng>\n    </northeast>\n   </bounds>\n  </geometry>\n </result>\n</GeocodeResponse>\n"
+  [1m[36mTaxonomy Load (0.4ms)[0m  [1mSELECT "taxonomies".* FROM "taxonomies" INNER JOIN "dnasamples_taxonomies" ON "taxonomies"."id" = "dnasamples_taxonomies"."taxonomy_id" WHERE "dnasamples_taxonomies"."dnasample_id" = 1[0m
+Rendered dnasamples/show.html.erb within layouts/dnasamples (75.8ms)
+Rendered _navigation.html.erb (1.1ms)
+Completed 200 OK in 755ms (Views: 101.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/dnasamples/new" for 127.0.0.1 at Fri Dec 02 13:03:25 -0600 2011
+  Processing by DnasamplesController#new as HTML
+Rendered dnasamples/new.html.erb within layouts/dnasamples (18.8ms)
+Rendered _navigation.html.erb (1.3ms)
+Completed 200 OK in 25ms (Views: 24.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnasamples/new" for 127.0.0.1 at Fri Dec 02 13:03:26 -0600 2011
+  Processing by DnasamplesController#new as HTML
+Rendered dnasamples/new.html.erb within layouts/dnasamples (16.4ms)
+Rendered _navigation.html.erb (1.0ms)
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnasamples/new" for 127.0.0.1 at Fri Dec 02 13:03:26 -0600 2011
+  Processing by DnasamplesController#new as HTML
+Rendered dnasamples/new.html.erb within layouts/dnasamples (18.4ms)
+Rendered _navigation.html.erb (1.0ms)
+Completed 200 OK in 24ms (Views: 23.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (43.7ms)[0m  INSERT INTO "dnasamples" ("collector_number", "created_at", "created_by", "date", "dna_accession", "dnasample_number", "extraction_notes", "first_elution_volume", "location_collected", "method", "museum", "reextracted", "sample_type", "second_elute", "second_elution_volume", "specimen_gender", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["collector_number", nil], ["created_at", Fri, 02 Dec 2011 13:08:21 CST -06:00], ["created_by", nil], ["date", nil], ["dna_accession", "FG123"], ["dnasample_number", nil], ["extraction_notes", nil], ["first_elution_volume", nil], ["location_collected", nil], ["method", nil], ["museum", nil], ["reextracted", nil], ["sample_type", nil], ["second_elute", nil], ["second_elution_volume", nil], ["specimen_gender", nil], ["updated_at", Fri, 02 Dec 2011 13:08:21 CST -06:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (11.3ms)[0m  INSERT INTO "dnasamples" ("collector_number", "created_at", "created_by", "date", "dna_accession", "dnasample_number", "extraction_notes", "first_elution_volume", "location_collected", "method", "museum", "reextracted", "sample_type", "second_elute", "second_elution_volume", "specimen_gender", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["collector_number", nil], ["created_at", Fri, 02 Dec 2011 13:08:52 CST -06:00], ["created_by", nil], ["date", nil], ["dna_accession", "FG123"], ["dnasample_number", nil], ["extraction_notes", nil], ["first_elution_volume", nil], ["location_collected", nil], ["method", nil], ["museum", nil], ["reextracted", nil], ["sample_type", nil], ["second_elute", nil], ["second_elution_volume", nil], ["specimen_gender", nil], ["updated_at", Fri, 02 Dec 2011 13:08:52 CST -06:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (11.4ms)[0m  INSERT INTO "dnasamples" ("collector_number", "created_at", "created_by", "date", "dna_accession", "dnasample_number", "extraction_notes", "first_elution_volume", "location_collected", "method", "museum", "reextracted", "sample_type", "second_elute", "second_elution_volume", "specimen_gender", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["collector_number", nil], ["created_at", Fri, 02 Dec 2011 13:09:46 CST -06:00], ["created_by", nil], ["date", nil], ["dna_accession", "FG123"], ["dnasample_number", nil], ["extraction_notes", nil], ["first_elution_volume", nil], ["location_collected", nil], ["method", nil], ["museum", nil], ["reextracted", nil], ["sample_type", nil], ["second_elute", nil], ["second_elution_volume", nil], ["specimen_gender", nil], ["updated_at", Fri, 02 Dec 2011 13:09:46 CST -06:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (35.3ms)[0m  INSERT INTO "dnasamples" ("collector_number", "created_at", "created_by", "date", "dna_accession", "dnasample_number", "extraction_notes", "first_elution_volume", "location_collected", "method", "museum", "reextracted", "sample_type", "second_elute", "second_elution_volume", "specimen_gender", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["collector_number", nil], ["created_at", Fri, 02 Dec 2011 13:15:02 CST -06:00], ["created_by", nil], ["date", nil], ["dna_accession", "FG123"], ["dnasample_number", nil], ["extraction_notes", nil], ["first_elution_volume", nil], ["location_collected", nil], ["method", nil], ["museum", nil], ["reextracted", nil], ["sample_type", nil], ["second_elute", nil], ["second_elution_volume", nil], ["specimen_gender", nil], ["updated_at", Fri, 02 Dec 2011 13:15:02 CST -06:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (12.6ms)[0m  INSERT INTO "dnasamples" ("collector_number", "created_at", "created_by", "date", "dna_accession", "dnasample_number", "extraction_notes", "first_elution_volume", "location_collected", "method", "museum", "reextracted", "sample_type", "second_elute", "second_elution_volume", "specimen_gender", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["collector_number", nil], ["created_at", Fri, 02 Dec 2011 13:15:23 CST -06:00], ["created_by", nil], ["date", nil], ["dna_accession", "FG123"], ["dnasample_number", nil], ["extraction_notes", nil], ["first_elution_volume", nil], ["location_collected", nil], ["method", nil], ["museum", nil], ["reextracted", nil], ["sample_type", nil], ["second_elute", nil], ["second_elution_volume", nil], ["specimen_gender", nil], ["updated_at", Fri, 02 Dec 2011 13:15:23 CST -06:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (61.8ms)[0m  INSERT INTO "dnasamples" ("collector_number", "created_at", "created_by", "date", "dna_accession", "dnasample_number", "extraction_notes", "first_elution_volume", "location_collected", "method", "museum", "reextracted", "sample_type", "second_elute", "second_elution_volume", "specimen_gender", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["collector_number", nil], ["created_at", Fri, 02 Dec 2011 13:21:20 CST -06:00], ["created_by", nil], ["date", nil], ["dna_accession", "FG123"], ["dnasample_number", nil], ["extraction_notes", nil], ["first_elution_volume", nil], ["location_collected", nil], ["method", nil], ["museum", nil], ["reextracted", nil], ["sample_type", nil], ["second_elute", nil], ["second_elution_volume", nil], ["specimen_gender", nil], ["updated_at", Fri, 02 Dec 2011 13:21:20 CST -06:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (28.2ms)[0m  INSERT INTO "dnasamples" ("collector_number", "created_at", "created_by", "date", "dna_accession", "dnasample_number", "extraction_notes", "first_elution_volume", "location_collected", "method", "museum", "reextracted", "sample_type", "second_elute", "second_elution_volume", "specimen_gender", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["collector_number", nil], ["created_at", Fri, 02 Dec 2011 14:23:45 CST -06:00], ["created_by", nil], ["date", nil], ["dna_accession", "FG123"], ["dnasample_number", "FG123Field"], ["extraction_notes", nil], ["first_elution_volume", nil], ["location_collected", nil], ["method", nil], ["museum", nil], ["reextracted", nil], ["sample_type", nil], ["second_elute", nil], ["second_elution_volume", nil], ["specimen_gender", nil], ["updated_at", Fri, 02 Dec 2011 14:23:45 CST -06:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "dnasamples" ("collector_number", "created_at", "created_by", "date", "dna_accession", "dnasample_number", "extraction_notes", "first_elution_volume", "location_collected", "method", "museum", "reextracted", "sample_type", "second_elute", "second_elution_volume", "specimen_gender", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["collector_number", nil], ["created_at", Fri, 02 Dec 2011 14:23:45 CST -06:00], ["created_by", nil], ["date", nil], ["dna_accession", "FG123"], ["dnasample_number", "FG123Field"], ["extraction_notes", nil], ["first_elution_volume", nil], ["location_collected", nil], ["method", nil], ["museum", nil], ["reextracted", nil], ["sample_type", nil], ["second_elute", nil], ["second_elution_volume", nil], ["specimen_gender", nil], ["updated_at", Fri, 02 Dec 2011 14:23:45 CST -06:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "dnasamples" ("collector_number", "created_at", "created_by", "date", "dna_accession", "dnasample_number", "extraction_notes", "first_elution_volume", "location_collected", "method", "museum", "reextracted", "sample_type", "second_elute", "second_elution_volume", "specimen_gender", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["collector_number", nil], ["created_at", Fri, 02 Dec 2011 14:23:45 CST -06:00], ["created_by", nil], ["date", nil], ["dna_accession", "FG123"], ["dnasample_number", "FG123Field"], ["extraction_notes", nil], ["first_elution_volume", nil], ["location_collected", nil], ["method", nil], ["museum", nil], ["reextracted", nil], ["sample_type", nil], ["second_elute", nil], ["second_elution_volume", nil], ["specimen_gender", nil], ["updated_at", Fri, 02 Dec 2011 14:23:45 CST -06:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "dnasamples" ("collector_number", "created_at", "created_by", "date", "dna_accession", "dnasample_number", "extraction_notes", "first_elution_volume", "location_collected", "method", "museum", "reextracted", "sample_type", "second_elute", "second_elution_volume", "specimen_gender", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["collector_number", nil], ["created_at", Fri, 02 Dec 2011 14:23:45 CST -06:00], ["created_by", nil], ["date", nil], ["dna_accession", "FG123"], ["dnasample_number", "FG123Field"], ["extraction_notes", nil], ["first_elution_volume", nil], ["location_collected", nil], ["method", nil], ["museum", nil], ["reextracted", nil], ["sample_type", nil], ["second_elute", nil], ["second_elution_volume", nil], ["specimen_gender", nil], ["updated_at", Fri, 02 Dec 2011 14:23:45 CST -06:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (11.0ms)[0m  INSERT INTO "dnasamples" ("collector_number", "created_at", "created_by", "date", "dna_accession", "dnasample_number", "extraction_notes", "first_elution_volume", "location_collected", "method", "museum", "reextracted", "sample_type", "second_elute", "second_elution_volume", "specimen_gender", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["collector_number", nil], ["created_at", Fri, 02 Dec 2011 14:25:52 CST -06:00], ["created_by", nil], ["date", nil], ["dna_accession", "FG123"], ["dnasample_number", "FG123Field"], ["extraction_notes", nil], ["first_elution_volume", nil], ["location_collected", nil], ["method", nil], ["museum", nil], ["reextracted", nil], ["sample_type", nil], ["second_elute", nil], ["second_elution_volume", nil], ["specimen_gender", nil], ["updated_at", Fri, 02 Dec 2011 14:25:52 CST -06:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (10.8ms)[0m  INSERT INTO "dnasamples" ("collector_number", "created_at", "created_by", "date", "dna_accession", "dnasample_number", "extraction_notes", "first_elution_volume", "location_collected", "method", "museum", "reextracted", "sample_type", "second_elute", "second_elution_volume", "specimen_gender", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["collector_number", nil], ["created_at", Fri, 02 Dec 2011 14:54:10 CST -06:00], ["created_by", nil], ["date", nil], ["dna_accession", "FG123"], ["dnasample_number", "FG123Field"], ["extraction_notes", nil], ["first_elution_volume", nil], ["location_collected", nil], ["method", nil], ["museum", nil], ["reextracted", nil], ["sample_type", nil], ["second_elute", nil], ["second_elution_volume", nil], ["specimen_gender", nil], ["updated_at", Fri, 02 Dec 2011 14:54:10 CST -06:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (15.4ms)[0m  INSERT INTO "dnasamples" ("collector_number", "created_at", "created_by", "date", "dna_accession", "dnasample_number", "extraction_notes", "first_elution_volume", "location_collected", "method", "museum", "reextracted", "sample_type", "second_elute", "second_elution_volume", "specimen_gender", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["collector_number", nil], ["created_at", Fri, 02 Dec 2011 14:59:23 CST -06:00], ["created_by", nil], ["date", nil], ["dna_accession", "FG123"], ["dnasample_number", "FG123Field"], ["extraction_notes", nil], ["first_elution_volume", nil], ["location_collected", nil], ["method", nil], ["museum", nil], ["reextracted", nil], ["sample_type", nil], ["second_elute", nil], ["second_elution_volume", nil], ["specimen_gender", nil], ["updated_at", Fri, 02 Dec 2011 14:59:23 CST -06:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (12.9ms)[0m  INSERT INTO "dnasamples" ("collector_number", "created_at", "created_by", "date", "dna_accession", "dnasample_number", "extraction_notes", "first_elution_volume", "location_collected", "method", "museum", "reextracted", "sample_type", "second_elute", "second_elution_volume", "specimen_gender", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["collector_number", nil], ["created_at", Fri, 02 Dec 2011 14:59:40 CST -06:00], ["created_by", nil], ["date", nil], ["dna_accession", "FG123"], ["dnasample_number", "FG123Field"], ["extraction_notes", nil], ["first_elution_volume", nil], ["location_collected", nil], ["method", nil], ["museum", nil], ["reextracted", nil], ["sample_type", nil], ["second_elute", nil], ["second_elution_volume", nil], ["specimen_gender", nil], ["updated_at", Fri, 02 Dec 2011 14:59:40 CST -06:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (12.6ms)[0m  INSERT INTO "dnasamples" ("collector_number", "created_at", "created_by", "date", "dna_accession", "dnasample_number", "extraction_notes", "first_elution_volume", "location_collected", "method", "museum", "reextracted", "sample_type", "second_elute", "second_elution_volume", "specimen_gender", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["collector_number", nil], ["created_at", Fri, 02 Dec 2011 15:00:08 CST -06:00], ["created_by", nil], ["date", nil], ["dna_accession", "FG123"], ["dnasample_number", "FG123Field"], ["extraction_notes", nil], ["first_elution_volume", nil], ["location_collected", nil], ["method", nil], ["museum", nil], ["reextracted", nil], ["sample_type", nil], ["second_elute", nil], ["second_elution_volume", nil], ["specimen_gender", nil], ["updated_at", Fri, 02 Dec 2011 15:00:08 CST -06:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "dnasamples" ("collector_number", "created_at", "created_by", "date", "dna_accession", "dnasample_number", "extraction_notes", "first_elution_volume", "location_collected", "method", "museum", "reextracted", "sample_type", "second_elute", "second_elution_volume", "specimen_gender", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["collector_number", nil], ["created_at", Fri, 02 Dec 2011 15:00:08 CST -06:00], ["created_by", nil], ["date", nil], ["dna_accession", "FG123"], ["dnasample_number", "FG123Field"], ["extraction_notes", nil], ["first_elution_volume", nil], ["location_collected", nil], ["method", nil], ["museum", nil], ["reextracted", nil], ["sample_type", nil], ["second_elute", nil], ["second_elution_volume", nil], ["specimen_gender", nil], ["updated_at", Fri, 02 Dec 2011 15:00:08 CST -06:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (13.3ms)[0m  INSERT INTO "dnasamples" ("collector_number", "created_at", "created_by", "date", "dna_accession", "dnasample_number", "extraction_notes", "first_elution_volume", "location_collected", "method", "museum", "reextracted", "sample_type", "second_elute", "second_elution_volume", "specimen_gender", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["collector_number", nil], ["created_at", Fri, 02 Dec 2011 15:01:14 CST -06:00], ["created_by", nil], ["date", nil], ["dna_accession", "FG123"], ["dnasample_number", "FG123Field"], ["extraction_notes", nil], ["first_elution_volume", nil], ["location_collected", nil], ["method", nil], ["museum", nil], ["reextracted", nil], ["sample_type", nil], ["second_elute", nil], ["second_elution_volume", nil], ["specimen_gender", nil], ["updated_at", Fri, 02 Dec 2011 15:01:14 CST -06:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (11.0ms)[0m  INSERT INTO "dnasamples" ("collector_number", "created_at", "created_by", "date", "dna_accession", "dnasample_number", "extraction_notes", "first_elution_volume", "location_collected", "method", "museum", "reextracted", "sample_type", "second_elute", "second_elution_volume", "specimen_gender", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["collector_number", nil], ["created_at", Fri, 02 Dec 2011 15:02:09 CST -06:00], ["created_by", nil], ["date", nil], ["dna_accession", "FG123"], ["dnasample_number", "FG123Field"], ["extraction_notes", nil], ["first_elution_volume", nil], ["location_collected", nil], ["method", nil], ["museum", nil], ["reextracted", nil], ["sample_type", nil], ["second_elute", nil], ["second_elution_volume", nil], ["specimen_gender", nil], ["updated_at", Fri, 02 Dec 2011 15:02:09 CST -06:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (11.0ms)[0m  INSERT INTO "dnasamples" ("collector_number", "created_at", "created_by", "date", "dna_accession", "dnasample_number", "extraction_notes", "first_elution_volume", "location_collected", "method", "museum", "reextracted", "sample_type", "second_elute", "second_elution_volume", "specimen_gender", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["collector_number", nil], ["created_at", Fri, 02 Dec 2011 15:02:29 CST -06:00], ["created_by", nil], ["date", nil], ["dna_accession", "FG123"], ["dnasample_number", "FG123Field"], ["extraction_notes", nil], ["first_elution_volume", nil], ["location_collected", nil], ["method", nil], ["museum", nil], ["reextracted", nil], ["sample_type", nil], ["second_elute", nil], ["second_elution_volume", nil], ["specimen_gender", nil], ["updated_at", Fri, 02 Dec 2011 15:02:29 CST -06:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "dnasamples" WHERE "dnasamples"."id" = 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (11.0ms)[0m  INSERT INTO "dnasamples" ("collector_number", "created_at", "created_by", "date", "dna_accession", "dnasample_number", "extraction_notes", "first_elution_volume", "location_collected", "method", "museum", "reextracted", "sample_type", "second_elute", "second_elution_volume", "specimen_gender", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["collector_number", nil], ["created_at", Fri, 02 Dec 2011 15:03:07 CST -06:00], ["created_by", nil], ["date", nil], ["dna_accession", "FG123"], ["dnasample_number", "FG123Field"], ["extraction_notes", nil], ["first_elution_volume", nil], ["location_collected", nil], ["method", nil], ["museum", nil], ["reextracted", nil], ["sample_type", nil], ["second_elute", nil], ["second_elution_volume", nil], ["specimen_gender", nil], ["updated_at", Fri, 02 Dec 2011 15:03:07 CST -06:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "dnasamples" WHERE "dnasamples"."id" = 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (29.4ms)[0m  INSERT INTO "taxonomies" ("character_diagnosis", "countries", "created_at", "description", "description_pdf", "distribution", "family", "genus", "ingroup", "new_diagnosis", "other_literature", "reference", "species", "subspecies", "synonyms", "type_museum", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["character_diagnosis", nil], ["countries", nil], ["created_at", Fri, 02 Dec 2011 15:08:28 CST -06:00], ["description", nil], ["description_pdf", nil], ["distribution", nil], ["family", nil], ["genus", "Gallus"], ["ingroup", nil], ["new_diagnosis", nil], ["other_literature", nil], ["reference", nil], ["species", "gallus"], ["subspecies", nil], ["synonyms", nil], ["type_museum", nil], ["updated_at", Fri, 02 Dec 2011 15:08:28 CST -06:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (10.8ms)[0m  INSERT INTO "taxonomies" ("character_diagnosis", "countries", "created_at", "description", "description_pdf", "distribution", "family", "genus", "ingroup", "new_diagnosis", "other_literature", "reference", "species", "subspecies", "synonyms", "type_museum", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["character_diagnosis", nil], ["countries", nil], ["created_at", Fri, 02 Dec 2011 15:10:25 CST -06:00], ["description", nil], ["description_pdf", nil], ["distribution", nil], ["family", nil], ["genus", "Ursa"], ["ingroup", nil], ["new_diagnosis", nil], ["other_literature", nil], ["reference", nil], ["species", "gallus"], ["subspecies", nil], ["synonyms", nil], ["type_museum", nil], ["updated_at", Fri, 02 Dec 2011 15:10:25 CST -06:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (13.2ms)[0m  INSERT INTO "dnasamples" ("collector_number", "created_at", "created_by", "date", "dna_accession", "dnasample_number", "extraction_notes", "first_elution_volume", "location_collected", "method", "museum", "reextracted", "sample_type", "second_elute", "second_elution_volume", "specimen_gender", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["collector_number", nil], ["created_at", Fri, 02 Dec 2011 15:12:22 CST -06:00], ["created_by", nil], ["date", nil], ["dna_accession", "FG123"], ["dnasample_number", "FG123Field"], ["extraction_notes", nil], ["first_elution_volume", nil], ["location_collected", "Rogers Park Chicago IL"], ["method", "Quagen DNeasy Blood & Tissue Kit"], ["museum", nil], ["reextracted", nil], ["sample_type", nil], ["second_elute", nil], ["second_elution_volume", nil], ["specimen_gender", nil], ["updated_at", Fri, 02 Dec 2011 15:12:22 CST -06:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "dnasamples" WHERE "dnasamples"."id" = 1

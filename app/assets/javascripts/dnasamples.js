@@ -19,13 +19,13 @@ $(document).ready(function() {
             source: '/taxonomies.json',
   // This updates the textfield when you move the updown the suggestions list, with your keyboard. In our case it will reflect the same value that you see in the suggestions which is the person.given_name.
             focus: function(event, ui) {
-                $('#taxonomy_select').val(ui.species);
+                $('#taxonomy_select').val(ui.genus+ui.species);
                 return false;
             },
  // Once a value in the drop down list is selected, do the following:
             select: function(event, ui) {
  // place the person.given_name value into the textfield called 'select_origin'...
-                $('#taxonomy_select').val(ui.item.species);
+                $('#taxonomy_select').val(ui.item.genus+" "+ui.item.species+ " "+ui.item.subspecies);
  // and place the person.id into the hidden textfield called 'link_origin_id'. 
         $('#dnasample_taxonomies').val(ui.item.id);
                 return false;
@@ -36,7 +36,7 @@ $(document).ready(function() {
             return $( "<li></li>" )
                 .data( "item.autocomplete", item )
  // For now which just want to show the person.given_name in the list.
-                .append( "<a>" + item.genus+" "+item.species + "</a>" )
+                .append( "<a>" + item.genus+" "+item.species + " "+item.subspecies+"</a>" )
                 .appendTo( ul );
         };
 

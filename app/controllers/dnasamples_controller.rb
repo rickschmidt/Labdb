@@ -51,26 +51,26 @@ class DnasamplesController < ApplicationController
   # POST /dnasamples
   # POST /dnasamples.xml
   def create
-	if (params[:dnasample][:taxonomies]!='')
-		params[:dnasample][:taxonomies]=[Taxonomy.find(params[:dnasample][:taxonomies])]
-	else
-		params[:dnasample][:taxonomies]=[]
-	end
-    @dnasample = Dnasample.new(params[:dnasample])
-    respond_to do |format|
-      if @dnasample.save
-
-		# 	@dnasample.taxonomies<<@taxonomy
-		# end
-						
-        format.html { redirect_to(@dnasample, :notice => 'Dnasample was successfully created.') }
-        format.xml  { render :xml => @dnasample, :status => :created, :location => @dnasample }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @dnasample.errors, :status => :unprocessable_entity }
+    	if (params[:dnasample][:taxonomies]!='')
+    		params[:dnasample][:taxonomies]=[Taxonomy.find(params[:dnasample][:taxonomies])]
+    	else
+    		params[:dnasample][:taxonomies]=[]
+    	end
+        @dnasample = Dnasample.new(params[:dnasample])
+        respond_to do |format|
+          if @dnasample.save
+    
+    		# 	@dnasample.taxonomies<<@taxonomy
+    		# end
+    						
+            format.html { redirect_to(@dnasample, :notice => 'Dnasample was successfully created.') }
+            format.xml  { render :xml => @dnasample, :status => :created, :location => @dnasample }
+          else
+            format.html { render :action => "new" }
+            format.xml  { render :xml => @dnasample.errors, :status => :unprocessable_entity }
+          end
+        end
       end
-    end
-  end
 
   # PUT /dnasamples/1
   # PUT /dnasamples/1.xml

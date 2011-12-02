@@ -1,11 +1,15 @@
-Feature: add dna samples to the dnasamples table
+Feature: The database should manage DNA Samples
     
-    In order to add the dna samples 
+    In order to manage the dna samples
     As a user
     I want to be able to create new dna samples
+	View an individual dna samples
+	Edit a dnasample
+	Delete a dnasample
     
-        Scenario: Create a new dna samples
-        Given a dna sample 
-        When I post the dnasample to dnasamples/new
-
-        
+        Scenario: Create a new dna sample
+        	Given a the fields necessary for a dna sample 
+			Then I should be able to create a dna sample
+			Then I should be able to edit a dna sample
+			Then I should be able to delete a dna sample
+			

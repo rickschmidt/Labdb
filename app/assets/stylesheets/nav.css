@@ -114,3 +114,8 @@ body, p, ol, ul, td {
   font-size:   13px;
   line-height: 18px;
 }
+.field_with_errors {
+  padding: 1px;
+  background-color: #DA0913;
+  display: table;
+}

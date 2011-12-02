@@ -7,6 +7,7 @@ require 'spec_helper'
 			@dnasample=mock_model(Dnasample)
 			Dnasample.stub!(:find).and_return(@dnasample)
 			@dnasample.stub!(:location_collected).and_return('NY NY')
+			@dnasample.taxonomies
 		end
 		
 		it "should be able to follow a link to the new page" do
