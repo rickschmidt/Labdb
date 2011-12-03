@@ -24,5 +24,8 @@ describe DnasamplesController do
 		end
 	end
 	
+	
+	it "should be able to have multiple projects" 
+	
 end
 

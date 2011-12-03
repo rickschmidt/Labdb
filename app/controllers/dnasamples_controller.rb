@@ -1,6 +1,7 @@
 class DnasamplesController < ApplicationController
   # GET /dnasamples
   # GET /dnasamples.xml
+  # GET /dnasamples.json
 
   helper_method :sort_column, :sort_direction
    helper :all
@@ -51,22 +52,30 @@ class DnasamplesController < ApplicationController
   # POST /dnasamples
   # POST /dnasamples.xml
   def create
-    	if (params[:dnasample][:taxonomies]!='')
-    		params[:dnasample][:taxonomies]=[Taxonomy.find(params[:dnasample][:taxonomies])]
-    	else
-    		params[:dnasample][:taxonomies]=[]
-    	end
+    	# if (params[:dnasample][:taxonomies]!='')
+    	#     		params[:dnasample][:taxonomies]=[Taxonomy.find(params[:dnasample][:taxonomies])]
+    	#     	else
+    	# 			flash[:error] = "Must choose an existing Taxonomy"
+    	#     		params[:dnasample][:taxonomies]=[]
+    	#     	end
+		# if (params[:dnasample][:projects]!='')
+		# 		    		params[:dnasample][:projects]=[Project.find(params[:dnasample][:projects])]
+		# 		    	else
+		# 					flash[:error] = "Must Choose an existing Project"
+		# 		    		params[:dnasample][:projects]=[]
+		# 		    	end
         @dnasample = Dnasample.new(params[:dnasample])
+		@dnasample.attributes={:projects=>(@dnasample.projects<<(Project.find(params[:projects][:id])))}
         respond_to do |format|
           if @dnasample.save
     
-    		# 	@dnasample.taxonomies<<@taxonomy
-    		# end
+    		
     						
             format.html { redirect_to(@dnasample, :notice => 'Dnasample was successfully created.') }
             format.xml  { render :xml => @dnasample, :status => :created, :location => @dnasample }
           else
             format.html { render :action => "new" }
+
             format.xml  { render :xml => @dnasample.errors, :status => :unprocessable_entity }
           end
         end
@@ -75,13 +84,10 @@ class DnasamplesController < ApplicationController
   # PUT /dnasamples/1
   # PUT /dnasamples/1.xml
   def update
-	if (params[:dnasample][:taxonomies]!='')
-		params[:dnasample][:taxonomies]=[Taxonomy.find(params[:dnasample][:taxonomies])]
-	else
-		params[:dnasample][:taxonomies]=[]
-	end
+	# dna.attributes={:projects=>(dna.projects<<pro)}
+	
     @dnasample = Dnasample.find(params[:id])
-
+	@dnasample.attributes={:projects=>(@dnasample.projects<<(Project.find(params[:projects][:id])))}
     respond_to do |format|
       if @dnasample.update_attributes(params[:dnasample])
         format.html { redirect_to(@dnasample, :notice => 'Dnasample was successfully updated.') }

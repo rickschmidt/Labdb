@@ -4,18 +4,14 @@ class Project < ActiveRecord::Base
   
   validates_presence_of :project_name
   validates_uniqueness_of :project_name
-  
+  		accepts_nested_attributes_for :dnasamples, :allow_destroy=>true
   
   
   
 
-  def self.search(search)
-        if search
-          
-          # Experiment.experiment_number_or_date_or_anneal_or_dna_amount_or_total_samples_or_notes_or_bsa_or_buffer_or_mgcl2_or_taq_or_dntps_or_dna_or_primerl_amount_or_primerh_amount_or_total_or_primerl_or_primerh_like_any(search)
-        else
-          # @search=Experiment.experiment_number_like("")
-          
-        end
+  def self.search(term)
+       projects=Project.arel_table
+		projects = Project.where(projects[:project_name].matches("%#{term}%"))
+		return projects
       end
 end

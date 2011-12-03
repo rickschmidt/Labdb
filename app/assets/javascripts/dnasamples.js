@@ -19,7 +19,7 @@ $(document).ready(function() {
             source: '/taxonomies.json',
   // This updates the textfield when you move the updown the suggestions list, with your keyboard. In our case it will reflect the same value that you see in the suggestions which is the person.given_name.
             focus: function(event, ui) {
-                $('#taxonomy_select').val(ui.genus+ui.species);
+                $('#taxonomy_select').val(ui.item.genus+" "+ui.item.species+" "+ui.item.subspecies);
                 return false;
             },
  // Once a value in the drop down list is selected, do the following:
@@ -37,6 +37,27 @@ $(document).ready(function() {
                 .data( "item.autocomplete", item )
  // For now which just want to show the person.given_name in the list.
                 .append( "<a>" + item.genus+" "+item.species + " "+item.subspecies+"</a>" )
+                .appendTo( ul );
+        };
+
+	$('#project_select').autocomplete({
+            minLength: 2,
+            source: '/projects.json',
+            focus: function(event, ui) {
+                $('#project_select').val(ui.item.project_name);
+                return false;
+            },
+            select: function(event, ui) {
+                $('#project_select').val(ui.item.project_name);
+        $('#projects_id').val(ui.item.id);
+                return false;
+            }
+        })
+        .data( "autocomplete" )._renderItem = function( ul, item ) {
+            return $( "<li></li>" )
+                .data( "item.autocomplete", item )
+ // For now which just want to show the person.given_name in the list.
+                .append( "<a>" + item.project_name+"</a>" )
                 .appendTo( ul );
         };
 

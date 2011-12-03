@@ -7,21 +7,27 @@
 </h3>
 <%= form_for(@dnasample) do |f| %>
 	<table border="0" cellspacing="5" cellpadding="5">
+		<tr>
+			<td>
+			<%= fields_for :projects do |p|%>				
+					<%= p.label "Project" %>
+					<input id="project_select">		
+					<%= p.hidden_field :id %>	
+				<%end%>	
+			</td>
+		</tr>
+		<tr>
+			<td	>
+				<%= f.label "Select Taxonomy" %>
+				<input id="taxonomy_select" size="50px"/>
+
+			</td>
+
+		</tr>
 			<tr>
 			<td>
 				<%= f.label "Accession Number" %>
 				<%= f.text_field :dna_accession %>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<%= f.label "Species Taxonomy" %>
-				<%= f.select(:taxonomies, Taxonomy.all.collect{|taxa| [[taxa.family,taxa.genus,taxa.species,taxa.subspecies].join(" "),taxa.id]} ) %>
-				<p>Must reselect taxonomies-on TODO list</p>
-				<!-- <%= f.fields_for @dnasample.taxonomies do |taxa2|  %>
-					 Name: <%= taxa2.select(:id, Taxonomy.all.collect{|taxa| [[taxa.family,taxa.genus,taxa.species,taxa.subspecies].join(" "),taxa.id]})  %>
-					<%end%> -->
-
 			</td>
 		</tr>
 		<tr>

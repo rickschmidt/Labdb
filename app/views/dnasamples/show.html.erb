@@ -1,11 +1,18 @@
 <h3>
-	Tissue Samples Obtained
+	General
 </h3>
-	<table div="left_table" border="0" cellspacing="5" cellpadding="5">
+	<table  border="0" cellspacing="5" cellpadding="5">
+		<tr>
+			<td>
+				<b>Project: </b><%= @dnasample.projects.collect{|project|[project.project_name]} %>
+			</td>
+		</tr>
 		<tr>
 			<td>
 				<b>Belongs to the following Taxonomy Record </b><br>
-				<%= @dnasample.taxonomies.collect{|taxa|[taxa.id,taxa.family,taxa.genus,taxa.species,taxa.subspecies].join(" ")} %>
+				<% @dnasample.taxonomies.collect do |taxa|%>
+					<%= [[taxa.id,taxa.family,taxa.genus,taxa.species,taxa.subspecies].join(" ")] %>
+					<%end%>
 			</td>
 		</tr>
 		<tr>

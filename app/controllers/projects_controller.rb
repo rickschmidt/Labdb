@@ -6,10 +6,15 @@ class ProjectsController < ApplicationController
   helper :all
  
 	def index
-      	@projects=Project.paginate(:per_page => @per_page, :page => params[:page])
+		if params[:term]
+			@projects=Project.search(params[:term])
+		 else
+	      	@projects=Project.paginate(:per_page => @per_page, :page => params[:page])
+		end
     	respond_to do |format|
       		format.html # index.html.erb
 		    format.xml  { render :xml => @projects }
+			format.json {render :json=>@projects.to_json}
 	    end
 	end
 

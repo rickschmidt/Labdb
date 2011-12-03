@@ -8,8 +8,7 @@ class TaxonomiesController < ApplicationController
     @per_page = params[:per_page] || 20
 
 		if params[:term]
-			# taxonomies=Taxonomy.arel_table
-			# @taxonomies = Taxonomy.where(taxonomies[:genus].matches("%#{params[:term]}%").or(taxonomies[:species].matches("%#{params[:term]}%")).or(taxonomies[:subspecies].matches("%#{params[:term]}%")))
+
 			@taxonomies=Taxonomy.search(params[:term])
 		 else
 	    	@taxonomies = Taxonomy.paginate(:per_page => @per_page, :page => params[:page])

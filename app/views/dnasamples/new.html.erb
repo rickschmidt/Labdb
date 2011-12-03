@@ -10,15 +10,25 @@
 	<table border="0" cellspacing="5" cellpadding="5">
 		<tr>
 			<td>
-				<%= f.label "Accession Number" %>
-				<%= f.text_field :dna_accession %>
+				<%= fields_for :projects do |p|%>				
+					<%= p.label "Project" %>
+					<input id="project_select">		
+					<%= p.hidden_field :id %>	
+				<%end%>
 			</td>
 		</tr>
 		<tr>
-			<td>
+			<td	>
 				<%= f.label "Select Taxonomy" %>
-				<input id="taxonomy_select"/>
-				<%= f.hidden_field :taxonomies %>
+				<input id="taxonomy_select" size="50px"/>
+			
+			</td>
+
+		</tr>
+		<tr>
+			<td>
+				<%= f.label "Accession Number" %>
+				<%= f.text_field :dna_accession %>
 			</td>
 		</tr>
 		<tr>
