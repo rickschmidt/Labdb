@@ -18,10 +18,12 @@
 			</td>
 		</tr>
 		<tr>
-			<td	>
-				<%= f.label "Select Taxonomy" %>
-				<input id="taxonomy_select" size="50px"/>
-			
+			<td>
+				<%= fields_for :taxonomy do |p|%>				
+					<%= p.label "Taxonomy" %>
+					<input id="taxonomy_select">		
+					<%= p.hidden_field :id %>	
+				<%end%>
 			</td>
 
 		</tr>

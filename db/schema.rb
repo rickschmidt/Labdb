@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111127011620) do
+ActiveRecord::Schema.define(:version => 20111204150352) do
 
   create_table "dnasamples", :force => true do |t|
     t.string   "dna_accession"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20111127011620) do
     t.text     "extraction_notes"
     t.string   "museum"
     t.string   "sample_type"
+    t.integer  "taxonomy_id"
   end
 
   create_table "dnasamples_genes", :id => false, :force => true do |t|

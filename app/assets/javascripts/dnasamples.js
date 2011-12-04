@@ -27,7 +27,7 @@ $(document).ready(function() {
  // place the person.given_name value into the textfield called 'select_origin'...
                 $('#taxonomy_select').val(ui.item.genus+" "+ui.item.species+ " "+ui.item.subspecies);
  // and place the person.id into the hidden textfield called 'link_origin_id'. 
-        $('#dnasample_taxonomies').val(ui.item.id);
+        $('#taxonomy_id').val(ui.item.id);
                 return false;
             }
         })

@@ -1,5 +1,10 @@
 class Taxonomy < ActiveRecord::Base
-  has_and_belongs_to_many :dnasamples
+  has_many :dnasamples
+	accepts_nested_attributes_for :dnasamples
+		attr_accessible :taxonomy_attributes
+	attr_accessible :taxonomies_attributes
+	attr_accessible :dnasamples_attributes
+	attr_accessible :dnasample_attributes
   
 
 	#Used in auto complete when Taxonomy needs to be selected. Searches the Genus species and subspecies fields of Taxonomy

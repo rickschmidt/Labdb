@@ -7,20 +7,14 @@
 </h3>
 <%= form_for(@dnasample) do |f| %>
 	<table border="0" cellspacing="5" cellpadding="5">
+
 		<tr>
 			<td>
-			<%= fields_for :projects do |p|%>				
-					<%= p.label "Project" %>
-					<input id="project_select">		
+				<%= fields_for :taxonomy do |p|%>				
+					<%= p.label "Taxonomy" %>
+					<input id="taxonomy_select" >		
 					<%= p.hidden_field :id %>	
-				<%end%>	
-			</td>
-		</tr>
-		<tr>
-			<td	>
-				<%= f.label "Select Taxonomy" %>
-				<input id="taxonomy_select" size="50px"/>
-
+				<%end%>
 			</td>
 
 		</tr>

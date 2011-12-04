@@ -45,7 +45,9 @@ class DnasamplesController < ApplicationController
   def edit
 	
     @dnasample = Dnasample.find(params[:id])
-
+	if @dnasample.projects!=nil
+		@projects2=@dnasample.projects
+	end
 
   end
 
@@ -66,6 +68,7 @@ class DnasamplesController < ApplicationController
 		# 		    	end
         @dnasample = Dnasample.new(params[:dnasample])
 		@dnasample.attributes={:projects=>(@dnasample.projects<<(Project.find(params[:projects][:id])))}
+				@dnasample.attributes={:taxonomy=>(@dnasample.taxonomy=(Taxonomy.find(params[:taxonomy][:id])))}
         respond_to do |format|
           if @dnasample.save
     
@@ -85,11 +88,30 @@ class DnasamplesController < ApplicationController
   # PUT /dnasamples/1.xml
   def update
 	# dna.attributes={:projects=>(dna.projects<<pro)}
-	
+	p params
     @dnasample = Dnasample.find(params[:id])
-	@dnasample.attributes={:projects=>(@dnasample.projects<<(Project.find(params[:projects][:id])))}
+	# if (params[:projects][:id]!='')
+	# 	@dnasample.attributes<<{:projects=>(@dnasample.projects<<(Project.find(params[:projects][:id])))}
+	# end
+	if (params[:taxonomy][:id]!='')
+		# @dnasample.attributes={:taxonomy=>(@dnasample.taxonomy=(Taxonomy.find(params[:taxonomy][:id])))}
+		@taxonomy=(Taxonomy.find(params[:taxonomy][:id]))
+		puts @taxonomy.inspect
+		puts @dnasample.taxonomy
+		@dnasample.taxonomy=@taxonomy
+		@dnasample.save
+		puts @dnasample.inspect
+		puts @dnasample.taxonomy
+
+
+		# @dnasample.update_attributes(params[:dnasample][:taxonomy])
+	end
+	puts @dnasample.inspect
     respond_to do |format|
-      if @dnasample.update_attributes(params[:dnasample])
+		puts "params [:dnasample] #{params[:dnasample]}"
+      if @dnasample.update_attributes(params[:dnasample][:taxonomy])
+		puts @dnasample.taxonomy
+
         format.html { redirect_to(@dnasample, :notice => 'Dnasample was successfully updated.') }
         format.xml  { head :ok }
       else

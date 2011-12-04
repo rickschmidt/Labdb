@@ -10,9 +10,8 @@
 		<tr>
 			<td>
 				<b>Belongs to the following Taxonomy Record </b><br>
-				<% @dnasample.taxonomies.collect do |taxa|%>
-					<%= [[taxa.id,taxa.family,taxa.genus,taxa.species,taxa.subspecies].join(" ")] %>
-					<%end%>
+				<%= @dnasample.taxonomy.genus%>
+
 			</td>
 		</tr>
 		<tr>
