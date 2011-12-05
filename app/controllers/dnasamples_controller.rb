@@ -7,9 +7,7 @@ class DnasamplesController < ApplicationController
    helper :all
    def index
 		@per_page = params[:per_page]  ||= 10
-
-       	@dnasamples=Dnasample.paginate(:page => params[:page], :per_page=>@per_page)
-		@recent=Dnasample.order("updated_at DESC").limit(5)
+       	@dnasamples=Dnasample.paginate(:page => params[:page], :per_page=>@per_page).order("updated_at DESC")
 
 
     respond_to do |format|
@@ -23,7 +21,7 @@ class DnasamplesController < ApplicationController
   def show
     @dnasample = Dnasample.find(params[:id])
 	@coords=geocode(@dnasample.location_collected)
-	@googlemap="http://maps.googleapis.com/maps/api/staticmap?center=#{@coords['lat']},#{@coords['lng']}&zoom=15&size=400x400&sensor=false"
+	@googlemap="http://maps.googleapis.com/maps/api/staticmap?center=#{@coords['lat']},#{@coords['lng']}&zoom=9&size=400x400&sensor=false"
 	@taxonomy=@dnasample.taxonomy.genus+" "+@dnasample.taxonomy.species+" "+@dnasample.taxonomy.subspecies
     respond_to do |format|
       format.html # show.html.erb

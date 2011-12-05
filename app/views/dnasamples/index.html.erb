@@ -1,21 +1,9 @@
 <h1>DNA Samples</h1>
-<div class="index_information">
-<table style="position:relative;margin-left:500px">
-	<tr>
-		<th>Accession </th>
-		<th>Extraction</th>
-	</tr>
-	<% @recent.each do |r| %>
-	<tr>
-		<td><%= r.dna_accession %></td>
-		<td><%= r.dnasample_number %></td>
-	</tr>
-	<%end%>
-</table>
+
 
 <%= button_to 'Create', new_dnasample_path,{:method=>:get,:class=>"button_create"} %>
 
-</div>
+
 <div class="dnasamples_index">
 <table >
   <tr id="header_row">

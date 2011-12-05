@@ -37,7 +37,31 @@ end
 end 
 end
 
-
+namespace :db do
+	desc "Create fake projects"
+	task :create_projects=>:environment do
+		i=1
+		30.times do
+			project=Project.create(
+			:project_name=>"Project #{i}",
+			:date=>Date.today-rand(90),
+			:anneal=>rand(100.0),
+			:dna_amount=>rand(10.0),
+			:total_samples=>rand(30),
+			:bsa=>rand(10.0),
+			:buffer=>rand(10.0),
+			:mgcl2=>rand(10.0),
+			:taq=>rand(10.0),
+			:h2o=>rand(10.0),
+			:dntps=>rand(10.0),
+			:dna=>rand(10.0),
+			:notes=>Faker::Lorem.paragraph(3)			
+			)
+			i=i+1
+			project.save
+		end
+	end
+end
 
 namespace :db do 
 desc "create some fake genes" 
@@ -106,17 +130,17 @@ taxonomy = Taxonomy.create(
 :genus=>"Genus #{counter}",
 :species=>"species #{counter}",
 :subspecies=>"subspecies #{counter}",
-:new_diagnosis=>Faker::Lorem.words,
-:family=>Faker::Lorem.words,
-:description_pdf=>Faker::Lorem.words,
-:synonyms=>Faker::Lorem.words,
-:type_museum=>Faker::Lorem.words,
-:distribution=>Faker::Lorem.words,
-:ingroup=>Faker::Lorem.words,
-:other_literature=>Faker::Lorem.words,
-:character_diagnosis=>Faker::Lorem.words,
-:description=>Faker::Lorem.words,
-:countries=>Faker::Lorem.words
+:new_diagnosis=>Faker::Lorem.words(1),
+:family=>Faker::Lorem.words(1),
+:description_pdf=>Faker::Lorem.words(1),
+:synonyms=>Faker::Lorem.words(1),
+:type_museum=>Faker::Lorem.words(1),
+:distribution=>Faker::Lorem.words(1),
+:ingroup=>Faker::Lorem.words(1),
+:other_literature=>Faker::Lorem.words(1),
+:character_diagnosis=>Faker::Lorem.words(1),
+:description=>Faker::Lorem.words(1),
+:countries=>Faker::Lorem.words(1)
 
 )
 

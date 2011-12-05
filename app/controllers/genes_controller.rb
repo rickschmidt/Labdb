@@ -69,18 +69,7 @@ class GenesController < ApplicationController
   # PUT /genes/1.xml
   def update
     @gene = Gene.find(params[:id])
-         if @gene.update_attributes(params[:gene][:primerl]!="")
-                @primer=Primer.find(params[:gene][:primerl])
-                logger.debug "primer in primerl #{@primer}: #{@primer.sequence}"
-                @gene.primerl=@primer.sequence
-                logger.debug "gene primerl #{@gene.primerl}"
-            end
-    
-    if params[:gene][:primerh]!=""
-        @primer=Primer.find(params[:gene][:primerh])
-        @gene.primerh=@primer.sequence
-        @gene.save
-    end
+         
     respond_to do |format|
       
 

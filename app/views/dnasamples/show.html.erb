@@ -4,7 +4,12 @@
 	<table  border="0" cellspacing="5" cellpadding="5">
 		<tr>
 			<td>
-				<b>Project: </b><%= @dnasample.projects.collect{|project|[project.project_name].join(" ")} %>
+				<b>Project: </b>
+				<%if @dnasample.projects!=[]%>
+					<%= @dnasample.projects.collect{|project|[project.project_name].join(" ")} %>
+				<%else%>
+					<em>None</em>-A project that contained this DNA Sample was most likely deleted.
+				<%end%>
 			</td>
 			<td rowspan="8">
 				<%= image_tag(@googlemap) %>
