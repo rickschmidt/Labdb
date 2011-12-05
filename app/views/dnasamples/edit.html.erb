@@ -12,7 +12,7 @@
 			<td>
 				<%= fields_for :taxonomy do |p|%>				
 					<%= p.label "Taxonomy" %>
-					<input id="taxonomy_select" >		
+					<input id="taxonomy_select" value="<%= @dnasample.taxonomy.genus %>">		
 					<%= p.hidden_field :id %>	
 				<%end%>
 			</td>

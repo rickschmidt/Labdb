@@ -1,5 +1,7 @@
 Given /^a the fields necessary for a dna sample$/ do
 	 @dnasample=FactoryGirl.build(:dnasample)
+	puts @dnasample.inspect
+	puts @dnasample.projects.first.inspect
 end
 
 Then /^I should be able to create a dna sample$/ do

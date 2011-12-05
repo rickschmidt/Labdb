@@ -22,9 +22,9 @@ class DnasamplesController < ApplicationController
   # GET /dnasamples/1.xml
   def show
     @dnasample = Dnasample.find(params[:id])
-
-
 	@coords=geocode(@dnasample.location_collected)
+	@googlemap="http://maps.googleapis.com/maps/api/staticmap?center=#{@coords['lat']},#{@coords['lng']}&zoom=15&size=400x400&sensor=false"
+	@taxonomy=@dnasample.taxonomy.genus+" "+@dnasample.taxonomy.species+" "+@dnasample.taxonomy.subspecies
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @dnasample }
@@ -109,7 +109,7 @@ class DnasamplesController < ApplicationController
 	puts @dnasample.inspect
     respond_to do |format|
 		puts "params [:dnasample] #{params[:dnasample]}"
-      if @dnasample.update_attributes(params[:dnasample][:taxonomy])
+      if @dnasample.update_attributes(params[:dnasample])
 		puts @dnasample.taxonomy
 
         format.html { redirect_to(@dnasample, :notice => 'Dnasample was successfully updated.') }

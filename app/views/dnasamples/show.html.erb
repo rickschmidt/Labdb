@@ -4,33 +4,49 @@
 	<table  border="0" cellspacing="5" cellpadding="5">
 		<tr>
 			<td>
-				<b>Project: </b><%= @dnasample.projects.collect{|project|[project.project_name]} %>
+				<b>Project: </b><%= @dnasample.projects.collect{|project|[project.project_name].join(" ")} %>
+			</td>
+			<td rowspan="8">
+				<%= image_tag(@googlemap) %>
 			</td>
 		</tr>
 		<tr>
 			<td>
 				<b>Belongs to the following Taxonomy Record </b><br>
-				<%= @dnasample.taxonomy.genus%>
-
+				<%= @taxonomy %>
 			</td>
 		</tr>
 		<tr>
 			<td>
-				<b>Date of sample collection</b><br>
-				<%= @dnasample.date%>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<b>DNA Accession #</b><br>
+				<b>DNA Accession:</b><br>
 				<%=@dnasample.dna_accession %>
 			</td>
 		</tr>
 		<tr>
 			<td>
-				<b>Collector #</b>
+				<b>Collector Number:</b><br>
 				<%= @dnasample.collector_number %>
 			</td>			
+		</tr>
+		<tr>
+			<td>
+				<b>Collection Location:</b><br>
+				<%= @dnasample.location_collected %><br>
+				<b>Estimated Coordinates: </b><br>
+				<%= @coords['lng'] %>,<%= @coords['lat'] %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<b>Museum:</b><br>
+				<%= @dnasample.museum %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<b>Sample Type:</b><br>
+				<%= @dnasample.sample_type %>
+			</td>
 		</tr>
 		<tr>
 			<td>
@@ -42,18 +58,41 @@
 
 	</table>
 	
-	<div id='map'><b>Specific Location of Collection</b><br>
-				<%= @dnasample.location_collected %><%= image_tag("http://maps.googleapis.com/maps/api/staticmap?center=#{@coords['lat']},#{@coords['lng']}&zoom=5&size=400x400&sensor=false") %></div>
+	
 	<h3>
 		DNA Extraction
 	</h3>
 	<table border="0" cellspacing="5" cellpadding="5">
+		<tr>			
+			<td>
+				<b>Extraction Number</b>
+				<%= @dnasample.dnasample_number %>
+			</td>
+		<tr>	
+			<td>
+				<b>Date of sample collection</b><br>
+				<%= @dnasample.date%>
+			</td>
+		</tr>
 		<tr>
 			<td>
-				<b>Extraction Method</b>
+				<b>Extraction Method</b><br>
 				<%= @dnasample.method %>
 			</td>
 		</tr>
+		<tr>
+			<td>
+				<b>First Elution Volume</b><br>
+				<%= @dnasample.first_elution_volume %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<b>Second Elution Volume</b><br>
+				<%= @dnasample.second_elution_volume %>
+			</td>
+		</tr>
+		
 		<tr>
 			<td>
 				<b>Extraction Notes</b><br>
