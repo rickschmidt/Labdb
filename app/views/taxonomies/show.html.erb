@@ -74,23 +74,9 @@
 </p>
 
 <hr/>
-<h5>Associate this Species sample with a DNA sample.</h5>
-<% form_tag(:action => "submitdnasample") do %>
-<p>	<%= select('taxonomy','dnasamples',Dnasample.all.collect {|p| [ p.dna_accession, p.id] }, {:prompt => 'Select DNA Sample'})%> Select a DNA Sample by its Accession ID in the <%= link_to "DNA Samples", dnasamples_path %> table.</p>
-<p><%=h  hidden_field_tag(:taxonomyid, @taxonomy.id) %></p>
-
-<%= submit_tag "Add"%>
-<%end%>
-
-<h5> Delete a DNA Sample that is associated with this species.</h5>
-<% form_tag(:action => "removednasample") do %>
-<p>	<%= select('taxonomy','dnasamples',@taxonomydnasamples.all.collect {|p| [ p.dna_accession, p.id] }, {:prompt => 'Select DNA Sample'})%> Select a DNA Sample by its Accession ID in the <%= link_to "DNA Samples", dnasamples_path %> table.</p>
-<p><%=h  hidden_field_tag(:taxonomyid, @taxonomy.id) %></p>
-
-<%= submit_tag "Remove"%>
-<%end%>
 
 
 
-<%= link_to 'Edit', edit_taxonomy_path(@taxonomy) %> |
-<%= link_to 'Back', taxonomies_path %>
+
+<%= button_to 'Edit', edit_taxonomy_path(@taxonomy),{:method=>:get} %> 
+<%= button_to 'Delete', @taxonomy,{:method=>:delete} %>

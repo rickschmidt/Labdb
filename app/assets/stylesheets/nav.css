@@ -5,7 +5,7 @@ body{
 #wrapper {
 width:1168px;
 margin: 0 auto;	
-	
+padding-bottom:75px;
 
 
 }
@@ -64,6 +64,11 @@ div.horizontal a:hover,div.horizontal a:active
 		background: -webkit-gradient(linear, left top, left bottom, from(#5E993C), to(#57993A)); /* for webkit browsers */
 		-webkit-box-shadow:none;
 
+}
+
+div.horizontal a:hover#redlight {
+		background: -webkit-gradient(linear, left top, left bottom, from(#992C33), to(#C30E04)); /* for webkit browsers */
+		-webkit-box-shadow:none;
 }
 
 div.top{

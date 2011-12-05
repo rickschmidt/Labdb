@@ -107,6 +107,7 @@ class DnasamplesController < ApplicationController
 		# @dnasample.update_attributes(params[:dnasample][:taxonomy])
 	end
 	puts @dnasample.inspect
+
     respond_to do |format|
 		puts "params [:dnasample] #{params[:dnasample]}"
       if @dnasample.update_attributes(params[:dnasample])

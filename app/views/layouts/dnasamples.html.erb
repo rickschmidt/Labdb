@@ -8,10 +8,10 @@
   <title>Reddy Lab:DNA Samples</title>
   <%= stylesheet_link_tag 'dnasamples','jquery-ui-1.8.16.custom.css' %>
   <%= stylesheet_link_tag 'ipad' if ipad? %>
-<%= javascript_include_tag 'jquery','rails','jquery-ui-1.8.16.custom.min.js','dnasamples' %>
+<%= javascript_include_tag 'jquery','jquery-ui-1.8.16.custom.min.js','dnasamples' %>
 <%= csrf_meta_tag %>
 <%= stylesheet_link_tag 'nav' %>
-<%= javascript_include_tag :defaults %>
+
 
 
 </head>
@@ -26,7 +26,7 @@
 <p style="color: green"><%= flash[:notice] %></p>
 <%end%>
 <%if flash[:error]%>
-<P style="color: red"><%=flash[:error]%></p>
+<p style="color: red"><%=flash[:error]%></p>
 	<%end%>
 <%= yield %>
 

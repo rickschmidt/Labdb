@@ -71,5 +71,5 @@ position:fixed;
   </p>
 <% end %>
 
-<%= link_to 'Show', @pcr %> |
-<%= link_to 'Back', pcrs_path %>
+<%= button_to 'Show', @pcr ,{:method=>:get}%> 
+<%= button_to 'Delete', @pcr,{:method=>:delete} %>

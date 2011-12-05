@@ -43,10 +43,11 @@
 
 <tr><td>  <%= f.label :countries %><br />
     <%= f.text_field :countries %></td></tr>
-  <p>
+</table>
     <%= f.submit 'Update' %>
-  </p>
+
+
 <% end %>
 
-<%= link_to 'Show', @taxonomy %> |
-<%= link_to 'Back', taxonomies_path %>
+<%= button_to 'Show', @taxonomy ,{:method=>:get}%> 
+<%= button_to 'Delete', @taxonomy,{:method=>:delete} %>

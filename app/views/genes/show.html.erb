@@ -18,5 +18,5 @@
   <%=h @gene.primerh %>
 </p>
 
-<%= link_to 'Edit', edit_gene_path(@gene) %> |
-<%= link_to 'Back', genes_path %>
+<%= button_to 'Edit', edit_gene_path(@gene),{:method=>:get} %> 
+<%= button_to 'Delete', @gene,{:method=>:delete} %>

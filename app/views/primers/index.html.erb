@@ -8,7 +8,7 @@
 	<%=hidden_field_tag :sort, params[:sort]%>
 
 <% end %>
-	<%=h button_to "New Primer", new_primer_path%>
+<%= button_to 'Create', new_primer_path,{:method=>:get,:class=>"button_create"} %>
 	<div class="primers_index">
 <table >
 	<tr id="header_row">
@@ -26,9 +26,8 @@
 		<td ><%=h primer.updated_at %></td>
 		<td class="icons" id="show"><%= link_to image_tag("show.png", :border=>0), primer%></td>
 	 	<td class="icons"><%= link_to image_tag("edit.png", :border=>0), edit_primer_path(primer)%></td>
-	 	<td class="icons"><%= link_to image_tag("delete.png", :border=>0), primer, :confirm => 'Are you sure?', :method => :delete %></td>
+
 	</tr>
 	<%end%>
 </table>
 
-<%=h link_to "Create new", new_primer_path%>

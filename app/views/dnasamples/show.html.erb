@@ -102,7 +102,5 @@
 	</table>
 <hr/>
 
-
-
-<%= link_to 'Edit', edit_dnasample_path(@dnasample) %> |
-<%= link_to 'Back', dnasamples_path %>
+<%= button_to 'Edit', edit_dnasample_path(@dnasample),{:method=>:get} %> 
+<%= button_to 'Delete', @dnasample,{:method=>:delete} %>

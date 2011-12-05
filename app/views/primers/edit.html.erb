@@ -23,5 +23,5 @@
     <%= f.submit 'Update' %>
   </p>
 <% end %>
-
-<%= link_to 'Back', primers_path %>
+<%= button_to 'Show', @primer ,{:method=>:get}%> 
+<%= button_to 'Delete', @primer,{:method=>:delete} %>

@@ -12,15 +12,15 @@
 		</tr>
 	
 	<%@projects.each do |pro| %>
-	<tr class="<%= cycle("even", "odd") %>">
-	    <td><%=h pro.project_name %></td>
+	<tr class="<%= cycle("even", "odd") %> " >
+	    <td class="pcr"><%=h pro.project_name %></td>
 	    <td><%=h pro.date %></td>
 		    <td><%=h pro.date %></td>
 			    <td><%=h pro.date %></td>
 				    <td><%=h pro.date %></td>
 	    <td class="icons" id="show"><%= link_to image_tag("show.png", :border=>0), pro%></td>
 	 	<td class="icons"><%= link_to image_tag("edit.png", :border=>0), edit_project_path(pro)%></td>
-	 	<td class="icons"><%= link_to image_tag("delete.png", :border=>0), pro, :confirm => 'Are you sure?', :method => :delete %></td>
+
 
 	  </tr>
 	<% end %>

@@ -82,7 +82,7 @@ class PrimersController < ApplicationController
     @primer.destroy
 
     respond_to do |format|
-      format.html { redirect_to(primerss_url) }
+      format.html { redirect_to(primers_url) }
       format.xml  { head :ok }
     end
   end

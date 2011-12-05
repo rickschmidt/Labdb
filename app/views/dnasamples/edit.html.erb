@@ -62,8 +62,8 @@
 	<table border="0" cellspacing="5" cellpadding="5">
 		<tr>
 			<td>
-				<%= f.label :dna_accession, "Extraction Number (usually museum and accession number)" %><br>
-				<%= f.text_field :dna_accession %>
+				<%= f.label :dnasample_number, "Extraction Number (usually museum and accession number)" %><br>
+				<%= f.text_field :dnasample_number %>
 			</td>
 		</tr>
 		<tr>
@@ -102,5 +102,5 @@
   </p>
 <% end %>
 
-<%= link_to 'Show', @dnasample %> |
-<%= link_to 'Back', dnasamples_path %>
+<%= button_to 'Show', @dnasample ,{:method=>:get}%> 
+<%= button_to 'Delete', @dnasample,{:method=>:delete} %>
