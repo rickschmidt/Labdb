@@ -172,7 +172,7 @@ class PcrsController < ApplicationController
 
 def getdnasamplestats
 	@dnasample=Dnasample.find(params[:id])
-	@taxonomy=@dnasample.taxonomies.first
+	@taxonomy=@dnasample.taxonomy
 	logger.debug "GETDNASAMPLESTATS"
 	respond_to do |with|
 		with.js
