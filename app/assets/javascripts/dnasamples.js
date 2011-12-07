@@ -28,10 +28,12 @@ $(document).ready(function() {
         select: function(event, ui) {
             // place the person.given_name value into the textfield called 'select_origin'...
             $('#taxonomy_select').val(ui.item.genus + " " + ui.item.species + " " + ui.item.subspecies);
+			$('<span style="float:right;" class="ui-icon ui-icon-check"></span>').insertAfter('#taxonomy_select');	
             // and place the person.id into the hidden textfield called 'link_origin_id'.
             $('#taxonomy_id').val(ui.item.id);
             return false;
         }
+ 	
     })
     // The below code is straight from the jQuery example. It formats what data is displayed in the dropdown box, and can be customized.
     .data("autocomplete")._renderItem = function(ul, item) {
@@ -58,7 +60,8 @@ $(document).ready(function() {
            select: function(event, ui) {
                // place the person.given_name value into the textfield called 'select_origin'...
                $('#gene_select').val(ui.item.genbank);
-				$('<div><span class="ui-icon ui-icon-check"></span></div>').insertAfter('#gene_select');	
+				$('<span style="float:right;" class="ui-icon ui-icon-check"></span>').insertAfter('#gene_select');	
+				// $('#gene_select').addClass('ui-icon ui-icon-check');
 
                // and place the person.id into the hidden textfield called 'link_origin_id'.
                $('#gene_id').val(ui.item.id);
@@ -75,5 +78,5 @@ $(document).ready(function() {
            .appendTo(ul);
        };
     ////////////////////////////////////////////////////////////////////////////////////////////
-
+	
 });
