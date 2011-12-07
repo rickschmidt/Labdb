@@ -35,8 +35,6 @@ class GenesController < ApplicationController
   # GET /genes/new.xml
   def new
     @gene = Gene.new
-    @primers=Primer.find(:all)
-    @primer=Primer.new
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @gene }
@@ -54,15 +52,7 @@ class GenesController < ApplicationController
   def create
     @gene = Gene.new(params[:gene])
     
-      if params[:gene][:primerl]!=""
-        @primer=Primer.find(params[:gene][:primerl])
-        @gene.primerl=@primer.primerl
-    end
-    
-    if params[:gene][:primerh]!=""
-        @primer=Primer.find(params[:gene][:primerh])
-        @gene.primerh=@primer.primerh
-    end
+   
     respond_to do |format|
       if @gene.save
         format.html { redirect_to(@gene, :notice => 'Gene was successfully created.') }
@@ -105,21 +95,7 @@ class GenesController < ApplicationController
     end
   end
   
-  def getprimerpair
-      @primer=Primer.find(params[:id])
-      @primerh=@primer.primerh
-      @primerl=@primer.primerl
-
-      # render :update do |page|
-      #     page.replace "primerh", :object => @primerh
-      # end
-      flash[:notice] = "updating" 
-      respond_to do |with|
-            with.js
-                    logger.debug "here"
-                end
-
-    end
+ 
     
     private 
    def sort_column

@@ -1,22 +1,44 @@
-<p>
-  <b>Genbank:</b>
-  <%=h @gene.genbank %>
-</p>
+<h3>Gene Information</h3>
+<table border="0" cellspacing="5" cellpadding="5">
+	<tr>
+		<td>
+			<b>Genbank: </b>	<%=h @gene.genbank %>
+		</td>
+	</tr>		
+	<tr>
+		<td>
+  			<b>Locus:</b><%=h @gene.locus %>		
+		</td>		
+	</tr>
+</table>
 
-<p>
-  <b>Locus:</b>
-  <%=h @gene.locus %>
-</p>
+<h3>DNA Samples that have been associated with this Gene</h3>
+<table style="margin-top:50px;margin-bottom:50px">
+	<tr>
+		<th>DNA Accession </th>
+		<th>Sample Number</th>
+	</tr>
 
-<p>
-  <b>Primerl:</b>
-  <%=h @gene.primerl %>
-</p>
+<%@gene.dnasamples.each do |dna| %>
+	<tr class="<%= cycle("even", "odd") %>">
+    	<td>
+			<%=h dna.dna_accession %>
+		</td>
+    	<td>
+			<%=h dna.dnasample_number %>
+		</td>
+		<td>
+			<%= link_to image_tag("show.png", :border=>0),dna %>
+		</td>
+		
+	</tr>
+<%end%>
+</table>
 
-<p>
-  <b>Primerh:</b>
-  <%=h @gene.primerh %>
-</p>
+
+
+
+
 
 <%= button_to 'Edit', edit_gene_path(@gene),{:method=>:get} %> 
 <%= button_to 'Delete', @gene,{:method=>:delete} %>

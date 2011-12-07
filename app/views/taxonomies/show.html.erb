@@ -73,7 +73,27 @@
   <%=h @taxonomy.countries %>
 </p>
 
-<hr/>
+<h3>DNA Samples that have been associated with this Taxonomy</h3>
+<table style="margin-top:50px;margin-bottom:50px">
+	<tr>
+		<th>DNA Accession </th>
+		<th>Sample Number</th>
+	</tr>
+
+<%@taxonomy.dnasamples.each do |dna| %>
+	<tr class="<%= cycle("even", "odd") %>">
+    	<td>
+			<%=h dna.dna_accession %>
+		</td>
+    	<td>
+			<%=h dna.dnasample_number %>
+		</td>
+		<td>
+			<%= link_to image_tag("show.png", :border=>0),dna %>
+		</td>
+	</tr>
+<%end%>
+</table>
 
 
 
