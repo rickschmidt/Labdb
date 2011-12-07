@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111204150352) do
+ActiveRecord::Schema.define(:version => 20111206162421) do
 
   create_table "dnasamples", :force => true do |t|
     t.string   "dna_accession"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20111204150352) do
     t.string   "museum"
     t.string   "sample_type"
     t.integer  "taxonomy_id"
+    t.integer  "gene_id"
   end
 
   create_table "dnasamples_genes", :id => false, :force => true do |t|
@@ -43,13 +44,6 @@ ActiveRecord::Schema.define(:version => 20111204150352) do
   create_table "dnasamples_pcrs", :id => false, :force => true do |t|
     t.integer  "dnasample_id"
     t.integer  "pcr_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "dnasamples_projects", :id => false, :force => true do |t|
-    t.integer  "dnasample_id"
-    t.integer  "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -97,6 +91,15 @@ ActiveRecord::Schema.define(:version => 20111204150352) do
     t.string   "bsa"
     t.string   "dntps"
     t.string   "taq"
+    t.integer  "dnasample_id"
+    t.integer  "project_id"
+  end
+
+  create_table "pcrs_primers", :id => false, :force => true do |t|
+    t.integer  "primer_id"
+    t.integer  "pcr_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "pcrs_projects", :id => false, :force => true do |t|

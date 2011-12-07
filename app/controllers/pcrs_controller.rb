@@ -21,7 +21,7 @@ class PcrsController < ApplicationController
   # GET /pcrs/1.xml
   def show
     @pcr = Pcr.find(params[:id])
-    @pcrdnas=@pcr.dnasamples
+
 
     session[:pcrid]=@pcr.id
     respond_to do |format|

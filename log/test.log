@@ -10451,3 +10451,95 @@ Completed 500 Internal Server Error in 2ms
   [1m[35m (0.1ms)[0m  UPDATE "dnasamples" SET "location_collected" = 'NY, NY', "updated_at" = '2011-12-05 00:28:25.029215' WHERE "dnasamples"."id" = 74
   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
   [1m[35mDnasample Load (0.3ms)[0m  SELECT "dnasamples".* FROM "dnasamples" WHERE "dnasamples"."id" = ? LIMIT 1  [["id", 75]]
+  [1m[36m (22.4ms)[0m  [1mSELECT 1 FROM "projects" WHERE "projects"."project_name" = 'Project Factory' LIMIT 1[0m
+  [1m[35mSQL (75.2ms)[0m  INSERT INTO "projects" ("anneal", "bsa", "buffer", "created_at", "date", "dna", "dna_amount", "dntps", "h2o", "mgcl2", "notes", "primerh", "primerh_amount", "primerl", "primerl_amount", "project_name", "taq", "total", "total_samples", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["anneal", nil], ["bsa", nil], ["buffer", nil], ["created_at", Tue, 06 Dec 2011 18:43:40 CST -06:00], ["date", nil], ["dna", nil], ["dna_amount", nil], ["dntps", nil], ["h2o", nil], ["mgcl2", nil], ["notes", nil], ["primerh", nil], ["primerh_amount", nil], ["primerl", nil], ["primerl_amount", nil], ["project_name", "Project Factory"], ["taq", nil], ["total", nil], ["total_samples", nil], ["updated_at", Tue, 06 Dec 2011 18:43:40 CST -06:00]]
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "taxonomies" ("character_diagnosis", "countries", "created_at", "description", "description_pdf", "distribution", "family", "genus", "ingroup", "new_diagnosis", "other_literature", "reference", "species", "subspecies", "synonyms", "type_museum", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["character_diagnosis", nil], ["countries", nil], ["created_at", Tue, 06 Dec 2011 18:43:40 CST -06:00], ["description", nil], ["description_pdf", nil], ["distribution", nil], ["family", nil], ["genus", "Gallus"], ["ingroup", nil], ["new_diagnosis", nil], ["other_literature", nil], ["reference", nil], ["species", "gallus"], ["subspecies", nil], ["synonyms", nil], ["type_museum", nil], ["updated_at", Tue, 06 Dec 2011 18:43:40 CST -06:00]]
+  [1m[35m (0.2ms)[0m  SELECT 1 FROM "projects" WHERE "projects"."project_name" = 'Project Factory' LIMIT 1
+  [1m[36mSQL (11.2ms)[0m  [1mINSERT INTO "taxonomies" ("character_diagnosis", "countries", "created_at", "description", "description_pdf", "distribution", "family", "genus", "ingroup", "new_diagnosis", "other_literature", "reference", "species", "subspecies", "synonyms", "type_museum", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["character_diagnosis", nil], ["countries", nil], ["created_at", Tue, 06 Dec 2011 18:45:01 CST -06:00], ["description", nil], ["description_pdf", nil], ["distribution", nil], ["family", nil], ["genus", "Gallus"], ["ingroup", nil], ["new_diagnosis", nil], ["other_literature", nil], ["reference", nil], ["species", "gallus"], ["subspecies", nil], ["synonyms", nil], ["type_museum", nil], ["updated_at", Tue, 06 Dec 2011 18:45:01 CST -06:00]]
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "taxonomies" ("character_diagnosis", "countries", "created_at", "description", "description_pdf", "distribution", "family", "genus", "ingroup", "new_diagnosis", "other_literature", "reference", "species", "subspecies", "synonyms", "type_museum", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["character_diagnosis", nil], ["countries", nil], ["created_at", Tue, 06 Dec 2011 18:45:01 CST -06:00], ["description", nil], ["description_pdf", nil], ["distribution", nil], ["family", nil], ["genus", "Gallus"], ["ingroup", nil], ["new_diagnosis", nil], ["other_literature", nil], ["reference", nil], ["species", "gallus"], ["subspecies", nil], ["synonyms", nil], ["type_museum", nil], ["updated_at", Tue, 06 Dec 2011 18:45:01 CST -06:00]]
+  [1m[36m (81.4ms)[0m  [1mDELETE FROM "dnasamples";[0m
+  [1m[35m (3.0ms)[0m  DELETE FROM "dnasamples_genes";
+  [1m[36m (2.7ms)[0m  [1mDELETE FROM "dnasamples_pcrs";[0m
+  [1m[35m (2.5ms)[0m  DELETE FROM "dnasamples_projects";
+  [1m[36m (2.5ms)[0m  [1mDELETE FROM "dnasamples_taxonomies";[0m
+  [1m[35m (2.4ms)[0m  DELETE FROM "genes";
+  [1m[36m (2.3ms)[0m  [1mDELETE FROM "pcrs";[0m
+  [1m[35m (2.2ms)[0m  DELETE FROM "pcrs_projects";
+  [1m[36m (3.1ms)[0m  [1mDELETE FROM "primers";[0m
+  [1m[35m (2.4ms)[0m  DELETE FROM "projects";
+  [1m[36m (2.3ms)[0m  [1mDELETE FROM "taxonomies";[0m
+  [1m[35m (54.5ms)[0m  DELETE FROM "users";
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "dnasamples" ("collector_number", "created_at", "created_by", "date", "dna_accession", "dnasample_number", "extraction_notes", "first_elution_volume", "location_collected", "method", "museum", "reextracted", "sample_type", "second_elute", "second_elution_volume", "specimen_gender", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["collector_number", 123], ["created_at", Tue, 06 Dec 2011 18:45:02 CST -06:00], ["created_by", nil], ["date", Tue, 06 Dec 2011], ["dna_accession", "FG123"], ["dnasample_number", "FG123Field"], ["extraction_notes", nil], ["first_elution_volume", 10.0], ["location_collected", "Rogers Park Chicago IL"], ["method", "Quagen DNeasy Blood & Tissue Kit"], ["museum", "Field"], ["reextracted", nil], ["sample_type", "Tissue"], ["second_elute", nil], ["second_elution_volume", 20.0], ["specimen_gender", "Male"], ["updated_at", Tue, 06 Dec 2011 18:45:02 CST -06:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "taxonomies" ("character_diagnosis", "countries", "created_at", "description", "description_pdf", "distribution", "family", "genus", "ingroup", "new_diagnosis", "other_literature", "reference", "species", "subspecies", "synonyms", "type_museum", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["character_diagnosis", nil], ["countries", nil], ["created_at", Tue, 06 Dec 2011 18:45:02 CST -06:00], ["description", nil], ["description_pdf", nil], ["distribution", nil], ["family", nil], ["genus", "Gallus"], ["ingroup", nil], ["new_diagnosis", nil], ["other_literature", nil], ["reference", nil], ["species", "gallus"], ["subspecies", nil], ["synonyms", nil], ["type_museum", nil], ["updated_at", Tue, 06 Dec 2011 18:45:02 CST -06:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mTaxonomy Load (0.2ms)[0m  [1mSELECT "taxonomies".* FROM "taxonomies" WHERE "taxonomies"."id" = 160 LIMIT 1[0m
+
+
+Started GET "/dnasamples" for 127.0.0.1 at Tue Dec 06 18:45:02 -0600 2011
+  Processing by DnasamplesController#index as HTML
+  [1m[35mDnasample Load (0.3ms)[0m  SELECT "dnasamples".* FROM "dnasamples" ORDER BY updated_at DESC LIMIT 10 OFFSET 0
+Rendered dnasamples/index.html.erb within layouts/dnasamples (9.3ms)
+Rendered _navigation.html.erb (1.6ms)
+Completed 200 OK in 48ms (Views: 46.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/dnasamples/new" for 127.0.0.1 at Tue Dec 06 18:45:02 -0600 2011
+  Processing by DnasamplesController#new as HTML
+Rendered dnasamples/_form.html.erb (17.3ms)
+Rendered dnasamples/new.html.erb within layouts/dnasamples (20.6ms)
+Rendered _navigation.html.erb (1.0ms)
+Completed 200 OK in 26ms (Views: 25.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "dnasamples" ("collector_number", "created_at", "created_by", "date", "dna_accession", "dnasample_number", "extraction_notes", "first_elution_volume", "location_collected", "method", "museum", "reextracted", "sample_type", "second_elute", "second_elution_volume", "specimen_gender", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["collector_number", 123], ["created_at", Tue, 06 Dec 2011 18:45:02 CST -06:00], ["created_by", nil], ["date", Tue, 06 Dec 2011], ["dna_accession", "FG123"], ["dnasample_number", "FG123Field"], ["extraction_notes", nil], ["first_elution_volume", 10.0], ["location_collected", "Rogers Park Chicago IL"], ["method", "Quagen DNeasy Blood & Tissue Kit"], ["museum", "Field"], ["reextracted", nil], ["sample_type", "Tissue"], ["second_elute", nil], ["second_elution_volume", 20.0], ["specimen_gender", "Male"], ["updated_at", Tue, 06 Dec 2011 18:45:02 CST -06:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "taxonomies" ("character_diagnosis", "countries", "created_at", "description", "description_pdf", "distribution", "family", "genus", "ingroup", "new_diagnosis", "other_literature", "reference", "species", "subspecies", "synonyms", "type_museum", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["character_diagnosis", nil], ["countries", nil], ["created_at", Tue, 06 Dec 2011 18:45:02 CST -06:00], ["description", nil], ["description_pdf", nil], ["distribution", nil], ["family", nil], ["genus", "Gallus"], ["ingroup", nil], ["new_diagnosis", nil], ["other_literature", nil], ["reference", nil], ["species", "gallus"], ["subspecies", nil], ["synonyms", nil], ["type_museum", nil], ["updated_at", Tue, 06 Dec 2011 18:45:02 CST -06:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mTaxonomy Load (0.2ms)[0m  [1mSELECT "taxonomies".* FROM "taxonomies" WHERE "taxonomies"."id" = 160 LIMIT 1[0m
+
+
+Started GET "/dnasamples/new" for 127.0.0.1 at Tue Dec 06 18:45:02 -0600 2011
+  Processing by DnasamplesController#new as HTML
+Rendered dnasamples/_form.html.erb (15.2ms)
+Rendered _navigation.html.erb (1.4ms)
+Completed 200 OK in 25ms (Views: 24.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/dnasamples" for 127.0.0.1 at Tue Dec 06 18:45:03 -0600 2011
+  Processing by DnasamplesController#create as HTML
+  Parameters: {"commit"=>"Create", "gene"=>{"id"=>""}, "dnasample"=>{"dnasample_number"=>"AABB", "date(1i)"=>"2011", "location_collected"=>"Chicago, IL", "date(2i)"=>"12", "extraction_notes"=>"Notes", "date(3i)"=>"6", "method"=>"Qiagen DNeasy Blood & Tissue Kit", "sample_type"=>"Tissue", "specimen_gender"=>"Male", "second_elution_volume"=>"2", "dna_accession"=>"Rspec capybara", "first_elution_volume"=>"1", "collector_number"=>"1", "museum"=>"Field"}, "utf8"=>"\342\234\223", "taxonomy"=>{"id"=>""}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Rendered dnasamples/_form.html.erb (14.1ms)
+Rendered _navigation.html.erb (1.0ms)
+Completed 200 OK in 26ms (Views: 19.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "dnasamples" ("collector_number", "created_at", "created_by", "date", "dna_accession", "dnasample_number", "extraction_notes", "first_elution_volume", "location_collected", "method", "museum", "reextracted", "sample_type", "second_elute", "second_elution_volume", "specimen_gender", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["collector_number", 123], ["created_at", Tue, 06 Dec 2011 18:45:03 CST -06:00], ["created_by", nil], ["date", Tue, 06 Dec 2011], ["dna_accession", "FG123"], ["dnasample_number", "FG123Field"], ["extraction_notes", nil], ["first_elution_volume", 10.0], ["location_collected", "Rogers Park Chicago IL"], ["method", "Quagen DNeasy Blood & Tissue Kit"], ["museum", "Field"], ["reextracted", nil], ["sample_type", "Tissue"], ["second_elute", nil], ["second_elution_volume", 20.0], ["specimen_gender", "Male"], ["updated_at", Tue, 06 Dec 2011 18:45:03 CST -06:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "taxonomies" ("character_diagnosis", "countries", "created_at", "description", "description_pdf", "distribution", "family", "genus", "ingroup", "new_diagnosis", "other_literature", "reference", "species", "subspecies", "synonyms", "type_museum", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["character_diagnosis", nil], ["countries", nil], ["created_at", Tue, 06 Dec 2011 18:45:03 CST -06:00], ["description", nil], ["description_pdf", nil], ["distribution", nil], ["family", nil], ["genus", "Gallus"], ["ingroup", nil], ["new_diagnosis", nil], ["other_literature", nil], ["reference", nil], ["species", "gallus"], ["subspecies", nil], ["synonyms", nil], ["type_museum", nil], ["updated_at", Tue, 06 Dec 2011 18:45:03 CST -06:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mTaxonomy Load (0.2ms)[0m  SELECT "taxonomies".* FROM "taxonomies" WHERE "taxonomies"."id" = 160 LIMIT 1
+
+
+Started GET "/dnasamples/74/edit" for 127.0.0.1 at Tue Dec 06 18:45:03 -0600 2011
+  Processing by DnasamplesController#edit as HTML
+  Parameters: {"id"=>"74"}
+  [1m[36mDnasample Load (0.2ms)[0m  [1mSELECT "dnasamples".* FROM "dnasamples" WHERE "dnasamples"."id" = ? LIMIT 1[0m  [["id", "74"]]
+Rendered dnasamples/_form.html.erb (132.5ms)
+Rendered _navigation.html.erb (1.0ms)
+Completed 200 OK in 162ms (Views: 159.8ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/dnasamples/74" for 127.0.0.1 at Tue Dec 06 18:45:03 -0600 2011
+  Processing by DnasamplesController#update as HTML
+  Parameters: {"commit"=>"Update", "gene"=>{"id"=>""}, "dnasample"=>{"dnasample_number"=>"AABB", "date(1i)"=>"2011", "location_collected"=>"Chicago, IL", "date(2i)"=>"12", "extraction_notes"=>"Notes", "date(3i)"=>"6", "method"=>"Qiagen DNeasy Blood & Tissue Kit", "sample_type"=>"Tissue", "specimen_gender"=>"Male", "second_elution_volume"=>"2", "dna_accession"=>"Rspec capybara", "first_elution_volume"=>"1", "collector_number"=>"1", "museum"=>"Field"}, "utf8"=>"\342\234\223", "id"=>"74", "taxonomy"=>{"id"=>""}}
+  [1m[35mDnasample Load (0.1ms)[0m  SELECT "dnasamples".* FROM "dnasamples" WHERE "dnasamples"."id" = ? LIMIT 1  [["id", "74"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Rendered dnasamples/_form.html.erb (19.7ms)
+Rendered _navigation.html.erb (1.1ms)
+Completed 200 OK in 34ms (Views: 27.6ms | ActiveRecord: 0.3ms)

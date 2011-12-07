@@ -1,5 +1,5 @@
 class Primer < ActiveRecord::Base
-
+	has_and_belongs_to_many :pcrs
       validates_presence_of :name
        
 

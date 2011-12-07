@@ -43,40 +43,26 @@ class DnasamplesController < ApplicationController
   def edit
 	
     @dnasample = Dnasample.find(params[:id])
-	if @dnasample.projects!=nil
-		@projects2=@dnasample.projects
-	end
+
 
   end
 
   # POST /dnasamples
   # POST /dnasamples.xml
   def create
-    	# if (params[:dnasample][:taxonomies]!='')
-    	#     		params[:dnasample][:taxonomies]=[Taxonomy.find(params[:dnasample][:taxonomies])]
-    	#     	else
-    	# 			flash[:error] = "Must choose an existing Taxonomy"
-    	#     		params[:dnasample][:taxonomies]=[]
-    	#     	end
-		# if (params[:dnasample][:projects]!='')
-		# 		    		params[:dnasample][:projects]=[Project.find(params[:dnasample][:projects])]
-		# 		    	else
-		# 					flash[:error] = "Must Choose an existing Project"
-		# 		    		params[:dnasample][:projects]=[]
-		# 		    	end
         @dnasample = Dnasample.new(params[:dnasample])
-		@dnasample.attributes={:projects=>(@dnasample.projects<<(Project.find(params[:projects][:id])))}
-				@dnasample.attributes={:taxonomy=>(@dnasample.taxonomy=(Taxonomy.find(params[:taxonomy][:id])))}
+		if((params[:taxonomy][:id]!='')&&(params[:gene][:id]!=''))			
+			@dnasample.attributes={:gene=>(@dnasample.gene=(Gene.find(params[:gene][:id])))}
+    		@dnasample.attributes={:taxonomy=>(@dnasample.taxonomy=(Taxonomy.find(params[:taxonomy][:id])))}
+		else
+			flash[:error] = "Must choose a Taxonomy and a Gene"
+		end
         respond_to do |format|
-          if @dnasample.save
-    
-    		
-    						
+          if @dnasample.save    		    						
             format.html { redirect_to(@dnasample, :notice => 'Dnasample was successfully created.') }
             format.xml  { render :xml => @dnasample, :status => :created, :location => @dnasample }
           else
             format.html { render :action => "new" }
-
             format.xml  { render :xml => @dnasample.errors, :status => :unprocessable_entity }
           end
         end
@@ -84,40 +70,23 @@ class DnasamplesController < ApplicationController
 
   # PUT /dnasamples/1
   # PUT /dnasamples/1.xml
-  def update
-	# dna.attributes={:projects=>(dna.projects<<pro)}
-	p params
-    @dnasample = Dnasample.find(params[:id])
-	# if (params[:projects][:id]!='')
-	# 	@dnasample.attributes<<{:projects=>(@dnasample.projects<<(Project.find(params[:projects][:id])))}
-	# end
-	if (params[:taxonomy][:id]!='')
-		# @dnasample.attributes={:taxonomy=>(@dnasample.taxonomy=(Taxonomy.find(params[:taxonomy][:id])))}
-		@taxonomy=(Taxonomy.find(params[:taxonomy][:id]))
-		puts @taxonomy.inspect
-		puts @dnasample.taxonomy
-		@dnasample.taxonomy=@taxonomy
-		@dnasample.save
-		puts @dnasample.inspect
-		puts @dnasample.taxonomy
-
-
-		# @dnasample.update_attributes(params[:dnasample][:taxonomy])
-	end
-	puts @dnasample.inspect
-
-    respond_to do |format|
-		puts "params [:dnasample] #{params[:dnasample]}"
-      if @dnasample.update_attributes(params[:dnasample])
-		puts @dnasample.taxonomy
-
-        format.html { redirect_to(@dnasample, :notice => 'Dnasample was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @dnasample.errors, :status => :unprocessable_entity }
-      end
-    end
+	def update
+    	@dnasample = Dnasample.find(params[:id])
+		if(params[:taxonomy][:id]!='')
+			@dnasample.attributes={:taxonomy=>(@dnasample.taxonomy=(Taxonomy.find(params[:taxonomy][:id])))}
+		end
+		if(params[:gene][:id]!='')		
+			@dnasample.attributes={:gene=>(@dnasample.gene=(Gene.find(params[:gene][:id])))}    		
+		end    	
+		respond_to do |format|
+			if @dnasample.update_attributes(params[:dnasample])
+		        format.html { redirect_to(@dnasample, :notice => 'Dnasample was successfully updated.') }
+		        format.xml  { head :ok }
+		    else
+	        	format.html { render :action => "edit" }
+	        	format.xml  { render :xml => @dnasample.errors, :status => :unprocessable_entity }
+	      	end
+	    end
   end
 
   # DELETE /dnasamples/1
@@ -148,12 +117,12 @@ class DnasamplesController < ApplicationController
           flash[:notice] = "Removed gene #{@gene.genbank} to DNA sample #{@dnasample.dna_accession}. " 
         request.env["HTTP_REFERER"] ? (redirect_to :back) :(redirect_to :root)
   end
-  private 
-   def sort_column
-       Project.column_names.include?(params[:sort]) ? params[:sort] : "date"
-     end
-
-     def sort_direction
-       %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-     end
+  # private 
+  #    def sort_column
+  #        Project.column_names.include?(params[:sort]) ? params[:sort] : "date"
+  #      end
+  # 
+  #      def sort_direction
+  #        %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  #      end
 end

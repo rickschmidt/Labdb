@@ -15,21 +15,7 @@
 					<%= f.select(:projects,Project.all.collect{|pro|[pro.project_name,pro.id]}) %>
 				</td>
 			</tr>
-			<tr>
-				<td>
-				<%= f.label "DNA Sample" %>
-				<%= f.select(:dnasamples, Dnasample.all.collect{|dna| [[dna.dna_accession,dna.dnasample_number].join(" "),dna.id]} ,options={:include_blank=>true}) %><%= link_to image_tag("show.png", :border=>0), {},{:id=>"sample_link"} %>
-				</td>
-				<td style="background-color:#ffffff;
-					padding:4px;
-					padding-bottom:40px;
-					border:1px solid #d4d4d4;
-					width:300px;
-					font-size:100%;
-					">DNA Sample Stats
-					<div class="dnasample_stats"></div></td>
-			</tr>
-
+		
 			
 			</table>
 

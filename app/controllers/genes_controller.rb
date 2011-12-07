@@ -3,11 +3,20 @@ class GenesController < ApplicationController
   # GET /genes
   # GET /genes.xml
   def index
-    @genes = Gene.all
+	@per_page = params[:per_page] || 20
+		if params[:term]
+
+			@genes=Gene.search(params[:term])
+		 else
+	    	@genes = Gene.paginate(:per_page => @per_page, :page => params[:page])
+	  	end
+
+
 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @genes }
+	  format.json { render :json=>@genes.to_json}
     end
   end
 

@@ -1,8 +1,8 @@
 FactoryGirl.define do
 	
-	factory :project do
-		project_name "Project Factory"
-	end
+	# factory :project do
+	# 		project_name "Project Factory"
+	# 	end
 	
 	factory :taxonomy do
 		genus 'Gallus'
@@ -14,7 +14,7 @@ FactoryGirl.define do
 		dnasample_number 'FG123Field'
 		location_collected 'Rogers Park Chicago IL'
 		method 'Quagen DNeasy Blood & Tissue Kit'
-		projects [FactoryGirl.create(:project)]
+
 		date Date.today
 		first_elution_volume "10"
 		second_elution_volume "20"
@@ -30,7 +30,7 @@ FactoryGirl.define do
 		dnasample_number 'FG123Field'
 		location_collected 'NY, NY'
 		method 'Quagen DNeasy Blood & Tissue Kit'
-		projects [FactoryGirl.create(:project)]
+
 		date Date.today
 		first_elution_volume "10"
 		second_elution_volume "20"

@@ -1,0 +1,111 @@
+<h3>
+	General
+</h3>
+	<table border="0" cellspacing="5" cellpadding="5">
+
+		<tr>
+			<td>
+				<%= fields_for :taxonomy do |p|%>				
+					<%= p.label "Taxonomy" %>
+					<%if @dnasample.taxonomy%>					
+						<input id="taxonomy_select" size="40px" value="<%=[@dnasample.taxonomy.genus,@dnasample.taxonomy.species,@dnasample.taxonomy.subspecies].join(" ")%>">
+					<%else%>
+						<input id="taxonomy_select" size="40px">									
+					<%end%>
+					<%= p.hidden_field :id %>	
+				<%end%>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= fields_for :gene do |g| %>
+				<%= g.label "Gene" %>
+				<%if @dnasample.gene %>
+					<input id="gene_select" size="40px" value="<%=@dnasample.gene.id%>">
+				<%else%>
+						<input id="gene_select" size="40px">									
+				<%end%>
+					<%= g.hidden_field :id %>	
+				<%end%>
+			</td>
+		</tr>
+			<tr>
+			<td>
+				<%= f.label "Accession Number" %>
+				<%= f.text_field :dna_accession %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= f.label "Collector Number" %>
+				<%= f.text_field :collector_number %>
+			</td>			
+		</tr>
+		<tr>
+			<td>
+				<%= f.label "Specific Location of Collection" %>
+				<%= f.text_field :location_collected %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= f.label "Museum" %>
+				<%= f.text_field :museum %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= f.label "Sample Type" %>
+				<%= f.select(:sample_type,["Tissue","Skin","Feather","Blood","Other"],{:include_blank=>true}) %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= f.label "Specimen Gender" %>
+				<%= f.select(:specimen_gender,["Male","Female","Unknown"],{:include_blank=>true}) %>
+			</td>
+		</tr>
+
+	</table>
+	<h3>
+		Extraction 
+	</h3>
+	<table border="0" cellspacing="5" cellpadding="5">
+		<tr>
+			<td>
+				<%= f.label :dnasample_number, "Extraction Number (usually museum and accession number)" %><br>
+				<%= f.text_field :dnasample_number %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= f.label "Date of extraction"%><br>
+				<%= f.date_select :date, :start_year=>Date.today.year-100%>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= f.label "Extraction Method" %>
+				<%= f.select(:method,["Qiagen DNeasy Blood & Tissue Kit","GeneClean Kit for Ancient DNA","Phenol Chloroform Extraction","Omega SQ Tissue DNA Kit"],{:include_blank=>true}) %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= f.label "First Extraction Volume" %>
+				<%= f.text_field :first_elution_volume %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= f.label "Second Extraction Volume" %>
+				<%= f.text_field :second_elution_volume %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= f.label "Extraction Notes" %><br>
+				<%= f.text_area :extraction_notes ,:cols=>130,:rows=>15%>
+			</td>
+		</tr>
+	</table>
+  
