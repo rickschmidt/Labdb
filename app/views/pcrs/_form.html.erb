@@ -1,0 +1,66 @@
+<h4>
+	Associate this PCR with a DNA Sample
+</h4>
+<p>
+	
+		<%= fields_for :dnasample do |dna| %>
+				<%= dna.label "DNA Sample" %><br>
+				<%if @pcr.dnasample %>
+					<input id="dnasample_select" size="40px" value="<%=@pcr.dnasample.id%>">
+				<%else%>
+						<input id="dnasample_select" size="40px">									
+				<%end%>
+					<%= dna.hidden_field :id %>	
+		<%end%>
+		
+		
+			<%= fields_for :taxonomy do |dna| %>
+				<%= dna.label "Taxa" %><br>
+				<%if @pcr.dnasample %>
+					<input id="taxonomy_select" size="40px" value="<%=@pcr.dnasample.id%>">
+				<%else%>
+						<input id="taxonomy_select" size="40px">									
+				<%end%>
+					<%= dna.hidden_field :id %>	
+		<%end%>
+</p>
+<table>	
+	 <tr>
+		<td>
+			<%= f.label :h2o %><br>
+			<%= f.text_field :h2o %>
+		</td>
+		<td>
+			<%= f.label :buffer %><br>
+			<%= f.text_field :buffer %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= f.label :mgcl2 %><br>
+			<%= f.text_field :mgcl2 %>
+		</td>
+		<td>
+			<%= f.label :bsa %><br>
+			<%= f.text_field :bsa %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= f.label :taq %><br>
+			<%= f.text_field :taq %>
+		</td>
+
+		<td>
+			<%= f.label :dntps %><br>
+			<%= f.text_field :dntps %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= f.label :notes %><br>
+			<%= f.text_field :notes %>
+		</td>
+	</tr>
+
+</table>

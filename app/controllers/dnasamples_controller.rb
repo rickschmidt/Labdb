@@ -7,12 +7,17 @@ class DnasamplesController < ApplicationController
    helper :all
    def index
 		@per_page = params[:per_page]  ||= 10
-       	@dnasamples=Dnasample.paginate(:page => params[:page], :per_page=>@per_page).order("updated_at DESC")
+		if params[:term]
+			@dnasmaples=Dnasample.search(params[:term])
+		else
+       		@dnasamples=Dnasample.paginate(:page => params[:page], :per_page=>@per_page).order("updated_at DESC")
+	  	end
 
 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @dnasamples }
+		format.json { render :json=>@dnasamples.to_json}
     end
   end
 

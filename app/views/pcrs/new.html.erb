@@ -1,71 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
-<html>
-	<head>
-		<title></title>
-	</head>
-	<body>
-		<h1>
-			New PCR Reaction
-		</h1>
-		<%= form_for(@pcr) do |f| %>
-		<table>
-			<tr>
-				<td>
-					<%= f.label "Project" %>
-					<%= f.select(:projects,Project.all.collect{|pro|[pro.project_name,pro.id]}) %>
-				</td>
-			</tr>
-		
-			
-			</table>
+<h1>
+	New PCR Reaction
+</h1>
 
-		<table>
+<%= form_for(@pcr) do |f| %>
+	<%=render :partial => 'form',:locals => { :f => f }%>	
 
-			
-			 <tr>
-				<td>
-					<%= f.label :h2o %><br>
-					<%= f.text_field :h2o %>
-				</td>
-				<td>
-					<%= f.label :buffer %><br>
-					<%= f.text_field :buffer %>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<%= f.label :mgcl2 %><br>
-					<%= f.text_field :mgcl2 %>
-				</td>
-				<td>
-					<%= f.label :bsa %><br>
-					<%= f.text_field :bsa %>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<%= f.label :taq %><br>
-					<%= f.text_field :taq %>
-				</td>
-
-				<td>
-					<%= f.label :dntps %><br>
-					<%= f.text_field :dntps %>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<%= f.label :notes %><br>
-					<%= f.text_field :notes %>
-				</td>
-			</tr>
-
-		</table>
-		<p>
-			<%=render :partial => '/primerselect'%>
-		</p>
-		<p>
-			<%= f.submit 'Create' %>
-		</p><% end %><%= link_to 'Back', pcrs_path %>
-	</body>
-</html>
+	<%= f.submit 'Create' %>
+<%end%>
+<%= link_to 'Back', pcrs_path %>

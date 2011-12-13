@@ -14,4 +14,12 @@ class Dnasample < ActiveRecord::Base
 	validates :location_collected, :presence=>true
 	validates :method, :presence=>true
 	validates :taxonomy, :presence=>true
+	
+	#Used in auto complete when Dnasample needs to be selected. Searches the accession and sample numbers field of Dnasample
+	def self.search(term)
+		dnasamples=Dnasample.arel_table
+		dnasamples = Dnasample.where(dnasamples[:dna_accession].matches("%#{term}%").or(dnasamples[:dnasample_number].matches("%#{term}%")))
+		puts "dnasamples #{dnasamples.inspect}"
+		return dnasamples
+	end
 end

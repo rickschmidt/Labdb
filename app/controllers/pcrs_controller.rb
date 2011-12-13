@@ -22,8 +22,6 @@ class PcrsController < ApplicationController
   def show
     @pcr = Pcr.find(params[:id])
 
-
-    session[:pcrid]=@pcr.id
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @pcr }
@@ -48,28 +46,9 @@ class PcrsController < ApplicationController
   # POST /pcrs
   # POST /pcrs.xml
   def create
-	if params[:pcr][:projects]!=''
-		params[:pcr][:projects]=[Project.find(params[:pcr][:projects])]
-	else
-		params[:pcr][:projects]=[]
-	end
-	
-	if params[:pcr][:dnasamples]!=''
-		params[:pcr][:dnasamples]=[Dnasample.find(params[:pcr][:dnasamples])]
-	else
-		params[:pcr][:dnasmaples]=[]
-	end
+
 	 
 	@pcr = Pcr.new(params[:pcr])
-     if params[:gene][:primerl]!=""
-        @primer=Primer.find(params[:gene][:primerl])
-        @pcr.primerl=@primer.sequence
-    end
-    
-    if params[:gene][:primerh]!=""
-        @primer=Primer.find(params[:gene][:primerh])
-        @pcr.primerh=@primer.sequence
-    end
     respond_to do |format|
       if @pcr.save
         format.html { redirect_to(@pcr, :notice => 'Pcr was successfully created.') }
@@ -84,27 +63,9 @@ class PcrsController < ApplicationController
   # PUT /pcrs/1
   # PUT /pcrs/1.xml
   def update
-	if params[:pcr][:projects]!=''
-		params[:pcr][:projects]=[Project.find(params[:pcr][:projects])]
-	else
-		params[:pcr][:projects]=[]
-	end
-	if params[:pcr][:dnasamples]!=''
-		params[:pcr][:dnasamples]=[Dnasample.find(params[:pcr][:dnasamples])]
-	else
-		params[:pcr][:dnasmaples]=[]
-	end
+
     @pcr = Pcr.find(params[:id])
       
-     if params[:gene][:primerl]!=""
-        @primer=Primer.find(params[:gene][:primerl])
-        @pcr.primerl=@primer.sequence
-    end
-    
-    if params[:gene][:primerh]!=""
-        @primer=Primer.find(params[:gene][:primerh])
-        @pcr.primerh=@primer.sequence
-    end
     respond_to do |format|
       if @pcr.update_attributes(params[:pcr])
         format.html { redirect_to(@pcr, :notice => 'Pcr was successfully updated.') }

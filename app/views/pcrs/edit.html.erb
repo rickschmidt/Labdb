@@ -1,64 +1,12 @@
-<h1>Editing PCR Reation</h1>
+<h1>Editing PCR Reaction</h1>
 
-<%= form_for(@pcr) do |f| %>
+
   
+<%= form_for(@pcr) do |f| %>
+	<%=render :partial => 'form',:locals => { :f => f }%>	
 
-  		<table>
-			<tr>
-				<td>
-					<%= f.label "Project" %>
-					<%= f.select(:projects,Project.all.collect{|pro|[pro.project_name,pro.id]}) %>
-				</td>
-			
-
-<div class="dnasample_stats" ></div></td>
-			</tr>
-			 <tr>
-				<td>
-					<%= f.label :h2o %><br>
-					<%= f.text_field :h2o %>
-				</td>
-				<td>
-					<%= f.label :buffer %><br>
-					<%= f.text_field :buffer %>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<%= f.label :mgcl2 %><br>
-					<%= f.text_field :mgcl2 %>
-				</td>
-				<td>
-					<%= f.label :bsa %><br>
-					<%= f.text_field :bsa %>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<%= f.label :taq %><br>
-					<%= f.text_field :taq %>
-				</td>
-
-				<td>
-					<%= f.label :dntps %><br>
-					<%= f.text_field :dntps %>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<%= f.label :notes %><br>
-					<%= f.text_field :notes %>
-				</td>
-			</tr>
-		
-		</table>
-		<p>
-			<%=render :partial => '/primerselect'%>
-		</p>
-
-  <p>
     <%= f.submit 'Update' %>
-  </p>
+
 <% end %>
 
 <%= button_to 'Show', @pcr ,{:method=>:get}%> 
