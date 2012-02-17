@@ -13,7 +13,7 @@ class PcrsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @pcrs }
+      format.xml  { render :xml => @pcrs.to_xml(:include=>:tubes) }
     end
   end
 
@@ -24,7 +24,9 @@ class PcrsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @pcr }
+      format.xml  { render :xml => @pcr.to_xml(:include => :tubes) }
+ 	
+
     end
   end
 
@@ -45,10 +47,17 @@ class PcrsController < ApplicationController
 
   # POST /pcrs
   # POST /pcrs.xml
+
+
   def create
 
 	 
 	@pcr = Pcr.new(params[:pcr])
+	if(params[:tube][:id])
+		@pcr.attributes={:tube=>@pcr.tube=(Tube.find(params[:tube][:id]))}
+	else
+		flash[:error] = "Must choose tube"
+	end
     respond_to do |format|
       if @pcr.save
         format.html { redirect_to(@pcr, :notice => 'Pcr was successfully created.') }
@@ -65,7 +74,10 @@ class PcrsController < ApplicationController
   def update
 
     @pcr = Pcr.find(params[:id])
-      
+    if(params[:tube][:id])
+		@pcr.attributes={:tube=>@pcr.tube=(Tube.find(params[:tube][:id]))}
+	end
+	
     respond_to do |format|
       if @pcr.update_attributes(params[:pcr])
         format.html { redirect_to(@pcr, :notice => 'Pcr was successfully updated.') }

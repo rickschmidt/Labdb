@@ -27,6 +27,8 @@ end
 	 resources :taxonomies
  
 	 resources :primers
+	
+	resources :tubes
  
 
  
@@ -42,6 +44,7 @@ end
 		match 'pcrs/removednasample'
 		match '/pcrs/getprimersequence'
 		match 'pcrs/getdnasamplestats'
+		
   # Sample resource route with options:
   #   resources :products do
   #     member do

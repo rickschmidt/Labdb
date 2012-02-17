@@ -15,8 +15,8 @@ class DnasamplesController < ApplicationController
 
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @dnasamples }
+      	format.html # index.html.erb
+      	format.xml  { render :xml => @dnasamples }
 		format.json { render :json=>@dnasamples.to_json}
     end
   end
