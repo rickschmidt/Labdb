@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120217010252) do
+ActiveRecord::Schema.define(:version => 20120228230514) do
 
   create_table "dnasamples", :force => true do |t|
     t.string   "dna_accession"
@@ -173,6 +173,8 @@ ActiveRecord::Schema.define(:version => 20120217010252) do
     t.integer  "pcr_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "success"
+    t.boolean  "ready"
   end
 
   create_table "users", :force => true do |t|

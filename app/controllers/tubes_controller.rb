@@ -1,6 +1,6 @@
 class TubesController < ApplicationController
 	# GET /tubes
-  # GET /tubes.xml
+  	# GET /tubes.xml
 
 
   helper_method :sort_column, :sort_direction
@@ -8,7 +8,6 @@ class TubesController < ApplicationController
 
   
   def index
-
     @tubes =Tube.find(:all)
 
     respond_to do |format|
