@@ -8,11 +8,21 @@ class TubesController < ApplicationController
 
   
   def index
-    @tubes =Tube.find(:all)
+      @per_page = params[:per_page] || 20
+
+		if params[:term]
+
+			@tubes=Tube.search(params[:term])
+		 else
+	    	@tubes = Tube.paginate(:per_page => @per_page, :page => params[:page])
+	  	end
+
+
 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @tubes }
+	format.json {render :json=>@tubes.to_json}
     end
   end
 
@@ -39,7 +49,7 @@ class TubesController < ApplicationController
   end
   # GET /tubes/1/edit
   def edit
-    @tubes = Tube.find(params[:id])
+    @tube = Tube.find(params[:id])
   end
 
   # POST /tubes

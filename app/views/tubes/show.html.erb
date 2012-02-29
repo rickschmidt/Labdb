@@ -1,0 +1,16 @@
+<p>
+  <b>Genus:</b>
+  <%=h @tube.id %>
+</p>
+
+PrimerID:  <%=h @tube.primer_id %><br>
+PCRID:  <%=h @tube.pcr_id %><br>
+Success:  <%=h @tube.success %><br>
+Ready:  <%=h @tube.ready %><br>
+</table>
+
+
+
+
+<%= button_to 'Edit', edit_tube_path(@tube),{:method=>:get} %> 
+<%= button_to 'Delete', @tube,{:method=>:delete} %>

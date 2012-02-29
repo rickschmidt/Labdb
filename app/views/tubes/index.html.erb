@@ -1,0 +1,35 @@
+<div class="taxonomies_index">
+<h1>Tubes</h1>
+
+
+<%= button_to 'Create', new_tube_path,{:method=>:get,:class=>"button_create"} %>
+<table >
+  <tr id="header_row">
+	<th>ID</th>
+	<th>Pcr Id</th>
+	<th>Primer ID</th>
+	<th>Success</th>
+	<th>Ready</th>
+  </tr>
+
+<% @tubes.each do |tube| %>
+  <tr class="<%= cycle("even", "odd") %>">
+	<td ><%=h tube.id %></td>
+		<td><%=h tube.pcr_id %></td>
+		<td><%=h tube.primer_id %></td>
+    <td><%=h tube.success %></td>
+    <td><%=h tube.ready %></td>
+
+    <td class="icons" id="show"><%= link_to image_tag("show.png", :border=>0), tube%></td>
+ 	<td class="icons"><%= link_to image_tag("edit.png", :border=>0), edit_tube_path(tube)%></td>
+
+  </tr>
+<% end %>
+</table>
+<%= will_paginate @tubes %> 
+Per Page: <%= select_tag :per_page, options_for_select([10,20,50,100,200], params[:per_page].to_i),
+               :onchange => "if(this.value){window.location='?per_page='+this.value;}" %>
+
+<br />
+
+</div>
