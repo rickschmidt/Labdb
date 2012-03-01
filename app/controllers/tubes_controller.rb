@@ -21,7 +21,7 @@ class TubesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @tubes }
+      format.xml  { render :xml => Tube.all }
 	format.json {render :json=>@tubes.to_json}
     end
   end
