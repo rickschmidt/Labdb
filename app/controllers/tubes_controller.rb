@@ -13,7 +13,9 @@ class TubesController < ApplicationController
 		if params[:term]
 
 			@tubes=Tube.search(params[:term])
-		 else
+		 elsif params[:pcr_id]
+			@tubes = Tube.pcr(params[:pcr_id]).paginate(:per_page => @per_page, :page => params[:page])
+		else
 	    	@tubes = Tube.paginate(:per_page => @per_page, :page => params[:page])
 	  	end
 

@@ -53,11 +53,11 @@ class PcrsController < ApplicationController
 
 	 
 	@pcr = Pcr.new(params[:pcr])
-	if(params[:tube][:id])
-		@pcr.attributes={:tube=>@pcr.tube=(Tube.find(params[:tube][:id]))}
-	else
-		flash[:error] = "Must choose tube"
-	end
+	# if(params[:tube][:id])
+	# 	@pcr.attributes={:tube=>@pcr.tube=(Tube.find(params[:tube][:id]))}
+	# else
+	# 	flash[:error] = "Must choose tube"
+	# end
     respond_to do |format|
       if @pcr.save
         format.html { redirect_to(@pcr, :notice => 'Pcr was successfully created.') }

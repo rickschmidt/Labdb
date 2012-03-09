@@ -20,7 +20,9 @@ end
 
 	resources :genes
 
-	 resources :pcrs
+	 resources :pcrs do
+		resources :tubes
+	end
  
 	 resources :dnasamples
  
@@ -44,6 +46,7 @@ end
 		match 'pcrs/removednasample'
 		match '/pcrs/getprimersequence'
 		match 'pcrs/getdnasamplestats'
+
 		
   # Sample resource route with options:
   #   resources :products do
