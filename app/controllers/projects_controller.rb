@@ -27,14 +27,14 @@ class ProjectsController < ApplicationController
     @pcrs=Hash.new
     @projects=Project.find(:all, :limit=>15 )
     @project=Project.find(params[:id])
-    @dnasamples=@project.dnasamples
-    @project.pcrs.each do |pcr|
-      @pcrs[pcr]=pcr.dnasamples.first
-      logger.debug "pcrs in exp show #{@pcrs.inspect}"
-      # pcr.dnasamples.each do |dna|
-      #   @ids<<dna
-      # end
-    end
+   	@dnasamples=@project.dnasamples
+    # @project.pcrs.each do |pcr|
+    #       @pcrs[pcr]=pcr.dnasamples.first
+    #       logger.debug "pcrs in exp show #{@pcrs.inspect}"
+    #       # pcr.dnasamples.each do |dna|
+    #       #   @ids<<dna
+    #       # end
+    #     end
     @project.update_attributes(:total_samples=>@pcrs.size)
     respond_to do |format|
       format.html # show.html.erb

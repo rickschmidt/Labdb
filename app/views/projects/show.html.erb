@@ -1,6 +1,7 @@
 <p><b>Date:</b> <%= @project.date %> <b>Project:</b><%= @project.project_name %></p>
 <p><b>Total # of Samples: </b> <div class="totalSamples"><%= @project.total_samples %></div></p>
 <%= hidden_field_tag "projectId", @project.id %>
+<%= link_to "Pcrs", project_pcrs_path(@project) %>
 <div class="premix">
 	<table >
 
@@ -25,14 +26,14 @@
 		<th class="custom"><%= sortable 'success' %></th>
 		<th class="custom"><%= sortable 'ready' %></th>
 	</tr>
-<%@dnasamples.each do |dna_sample| %>
+<!-- <%@dnasamples.each do |dna_sample| %>
 
   <tr class="<%= cycle("even", "odd") %>">
-	<td class="customPrev"><%= dna_sample.id %></td>
-	<td><%= dna_sample.dna_accession %></td>
+    <td class="customPrev"><%= dna_sample.id %></td>
+    <td><%= dna_sample.dna_accession %></td>
 
-	</tr>
-	 <%end%>
+    </tr>
+     <%end%> -->
 
 <tr class="exp" id="0">
 

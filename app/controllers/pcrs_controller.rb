@@ -5,11 +5,13 @@ class PcrsController < ApplicationController
     helper_method :sort_column, :sort_direction
     helper :all
   def index
-
-    @per_page = params[:per_page] || Pcr.per_page || 10
-
-      @pcrs=Pcr.paginate(:per_page => @per_page, :page => params[:page])
-
+		if params[:term]
+			@pcrs=Pcr.search(params[:term])
+		 elsif params[:project_id]
+			@pcrs = Pcr.project(params[:project_id]).paginate(:per_page => @per_page, :page => params[:page])
+		else
+	    	@pcrs = Pcr.paginate(:per_page => @per_page, :page => params[:page])
+	  	end
 
     respond_to do |format|
       format.html # index.html.erb

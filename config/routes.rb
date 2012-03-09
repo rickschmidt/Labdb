@@ -15,7 +15,9 @@ end
   # This route can be invoked with purchase_url(:id => product.id)
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
-    resources :projects
+    resources :projects do 
+		resources :pcrs
+	end
 
 
 	resources :genes
@@ -46,7 +48,7 @@ end
 		match 'pcrs/removednasample'
 		match '/pcrs/getprimersequence'
 		match 'pcrs/getdnasamplestats'
-
+		
 		
   # Sample resource route with options:
   #   resources :products do

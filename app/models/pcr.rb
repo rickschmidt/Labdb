@@ -4,4 +4,11 @@ class Pcr < ActiveRecord::Base
 	has_many :tubes
 	
 	# accepts_nested_attributes_for :dnasample, :allow_destroy=>true
+
+	def self.project(term)
+		pcrs=Pcr.arel_table
+		@project=Project.find(term)
+		pcrs = @project.pcrs
+		return pcrs
+	end
 end
