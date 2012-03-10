@@ -4,7 +4,9 @@ class Project < ActiveRecord::Base
   
   validates_presence_of :project_name
   validates_uniqueness_of :project_name
-  		accepts_nested_attributes_for :dnasamples, :allow_destroy=>true
+  accepts_nested_attributes_for :dnasamples, :allow_destroy=>true
+  accepts_nested_attributes_for :pcrs, :allow_destroy=>true
+
   
   
   

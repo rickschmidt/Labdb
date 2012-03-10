@@ -45,7 +45,18 @@
   <b>Notes:</b><br>
   <%=h @pcr.notes %>
 
+<%= form_for(@pcr) do |f| %>
+  <%= f.label "Tube ID" %>
+  <%= f.text_field :tubes  %>
+  <%= f.submit "Add" %>
+<% end %>
 
+<table border="0" cellspacing="5" cellpadding="5">
+    <tr><th>Tube ID</th></tr>
+    <% @pcr.tubes.each do |tube| %>
+    <tr><td><%=h tube.id %></td></tr>
+    <%end %>
+</table>
 
 
 
