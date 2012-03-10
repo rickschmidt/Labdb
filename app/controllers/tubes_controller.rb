@@ -22,8 +22,17 @@ class TubesController < ApplicationController
 
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @tubes.to_xml }
+      format.html 
+      format.xml do
+		if params[:pcr_id]
+			@tubes = Tube.pcr(params[:pcr_id])
+		 	render :xml => @tubes.to_xml 
+		else
+			@tubes=Tube.all
+			render :xml =>@tubes.to_xml
+		end
+		
+		end 
 	format.json {render :json=>@tubes.to_json}
     end
   end

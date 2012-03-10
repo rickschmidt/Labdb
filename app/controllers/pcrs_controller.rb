@@ -15,6 +15,16 @@ class PcrsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
+ 	format.xml do
+		if params[:project_id]
+			@pcrs = Pcr.project(params[:project_id])
+		 	render :xml => @pcrs.to_xml 
+		else
+			@pcrs=Pcr.all
+			render :xml =>@pcrs.to_xml
+		end
+		
+		end 
       format.xml  { render :xml => @pcrs.to_xml(:include=>:tubes) }
     end
   end
