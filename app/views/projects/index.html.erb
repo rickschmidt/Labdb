@@ -5,19 +5,17 @@
 	<table>
 		<tr id="header_row">
 	    	<th >Project Name</th>
-			<th >Date</th>
-						<th >Date</th>
-									<th >Date</th>
-												<th >Date</th>	
+			<th >Last Updated</th>
+			<th ># of PCRs</th>
+								
 		</tr>
 	
 	<%@projects.each do |pro| %>
 	<tr class="<%= cycle("even", "odd") %> " >
 	    <td class="pcr"><%=h pro.project_name %></td>
-	    <td><%=h pro.date %></td>
-		    <td><%=h pro.date %></td>
-			    <td><%=h pro.date %></td>
-				    <td><%=h pro.date %></td>
+	    <td><%=h pro.updated_at %></td>
+		    <td><%=h pro.pcrs.count %></td>
+			    
 	    <td class="icons" id="show"><%= link_to image_tag("show.png", :border=>0), pro%></td>
 	 	<td class="icons"><%= link_to image_tag("edit.png", :border=>0), edit_project_path(pro)%></td>
 

@@ -16,7 +16,10 @@ end
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
     resources :projects do 
-		resources :pcrs
+		resources :pcrs 
+		 member do
+	  		delete 'remove_pcr_from_project'
+		end
 	end
 
 

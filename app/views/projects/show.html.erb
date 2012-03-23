@@ -1,39 +1,42 @@
 
-<p><b>Date:</b> <%= @project.date %> <b>Project:</b><%= @project.project_name %></p>
-<p><b>Total # of Samples: </b> <div class="totalSamples"><%= @project.total_samples %></div></p>
-<%= hidden_field_tag "projectId", @project.id %>
-<%= link_to "Pcrs", project_pcrs_path(@project) %>
-<div class="premix">
-	<table >
+<p><b>Project:</b><%= @project.project_name %></p>
+<p><b>Updated:</b> <%= @project.updated_at %> </p>
+<p><b>Created:</b> <%= @project.created_at %> </p>
+<p>
+    <b>
+        Total # of PCRS: 
+    </b> 
+    <%= @project.pcrs.count %>
+</p>
 
-		<tr><td>BSA</td><td>  <%=h @project.bsa %></td></tr>
-		<tr><td>Buffer</td><td>  <%=h @project.buffer %></td></tr>
-		<tr><td>MgCl2</td><td>  <%=h @project.mgcl2 %></td></tr>
-		<tr><td>TAQ  </td><td>   <%=h @project.taq %> </td></tr>
-		<tr><td>H2O  </td><td>   <%=h @project.h2o %> </td></tr>
-		<tr><td>dNTPs  </td><td> <%=h @project.dntps %>  </td></tr>
-		<tr><td>primerL  </td><td>   <%=h @project.primerl_amount %> </td></tr>
-		<tr><td>primerH  </td><td>   <%=h @project.primerh_amount %> </td></tr>
-		<tr><td>DNA  </td><td> <%=h @project.dna %>  </td></tr>
-		<tr><td>Total  </td><td> <%=h @project.total %> </td></tr>
-		<tr><td>Total  </td><td> <%=h @project.notes %> </td></tr>
-	</table>
-</div>
+<%= button_to "Pcrs", project_pcrs_path(@project) %>
 
 
 
 
 
 <%= form_for(@project) do |f| %>
-  <%= f.label "PCR ID" %>
-  <%= f.text_field :pcrs  %>
+<%= f.label "Add a PCR by its ID" %>
+<%= text_field 'project','pcrs', :value=>""%>
   <%= f.submit "Add" %>
 <% end %>
 
+
+
 <table border="0" cellspacing="5" cellpadding="5">
-    <tr><th>PCR ID</th></tr>
+    <tr>
+        <th>PCR ID</th>
+        <th>PCR Name</th>
+        <th># of Tubes</th>
+    </tr>
     <% @project.pcrs.each do |pcr| %>
-    <tr><td><%=h pcr.id %></td></tr>
+    <tr>
+        <td><%=h pcr.id %></td>
+        <td><%=h pcr.pcr_tube_number %></td>
+        <td><%=h pcr.tubes.count %></td>
+        <td class="icons" id="show"><%= link_to image_tag("show.png", :border=>0), pcr%></td>
+        <td><%= button_to "Remove PCR", remove_pcr_from_project_project_url(:project_id=>@project.id,:pcr_id=>pcr.id),{:method=>:delete}%>
+    </tr>
     <%end %>
 </table>
 

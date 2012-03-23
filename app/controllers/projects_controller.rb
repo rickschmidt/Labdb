@@ -93,14 +93,23 @@ class ProjectsController < ApplicationController
      #       @project.primerh=@primer.primerh
      #       @project.primerl=@primer.primerl
      #   end
-	logger.debug("params[proj][pcr] #{params[:project][:pcrs]}")
+
 
     respond_to do |format|
 	if params[:project][:pcrs]
-		@project.pcrs<<(Pcr.find(params[:project][:pcrs]))
-		params[:project][:pcrs]=@project.pcrs
+
+		if Pcr.exists?(params[:project][:pcrs])
+			pcr=Pcr.find(params[:project][:pcrs])
+			@project.pcrs<<(pcr)					
+			params[:project][:pcrs]=@project.pcrs
+			flash[:notice] = "PCR was added."
+		else
+			flash[:error] = "PCR with id #{params[:project][:pcrs]} was not found."
+			params[:project][:pcrs]=@project.pcrs
+		end
+
       if @project.update_attributes(params[:project])
-        format.html { redirect_to(@project, :notice => 'Project was successfully updated.') }
+        format.html { redirect_to(@project) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -272,6 +281,15 @@ class ProjectsController < ApplicationController
         
         
     end
+
+	def remove_pcr_from_project
+	     project = Project.find(params[:project_id])
+	     pcr = project.pcrs.find(params[:pcr_id])
+	     if pcr
+	        project.pcrs.delete(pcr)
+	     end
+		redirect_to project_url(project)
+	 end
     
   private 
    def sort_column

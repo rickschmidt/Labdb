@@ -1,6 +1,6 @@
 class Pcr < ActiveRecord::Base
 	belongs_to :dnasample
-  	has_and_belongs_to_many :projects
+  	has_and_belongs_to_many :projects ,:uniq => true
 	has_many :tubes
 	
 	accepts_nested_attributes_for :tubes, :allow_destroy=>true

@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  has_and_belongs_to_many :pcrs
+  has_and_belongs_to_many :pcrs, :uniq=>true
   has_many :dnasamples, :through=>:pcrs
   
   validates_presence_of :project_name
