@@ -21,36 +21,42 @@
   <%= f.submit "Add" %>
 <% end %>
 
+<div>
+    <div class="projects_show">
+    <table border="0" cellspacing="5" cellpadding="5">
+        <tr>
+            <th>PCR ID</th>
+            <th>PCR Name</th>
+            <th># of Tubes</th>
+        </tr>
+        <% @project.pcrs.each do |pcr| %>
+        <tr>
+            <td><%=h pcr.id %></td>
+            <td><%=h pcr.pcr_tube_number %></td>
+            <td><%=h pcr.tubes.count %></td>
+            <td class="icons" id="show"><%= link_to image_tag("show.png", :border=>0), pcr%></td>
+            <td><%= button_to "Remove PCR", remove_pcr_from_project_project_url(:project_id=>@project.id,:pcr_id=>pcr.id),{:method=>:delete}%>
+        </tr>
+        <%end %>
+    </table>
+    </div>
+    <div class="projects_right">
+        <table border="0" cellspacing="5" cellpadding="5">
+            <tr><th>Header</th></tr>
+            <tr><td>Data</td></tr>
+        </table>
+    </div>
+
+</div>
 
 
-<table border="0" cellspacing="5" cellpadding="5">
-    <tr>
-        <th>PCR ID</th>
-        <th>PCR Name</th>
-        <th># of Tubes</th>
-    </tr>
-    <% @project.pcrs.each do |pcr| %>
-    <tr>
-        <td><%=h pcr.id %></td>
-        <td><%=h pcr.pcr_tube_number %></td>
-        <td><%=h pcr.tubes.count %></td>
-        <td class="icons" id="show"><%= link_to image_tag("show.png", :border=>0), pcr%></td>
-        <td><%= button_to "Remove PCR", remove_pcr_from_project_project_url(:project_id=>@project.id,:pcr_id=>pcr.id),{:method=>:delete}%>
-    </tr>
-    <%end %>
-</table>
 
 
 
 
 
 
-
-
-
-
-
-
-
+<div id="item_buttons">
 <%= button_to 'Edit', edit_project_path(@project),{:method=>:get} %> 
 <%= button_to 'Delete', @project,{:method=>:delete} %>
+</div>

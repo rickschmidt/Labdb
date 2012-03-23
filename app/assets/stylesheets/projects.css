@@ -1,5 +1,6 @@
 body{
 /*	background-color:#CACACA;*/
+	
 }
 div.projects_index{
 /*	position:relative;*/
@@ -14,6 +15,13 @@ padding-bottom:50px;
 div.projects_index table{
     border-collapse: collapse;
 	width:100%;
+
+
+
+}
+div.projects_show table{
+	border-collapse: collapse;
+	float:left;
 
 }
 
@@ -55,4 +63,13 @@ div.projects_index td a{
 	display:block;
     height:100%;
     width:100%;
+}
+div.projects_right table{
+	margin-left: 100px;
+	float:left;
+
+}
+div#item_buttons{
+	clear:both;
+
 }

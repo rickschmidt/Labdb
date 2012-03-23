@@ -88,13 +88,6 @@ class ProjectsController < ApplicationController
   # PUT /experiments/1.xml
   def update
     @project = Project.find(params[:id])
-     # if params[:gene][:primer]!=""
-     #       @primer=Primer.find(params[:gene][:primer])
-     #       @project.primerh=@primer.primerh
-     #       @project.primerl=@primer.primerl
-     #   end
-
-
     respond_to do |format|
 	if params[:project][:pcrs]
 
