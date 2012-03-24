@@ -9,7 +9,7 @@
     <%= @project.pcrs.count %>
 </p>
 
-<%= button_to "Pcrs", project_pcrs_path(@project) %>
+<%= link_to "Pcrs", project_pcrs_path(@project) %>
 
 
 
@@ -41,10 +41,16 @@
     </table>
     </div>
     <div class="projects_right">
-        <table border="0" cellspacing="5" cellpadding="5">
-            <tr><th>Header</th></tr>
-            <tr><td>Data</td></tr>
-        </table>
+        <h3>Available Recent PCRs</h3>
+        <%= select(:pcr,:id,Pcr.all(:order=>'updated_at DESC').collect{|p| [p.id, p.id ]},{:include_blank=>true}) %>
+
+        <div id="pcr_info">
+            <div id="pcr_name">PCR Name:</div>
+            <div id="pcr_updated_at">Updated at:</div>
+            <div id="pcr_created_at">Created at:</div>
+            
+        </div>
+        
     </div>
 
 </div>

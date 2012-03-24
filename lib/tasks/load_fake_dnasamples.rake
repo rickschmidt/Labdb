@@ -93,21 +93,7 @@ task :create_pcrs => :environment do
 pcr = Pcr.create(
 
 
-:pcr_tube_number=>rand(20),
-:gel_image=>"image",
-:anneal_temp=>rand(10)+90,
-:dna_amount=>rand(50),
-:conditions=>"normal",
-:total_samples=>rand(50),
-:notes=> "notes",
-:reamp=> rand(10),
-:total_worked=> rand(50),
-:denature=>rand(10)+80,
-:extension=>rand(10)+85,
-:cycle=>rand(80),
-:primerh=>(primer 10),
-:primerl=>(primer 10)
-
+:pcr_tube_number=>rand(20)
 )
 
 

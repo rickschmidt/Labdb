@@ -2,7 +2,7 @@
 
 <%= form_for(@project) do |f| %>
    
-<h3>Premix</h3>
+
 	<table border="0" cellspacing="5" cellpadding="5">
 		<tr>
 			<td>
@@ -15,71 +15,7 @@
 			</td>
 		</tr>
    
-		<tr>
-			<td> 
-				<%= f.label "Anneal Temp:" %><br/>
-			    <%= f.text_field :anneal %>
-			</td>
-			<td> 
-				<%= f.label "DNA Amount:" %><br/>
-		    	<%= f.text_field :dna_amount %>
-			</td>
-		</tr>
 	
-		<tr>
-			<td>
-				<%= f.label :total_samples %><br/>
-		    	<%= f.text_field :total_samples %>
-			</td>
-			<td> 
-				<%= f.label :bsa %><br/>
-			    <%= f.text_field :bsa %>
-			</td>
-		</tr>
-		
-		<tr>
-			<td>
-				<%= f.label :buffer %><br/>
-				<%= f.text_field :buffer %>
-			</td>
-			<td>
-				<%= f.label :mgcl2 %><br/>
-			    <%= f.text_field :mgcl2 %>
-			</td>
-		</tr>
-		
-		<tr>
-			<td>
-				<%= f.label :taq %><br/>
-			    <%= f.text_field :taq %>
-			</td>
-			<td>
-				<%= f.label :h2o %><br/>
-			    <%= f.text_field :h2o %>
-			</td>
-		</tr>
-
-		<tr>
-			<td>
-			   <%= f.label :dntps %><br/>
-			    <%= f.text_field :dntps %>
-			</td>
-			<td>
-			    <%= f.label :dna %><br/>
-			    <%= f.text_field :dna %>
-			</td>
-		</tr>
-
-		<tr>
-			<td>
-				 <%= f.label :total %><br/>
-			    <%= f.text_field :total %>
-			</td>
-			<td>
-				
-			</td>
-		</tr>
-
 
 	</table>
 

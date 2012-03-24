@@ -37,6 +37,7 @@ class PcrsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @pcr.to_xml(:include => :tubes) }
+	  format.js {render :json=>@pcr.to_json}
  	
 
     end

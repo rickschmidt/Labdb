@@ -14,15 +14,7 @@
 		<%end%>
 		
 		
-			<%= fields_for :taxonomy do |dna| %>
-				<%= dna.label "Taxa" %><br>
-				<%if @pcr.dnasample %>
-					<input id="taxonomy_select" size="40px" value="<%=@pcr.dnasample.id%>">
-				<%else%>
-						<input id="taxonomy_select" size="40px">									
-				<%end%>
-					<%= dna.hidden_field :id %>	
-		<%end%>
+    
 </p>
 <table>	
 	 <tr>

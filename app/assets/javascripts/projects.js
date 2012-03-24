@@ -19,4 +19,26 @@ $(document).ready(function() {
 	    
 	  }
 	});
+	$('select#pcr_id').live('change',function(){
+             dataString = jQuery('select#pcr_id').val();
+              // var currentExperiment=$('input#experimentId').val();
+              $.ajax({
+                  url: "/pcrs/"+dataString,
+                  type:"GET",
+                  data:{id:dataString},
+
+                  success: function(json,textStatus){
+                      	var obj=jQuery.parseJSON(json);
+
+						$('div#pcr_name').text("PCR Name: "+obj.pcr_tube_name);
+						$('div#pcr_updated_at').text("Updated at: "+obj.updated_at);
+						$('div#pcr_created_at').text("Created at: "+obj.created_at);
+						
+
+                      
+					
+                  }
+              });
+        });
+        
 });
