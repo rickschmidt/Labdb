@@ -1,8 +1,16 @@
 
-<h3>
-	PCR Reaction
-</h3>
+<p><b>Pcr:</b><%= @pcr.pcr_tube_number %></p>
+<p><b>Updated:</b> <%= @pcr.updated_at %> </p>
+<p><b>Created:</b> <%= @pcr.created_at %> </p>
+<p>
+    <b>
+        Total # of Tubes: 
+    </b> 
+    <%= @pcr.tubes.count %>
+</p>
+
 <%= link_to "Tubes", pcr_tubes_path(@pcr) %>
+
 <table border="0" cellspacing="5" cellpadding="5">
 	<tr>
 		<td>
@@ -46,22 +54,60 @@
   <%=h @pcr.notes %>
 
 <%= form_for(@pcr) do |f| %>
-  <%= f.label "Tube ID" %>
-  <%= f.text_field :tubes  %>
+<%= f.label "Add a Tube by its ID" %>
+<%= text_field 'pcr','tubes', :value=>""%>
   <%= f.submit "Add" %>
 <% end %>
 
-<table border="0" cellspacing="5" cellpadding="5">
-    <tr><th>Tube ID</th></tr>
-    <% @pcr.tubes.each do |tube| %>
-    <tr><td><%=h tube.id %></td></tr>
-    <%end %>
-</table>
+<div>
+    <div class="pcrs_show">
+    <table border="0" cellspacing="5" cellpadding="5">
+        <tr>
+            <th>Tube ID</th>
+            <th>Success</th>
+            <th>Ready</th>
+        </tr>
+        <% @pcr.tubes.each do |tube| %>
+        <tr>
+            <td><%=h tube.id %></td>
+            <td><%=h tube.success %></td>
+            <td><%=h tube.ready %></td>
+            <td class="icons" id="show"><%= link_to image_tag("show.png", :border=>0), tube%></td>
+            <td><%= button_to "Remove Tube", remove_tube_from_pcr_pcr_url(:pcr_id=>@pcr.id,:tube_id=>tube.id),{:method=>:delete}%>
+        </tr>
+        <%end %>
+    </table>
+    </div>
+    <div class="pcrs_right">
+        <h3>Available Recent Tubes</h3>
+        <%= select(:tube,:id,Tube.all(:order=>'updated_at DESC').collect{|p| [p.id, p.id ]},{:include_blank=>true}) %>
+
+        <div id="tube_info">
+            <div id="tube_name">Tube Name:</div>
+            <div id="tube_updated_at">Updated at:</div>
+            <div id="tube_created_at">Created at:</div>
+            
+        </div>
+        
+    </div>
+
+</div>
 
 
 
 
 
 
-<%= button_to 'Edit', edit_pcr_path(@pcr),{:method=>:get} %> 
-<%= button_to 'Delete', @pcr,{:method=>:delete} %>
+
+
+<div id="item_buttons">
+<%= button_to 'Edit', edit_project_path(@project),{:method=>:get} %> 
+<%= button_to 'Delete', @project,{:method=>:delete} %>
+</div>
+
+
+
+
+
+
+

@@ -85,32 +85,38 @@ class PcrsController < ApplicationController
   # PUT /pcrs/1
   # PUT /pcrs/1.xml
   def update
+	 @pcr = Pcr.find(params[:id])
+	    respond_to do |format|
+		if params[:pcr][:tubes]
 
-    @pcr = Pcr.find(params[:id])
-    
-	
-   respond_to do |format|
-	if params[:pcr][:tubes]
-		@pcr.tubes<<(Tube.find(params[:pcr][:tubes]))
-		params[:pcr][:tubes]=@pcr.tubes
-      if @pcr.update_attributes(params[:pcr])
-        format.html { redirect_to(@pcr, :notice => 'PCR was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @pcr.errors, :status => :unprocessable_entity }
-      end
+			if Tube.exists?(params[:pcr][:tubes])
+				tube=Tube.find(params[:pcr][:tubes])
+				@pcr.tubes<<(tube)					
+				params[:pcr][:tubes]=@pcr.tubes
+				flash[:notice] = "Tube was added."
+			else
+				flash[:error] = "Tube with id #{params[:pcr][:tubes]} was not found."
+				params[:pcr][:tubes]=@pcr.tubes
+			end
 
-	else
-		  if @pcr.update_attributes(params[:pcr])
-        format.html { redirect_to(@pcr, :notice => 'PCR was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @pcr.errors, :status => :unprocessable_entity }
-      end
-	end	
-    end
+	      if @pcr.update_attributes(params[:pcr])
+	        format.html { redirect_to(@pcr) }
+	        format.xml  { head :ok }
+	      else
+	        format.html { render :action => "edit" }
+	        format.xml  { render :xml => @pcr.errors, :status => :unprocessable_entity }
+	      end
+
+		else
+			  if @pcr.update_attributes(params[:pcr])
+	        format.html { redirect_to(@pcr, :notice => 'PCR was successfully updated.') }
+	        format.xml  { head :ok }
+	      else
+	        format.html { render :action => "edit" }
+	        format.xml  { render :xml => @pcr.errors, :status => :unprocessable_entity }
+	      end
+		end	
+	    end
   end
 
 
@@ -176,6 +182,16 @@ def getdnasamplestats
 		with.js
 	end
 end
+
+def remove_tube_from_pcr
+     pcr = Pcr.find(params[:pcr_id])
+     tube = pcr.tubes.find(params[:tube_id])
+     if tube
+        pcr.tubes.delete(tube)
+     end
+	redirect_to pcr_url(pcr)
+ end
+
   private 
    def sort_column
        Pcr.column_names.include?(params[:sort]) ? params[:sort] : "date"

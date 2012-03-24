@@ -45,6 +45,7 @@ class TubesController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @tube }
+      format.js {render :json=>@tube.to_json}
     end
   end
 

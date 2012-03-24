@@ -18,6 +18,11 @@ div.pcrs_index tr#header_row{
 	background-color:#9BAACF;
 	line-height:50px;
 }
+div.pcrs_show table{
+	border-collapse: collapse;
+	float:left;
+
+}
 
 div.pcrs_index tr.odd{
 	background-color:#D5D5D5;
@@ -49,4 +54,15 @@ div.pcrs_index td a{
 	display:block;
     height:100%;
     width:100%;
+}
+div.pcrs_right {
+	margin-left: 100px;
+	float:left;
+	width:300px;
+	height:300px;
+	overflow:auto;
+}
+div#item_buttons{
+	clear:both;
+
 }

@@ -27,6 +27,10 @@ end
 
 	 resources :pcrs do
 		resources :tubes
+    member do
+		     delete 'remove_tube_from_pcr'
+    end
+    
 	end
  
 	 resources :dnasamples
@@ -34,8 +38,9 @@ end
 	 resources :taxonomies
  
 	 resources :primers
-	
-	resources :tubes
+   
+   resources :tubes
+
  
 
  

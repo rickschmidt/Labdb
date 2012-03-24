@@ -12,6 +12,28 @@ $(document).ready(function() {
         window.location = selected;
 
     });
+	
+	//Used in show page of pcr-updates tube info after select
+	$('select#tube_id').live('change',function(){
+             dataString = jQuery('select#tube_id').val();
+              $.ajax({
+                  url: "/tubes/"+dataString,
+                  type:"GET",
+                  data:{id:dataString},
+
+                  success: function(json,textStatus){
+                      	var obj=jQuery.parseJSON(json);
+
+						$('div#tube_name').text("Tube Name: "+obj.pcr_tube_name);
+						$('div#tube_updated_at').text("Updated at: "+obj.updated_at);
+						$('div#tube_created_at').text("Created at: "+obj.created_at);
+						
+
+                      
+					
+                  }
+              });
+        });
 
 
   //Autocompletes Taxonomy in form
