@@ -2,6 +2,9 @@
 <p><b>Pcr:</b><%= @pcr.pcr_tube_number %></p>
 <p><b>Updated:</b> <%= @pcr.updated_at %> </p>
 <p><b>Created:</b> <%= @pcr.created_at %> </p>
+<%if @dnasample %>
+<p><b>DNA Sample: <%= @dnasample.id %></b></p>
+<%end%>
 <p>
     <b>
         Total # of Tubes: 
@@ -101,8 +104,8 @@
 
 
 <div id="item_buttons">
-<%= button_to 'Edit', edit_project_path(@project),{:method=>:get} %> 
-<%= button_to 'Delete', @project,{:method=>:delete} %>
+	<%= button_to 'Edit', edit_pcr_path(@pcr),{:method=>:get} %> 
+<%= button_to 'Delete', @pcr,{:method=>:delete} %>
 </div>
 
 

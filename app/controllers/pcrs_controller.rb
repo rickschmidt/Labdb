@@ -33,7 +33,9 @@ class PcrsController < ApplicationController
   # GET /pcrs/1.xml
   def show
     @pcr = Pcr.find(params[:id])
-
+    if @pcr.dnasample_id!=nil
+      @dnasample=Dnasample.find(@pcr.dnasample_id)
+    end
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @pcr.to_xml(:include => :tubes) }

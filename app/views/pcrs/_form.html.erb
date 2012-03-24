@@ -1,21 +1,26 @@
 <h4>
 	Associate this PCR with a DNA Sample
 </h4>
-<p>
-	
+
+	<table border="0" cellspacing="5" cellpadding="5">
+		<tr>
+		
+			<td style="float:left">
 		<%= fields_for :dnasample do |dna| %>
 				<%= dna.label "DNA Sample" %><br>
-				<%if @pcr.dnasample %>
-					<input id="dnasample_select" size="40px" value="<%=@pcr.dnasample.id%>">
+				<%if @pcr.dnasample_id %>
+				<input id="dnasample_select" size="40px" value="<%=@pcr.dnasample_id%>">
 				<%else%>
 						<input id="dnasample_select" size="40px">									
 				<%end%>
 					<%= dna.hidden_field :id %>	
 		<%end%>
-		
+		</td>
+		</tr>
+	</table>
 		
     
-</p>
+
 <table>	
 	 <tr>
 		<td>

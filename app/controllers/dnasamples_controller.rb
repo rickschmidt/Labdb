@@ -8,7 +8,8 @@ class DnasamplesController < ApplicationController
    def index
 		@per_page = params[:per_page]  ||= 10
 		if params[:term]
-			@dnasmaples=Dnasample.search(params[:term])
+			@dnasamples=Dnasample.search(params[:term])
+
 		else
        		@dnasamples=Dnasample.paginate(:page => params[:page], :per_page=>@per_page).order("updated_at DESC")
 	  	end
