@@ -1,8 +1,10 @@
 <div class="taxonomies_index">
 <h1>Tubes</h1>
+<h4><em><%= "#{@tubesCount} total" %></em></h4>
 
 
 <%= button_to 'Create', new_tube_path,{:method=>:get,:class=>"button_create"} %>
+<%if @tubes%>
 <% @tubes.each do |k,v| %>
 <h3>PCR <%= k %>
     <%if k.class==Fixnum%>
@@ -11,25 +13,25 @@
 </h3>
     <table >
       <tr id="header_row">
-    	<th>ID</th>
-    	<th>Success</th>
-    	<th>Ready</th>
+    	<th width="100px" >ID</th>
+    	<th width="100px">Success</th>
+    	<th width="100px">Ready</th>
       </tr>
 
     <% v.each do |t| %>
       <tr class="<%= cycle("even", "odd") %>">
-    	<td >
+    	<td align="center" >
     	    <%=h t.id %>
     	</td>
 
-        <td>
+        <td align="center">
             <%if t.success==true %>
                 <span style="float:center;" class="ui-icon ui-icon-check"></span>
             <%else%>
                 <span style="float:center;" class="ui-state-error ui-icon ui-icon-cancel"></span>
             <%end%>
             </td>
-        <td>
+        <td align="center">
             <%if t.ready==true %>
                 <span style="float:center;" class="ui-icon ui-icon-check"></span>
             <%else%>
@@ -41,13 +43,59 @@
      	<td class="icons"><%= link_to image_tag("edit.png", :border=>0), edit_tube_path(t)%></td>
 
       </tr>
+
     <% end %>
+
     </table>
+    <hr/>
+
+<%end%>
+<%else%>
+
+<h3>PCR <%= params[:pcr_id] %>
+        <%= link_to image_tag("show.png", :border=>0), "/pcrs/#{params[:pcr_id]}"%>
+</h3>
+
+    <table >
+      <tr id="header_row">
+    	<th width="100px" >ID</th>
+    	<th width="100px">Success</th>
+    	<th width="100px">Ready</th>
+      </tr>
+
+<%@tubes_for_pcr.each do |t|%>
+      <tr class="<%= cycle("even", "odd") %>">
+    	<td align="center" >
+    	    <%=h t.id %>
+    	</td>
+
+        <td align="center">
+            <%if t.success==true %>
+                <span style="float:center;" class="ui-icon ui-icon-check"></span>
+            <%else%>
+                <span style="float:center;" class="ui-state-error ui-icon ui-icon-cancel"></span>
+            <%end%>
+            </td>
+        <td align="center">
+            <%if t.ready==true %>
+                <span style="float:center;" class="ui-icon ui-icon-check"></span>
+            <%else%>
+                <span style="float:center;" class="ui-state-error ui-icon ui-icon-cancel"></span>
+            <%end%>
+        </td>
+
+        <td class="icons" id="show"><%= link_to image_tag("show.png", :border=>0), t%></td>
+     	<td class="icons"><%= link_to image_tag("edit.png", :border=>0), edit_tube_path(t)%></td>
+
+      </tr>
+
 <%end%>
 
-Per Page: <%= select_tag :per_page, options_for_select([10,20,50,100,200], params[:per_page].to_i),
-               :onchange => "if(this.value){window.location='?per_page='+this.value;}" %>
+    </table>
 
+
+
+<%end%>
 <br />
 
 </div>

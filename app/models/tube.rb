@@ -16,11 +16,12 @@ class Tube < ActiveRecord::Base
 		
 		tubes_pcrs.each  do |t|
 			if t.pcr_id!=nil
-				tubes[t.pcr_id]=Tube.where("pcr_id=?",t.pcr_id)
+				tubes[t.pcr_id]=Tube.where("pcr_id=?",t.pcr_id)#.paginate(:per_page => @per_page, :page => 1)
 			else
-				tubes["Not Set"]=Tube.where("pcr_id IS NULL")
+				tubes["Not Set"]=Tube.where("pcr_id IS NULL")#.paginate(:per_page => @per_page, :page => 1)
 			end
 		end
+		# tubes.keys.paginate(:per_page => @per_page, :page => 1)
 		return tubes
 	end	
 end

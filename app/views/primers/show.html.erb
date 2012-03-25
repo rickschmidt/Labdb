@@ -1,10 +1,10 @@
-<H2>Primer <%=h @primer.name %> </H2>
+<H2>Primer # <%=h @primer.id %> </H2>
 
 <table border="0" >
 	<tr><th></th><th></th><th></th></tr>
 
-	<tr><td>Name:</td><td><%= @primer.name %></td></tr>
-	<tr><td>Sequence</td><td> <%=h @primer.sequence  %></td></tr>
+	<tr><td><b>Name:</b></td><td><%= @primer.name %></td></tr>
+	<tr><td><b>Sequence:</b></td><td> <%=h @primer.sequence  %></td></tr>
 </table>
 
 <%= button_to 'Edit', edit_primer_path(@primer),{:method=>:get} %> 

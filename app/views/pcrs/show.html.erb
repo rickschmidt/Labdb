@@ -12,7 +12,7 @@
     <%= @pcr.tubes.count %>
 </p>
 
-<%= link_to "Tubes", pcr_tubes_path(@pcr) %>
+
 
 <table border="0" cellspacing="5" cellpadding="5">
 	<tr>
@@ -54,6 +54,7 @@
 </table>
 
   <b>Notes:</b><br>
+<h4>PCR <%= @pcr.id %> <%= link_to image_tag("show.png", :border=>0), pcr_tubes_path(@pcr)%></h4>
   <%=h @pcr.notes %>
 
 <%= form_for(@pcr) do |f| %>
@@ -64,14 +65,16 @@
 
 <div>
     <div class="pcrs_show">
-    <table border="0" cellspacing="5" cellpadding="5">
-        <tr>
+    <table  border="0" cellspacing="5" cellpadding="5">
+        <tr id="header_row">
             <th>Tube ID</th>
             <th>Success</th>
             <th>Ready</th>
+            <th></th>
+            <th></th>
         </tr>
         <% @pcr.tubes.each do |tube| %>
-        <tr>
+        <tr class="<%= cycle("even", "odd") %>">
             <td><%=h tube.id %></td>
             <td><%=h tube.success %></td>
             <td><%=h tube.ready %></td>
