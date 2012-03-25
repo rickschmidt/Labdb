@@ -2,24 +2,7 @@
 <h1>Create a New Primer</h1>
 
 <%= form_for(@primer) do |f| %>
-  
-<table border="0" cellspacing="5" cellpadding="5">
-	<tr>
-		<td><b>Primer Name:</b><br/>
-			<%= f.text_field :name, :size=>'50' %></td>
-	</tr>
-
-
-	
-	<tr>
-		<td><b>Sequence: </b><br />
-	    <%= f.text_field :sequence, :size=>'50' %></td>
-	</tr>
-
-</table>
-
-
-  
+	<%=render :partial => 'form',:locals => { :f => f }%>	
   <p>
     <%= f.submit 'Create' %>
   </p>

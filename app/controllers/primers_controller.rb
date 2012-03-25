@@ -8,12 +8,17 @@ class PrimersController < ApplicationController
 
   
   def index
-
-    @primers =Primer.find(:all)
+		@per_page = params[:per_page]  ||= 10
+		if params[:term]
+			@primers=Primer.search(params[:term])
+		else
+    		@primers =Primer.find(:all)
+		end
 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @primers }
+		format.json {render :json =>@primers}
     end
   end
 

@@ -16,7 +16,7 @@ class TubesController < ApplicationController
 		 elsif params[:pcr_id]
 			@tubes = Tube.pcr(params[:pcr_id]).paginate(:per_page => @per_page, :page => params[:page])
 		else
-	    	@tubes = Tube.paginate(:per_page => @per_page, :page => params[:page])
+	    	@tubes = Tube.sectionize#.paginate(:per_page => @per_page, :page => params[:page])
 	  	end
 
 
@@ -68,7 +68,12 @@ class TubesController < ApplicationController
   # POST /tubes.xml
   def create
     @tube = Tube.new(params[:tube])
-
+		if(params[:pcr][:id]!='')
+			@tube.attributes={:pcr=>(@tube.pcr=(Pcr.find(params[:pcr][:id])))}    	
+		end
+		if(params[:primer][:id]!='')
+			@tube.attributes={:primer=>(@tube.primer=(Primer.find(params[:primer][:id])))}    	
+		end
     respond_to do |format|
       if @tube.save
         format.html { redirect_to(@tube, :notice => 'Tube was successfully created.') }
@@ -84,7 +89,16 @@ class TubesController < ApplicationController
   # PUT /tubes/1.xml
   def update
     @tube = Tube.find(params[:id])
-
+	if(params[:pcr]!=nil)
+		if(params[:pcr][:id]!='')
+				@tube.attributes={:pcr=>(@tube.pcr=(Pcr.find(params[:pcr][:id])))}
+			end
+	end
+	if(params[:primer]!=nil)
+		if(params[:primer][:id]!='')
+				@tube.attributes={:primer=>(@tube.primer=(Primer.find(params[:primer][:id])))}
+			end
+	end
     respond_to do |format|
       if @tube.update_attributes(params[:tube])
         format.html { redirect_to(@tube, :notice => 'Tube was successfully updated.') }

@@ -3,30 +3,48 @@
 
 
 <%= button_to 'Create', new_tube_path,{:method=>:get,:class=>"button_create"} %>
-<table >
-  <tr id="header_row">
-	<th>ID</th>
-	<th>Pcr Id</th>
-	<th>Primer ID</th>
-	<th>Success</th>
-	<th>Ready</th>
-  </tr>
+<% @tubes.each do |k,v| %>
+<h3>PCR <%= k %>
+    <%if k.class==Fixnum%>
+        <%= link_to image_tag("show.png", :border=>0), "/pcrs/#{k}"%>
+    <%end%>
+</h3>
+    <table >
+      <tr id="header_row">
+    	<th>ID</th>
+    	<th>Success</th>
+    	<th>Ready</th>
+      </tr>
 
-<% @tubes.each do |tube| %>
-  <tr class="<%= cycle("even", "odd") %>">
-	<td ><%=h tube.id %></td>
-		<td><%=h tube.pcr_id %></td>
-		<td><%=h tube.primer_id %></td>
-    <td><%=h tube.success %></td>
-    <td><%=h tube.ready %></td>
+    <% v.each do |t| %>
+      <tr class="<%= cycle("even", "odd") %>">
+    	<td >
+    	    <%=h t.id %>
+    	</td>
 
-    <td class="icons" id="show"><%= link_to image_tag("show.png", :border=>0), tube%></td>
- 	<td class="icons"><%= link_to image_tag("edit.png", :border=>0), edit_tube_path(tube)%></td>
+        <td>
+            <%if t.success==true %>
+                <span style="float:center;" class="ui-icon ui-icon-check"></span>
+            <%else%>
+                <span style="float:center;" class="ui-state-error ui-icon ui-icon-cancel"></span>
+            <%end%>
+            </td>
+        <td>
+            <%if t.ready==true %>
+                <span style="float:center;" class="ui-icon ui-icon-check"></span>
+            <%else%>
+                <span style="float:center;" class="ui-state-error ui-icon ui-icon-cancel"></span>
+            <%end%>
+        </td>
 
-  </tr>
-<% end %>
-</table>
-<%= will_paginate @tubes %> 
+        <td class="icons" id="show"><%= link_to image_tag("show.png", :border=>0), t%></td>
+     	<td class="icons"><%= link_to image_tag("edit.png", :border=>0), edit_tube_path(t)%></td>
+
+      </tr>
+    <% end %>
+    </table>
+<%end%>
+
 Per Page: <%= select_tag :per_page, options_for_select([10,20,50,100,200], params[:per_page].to_i),
                :onchange => "if(this.value){window.location='?per_page='+this.value;}" %>
 

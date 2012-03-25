@@ -26,6 +26,7 @@ class PcrsController < ApplicationController
 		
 		end 
       format.xml  { render :xml => @pcrs.to_xml(:include=>:tubes) }
+	  format.json {render :json=>@pcrs.to_json}
     end
   end
 
@@ -74,6 +75,10 @@ class PcrsController < ApplicationController
 	# 	flash[:error] = "Must choose tube"
 	# end
     respond_to do |format|
+      if params[:dnasample][:id]
+        @pcr.dnasample_id=params[:dnasample][:id]
+      end
+      
       if @pcr.save
         format.html { redirect_to(@pcr, :notice => 'Pcr was successfully created.') }
         format.xml  { render :xml => @pcr, :status => :created, :location => @pcr }
@@ -89,6 +94,9 @@ class PcrsController < ApplicationController
   def update
 	 @pcr = Pcr.find(params[:id])
 	    respond_to do |format|
+        if params[:dnasample][:id]
+          @pcr.dnasample_id=params[:dnasample][:id]
+        end
 		if params[:pcr][:tubes]
 
 			if Tube.exists?(params[:pcr][:tubes])

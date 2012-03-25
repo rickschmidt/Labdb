@@ -3,7 +3,7 @@
 <p><b>Updated:</b> <%= @pcr.updated_at %> </p>
 <p><b>Created:</b> <%= @pcr.created_at %> </p>
 <%if @dnasample %>
-<p><b>DNA Sample: <%= @dnasample.id %></b></p>
+<b>DNA Sample: <%= link_to image_tag("show.png", :border=>0), @dnasample%></b>
 <%end%>
 <p>
     <b>

@@ -1,27 +1,30 @@
 <table border="0" cellspacing="5" cellpadding="5">
 	<tr>
-		<td>
-			<%= f.label :primer_id %><br>
-			<%= f.text_field :primer_id %>
-		</td>
+		<td style="float:left">
+				<%= fields_for :primer do |p|%>				
+					<%= p.label "Primer" %><br>
+					<%if @tube.primer%>					
+						<input id="primer_select" size="40px" value="<%=[@tube.primer.name]%>">
+					<%else%>
+						<input id="primer_select" size="40px">									
+					<%end%>
+					<%= p.hidden_field :id %>	
+				<%end%>
+			</td>
 	</tr>
 		<tr>
-		<td>
-			<%= f.label :pcr_id %><br>
-			<%= f.text_field :pcr_id %>
-		</td>
+			<td style="float:left">
+				<%= fields_for :pcr do |p|%>				
+					<%= p.label "PCR" %><br>
+					<%if @tube.pcr%>					
+						<input id="pcr_select" size="40px" value="<%=[@tube.pcr.pcr_tube_number]%>">
+					<%else%>
+						<input id="pcr_select" size="40px">									
+					<%end%>
+					<%= p.hidden_field :id %>	
+				<%end%>
+			</td>
 	</tr>
-	<tr>
-		<td>
-			<%= f.label :success %><br>
-			<%= f.check_box :success %>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<%= f.label :ready %><br>
-			<%= f.check_box :ready %>
-		</td>
-	</tr>
+	
 
 </table>

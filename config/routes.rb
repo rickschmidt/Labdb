@@ -43,7 +43,7 @@ end
 
  
 
- 
+ 	match 'erd'=>'welcome#erd'
 	  #map.root :controller => "user_sessions", :action => "new"   
 
  		match 'dnasamples/submitgene'
