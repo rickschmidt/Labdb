@@ -5,6 +5,13 @@ class Pcr < ActiveRecord::Base
 	
 	accepts_nested_attributes_for :tubes, :allow_destroy=>true
 
+
+	def self.project(term)
+		@project=Project.find(term)
+		pcrs = @project.pcrs
+		return pcrs
+	end
+	
 	def self.search(term)
 		pcrs=Pcr.arel_table
 		pcrs =Pcr.where(pcrs[:pcr_tube_number].matches("%#{term}%"))

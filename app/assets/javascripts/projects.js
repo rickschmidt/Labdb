@@ -11,6 +11,7 @@ $(document).ready(function() {
            window.location = selected;
     
        });
+
 	$('.pcr').selectable({	  
 	  selected: function(event, ui) { 
 	    var p = $(this).html();

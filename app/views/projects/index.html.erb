@@ -12,7 +12,7 @@
 	
 	<%@projects.each do |pro| %>
 	<tr class="<%= cycle("even", "odd") %> " >
-	    <td class="pcr"><%=h pro.project_name %></td>
+	    <td ><%=h pro.project_name %></td>
 	    <td><%=h pro.updated_at %></td>
 		    <td><%=h pro.pcrs.count %></td>
 			    

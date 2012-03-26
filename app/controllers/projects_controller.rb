@@ -86,40 +86,32 @@ class ProjectsController < ApplicationController
 
   # PUT /experiments/1
   # PUT /experiments/1.xml
-  def update
-    @project = Project.find(params[:id])
-    respond_to do |format|
-	if params[:project][:pcrs]
-
-		if Pcr.exists?(params[:project][:pcrs])
-			pcr=Pcr.find(params[:project][:pcrs])
-			@project.pcrs<<(pcr)					
-			params[:project][:pcrs]=@project.pcrs
-			flash[:notice] = "PCR was added."
-		else
-			flash[:error] = "PCR with id #{params[:project][:pcrs]} was not found."
-			params[:project][:pcrs]=@project.pcrs
+	def update
+	    @project = Project.find(params[:id])
+		@pcrAddTransactions={}
+		@pcrRemoveTransaction={}
+		if params[:project][:pcrs]
+			@pcrAddTransactions=Project.add_pcrs(params,@project)
+		end
+		if params[:project][:pcrsToRemove]
+			@pcrRemoveTransactions=Project.remove_pcrs(params,@project)
 		end
 
-      if @project.update_attributes(params[:project])
-        format.html { redirect_to(@project) }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @project.errors, :status => :unprocessable_entity }
-      end
 
-	else
-		  if @project.update_attributes(params[:project])
-        format.html { redirect_to(@project, :notice => 'Project was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @project.errors, :status => :unprocessable_entity }
-      end
-	end	
-    end
-  end
+
+		params[:project][:pcrs]=@project.pcrs
+		params[:project].delete :pcrsToRemove
+	    respond_to do |format|
+			if @project.update_attributes(params[:project])
+	        	format.html { redirect_to(@project) }
+		        format.xml  { head :ok }
+		    else
+	        	format.html { render :action => "edit" }
+	        	format.xml  { render :xml => @project.errors, :status => :unprocessable_entity }
+	      	end
+		end
+	end
+
 
   # DELETE /experiments/1
   # DELETE /experiments/1.xml

@@ -1,5 +1,10 @@
 <div class="pcrs_index">
 <h1>PCR Reactions</h1>
+<%if params[:project_id] %>
+<h3><%= "Project #{params[:project_id].to_i}" %></h3>
+<%else%>
+<h3>All</h3>
+<%end%>
 <%= button_to 'New pcr', new_pcr_path, {:method=>:get} %>
 <table>
   <tr id="header_row">
