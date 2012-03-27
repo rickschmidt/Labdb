@@ -7,9 +7,9 @@
 		
 			<td style="float:left">
 		<%= fields_for :dnasample do |dna| %>
-				<%= dna.label "DNA Sample" %><br>
+				<%= dna.label "DNA Sample Accession" %><br>
 				<%if @pcr.dnasample_id %>
-				<input id="dnasample_select" size="40px" value="<%=@pcr.dnasample_id%>">
+				<input id="dnasample_select" size="40px" value="<%=Dnasample.find(@pcr.dnasample_id).dna_accession%>">
 				<%else%>
 						<input id="dnasample_select" size="40px">									
 				<%end%>

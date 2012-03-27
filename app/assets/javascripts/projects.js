@@ -20,6 +20,16 @@ $(document).ready(function() {
 	    
 	  }
 	});
+	$('#project_pcrs').focus(function() {
+		// alert("hi");
+		$(this).val("");
+		
+	});
+	$('#project_pcrsToRemove').focus(function() {
+		// alert("hi");
+		$(this).val("");
+	});
+
 	$('select#pcr_id').live('change',function(){
              dataString = jQuery('select#pcr_id').val();
               // var currentExperiment=$('input#experimentId').val();

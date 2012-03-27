@@ -35,7 +35,13 @@ $(document).ready(function() {
               });
         });
 
-
+	$('#pcr_tubesToAdd').focus(function() {
+		$(this).val("");
+		
+	});
+	$('#pcr_tubesToRemove').focus(function() {
+		$(this).val("");
+	});
 
 
 //Autocompletes Taxonomy in form

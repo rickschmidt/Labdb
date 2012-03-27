@@ -9,7 +9,8 @@
 
             </div>
         </div>
-<p><b>Pcr:</b><%= @pcr.pcr_tube_number %></p>
+<h2>PCR <%= @pcr.id %></h2>
+<p><b>PCR Name:</b><%= @pcr.pcr_tube_number %></p>
 
 <%if @dnasample %>
 <b>DNA Sample: </b><%= @dnasample.id %> <%= link_to image_tag("show.png", :border=>0), @dnasample%>
@@ -32,31 +33,31 @@
 	</tr>
 	<tr>
 		<td>
-			<b>Buffer</b>
+			<b>Buffer:</b>
 			<%= @pcr.buffer %>
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<b>MgCl2</b>
+			<b>MgCl2:</b>
 			<%= @pcr.mgcl2 %>
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<b>BSA</b>
+			<b>BSA:</b>
 			<%= @pcr.bsa %>
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<b>TAQ</b>
+			<b>TAQ:</b>
 			<%= @pcr.taq %>
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<b>DNTPs</b>
+			<b>DNTPs:</b>
 			<%= @pcr.dntps %>
 		</td>
 	</tr>
@@ -69,19 +70,13 @@
  <h3>
                 Add and Remove Tubes using their ID
             </h3>
-            <ul>
-                <li>
-                    <em>Values may be entered individually, as a comma separated list, or as a range.</em>
-                </li>
-                <li>Example: 3 or 3,4,5, or 3-5
-                </li>
-            </ul><%= form_for(@pcr) do |f| %>
-                <%= text_field 'pcr','tubesToAdd', :value=>""%>
+          <%= form_for(@pcr) do |f| %>
+                <%= text_field 'pcr','tubesToAdd', :value=>"Ex: 3 or 3,4,5, or 3-5"%>
                 <%= f.submit "Add" %>
                 <% end %>
                 
                 <%= form_for(@pcr) do |f| %>
-                    <%= text_field 'pcr','tubesToRemove', :value=>""%>
+                    <%= text_field 'pcr','tubesToRemove', :value=>"Ex: 3 or 3,4,5, or 3-5, or all"%>
                     <%= f.submit "Remove" %>
                 <% end %>
 

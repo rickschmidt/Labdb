@@ -32,21 +32,19 @@
             <h3>
                 Add and Remove PCRS using their ID
             </h3>
-            <ul>
-                <li>
-                    <em>Values may be entered individually, as a comma separated list, or as a range.</em>
-                </li>
-                <li>Example: 3 or 3,4,5, or 3-5
-                </li>
-            </ul><%= form_for(@project) do |f| %>
-                <%= text_field 'project','pcrs', :value=>""%>
+          <%= form_for(@project) do |f| %>
+                <div id="add_pcrs">
+                <%= text_field 'project','pcrs', :value=>"Ex: 3 or 3,4,5, or 3-5"%>
+
                 <%= f.submit "Add" %>
+
                 <% end %>
                 
                 <%= form_for(@project) do |f| %>
-                    <%= text_field 'project','pcrsToRemove', :value=>""%>
+                    <%= text_field 'project','pcrsToRemove', :value=>"Ex: 3 or 3,4,5, 3-5, or all"%>
                     <%= f.submit "Remove" %>
                 <% end %>
+                                </div>
             <div>
                 <h3>
                     Reference Recent PCRS

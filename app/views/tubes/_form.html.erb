@@ -3,7 +3,7 @@
 	    <h1>TODO: Adding Primer</h1>
 		<td style="float:left">
 				<%= fields_for :primer do |p|%>				
-					<%= p.label "Primer" %><br>
+					<%= p.label "Primer Name" %><br>
 					<%if @tube.primer%>					
 						<input id="primer_select" size="40px" value="<%=[@tube.primer.name]%>">
 					<%else%>
@@ -16,7 +16,7 @@
 		<tr>
 			<td style="float:left">
 				<%= fields_for :pcr do |p|%>				
-					<%= p.label "PCR" %><br>
+					<%= p.label "PCR Name" %><br>
 					<%if @tube.pcr%>					
 						<input id="pcr_select" size="40px" value="<%=[@tube.pcr.pcr_tube_number]%>">
 					<%else%>
