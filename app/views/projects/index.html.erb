@@ -4,6 +4,7 @@
 
 	<table>
 		<tr id="header_row">
+		    <th>ID</th>
 	    	<th >Project Name</th>
 			<th >Last Updated</th>
 			<th ># of PCRs</th>
@@ -12,8 +13,9 @@
 	
 	<%@projects.each do |pro| %>
 	<tr class="<%= cycle("even", "odd") %> " >
+	    <td><%=h pro.id %></td>
 	    <td ><%=h pro.project_name %></td>
-	    <td><%=h pro.updated_at %></td>
+	    <td><%=h time_ago_in_words(pro.updated_at)  %> ago</td>
 		    <td><%=h pro.pcrs.count %></td>
 			    
 	    <td class="icons" id="show"><%= link_to image_tag("show.png", :border=>0), pro%></td>

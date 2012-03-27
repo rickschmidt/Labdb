@@ -19,12 +19,12 @@
 		</tr>
 	</table>
 		
-    
+    <hr/>
 
 <table>	
     <tr>
         <td>
-            <%= f.label :pcr_tube_number %>
+            PCR Name<br>
             <%= f.text_field :pcr_tube_number %>
         </td>
     </tr>
@@ -62,7 +62,7 @@
 	<tr>
 		<td>
 			<%= f.label :notes %><br>
-			<%= f.text_field :notes %>
+			<%= f.text_area :notes ,:size=>'80x20' %>
 		</td>
 	</tr>
 

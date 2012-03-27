@@ -1,54 +1,81 @@
 
-<p><b>Project:</b><%= @project.project_name %></p>
-<p><b>Updated:</b> <%= @project.updated_at %> </p>
-<p><b>Created:</b> <%= @project.created_at %> </p>
-<p>
-    <b>
-        Total # of PCRS: 
-    </b> 
-    <%= @project.pcrs.count %>
-</p>
+        <div style="float:right;padding-right:30%">
+            <div id="buttons">
+            	<b>Project Information</b>
+            	    <%= button_to 'XML',{:id=>@project.id, :format=>"xml"}, :method=>:get%>
+                     <span>Updated <%= time_ago_in_words(@project.updated_at)%> ago</span><br>
+                     <span>Created <%= time_ago_in_words(@project.created_at)%> ago</span><br>
+                     <span>Owner "SET OWNER ATTR"</span><br>
+                Project <%= @project.id %> PCRS <%= link_to image_tag("show.png", :border=>0), project_pcrs_path(@project)%>
+                     
 
-<h4>PCRs for Project <%= @project.id %> <%= link_to image_tag("show.png", :border=>0), project_pcrs_path(@project)%></h4>
-
-
-
-
-
-<%= form_for(@project) do |f| %>
-<%= f.label "Add a PCR by its ID" %>
-<%= text_field 'project','pcrs', :value=>""%>
-  <%= f.submit "Add" %>
-<% end %>
-<%= form_for(@project) do |f| %>
-<%= f.label "Remove a PCR by its ID" %>
-<%= text_field 'project','pcrsToRemove', :value=>""%>
-  <%= f.submit "Remove" %>
-<% end %>
-
-    <div class="projects_right">
-        <h3>Available Recent PCRs</h3>
-        <%= select(:pcr,:id,Pcr.all(:order=>'updated_at DESC').collect{|p| [p.id, p.id ]},{:include_blank=>true}) %>
-
-        <div id="pcr_info">
-            <div id="pcr_name">PCR Name:</div>
-            <div id="pcr_updated_at">Updated at:</div>
-            <div id="pcr_created_at">Created at:</div>
-            
+            </div>
         </div>
-        
-    </div>
+        <div>
+            <h2>Project <%= @project.id %></h2>
+            <table border="0" cellspacing="5" cellpadding="5">
+                <tr>
+                    <td>
+                        <b>Name:</b><%= @project.project_name %>
+                    </td>
+                </tr>
+                
+            </table>
+        </div>
 
-</div>
+                    <hr>
+        <div>
 
-
-
-
-
-
-
-
-<div id="item_buttons">
-<%= button_to 'Edit', edit_project_path(@project),{:method=>:get} %> 
-<%= button_to 'Delete', @project,{:method=>:delete} %>
-</div>
+            <h3>
+                Project <%= @project.id %> PCRS <%= link_to image_tag("show.png", :border=>0), project_pcrs_path(@project)%>
+            </h3>Total # of PCRS: <%= @project.pcrs.count %>
+            <h3>
+                Add and Remove PCRS using their ID
+            </h3>
+            <ul>
+                <li>
+                    <em>Values may be entered individually, as a comma separated list, or as a range.</em>
+                </li>
+                <li>Example: 3 or 3,4,5, or 3-5
+                </li>
+            </ul><%= form_for(@project) do |f| %>
+                <%= text_field 'project','pcrs', :value=>""%>
+                <%= f.submit "Add" %>
+                <% end %>
+                
+                <%= form_for(@project) do |f| %>
+                    <%= text_field 'project','pcrsToRemove', :value=>""%>
+                    <%= f.submit "Remove" %>
+                <% end %>
+            <div>
+                <h3>
+                    Reference Recent PCRS
+                </h3><%= select(:pcr,:id,Pcr.all(:order=>'updated_at DESC').collect{|p| [p.id, p.id ]},{:include_blank=>true}) %>
+                <div id="pcr_info">
+                    <div id="pcr_name">
+                        PCR Name:
+                    </div>
+                    <div id="pcr_updated_at">
+                        Updated at:
+                    </div>
+                    <div id="pcr_created_at">
+                        Created at:
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr/>
+        <div>
+            <h3>
+                Notes:
+            </h3>
+            <%= form_for(@project) do |f| %>
+                <%= text_area 'project','notes',:size=>'80x20' %><br>
+                <%= f.submit "Save" %>
+            <%end%>
+        </div>
+        <div id="item_buttons">
+            <%= button_to 'Edit', edit_project_path(@project),{:method=>:get} %>
+            <%= button_to 'Delete', @project,{:method=>:delete} %>
+        </div>
+  

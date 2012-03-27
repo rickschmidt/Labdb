@@ -1,4 +1,14 @@
+<div style="float:right;padding-right:30%">
+            <div id="buttons">
+            	<b>PCR Information</b>
+            	    <%= button_to 'XML',{:id=>@pcr.id, :format=>"xml"}, :method=>:get%>
+                     <span>Updated <%= time_ago_in_words(@pcr.updated_at)%> ago</span><br>
+                     <span>Created <%= time_ago_in_words(@pcr.created_at)%> ago</span><br>
+                PCR <%= @pcr.id %> Tubes <%= link_to image_tag("show.png", :border=>0), pcr_tubes_path(@pcr)%>
+                     
 
+            </div>
+        </div>
 <p><b>Pcr:</b><%= @pcr.pcr_tube_number %></p>
 <p><b>Updated:</b> <%= @pcr.updated_at %> </p>
 <p><b>Created:</b> <%= @pcr.created_at %> </p>

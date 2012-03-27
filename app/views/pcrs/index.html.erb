@@ -9,17 +9,9 @@
 <table>
   <tr id="header_row">
 	<th>Id</th>
-    <th >Tube Number</th>
-       
-       
-    <th > DNA Amount</th>
-       
-    <th  >Total Samples</th>
-       
-    <th >Total Worked</th>
-    <th  >Reamp</th>
-
-    <th  >Date</th>
+    <th >Pcr Name</th>
+    <th  >Total Samples</th>      
+    <th  >Last Updated</th>
        
   </tr>
 
@@ -29,15 +21,14 @@
 	<td><%=h pcr.pcr_tube_number %></td>
 
 
-    <td><%=h pcr.dna_amount %></td>
 
-    <td><%=h pcr.total_samples %></td>
 
-    <td><%=h pcr.total_worked %></td>
-    <td><%=h pcr.reamp %></td>
+    <td><%=h pcr.tubes.count %></td>
+
+
 
 	
-    <td><%=h pcr.date %></td>
+    <td><%=h time_ago_in_words(pcr.updated_at) %> ago</td>
 
    	<td class="icons" id="show"><%= link_to image_tag("show.png", :border=>0), pcr%></td>
  	<td class="icons"><%= link_to image_tag("edit.png", :border=>0), edit_pcr_path(pcr)%></td>

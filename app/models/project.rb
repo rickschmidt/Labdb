@@ -108,6 +108,7 @@ class Project < ActiveRecord::Base
 			end				
 		end
 		puts "PCR TRANS #{pcrTransactions.inspect}"
+		
 		return pcrTransactions
 	end
 end
