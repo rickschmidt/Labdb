@@ -81,42 +81,30 @@ class PcrsController < ApplicationController
 
   # PUT /pcrs/1
   # PUT /pcrs/1.xml
-  def update
-	 @pcr = Pcr.find(params[:id])
+	def update
+ 		@pcr = Pcr.find(params[:id])
+		@tubeAddTransactions={}
+		@tubeRemoveTransaction={}
+		if params[:pcr][:tubesToAdd]
+			@tubeAddTransactions=Pcr.add_tubes(params,@pcr)
+		end
+		if params[:pcr][:tubesToRemove]
+			@tubeRemoveTransactions=Pcr.remove_tubes(params,@pcr)
+		end
+
+
+
+		params[:pcr].delete :tubesToAdd
+		params[:pcr].delete :tubesToRemove
 	    respond_to do |format|
-        if params[:dnasample][:id]
-          @pcr.dnasample_id=params[:dnasample][:id]
-        end
-		if params[:pcr][:tubes]
-
-			if Tube.exists?(params[:pcr][:tubes])
-				tube=Tube.find(params[:pcr][:tubes])
-				@pcr.tubes<<(tube)					
-				params[:pcr][:tubes]=@pcr.tubes
-				flash[:notice] = "Tube was added."
-			else
-				flash[:error] = "Tube with id #{params[:pcr][:tubes]} was not found."
-				params[:pcr][:tubes]=@pcr.tubes
-			end
-
-	      if @pcr.update_attributes(params[:pcr])
-	        format.html { redirect_to(@pcr) }
-	        format.xml  { head :ok }
-	      else
-	        format.html { render :action => "edit" }
-	        format.xml  { render :xml => @pcr.errors, :status => :unprocessable_entity }
-	      end
-
-		else
-			  if @pcr.update_attributes(params[:pcr])
-	        format.html { redirect_to(@pcr, :notice => 'PCR was successfully updated.') }
-	        format.xml  { head :ok }
-	      else
-	        format.html { render :action => "edit" }
-	        format.xml  { render :xml => @pcr.errors, :status => :unprocessable_entity }
-	      end
-		end	
-	    end
+			if @pcr.update_attributes(params[:pcr])
+	        	format.html { redirect_to(@pcr) }
+		        format.xml  { head :ok }
+		    else
+	        	format.html { render :action => "edit" }
+	        	format.xml  { render :xml => @pcr.errors, :status => :unprocessable_entity }
+	      	end
+		end
   end
 
 

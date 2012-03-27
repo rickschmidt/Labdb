@@ -10,10 +10,9 @@
             </div>
         </div>
 <p><b>Pcr:</b><%= @pcr.pcr_tube_number %></p>
-<p><b>Updated:</b> <%= @pcr.updated_at %> </p>
-<p><b>Created:</b> <%= @pcr.created_at %> </p>
+
 <%if @dnasample %>
-<b>DNA Sample: <%= link_to image_tag("show.png", :border=>0), @dnasample%></b>
+<b>DNA Sample: </b><%= @dnasample.id %> <%= link_to image_tag("show.png", :border=>0), @dnasample%>
 <%end%>
 <p>
     <b>
@@ -22,8 +21,8 @@
     <%= @pcr.tubes.count %>
 </p>
 
-
-
+<hr/>
+<h3>PCR Master Mix</h3>
 <table border="0" cellspacing="5" cellpadding="5">
 	<tr>
 		<td>
@@ -62,39 +61,32 @@
 		</td>
 	</tr>
 </table>
-
-  <b>Notes:</b><br>
-<h4>PCR <%= @pcr.id %> <%= link_to image_tag("show.png", :border=>0), pcr_tubes_path(@pcr)%></h4>
-  <%=h @pcr.notes %>
-
-<%= form_for(@pcr) do |f| %>
-<%= f.label "Add a Tube by its ID" %>
-<%= text_field 'pcr','tubes', :value=>""%>
-  <%= f.submit "Add" %>
-<% end %>
+<hr/>
 
 <div>
-    <div class="pcrs_show">
-    <table  border="0" cellspacing="5" cellpadding="5">
-        <tr id="header_row">
-            <th>Tube ID</th>
-            <th>Success</th>
-            <th>Ready</th>
-            <th></th>
-            <th></th>
-        </tr>
-        <% @pcr.tubes.each do |tube| %>
-        <tr class="<%= cycle("even", "odd") %>">
-            <td><%=h tube.id %></td>
-            <td><%=h tube.success %></td>
-            <td><%=h tube.ready %></td>
-            <td class="icons" id="show"><%= link_to image_tag("show.png", :border=>0), tube%></td>
-            <td><%= button_to "Remove Tube", remove_tube_from_pcr_pcr_url(:pcr_id=>@pcr.id,:tube_id=>tube.id),{:method=>:delete}%>
-        </tr>
-        <%end %>
-    </table>
-    </div>
-    <div class="pcrs_right">
+
+
+ <h3>
+                Add and Remove Tubes using their ID
+            </h3>
+            <ul>
+                <li>
+                    <em>Values may be entered individually, as a comma separated list, or as a range.</em>
+                </li>
+                <li>Example: 3 or 3,4,5, or 3-5
+                </li>
+            </ul><%= form_for(@pcr) do |f| %>
+                <%= text_field 'pcr','tubesToAdd', :value=>""%>
+                <%= f.submit "Add" %>
+                <% end %>
+                
+                <%= form_for(@pcr) do |f| %>
+                    <%= text_field 'pcr','tubesToRemove', :value=>""%>
+                    <%= f.submit "Remove" %>
+                <% end %>
+
+</div>
+    <div >
         <h3>Available Recent Tubes</h3>
         <%= select(:tube,:id,Tube.all(:order=>'updated_at DESC').collect{|p| [p.id, p.id ]},{:include_blank=>true}) %>
 
@@ -107,10 +99,19 @@
         
     </div>
 
-</div>
 
 
 
+<hr/>
+        <div>
+            <h3>
+                Notes:
+            </h3>
+            <%= form_for(@pcr) do |f| %>
+                <%= text_area 'pcr','notes',:size=>'80x20' %><br>
+                <%= f.submit "Save" %>
+            <%end%>
+        </div>
 
 
 
