@@ -10,6 +10,9 @@
   <tr id="header_row">
 	<th>Id</th>
     <th >Pcr Name</th>
+    <th>DNA Sample Name</th>
+    <th>Gene</th>
+    <th>Taxonomy</th>
     <th  >Total Samples</th>      
     <th  >Last Updated</th>
        
@@ -20,7 +23,16 @@
     <td class='idfield'><%= pcr.id %>
 	<td><%=h pcr.pcr_tube_number %></td>
 
-
+    <%if pcr.dnasample %>
+        <td><%= pcr.dnasample.dna_accession %></td>
+        <td><%= pcr.dnasample.gene.genbank %></td>
+        <td><%= pcr.dnasample.taxonomy.species %></td>
+    <%else%>
+        <td>Not Set</td>
+                <td>Not Set</td>
+                        <td>Not Set</td>
+    <%end%>
+    
 
 
     <td><%=h pcr.tubes.count %></td>

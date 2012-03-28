@@ -28,7 +28,8 @@
 
             <h3>
                 Project <%= @project.id %> PCRS <%= link_to image_tag("show.png", :border=>0), project_pcrs_path(@project)%>
-            </h3>Total # of PCRS: <%= @project.pcrs.count %>
+            </h3>
+            <b>Total # of PCRS:</b> <%= @project.pcrs.count %>
             <h3>
                 Add and Remove PCRS using their ID
             </h3>
@@ -44,6 +45,7 @@
                     <%= text_field 'project','pcrsToRemove', :value=>"Ex: 3 or 3,4,5, 3-5, or all"%>
                     <%= f.submit "Remove" %>
                 <% end %>
+                <%= button_to "Create PCR", new_pcr_path, {:method=>:get} %>
                                 </div>
             <div>
                 <h3>

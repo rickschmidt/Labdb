@@ -63,6 +63,7 @@ $(document).ready(function() {
             // place the person.given_name value into the textfield called 'select_origin'...
             $('#dnasample_select').val(ui.item.dna_accession);
 			$('<span style="float:right;" class="ui-icon ui-icon-check"></span>').insertAfter('#dnasample_select');	
+			updateDnasampleInfo(ui.item.id);
             // and place the person.id into the hidden textfield called 'link_origin_id'.
             $('#dnasample_id').val(ui.item.id);
             return false;
@@ -80,7 +81,29 @@ $(document).ready(function() {
 			});      
 
 
-        
+		function updateDnasampleInfo(dnasample_id){
+
+               $.ajax({
+                   url: "/dnasamples/"+dnasample_id+"/stats",
+                   type:"GET",
+                   data:{id:dnasample_id},
+ 
+                   success: function(json,textStatus){
+                       	var obj=jQuery.parseJSON(json);
+						var taxa=obj.taxonomy[0].genus+" "+obj.taxonomy[0].species+" "+obj.taxonomy[0].subspecies
+ 						$('div#gene_info').text(obj.gene[0].genbank )
+						jQuery("<a />").prepend("<img src='/assets/show.png'/>").attr("href", "/genes/"+obj.gene[0].id).appendTo("#gene_info");
+ 						$('div#taxonomy_info').text(taxa);
+						jQuery("<a />").prepend("<img src='/assets/show.png'/>").attr("href", "/taxonomies/"+obj.taxonomy[0].id).appendTo("#taxonomy_info");
+
+ 						
+ 
+                       
+ 					
+                   }
+				
+               });
+        };        
 
    			
   

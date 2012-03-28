@@ -32,7 +32,11 @@ end
    		end    
 	end
  
-	 resources :dnasamples
+	 resources :dnasamples do
+		member do 
+			get 'stats'
+		end
+	end
  
 	 resources :taxonomies
  

@@ -123,6 +123,16 @@ class DnasamplesController < ApplicationController
           flash[:notice] = "Removed gene #{@gene.genbank} to DNA sample #{@dnasample.dna_accession}. " 
         request.env["HTTP_REFERER"] ? (redirect_to :back) :(redirect_to :root)
   end
+
+	def stats
+		@dnasample=Dnasample.find(params[:id])
+		@stats={:gene=>[],:taxonomy=>[]}
+		@stats[:gene]<<@dnasample.gene
+		@stats[:taxonomy]<<@dnasample.taxonomy
+		respond_to do |format|
+			format.js{ render :json=>@stats.to_json }
+		end
+	end
   # private 
   #    def sort_column
   #        Project.column_names.include?(params[:sort]) ? params[:sort] : "date"
