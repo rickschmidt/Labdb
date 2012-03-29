@@ -64,12 +64,23 @@
 </table>
 <hr/>
 
-<div >
-    <div style="float:left;padding-right:200px">
+<div style="display:inline">
+    <div style="float:left;padding-right:200px;padding-bottom:20px">
 
+<h3>Create and Add a new Tube</h3>
+        <%= form_for(@pcr) do |pcr| %>
+                Primer ID
+                <%= text_field 'tubes','primerID' %><br>
+                <%= hidden_field 'tubes','hiddenPrimerID' %>
+                <%= pcr.submit "Create" %>
 
-                <h3>
-                    Add and Remove Tubes using their ID
+        <%end %>
+                
+
+    </div>
+    <div>
+        <h3>
+                    Add and Remove existing Tubes using their ID
                 </h3>
               <%= form_for(@pcr) do |f| %>
                     <%= text_field 'pcr','tubesToAdd', :value=>"Ex: 3 or 3,4,5, or 3-5"%>
@@ -80,17 +91,6 @@
                         <%= text_field 'pcr','tubesToRemove', :value=>"Ex: 3 or 3,4,5, or 3-5, or all"%>
                         <%= f.submit "Remove" %>
                     <% end %>
-
-    </div>
-    <div>
-        <h3>Create  New Tube</h3>
-        <%= form_for(@pcr) do |pcr| %>
-                <p>Primer ID</p>
-                <%= text_field 'tubes','primerID' %><br>
-                <%= hidden_field 'tubes','hiddenPrimerID' %>
-                <%= pcr.submit "Create" %>
-
-        <%end %>
     </div>
 </div>
     <div style="clear:both" >
