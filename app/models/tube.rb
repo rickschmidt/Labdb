@@ -23,5 +23,13 @@ class Tube < ActiveRecord::Base
 		end
 		# tubes.keys.paginate(:per_page => @per_page, :page => 1)
 		return tubes
-	end	
+	end
+	
+	def self.createNewTube(params,pcr)
+		@tube=Tube.new
+		@tube.primer_id=params[:tubes][:hiddenPrimerID]
+		@tube.save
+		pcr.tubes<<@tube
+		
+		end	
 end

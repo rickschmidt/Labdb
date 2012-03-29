@@ -85,17 +85,27 @@ class PcrsController < ApplicationController
  		@pcr = Pcr.find(params[:id])
 		@tubeAddTransactions={}
 		@tubeRemoveTransaction={}
-		if params[:pcr][:tubesToAdd]
-			@tubeAddTransactions=Pcr.add_tubes(params,@pcr)
+		if params[:pcr]
+			if params[:pcr][:tubesToAdd]
+				@tubeAddTransactions=Pcr.add_tubes(params,@pcr)
+				params[:pcr].delete :tubesToAdd
+			end
+			if params[:pcr][:tubesToRemove]
+				@tubeRemoveTransactions=Pcr.remove_tubes(params,@pcr)
+				params[:pcr].delete :tubesToRemove
+			end
 		end
-		if params[:pcr][:tubesToRemove]
-			@tubeRemoveTransactions=Pcr.remove_tubes(params,@pcr)
+		
+		if params[:tubes]
+			if params[:tubes][:primerID]
+				Tube.createNewTube(params,@pcr)
+				params[:tubes].delete :primerID
+			end
 		end
 
+		
 
 
-		params[:pcr].delete :tubesToAdd
-		params[:pcr].delete :tubesToRemove
 	    respond_to do |format|
 			if @pcr.update_attributes(params[:pcr])
 	        	format.html { redirect_to(@pcr) }

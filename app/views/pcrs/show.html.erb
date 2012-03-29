@@ -64,24 +64,36 @@
 </table>
 <hr/>
 
-<div>
+<div >
+    <div style="float:left;padding-right:200px">
 
 
- <h3>
-                Add and Remove Tubes using their ID
-            </h3>
-          <%= form_for(@pcr) do |f| %>
-                <%= text_field 'pcr','tubesToAdd', :value=>"Ex: 3 or 3,4,5, or 3-5"%>
-                <%= f.submit "Add" %>
-                <% end %>
+                <h3>
+                    Add and Remove Tubes using their ID
+                </h3>
+              <%= form_for(@pcr) do |f| %>
+                    <%= text_field 'pcr','tubesToAdd', :value=>"Ex: 3 or 3,4,5, or 3-5"%>
+                    <%= f.submit "Add" %>
+                    <% end %>
                 
-                <%= form_for(@pcr) do |f| %>
-                    <%= text_field 'pcr','tubesToRemove', :value=>"Ex: 3 or 3,4,5, or 3-5, or all"%>
-                    <%= f.submit "Remove" %>
-                <% end %>
+                    <%= form_for(@pcr) do |f| %>
+                        <%= text_field 'pcr','tubesToRemove', :value=>"Ex: 3 or 3,4,5, or 3-5, or all"%>
+                        <%= f.submit "Remove" %>
+                    <% end %>
 
+    </div>
+    <div>
+        <h3>Create  New Tube</h3>
+        <%= form_for(@pcr) do |pcr| %>
+                <p>Primer ID</p>
+                <%= text_field 'tubes','primerID' %><br>
+                <%= hidden_field 'tubes','hiddenPrimerID' %>
+                <%= pcr.submit "Create" %>
+
+        <%end %>
+    </div>
 </div>
-    <div >
+    <div style="clear:both" >
         <h3>Available Recent Tubes</h3>
         <%= select(:tube,:id,Tube.all(:order=>'updated_at DESC').collect{|p| [p.id, p.id ]},{:include_blank=>true}) %>
 

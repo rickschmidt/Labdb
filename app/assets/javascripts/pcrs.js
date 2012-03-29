@@ -12,98 +12,134 @@ $(document).ready(function() {
         window.location = selected;
 
     });
-	
-	//Used in show page of pcr-updates tube info after select
-	$('select#tube_id').live('change',function(){
-             dataString = jQuery('select#tube_id').val();
-              $.ajax({
-                  url: "/tubes/"+dataString,
-                  type:"GET",
-                  data:{id:dataString},
 
-                  success: function(json,textStatus){
-                      	var obj=jQuery.parseJSON(json);
+    //Used in show page of pcr-updates tube info after select
+    $('select#tube_id').live('change',
+    function() {
+        dataString = jQuery('select#tube_id').val();
+        $.ajax({
+            url: "/tubes/" + dataString,
+            type: "GET",
+            data: {
+                id: dataString
+            },
 
-						$('div#tube_name').text("Tube Name: "+obj.pcr_tube_name);
-						$('div#tube_updated_at').text("Updated at: "+obj.updated_at);
-						$('div#tube_created_at').text("Created at: "+obj.created_at);
-						
+            success: function(json, textStatus) {
+                var obj = jQuery.parseJSON(json);
 
-                      
-					
-                  }
-              });
-        });
-
-	$('#pcr_tubesToAdd').focus(function() {
-		$(this).val("");
-		
-	});
-	$('#pcr_tubesToRemove').focus(function() {
-		$(this).val("");
-	});
+                $('div#tube_name').text("Tube Name: " + obj.pcr_tube_name);
+                $('div#tube_updated_at').text("Updated at: " + obj.updated_at);
+                $('div#tube_created_at').text("Created at: " + obj.created_at);
 
 
-//Autocompletes Taxonomy in form
 
-    $('#dnasample_select').autocomplete(
 
-		{
-        // This shows the min length of charcters that must be typed before the autocomplete looks for a match.
-        minLength: 2,
-        // This is the source of the auocomplete suggestions. In this case a list of names from the people controller, in JSON format.
-        source: '/dnasamples.json',
-        // This updates the textfield when you move the updown the suggestions list, with your keyboard. In our case it will reflect the same value that you see in the suggestions which is the person.given_name.
-        focus: function(event, ui) {
-            $('#dnasample_select').val(ui.item.id);
-            return false;
-        },
-        // Once a value in the drop down list is selected, do the following:
-        select: function(event, ui) {
-            // place the person.given_name value into the textfield called 'select_origin'...
-            $('#dnasample_select').val(ui.item.dna_accession);
-			$('<span style="float:right;" class="ui-icon ui-icon-check"></span>').insertAfter('#dnasample_select');	
-			updateDnasampleInfo(ui.item.id);
-            // and place the person.id into the hidden textfield called 'link_origin_id'.
-            $('#dnasample_id').val(ui.item.id);
-            return false;
-        }
- 	
-    })
-    // The below code is straight from the jQuery example. It formats what data is displayed in the dropdown box, and can be customized.
-    .data("autocomplete")._renderItem = function(ul, item) {
-        return $("<li></li>")
-        .data("item.autocomplete", item)
-        // For now which just want to show the person.given_name in the list.
-        .append("<a>" + item.dna_accession  + "</a>")
-        .appendTo(ul);
             }
-			});      
+        });
+    });
+
+    $('#pcr_tubesToAdd').focus(function() {
+        $(this).val("");
+
+    });
+    $('#pcr_tubesToRemove').focus(function() {
+        $(this).val("");
+    });
 
 
-		function updateDnasampleInfo(dnasample_id){
+    //Autocompletes Taxonomy in form
+	if($('#dnasample_select').length ) {
+    	$('#dnasample_select').autocomplete(
 
-               $.ajax({
-                   url: "/dnasamples/"+dnasample_id+"/stats",
-                   type:"GET",
-                   data:{id:dnasample_id},
- 
-                   success: function(json,textStatus){
-                       	var obj=jQuery.parseJSON(json);
-						var taxa=obj.taxonomy[0].genus+" "+obj.taxonomy[0].species+" "+obj.taxonomy[0].subspecies
- 						$('div#gene_info').text(obj.gene[0].genbank )
-						jQuery("<a />").prepend("<img src='/assets/show.png'/>").attr("href", "/genes/"+obj.gene[0].id).appendTo("#gene_info");
- 						$('div#taxonomy_info').text(taxa);
-						jQuery("<a />").prepend("<img src='/assets/show.png'/>").attr("href", "/taxonomies/"+obj.taxonomy[0].id).appendTo("#taxonomy_info");
+	    {
+	        // This shows the min length of charcters that must be typed before the autocomplete looks for a match.
+	        minLength: 2,
+	        // This is the source of the auocomplete suggestions. In this case a list of names from the people controller, in JSON format.
+	        source: '/dnasamples.json',
+	        // This updates the textfield when you move the updown the suggestions list, with your keyboard. In our case it will reflect the same value that you see in the suggestions which is the person.given_name.
+	        focus: function(event, ui) {
+	            $('#dnasample_select').val(ui.item.id);
+	            return false;
+	        },
+	        // Once a value in the drop down list is selected, do the following:
+	        select: function(event, ui) {
+	            // place the person.given_name value into the textfield called 'select_origin'...
+	            $('#dnasample_select').val(ui.item.dna_accession);
+	            $('<span style="float:right;" class="ui-icon ui-icon-check"></span>').insertAfter('#dnasample_select');
+	            updateDnasampleInfo(ui.item.id);
+	            // and place the person.id into the hidden textfield called 'link_origin_id'.
+	            $('#dnasample_id').val(ui.item.id);
+	            return false;
+	        }
 
- 						
- 
-                       
- 					
-                   }
-				
-               });
-        };        
+	    })
+	    // The below code is straight from the jQuery example. It formats what data is displayed in the dropdown box, and can be customized.
+	    .data("autocomplete")._renderItem = function(ul, item) {
+	        return $("<li></li>")
+	        .data("item.autocomplete", item)
+	        // For now which just want to show the person.given_name in the list.
+	        .append("<a>" + item.dna_accession + "</a>")
+	        .appendTo(ul);
+	    };
+	};
+	if($('#tubes_primerID').length){
+		$('#tubes_primerID').autocomplete(
 
-   			
-  
+		    {
+		        // This shows the min length of charcters that must be typed before the autocomplete looks for a match.
+		        minLength: 2,
+		        // This is the source of the auocomplete suggestions. In this case a list of names from the people controller, in JSON format.
+		        source: '/primers.json',
+		        // This updates the textfield when you move the updown the suggestions list, with your keyboard. In our case it will reflect the same value that you see in the suggestions which is the person.given_name.
+		        focus: function(event, ui) {
+		            $('#tubes_primerID').val(ui.item.id);
+		            return false;
+		        },
+		        // Once a value in the drop down list is selected, do the following:
+		        select: function(event, ui) {
+		            // place the person.given_name value into the textfield called 'select_origin'...
+		            $('#tubes_primerID').val(ui.item.name);
+		            // $('<span style="float:right;" class="ui-icon ui-icon-check"></span>').insertAfter('#tubes_primerID');
+
+		            // and place the person.id into the hidden textfield called 'link_origin_id'.
+		            $('#tubes_hiddenPrimerID').val(ui.item.id);
+		            return false;
+		        }
+
+		    })
+		    // The below code is straight from the jQuery example. It formats what data is displayed in the dropdown box, and can be customized.
+		    .data("autocomplete")._renderItem = function(ul, item) {
+		        return $("<li></li>")
+		        .data("item.autocomplete", item)
+		        // For now which just want to show the person.given_name in the list.
+		        .append("<a>" + item.name + "</a>")
+		        .appendTo(ul);
+		    };
+		};
+function updateDnasampleInfo(dnasample_id) {
+
+    $.ajax({
+        url: "/dnasamples/" + dnasample_id + "/stats",
+        type: "GET",
+        data: {
+            id: dnasample_id
+        },
+
+        success: function(json, textStatus) {
+            var obj = jQuery.parseJSON(json);
+            var taxa = obj.taxonomy[0].genus + " " + obj.taxonomy[0].species + " " + obj.taxonomy[0].subspecies
+            $('div#gene_info').text(obj.gene[0].genbank)
+            jQuery("<a />").prepend("<img src='/assets/show.png'/>").attr("href", "/genes/" + obj.gene[0].id).appendTo("#gene_info");
+            $('div#taxonomy_info').text(taxa);
+            jQuery("<a />").prepend("<img src='/assets/show.png'/>").attr("href", "/taxonomies/" + obj.taxonomy[0].id).appendTo("#taxonomy_info");
+
+
+
+
+
+        }
+
+    });//close ajax
+};//close function
+});
+
