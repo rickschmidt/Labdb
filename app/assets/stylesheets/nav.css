@@ -74,7 +74,7 @@ div.horizontal a:hover#redlight {
 div.top{
 	height:150px;
 	background-color:#BFBFBF;
-		background: -webkit-gradient(linear, left top, left bottom, from(#666666), to(#878787)); /* for webkit browsers */
+	background: -webkit-gradient(linear, left top, left bottom, from(#666666), to(#878787)); /* for webkit browsers */
 						background: -moz-linear-gradient(top,  #666666,  #878787); /* for firefox 3.6+ */
 	margin-bottom:0;
 	padding-bottom:0;

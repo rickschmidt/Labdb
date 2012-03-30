@@ -27,6 +27,8 @@ class PcrsController < ApplicationController
     if @pcr.dnasample_id!=nil
       @dnasample=Dnasample.find(@pcr.dnasample_id)
     end
+	@stats=Pcr.tubeStats(@pcr)
+	puts "@stats #{@stats.inspect}"
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @pcr.to_xml(:include => :tubes) }

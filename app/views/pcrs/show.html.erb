@@ -1,73 +1,88 @@
-<div style="float:right;padding-right:30%">
-            <div id="buttons">
-            	<b>PCR Information</b>
-            	    <%= button_to 'XML',{:id=>@pcr.id, :format=>"xml"}, :method=>:get%>
-                     <span>Updated <%= time_ago_in_words(@pcr.updated_at)%> ago</span><br>
-                     <span>Created <%= time_ago_in_words(@pcr.created_at)%> ago</span><br>
-                PCR <%= @pcr.id %> Tubes <%= link_to image_tag("show.png", :border=>0), pcr_tubes_path(@pcr)%>
-                     
+<div id="top_container" style="clear:both" >
+    <div style="float:left">
+        <table border="0" cellspacing="5" cellpadding="5">
+            <col width="300px">
+            <col width="300px">
+            <tr align="left">
+                <th >
+                    <h2>PCR Information</h2>
+                </th>
+                <th>
+                    <h2>Master Mix</h2>
+                </th>
+            </tr>
+	        <tr>
+		        <td>
+			        <b>PCR Name:</b>
+  			        <%=h @pcr.pcr_tube_number %>
+		        </td>
+		        <td>
+		          <b>H2O:</b>
+		          <%=h @pcr.h2o %>		          
+		        </td>
+	        </tr>
+	        <tr>
+	            <td>
+                    <%if @dnasample %>
+                    <b>DNA Sample: </b><%= @dnasample.id %> <%= link_to image_tag("show.png", :border=>0), @dnasample%>
+                    <%end%>
+	            </td>
+	        	<td>
+        			<b>Buffer:</b>
+        			<%= @pcr.buffer %>
+        		</td>
+        	</tr>
+        	<tr>
+        	    <td>
+        	       <b># of Tubes:</b>
+        	         <%= @pcr.tubes.count %>
+        	    </td>
+        		<td>
+        			<b>MgCl2:</b>
+        			<%= @pcr.mgcl2 %>
+        		</td>
+        	</tr>
+        	<tr>
+        	    <td>
+        	       <b>Tube Success Rate</b>
+                   <%= @stats[:successPercentage].round(1) %>%
+        	    </td>
+        		<td>
+        			<b>BSA:</b>
+        			<%= @pcr.bsa %>
+        		</td>
+        	</tr>
+        	<tr>
+        	    <td>
+        	       <b>Tube Ready Rate</b>
+        	       <%= @stats[:readyPercentage].round(1) %>%
+        	    </td>
+        		<td>
+        			<b>TAQ:</b>
+        			<%= @pcr.taq %>
+        		</td>
+        	</tr>
+        	<tr>
+        		<td>
+        			<b>DNTPs:</b>
+        			<%= @pcr.dntps %>
+        		</td>
+        	</tr>
+        </table>       
+    </div>
+    <div style="padding-top:30px">
 
-            </div>
-        </div>
-<h2>PCR <%= @pcr.id %></h2>
-<p><b>PCR Name:</b><%= @pcr.pcr_tube_number %></p>
+        	<b>Document Attributes</b>
+        	    <%= button_to 'XML',{:id=>@pcr.id, :format=>"xml"}, :method=>:get%>
+                 <span>Updated <%= time_ago_in_words(@pcr.updated_at)%> ago</span><br>
+                 <span>Created <%= time_ago_in_words(@pcr.created_at)%> ago</span><br>
+            PCR <%= @pcr.id %> Tubes <%= link_to image_tag("show.png", :border=>0), pcr_tubes_path(@pcr)%>             
 
-<%if @dnasample %>
-<b>DNA Sample: </b><%= @dnasample.id %> <%= link_to image_tag("show.png", :border=>0), @dnasample%>
-<%end%>
-<p>
-    <b>
-        Total # of Tubes: 
-    </b> 
-    <%= @pcr.tubes.count %>
-</p>
-
-<hr/>
-<h3>PCR Master Mix</h3>
-<table border="0" cellspacing="5" cellpadding="5">
-	<tr>
-		<td>
-			<b>H2O:</b>
-  			<%=h @pcr.h2o %>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<b>Buffer:</b>
-			<%= @pcr.buffer %>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<b>MgCl2:</b>
-			<%= @pcr.mgcl2 %>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<b>BSA:</b>
-			<%= @pcr.bsa %>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<b>TAQ:</b>
-			<%= @pcr.taq %>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<b>DNTPs:</b>
-			<%= @pcr.dntps %>
-		</td>
-	</tr>
-</table>
-<hr/>
-
-<div style="display:inline">
-    <div style="float:left;padding-right:200px;padding-bottom:20px">
-
-<h3>Create and Add a new Tube</h3>
+    </div>
+</div>
+ <div id="middle_container" style="clear:both">
+     <div>
+        <h3>Create and Add a new Tube</h3>
         <%= form_for(@pcr) do |pcr| %>
                 Primer ID
                 <%= text_field 'tubes','primerID' %><br>
@@ -75,10 +90,8 @@
                 <%= pcr.submit "Create" %>
 
         <%end %>
-                
-
-    </div>
-    <div>
+     </div>
+     <div>
         <h3>
                     Add and Remove existing Tubes using their ID
                 </h3>
@@ -91,47 +104,6 @@
                         <%= text_field 'pcr','tubesToRemove', :value=>"Ex: 3 or 3,4,5, or 3-5, or all"%>
                         <%= f.submit "Remove" %>
                     <% end %>
-    </div>
-</div>
-    <div style="clear:both" >
-        <h3>Available Recent Tubes</h3>
-        <%= select(:tube,:id,Tube.all(:order=>'updated_at DESC').collect{|p| [p.id, p.id ]},{:include_blank=>true}) %>
-
-        <div id="tube_info">
-            <div id="tube_name">Tube Name:</div>
-            <div id="tube_updated_at">Updated at:</div>
-            <div id="tube_created_at">Created at:</div>
-            
-        </div>
-        
-    </div>
-
-
-
-
-<hr/>
-        <div>
-            <h3>
-                Notes:
-            </h3>
-            <%= form_for(@pcr) do |f| %>
-                <%= text_area 'pcr','notes',:size=>'80x20' %><br>
-                <%= f.submit "Save" %>
-            <%end%>
-        </div>
-
-
-
-
-
-<div id="item_buttons">
-	<%= button_to 'Edit', edit_pcr_path(@pcr),{:method=>:get} %> 
-<%= button_to 'Delete', @pcr,{:method=>:delete} %>
-</div>
-
-
-
-
-
-
+     </div>
+ </div>           
 

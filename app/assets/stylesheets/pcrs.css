@@ -1,37 +1,33 @@
-div.pcrs_index{
+div.pcrs_index {
 /*	position:relative;*/
-position: relative; 
-			padding: 20px 0px 10px 10px;
-
-
+position: relative;
+padding: 20px 0px 10px 10px;
 }
 
-div.pcrs_index table{
-    border-collapse: collapse;
-	width:100%;
+div.pcrs_index table {
+border-collapse: collapse;
+width: 100%;
 }
 
-div.pcrs_index tr#header_row{
-	background: -webkit-gradient(linear, left top, left bottom, from(#218989), to(#257A8D)); /* for webkit browsers */
+div.pcrs_index tr#header_row {
+background: -webkit-gradient(linear, left top, left bottom, from(#218989), to(#257A8D)); /* for webkit browsers */
 	background: -moz-linear-gradient(top,  #218989,  #257A8D); /* for firefox 3.6+ */
 	-webkit-box-shadow:none;
-	background-color:#9BAACF;
-	line-height:50px;
+background-color: #9BAACF;
+line-height: 50px;
 }
-div.pcrs_show table{
-	border-collapse: collapse;
-	float:left;
-
+div.pcrs_show table {
+border-collapse: collapse;
+float: left;
 }
 
-div.pcrs_index tr.odd{
-	background-color:#D5D5D5;
-	height:40px;
+div.pcrs_index tr.odd {
+background-color: #D5D5D5;
+height: 40px;
 }
-div.pcrs_index tr.even{
-
-	background-color:white;
-		height:40px;
+div.pcrs_index tr.even {
+background-color: white;
+height: 40px;
 }
 
 
@@ -43,38 +39,35 @@ div.pcrs_index tr.even:hover {
 background-color: #A7F0DE;
 }
 
-div.pcrs_index td{
-	text-align: center;
-	font-weight:400;
-	font-size:14px;
-	font-family:  sans-serif;
-
+div.pcrs_index td {
+text-align: center;
+font-weight: 400;
+font-size: 14px;
+font-family: sans-serif;
 }
-div.pcrs_index td a{
-	display:block;
-    height:100%;
-    width:100%;
+div.pcrs_index td a {
+display: block;
+height: 100%;
+width: 100%;
 }
 div.pcrs_right {
-	margin-left: 100px;
-	float:left;
-	width:300px;
-	height:300px;
-	overflow:auto;
+margin-left: 100px;
+float: left;
+width: 300px;
+height: 300px;
+overflow: auto;
 }
-div#item_buttons{
-	clear:both;
-
+div#item_buttons {
+clear: both;
 }
 
-div.pcrs_show tr.odd{
-	background-color:#D5D5D5;
-	height:40px;
+div.pcrs_show tr.odd {
+background-color: #D5D5D5;
+height: 40px;
 }
-div.pcrs_show tr.even{
-
-	background-color:white;
-		height:40px;
+div.pcrs_show tr.even {
+background-color: white;
+height: 40px;
 }
 
 
@@ -85,10 +78,10 @@ background-color: #A7F0DE;
 div.pcrs_show tr.even:hover {
 background-color: #A7F0DE;
 }
-div.pcrs_show tr#header_row{
-	background: -webkit-gradient(linear, left top, left bottom, from(#218989), to(#257A8D)); /* for webkit browsers */
+div.pcrs_show tr#header_row {
+background: -webkit-gradient(linear, left top, left bottom, from(#218989), to(#257A8D)); /* for webkit browsers */
 	background: -moz-linear-gradient(top,  #218989,  #257A8D); /* for firefox 3.6+ */
 	-webkit-box-shadow:none;
-	background-color:#9BAACF;
-	line-height:50px;
+background-color: #9BAACF;
+line-height: 50px;
 }

@@ -1,0 +1,74 @@
+<div id="middle_container">
+<div style="display:inline">
+    <div style="float:left;padding-right:200px;padding-bottom:20px">
+
+<h3>Create and Add a new Tube</h3>
+        <%= form_for(@pcr) do |pcr| %>
+                Primer ID
+                <%= text_field 'tubes','primerID' %><br>
+                <%= hidden_field 'tubes','hiddenPrimerID' %>
+                <%= pcr.submit "Create" %>
+
+        <%end %>
+                
+
+    </div>
+    <div>
+        <h3>
+                    Add and Remove existing Tubes using their ID
+                </h3>
+              <%= form_for(@pcr) do |f| %>
+                    <%= text_field 'pcr','tubesToAdd', :value=>"Ex: 3 or 3,4,5, or 3-5"%>
+                    <%= f.submit "Add" %>
+                    <% end %>
+                
+                    <%= form_for(@pcr) do |f| %>
+                        <%= text_field 'pcr','tubesToRemove', :value=>"Ex: 3 or 3,4,5, or 3-5, or all"%>
+                        <%= f.submit "Remove" %>
+                    <% end %>
+    </div>
+</div>
+    <div style="clear:both" >
+        <h3>Available Recent Tubes</h3>
+        <%= select(:tube,:id,Tube.all(:order=>'updated_at DESC').collect{|p| [p.id, p.id ]},{:include_blank=>true}) %>
+
+        <div id="tube_info">
+            <div id="tube_name">Tube Name:</div>
+            <div id="tube_updated_at">Updated at:</div>
+            <div id="tube_created_at">Created at:</div>
+            
+        </div>
+        
+    </div>
+
+
+
+
+<hr/>
+</div>
+
+        <div id="bottom_container">
+            <h3>
+                Notes:
+            </h3>
+            <%= form_for(@pcr) do |f| %>
+                <%= text_area 'pcr','notes',:size=>'80x20' %><br>
+                <%= f.submit "Save" %>
+            <%end%>
+        </div>
+
+
+
+
+
+<div id="item_buttons">
+	<%= button_to 'Edit', edit_pcr_path(@pcr),{:method=>:get} %> 
+<%= button_to 'Delete', @pcr,{:method=>:delete} %>
+</div>
+
+
+
+
+
+
+

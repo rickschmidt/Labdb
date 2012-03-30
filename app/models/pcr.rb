@@ -110,4 +110,21 @@ class Pcr < ActiveRecord::Base
 		end		
 		return tubeTransactions
 	end
+	
+	def self.tubeStats(pcr)
+		success=0
+		ready=0
+		total=pcr.tubes.count
+		pcr.tubes.each do |tube|
+			if tube.success==true
+				success=success+1
+			end
+			if tube.ready==true
+				ready=ready+1
+			end
+		end
+		stats={:success=>success, :ready=>ready,:total=>total, :successPercentage=>((success.to_f/total.to_f)*100), :readyPercentage=>((ready.to_f/total.to_f)*100)}
+		return stats
+		
+	end
 end
